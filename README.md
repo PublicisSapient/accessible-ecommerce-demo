@@ -32,6 +32,12 @@ Creating a new branch as follows. The general nomenclature for a branch should b
 git branch -b feature/carousel
 `
 
+Please be sure to provide detailed comments within your commits as follows:
+
+`
+git commit -m "Title of the commit" -m "Detailed comment"
+`
+
 Open up a pull request from your working branch into `dev`, and have your partner approve and merge the branch within GitHub.
 
 ### Developer Syntax Settings
