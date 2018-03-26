@@ -8,10 +8,24 @@ A truly accessible demo eCommerce website brought to you by SapientRazorfish.
 
 ## Production Notes
 
+### BEM
+
+### Watch Task
+
+### GIT Flow
+
 ### Developer Syntax Settings
 These settings override both User and Default settings for the HTML syntax. Please add these to your IDE sytax overrides.
 `
 {
 	"tab_size": 4,
 	"translate_tabs_to_spaces": false
-}`
+}
+`
+
+### Task Ownership
+
++ Page Assembly - Kristen
++ Build 'Script' - Rene
++ Production Notes + Accessibility Criteria Update
+
