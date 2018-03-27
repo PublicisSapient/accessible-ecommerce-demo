@@ -1,1 +1,1 @@
-/* Footer Functions */
+/* Mini Cart Functions */
