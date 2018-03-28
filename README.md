@@ -21,7 +21,9 @@ Please review the [BEM documentation](http://getbem.com/naming/) in preparation 
 
 ### Watch Task
 
-`Rene to fill in this section`
+You will need to install a recent version of [**Node**](https://nodejs.org) and [**NPM**](https://www.npmjs.com/).
+
+* The setup here is quite similar to what is described here: https://webdesign.tutsplus.com/tutorials/watch-and-compile-sass-in-five-quick-steps--cms-28275 - but the big difference being the paths: it will automatically convert any `.scss` file in "Components" to the corresponding `.css` file.
 
 ### GIT Flow
 
