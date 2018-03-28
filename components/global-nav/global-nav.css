@@ -1,6 +1,9 @@
 /* Mobile Styles */
-.navigation {
-  display: flex; }
+.navigation .navigation-logo {
+  display: inline-block; }
+
+.navigation .navigation-mini-cart {
+  display: inline-block; }
 
 .navigation .global-nav {
   display: flex; }
@@ -15,11 +18,28 @@
   display: none; }
 
 .navigation .global-nav .has-submenu.open .submenu {
-  display: block; }
+  display: block;
+  position: absolute;
+  width: 100%;
+  background: #333;
+  left: 0; }
 
-.global-nav .global-nav-menu {
+.navigation .global-nav-menu {
   list-style: none;
   padding: 0; }
+
+.navigation ul.global-nav-menu li {
+  display: inline-block;
+  padding: 5px;
+  background: #222;
+  border: none; }
+
+.navigation ul.global-nav-menu li a {
+  color: white;
+  text-decoration: none; }
+
+.navigation ul.global-nav-menu li a:focus, .navigation ul.global-nav-menu li a:hover {
+  text-decoration: underline; }
 
 /* Tablet Styles */
 /* Desktop Styles */
