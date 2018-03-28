@@ -1,0 +1,20 @@
+{
+  "name": "accessible-ecommerce-demo",
+  "version": "0.0.1",
+  "description": "Accessible eCommerce Demo",
+  "repository": "https://github.com/SapientRazorfish/accessible-ecommerce-demo",
+  "engines": {
+    "node": ">4.4.0",
+    "npm": ">3.9.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch --recursive ./components/ -o ./components/"
+  },
+  "devDependencies": {
+    "node-sass": "4.8.3"
+  },
+  "dependencies": {
+    "npm": "^5.8.0"
+  }
+}
