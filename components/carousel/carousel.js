@@ -11,18 +11,19 @@ let shiftAmount = () => {
 }
 
 // setup item focus listeners
-items.forEach( item => {
-	item.addEventListener('focusin', () => {
-		const offset = item.offsetLeft - 66; // TODO: this could be programatic
-		if (offset > Math.abs(carouselPosition)) {
-			carouselPosition = carouselPosition - itemWidth()
-			shiftCarousel(carouselPosition);
-		} else if (offset < Math.abs(carouselPosition)) {
-			carouselPosition = carouselPosition + itemWidth()
-			shiftCarousel(carouselPosition);
-		}
-	})
-})
+// items.forEach( item => {
+// 	item.addEventListener('focusin', () => {
+// 		const offset = item.offsetLeft - 67; // TODO: this could be programatic
+// 		if (offset > Math.abs(carouselPosition)) {
+// 			carouselPosition = carouselPosition - itemWidth()
+// 			shiftCarousel(carouselPosition);
+// 		} else if (offset < Math.abs(carouselPosition)) {
+// 			var nextPos = carouselPosition + itemWidth();
+// 			if (nextPos > 0) carouselPosition = 0;
+// 			shiftCarousel(nextPos);
+// 		}
+// 	})
+// })
 
 
 let visibleW = carouselWidth();
