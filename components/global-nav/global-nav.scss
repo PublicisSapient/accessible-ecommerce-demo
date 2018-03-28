@@ -1,6 +1,13 @@
 /* Mobile Styles */
 
 .global-nav {
+	.has-submenu .submenu {
+		display: none;
+	}
+	
+	.has-submenu.open .submenu {
+			display: block;
+	}
 }
 
 /* Tablet Styles */

@@ -1,3 +1,9 @@
 /* Mobile Styles */
+.global-nav .has-submenu .submenu {
+  display: none; }
+
+.global-nav .has-submenu.open .submenu {
+  display: block; }
+
 /* Tablet Styles */
 /* Desktop Styles */
