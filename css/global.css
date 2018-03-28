@@ -2,3 +2,4 @@
 @import url("helpers.css");
 
 /* Page Styles */
+@import url("../components/global-nav/global-nav.css");
