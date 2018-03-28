@@ -1,2 +1,6 @@
 /* Global Styles */
 @import url("helpers.css");
+
+/* Component Styles */
+@import url("../components/global-nav/global-nav.css");
+@import url("../components/breadcrumb/breadcrumb.css");

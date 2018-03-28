@@ -21,7 +21,11 @@ Please review the [BEM documentation](http://getbem.com/naming/) in preparation 
 
 ### Watch Task
 
-`Rene to fill in this section`
+You will need to install a recent version of [**Node**](https://nodejs.org) and [**NPM**](https://www.npmjs.com/).
+
+* The setup here is quite similar to what is described here: https://webdesign.tutsplus.com/tutorials/watch-and-compile-sass-in-five-quick-steps--cms-28275 - but the big difference being the paths: it will automatically convert any `.scss` file in "Components" to the corresponding `.css` file.
+
+All you should need to do is run `npm run scss` and it *should* take care of the rest.
 
 ### GIT Flow
 
@@ -49,8 +53,17 @@ These settings override both User and Default settings for the HTML syntax. Plea
 }
 `
 
-### Task Ownership
+### Quick Start for Development
 
-+ Page Assembly - Kristen
-+ Build 'Script' - Rene
+1) Open Terminal on your computer (or Terminal equivalent).
 
+2) Navigate to the directory where you want this repository code to be on your local computer using the `cd foldername` command.
+
+3) Enter the following 4 lines in Terminal:
+
+```bash
+git clone https://github.com/SapientRazorfish/accessible-ecommerce-demo.git
+cd accessible-ecommerce-demo
+npm install
+npm run scss
+```
