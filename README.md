@@ -56,3 +56,18 @@ These settings override both User and Default settings for the HTML syntax. Plea
 + Page Assembly - Kristen
 + Build 'Script' - Rene
 
+
+### Quick Start for Development
+
+1) Open Terminal on your computer (or Terminal equivalent).
+
+2) Navigate to the directory where you want this repository code to be on your local computer using the `cd foldername` command.
+
+3) Enter the following 4 lines in Terminal:
+
+```bash
+git clone https://github.com/SapientRazorfish/accessible-ecommerce-demo.git
+cd accessible-ecommerce-demo
+npm install
+npm run scss
+```
