@@ -1,30 +1,3 @@
 /* Mobile Styles */
-.global-nav nav.breadcrumb {
-  padding: 0.8em 1em;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  background: #f8f6f8; }
-
-.global-nav nav.breadcrumb ol {
-  margin: 0;
-  padding-left: 0;
-  list-style: none; }
-
-.global-nav nav.breadcrumb li {
-  display: inline; }
-
-.global-nav nav.breadcrumb li + li::before {
-  display: inline-block;
-  margin: 0 .25em;
-  transform: rotate(15deg);
-  border-right: .1em solid currentColor;
-  height: .8em;
-  content: ''; }
-
-.global-nav nav.breadcrumb [aria-current="page"] {
-  color: #000;
-  font-weight: 700;
-  text-decoration: none; }
-
 /* Tablet Styles */
 /* Desktop Styles */
