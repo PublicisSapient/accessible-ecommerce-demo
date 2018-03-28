@@ -10,13 +10,15 @@ const MiniCart = new function () {
         this.onBlur = this.onBlur.bind(this);
         this.onButtonBlur = this.onButtonBlur.bind(this);
         this.closeIfMenuBlurred = this.closeIfMenuBlurred.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
 
         console.log(el, buttonEl, dropdownEl);
-        buttonEl.addEventListener('mouseover', this.onFocus);
-        buttonEl.addEventListener('mouseout', this.onBlur);
+        /* buttonEl.addEventListener('mouseover', this.onFocus);
+        buttonEl.addEventListener('mouseout', this.onBlur); */
+        buttonEl.addEventListener('click', this.toggleMenu)
 
-        buttonEl.addEventListener('focus', this.onFocus);
-        buttonEl.addEventListener('blur', this.onButtonBlur);
+        /* buttonEl.addEventListener('focus', this.onFocus);
+        buttonEl.addEventListener('blur', this.onButtonBlur); */
         
         dropdownEl.addEventListener('focus', this.onFocus, true);
         dropdownEl.addEventListener('blur', this.onButtonBlur, true);
@@ -24,10 +26,20 @@ const MiniCart = new function () {
 
     this.onFocus = function () {
         dropdownEl.classList.add('expanded');
+        buttonEl.setAttribute('aria-expanded', 'true');
     }
 
     this.onBlur = function () {
         dropdownEl.classList.remove('expanded');
+        buttonEl.setAttribute('aria-expanded', 'false');
+    }
+
+    this.toggleMenu = function () {
+        if (dropdownEl.classList.contains('expanded')) {
+            this.onBlur();
+        } else {
+            this.onFocus();
+        }
     }
 
     this.onButtonBlur = function (e) {

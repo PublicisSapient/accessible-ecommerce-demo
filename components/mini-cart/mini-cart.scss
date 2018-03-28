@@ -17,14 +17,14 @@ $buttonSize: 2em;
 	&__dropdown {
 		position: absolute;
 		width: 30em;
-		height: 0;
+		display: none;
 		overflow: hidden;
 		background: white;
 		z-index: 1;
 
 		&.expanded {
 			border: solid 1px black;
-			height: 30em;
+			display: block;
 		}
 	}
 
