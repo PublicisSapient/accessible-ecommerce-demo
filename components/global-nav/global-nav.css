@@ -3,7 +3,8 @@
   display: inline-block; }
 
 .navigation .navigation-mini-cart {
-  display: inline-block; }
+  align-items: right;
+  display: flex; }
 
 .navigation .global-nav-menu {
   list-style: none;
@@ -11,7 +12,8 @@
   padding: 0;
   flex: 1 1 auto;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+  background-color: #222; }
 
 .navigation .global-nav {
   display: flex;
@@ -34,6 +36,9 @@
   width: 100%;
   background: #333;
   left: 0; }
+
+.navigation .open ul.submenu {
+  margin-top: 16px; }
 
 .navigation ul.global-nav-menu li {
   display: inline-block;
