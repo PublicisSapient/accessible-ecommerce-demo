@@ -1,6 +1,11 @@
 /* Mobile Styles */
 
+.navigation-logo {
+	display: inline-block;
+}
 .global-nav {
+	display: inline-block;
+
 	.has-submenu .submenu {
 		display: none;
 	}
@@ -33,6 +38,11 @@
 	ul.global-nav-menu li a:focus, ul.global-nav-menu li a:hover {
 		text-decoration: underline;
 	}
+}
+
+.navigation-mini-cart {
+	display: inline-block;
+	float: right;
 }
 
 /* Tablet Styles */

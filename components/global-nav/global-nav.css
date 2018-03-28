@@ -1,4 +1,10 @@
 /* Mobile Styles */
+.navigation-logo {
+  display: inline-block; }
+
+.global-nav {
+  display: inline-block; }
+
 .global-nav .has-submenu .submenu {
   display: none; }
 
@@ -25,6 +31,10 @@
 
 .global-nav ul.global-nav-menu li a:focus, .global-nav ul.global-nav-menu li a:hover {
   text-decoration: underline; }
+
+.navigation-mini-cart {
+  display: inline-block;
+  float: right; }
 
 /* Tablet Styles */
 /* Desktop Styles */
