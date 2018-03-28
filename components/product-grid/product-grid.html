@@ -9,59 +9,60 @@
 		<link rel="stylesheet" href="product-grid.css">
 	</head>
 	<body>
-		<section aria-label="Filters" class="productGrid__filters">
-			<h2 tabindex="0">Product Filters</h2>
-			<a>Skip to product grid</a>
-			<form action="">
-				<input type="reset" id="showingNumberProducts__clear" value="Clear filters" aria-label="Clear product filters. 0 filters selected" aria-controls="showingNumberProducts">
-				<div role="region" id="showingNumberProducts" aria-live="polite">
-					<p id="showingNumberProducts__description">Showing 99 products</p>
-				</div>
-				<h3>Colors</h3>
-				<p>
-					<fieldset>
-						<legend tabindex="0" id="colorsLegend">Filter by Colors</legend>
-						<input id="blue" aria-label="Filter on color blue" type="checkbox" name="colors" value="blue"/>
-						<label for="blue">Blue</label><br>
-						<input id="green" aria-label="Filter on color green" type="checkbox" name="colors" value="green">
-						<label for="green">Green</label><br>
-						<input id="yellow" aria-label="Filter on color yellow" type="checkbox" name="colors" value="yellow">
-						<label for="yellow">Yellow</label><br>
-						<input id="red" aria-label="Filter on color red" type="checkbox" name="colors" value="red">
-						<label for="red">Red</label>
-					</fieldset>
-				</p>
-				<h3>Size</h3>
-				<p>
-					<fieldset>
-						<legend tabindex="0" id="colorsLegend">Filter by Size</legend>
-						<input id="large" aria-label="Filter on size large" type="checkbox" name="sizes" value="large"/>
-						<label for="large">Large</label><br>
-						<input id="medium" aria-label="Filter on size medium" type="checkbox" name="sizes" value="medium">
-						<label for="medium">Medium</label><br>
-						<input id="small" aria-label="Filter on size small" type="checkbox" name="sizes" value="small">
-						<label for="small">Small</label><br>
-					</fieldset>
-				</p>
-				<h3>Brand</h3>
-				<p>
-					<fieldset>
-						<legend tabindex="0" id="colorsLegend">Filter by Brand</legend>
-						<input id="brand1" aria-label="Filter on brand Brand 1" type="checkbox" name="brands" value="brand1"/>
-						<label for="brand1">Brand 1</label><br>
-						<input id="brand2" aria-label="Filter on brand Brand 2" type="checkbox" name="brands" value="brand2">
-						<label for="brand2">Brand 2</label><br>
-						<input id="brand3" aria-label="Filter on brand Brand 3" type="checkbox" name="brands" value="brand3">
-						<label for="brand3">Brand 3</label><br>
-						<input id="brand4" aria-label="Filter on brand Brand 4" type="checkbox" name="brands" value="brand4">
-						<label for="brand4">Brand 4</label>
-					</fieldset>
-				</p>
-			</form>
-		</section>
-		<section aria-label="Product Grid" class="productGrid__grid">
-			grid goes here
-		</section>
+		<main class="productGrid">
+			<section aria-label="Filters" class="productGrid__filters">
+				<h2>Filters</h2>
+				<form action="">
+					<input type="reset" id="showingNumberProducts__clear" value="Clear filters" aria-label="Clear product filters. 0 filters selected" aria-controls="showingNumberProducts">
+					<div role="region" id="showingNumberProducts" aria-live="polite">
+						<p id="showingNumberProducts__description">Showing 99 products</p>
+					</div>
+					<h3>Colors</h3>
+					<p>
+						<fieldset>
+							<legend tabindex="0" id="colorsLegend">Filter by Colors</legend>
+							<input id="blue" class="productGrid__filter" aria-label="Filter on color blue" type="checkbox" name="colors" value="blue"/>
+							<label for="blue">Blue</label><br>
+							<input id="green" class="productGrid__filter" aria-label="Filter on color green" type="checkbox" name="colors" value="green">
+							<label for="green">Green</label><br>
+							<input id="yellow" class="productGrid__filter" aria-label="Filter on color yellow" type="checkbox" name="colors" value="yellow">
+							<label for="yellow">Yellow</label><br>
+							<input id="red" class="productGrid__filter" aria-label="Filter on color red" type="checkbox" name="colors" value="red">
+							<label for="red">Red</label>
+						</fieldset>
+					</p>
+					<h3>Size</h3>
+					<p>
+						<fieldset>
+							<legend tabindex="0" id="colorsLegend">Filter by Size</legend>
+							<input id="large" class="productGrid__filter" aria-label="Filter on size large" type="checkbox" name="sizes" value="large"/>
+							<label for="large">Large</label><br>
+							<input id="medium" class="productGrid__filter" aria-label="Filter on size medium" type="checkbox" name="sizes" value="medium">
+							<label for="medium">Medium</label><br>
+							<input id="small" class="productGrid__filter" aria-label="Filter on size small" type="checkbox" name="sizes" value="small">
+							<label for="small">Small</label><br>
+						</fieldset>
+					</p>
+					<h3>Brand</h3>
+					<p>
+						<fieldset>
+							<legend tabindex="0" id="colorsLegend">Filter by Brand</legend>
+							<input id="brand1" class="productGrid__filter" aria-label="Filter on brand Brand 1" type="checkbox" name="brands" value="brand1"/>
+							<label for="brand1">Brand 1</label><br>
+							<input id="brand2" class="productGrid__filter" aria-label="Filter on brand Brand 2" type="checkbox" name="brands" value="brand2">
+							<label for="brand2">Brand 2</label><br>
+							<input id="brand3" class="productGrid__filter" aria-label="Filter on brand Brand 3" type="checkbox" name="brands" value="brand3">
+							<label for="brand3">Brand 3</label><br>
+							<input id="brand4" class="productGrid__filter" aria-label="Filter on brand Brand 4" type="checkbox" name="brands" value="brand4">
+							<label for="brand4">Brand 4</label>
+						</fieldset>
+					</p>
+				</form>
+			</section>
+			<section aria-label="Product Grid" class="productGrid__grid">
+				grid goes here
+			</section>
+		</main>
 		<script src="product-grid.js"></script>
 	</body>
 </html>
