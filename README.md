@@ -25,6 +25,8 @@ You will need to install a recent version of [**Node**](https://nodejs.org) and 
 
 * The setup here is quite similar to what is described here: https://webdesign.tutsplus.com/tutorials/watch-and-compile-sass-in-five-quick-steps--cms-28275 - but the big difference being the paths: it will automatically convert any `.scss` file in "Components" to the corresponding `.css` file.
 
+All you should need to do is run `npm run scss` and it *should* take care of the rest.
+
 ### GIT Flow
 
 Please branch off of the default branch. The default branch is currently `dev`
