@@ -20,8 +20,22 @@
   display: block; }
 
 .mini-cart__features, .mini-cart__prices {
+  width: 30%;
+  margin: 0; }
+
+.mini-cart__features {
+  float: left; }
+
+.mini-cart__prices {
+  float: right; }
+
+.mini-cart__term, .mini-cart__description {
+  float: left;
   width: 50%;
-  display: inline-block; }
+  margin: 0; }
+
+.mini-cart__term--full, .mini-cart__description--full {
+  width: 100%; }
 
 .mini-cart__title {
   margin-bottom: 0; }

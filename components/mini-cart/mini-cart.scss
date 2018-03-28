@@ -26,8 +26,26 @@ $buttonSize: 2em;
 	}
 
 	&__features, &__prices {
+		width: 30%;
+		margin: 0;
+	}
+
+	&__features {
+		float: left;
+	}
+
+	&__prices {
+		float: right;
+	}
+
+	&__term, &__description {
+		float: left;
 		width: 50%;
-		display: inline-block;
+		margin: 0;
+
+		&--full {
+			width: 100%;
+		}
 	}
 
 	&__title {
