@@ -2,6 +2,50 @@
 $something: 25px;
 .mini-cart {
 	padding: $something;
+
+	&__dropdown {
+
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__quantity {
+		margin-top: 0;
+	}
+
+	&__item-list {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	&__item {
+		display: inline-block;
+		width: 100%;
+	}
+
+	&__item-link {
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&__image {
+		float: left;
+		margin: 0 1em 1em 0;
+	}
+
+	&__item-title {
+		margin-top: 0;
+	}
+
+	&__item-price {
+		margin-top: 0;
+	}
 }
 
 /* Tablet Styles */

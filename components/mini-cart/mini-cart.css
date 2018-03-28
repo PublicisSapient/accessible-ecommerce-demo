@@ -2,5 +2,35 @@
 .mini-cart {
   padding: 25px; }
 
+.mini-cart__title {
+  margin-bottom: 0; }
+
+.mini-cart__quantity {
+  margin-top: 0; }
+
+.mini-cart__item-list {
+  list-style-type: none;
+  padding: 0; }
+
+.mini-cart__item {
+  display: inline-block;
+  width: 100%; }
+
+.mini-cart__item-link {
+  text-decoration: none; }
+
+.mini-cart__item-link:hover, .mini-cart__item-link:focus {
+  text-decoration: underline; }
+
+.mini-cart__image {
+  float: left;
+  margin: 0 1em 1em 0; }
+
+.mini-cart__item-title {
+  margin-top: 0; }
+
+.mini-cart__item-price {
+  margin-top: 0; }
+
 /* Tablet Styles */
 /* Desktop Styles */
