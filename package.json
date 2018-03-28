@@ -2,7 +2,10 @@
   "name": "accessible-ecommerce-demo",
   "version": "0.0.1",
   "description": "Accessible eCommerce Demo",
-  "repository": "https://github.com/SapientRazorfish/accessible-ecommerce-demo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SapientRazorfish/accessible-ecommerce-demo.git"
+  },
   "engines": {
     "node": ">4.4.0",
     "npm": ">3.9.9"
@@ -15,6 +18,14 @@
     "node-sass": "4.8.3"
   },
   "dependencies": {
+    "node-sass": "^4.8.3",
     "npm": "^5.8.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/SapientRazorfish/accessible-ecommerce-demo/issues"
+  },
+  "homepage": "https://github.com/SapientRazorfish/accessible-ecommerce-demo#readme",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
