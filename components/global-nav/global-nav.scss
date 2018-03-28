@@ -1,12 +1,24 @@
 /* Mobile Styles */
+.skip-link {
+}
 
-.global-nav {
-	.has-submenu .submenu {
-		display: none;
-	}
-	
-	.has-submenu.open .submenu {
+.navigation {
+	display: flex;
+	.global-nav {
+		display: flex;
+		.menu-item {
+			display: inline-block;
+		}
+		.menu-item a {
+			display: inline-block;
+		}
+		.has-submenu .submenu {
+			display: none;
+		}
+		
+		.has-submenu.open .submenu {
 			display: block;
+		}
 	}
 
 	.global-nav-menu {
@@ -14,6 +26,7 @@
 		padding: 0;
 	}
 }
+
 
 /* Tablet Styles */
 

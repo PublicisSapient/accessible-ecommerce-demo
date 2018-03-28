@@ -1,8 +1,20 @@
 /* Mobile Styles */
-.global-nav .has-submenu .submenu {
+.navigation {
+  display: flex; }
+
+.navigation .global-nav {
+  display: flex; }
+
+.navigation .global-nav .menu-item {
+  display: inline-block; }
+
+.navigation .global-nav .menu-item a {
+  display: inline-block; }
+
+.navigation .global-nav .has-submenu .submenu {
   display: none; }
 
-.global-nav .has-submenu.open .submenu {
+.navigation .global-nav .has-submenu.open .submenu {
   display: block; }
 
 .global-nav .global-nav-menu {
