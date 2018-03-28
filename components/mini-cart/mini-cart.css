@@ -1,6 +1,26 @@
 /* Mobile Styles */
 .mini-cart {
-  padding: 25px; }
+  padding: 25px;
+  width: 3em;
+  height: 3em; }
+
+.mini-cart__button {
+  background: red;
+  color: white;
+  appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em; }
+
+.mini-cart__dropdown {
+  height: 0;
+  border: solid 1px black; }
+
+.mini-cart__dropdown.expanded {
+  height: 10em; }
 
 /* Tablet Styles */
 /* Desktop Styles */
