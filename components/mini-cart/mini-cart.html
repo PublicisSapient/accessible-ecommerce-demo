@@ -22,7 +22,8 @@
 
 				<ul class="mini-cart__item-list">
 					<li class="mini-cart__item">
-						<a class="mini-cart__item-link" href="https://placeholder.com">
+						<a class="mini-cart__item-link" href="https://placeholder.com"
+							aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
 							<img class="mini-cart__image" alt="" src="http://via.placeholder.com/140x100">
 
 							<p class="mini-cart__item-title">Shirt Malo</p>
@@ -49,10 +50,30 @@
 						</a>
 					</li>
 					<li class="mini-cart__item">
-						<a class="mini-cart__item-link" href="https://placeholder.com">
+						<a class="mini-cart__item-link" 
+						aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09" href="https://placeholder.com">
 							<img class="mini-cart__image" alt="" src="http://via.placeholder.com/140x100">
-							<p class="mini-cart__item-title">Skittles</p>
-							<p class="mini-cart__item-price">$5.97</p>
+							<p class="mini-cart__item-title">Shirt Malo</p>
+							<div>
+								<dl class="mini-cart__features">
+									<dt class="mini-cart__term">size:</dt>
+									<dd class="mini-cart__description" aria-label="medium">M</dd>
+
+									<dt class="mini-cart__term">color:</dt>
+									<dd class="mini-cart__description">blue</dd>
+
+									<dt class="mini-cart__term">quantity:</dt>
+									<dd class="mini-cart__description">2</dd>
+								</dl>
+
+								<dl class="mini-cart__prices">
+									<dt class="element-invisible">Item unit price:</dt>
+									<dd class="mini-cart__description mini-cart__description--full">$36.95</dt>
+
+									<dt class="element-invisible">Item total price:</dt>
+									<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
+								</dl>
+							</div>
 						</a>
 					</li>
 				</ul>
