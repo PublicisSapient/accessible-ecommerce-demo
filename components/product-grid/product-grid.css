@@ -2,5 +2,31 @@
 .global-nav {
   padding: 25px; }
 
+.product {
+  border: #999 solid thin;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.quantity-comp__text::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.quantity-comp__text::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.price__cents {
+  font-size: 10px;
+  vertical-align: super; }
+
+.visibly-hidden {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: -9999; }
+
 /* Tablet Styles */
 /* Desktop Styles */
