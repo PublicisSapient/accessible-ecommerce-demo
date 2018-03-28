@@ -12,6 +12,17 @@
 	}
 }
 
+.pagination {
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		list-style: none;
+	}
+
+}
+
 /* Mobile Styles */
 
 /* Tablet Styles */

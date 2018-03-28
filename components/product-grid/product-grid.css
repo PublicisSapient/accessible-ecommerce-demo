@@ -9,6 +9,12 @@
 .productGrid__grid {
   flex-basis: 75%; }
 
+.pagination__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style: none; }
+
 /* Mobile Styles */
 /* Tablet Styles */
 /* Desktop Styles */
