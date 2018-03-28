@@ -5,5 +5,9 @@
 .global-nav .has-submenu.open .submenu {
   display: block; }
 
+.global-nav .global-nav-menu {
+  list-style: none;
+  padding: 0; }
+
 /* Tablet Styles */
 /* Desktop Styles */
