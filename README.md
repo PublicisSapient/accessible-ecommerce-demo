@@ -51,12 +51,6 @@ These settings override both User and Default settings for the HTML syntax. Plea
 }
 `
 
-### Task Ownership
-
-+ Page Assembly - Kristen
-+ Build 'Script' - Rene
-
-
 ### Quick Start for Development
 
 1) Open Terminal on your computer (or Terminal equivalent).
