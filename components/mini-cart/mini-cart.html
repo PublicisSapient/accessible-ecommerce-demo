@@ -11,7 +11,9 @@
 	</head>
 	<body>
 		<article class="mini-cart">
-			<button class="" aria-haspopup="true" aria-expanded="false">X</button>
+			<button class="mini-cart__toggle" aria-haspopup="true" aria-expanded="false">
+				<span class="ion-ios-cart"></span>
+			</button>
 
 			<div class="mini-cart__dropdown">
 				<h2 class="mini-cart__title">Shopping Cart</h2>
@@ -35,7 +37,14 @@
 				</ul>
 
 				<div class="mini-cart__summary">
-
+					<div class="mini-cart__summary-subtotal">
+						<p class="mini-cart__subtotal-title">Subtotal</p>
+						<p class="mini-cart__subtotal">$42.92</p>
+					</div>
+					<div class="mini-cart__summary-controls">
+						<a href="#" class="mini-cart__view-cart">View cart</a>
+						<a href="#" class="mini-cart__checkout">Checkout</a>
+					</div>
 				</div>
 			</div>
 			<div class="element-invisible" aria-live="assertive" role="alert"></div>

@@ -3,6 +3,10 @@ $something: 25px;
 .mini-cart {
 	padding: $something;
 
+	&__toggle {
+		font-size: 2em;
+	}
+
 	&__dropdown {
 
 	}
@@ -45,6 +49,50 @@ $something: 25px;
 
 	&__item-price {
 		margin-top: 0;
+	}
+
+	&__summary {
+		border-top: 1px solid gray;
+	}
+
+	&__summary-subtotal {
+		display: inline-block;
+		width: 100%
+	}
+
+	&__subtotal-title {
+		float: left;
+	}
+
+	&__subtotal {
+		float: right;
+	}
+
+	&__summary-controls {
+		display: inline-block;
+		width: 100%;
+	}
+
+	&__view-cart {
+		text-decoration: none;
+		padding: 0.5rem;
+		float: left;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&__checkout {
+		color: black;
+		background-color: orange;
+		border: 0;
+		clear: none;
+		padding: 0.5rem;
+		text-decoration: none;
+		text-align: center;
+		float: right;
 	}
 }
 
