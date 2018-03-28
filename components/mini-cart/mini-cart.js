@@ -3,7 +3,7 @@
 const MiniCart = new function () {
     const rootClass = 'mini-cart'
     const el = document.getElementsByClassName(rootClass)[0];
-    const buttonEl = el.getElementsByClassName(`${rootClass}__button`)[0];
+    const buttonEl = el.getElementsByClassName(`${rootClass}__toggle`)[0];
     const dropdownEl = el.getElementsByClassName(`${rootClass}__dropdown`)[0];
     this.init = function () {
         this.onFocus = this.onFocus.bind(this);

@@ -7,26 +7,23 @@ $buttonSize: 2em;
 	width: 3em;
 	height: 3em;
 
-	&__button {
-		background: red;
-		color: white;
-		appearance: none;
-		-moz-appearance: none;
-		border: none;
-		border-radius: $buttonSize - 1;
-		width: $buttonSize;
-		height: $buttonSize;
-		line-height: $buttonSize;
+	display: inline-block;
+
+	&__toggle {
+		font-size: 2em;
 
 	}
 
 	&__dropdown {
+		position: absolute;
 		width: 30em;
 		height: 0;
 		overflow: hidden;
-		border: solid 1px black;
+		background: white;
+		z-index: 1;
 
 		&.expanded {
+			border: solid 1px black;
 			height: 30em;
 		}
 	}
@@ -70,6 +67,51 @@ $buttonSize: 2em;
 	&__item-price {
 		margin-top: 0;
 	}
+
+	&__summary {
+		border-top: 1px solid gray;
+	}
+
+	&__summary-subtotal {
+		display: inline-block;
+		width: 100%
+	}
+
+	&__subtotal-title {
+		float: left;
+	}
+
+	&__subtotal {
+		float: right;
+	}
+
+	&__summary-controls {
+		display: inline-block;
+		width: 100%;
+	}
+
+	&__view-cart {
+		text-decoration: none;
+		padding: 0.5rem;
+		float: left;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&__checkout {
+		color: black;
+		background-color: orange;
+		border: 0;
+		clear: none;
+		padding: 0.5rem;
+		text-decoration: none;
+		text-align: center;
+		float: right;
+	}
+
 }
 
 /* Tablet Styles */
