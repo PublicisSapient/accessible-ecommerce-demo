@@ -10,9 +10,13 @@
 	</head>
 	<body>
 		<section aria-label="Filters" class="productGrid__filters">
-			<h2>Filters</h2>
+			<h2 tabindex="0">Product Filters</h2>
+			<a>Skip to product grid</a>
 			<form action="">
-				<input type="reset" value="Clear filters">
+				<input type="reset" id="showingNumberProducts__clear" value="Clear filters" aria-label="Clear product filters. 0 filters selected" aria-controls="showingNumberProducts">
+				<div role="region" id="showingNumberProducts" aria-live="polite">
+					<p id="showingNumberProducts__description">Showing 99 products</p>
+				</div>
 				<h3>Colors</h3>
 				<p>
 					<fieldset>
@@ -53,7 +57,6 @@
 						<label for="brand4">Brand 4</label>
 					</fieldset>
 				</p>
-				<input type="reset" value="Clear filters">
 			</form>
 		</section>
 		<section aria-label="Product Grid" class="productGrid__grid">
