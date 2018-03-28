@@ -1,8 +1,18 @@
-/* Mobile Styles */
-$something: 25px;
-.global-nav {
-	padding: $something;
+.productGrid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	&__filters {
+		flex-basis: 25%;
+	}
+
+	&__grid {
+		flex-basis: 75%;
+	}
 }
+
+/* Mobile Styles */
 
 /* Tablet Styles */
 
