@@ -4,6 +4,7 @@ var numberOfProductsInGridAriaLiveRegion = document.querySelector('#showingNumbe
 var numberOfProductsHeading = document.querySelector('#showingNumberProducts__heading');
 var numberOfFiltersAppliedAriaLiveRegion = document.querySelector('#showingNumberFilters__description');
 var filterInputs = document.querySelectorAll('.productGrid__filter');
+var productGrid = document.querySelector('#product-grid');
 
 // Add click event to clear filters button
 clearFiltersButton.addEventListener('click', function() {
@@ -50,8 +51,12 @@ pagination.forEach((paginationBtn) => {
     evt.preventDefault();
     location.hash = "!/" + paginationBtn.dataset.goToPage;
     // refresh product list...
+    productGrid.style.opacity = 0.1
+    setTimeout(function(){
+      productGrid.style.opacity = 1
 
-    // set focus state
-    numberOfProductsHeading.focus();
+      // set focus state
+      numberOfProductsHeading.focus();
+    }, 500);
   });
 });
