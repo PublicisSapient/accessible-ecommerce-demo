@@ -3,7 +3,8 @@ $something: 25px;
 $buttonSize: 2em;
 .mini-cart {
 	padding: $something;
-
+<<<<<<< HEAD
+	
 	width: 3em;
 	height: 3em;
 
@@ -21,14 +22,17 @@ $buttonSize: 2em;
 	}
 
 	&__dropdown {
-		width: 30em;
 		height: 0;
-		overflow: hidden;
 		border: solid 1px black;
 
 		&.expanded {
-			height: 30em;
+			height: 10em;
 		}
+	}
+=======
+
+	&__dropdown {
+
 	}
 
 	&__title {
@@ -70,6 +74,7 @@ $buttonSize: 2em;
 	&__item-price {
 		margin-top: 0;
 	}
+>>>>>>> d1ef87728073f6d76330c36f9f3d38ed31e0f445
 }
 
 /* Tablet Styles */

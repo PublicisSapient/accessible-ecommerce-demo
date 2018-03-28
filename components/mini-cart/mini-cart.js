@@ -18,21 +18,19 @@ const MiniCart = new function () {
         buttonEl.addEventListener('focus', this.onFocus);
         buttonEl.addEventListener('blur', this.onButtonBlur);
         
-        dropdownEl.addEventListener('blur', this.onButtonBlur);
+        dropdownEl.addEventListener('focus', this.onFocus, true);
+        dropdownEl.addEventListener('blur', this.onButtonBlur, true);
     }
 
     this.onFocus = function () {
-        console.log('focus');
         dropdownEl.classList.add('expanded');
     }
 
     this.onBlur = function () {
-        console.log('onBlur');
         dropdownEl.classList.remove('expanded');
     }
 
     this.onButtonBlur = function (e) {
-        console.log('onButtonBlur');
         requestAnimationFrame(
 			this.closeIfMenuBlurred.bind(this, e.target, e.currentTarget, e.relatedTarget)
 		);
@@ -55,8 +53,8 @@ const MiniCart = new function () {
 		 * If we blurred out of the `.menu_panel`, then we must close the
 		 * menu.
 		 */
-        console.log(isFocusLost)
-		if (/* !isFocusLost &&*/ !dropdownEl.contains(focusedElement)) {
+        console.log('isFocusLost', isFocusLost)
+		if (isFocusLost && !dropdownEl.contains(focusedElement)) {
 			this.onBlur();
 		}
 	}
