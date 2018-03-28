@@ -4,3 +4,11 @@
 /* Component Styles */
 @import url("../components/global-nav/global-nav.css");
 @import url("../components/breadcrumb/breadcrumb.css");
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
