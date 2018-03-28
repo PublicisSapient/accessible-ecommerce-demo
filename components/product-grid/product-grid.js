@@ -8,6 +8,8 @@ clearFiltersButton.addEventListener('click', function(event) {
   numberOfProductsInGridAriaLiveRegion.innerHTML = 'Showing ' + 80 + ' products.';
 });
 
-filterInputs.addEventListener('change', function(event) {
-  console.log('change');
+filterInputs.forEach(function(filterInput) {
+  filterInput.addEventListener('change', function(event) {
+    console.log('change');
+  });
 })
