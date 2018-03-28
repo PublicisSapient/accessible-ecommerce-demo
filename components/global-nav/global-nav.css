@@ -5,8 +5,19 @@
 .navigation .navigation-mini-cart {
   display: inline-block; }
 
+.navigation .global-nav-menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+  align-items: center; }
+
 .navigation .global-nav {
-  display: flex; }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto; }
 
 .navigation .global-nav .menu-item {
   display: inline-block; }
@@ -23,10 +34,6 @@
   width: 100%;
   background: #333;
   left: 0; }
-
-.navigation .global-nav-menu {
-  list-style: none;
-  padding: 0; }
 
 .navigation ul.global-nav-menu li {
   display: inline-block;
