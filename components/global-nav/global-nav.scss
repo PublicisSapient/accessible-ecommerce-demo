@@ -7,6 +7,10 @@
 	
 	.has-submenu.open .submenu {
 			display: block;
+			position: absolute;
+			width: 100%;
+			background: #333;
+			left: 0;
 	}
 
 	.global-nav-menu {

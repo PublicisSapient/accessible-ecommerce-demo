@@ -3,11 +3,28 @@
   display: none; }
 
 .global-nav .has-submenu.open .submenu {
-  display: block; }
+  display: block;
+  position: absolute;
+  width: 100%;
+  background: #333;
+  left: 0; }
 
 .global-nav .global-nav-menu {
   list-style: none;
   padding: 0; }
+
+.global-nav ul.global-nav-menu li {
+  display: inline-block;
+  padding: 5px;
+  background: #222;
+  border: none; }
+
+.global-nav ul.global-nav-menu li a {
+  color: white;
+  text-decoration: none; }
+
+.global-nav ul.global-nav-menu li a:focus, .global-nav ul.global-nav-menu li a:hover {
+  text-decoration: underline; }
 
 /* Tablet Styles */
 /* Desktop Styles */
