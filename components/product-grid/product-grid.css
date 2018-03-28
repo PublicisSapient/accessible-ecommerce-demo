@@ -9,13 +9,8 @@
   flex-direction: column;
   justify-content: flex-start; }
 
-.quantity-comp__text::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
-
-.quantity-comp__text::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
+.price__dollar {
+  font-size: 12px; }
 
 .price__cents {
   font-size: 10px;
