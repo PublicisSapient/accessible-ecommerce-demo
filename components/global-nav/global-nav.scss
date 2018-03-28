@@ -6,7 +6,8 @@
 	}
 
 	.navigation-mini-cart {
-		display: inline-block;
+		align-items: right;
+		display: flex;
 	}
 
 	.global-nav-menu {
@@ -16,6 +17,7 @@
 		flex: 1 1 auto;
 		justify-content: space-evenly;
 		align-items: center;
+		background-color: #222;
 	}
 
 	.global-nav {
@@ -39,6 +41,10 @@
 			background: #333;
 			left: 0;
 		}
+	}
+
+	.open ul.submenu {
+		margin-top: 16px;
 	}
 
 	ul.global-nav-menu li {
