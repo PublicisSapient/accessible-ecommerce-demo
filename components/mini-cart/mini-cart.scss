@@ -25,6 +25,11 @@ $buttonSize: 2em;
 		}
 	}
 
+	&__features, &__prices {
+		width: 50%;
+		display: inline-block;
+	}
+
 	&__title {
 		margin-bottom: 0;
 	}

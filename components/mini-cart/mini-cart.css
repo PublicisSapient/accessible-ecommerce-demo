@@ -19,6 +19,10 @@
   border: solid 1px black;
   display: block; }
 
+.mini-cart__features, .mini-cart__prices {
+  width: 50%;
+  display: inline-block; }
+
 .mini-cart__title {
   margin-bottom: 0; }
 
