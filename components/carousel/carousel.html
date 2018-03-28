@@ -9,8 +9,54 @@
 		<link rel="stylesheet" href="carousel.css">
 	</head>
 	<body>
-		<section class="carousel">
-			<!-- Component goes here -->
+		<section class="carousel-wrapper">
+				<h1>Product Recommendations</h1>
+				<a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="element-invisible">Skip product recommendations carousel</a>
+				<div class="carousel">
+					<button class="carousel__arrow carousel__arrow--left ion-arrow-left-b" tabindex="-1">
+						<span class="element-invisible" tabindex="-1">Previous arrow</span>
+					</button>
+					<div class="carousel__container">
+						<ul class="carousel__items">
+							<li class="card card--active">
+								<a href="https://placeholder.com">
+									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+									<span class="card__title">Product Title 1</span>
+								</a>
+							</li>
+							<li class="card">
+								<a href="https://placeholder.com">
+									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+									<span class="card__title">Product Title 2</span>
+								</a>
+							</li>
+							<li class="card">
+								<a href="https://placeholder.com">
+									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+									<span class="card__title">Product Title 3</span>
+								</a>
+							</li>
+							<li class="card">
+								<a href="https://placeholder.com">
+									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+									<span class="card__title">Product Title 4</span>
+								</a>
+							</li>
+							<li class="card">
+								<a href="https://placeholder.com">
+									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+									<span class="card__title">Product Title 5</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+			
+					<button class="carousel__arrow carousel__arrow--right ion-arrow-right-b" tabindex="-1">
+						<span class="element-invisible" tabindex="-1">Next arrow</span>
+					</button>
+				</div>
+			
+				<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="element-invisible">Jump to start of product recommendations carousel</a>
 		</section>
 		<script src="carousel.js"></script>
 	</body>
