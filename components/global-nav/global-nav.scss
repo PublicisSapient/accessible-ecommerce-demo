@@ -13,6 +13,22 @@
 		list-style: none;
 		padding: 0;
 	}
+
+	ul.global-nav-menu li {
+		display: inline-block;
+		padding: 5px;
+		background: #222;
+		border: none;
+	}
+	
+	ul.global-nav-menu li a {
+		color: white;
+		text-decoration: none;
+	}
+	
+	ul.global-nav-menu li a:focus, ul.global-nav-menu li a:hover {
+		text-decoration: underline;
+	}
 }
 
 /* Tablet Styles */
