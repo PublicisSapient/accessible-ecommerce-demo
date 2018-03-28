@@ -1,29 +1,56 @@
 /* Mobile Styles */
-.global-nav .has-submenu .submenu {
+.navigation .navigation-logo {
+  display: inline-block; }
+
+.navigation .navigation-mini-cart {
+  align-items: right;
+  display: flex; }
+
+.navigation .global-nav-menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #222; }
+
+.navigation .global-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto; }
+
+.navigation .global-nav .menu-item {
+  display: inline-block; }
+
+.navigation .global-nav .menu-item a {
+  display: inline-block; }
+
+.navigation .global-nav .has-submenu .submenu {
   display: none; }
 
-.global-nav .has-submenu.open .submenu {
+.navigation .global-nav .has-submenu.open .submenu {
   display: block;
   position: absolute;
   width: 100%;
   background: #333;
   left: 0; }
 
-.global-nav .global-nav-menu {
-  list-style: none;
-  padding: 0; }
+.navigation .open ul.submenu {
+  margin-top: 16px; }
 
-.global-nav ul.global-nav-menu li {
+.navigation ul.global-nav-menu li {
   display: inline-block;
   padding: 5px;
   background: #222;
   border: none; }
 
-.global-nav ul.global-nav-menu li a {
+.navigation ul.global-nav-menu li a {
   color: white;
   text-decoration: none; }
 
-.global-nav ul.global-nav-menu li a:focus, .global-nav ul.global-nav-menu li a:hover {
+.navigation ul.global-nav-menu li a:focus, .navigation ul.global-nav-menu li a:hover {
   text-decoration: underline; }
 
 /* Tablet Styles */
