@@ -21,19 +21,12 @@ $small-padding: 10px;
 }
 
 .quantity-comp {
-	&__text::-webkit-inner-spin-button { 
-		-webkit-appearance: none; 
-		margin: 0; 
-	}
-	&__text::-webkit-outer-spin-button { 
-	-webkit-appearance: none; 
-	margin: 0; 
-	}
+
 }
 
 .price {
 	&__dollar {
-
+		font-size: $dollar-size;
 	}
 	&__cents {
 		font-size: $cent-size;
