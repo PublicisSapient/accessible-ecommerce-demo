@@ -1,4 +1,5 @@
 /* Mobile Styles */
+
 .carousel-wrapper {
   margin: 20px;
   box-sizing: border-box; }
@@ -29,6 +30,11 @@
 
 .carousel .card {
   padding: 10px; }
+
+/* Local solution to possible global issue: making skip links visible on focus */
+.carousel-wrapper .element-invisible:focus {
+  position: static !important;
+}
 
 /* Tablet Styles */
 /* Desktop Styles */
