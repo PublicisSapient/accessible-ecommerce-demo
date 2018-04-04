@@ -1,8 +1,37 @@
 /* Mobile Styles */
-$something: 25px;
-.carousel {
-	padding: $something;
+.carousel-wrapper {
+	margin: 20px;
+	box-sizing: border-box;
 }
+
+.carousel {
+	max-width: 100%;
+	border: 1px solid black;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row nowrap;
+	&__arrow {
+		width: 50px;
+	}
+	&__container {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	&__items {
+		list-style: none;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-flow: row nowrap;
+		padding-left: 0;
+		transition: all 1s;
+	}
+	.card {
+		padding: 10px;
+	}
+}
+
 
 /* Tablet Styles */
 

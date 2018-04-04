@@ -1,8 +1,27 @@
 /* Mobile Styles */
-.product-grid {
-	
-}
+.global-nav {
+  padding: 25px; }
+
+.product {
+  border: #999 solid thin;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.price__dollar {
+  font-size: 12px; }
+
+.price__cents {
+  font-size: 10px;
+  vertical-align: super; }
+
+.visibly-hidden {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: -9999; }
 
 /* Tablet Styles */
-
 /* Desktop Styles */

@@ -1,9 +1,89 @@
-/* Mobile Styles */
-$something: 25px;
 .footer {
-	padding: $something;
+	&__heading {
+		width: 100%;
+		float: left;
+	}
+	&__list {
+		list-style: none;
+		display: inline-block;
+		padding: 0;
+		&--2-column {
+			width: 60%;
+			columns: 2;
+			float: left;
+		}
+		&--social-links {
+			width: 30%;
+			float: right;
+		}
+		&--legal {
+			width: 100%;
+			>li {
+				display: inline-block;
+			}
+		}
+	}
+	&__form {
+		float: right;
+		width: 30%;
+		>label {
+			display: block;
+			padding: 5px;
+		}
+		>input {
+			display: block;
+			padding: 5px;
+		}
+	}
+	&__link {
+		padding: 5px;
+		&--social-media {
+			display: inline-block;
+			width: 40px;
+		}
+	}
+	&__column {
+		-webkit-column-break-inside: avoid;
+		/* Chrome, Safari, Opera */
+		page-break-inside: avoid;
+		/* Firefox */
+		break-inside: avoid;
+		/* IE 10+ */
+	}
+	&__icon {
+		font-size: 40px;
+		color: grey;
+		padding: 10px;
+		&:hover {
+			color: black;
+		}
+	}
+	a:hover {
+		color: navy;
+	}
 }
 
-/* Tablet Styles */
-
-/* Desktop Styles */
+@media screen and (max-width: 600px) {
+	.footer {
+		text-align: center;
+		&__list {
+			&--2-column {
+				width: 100%;
+				columns: 1;
+			}
+			&--social-links {
+				width: 100%;
+				float: right;
+			}
+			&--legal {
+				>li {
+					display: block;
+				}
+			}
+		}
+		&__form {
+			float: left;
+			width: 100%;
+		}
+	}
+}
