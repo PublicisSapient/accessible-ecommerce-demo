@@ -37,9 +37,10 @@
 		.has-submenu.open .submenu {
 			display: block;
 			position: absolute;
-			width: 100%;
+			// width: 100%;
 			background: #333;
-			left: 0;
+			// left: 0;
+			padding-left: 10px;
 		}
 	}
 
@@ -52,6 +53,7 @@
 		padding: 5px;
 		background: #222;
 		border: none;
+		width: 100%;
 	}
 	
 	ul.global-nav-menu li a {
