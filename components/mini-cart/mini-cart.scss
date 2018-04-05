@@ -1,7 +1,138 @@
 /* Mobile Styles */
-$something: 25px;
+$buttonSize: 2em;
 .mini-cart {
-	padding: $something;
+	width: 3em;
+	height: 3em;
+
+	display: inline-block;
+
+	&__toggle {
+		font-size: 2em;
+
+	}
+
+	&__dropdown {
+		position: absolute;
+		right: 33px;
+		width: 30em;
+		display: none;
+		overflow: hidden;
+		background: white;
+		z-index: 1;
+
+		&.expanded {
+			border: solid 1px black;
+			display: block;
+		}
+	}
+
+	&__features, &__prices {
+		width: 30%;
+		margin: 0;
+	}
+
+	&__features {
+		float: left;
+	}
+
+	&__prices {
+		float: right;
+	}
+
+	&__term, &__description {
+		float: left;
+		width: 50%;
+		margin: 0;
+
+		&--full {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__quantity {
+		margin-top: 0;
+	}
+
+	&__item-list {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	&__item {
+		display: inline-block;
+		width: 100%;
+	}
+
+	&__item-link {
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&__image {
+		float: left;
+		margin: 0 1em 1em 0;
+	}
+
+	&__item-title {
+		margin-top: 0;
+	}
+
+	&__item-price {
+		margin-top: 0;
+	}
+
+	&__summary {
+		border-top: 1px solid gray;
+	}
+
+	&__summary-subtotal {
+		display: inline-block;
+		width: 100%
+	}
+
+	&__subtotal-title {
+		float: left;
+	}
+
+	&__subtotal {
+		float: right;
+	}
+
+	&__summary-controls {
+		display: inline-block;
+		width: 100%;
+	}
+
+	&__view-cart {
+		text-decoration: none;
+		padding: 0.5rem;
+		float: left;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&__checkout {
+		color: black;
+		background-color: orange;
+		border: 0;
+		clear: none;
+		padding: 0.5rem;
+		text-decoration: none;
+		text-align: center;
+		float: right;
+	}
+
 }
 
 /* Tablet Styles */

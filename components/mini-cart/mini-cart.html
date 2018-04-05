@@ -5,13 +5,94 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Component | Mini Cart</title>
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="../../css/global.css">
 		<link rel="stylesheet" href="mini-cart.css">
 	</head>
 	<body>
+		<a class="mini-cart__test-link" href="#">Test link</a>
 		<article class="mini-cart">
-			<!-- Component goes here -->
+			<button aria-label="Mini Cart, 2 items, estimated subtotal: $42.82" class="mini-cart__toggle" aria-haspopup="true" aria-expanded="false">
+				<span class="ion-ios-cart"></span>
+			</button>
+
+			<div class="mini-cart__dropdown">
+				<h2 class="mini-cart__title">Shopping Cart</h2>
+				<p class="mini-cart__quantity">2 item</p>
+
+				<ul class="mini-cart__item-list">
+					<li class="mini-cart__item">
+						<a class="mini-cart__item-link" href="https://placeholder.com"
+							aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
+							<img class="mini-cart__image" alt="" src="http://via.placeholder.com/140x100">
+
+							<p class="mini-cart__item-title">Shirt Malo</p>
+							<div>
+								<dl class="mini-cart__features">
+									<dt class="mini-cart__term">size:</dt>
+									<dd class="mini-cart__description" aria-label="medium">M</dd>
+
+									<dt class="mini-cart__term">color:</dt>
+									<dd class="mini-cart__description">blue</dd>
+
+									<dt class="mini-cart__term">quantity:</dt>
+									<dd class="mini-cart__description">2</dd>
+								</dl>
+
+								<dl class="mini-cart__prices">
+									<dt class="element-invisible">Item unit price:</dt>
+									<dd class="mini-cart__description mini-cart__description--full">$36.95</dt>
+
+									<dt class="element-invisible">Item total price:</dt>
+									<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
+								</dl>
+							</div>
+						</a>
+					</li>
+					<li class="mini-cart__item">
+						<a class="mini-cart__item-link" 
+						aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09" href="https://placeholder.com">
+							<img class="mini-cart__image" alt="" src="http://via.placeholder.com/140x100">
+							<p class="mini-cart__item-title">Shirt Malo</p>
+							<div>
+								<dl class="mini-cart__features">
+									<dt class="mini-cart__term">size:</dt>
+									<dd class="mini-cart__description" aria-label="medium">M</dd>
+
+									<dt class="mini-cart__term">color:</dt>
+									<dd class="mini-cart__description">blue</dd>
+
+									<dt class="mini-cart__term">quantity:</dt>
+									<dd class="mini-cart__description">2</dd>
+								</dl>
+
+								<dl class="mini-cart__prices">
+									<dt class="element-invisible">Item unit price:</dt>
+									<dd class="mini-cart__description mini-cart__description--full">$36.95</dt>
+
+									<dt class="element-invisible">Item total price:</dt>
+									<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
+								</dl>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<div class="mini-cart__summary">
+					<div class="mini-cart__summary-subtotal">
+						<p class="mini-cart__subtotal-title">Subtotal</p>
+						<p class="mini-cart__subtotal">$42.92</p>
+					</div>
+					<div class="mini-cart__summary-controls">
+						<a href="#" class="mini-cart__view-cart">View cart</a>
+						<a href="#" class="mini-cart__checkout">Checkout</a>
+					</div>
+				</div>
+			</div>
+			<div class="element-invisible" aria-live="assertive" role="alert"></div>
 		</article>
+
+		<a class="mini-cart__test-link" href="#">Test link</a>
 		<script src="mini-cart.js"></script>
 	</body>
 </html>
