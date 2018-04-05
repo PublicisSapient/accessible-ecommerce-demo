@@ -7,13 +7,510 @@
 		<title>Page | Product Listing</title>
 		<link rel="stylesheet" href="../../css/global.css">
 		<link rel="stylesheet" href="plp.css">
+		<link rel="stylesheet" href="../../components/breadcrumb/breadcrumb.css">
+		<link rel="stylesheet" href="../../components/carousel/carousel.css">
+		<link rel="stylesheet" href="../../components/global-nav/global-nav.css">
+		<link rel="stylesheet" href="../../components/mini-cart/mini-cart.css">
+		<link rel="stylesheet" href="../../components/product-grid/product-grid.css">
+		<link rel="stylesheet" href="../../components/product-tile/product-tile.css">
+		<link rel="stylesheet" href="../../components/footer/footer.css">
+
 	</head>
 	<body>
 		<!-- Global Nav Goes Here -->
+		<a class="skip-link" id="skip-to-main" href="#skip-to-nav" class="skip-link">Skip to main content</a> 
+		<section class="navigation">
+			<nav class="global-nav">
+				<a class="navigation-logo" href="#" title="Company name: Home" ><img src="http://via.placeholder.com/75x75" /></a> 
+				<ul class="global-nav-menu">
+					<li class="menu-item has-submenu">
+						<a href="#" aria-haspopup="true" aria-expanded="false">Women</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Women">All Womens</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Tops">Tops</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Pants">Pants</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Dresses">Dresses</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Shoes">Shoes</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Hats">Hats</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-item has-submenu">
+						<a href="#" aria-haspopup="true" aria-expanded="false">Men</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Men">All Mens</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Tops</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Pants</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Kilts</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Shoes</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Hats</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-item has-submenu">
+						<a href="#" aria-haspopup="true" aria-expanded="false">Kids</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Tops">All Kids</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Tops</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Pants</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Dresses</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Shoes</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Hats</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-item has-submenu">
+						<a href="#" aria-haspopup="true" aria-expanded="false">Accessories</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Tops">All Accessories</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Necklaces</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Belts</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Rings</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-item">
+						<a href="#">Sale</a>
+					</li>
+					<article class="mini-cart">
+						<button aria-label="Mini Cart, 2 items, estimated subtotal: $42.82" class="mini-cart__toggle" aria-haspopup="true" aria-expanded="false">
+							<span class="ion-ios-cart"></span>
+						</button>
+			
+						<div class="mini-cart__dropdown">
+							<h2 class="mini-cart__title">Shopping Cart</h2>
+							<p class="mini-cart__quantity">2 item</p>
+			
+							<ul class="mini-cart__item-list">
+								<li class="mini-cart__item">
+									<a class="mini-cart__item-link" href="https://placeholder.com"
+										aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
+										<img class="mini-cart__image" alt="" src="http://via.placeholder.com/140x100">
+			
+										<p class="mini-cart__item-title">Shirt Malo</p>
+										<div>
+											<dl class="mini-cart__features">
+												<dt class="mini-cart__term">size:</dt>
+												<dd class="mini-cart__description" aria-label="medium">M</dd>
+			
+												<dt class="mini-cart__term">color:</dt>
+												<dd class="mini-cart__description">blue</dd>
+			
+												<dt class="mini-cart__term">quantity:</dt>
+												<dd class="mini-cart__description">2</dd>
+											</dl>
+			
+											<dl class="mini-cart__prices">
+												<dt class="element-invisible">Item unit price:</dt>
+												<dd class="mini-cart__description mini-cart__description--full">$36.95</dt>
+			
+												<dt class="element-invisible">Item total price:</dt>
+												<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
+											</dl>
+										</div>
+									</a>
+								</li>
+								<li class="mini-cart__item">
+									<a class="mini-cart__item-link" 
+									aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09" href="https://placeholder.com">
+										<img class="mini-cart__image" alt="" src="http://via.placeholder.com/140x100">
+										<p class="mini-cart__item-title">Shirt Malo</p>
+										<div>
+											<dl class="mini-cart__features">
+												<dt class="mini-cart__term">size:</dt>
+												<dd class="mini-cart__description" aria-label="medium">M</dd>
+			
+												<dt class="mini-cart__term">color:</dt>
+												<dd class="mini-cart__description">blue</dd>
+			
+												<dt class="mini-cart__term">quantity:</dt>
+												<dd class="mini-cart__description">2</dd>
+											</dl>
+			
+											<dl class="mini-cart__prices">
+												<dt class="element-invisible">Item unit price:</dt>
+												<dd class="mini-cart__description mini-cart__description--full">$36.95</dt>
+			
+												<dt class="element-invisible">Item total price:</dt>
+												<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
+											</dl>
+										</div>
+									</a>
+								</li>
+							</ul>
+			
+							<div class="mini-cart__summary">
+								<div class="mini-cart__summary-subtotal">
+									<p class="mini-cart__subtotal-title">Subtotal</p>
+									<p class="mini-cart__subtotal">$42.92</p>
+								</div>
+								<div class="mini-cart__summary-controls">
+									<a href="#" class="mini-cart__view-cart">View cart</a>
+									<a href="#" class="mini-cart__checkout">Checkout</a>
+								</div>
+							</div>
+						</div>
+						<div class="element-invisible" aria-live="assertive" role="alert"></div>
+					</article>
+				</nav>
+				
+			</section>
+			<a class="skip-link" id="skip-to-nav" href="#skip-to-main">Skip to Nav</a>
 		<!-- Breadcrumb Goes Here -->
-		<section id="main-content" class="product-listing-page">
-			<!-- Component goes here -->
+		<section id="breadcrumb">
+			<nav aria-label="Breadcrumb" class="breadcrumb">
+				<ol>
+					<li>
+						<a href="../../">
+							WAI-ARIA Authoring Practices 1.1
+						</a>
+					</li>
+					<li>
+						<a href="../../#aria_ex">
+							Design Patterns
+						</a>
+					</li>
+					<li>
+						<a href="../../#breadcrumb">
+							Breadcrumb Pattern
+						</a>
+					</li>
+					<li>
+						<a href="./index.html" aria-current="page">
+							Breadcrumb Example
+						</a>
+					</li>
+				</ol>
+			</nav>
 		</section>
+		<main class="productGrid">
+			<section aria-label="Filters" class="productGrid__filters">
+				<h2>Filters</h2>
+				<div class="skip-link"><a href="#product-grid">Skip to Product</a></div>
+				<form action="">
+					<input type="reset" id="showingNumberProducts__clear" value="Clear filters" aria-label="Clear product filters. There are no filters currently applied." aria-controls="showingNumberProducts">
+					<div role="region" id="showingNumberProducts" aria-live="polite">
+						<p id="showingNumberFilters__description">0 filters applied</p>
+						<p id="showingNumberProducts__description">Showing 99 products</p>
+					</div>
+					<h3>Colors</h3>
+					<p>
+						<fieldset>
+							<legend tabindex="0" id="colorsLegend">Filter by Colors</legend>
+							<input id="blue" class="productGrid__filter" aria-label="Filter on color blue" type="checkbox" name="colors" value="blue"/>+
+ 							<label for="blue">Blue</label><br>
+							<input id="green" class="productGrid__filter" aria-label="Filter on color green" type="checkbox" name="colors" value="green">
+ 							<label for="green">Green</label><br>
+							<input id="yellow" class="productGrid__filter" aria-label="Filter on color yellow" type="checkbox" name="colors" value="yellow">
+ 							<label for="yellow">Yellow</label><br>
+							<input id="red" class="productGrid__filter" aria-label="Filter on color red" type="checkbox" name="colors" value="red">
+ 							<label for="red">Red</label>
+						</fieldset>
+					</p>
+					<div class="skip-link"><a href="#product-grid">Skip to Product</a></div>
+					<h3>Size</h3>
+					<p>
+						<fieldset>
+							<legend tabindex="0" id="colorsLegend">Filter by Size</legend>
+							<input id="large" class="productGrid__filter" aria-label="Filter on size large" type="checkbox" name="sizes" value="large"/>
+							<label for="large">Large</label><br>
+							<input id="medium" class="productGrid__filter" aria-label="Filter on size medium" type="checkbox" name="sizes" value="medium">
+							<label for="medium">Medium</label><br>
+							<input id="small" class="productGrid__filter" aria-label="Filter on size small" type="checkbox" name="sizes" value="small">
+							<label for="small">Small</label><br>
+						</fieldset>
+					</p>
+					<div class="skip-link"><a href="#product-grid">Skip to Product</a></div>
+					<h3>Brand</h3>
+					<p>
+						<fieldset>
+							<legend tabindex="0" id="colorsLegend">Filter by Brand</legend>
+							<input id="brand1" class="productGrid__filter" aria-label="Filter on brand Brand 1" type="checkbox" name="brands" value="brand1"/>
+							<label for="brand1">Brand 1</label><br>
+							<input id="brand2" class="productGrid__filter" aria-label="Filter on brand Brand 2" type="checkbox" name="brands" value="brand2">
+							<label for="brand2">Brand 2</label><br>
+							<input id="brand3" class="productGrid__filter" aria-label="Filter on brand Brand 3" type="checkbox" name="brands" value="brand3">
+							<label for="brand3">Brand 3</label><br>
+							<input id="brand4" class="productGrid__filter" aria-label="Filter on brand Brand 4" type="checkbox" name="brands" value="brand4">
+							<label for="brand4">Brand 4</label>
+						</fieldset>
+					</p>
+				</form>
+			</section>
+			<section aria-label="Product Grid" class="productGrid__grid" id="product-grid" name="product-grid" tabindex="-1">
+				<h2 id="showingNumberProducts__heading" tabindex="-1">Showing products X of X</h2>
+				<section role="sort" class="productGrid__sort-menu" id="product-sort" name="product-sort" tab-index="-1">
+					<fieldset>
+						<legend tabindex="0" id="sort-products=">Sort by</legend>
+						<ul>
+							<li><input type="radio" name="product-sort" class="sort-option" id="sort-low-high"><label for="sort-low-high" aria-label="Sort products by price, lowest to highest">Price low to high</label></li>
+							<li><input type="radio" name="product-sort" class="sort-option" id="sort-high-low"><label for="sort-high-low" aria-label="Sort products by price, highest to lowest">Price high to low</label></li>
+							<li><input type="radio" name="product-sort" class="sort-option" id="sort-newest"><label for="sort-newest" aria-label="Sort products from newest to oldest">Newest to Top</label></li>
+						</ul>
+					</fieldset>
+				</section>
+				<article class="product">
+					<a href="#">
+						<picture>
+							<source media="(min-width: 650px)" srcset="http://via.placeholder.com/350x150">
+							<source media="(min-width: 465px)" srcset="http://via.placeholder.com/350x150">
+							<img src="http://via.placeholder.com/350x150" alt="" style="width:auto;">
+						</picture>
+						<h3 aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+					</a>
+					<p>description goes here</p>
+					<span class="quantity-comp">
+						<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+						<input type="text" value="5" class="quantity-comp__text">
+						<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+						<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+					</span>
+					<span class="price">
+						<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
+						<span class="visibly-hidden">$127.99</span>
+					</span>
+					<button role="button">Add to Cart</button>
+				</article>
+				<article class="product">
+					<a href="#">
+						<picture>
+							<source media="(min-width: 650px)" srcset="http://via.placeholder.com/350x150">
+							<source media="(min-width: 465px)" srcset="http://via.placeholder.com/350x150">
+							<img src="http://via.placeholder.com/350x150" alt="" style="width:auto;">
+						</picture>
+						<h3 aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+					</a>
+					<p>description goes here</p>
+					<span class="quantity-comp">
+						<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+						<input type="text" value="5" class="quantity-comp__text">
+						<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+						<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+					</span>
+					<span class="price">
+						<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
+						<span class="visibly-hidden">$127.99</span>
+					</span>
+					<button role="button">Add to Cart</button>
+				</article>
+				<article class="product">
+					<a href="#">
+						<picture>
+							<source media="(min-width: 650px)" srcset="http://via.placeholder.com/350x150">
+							<source media="(min-width: 465px)" srcset="http://via.placeholder.com/350x150">
+							<img src="http://via.placeholder.com/350x150" alt="" style="width:auto;">
+						</picture>
+						<h3 aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+					</a>
+					<p>description goes here</p>
+					<span class="quantity-comp">
+						<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+						<input type="text" value="5" class="quantity-comp__text">
+						<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+						<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+					</span>
+					<span class="price">
+						<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
+						<span class="visibly-hidden">$127.99</span>
+					</span>
+					<button role="button">Add to Cart</button>
+				</article>
+				<nav aria-label="Product Results Pagination">
+					<h2>Pagination</h2>
+					<ol class="pagination__list">
+						<li class="pagination__list-item">
+							<button aria-label="Goto Page 1" data-go-to-page="1">1</button>
+						</li>
+						<li class="pagination__list-item">
+							<button aria-label="Goto Page 2" data-go-to-page="2">2</button>
+						</li>
+						<li class="pagination__list-item">
+							<button aria-label="Goto Page 3" data-go-to-page="3">3</button>
+						</li>
+						<li class="pagination__list-item">
+							<button aria-label="Goto Page 4" data-go-to-page="4">4</button>
+						</li>
+						<li class="pagination__list-item">
+							<button aria-label="Goto Page 5" data-go-to-page="5">5</button>
+						</li>
+					</ol>
+				</nav>
+			</section>
+		</main>
+		<section class="carousel-wrapper">
+			<h1>Product Recommendations</h1>
+			<a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="element-invisible">Skip product recommendations carousel</a>
+			<div class="carousel">
+				<button class="carousel__arrow carousel__arrow--left ion-arrow-left-b" tabindex="-1">
+					<span class="element-invisible" tabindex="-1">Previous arrow</span>
+				</button>
+				<div class="carousel__container">
+					<ul class="carousel__items">
+						<li class="card card--active">
+							<a href="https://placeholder.com">
+								<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+								<span class="card__title">Product Title 1</span>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://placeholder.com">
+								<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+								<span class="card__title">Product Title 2</span>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://placeholder.com">
+								<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+								<span class="card__title">Product Title 3</span>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://placeholder.com">
+								<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+								<span class="card__title">Product Title 4</span>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://placeholder.com">
+								<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
+								<span class="card__title">Product Title 5</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+		
+				<button class="carousel__arrow carousel__arrow--right ion-arrow-right-b" tabindex="-1">
+					<span class="element-invisible" tabindex="-1">Next arrow</span>
+				</button>
+			</div>
+		
+			<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="element-invisible">Jump to start of product recommendations carousel</a>
+	</section>
+	<footer class="footer clearfix">
+		<nav aria-labelledby="footer-label" class="footer__nav">
+			<h2 id="footer-label" class="footer__heading footer__heading--main element-invisible">Secondary Navigation</h2>
+			<ul class="footer__list footer__list--2-column">
+				<div class="footer__column">
+					<li class="footer__link">
+						<a href="https://placeholder.com">About</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Contact Us</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Press release</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Careers</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Site map</a>
+					</li>
+				</div>
+				<div class="footer__column">
+					<li class="footer__link">
+						<a href="https://placeholder.com">Returns</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Shipping</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Gift Cards</a>
+					</li>
+				</div>
+			</ul>
+	
+			<h3 class="element-invisible footer__heading">Social Media Links</h3>
+			<ul class="footer__list footer__list--social-links">
+				<li class="footer__link footer__link--social-media">
+					<a href="https://placeholder.com">
+						<span class="footer__icon ion-social-facebook"></span>
+						<span class="element-invisible">Follow us on Facebook</span>
+					</a>
+				</li>
+				<li class="footer__link footer__link--social-media">
+					<a href="https://placeholder.com">
+						<span class="footer__icon ion-social-twitter"></span>
+						<span class="element-invisible">Follow us on Twitter</span>
+					</a>
+				</li>
+				<li class="footer__link footer__link--social-media">
+					<a href="https://placeholder.com">
+						<span class="footer__icon ion-social-instagram"></span>
+						<span class="element-invisible">Follow us on Instagram</span>
+					</a>
+				</li>
+			</ul>
+	
+			<form class="footer__form">
+				<label for="newsletter-sign-up">Subscribe for our Newsletter</label>
+				<input id="newsletter-sign-up" type="email" placeholder="Enter email">
+			</form>
+	
+			<h3 class="element-invisible footer__heading">Legal Information</h3>
+			<ul class="footer__list footer__list--legal">
+				<li>
+					<p>&copy;2018 SR Fashion Inc.</p>
+				</li>
+				<li class="footer__link">
+					<a href="https://placeholder.com">Privacy Policy</a>
+				</li>
+				<li class="footer__link">
+					<a href="https://placeholder.com">Terms of Use</a>
+				</li>
+				<li class="footer__link">
+					<a href="https://placeholder.com">Accessibility</a>
+				</li>
+			</ul>
+		</nav>
+	</footer>
+		<script src="../../components/global-nav/global-nav.js"></script>
+		<script src="../../components/mini-cart/mini-cart.js"></script>
+		<script src="../../components/breadcrumb/breadcrumb.js"></script>
+		<script src="../../components/product-grid/product-grid.js"></script>
+		<script src="../../components/product-tile/product-tile.js"></script>
+		<script src="../../components/carousel/carousel.js"></script>
+		<script src="../../components/footer/footer.js"></script>
 		<script src="plp.js"></script>
 	</body>
 </html>

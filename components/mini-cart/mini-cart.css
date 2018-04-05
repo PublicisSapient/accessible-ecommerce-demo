@@ -9,6 +9,7 @@
 
 .mini-cart__dropdown {
   position: absolute;
+  right: 33px;
   width: 30em;
   display: none;
   overflow: hidden;
