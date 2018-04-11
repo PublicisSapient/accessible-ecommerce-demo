@@ -80,6 +80,12 @@
 			background-color: transparent;
 			padding: 16px;
 			cursor: pointer;
+
+			&:hover, &:focus {
+				color: $black-transparent;
+				text-decoration: underline;
+				border-color: $black-transparent;
+			}
 		}
 	}
 	&__link {
@@ -100,11 +106,11 @@
 		font-size: 26px;
 		color: $blue;
 		margin-right: 36px;
-		&:hover {
+		&:hover, &:focus {
 			color: $dark-blue;
 		}
 	}
-	a:hover {
+	a:hover, &:focus {
 		color: $dark-blue;
 	}
 }

@@ -41,11 +41,17 @@
 		
 		&-clear {
 			font-size: 14px;
-			border: 1px solid $dark-grey;
+			border: 1px solid $black;
 			width: 100%;
 			background-color: transparent;
 			padding: 16px;
 			cursor: pointer;
+
+			&:hover, &:focus {
+				color: $black-transparent;
+				text-decoration: underline;
+				border-color: $black-transparent;
+			}
 		}
 		
 
@@ -175,6 +181,10 @@
 			height: 32px;
 			border: none;
 			margin: 0 16px;
+			cursor: pointer;
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
 		}
 	
 		button.active{

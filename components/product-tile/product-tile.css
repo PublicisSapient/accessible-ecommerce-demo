@@ -1780,7 +1780,12 @@
   background-color: #3575FF;
   font-size: 14px;
   color: #FFFFFF;
-  padding: 8px; }
+  padding: 8px;
+  cursor: pointer; }
+
+.product__cta:hover, .product__cta:focus {
+  background-color: #2A5FD2;
+  text-decoration: underline; }
 
 .quantity-comp {
   display: flex;

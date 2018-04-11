@@ -178,6 +178,10 @@ $buttonSize: 2em;
 		text-align: center;
 		width: 100%;
 		display: inline-block;
+		&:hover, &:focus {
+			background-color: $dark-blue;
+			text-decoration: underline;
+		}
 	}
 
 }

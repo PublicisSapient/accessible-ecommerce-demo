@@ -1907,5 +1907,9 @@
   width: 100%;
   display: inline-block; }
 
+.mini-cart__checkout:hover, .mini-cart__checkout:focus {
+  background-color: #2A5FD2;
+  text-decoration: underline; }
+
 /* Tablet Styles */
 /* Desktop Styles */

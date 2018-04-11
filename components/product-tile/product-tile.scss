@@ -26,6 +26,11 @@ $small-padding: 16px;
 		font-size: 14px;
 		color: $white;
 		padding: 8px;
+		cursor: pointer;
+		&:hover, &:focus {
+			background-color: $dark-blue;
+			text-decoration: underline;
+		}
 	}
 }
 

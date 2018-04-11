@@ -1838,6 +1838,11 @@
   padding: 16px;
   cursor: pointer; }
 
+.footer__form-submit:hover, .footer__form-submit:focus {
+  color: rgba(25, 25, 30, 0.75);
+  text-decoration: underline;
+  border-color: rgba(25, 25, 30, 0.75); }
+
 .footer__link {
   padding: 5px 0; }
 
@@ -1857,10 +1862,10 @@
   color: #3575FF;
   margin-right: 36px; }
 
-.footer__icon:hover {
+.footer__icon:hover, .footer__icon:focus {
   color: #2A5FD2; }
 
-.footer a:hover {
+.footer a:hover, .footer:focus {
   color: #2A5FD2; }
 
 @media screen and (max-width: 600px) {

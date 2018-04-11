@@ -1793,11 +1793,16 @@
 
 .productGrid__filters-clear {
   font-size: 14px;
-  border: 1px solid #333333;
+  border: 1px solid #19191E;
   width: 100%;
   background-color: transparent;
   padding: 16px;
   cursor: pointer; }
+
+.productGrid__filters-clear:hover, .productGrid__filters-clear:focus {
+  color: rgba(25, 25, 30, 0.75);
+  text-decoration: underline;
+  border-color: rgba(25, 25, 30, 0.75); }
 
 .productGrid__filter {
   opacity: 0;
@@ -1899,7 +1904,11 @@
   width: 32px;
   height: 32px;
   border: none;
-  margin: 0 16px; }
+  margin: 0 16px;
+  cursor: pointer; }
+
+.pagination__list-item button:hover, .pagination__list-item button:focus {
+  text-decoration: underline; }
 
 .pagination__list-item button.active {
   background-color: #333333;
