@@ -1,0 +1,39 @@
+@import '../scss/variables';
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.element-invisible {
+	position: absolute !important;
+	height: 1px; width: 1px; 
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.skip-link {
+	color: transparent;
+	font-size: 12px;
+	height: 0;
+	position: absolute;
+   &:focus {
+      color: $blue;
+		height: auto;
+		position: inherit;
+		display: inline-block;
+		margin: 10px 0;
+   }
+}
+
+.visibly-hidden {
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	position: absolute;
+	left: -9999;
+}

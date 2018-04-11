@@ -1,9 +1,11 @@
 /* Font */
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 /* Global Styles */
-/* COLOURS */
+@import 'variables';
 @import url("helpers.css");
 @import url("flexboxgrid.css");
+
 /* Component Styles */
 @import url("../components/global-nav/global-nav.css");
 @import url("../components/breadcrumb/breadcrumb.css");
@@ -12,12 +14,15 @@
 @import url("../components/product-tile/product-tile.css");
 @import url("../components/carousel/carousel.css");
 @import url("../components/footer/footer.css");
+
 * {
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  padding: 0;
-  margin: 0; }
+   box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   padding: 0;
+   margin: 0;
+}
 
 a {
-  color: #3575FF; }
+   color: $blue;
+}

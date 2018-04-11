@@ -30,7 +30,7 @@ function updateNumberOfAppliedFilters() {
   // if the number of filters is 1 then we need to use singlular filter
   var filterOrFilters = numberOfAppliedFilters === 1 ? 'filter' : 'filters';
 
-  showingNumberFilters__description.innerHTML = numberOfAppliedFilters + ' ' + filterOrFilters + ' applied.';
+  showingNumberFilters__description.innerHTML = numberOfAppliedFilters + ' ' + filterOrFilters + ' applied';
   if (numberOfAppliedFilters > 0) {
     clearFiltersButton.setAttribute('aria-label', 'Clear ' + numberOfAppliedFilters + ' applied product ' + filterOrFilters + '.');
   } else {
@@ -41,7 +41,7 @@ function updateNumberOfAppliedFilters() {
 function updateNumberOfProductsShowing() {
   // for the demo we will generate a random number of products available between 0 and 100
   var randomNumberOfProducts = Math.floor(Math.random() * Math.floor(100));
-  numberOfProductsInGridAriaLiveRegion.innerHTML = 'Showing ' + randomNumberOfProducts + ' products.';
+  numberOfProductsInGridAriaLiveRegion.innerHTML = 'Showing ' + randomNumberOfProducts + ' products';
 }
 
 var pagination = document.querySelectorAll('[data-go-to-page]');

@@ -1,4 +1,24 @@
+@import '../../scss/variables';
+@import '../../scss/flexboxgrid';
+
 .footer {
+	background: $light-grey;
+	padding: 32px 0;
+	font-size: 14px;
+
+	a {
+		text-decoration: none;
+		margin-bottom: 8px;
+		display: inline-block;
+	}
+	
+	&__nav {
+		@extend .col-md-10;
+		display: flex;
+    	flex-wrap: wrap;
+    	width: 100%;
+	}
+
 	&__heading {
 		width: 100%;
 		float: left;
@@ -8,38 +28,70 @@
 		display: inline-block;
 		padding: 0;
 		&--2-column {
-			width: 60%;
+			width: 40%;
+			margin-right: 20%;
 			columns: 2;
 			float: left;
-		}
-		&--social-links {
-			width: 30%;
-			float: right;
+			margin-bottom: 20px;
 		}
 		&--legal {
 			width: 100%;
+			font-size: 12px;
+			
+			a {
+				text-decoration: underline;
+				padding-left: 24px;
+			}
 			>li {
 				display: inline-block;
 			}
 		}
+		&--social-links {
+			margin-top: 25px;
+		}
 	}
 	&__form {
-		float: right;
-		width: 30%;
+		width: 40%;
+		text-align: center;
 		>label {
 			display: block;
 			padding: 5px;
+			font-size: 22px;
+			color: $black;
+			margin: 25px 0 30px;
 		}
-		>input {
+		&-input {
 			display: block;
 			padding: 5px;
+			width: 280px;
+			margin: 0 auto;
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid $black;
+			color: $black;
+			font-size: 14px;
+			line-height: 16px;
+			margin-bottom: 32px;
+		}
+		&-submit {
+			font-size: 14px;
+			border: 1px solid $black;
+			width: 224px;
+			background-color: transparent;
+			padding: 16px;
+			cursor: pointer;
+
+			&:hover, &:focus {
+				color: $black-transparent;
+				text-decoration: underline;
+				border-color: $black-transparent;
+			}
 		}
 	}
 	&__link {
-		padding: 5px;
+		padding: 5px 0;
 		&--social-media {
 			display: inline-block;
-			width: 40px;
 		}
 	}
 	&__column {
@@ -51,15 +103,15 @@
 		/* IE 10+ */
 	}
 	&__icon {
-		font-size: 40px;
-		color: grey;
-		padding: 10px;
-		&:hover {
-			color: black;
+		font-size: 26px;
+		color: $blue;
+		margin-right: 36px;
+		&:hover, &:focus {
+			color: $dark-blue;
 		}
 	}
-	a:hover {
-		color: navy;
+	a:hover, &:focus {
+		color: $dark-blue;
 	}
 }
 
@@ -70,10 +122,7 @@
 			&--2-column {
 				width: 100%;
 				columns: 1;
-			}
-			&--social-links {
-				width: 100%;
-				float: right;
+				margin-right: 0;
 			}
 			&--legal {
 				>li {
