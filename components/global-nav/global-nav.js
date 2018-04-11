@@ -4,7 +4,7 @@ var menuItems = document.querySelectorAll('li.has-submenu');
 Array.prototype.forEach.call(menuItems, function(el, i){
 	el.querySelector('a').addEventListener("click",  function(event){
 		
-		if (this.parentNode.className == "has-submenu") {
+		if (this.parentNode.className == "menu-item has-submenu") {
 
 			var openMenuItems = document.querySelectorAll('li.has-submenu.open');
 
@@ -12,14 +12,14 @@ Array.prototype.forEach.call(menuItems, function(el, i){
 
 			[].forEach.call(openMenuItems, function(item) {
 				console.log('looping', item);
-				item.className = "has-submenu";
+				item.className = "menu-item has-submenu";
 				item.querySelector('a').setAttribute('aria-expanded', "false");
 			});
 
-			this.parentNode.className = "has-submenu open";
+			this.parentNode.className = "menu-item has-submenu open";
 			this.setAttribute('aria-expanded', "true");
 		} else {
-			this.parentNode.className = "has-submenu";
+			this.parentNode.className = "menu-item has-submenu";
 			this.setAttribute('aria-expanded', "false");
 		}
 		event.preventDefault();

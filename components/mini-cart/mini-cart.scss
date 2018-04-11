@@ -1,34 +1,68 @@
-/* Mobile Styles */
+@import '../../scss/variables';
+@import '../../scss/flexboxgrid';
+
 $buttonSize: 2em;
 .mini-cart {
+	@extend .col-md-offset-1;
+	@extend .col-md-1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: relative;
+
 	width: 3em;
 	height: 3em;
 
-	display: inline-block;
-
 	&__toggle {
-		font-size: 2em;
-
+		margin-top: 5px;
+		font-size: 36px;
+		background-color: transparent;
+		border: none;
 	}
 
 	&__dropdown {
 		position: absolute;
-		right: 33px;
-		width: 30em;
+		top: 82px;
+		right: -20px;
+		width: 330px;
 		display: none;
-		overflow: hidden;
-		background: white;
+		background: $white;
 		z-index: 1;
+		box-shadow: 0 4px 14px 2px rgba(0,0,0,0.31);
+		z-index: 100;
+		padding: 16px;
+
+		&:before {
+			top: 0;
+			right: 0;
+			margin-left: 18px;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			box-sizing: border-box;
+			border: 12px solid black;
+			border-color: transparent transparent $white $white;
+			transform-origin: 0 0;
+			transform: rotate(-225deg);
+			box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.11);
+		}
 
 		&.expanded {
-			border: solid 1px black;
-			display: block;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
 		}
 	}
 
 	&__features, &__prices {
 		width: 30%;
 		margin: 0;
+		font-size: 14px;
+		color: $black;
+		line-height: 22px;
 	}
 
 	&__features {
@@ -50,11 +84,14 @@ $buttonSize: 2em;
 	}
 
 	&__title {
-		margin-bottom: 0;
+		margin-bottom: 16px;
+		font-size: 16px;
 	}
 
 	&__quantity {
 		margin-top: 0;
+		font-size: 14px;
+		font-weight: 300;
 	}
 
 	&__item-list {
@@ -82,6 +119,8 @@ $buttonSize: 2em;
 	}
 
 	&__item-title {
+		font-size: 14px;
+		line-height: 22px;
 		margin-top: 0;
 	}
 
@@ -90,20 +129,27 @@ $buttonSize: 2em;
 	}
 
 	&__summary {
-		border-top: 1px solid gray;
+		border-top: 1px solid $grey;
+		padding-top: 24px;
+		width: 100%;
+		
 	}
 
 	&__summary-subtotal {
 		display: inline-block;
-		width: 100%
+		width: 100%;
+		margin-bottom: 16px;
 	}
 
 	&__subtotal-title {
 		float: left;
+		font-size: 14px;
+		line-height: 22px;
 	}
 
 	&__subtotal {
 		float: right;
+		font-size: 18px;
 	}
 
 	&__summary-controls {
@@ -123,14 +169,19 @@ $buttonSize: 2em;
 	}
 
 	&__checkout {
-		color: black;
-		background-color: orange;
+		color: $white;
+		background-color: $blue;
 		border: 0;
 		clear: none;
-		padding: 0.5rem;
+		padding: 16px;
 		text-decoration: none;
 		text-align: center;
-		float: right;
+		width: 100%;
+		display: inline-block;
+		&:hover, &:focus {
+			background-color: $dark-blue;
+			text-decoration: underline;
+		}
 	}
 
 }

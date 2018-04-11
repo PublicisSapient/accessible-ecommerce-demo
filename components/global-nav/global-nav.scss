@@ -1,11 +1,17 @@
+@import '../../scss/variables';
+@import '../../scss/flexboxgrid';
+
 /* Mobile Styles */
 .navigation {
+	background-color: $light-grey;
+	padding: 25px 0;
 
-	.navigation-logo {
+	&-logo {
+		@extend .col-md-2;
 		display: inline-block;
 	}
 
-	.navigation-mini-cart {
+	&-mini-cart {
 		align-items: right;
 		display: flex;
 	}
@@ -14,56 +20,88 @@
 		list-style: none;
 		display: flex;
 		padding: 0;
-		flex: 1 1 auto;
-		justify-content: space-evenly;
+		width: 100%;
+		justify-content: space-between;
 		align-items: center;
-		background-color: #222;
+		text-align: center;
 	}
 
 	.global-nav {
+		@extend .col-md-offset-1;
+		@extend .col-md-7;
+		
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		flex: 1 1 auto;
+
 		.menu-item {
 			display: inline-block;
+			flex: 1 1 0;
+			text-align: center;
 		}
 		.menu-item a {
 			display: inline-block;
 		}
+		.has-submenu {
+			position: relative;
+		}
 		.has-submenu .submenu {
 			display: none;
+			a {
+				font-size: 14px;
+			}
+		}
+		.has-submenu.open .menu-item-heading {
+			border-bottom: 2px solid $blue;
 		}
 		.has-submenu.open .submenu {
 			display: block;
 			position: absolute;
-			// width: 100%;
-			background: #333;
-			// left: 0;
-			padding-left: 10px;
+			padding: 17px;
+			width: 220px;
+			left: -50%;
+			margin: 42px 24px 0 12px;;
+			background: $white;
+			box-shadow: 0 4px 14px 2px rgba(0,0,0,0.31);
+			z-index: 100;
+			&:before {
+				top: 0;
+				left: 50%;
+				margin-left: 18px;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+    			box-sizing: border-box;
+    			border: 12px solid black;
+    			border-color: transparent transparent $white $white;
+				transform-origin: 0 0;
+				transform: rotate(-225deg);
+    			box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.11);
+			}
 		}
 	}
 
-	.open ul.submenu {
-		margin-top: 16px;
-	}
-
 	ul.global-nav-menu li {
-		display: inline-block;
-		padding: 5px;
-		background: #222;
+		display: block;
+		padding: 8px 5px;
 		border: none;
-		width: 100%;
+		text-align: left;
 	}
 	
 	ul.global-nav-menu li a {
-		color: white;
+		color: $blue;
+		font-size: 18px;
 		text-decoration: none;
-	}
-	
-	ul.global-nav-menu li a:focus, ul.global-nav-menu li a:hover {
-		text-decoration: underline;
-	}
+		border-bottom: 2px solid transparent;
+		&:hover, &:focus {
+			text-decoration: none;
+			border-bottom: 2px solid $blue;
+		}
+	}		
 }
 
 

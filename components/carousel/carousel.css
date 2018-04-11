@@ -1,17 +1,23 @@
 /* Mobile Styles */
 .carousel-wrapper {
-  margin: 20px;
+  margin-bottom: 40px;
   box-sizing: border-box; }
+
+.carousel-wrapper h2 {
+  font-size: 14px;
+  margin-bottom: 8px; }
 
 .carousel {
   max-width: 100%;
-  border: 1px solid black;
   margin: 0 auto;
   display: flex;
+  align-items: center;
   flex-flow: row nowrap; }
 
 .carousel__arrow {
-  width: 50px; }
+  width: 40px;
+  min-height: 120px;
+  border: 1px solid black; }
 
 .carousel__container {
   width: 100%;
