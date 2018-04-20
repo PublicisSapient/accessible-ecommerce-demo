@@ -319,15 +319,25 @@
 						</section>
 						<section aria-label="Product Grid" class="productGrid__grid" id="product-grid" name="product-grid" tabindex="-1">
 							<section role="sort" class="productGrid__sort-menu" id="product-sort" name="product-sort" tab-index="-1">
-								<fieldset>
-									<legend tabindex="0" id="sort-products=">Sort by</legend>
-									<ul>
-										<li><input type="radio" name="product-sort" class="sort-option" id="sort-low-high"><label for="sort-low-high" aria-label="Sort products by price, lowest to highest">Price low to high</label></li>
-										<li><input type="radio" name="product-sort" class="sort-option" id="sort-high-low"><label for="sort-high-low" aria-label="Sort products by price, highest to lowest">Price high to low</label></li>
-										<li><input type="radio" name="product-sort" class="sort-option" id="sort-newest"><label for="sort-newest" aria-label="Sort products from newest to oldest">Newest to Top</label></li>
-									</ul>
-								</fieldset>
-								<h2 class="productGrid__sort-menu-heading" id="showingNumberProducts__heading" tabindex="-1">Showing products X of X</h2>
+								<h2 tabindex="0" id="sort-products=">Sort by</h2>
+								<ul>
+									<li>
+										<button type="button" name="product-sort" class="sort-option" id="sort-low-high">
+											<label for="sort-low-high" aria-label="Sort products by price, lowest to highest">Price low to high</label>
+										</button>
+									</li>
+									<li>
+										<button type="button" name="product-sort" class="sort-option" id="sort-high-low">
+											<label for="sort-high-low" aria-label="Sort products by price, highest to lowest">Price high to low</label>
+										</button>
+									</li>
+									<li>
+										<button type="button" name="product-sort" class="sort-option" id="sort-newest">
+											<label for="sort-newest" aria-label="Sort products from newest to oldest">Newest to Top</label>
+										</button>
+									</li>
+								</ul>
+								<h3 class="productGrid__sort-menu-heading" id="showingNumberProducts__heading" tabindex="-1">Showing products X of X</h3>
 							</section>
 							<section class="productsContainer">
 								<article class="product">
