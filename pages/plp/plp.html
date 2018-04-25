@@ -535,117 +535,129 @@
 		</main>
 		<section class="carousel-wrapper">
 			<div class="wrapper">
-					<h2>Product Recommendations</h2>
-					<a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="element-invisible">Skip product recommendations carousel</a>
-					<div class="carousel">
-						<button class="carousel__arrow carousel__arrow--left ion-arrow-left-b" tabindex="-1">
-							<span class="element-invisible" tabindex="-1">Previous arrow</span>
-						</button>
-						<div class="carousel__container">
-							<div class="carousel__items">
-								<li class="card card--active">
-									<article class="product">
-										<a href="#">
-											<picture>
-												<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
-												<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
-												<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
-											</picture>
-											<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
-										</a>
-										<span class="price">
-											<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
-											<span class="visibly-hidden">$127.99</span>
+				<h2>Product Recommendations</h2>
+				<a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="element-invisible">Skip product recommendations carousel</a>
+				<div class="carousel">
+					<button class="carousel__arrow carousel__arrow--left ion-arrow-left-b" tabindex="-1">
+						<span class="element-invisible" tabindex="-1">Previous arrow</span>
+					</button>
+					<div class="carousel__container">
+						<div class="carousel__items">
+							<li class="card card--active">
+								<article class="product">
+									<a href="#">
+										<picture>
+											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
+											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
+											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
+										</picture>
+										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+									</a>
+									<span class="price">
+										<span class="price__dollar" aria-hidden="true">$127</span>
+										<span class="price__cents">99</span>
+										<span class="visibly-hidden">$127.99</span>
+									</span>
+									<span class="quantity-comp">
+										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected
+											<span> 1 Item</span>
 										</span>
-										<span class="quantity-comp">
-											<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-											<input type="text" value="1" class="quantity-comp__text">
-											<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
-											<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+									</span>
+									<button class="product__cta" role="button">Add to Cart</button>
+								</article>
+							</li>
+							<li class="card">
+								<article class="product">
+									<a href="#">
+										<picture>
+											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
+											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
+											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
+										</picture>
+										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+									</a>
+									<span class="price">
+										<span class="price__dollar" aria-hidden="true">$127</span>
+										<span class="price__cents">99</span>
+										<span class="visibly-hidden">$127.99</span>
+									</span>
+									<span class="quantity-comp">
+										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected
+											<span> 1 Item</span>
 										</span>
-										<button class="product__cta" role="button">Add to Cart</button>
-									</article>
-								</li>
-								<li class="card">
-										<article class="product">
-												<a href="#">
-													<picture>
-														<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
-														<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
-														<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
-													</picture>
-													<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
-												</a>
-												<span class="price">
-													<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
-													<span class="visibly-hidden">$127.99</span>
-												</span>
-												<span class="quantity-comp">
-													<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-													<input type="text" value="1" class="quantity-comp__text">
-													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
-													<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
-												</span>
-												<button class="product__cta" role="button">Add to Cart</button>
-											</article>
-								</li>
-								<li class="card">
-										<article class="product">
-												<a href="#">
-													<picture>
-														<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
-														<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
-														<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
-													</picture>
-													<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
-												</a>
-												<span class="price">
-													<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
-													<span class="visibly-hidden">$127.99</span>
-												</span>
-												<span class="quantity-comp">
-													<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-													<input type="text" value="1" class="quantity-comp__text">
-													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
-													<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
-												</span>
-												<button class="product__cta" role="button">Add to Cart</button>
-											</article>
-								</li>
-								<li class="card">
-										<article class="product">
-												<a href="#">
-													<picture>
-														<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
-														<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
-														<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
-													</picture>
-													<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
-												</a>
-												<span class="price">
-													<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
-													<span class="visibly-hidden">$127.99</span>
-												</span>
-												<span class="quantity-comp">
-													<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-													<input type="text" value="1" class="quantity-comp__text">
-													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
-													<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
-												</span>
-												<button class="product__cta" role="button">Add to Cart</button>
-											</article>
-								</li>
-							</div>
+										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+									</span>
+									<button class="product__cta" role="button">Add to Cart</button>
+								</article>
+							</li>
+							<li class="card">
+								<article class="product">
+									<a href="#">
+										<picture>
+											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
+											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
+											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
+										</picture>
+										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+									</a>
+									<span class="price">
+										<span class="price__dollar" aria-hidden="true">$127</span>
+										<span class="price__cents">99</span>
+										<span class="visibly-hidden">$127.99</span>
+									</span>
+									<span class="quantity-comp">
+										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected
+											<span> 1 Item</span>
+										</span>
+										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+									</span>
+									<button class="product__cta" role="button">Add to Cart</button>
+								</article>
+							</li>
+							<li class="card">
+								<article class="product">
+									<a href="#">
+										<picture>
+											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
+											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
+											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
+										</picture>
+										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+									</a>
+									<span class="price">
+										<span class="price__dollar" aria-hidden="true">$127</span>
+										<span class="price__cents">99</span>
+										<span class="visibly-hidden">$127.99</span>
+									</span>
+									<span class="quantity-comp">
+										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected
+											<span> 1 Item</span>
+										</span>
+										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+									</span>
+									<button class="product__cta" role="button">Add to Cart</button>
+								</article>
+							</li>
 						</div>
-				
-						<button class="carousel__arrow carousel__arrow--right ion-arrow-right-b" tabindex="-1">
-							<span class="element-invisible" tabindex="-1">Next arrow</span>
-						</button>
 					</div>
-				
-					<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="element-invisible">Jump to start of product recommendations carousel</a>
+
+					<button class="carousel__arrow carousel__arrow--right ion-arrow-right-b" tabindex="-1">
+						<span class="element-invisible" tabindex="-1">Next arrow</span>
+					</button>
+				</div>
+
+				<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="element-invisible">Jump to start of product recommendations carousel</a>
 			</div>
-	</section>
+		</section>
 	<footer class="footer clearfix">
 		<div class="wrapper">
 			<div class="row">
