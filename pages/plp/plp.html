@@ -702,28 +702,32 @@
 							</ul>
 						</div>
 					</ul>
-					<form class="footer__form">
-						<label for="newsletter-sign-up">Subscribe to our Newsletter!</label>
-						<input class="footer__form-input" id="newsletter-sign-up" type="email" placeholder="enter email address">
-						<input class="footer__form-submit" type="submit" value="Subscribe Now">
-					</form>
-
-					<h3 class="element-invisible footer__heading">Legal Information</h3>
-					<ul class="footer__list footer__list--legal">
-						<li>
-							<p>&copy;2018 SR Fashion Inc.</p>
-						</li>
-						<li class="footer__link">
-							<a href="https://placeholder.com">Privacy Policy</a>
-						</li>
-						<li class="footer__link">
-							<a href="https://placeholder.com">Terms of Use</a>
-						</li>
-						<li class="footer__link">
-							<a href="https://placeholder.com">Accessibility</a>
-						</li>
-					</ul>
 				</nav>
+				<form class="footer__form" data-validate novalidate>
+					<h3 class="footer__heading footer__heading--newsletter">Subscribe to our Newsletter!</h3>
+					<div class="input__placeholder-label">
+						<input class="footer__form-input" id="newsletter-sign-up" type="email" data-validation-message="Please enter a valid email address" required>
+						<label for="newsletter-sign-up">Enter your email address</label>
+					</div>
+					<input class="footer__form-submit" type="submit" value="Subscribe Now">
+				</form>
+
+				<h3 class="element-invisible footer__heading">Legal Information</h3>
+				<ul class="footer__list footer__list--legal">
+					<li>
+						<p>&copy;2018 SR Fashion Inc.</p>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Privacy Policy</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Terms of Use</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Accessibility</a>
+					</li>
+				</ul>
+
 			</div>
 		</div>
 	</footer>
