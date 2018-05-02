@@ -13,7 +13,8 @@
   text-align: left;
   padding: 10px;
   font-size: 16px;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
 .accordion-panel_heading button:after {
   content: '';
@@ -26,7 +27,8 @@
   height: 0.45em;
   transform: rotate(135deg);
   vertical-align: top;
-  width: 0.45em; }
+  width: 0.45em;
+  transition: transform 1s; }
 
 .accordion-panel_heading.accordion--open button {
   background-color: #e6e6e6; }
@@ -35,8 +37,8 @@
   transform: rotate(-45deg); }
 
 .accordion-panel_content {
-  display: none;
+  visibility: hidden;
   padding: 15px; }
 
 .accordion-panel_content.accordion--open {
-  display: block; }
+  visibility: visible; }
