@@ -1,11 +1,33 @@
 .accordion {
+  padding: 0;
+  margin: 0;
+
   &-panel {
+    list-style: none;
+    border: 1px grey solid;
+
     &_heading {
-      background-color: grey;
+      button {
+        border-bottom: 1px grey solid;
+        background: lightgray;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        font-size: 16px;
+        position: relative;
+
+        &:after {
+          content: 'hi';
+          position: absolute;
+          right: 20px;
+          top: 5px;
+        }
+      }
     }
 
     &_content {
       display: none;
+      padding: 15px;
       
       &.accordion--open {
         display: block;

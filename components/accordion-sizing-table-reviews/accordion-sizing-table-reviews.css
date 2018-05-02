@@ -1,8 +1,29 @@
-.accordion-panel_heading {
-  background-color: grey; }
+.accordion {
+  padding: 0;
+  margin: 0; }
+
+.accordion-panel {
+  list-style: none;
+  border: 1px grey solid; }
+
+.accordion-panel_heading button {
+  border-bottom: 1px grey solid;
+  background: lightgray;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  position: relative; }
+
+.accordion-panel_heading button:after {
+  content: 'hi';
+  position: absolute;
+  right: 20px;
+  top: 5px; }
 
 .accordion-panel_content {
-  display: none; }
+  display: none;
+  padding: 15px; }
 
 .accordion-panel_content.accordion--open {
   display: block; }
