@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,35 +10,68 @@
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="gallery.css">
 </head>
- 
+
 <body>
+    <main id="main">
     <div class="gallery">
-        <div class="gallery__main-image">
-            <img src="http://via.placeholder.com/600x900" alt="" />
+            <div class="gallery__main-image__container">
+                <div class="gallery__main-image__inner-container">
+                    <img id="gallery__main-image" src="http://via.placeholder.com/600x900?text=1" alt="" />
+                </div>
+                <div class="gallery__main-image__zoom">
+                    <button data-modal-show="my-accessible-modal" aria-label="Enlarge the Image">Enlarge</button>
+                    <button id="gallery__minimize" disabled aria-label="Decrease size of the image to 100%">-</button>
+                    <button id="gallery__maximize" aria-label="Increase size of the image to 150%">+</button>
+                </div>
+            </div>
+    
+            <ul class="gallery__thumbnail-list">
+                <li>
+                    <button>
+                        <img src="http://via.placeholder.com/100x100?text=1" data-main-image-url="http://via.placeholder.com/600x900?text=1" alt="Display product view one">
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img src="http://via.placeholder.com/100x100?text=2" data-main-image-url="http://via.placeholder.com/600x900?text=2" alt="Display product view two">
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img src="http://via.placeholder.com/100x100?text=3" data-main-image-url="http://via.placeholder.com/600x900?text=3" alt="Display product view three">
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img src="http://via.placeholder.com/100x100?text=4" data-main-image-url="http://via.placeholder.com/600x900?text=4" alt="Display product view four">
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img src="http://via.placeholder.com/100x100?text=5" data-main-image-url="http://via.placeholder.com/600x900?text=5" alt="Display product view five">
+                    </button>
+                </li>
+            </ul>
         </div>
- 
-        <ul class="gallery__thumbnail-list">
-            <li>
-                <button>
-                    <img src="http://via.placeholder.com/100x100?text=1" alt="First image thumbnail">
-                </button>
-                <button>
-                    <img src="http://via.placeholder.com/100x100?text=2" alt="Second image thumbnail">
-                </button>
-                <button>
-                    <img src="http://via.placeholder.com/100x100?text=3" alt="Third image thumbnail">
-                </button>
-                <button>
-                    <img src="http://via.placeholder.com/100x100?text=4" alt="Fourth image thumbnail">
-                </button>
-                <button>
-                    <img src="http://via.placeholder.com/100x100?text=V" alt="First Video">
-                </button>
-            </li>
-        </ul>
+    </main> 
+    <div class="modal" aria-hidden="true" id="my-accessible-modal">
+        <div class="modal-overlay" tabindex="-1" data-modal-hide></div>
+        <div class="modal-content" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+            <div role="document">
+                <p id="modalDescription" class="element-invisible">Side view of product 3. Escape will
+                    cancel and close the window.</p>
+                <h2 id="modalTitle">Zoomed  First Image</h2>
+                <p>These are the onscreen instructions that are not attached explicitly to a focusable element. Can screen reader
+                    users read this text with the virtual cursor?</p>
+                
+                <button data-modal-hide class="modal-close" aria-label="Close gallery modal">&times;</button>
+            </div>
+        </div>
     </div>
+
+
+    <script src="modal.js"></script>
     <script src="gallery.js"></script>
 </body>
- 
+
 </html>
- 
