@@ -23,7 +23,8 @@
   border: 1px solid black; }
 
 #size-chart-table tr:first-of-type th {
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  min-width: 90px; }
 
 .accordion {
   padding: 0;
