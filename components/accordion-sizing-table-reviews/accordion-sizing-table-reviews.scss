@@ -23,6 +23,17 @@
 	display: none;
 }
 
+#size-chart-table {
+	th,
+	td {
+		border: 1px solid black;
+	}
+
+	tr:first-of-type th {
+		font-size: 1.3em;
+	}
+}
+
 .accordion {
   padding: 0;
   margin: 0;

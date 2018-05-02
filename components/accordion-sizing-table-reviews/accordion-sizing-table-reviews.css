@@ -18,6 +18,13 @@
 .show-inches tr.centimeters {
   display: none; }
 
+#size-chart-table th,
+#size-chart-table td {
+  border: 1px solid black; }
+
+#size-chart-table tr:first-of-type th {
+  font-size: 1.3em; }
+
 .accordion {
   padding: 0;
   margin: 0; }
