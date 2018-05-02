@@ -90,3 +90,54 @@
     }
   }
 }
+
+
+#reviews {
+  .rating-stars {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .user-rating-container {
+    padding: 5px;
+    outline: 1px solid #292a2b;
+    background-color: #e8eaed;
+    margin-bottom: 10px;
+  }
+
+  .rating-summary {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  #customer-reviews {
+    padding: 0;
+  }
+
+  .rating-stars,
+  .review-details,
+  .review-text {
+    margin-bottom: 5px;
+  }
+
+  .review-details {
+   color: #6b6f72;
+  }
+ 
+}
+
+  /* Global */
+  .element-invisible {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); } 
+
+
+
