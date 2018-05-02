@@ -40,6 +40,7 @@
         padding: 10px;
         font-size: 16px;
         position: relative;
+        cursor: pointer;
 
         &:after {
           content: '';
@@ -53,6 +54,7 @@
           transform: rotate(135deg);
           vertical-align: top;
           width: 0.45em;
+          transition: transform 1s;
         }
       }
 
@@ -67,11 +69,11 @@
     }
 
     &_content {
-      display: none;
+      visibility: hidden;
       padding: 15px;
       
       &.accordion--open {
-        display: block;
+        visibility: visible;
       }
     }
   }
