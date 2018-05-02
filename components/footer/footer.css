@@ -1103,7 +1103,7 @@
     -ms-flex-preferred-size: 90%;
     flex-basis: 90%;
     max-width: 90%; }
-  .col-md-10, .footer__nav {
+  .col-md-10 {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -1766,6 +1766,9 @@
   padding: 32px 0;
   font-size: 14px; }
 
+.footer .row {
+  justify-content: space-between; }
+
 .footer a {
   text-decoration: none;
   margin-bottom: 8px;
@@ -1774,11 +1777,12 @@
 .footer__nav {
   display: flex;
   flex-wrap: wrap;
-  width: 100%; }
+  padding: 0 8px; }
 
-.footer__heading {
-  width: 100%;
-  float: left; }
+.footer__heading--newsletter {
+  padding: 5px;
+  font-size: 22px;
+  margin: 0 0 16px; }
 
 .footer__list {
   list-style: none;
@@ -1786,10 +1790,7 @@
   padding: 0; }
 
 .footer__list--2-column {
-  width: 40%;
-  margin-right: 20%;
   columns: 2;
-  float: left;
   margin-bottom: 20px; }
 
 .footer__list--legal {
@@ -1807,28 +1808,23 @@
   margin-top: 25px; }
 
 .footer__form {
-  width: 40%;
-  text-align: center; }
-
-.footer__form > label {
-  display: block;
-  padding: 5px;
-  font-size: 22px;
-  color: #19191E;
-  margin: 25px 0 30px; }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 60px; }
 
 .footer__form-input {
   display: block;
   padding: 5px;
   width: 280px;
-  margin: 0 auto;
+  margin: 0 auto 48px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #19191E;
   color: #19191E;
   font-size: 14px;
-  line-height: 16px;
-  margin-bottom: 32px; }
+  line-height: 16px; }
 
 .footer__form-submit {
   font-size: 14px;
@@ -1867,6 +1863,38 @@
 
 .footer a:hover, .footer:focus {
   color: #2A5FD2; }
+
+.input__placeholder-label {
+  position: relative; }
+
+.input__placeholder-label > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 26px;
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  color: #6E6E6E; }
+
+.input__placeholder-label > input:focus + label, .input__placeholder-label > .edited + label {
+  top: 26px;
+  font-size: 12px;
+  color: #333333; }
+
+.input__placeholder-label > input:focus.has-error + label, .input__placeholder-label > .edited.has-error + label {
+  color: firebrick; }
+
+.input__validation-message {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -26px;
+  font-size: 12px;
+  color: firebrick; }
+
+input:focus + label .input__validation-message, .edited + label .input__validation-message {
+  bottom: -16px; }
 
 @media screen and (max-width: 600px) {
   .footer {

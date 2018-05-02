@@ -1,8 +1,8 @@
 # accessible-ecommerce-demo
 
-A truly accessible demo eCommerce website brought to you by SapientRazorfish.
+A truly accessible demo eCommerce website brought to you by Publicis.Sapient.
 
-**This project is currently in alpha status.** This means that anything could change at any time. Additionally, it means that your feedback will have an impact on how the project evolves, so please feel free to [open issues](https://github.com/SapientRazorfish/accessible-ecommerce-demo/issues).
+**This project is currently in alpha status.** This means that anything could change at any time. Additionally, it means that your feedback will have an impact on how the project evolves, so please feel free to [open issues](https://github.com/PublicisSapient/accessible-ecommerce-demo/issues).
 
 ## Accessibility Criteria
 
@@ -62,7 +62,7 @@ These settings override both User and Default settings for the HTML syntax. Plea
 3) Enter the following 4 lines in Terminal:
 
 ```bash
-git clone https://github.com/SapientRazorfish/accessible-ecommerce-demo.git
+git clone https://github.com/PublicisSapient/accessible-ecommerce-demo.git
 cd accessible-ecommerce-demo
 npm install
 npm run scss

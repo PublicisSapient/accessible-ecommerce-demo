@@ -12,12 +12,13 @@
 	</head>
 	<body>
 		<!-- Global Nav-->
-		<section class="navigation">
+		<nav class="navigation">
 			<div class="wrapper">
-			<a class="skip-link" id="skip-to-main" href="#skip-to-nav" class="skip-link">Skip to main content</a> 
+			<a class="skip-link" id="skip-to-main" href="#skip-to-nav" class="skip-link">Skip navigation menu</a>
 			<div class="row">
-				<a class="navigation-logo" href="#" title="Company name: Home" >
-							<svg width="148px" height="54px" viewBox="0 0 148 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<a class="navigation-logo" href="#">
+					<span class="element-invisible">SapientRazorfish Fashion</span>
+					<svg width="148px" height="54px" focusable="false" viewBox="0 0 148 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
 								<desc>SapientRazorfish Fashion | Home</desc>
 								<defs>
@@ -55,9 +56,9 @@
 										</g>
 									</g>
 								</g>
-							</svg>
-						</a> 
-				<nav class="global-nav">		
+					</svg>
+				</a>
+				<nav class="global-nav">
 					<ul class="global-nav-menu">
 						<li class="menu-item has-submenu">
 							<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Women</a>
@@ -147,7 +148,7 @@
 						</li>
 						<li class="menu-item">
 							<a href="#">Sale</a>
-						</li>	
+						</li>
 					</nav>
 					<article class="mini-cart">
 						<button aria-label="Mini Cart, 2 items, estimated subtotal: $42.82" class="mini-cart__toggle" aria-haspopup="true" aria-expanded="false">
@@ -160,24 +161,24 @@
 								<li class="mini-cart__item">
 									<a class="mini-cart__item-link" href="https://placeholder.com"
 										aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
-										<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">			
+										<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">
 										<p class="mini-cart__item-title">Shirt Malo</p>
 										<div>
 											<dl class="mini-cart__features">
 												<dt class="mini-cart__term">Size:</dt>
 												<dd class="mini-cart__description" aria-label="medium">M</dd>
-			
+
 												<dt class="mini-cart__term">Color:</dt>
 												<dd class="mini-cart__description">blue</dd>
-			
+
 												<dt class="mini-cart__term">Qty:</dt>
 												<dd class="mini-cart__description">2</dd>
 											</dl>
-			
+
 											<dl class="mini-cart__prices">
 												<dt class="element-invisible">Item unit price:</dt>
 												<dd class="mini-cart__description mini-cart__description--full">$36.95</dt>
-			
+
 												<dt class="element-invisible">Item total price:</dt>
 												<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
 											</dl>
@@ -185,7 +186,7 @@
 									</a>
 								</li>
 								<li class="mini-cart__item">
-									<a class="mini-cart__item-link" 
+									<a class="mini-cart__item-link"
 									aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09" href="https://placeholder.com">
 										<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">
 										<p class="mini-cart__item-title">Shirt Malo</p>
@@ -193,18 +194,18 @@
 											<dl class="mini-cart__features">
 												<dt class="mini-cart__term">Size:</dt>
 												<dd class="mini-cart__description" aria-label="medium">M</dd>
-			
+
 												<dt class="mini-cart__term">Color:</dt>
 												<dd class="mini-cart__description">blue</dd>
-			
+
 												<dt class="mini-cart__term">Qty:</dt>
 												<dd class="mini-cart__description">2</dd>
 											</dl>
-			
+
 											<dl class="mini-cart__prices">
 												<dt class="element-invisible">Item unit price:</dt>
 												<dd class="mini-cart__description mini-cart__description--full">$36.95</dt>
-			
+
 												<dt class="element-invisible">Item total price:</dt>
 												<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
 											</dl>
@@ -212,7 +213,7 @@
 									</a>
 								</li>
 							</ul>
-			
+
 							<div class="mini-cart__summary">
 								<div class="mini-cart__summary-subtotal">
 									<p class="mini-cart__subtotal-title">Subtotal</p>
@@ -226,10 +227,10 @@
 						<div class="element-invisible" aria-live="assertive" role="alert"></div>
 					</article>
 				</div>
-				<a class="skip-link" id="skip-to-nav" href="#skip-to-main">Skip to Nav</a>	
+				<a class="skip-link" id="skip-to-nav" href="#skip-to-main">Return to navigation menu</a>
 			</div>
-		</section>
-		
+		</nav>
+
 		<!-- Breadcrumbs-->
 		<section id="breadcrumb">
 			<div class="wrapper">
@@ -318,15 +319,25 @@
 						</section>
 						<section aria-label="Product Grid" class="productGrid__grid" id="product-grid" name="product-grid" tabindex="-1">
 							<section role="sort" class="productGrid__sort-menu" id="product-sort" name="product-sort" tab-index="-1">
-								<fieldset>
-									<legend tabindex="0" id="sort-products=">Sort by</legend>
-									<ul>
-										<li><input type="radio" name="product-sort" class="sort-option" id="sort-low-high"><label for="sort-low-high" aria-label="Sort products by price, lowest to highest">Price low to high</label></li>
-										<li><input type="radio" name="product-sort" class="sort-option" id="sort-high-low"><label for="sort-high-low" aria-label="Sort products by price, highest to lowest">Price high to low</label></li>
-										<li><input type="radio" name="product-sort" class="sort-option" id="sort-newest"><label for="sort-newest" aria-label="Sort products from newest to oldest">Newest to Top</label></li>
-									</ul>
-								</fieldset>
-								<h2 class="productGrid__sort-menu-heading" id="showingNumberProducts__heading" tabindex="-1">Showing products X of X</h2>
+								<h2 tabindex="0" id="sort-products=">Sort by</h2>
+								<ul>
+									<li>
+										<button type="button" name="product-sort" class="sort-option" id="sort-low-high">
+											<label for="sort-low-high" aria-label="Sort products by price, lowest to highest">Price low to high</label>
+										</button>
+									</li>
+									<li>
+										<button type="button" name="product-sort" class="sort-option" id="sort-high-low">
+											<label for="sort-high-low" aria-label="Sort products by price, highest to lowest">Price high to low</label>
+										</button>
+									</li>
+									<li>
+										<button type="button" name="product-sort" class="sort-option" id="sort-newest">
+											<label for="sort-newest" aria-label="Sort products from newest to oldest">Newest to Top</label>
+										</button>
+									</li>
+								</ul>
+								<h3 class="productGrid__sort-menu-heading" id="showingNumberProducts__heading" tabindex="-1">Showing products X of X</h3>
 							</section>
 							<section class="productsContainer">
 								<article class="product">
@@ -344,8 +355,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -365,8 +376,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -386,8 +397,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -407,8 +418,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -428,8 +439,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -449,8 +460,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -470,8 +481,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -491,8 +502,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="5" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+										<input type="text" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
@@ -548,8 +559,8 @@
 										</span>
 										<span class="quantity-comp">
 											<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-											<input type="text" value="5" class="quantity-comp__text">
-											<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+											<input type="text" value="1" class="quantity-comp__text">
+											<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 											<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 										</span>
 										<button class="product__cta" role="button">Add to Cart</button>
@@ -571,8 +582,8 @@
 												</span>
 												<span class="quantity-comp">
 													<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-													<input type="text" value="5" class="quantity-comp__text">
-													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+													<input type="text" value="1" class="quantity-comp__text">
+													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 													<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 												</span>
 												<button class="product__cta" role="button">Add to Cart</button>
@@ -594,8 +605,8 @@
 												</span>
 												<span class="quantity-comp">
 													<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-													<input type="text" value="5" class="quantity-comp__text">
-													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+													<input type="text" value="1" class="quantity-comp__text">
+													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 													<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 												</span>
 												<button class="product__cta" role="button">Add to Cart</button>
@@ -617,8 +628,8 @@
 												</span>
 												<span class="quantity-comp">
 													<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-													<input type="text" value="5" class="quantity-comp__text">
-													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 5 items</span></span>
+													<input type="text" value="1" class="quantity-comp__text">
+													<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 													<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 												</span>
 												<button class="product__cta" role="button">Add to Cart</button>
@@ -626,12 +637,12 @@
 								</li>
 							</div>
 						</div>
-				
+
 						<button class="carousel__arrow carousel__arrow--right ion-arrow-right-b" tabindex="-1">
 							<span class="element-invisible" tabindex="-1">Next arrow</span>
 						</button>
 					</div>
-				
+
 					<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="element-invisible">Jump to start of product recommendations carousel</a>
 			</div>
 	</section>
@@ -640,80 +651,84 @@
 			<div class="row">
 				<nav aria-labelledby="footer-label" class="footer__nav">
 					<h2 id="footer-label" class="footer__heading footer__heading--main element-invisible">Secondary Navigation</h2>
-						<ul class="footer__list footer__list--2-column">
-							<div class="footer__column">
-								<li class="footer__link">
-									<a href="https://placeholder.com">About</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Contact Us</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Press release</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Careers</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Site map</a>
-								</li>
-							</div>
-							<div class="footer__column">
-								<li class="footer__link">
-									<a href="https://placeholder.com">Returns</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Shipping</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Gift Cards</a>
-								</li>
-								<h3 class="element-invisible footer__heading">Social Media Links</h3>
-								<ul class="footer__list footer__list--social-links">
-									<li class="footer__link footer__link--social-media">
-										<a href="https://placeholder.com">
-											<span class="footer__icon ion-social-facebook"></span>
-											<span class="element-invisible">Follow us on Facebook</span>
-										</a>
-									</li>
-									<li class="footer__link footer__link--social-media">
-										<a href="https://placeholder.com">
-											<span class="footer__icon ion-social-twitter"></span>
-											<span class="element-invisible">Follow us on Twitter</span>
-										</a>
-									</li>
-									<li class="footer__link footer__link--social-media">
-										<a href="https://placeholder.com">
-											<span class="footer__icon ion-social-instagram"></span>
-											<span class="element-invisible">Follow us on Instagram</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</ul>
-						<form class="footer__form">
-							<label for="newsletter-sign-up">Subscribe to our Newsletter!</label>
-							<input class="footer__form-input" id="newsletter-sign-up" type="email" placeholder="enter email address">
-							<input class="footer__form-submit" type="submit" value="Subscribe Now">
-						</form>
-				
-						<h3 class="element-invisible footer__heading">Legal Information</h3>
-						<ul class="footer__list footer__list--legal">
-							<li>
-								<p>&copy;2018 SR Fashion Inc.</p>
+					<ul class="footer__list footer__list--2-column">
+						<div class="footer__column">
+							<li class="footer__link">
+								<a href="https://placeholder.com">About</a>
 							</li>
 							<li class="footer__link">
-								<a href="https://placeholder.com">Privacy Policy</a>
+								<a href="https://placeholder.com">Contact Us</a>
 							</li>
 							<li class="footer__link">
-								<a href="https://placeholder.com">Terms of Use</a>
+								<a href="https://placeholder.com">Press release</a>
 							</li>
 							<li class="footer__link">
-								<a href="https://placeholder.com">Accessibility</a>
+								<a href="https://placeholder.com">Careers</a>
 							</li>
-						</ul>
-					</nav>
-				</div>
+							<li class="footer__link">
+								<a href="https://placeholder.com">Site map</a>
+							</li>
+						</div>
+						<div class="footer__column">
+							<li class="footer__link">
+								<a href="https://placeholder.com">Returns</a>
+							</li>
+							<li class="footer__link">
+								<a href="https://placeholder.com">Shipping</a>
+							</li>
+							<li class="footer__link">
+								<a href="https://placeholder.com">Gift Cards</a>
+							</li>
+							<h3 class="element-invisible footer__heading">Social Media Links</h3>
+							<ul class="footer__list footer__list--social-links">
+								<li class="footer__link footer__link--social-media">
+									<a href="https://placeholder.com">
+										<span class="footer__icon ion-social-facebook"></span>
+										<span class="element-invisible">Follow us on Facebook</span>
+									</a>
+								</li>
+								<li class="footer__link footer__link--social-media">
+									<a href="https://placeholder.com">
+										<span class="footer__icon ion-social-twitter"></span>
+										<span class="element-invisible">Follow us on Twitter</span>
+									</a>
+								</li>
+								<li class="footer__link footer__link--social-media">
+									<a href="https://placeholder.com">
+										<span class="footer__icon ion-social-instagram"></span>
+										<span class="element-invisible">Follow us on Instagram</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</ul>
+				</nav>
+				<form class="footer__form" data-validate novalidate>
+					<h3 class="footer__heading footer__heading--newsletter">Subscribe to our Newsletter!</h3>
+					<div class="input__placeholder-label">
+						<input class="footer__form-input" id="newsletter-sign-up" type="email" data-validation-message="Please enter a valid email address" required>
+						<label for="newsletter-sign-up">Enter your email address</label>
+					</div>
+					<input class="footer__form-submit" type="submit" value="Subscribe Now">
+				</form>
+
+				<h3 class="element-invisible footer__heading">Legal Information</h3>
+				<ul class="footer__list footer__list--legal">
+					<li>
+						<p>&copy;2018 SR Fashion Inc.</p>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Privacy Policy</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Terms of Use</a>
+					</li>
+					<li class="footer__link">
+						<a href="https://placeholder.com">Accessibility</a>
+					</li>
+				</ul>
+
+			</div>
 		</div>
 	</footer>
 		<script src="../../components/global-nav/global-nav.js"></script>
