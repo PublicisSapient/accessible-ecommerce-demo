@@ -1,0 +1,15 @@
+.accordion {
+  &-panel {
+    &_heading {
+      background-color: grey;
+    }
+
+    &_content {
+      display: none;
+      
+      &.accordion--open {
+        display: block;
+      }
+    }
+  }
+}

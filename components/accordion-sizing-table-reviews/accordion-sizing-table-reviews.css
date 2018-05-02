@@ -1,0 +1,8 @@
+.accordion-panel_heading {
+  background-color: grey; }
+
+.accordion-panel_content {
+  display: none; }
+
+.accordion-panel_content.accordion--open {
+  display: block; }

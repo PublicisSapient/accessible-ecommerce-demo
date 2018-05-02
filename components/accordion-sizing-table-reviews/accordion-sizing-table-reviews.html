@@ -6,11 +6,48 @@
 	<title>Accordion, Sizing Table, Reviews</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="accordion-sizing-table-reviews.css" />
-	<script src="accordion-sizing-table-reviews.js"></script>
 </head>
 <body>
 	<!-- Accordion START -->
-
+	// annouce number of drawers
+	<ul class="accordion">
+		<li class="accordion-panel">
+			<div class="accordion-panel_heading accordion--open">
+				<button aria-label="Show Product Description" data-show-aria-label="Show Product Description" data-hide-aria-label="Hide Product Description">Product Description</button>
+			</div>
+			<div class="accordion-panel_content accordion--open">
+				<h2>Product Description</h2>
+				<p>Here is a bunch of stufff</p>
+			</div>
+		</li>
+		<li class="accordion-panel">
+			<div class="accordion-panel_heading accordion--open">
+					<button aria-label="Show size chart" data-show-aria-label="Show Size Chart" data-hide-aria-label="Hide Size Chart">Size Chart</button>
+			</div>
+			<div class="accordion-panel_content accordion--open">
+				<h2>Size Chart</h2>
+				<p>Here is a bunch of stufff</p>
+			</div>
+		</li>
+		<li class="accordion-panel">
+			<div class="accordion-panel_heading accordion--open">
+					<button aria-label="Show care instructions" data-show-aria-label="Show care instructions" data-hide-aria-label="Hide care instructions">Care Instructions</button>
+			</div>
+			<div class="accordion-panel_content accordion--open">
+				<h2>Care Instructions</h2>
+				<p>Here is a bunch of stufff</p>
+			</div>
+		</li>
+		<li class="accordion-panel">
+			<div class="accordion-panel_heading accordion--open">
+				<button aria-label="Show Ratings and Reviews" data-show-aria-label="Show ratings and reviews" data-hide-aria-label="Hide ratings and reviews">Ratings and Reviews</button>
+			</div>
+			<div class="accordion-panel_content accordion--open">
+				<h2>Ratings and Reviews</h2>
+				<p>Here is a bunch of stufff</p>
+			</div>
+		</li>
+	</ul>
 	<!-- Accordion END -->
 
 	<!-- Table START -->
@@ -39,5 +76,6 @@
 	<!-- Reviews START -->
 
 	<!-- Reviews END -->
+	<script src="accordion-sizing-table-reviews.js"></script>
 </body>
 </html>
