@@ -1,0 +1,19 @@
+#toggle-size-units-button {
+  padding: 10px 0;
+  border: 2px solid black;
+  background: none;
+  border-radius: 5px; }
+
+#toggle-size-units-button .units-toggle {
+  padding: 10px; }
+
+#toggle-size-units-button .selected {
+  color: red;
+  background: #CCC;
+  border-radius: 5px; }
+
+.show-centimeters tr.inches {
+  display: none; }
+
+.show-inches tr.centimeters {
+  display: none; }
