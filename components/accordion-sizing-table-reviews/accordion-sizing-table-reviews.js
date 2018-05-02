@@ -14,10 +14,12 @@ function setAriaLabelForButton(accordionPanel) {
 function onClickToggleAccordionPanel(accordionPanel) {
   return function(event) {
     var accordionPanelContent = accordionPanel.querySelector('.accordion-panel_content');
+    var accordionPanelHeading = accordionPanel.querySelector('.accordion-panel_heading');
     var accordionPanelButton = accordionPanel.querySelector('button');
 
     // toggle the open class
     accordionPanelContent.classList.toggle('accordion--open');
+    accordionPanelHeading.classList.toggle('accordion--open');
     
     setAriaLabelForButton(accordionPanel);
   }

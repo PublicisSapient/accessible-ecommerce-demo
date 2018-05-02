@@ -4,11 +4,11 @@
 
 .accordion-panel {
   list-style: none;
-  border: 1px grey solid; }
+  border: 1px #c5c5c5 solid; }
 
 .accordion-panel_heading button {
-  border-bottom: 1px grey solid;
-  background: lightgray;
+  border-bottom: 1px #c5c5c5 solid;
+  background-color: #c5c5c5;
   width: 100%;
   text-align: left;
   padding: 10px;
@@ -16,10 +16,23 @@
   position: relative; }
 
 .accordion-panel_heading button:after {
-  content: 'hi';
+  content: '';
   position: absolute;
-  right: 20px;
-  top: 5px; }
+  right: 15px;
+  top: 15px;
+  border-style: solid;
+  border-width: 0.12em 0.12em 0 0;
+  display: inline-block;
+  height: 0.45em;
+  transform: rotate(135deg);
+  vertical-align: top;
+  width: 0.45em; }
+
+.accordion-panel_heading.accordion--open button {
+  background-color: #e6e6e6; }
+
+.accordion-panel_heading.accordion--open button:after {
+  transform: rotate(-45deg); }
 
 .accordion-panel_content {
   display: none;
