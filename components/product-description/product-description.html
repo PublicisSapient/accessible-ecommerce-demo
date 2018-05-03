@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Product Description</title>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="product-description.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/helpers.css">
+  </head>
+  <body>
+    <div class="product-description">
+        <span class="product-description__title" aria-label="product title"><h1>Fancy Shirt</h1></span>
+
+        <span class="product-description__price" aria-label="product price">
+            <span class="product-description__price-now">
+                <span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents" aria-hidden="true">99</span>
+                <span class="element-invisible">now is $127.99</span>
+            </span>
+
+            <span class="product-description__price-was">was
+                <span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents" aria-hidden="true">99</span>
+                <span class="element-invisible">$127.99</span>
+            </span>
+            <span class="product-description__price-save">save
+                <span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents" aria-hidden="true">99</span>
+                <span class="element-invisible">$127.99</span>
+            </span>
+
+        </span>
+        <p class="product-description__summary">Readymade glossier echo park meh bicycle rights disrupt food truck. Leggings chicharrones butcher street art banh mi williamsburg farm-to-table lyft cardigan distillery thundercats typewriter wolf small batch...<a href="#">Full description</a> </p>
+
+        <span class="product-description__color-and-size">
+            <form>
+                <fieldset>
+                  <legend id="color">Color Selection</legend>
+                  <label for="color-red">
+                    <input type="radio" value="red" name="color" id="color-red" aria-describedby="color"> <span>red</span>
+                  </label>
+                  <label for="color-orange">
+                    <input type="radio" value="orange" name="color" id="color-orange" aria-describedby="color"> <span>orange</span>
+                  </label>
+                  <label for="color-white">
+                    <input type="radio" value="white" name="color" id="color-white" aria-describedby="color" checked> <span>white</span>
+                  </label>
+
+                </fieldset>
+            </form>
+                <a href="#" class="skip-link">jump to product gallery</a>
+
+            <form>
+                <fieldset>
+                  <legend id="size">Size Selection</legend>
+                  <label for="size-small">
+                    <input type="radio" value="small" name="size" id="size-small" aria-describedby="size"> <span>small</span>
+                  </label>
+                  <label for="size-medium">
+                    <input type="radio" value="medium" name="size" id="size-medium" aria-describedby="size"> <span>medium</span>
+                  </label>
+                  <label for="size-large">
+                    <input type="radio" value="large"  name="size" id="size-large" aria-describedby="size" checked> <span>large</span>
+                  </label>
+                </fieldset>
+                <a href="#">view size chart</a>
+            </form>
+        </span>
+        <span class="quantity-comp">
+            <button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+            <input type="text" aria-label="quantity" value="1" class="quantity-comp__text">
+            <span aria-live="assertive" aria-atomic="true" class="visibly-hidden">Quantity now is<span> 1 </span></span>
+            <button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+        </span>
+        <div class="product-rating">
+          <button class="product-rating__view-button">
+            <span class="product-rating__prefix">Rating</span>
+            <span class="product-rating__star product-rating__star-full ion-android-star" aria-hidden="true"></span>
+            <span class="product-rating__star product-rating__star-full ion-android-star" aria-hidden="true"></span>
+            <span class="product-rating__star product-rating__star-half ion-android-star-half" aria-hidden="true"></span>
+            <span class="product-rating__star product-rating__star-empty ion-android-star-outline" aria-hidden="true"></span>
+            <br>
+            <span class="product-rating__value">3.5 out of 5</span>
+            <span class="product-rating__count">(123<span class="element-invisible"> reviews</span>)</span>
+            <br>
+            <span class="product-rating__view-all">View all reviews</span>
+          </button>
+        </div>
+        <div class="product-add-to-cart">
+            <button role="button">Add to Cart</button>
+        </div>
+        <div class="product-add-to-wishlist">
+            <button role="button">Add to Wishlist</button>
+        </div>
+    </div>
+  </body>
+</html>
