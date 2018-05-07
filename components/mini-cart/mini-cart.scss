@@ -21,14 +21,28 @@ $buttonSize: 2em;
 		position: relative;
 	}
 
-	&__visible-amount {
-		position: absolute;
-		text-align: center;
-		color: white;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		right: 0;
+	&__visible-label { 
+		&--amount,
+		&--subtotal {
+			position: absolute;
+			text-align: center;
+			color: #000;
+			
+			left: 0;
+			right: 0;
+			font-size: 10px;
+			line-height: 36px;
+			font-weight: bold;
+			font-family: "Helvetica", "Arial", sans-serif;
+		}
+
+		&--amount {
+			top: 25px;
+		}
+
+		&--subtotal {
+			top: -10px;
+		}
 	}
 
 	&__dropdown {
