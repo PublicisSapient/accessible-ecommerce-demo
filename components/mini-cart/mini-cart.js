@@ -3,8 +3,8 @@
 const MiniCart = new function () {
     const rootClass = 'mini-cart'
     const el = document.getElementsByClassName(rootClass)[0];
-    const buttonEl = el.getElementsByClassName(`${rootClass}__toggle`)[0];
-    const dropdownEl = el.getElementsByClassName(`${rootClass}__dropdown`)[0];
+    const buttonEl = el.getElementsByClassName(rootClass + "__toggle")[0];
+    const dropdownEl = el.getElementsByClassName(rootClass + "__dropdown")[0];
     this.init = function () {
         this.onFocus = this.onFocus.bind(this);
         this.onBlur = this.onBlur.bind(this);
@@ -22,6 +22,7 @@ const MiniCart = new function () {
         
         dropdownEl.addEventListener('focus', this.onFocus, true);
         dropdownEl.addEventListener('blur', this.onButtonBlur, true);
+        buttonEl.addEventListener('blur', this.onButtonBlur);
     }
 
     this.onFocus = function () {
@@ -49,7 +50,7 @@ const MiniCart = new function () {
     }
 
     this.closeIfMenuBlurred = function (target, currentTarget, relatedTarget) {
-        console.log('closeIfMenuBlurred', relatedTarget, document.activeElement);
+        console.log('closeIfMenuBlurred', 'relatedTarget', relatedTarget, 'activeElement', document.activeElement);
         const focusedElement = relatedTarget || document.activeElement;
 		const isFocusLost = (
 			focusedElement.parentNode === document.body ||
@@ -66,7 +67,7 @@ const MiniCart = new function () {
 		 * menu.
 		 */
         console.log('isFocusLost', isFocusLost)
-		if (isFocusLost && !dropdownEl.contains(focusedElement)) {
+		if (isFocusLost || (!dropdownEl.contains(focusedElement) && focusedElement !== buttonEl)) {
 			this.onBlur();
 		}
 	}
