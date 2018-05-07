@@ -18,6 +18,17 @@ $buttonSize: 2em;
 		font-size: 36px;
 		background-color: transparent;
 		border: none;
+		position: relative;
+	}
+
+	&__visible-amount {
+		position: absolute;
+		text-align: center;
+		color: white;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
 	}
 
 	&__dropdown {

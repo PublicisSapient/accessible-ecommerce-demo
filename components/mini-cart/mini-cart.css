@@ -1773,7 +1773,17 @@
   margin-top: 5px;
   font-size: 36px;
   background-color: transparent;
-  border: none; }
+  border: none;
+  position: relative; }
+
+.mini-cart__visible-amount {
+  position: absolute;
+  text-align: center;
+  color: white;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0; }
 
 .mini-cart__dropdown {
   position: absolute;
