@@ -3,9 +3,11 @@ const carouselList = document.querySelector('.carousel__items');
 const items = carouselList.querySelectorAll('.card')
 
 let carouselWidth = () => carouselList.getBoundingClientRect().width;
+let totalWidth = () => carouselList.scrollWidth;
 let itemWidth = () => items[0].getBoundingClientRect().width;
 let numItemsVisible = () => Math.floor(carouselWidth() / itemWidth());
-// console.log(itemWidth(), carouselWidth())
+let minX = () => (totalWidth() >= carouselWidth()) ? -(Math.floor(totalWidth()/carouselWidth()) * carouselWidth()) + carouselWidth() - (totalWidth() % carouselWidth()) : 0;
+
 let shiftAmount = () => {
 	return numItemsVisible() * itemWidth();
 }
@@ -26,10 +28,7 @@ let shiftAmount = () => {
 // })
 
 
-let visibleW = carouselWidth();
-let totalW = carouselList.scrollWidth;
 
-let minX = (totalW >= visibleW) ? -(Math.floor(totalW/visibleW) * visibleW) + visibleW - (totalW % visibleW) : 0;
 
 function shiftCarousel(amount) {
 	carouselList.style.transform = `translatex(${amount}px)`;
@@ -42,25 +41,17 @@ const buttonLeft = document.querySelector('.carousel__arrow--left');
 // UI State + Interactions
 let carouselPosition = 0;
 buttonRight.addEventListener('click', (e) => {
-	// TODO: seems like this messes with moving back 
-	// let nextPos = (carouselPosition < 0 && carouselPosition - shiftAmount() > minX) ? carouselPosition - shiftAmount() : minX;
-	let nextPos = carouselPosition - shiftAmount();
-	
-	carouselPosition = nextPos
+	let nextPos = (carouselPosition - shiftAmount() > minX()) ? carouselPosition - shiftAmount() : minX();
+	carouselPosition = nextPos;
 	shiftCarousel(nextPos);
-})
+});
 buttonLeft.addEventListener('click', (e) => {
-	let nextPos = carouselPosition + shiftAmount()
-	carouselPosition = nextPos
-	if (nextPos > 0) nextPos = 0;
+	let nextPos = (carouselPosition + shiftAmount() <= 0) ? carouselPosition + shiftAmount() : 0;
+	carouselPosition = nextPos;
 	shiftCarousel(nextPos);
-})
-
-
-
-
+});
 
 // function getActiveItem() {
-// 	const activeItem = 
+// 	const activeItem =
 // }
 
