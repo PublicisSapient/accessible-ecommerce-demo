@@ -1,7 +1,10 @@
 /* Carousel Functions */
 const carouselList = document.querySelector('.carousel__items');
 const items = carouselList.querySelectorAll('.card')
+const buttonRight = document.querySelector('.carousel__arrow--right');
+const buttonLeft = document.querySelector('.carousel__arrow--left');
 
+let carouselPosition = 0;
 let carouselWidth = () => carouselList.getBoundingClientRect().width;
 let totalWidth = () => carouselList.scrollWidth;
 let itemWidth = () => items[0].getBoundingClientRect().width;
@@ -11,6 +14,7 @@ let minX = () => (totalWidth() >= carouselWidth()) ? -(Math.floor(totalWidth()/c
 let shiftAmount = () => {
 	return numItemsVisible() * itemWidth();
 }
+
 
 // setup item focus listeners
 // items.forEach( item => {
@@ -28,28 +32,32 @@ let shiftAmount = () => {
 // })
 
 
-
-
 function shiftCarousel(amount) {
 	carouselList.style.transform = `translatex(${amount}px)`;
+	refreshArrowButtons();
+}
+function toggleButton(button, isDisabled){
+	return isDisabled ? button.setAttribute("disabled", "disabled") : button.removeAttribute("disabled");
+}
+function refreshArrowButtons(){
+	toggleButton(buttonLeft, carouselPosition === 0);
+	toggleButton(buttonRight, carouselPosition === minX());
 }
 
-const buttonRight = document.querySelector('.carousel__arrow--right');
-const buttonLeft = document.querySelector('.carousel__arrow--left');
-
-
 // UI State + Interactions
-let carouselPosition = 0;
 buttonRight.addEventListener('click', (e) => {
 	let nextPos = (carouselPosition - shiftAmount() > minX()) ? carouselPosition - shiftAmount() : minX();
 	carouselPosition = nextPos;
 	shiftCarousel(nextPos);
+	console.log('%cCLICKY', 'background: hotpink; color: white');
 });
 buttonLeft.addEventListener('click', (e) => {
 	let nextPos = (carouselPosition + shiftAmount() <= 0) ? carouselPosition + shiftAmount() : 0;
 	carouselPosition = nextPos;
 	shiftCarousel(nextPos);
 });
+
+refreshArrowButtons();
 
 // function getActiveItem() {
 // 	const activeItem =
