@@ -11,6 +11,7 @@ const MiniCart = new function () {
         this.onButtonBlur = this.onButtonBlur.bind(this);
         this.closeIfMenuBlurred = this.closeIfMenuBlurred.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.onBodyClick = this.onBodyClick.bind(this);
 
         console.log(el, buttonEl, dropdownEl);
         /* buttonEl.addEventListener('mouseover', this.onFocus);
@@ -22,6 +23,7 @@ const MiniCart = new function () {
         
         dropdownEl.addEventListener('focus', this.onFocus, true);
         dropdownEl.addEventListener('blur', this.onButtonBlur, true);
+        document.addEventListener('click', this.onBodyClick, true);
     }
 
     this.onFocus = function () {
@@ -46,6 +48,14 @@ const MiniCart = new function () {
         requestAnimationFrame(
 			this.closeIfMenuBlurred.bind(this, e.target, e.currentTarget, e.relatedTarget)
 		);
+    }
+
+    this.onBodyClick = function (e) {
+        const target = e.target;
+
+        if (!dropdownEl.contains(target) && target !== buttonEl) {
+            this.onBlur();
+        }
     }
 
     this.closeIfMenuBlurred = function (target, currentTarget, relatedTarget) {
