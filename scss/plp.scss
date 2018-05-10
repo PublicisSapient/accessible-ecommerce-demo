@@ -1,0 +1,48 @@
+.plp {
+
+	.row {
+		max-width: inherit;
+		margin: inherit;
+	}
+
+	.navigation {
+		.row {
+			margin-left: 0.5em;
+			margin-right: 0.5em;
+			justify-content: space-between;
+		}
+	}
+
+	#breadcrumb {
+		.row {
+			margin-left: 0.5em;
+			margin-right: 0.5em;
+		}
+	}
+
+	.wrapper {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: inherit;
+		margin: inherit;
+	}
+
+	main.productGrid {
+		width: 100%;
+
+		.wrapper {
+			max-width: inherit;
+		}
+
+		.productGrid__filters {
+			float: left;
+		}
+
+		.productGrid__grid {
+			@media only screen and (max-width:1024px) {
+			
+			
+			}
+		}
+	}
+}

@@ -112,6 +112,24 @@
 		background-color: $light-grey;
 		padding: 8px 16px;
 		margin-bottom: 16px;
+
+		@media only screen and (max-width:1024px) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			
+			@media only screen and (max-width:$tablet) {
+				font-size: 1rem;
+			}
+
+			@media only screen and (max-width:$phablet) {
+				font-size: 0.75rem;
+			}
+		}
+
 		fieldset {
 			border: none;
 			font-size: 14px;
@@ -128,9 +146,19 @@
 				color: $blue;
 			}
 		}
+
+		button {
+			padding: 0.5em;
+		}
+
 		&-heading {
 			margin-bottom: 0;
-			font-size: 14px;
+			font-size: 0.875rem;
+
+			@media only screen and (max-width:$tablet) {
+				font-size: 0.667rem;
+				margin-left: 1em;
+			}
 		}
 		input {
 			opacity: 0;
@@ -147,6 +175,8 @@
 	&__grid {
 		@extend .col-md-8;
 		margin-bottom: 48px;
+		flex-basis: inherit;
+		max-width: inherit;
 	}
 }
 
@@ -159,6 +189,22 @@
 		flex-basis: calc(25% - 16px);
 		max-width: calc(25% - 16px);
 		margin: 0 8px 16px;
+
+
+		@media only screen and (max-width:$tablet) {
+			flex-basis: calc(33% - 16px);
+			max-width: calc(33% - 16px);
+		}
+
+		@media only screen and (max-width:$phablet) {
+			flex-basis: calc(50% - 16px);
+			max-width: calc(50% - 16px);
+		}
+
+		@media only screen and (max-width:$mobile) {
+			flex-basis: calc(100% - 16px);
+			max-width: calc(100% - 16px);
+		}
 	}
 
 } 
