@@ -63,7 +63,6 @@ pagination.forEach((paginationBtn) => {
 });
 
 products.forEach(function(product, index) {
-  console.log(product);
   var addToCartButton = product.querySelector('.product__cta');
   var quantityComponent = product.querySelector('.quantity-comp');
   var quantityComponentValue = product.querySelector('.quantity-comp__text');
