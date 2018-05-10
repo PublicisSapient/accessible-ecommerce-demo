@@ -9,11 +9,18 @@
 	&-logo {
 		@extend .col-md-2;
 		display: inline-block;
+		order: 1;
 	}
 
-	&-mini-cart {
+	&-mini-cart, .mini-cart {
 		align-items: right;
 		display: flex;
+		order: 3;
+
+		@media only screen and (max-width:$tablet) {
+			order: 2;
+			padding-right: 0.5em;
+		}
 	}
 
 	.global-nav-menu {
@@ -21,7 +28,7 @@
 		display: flex;
 		padding: 0;
 		width: 100%;
-		justify-content: space-between;
+		justify-content: space-around; // space-between;
 		align-items: center;
 		text-align: center;
 	}
@@ -34,6 +41,12 @@
 		align-items: center;
 		justify-content: space-between;
 		flex: 1 1 auto;
+		order: 2;
+
+		@media only screen and (max-width:$mobile) {
+			order: 3;
+			width: 100vw;
+		}
 
 		.menu-item {
 			display: inline-block;
@@ -94,12 +107,16 @@
 	
 	ul.global-nav-menu li a {
 		color: $blue;
-		font-size: 18px;
+		font-size: 1.125rem;
 		text-decoration: none;
 		border-bottom: 2px solid transparent;
 		&:hover, &:focus {
 			text-decoration: none;
 			border-bottom: 2px solid $blue;
+		}
+
+		@media only screen and (max-width:$tablet) {
+			font-size: 0.874rem;
 		}
 	}		
 }
