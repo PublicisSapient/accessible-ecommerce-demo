@@ -5,6 +5,7 @@ var numberOfProductsHeading = document.querySelector('#showingNumberProducts__he
 var numberOfFiltersAppliedAriaLiveRegion = document.querySelector('#showingNumberFilters__description');
 var filterInputs = document.querySelectorAll('.productGrid__filter');
 var productGrid = document.querySelector('#product-grid');
+var products = productGrid.querySelectorAll('.product');
 
 // Add click event to clear filters button
 clearFiltersButton.addEventListener('click', function() {
@@ -60,3 +61,32 @@ pagination.forEach((paginationBtn) => {
     }, 500);
   });
 });
+
+products.forEach(function(product, index) {
+  console.log(product);
+  var addToCartButton = product.querySelector('.product__cta');
+  var quantityComponent = product.querySelector('.quantity-comp');
+  var quantityComponentValue = product.querySelector('.quantity-comp__text');
+  var productName = product.querySelector('.product__heading').innerHTML;
+  var decreaseQuantityButton = product.querySelector('.quantity-comp__decrease');
+  var increaseQuantityButton = product.querySelector('.quantity-comp__increase');
+  var productDetails = product.querySelector('.product__details');
+
+  addToCartButton.addEventListener("click", function (evt) {
+    // toggle the UI to show the + - component
+    quantityComponent.classList.add('show');
+    addToCartButton.classList.add('hide');
+
+    // update the mini cart with the valid info
+    updateMiniCart('123', quantityComponentValue.value, productName);
+    productDetails.focus();
+  });
+});
+
+function updateMiniCart(sku, quantity, name) {
+  MiniCart.update({
+    sku,
+    quantity,
+    name
+  });
+}

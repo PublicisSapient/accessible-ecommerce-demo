@@ -5,6 +5,8 @@ const MiniCart = new function () {
     const el = document.getElementsByClassName(rootClass)[0];
     const buttonEl = el.getElementsByClassName(`${rootClass}__toggle`)[0];
     const dropdownEl = el.getElementsByClassName(`${rootClass}__dropdown`)[0];
+    const updateElement = el.getElementsByClassName(`${rootClass}__updated`)[0];
+
     this.init = function () {
         this.onFocus = this.onFocus.bind(this);
         this.onBlur = this.onBlur.bind(this);
@@ -24,6 +26,11 @@ const MiniCart = new function () {
         dropdownEl.addEventListener('focus', this.onFocus, true);
         dropdownEl.addEventListener('blur', this.onButtonBlur, true);
         document.addEventListener('click', this.onBodyClick, true);
+    }
+
+    this.update = function(data) {
+        const message = `${data.quantity} ${data.name} has been added to your cart.`;
+        updateElement.innerHTML = message;
     }
 
     this.onFocus = function () {
