@@ -8,9 +8,10 @@
 		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="../../css/global.css">
 		<link rel="stylesheet" href="plp.css">
+		<link rel="stylesheet" href="../../css/plp.css">
 
 	</head>
-	<body>
+	<body class="plp">
 		<!-- Global Nav-->
 		<nav class="navigation">
 			<div class="wrapper">
@@ -151,6 +152,7 @@
 						</li>
 					</nav>
 					<article class="mini-cart">
+						<span class="mini-cart__updated element-invisible" aria-live="assertive" aria-atomic="true"></span>
 						<button aria-label="Mini Cart, 2 items, estimated subtotal: $42.82" class="mini-cart__toggle" aria-haspopup="true" aria-expanded="false">
 								<span class="ion-ios-cart"></span>
 						</button>
@@ -261,7 +263,7 @@
 		<!-- Product Grid -->
 		<main class="productGrid">
 			<div class="wrapper">
-				<div class="row">
+				<div> <!-- was .row -->
 					<section aria-label="Filters" class="productGrid__filters">
 						<div class="productGrid__filters-wrapper">
 								<h2>Filters</h2>
@@ -341,13 +343,35 @@
 							</section>
 							<section class="productsContainer">
 								<article class="product">
-									<a href="#">
+									<a class="product__details" href="#">
 										<picture>
 											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
 											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
 											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
 										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+										<p class="product__heading" aria-label="learn more about: Turtleneck Sweater, $127.99">Turtleneck Sweater</p>
+									</a>
+									<span class="price">
+										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
+										<span class="visibly-hidden">$127.99</span>
+									</span>
+									<span class="quantity-comp">
+										<button aria-label="Decrease quantity of Turtleneck Sweater by 1" class="quantity-comp__decrease">-</button>
+										<label class="element-invisible" for="product-0-quantity">Change quantity of Turtleneck Sweater from</label>
+										<input type="text" id="product-0-quantity" placeholder="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+										<button aria-label="increase quantity of Turtleneck Sweater by 1" class="quantity-comp__increase">+</button>
+									</span>
+									<button class="product__cta" role="button">Add to Cart</button>
+								</article>
+								<article class="product">
+									<a class="product__details" href="#">
+										<picture>
+											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
+											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
+											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
+										</picture>
+										<p class="product__heading" aria-label="learn more about: Pleated Dress Pants, $127.99">Pleated Dress Pants</p>
 									</a>
 									<span class="price">
 										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
@@ -355,20 +379,21 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
+										<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+										<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
 								</article>
 								<article class="product">
-									<a href="#">
+									<a class="product__details" href="#">
 										<picture>
 											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
 											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
 											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
 										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+										<p class="product__heading" aria-label="learn more about: High Waisted Jeans, $127.99">High Waisted Jeans</p>
 									</a>
 									<span class="price">
 										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
@@ -376,20 +401,21 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
+										<label class="element-invisible" for="product-2-quantity">Change quantity</label>
+										<input type="text" id="product-2-quantity" placeholder="1" class="quantity-comp__text">
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
 								</article>
 								<article class="product">
-									<a href="#">
+									<a class="product__details" href="#">
 										<picture>
 											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
 											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
 											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
 										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+										<p class="product__heading" aria-label="learn more about: T-shirt, $127.99">T-shirt</p>
 									</a>
 									<span class="price">
 										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
@@ -397,20 +423,21 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
+										<label class="element-invisible" for="product-3-quantity">Change quantity</label>
+										<input type="text" id="product-3-quantity" placeholder="1" class="quantity-comp__text">
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
 								</article>
 								<article class="product">
-									<a href="#">
+									<a class="product__details" href="#">
 										<picture>
 											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
 											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
 											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
 										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+										<p class="product__heading" aria-label="learn more about: Bomber Jacket, $127.99">Bomber Jacket</p>
 									</a>
 									<span class="price">
 										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
@@ -418,20 +445,21 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
+										<label class="element-invisible" for="product-4-quantity">Change quantity</label>
+										<input type="text" id="product-4-quantity" placeholder="1" class="quantity-comp__text">
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
 								</article>
 								<article class="product">
-									<a href="#">
+									<a class="product__details" href="#">
 										<picture>
 											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
 											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
 											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
 										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+										<p class="product__heading" aria-label="learn more about: Sandals, $127.99">Sandals</p>
 									</a>
 									<span class="price">
 										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
@@ -439,20 +467,21 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
+										<label class="element-invisible" for="product-5-quantity">Change quantity</label>
+										<input type="text" id="product-5-quantity" placeholder="1" class="quantity-comp__text">
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
 								</article>
 								<article class="product">
-									<a href="#">
+									<a class="product__details" href="#">
 										<picture>
 											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
 											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
 											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
 										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+										<p class="product__heading" aria-label="learn more about: Summer Dress, $127.99">Summer Dress</p>
 									</a>
 									<span class="price">
 										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
@@ -460,20 +489,21 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
+										<label class="element-invisible" for="product-6-quantity">Change quantity</label>
+										<input type="text" id="product-6-quantity" placeholder="1" class="quantity-comp__text">
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
 									<button class="product__cta" role="button">Add to Cart</button>
 								</article>
 								<article class="product">
-									<a href="#">
+									<a class="product__details" href="#">
 										<picture>
 											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
 											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
 											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
 										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
+										<p class="product__heading" aria-label="learn more about: Overalls, $127.99">Overalls</p>
 									</a>
 									<span class="price">
 										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
@@ -481,28 +511,8 @@
 									</span>
 									<span class="quantity-comp">
 										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
-										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
-										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
-									</span>
-									<button class="product__cta" role="button">Add to Cart</button>
-								</article>
-								<article class="product">
-									<a href="#">
-										<picture>
-											<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
-											<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
-											<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
-										</picture>
-										<h3 class="product__heading" aria-label="learn more about: Title of product, $127.99">Title of product</h3>
-									</a>
-									<span class="price">
-										<span class="price__dollar" aria-hidden="true">$127</span><span class="price__cents">99</span>
-										<span class="visibly-hidden">$127.99</span>
-									</span>
-									<span class="quantity-comp">
-										<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-										<input type="text" value="1" class="quantity-comp__text">
+										<label class="element-invisible" for="product-7-quantity">Change quantity</label>
+										<input type="text" id="product-7-quantity" placeholder="1" class="quantity-comp__text">
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>

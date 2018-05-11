@@ -1,0 +1,25 @@
+.plp .row {
+  max-width: inherit;
+  margin: inherit; }
+
+.plp .navigation .row {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  justify-content: space-between; }
+
+.plp #breadcrumb .row {
+  margin-left: 0.5em;
+  margin-right: 0.5em; }
+
+.plp .wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: inherit;
+  margin: inherit; }
+
+.plp main.productGrid {
+  width: 100%; }
+  .plp main.productGrid .wrapper {
+    max-width: inherit; }
+  .plp main.productGrid .productGrid__filters {
+    float: left; }
