@@ -959,7 +959,7 @@
     -ms-flex-preferred-size: 10%;
     flex-basis: 10%;
     max-width: 10%; }
-  .col-md-2, .navigation-logo {
+  .col-md-2 {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -1767,8 +1767,12 @@
   padding: 25px 0; }
 
 .navigation-logo {
-  display: inline-block;
-  order: 1; }
+  color: #333;
+  text-decoration: none; }
+
+.navigation-logo img {
+  float: left;
+  margin: 0 15px 0 10px; }
 
 .navigation-mini-cart, .navigation .mini-cart {
   align-items: right;
@@ -1779,6 +1783,14 @@
   .navigation-mini-cart, .navigation .mini-cart {
     order: 2;
     padding-right: 0.5em; } }
+
+.navigation-siteName {
+  font-family: Georgia, Times, Palatino, serif;
+  font-size: 22px;
+  font-weight: 600;
+  max-width: 500px;
+  line-height: 1.1;
+  padding: 2px 0 10px 0; }
 
 .navigation .global-nav-menu {
   list-style: none;
