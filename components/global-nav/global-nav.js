@@ -1,40 +1,79 @@
 /* Global Nav Functions */
-var menuItems = document.querySelectorAll('li.has-submenu');
+var menuItems = document.querySelectorAll('li.has-submenu > a');
+var activeMenuItem = null;
 
-Array.prototype.forEach.call(menuItems, function(el, i){
-	el.querySelector('a').addEventListener("click",  function(event){
-		
-		if (this.parentNode.className == "menu-item has-submenu") {
+function onDocumentClick(event) {
+	const target = event.target;
+	if(!target.classList.contains('has-submenu') && !target.classList.contains('open') && !target.classList.contains('menu-item-heading')) {
+		closeAllMenus();
+		removeOnDocumentClickEventHandler();
+	}
+}
 
-			var openMenuItems = document.querySelectorAll('li.has-submenu.open');
+function addOnDocumentClickEventHandler() {
+	setTimeout(function() {
+		window.addEventListener('click', onDocumentClick);
+	}, 1);
+}
 
-			console.log(openMenuItems);
+function removeOnDocumentClickEventHandler() {
+	window.removeEventListener('click', onDocumentClick);
+}
 
-			[].forEach.call(openMenuItems, function(item) {
-				console.log('looping', item);
-				item.className = "menu-item has-submenu";
-				item.querySelector('a').setAttribute('aria-expanded', "false");
-			});
+function onBlurTabableElement(event) {
+	removeTabOutEventHandler(activeMenuItem);
+	closeAllMenus();
+}
 
-			this.parentNode.className = "menu-item has-submenu open";
-			this.setAttribute('aria-expanded', "true");
-		} else {
-			this.parentNode.className = "menu-item has-submenu";
-			this.setAttribute('aria-expanded', "false");
-		}
-		event.preventDefault();
-		return false;
-	});
+function addTabOutEventHandler(element) {
+	const tabableElements = element.querySelectorAll('.submenu a');
+	const tabableElementsLength = tabableElements.length;
+	if (tabableElementsLength > 0) {
+		const lastElement = tabableElements[tabableElementsLength-1];
+		lastElement.addEventListener('blur', onBlurTabableElement);
+	}
+}
 
-	// el.querySelector('a').addEventListener("blur",  function(event){
-	// 	if (this.parentNode.className == "has-submenu open") {
-	// 		this.parentNode.className = "has-submenu";
-	// 		this.setAttribute('aria-expanded', "false");
-	// 	} else {
-	// 		this.parentNode.className = "has-submenu open";
-	// 		this.setAttribute('aria-expanded', "true");
-	// 	}
-	// 	event.preventDefault();
-	// 	return false;
-	// });
+function removeTabOutEventHandler(element) {
+	const tabableElements = element.querySelectorAll('.submenu a');
+	const tabableElementsLength = tabableElements.length;
+	if (tabableElementsLength > 0) {
+		const lastElement = tabableElements[tabableElementsLength-1];
+		lastElement.removeEventListener('blur', onBlurTabableElement);
+	}
+}
+
+function closeMenu(element) {
+	if (element.parentNode.classList.contains('open')) {
+		element.parentNode.classList.remove('open');
+		element.setAttribute('aria-expanded', "false");
+		activeMenuItem = null;
+	}
+}
+
+function openMenu(element) {
+	closeAllMenus();
+	const parent = element.parentNode;
+	parent.classList.add('open');
+	element.setAttribute('aria-expanded', "true");
+	activeMenuItem = parent;
+	addOnDocumentClickEventHandler();
+	addTabOutEventHandler(activeMenuItem);
+}
+
+function closeAllMenus() {
+	[].forEach.call(menuItems, closeMenu);
+}
+
+function onClickMenuItemWithSubmenu(event) {
+	event.preventDefault();
+	const target = event.currentTarget;
+	target.parentNode.classList.contains('open') ?
+		closeMenu(target) :
+		openMenu(target);
+	return false;
+}
+
+Array.prototype.forEach.call(menuItems, function(el, i) {
+	el.addEventListener("click", onClickMenuItemWithSubmenu);
 });

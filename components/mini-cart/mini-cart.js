@@ -5,12 +5,15 @@ const MiniCart = new function () {
     const el = document.getElementsByClassName(rootClass)[0];
     const buttonEl = el.getElementsByClassName(`${rootClass}__toggle`)[0];
     const dropdownEl = el.getElementsByClassName(`${rootClass}__dropdown`)[0];
+    const updateElement = el.getElementsByClassName(`${rootClass}__updated`)[0];
+
     this.init = function () {
         this.onFocus = this.onFocus.bind(this);
         this.onBlur = this.onBlur.bind(this);
         this.onButtonBlur = this.onButtonBlur.bind(this);
         this.closeIfMenuBlurred = this.closeIfMenuBlurred.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.onBodyClick = this.onBodyClick.bind(this);
 
         console.log(el, buttonEl, dropdownEl);
         /* buttonEl.addEventListener('mouseover', this.onFocus);
@@ -22,6 +25,12 @@ const MiniCart = new function () {
         
         dropdownEl.addEventListener('focus', this.onFocus, true);
         dropdownEl.addEventListener('blur', this.onButtonBlur, true);
+        document.addEventListener('click', this.onBodyClick, true);
+    }
+
+    this.update = function(data) {
+        const message = `${data.quantity} ${data.name} has been added to your cart.`;
+        updateElement.innerHTML = message;
     }
 
     this.onFocus = function () {
@@ -46,6 +55,14 @@ const MiniCart = new function () {
         requestAnimationFrame(
 			this.closeIfMenuBlurred.bind(this, e.target, e.currentTarget, e.relatedTarget)
 		);
+    }
+
+    this.onBodyClick = function (e) {
+        const target = e.target;
+
+        if (!dropdownEl.contains(target) && target !== buttonEl) {
+            this.onBlur();
+        }
     }
 
     this.closeIfMenuBlurred = function (target, currentTarget, relatedTarget) {
