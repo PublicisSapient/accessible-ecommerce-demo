@@ -959,7 +959,7 @@
     -ms-flex-preferred-size: 10%;
     flex-basis: 10%;
     max-width: 10%; }
-  .col-md-2, .navigation-logo {
+  .col-md-2 {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -1763,22 +1763,41 @@
 
 /* Mobile Styles */
 .navigation {
-  background-color: #F2F2F2;
+  background-color: #f4f0ec;
   padding: 25px 0; }
 
 .navigation-logo {
-  display: inline-block; }
+  color: #333;
+  text-decoration: none; }
 
-.navigation-mini-cart {
+.navigation-logo img {
+  float: left;
+  margin: 0 15px 0 10px; }
+
+.navigation-mini-cart, .navigation .mini-cart {
   align-items: right;
-  display: flex; }
+  display: flex;
+  order: 3; }
+
+@media only screen and (max-width: 1024px) {
+  .navigation-mini-cart, .navigation .mini-cart {
+    order: 2;
+    padding-right: 0.5em; } }
+
+.navigation-siteName {
+  font-family: Georgia, Times, Palatino, serif;
+  font-size: 22px;
+  font-weight: 600;
+  max-width: 500px;
+  line-height: 1.1;
+  padding: 2px 0 10px 0; }
 
 .navigation .global-nav-menu {
   list-style: none;
   display: flex;
   padding: 0;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center; }
 
@@ -1786,7 +1805,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 1 1 auto; }
+  flex: 1 1 auto;
+  order: 2; }
+
+@media only screen and (max-width: 500px) {
+  .navigation .global-nav {
+    order: 3;
+    width: 100vw; } }
 
 .navigation .global-nav .menu-item {
   display: inline-block;
@@ -1806,7 +1831,7 @@
   font-size: 14px; }
 
 .navigation .global-nav .has-submenu.open .menu-item-heading {
-  border-bottom: 2px solid #3575FF; }
+  border-bottom: 2px solid #B94650; }
 
 .navigation .global-nav .has-submenu.open .submenu {
   display: block;
@@ -1843,14 +1868,18 @@
   text-align: left; }
 
 .navigation ul.global-nav-menu li a {
-  color: #3575FF;
-  font-size: 18px;
+  color: #B94650;
+  font-size: 1.125rem;
   text-decoration: none;
   border-bottom: 2px solid transparent; }
 
 .navigation ul.global-nav-menu li a:hover, .navigation ul.global-nav-menu li a:focus {
   text-decoration: none;
-  border-bottom: 2px solid #3575FF; }
+  border-bottom: 2px solid #B94650; }
+
+@media only screen and (max-width: 1024px) {
+  .navigation ul.global-nav-menu li a {
+    font-size: 0.874rem; } }
 
 /* Tablet Styles */
 /* Desktop Styles */

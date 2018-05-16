@@ -1770,7 +1770,7 @@
 .productGrid__filters-wrapper {
   padding: 16px;
   font-size: 12px;
-  background-color: #F2F2F2; }
+  background-color: #f4f0ec; }
 
 .productGrid__filters-wrapper h2, .productGrid__filters-wrapper h3 {
   font-size: 14px;
@@ -1848,9 +1848,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #F2F2F2;
+  background-color: #f4f0ec;
   padding: 8px 16px;
   margin-bottom: 16px; }
+
+@media only screen and (max-width: 1024px) {
+  .productGrid__sort-menu {
+    padding-left: 8px;
+    padding-right: 8px; } }
+
+.productGrid__sort-menu h2 {
+  font-size: 1.5rem; }
+
+@media only screen and (max-width: 1024px) {
+  .productGrid__sort-menu h2 {
+    font-size: 1rem; } }
+
+@media only screen and (max-width: 800px) {
+  .productGrid__sort-menu h2 {
+    font-size: 0.75rem; } }
 
 .productGrid__sort-menu fieldset {
   border: none;
@@ -1866,11 +1882,19 @@
 
 .productGrid__sort-menu ul li {
   padding-left: 24px;
-  color: #3575FF; }
+  color: #B94650; }
+
+.productGrid__sort-menu button {
+  padding: 0.5em; }
 
 .productGrid__sort-menu-heading {
   margin-bottom: 0;
-  font-size: 14px; }
+  font-size: 0.875rem; }
+
+@media only screen and (max-width: 1024px) {
+  .productGrid__sort-menu-heading {
+    font-size: 0.667rem;
+    margin-left: 1em; } }
 
 .productGrid__sort-menu input {
   opacity: 0;
@@ -1880,17 +1904,33 @@
   text-decoration: underline; }
 
 .productGrid__grid {
-  margin-bottom: 48px; }
+  margin-bottom: 48px;
+  flex-basis: inherit;
+  max-width: inherit; }
 
 .productsContainer {
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 -8px; }
+  flex-wrap: wrap; }
 
 .productsContainer .product {
   flex-basis: calc(25% - 16px);
   max-width: calc(25% - 16px);
   margin: 0 8px 16px; }
+
+@media only screen and (max-width: 1024px) {
+  .productsContainer .product {
+    flex-basis: calc(33% - 16px);
+    max-width: calc(33% - 16px); } }
+
+@media only screen and (max-width: 800px) {
+  .productsContainer .product {
+    flex-basis: calc(50% - 16px);
+    max-width: calc(50% - 16px); } }
+
+@media only screen and (max-width: 500px) {
+  .productsContainer .product {
+    flex-basis: calc(100% - 16px);
+    max-width: calc(100% - 16px); } }
 
 .pagination__list {
   display: flex;
@@ -1900,7 +1940,7 @@
   justify-content: center; }
 
 .pagination__list-item button {
-  color: #3575FF;
+  color: #B94650;
   width: 32px;
   height: 32px;
   border: none;

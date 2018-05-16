@@ -3,17 +3,37 @@
 
 /* Mobile Styles */
 .navigation {
-	background-color: $light-grey;
+	background-color: $beige;
 	padding: 25px 0;
 
 	&-logo {
-		@extend .col-md-2;
-		display: inline-block;
+		color: #333;
+		text-decoration: none;
 	}
 
-	&-mini-cart {
+	&-logo img {
+		float: left;
+    	margin: 0 15px 0 10px;
+	}
+
+	&-mini-cart, .mini-cart {
 		align-items: right;
 		display: flex;
+		order: 3;
+
+		@media only screen and (max-width:$tablet) {
+			order: 2;
+			padding-right: 0.5em;
+		}
+	}
+
+	&-siteName {
+		font-family: Georgia, Times, Palatino, serif;
+    	font-size: 22px;
+    	font-weight: 600;
+    	max-width: 500px;
+    	line-height: 1.1;
+    	padding: 2px 0 10px 0;
 	}
 
 	.global-nav-menu {
@@ -21,7 +41,7 @@
 		display: flex;
 		padding: 0;
 		width: 100%;
-		justify-content: space-between;
+		justify-content: space-around; // space-between;
 		align-items: center;
 		text-align: center;
 	}
@@ -34,6 +54,12 @@
 		align-items: center;
 		justify-content: space-between;
 		flex: 1 1 auto;
+		order: 2;
+
+		@media only screen and (max-width:$mobile) {
+			order: 3;
+			width: 100vw;
+		}
 
 		.menu-item {
 			display: inline-block;
@@ -53,7 +79,7 @@
 			}
 		}
 		.has-submenu.open .menu-item-heading {
-			border-bottom: 2px solid $blue;
+			border-bottom: 2px solid $rose;
 		}
 		.has-submenu.open .submenu {
 			display: block;
@@ -93,13 +119,17 @@
 	}
 	
 	ul.global-nav-menu li a {
-		color: $blue;
-		font-size: 18px;
+		color: $rose;
+		font-size: 1.125rem;
 		text-decoration: none;
 		border-bottom: 2px solid transparent;
 		&:hover, &:focus {
 			text-decoration: none;
-			border-bottom: 2px solid $blue;
+			border-bottom: 2px solid $rose;
+		}
+
+		@media only screen and (max-width:$tablet) {
+			font-size: 0.874rem;
 		}
 	}		
 }

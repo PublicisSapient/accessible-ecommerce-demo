@@ -1,0 +1,54 @@
+.product-description__title {
+    display: block;
+    line-height: 2.5;
+}
+
+.product-description__price {
+    display: block;
+    line-height: 1.5;
+
+}
+
+.product-description__price-now {
+    display: block;
+}
+
+.product-description__price-was,
+.product-description__price-save {
+    display: block;
+    font-size: 10px;
+    line-height: 1.0;
+}
+
+
+.quantity-comp {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+
+	&__text {
+		text-align: center;
+		border: none;
+		font-size: 14px;
+		display: inline-block;
+		width: 50px;
+		flex-grow: 1;
+	}
+}
+.product-rating__view-button{
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  &:focus{
+      .product-rating__view-all{
+        box-shadow: 0 0 3px rose;
+      }
+  }
+}
+.product-rating__view-all{
+  border: 1px solid #3575FF;
+  color: #FFF;
+  background-color: grey;
+  padding: 10px;
+  display: inline-block;
+}
