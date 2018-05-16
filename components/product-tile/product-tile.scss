@@ -35,9 +35,13 @@ $small-padding: 16px;
 }
 
 .quantity-comp {
-	display: flex;
+	display: none;
 	align-items: center;
 	margin-bottom: 16px;
+
+	&.show {
+		display: flex;
+	}
 
 	&__text {
 		text-align: center;

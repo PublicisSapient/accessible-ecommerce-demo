@@ -1788,9 +1788,12 @@
   text-decoration: underline; }
 
 .quantity-comp {
-  display: flex;
+  display: none;
   align-items: center;
   margin-bottom: 16px; }
+
+.quantity-comp.show {
+  display: flex; }
 
 .quantity-comp__text {
   text-align: center;
