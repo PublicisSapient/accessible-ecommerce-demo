@@ -34,7 +34,7 @@
   outline: 0; }
 
 .product-rating__view-button:focus .product-rating__view-all {
-  box-shadow: 0 0 3px blue; }
+  box-shadow: 0 0 3px rose; }
 
 .product-rating__view-all {
   border: 1px solid #3575FF;
