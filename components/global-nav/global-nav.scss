@@ -7,9 +7,13 @@
 	padding: 25px 0;
 
 	&-logo {
-		@extend .col-md-2;
-		display: inline-block;
-		order: 1;
+		color: #333;
+		text-decoration: none;
+	}
+
+	&-logo img {
+		float: left;
+    	margin: 0 15px 0 10px;
 	}
 
 	&-mini-cart, .mini-cart {
@@ -21,6 +25,15 @@
 			order: 2;
 			padding-right: 0.5em;
 		}
+	}
+
+	&-siteName {
+		font-family: Georgia, Times, Palatino, serif;
+    	font-size: 22px;
+    	font-weight: 600;
+    	max-width: 500px;
+    	line-height: 1.1;
+    	padding: 2px 0 10px 0;
 	}
 
 	.global-nav-menu {
