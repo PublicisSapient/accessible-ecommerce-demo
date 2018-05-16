@@ -2,7 +2,7 @@
 @import '../../scss/flexboxgrid';
 
 .footer {
-	background: $light-grey;
+	background: $beige;
 	padding: 32px 0;
 	font-size: 14px;
 
@@ -101,14 +101,14 @@
 	}
 	&__icon {
 		font-size: 26px;
-		color: $blue;
+		color: $rose;
 		margin-right: 36px;
 		&:hover, &:focus {
-			color: $dark-blue;
+			color: $dark-rose;
 		}
 	}
 	a:hover, &:focus {
-		color: $dark-blue;
+		color: $dark-rose;
 	}
 }
 .input{

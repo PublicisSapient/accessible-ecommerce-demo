@@ -170,7 +170,7 @@ $buttonSize: 2em;
 
 	&__checkout {
 		color: $white;
-		background-color: $blue;
+		background-color: $rose;
 		border: 0;
 		clear: none;
 		padding: 16px;
@@ -179,7 +179,7 @@ $buttonSize: 2em;
 		width: 100%;
 		display: inline-block;
 		&:hover, &:focus {
-			background-color: $dark-blue;
+			background-color: $dark-rose;
 			text-decoration: underline;
 		}
 	}
