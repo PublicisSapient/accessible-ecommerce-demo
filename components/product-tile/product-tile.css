@@ -1787,13 +1787,13 @@
   background-color: #90373D;
   text-decoration: underline; }
 
+.product__cta.hide {
+  display: none; }
+
 .quantity-comp {
   display: none;
   align-items: center;
   margin-bottom: 16px; }
-
-.quantity-comp.hide {
-  display: none; }
 
 .quantity-comp.show {
   display: flex; }

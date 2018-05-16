@@ -31,6 +31,11 @@ $small-padding: 16px;
 			background-color: $dark-rose;
 			text-decoration: underline;
 		}
+
+		&.hide {
+			display: none;
+		}
+
 	}
 }
 
@@ -38,10 +43,6 @@ $small-padding: 16px;
 	display: none;
 	align-items: center;
 	margin-bottom: 16px;
-
-	&.hide {
-		display: none;
-	}
 
 	&.show {
 		display: flex;
