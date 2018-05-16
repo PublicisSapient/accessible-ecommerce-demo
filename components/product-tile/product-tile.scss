@@ -39,6 +39,10 @@ $small-padding: 16px;
 	align-items: center;
 	margin-bottom: 16px;
 
+	&.hide {
+		display: none;
+	}
+
 	&.show {
 		display: flex;
 	}

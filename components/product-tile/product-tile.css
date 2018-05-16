@@ -1792,6 +1792,9 @@
   align-items: center;
   margin-bottom: 16px; }
 
+.quantity-comp.hide {
+  display: none; }
+
 .quantity-comp.show {
   display: flex; }
 
