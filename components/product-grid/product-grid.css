@@ -1770,7 +1770,7 @@
 .productGrid__filters-wrapper {
   padding: 16px;
   font-size: 12px;
-  background-color: #F2F2F2; }
+  background-color: #f4f0ec; }
 
 .productGrid__filters-wrapper h2, .productGrid__filters-wrapper h3 {
   font-size: 14px;
@@ -1848,7 +1848,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #F2F2F2;
+  background-color: #f4f0ec;
   padding: 8px 16px;
   margin-bottom: 16px; }
 
@@ -1882,7 +1882,7 @@
 
 .productGrid__sort-menu ul li {
   padding-left: 24px;
-  color: #3575FF; }
+  color: #B94650; }
 
 .productGrid__sort-menu button {
   padding: 0.5em; }
@@ -1910,8 +1910,7 @@
 
 .productsContainer {
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 -8px; }
+  flex-wrap: wrap; }
 
 .productsContainer .product {
   flex-basis: calc(25% - 16px);
@@ -1941,7 +1940,7 @@
   justify-content: center; }
 
 .pagination__list-item button {
-  color: #3575FF;
+  color: #B94650;
   width: 32px;
   height: 32px;
   border: none;

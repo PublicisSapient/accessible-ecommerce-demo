@@ -22,22 +22,31 @@ $small-padding: 16px;
 
 	&__cta {
 		border: none;
-		background-color: $blue;
+		background-color: $rose;
 		font-size: 14px;
 		color: $white;
 		padding: 8px;
 		cursor: pointer;
 		&:hover, &:focus {
-			background-color: $dark-blue;
+			background-color: $dark-rose;
 			text-decoration: underline;
 		}
+
+		&.hide {
+			display: none;
+		}
+
 	}
 }
 
 .quantity-comp {
-	display: flex;
+	display: none;
 	align-items: center;
 	margin-bottom: 16px;
+
+	&.show {
+		display: flex;
+	}
 
 	&__text {
 		text-align: center;
@@ -49,9 +58,9 @@ $small-padding: 16px;
 	}
 
 	button {
-		border: 1px solid $blue;
+		border: 1px solid $rose;
 		font-size: 22px;
-		color: $blue;
+		color: $rose;
 		width: 36px; // 56px;
 		min-width: 36px; // 56px;
 		height: 32px;
