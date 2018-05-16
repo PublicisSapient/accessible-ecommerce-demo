@@ -1777,28 +1777,20 @@
 
 .product__cta {
   border: none;
-  background-color: #3575FF;
+  background-color: #B94650;
   font-size: 14px;
   color: #FFFFFF;
   padding: 8px;
   cursor: pointer; }
 
 .product__cta:hover, .product__cta:focus {
-  background-color: #2A5FD2;
+  background-color: #90373D;
   text-decoration: underline; }
 
-.product__cta.hide {
-  display: none;
-}
-
 .quantity-comp {
-  display: none;
+  display: flex;
   align-items: center;
   margin-bottom: 16px; }
-
-.quantity-comp.show {
-  display: flex;
-}
 
 .quantity-comp__text {
   text-align: center;
@@ -1809,9 +1801,9 @@
   flex-grow: 1; }
 
 .quantity-comp button {
-  border: 1px solid #3575FF;
+  border: 1px solid #B94650;
   font-size: 22px;
-  color: #3575FF;
+  color: #B94650;
   width: 36px;
   min-width: 36px;
   height: 32px; }
