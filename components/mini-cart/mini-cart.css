@@ -1773,7 +1773,25 @@
   margin-top: 5px;
   font-size: 36px;
   background-color: transparent;
-  border: none; }
+  border: none;
+  position: relative; }
+
+.mini-cart__visible-label--amount, .mini-cart__visible-label--subtotal {
+  position: absolute;
+  text-align: center;
+  color: #000;
+  left: 0;
+  right: 0;
+  font-size: 10px;
+  line-height: 36px;
+  font-weight: bold;
+  font-family: "Helvetica", "Arial", sans-serif; }
+
+.mini-cart__visible-label--amount {
+  top: -17px; }
+
+.mini-cart__visible-label--subtotal {
+  top: 25px; }
 
 .mini-cart__dropdown {
   position: absolute;
