@@ -1762,7 +1762,7 @@
     order: 1; } }
 
 .footer {
-  background: #F2F2F2;
+  background: #f4f0ec;
   padding: 32px 0;
   font-size: 14px; }
 
@@ -1855,14 +1855,14 @@
 
 .footer__icon {
   font-size: 26px;
-  color: #3575FF;
+  color: #B94650;
   margin-right: 36px; }
 
 .footer__icon:hover, .footer__icon:focus {
-  color: #2A5FD2; }
+  color: #90373D; }
 
 .footer a:hover, .footer:focus {
-  color: #2A5FD2; }
+  color: #90373D; }
 
 .input__placeholder-label {
   position: relative; }
