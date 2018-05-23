@@ -19,10 +19,10 @@
 .skip-link {
 	color: transparent;
 	font-size: 12px;
-	height: 0;
+	/*height: 0;*/
 	position: absolute;
    &:focus {
-      color: $blue;
+      color: $rose;
 		height: auto;
 		position: inherit;
 		display: inline-block;
