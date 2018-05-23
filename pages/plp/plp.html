@@ -21,7 +21,7 @@
 	</head>
 	<body class="plp">
 		<!-- Global Nav-->
-		<nav class="navigation">
+		<header class="navigation">
 			<div class="wrapper">
 			<a class="skip-link" id="skip-to-main" href="#skip-to-nav">Skip navigation menu</a>
 			<div class="row">
@@ -29,7 +29,7 @@
 					<img src="https://publicissapient.github.io/accessible-ecommerce/assets/images/ps-logo.gif" alt="Publicis dot Sapient logo" width="50" height="50">
         			<p class="navigation-siteName">P.S Toronto Accessible E-Commerce Demo Store</p>
 				</a>
-				<nav class="global-nav">
+				<nav class="global-nav" aria-label="Primary">
 					<ul class="global-nav-menu">
 						<li class="menu-item has-submenu">
 							<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Women</a>
@@ -205,7 +205,7 @@
 				</div>
 				<a class="skip-link" id="skip-to-nav" href="#skip-to-main">Return to navigation menu</a>
 			</div>
-		</nav>
+		</header>
 
 		<!-- Breadcrumbs-->
 		<section id="breadcrumb">
@@ -235,7 +235,7 @@
 		</section>
 
 		<!-- Product Grid -->
-		<main class="productGrid">
+		<main class="productGrid" aria-label="Content">
 			<div class="wrapper">
 				<div> <!-- was .row -->
 					<section aria-label="Filters" class="productGrid__filters">
@@ -293,27 +293,21 @@
 								</form>
 							</div>
 						</section>
-						<section aria-label="Product Grid" class="productGrid__grid" id="product-grid" name="product-grid" tabindex="-1">
-							<section role="sort" class="productGrid__sort-menu" id="product-sort" name="product-sort" tab-index="-1">
-								<h2 tabindex="0" id="sort-products=">Sort by</h2>
+						<section aria-label="Product Grid" class="productGrid__grid" id="product-grid" name="product-grid" tabindex="-1" aria-describedby="showingNumberProducts__heading">
+							<section class="productGrid__sort-menu" id="product-sort" name="product-sort">
+								<h2 id="sort-products=">Sort by</h2>
 								<ul>
 									<li>
-										<button type="button" name="product-sort" class="sort-option" id="sort-low-high">
-											<label aria-label="Sort products by price, lowest to highest">Price low to high</label>
-										</button>
+										<button type="button" name="product-sort" class="sort-option" id="sort-low-high" aria-label="Sort products by price, lowest to highest">Price low to high</button>
 									</li>
 									<li>
-										<button type="button" name="product-sort" class="sort-option" id="sort-high-low">
-											<label aria-label="Sort products by price, highest to lowest">Price high to low</label>
-										</button>
+										<button type="button" name="product-sort" class="sort-option" id="sort-high-low" aria-label="Sort products by price, highest to lowest">Price high to low</button>
 									</li>
 									<li>
-										<button type="button" name="product-sort" class="sort-option" id="sort-newest">
-											<label aria-label="Sort products from newest to oldest">Newest to Top</label>
-										</button>
+										<button type="button" name="product-sort" class="sort-option" id="sort-newest" aria-label="Sort products from newest to oldest">Newest to Top</button>
 									</li>
 								</ul>
-								<h3 class="productGrid__sort-menu-heading" id="showingNumberProducts__heading" tabindex="-1">Showing products X of X</h3>
+								<div class="productGrid__sort-menu-heading" id="showingNumberProducts__heading">Showing products X of X</div>
 							</section>
 							<section class="productsContainer">
 								<article class="product">
@@ -336,7 +330,7 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity of Turtleneck Sweater by 1" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 								<article class="product">
 									<a class="product__details" href="#">
@@ -358,7 +352,7 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 								<article class="product">
 									<a class="product__details" href="#">
@@ -380,7 +374,7 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 								<article class="product">
 									<a class="product__details" href="#">
@@ -402,7 +396,7 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 								<article class="product">
 									<a class="product__details" href="#">
@@ -424,7 +418,7 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 								<article class="product">
 									<a class="product__details" href="#">
@@ -446,7 +440,7 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 								<article class="product">
 									<a class="product__details" href="#">
@@ -468,7 +462,7 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 								<article class="product">
 									<a class="product__details" href="#">
@@ -490,14 +484,14 @@
 										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</section>
-							<nav aria-label="Product Results Pagination">
+							<nav aria-label="Products list Pagination">
 								<h2 class="visibly-hidden">Pagination</h2>
 								<ol class="pagination__list">
 									<li class="pagination__list-item">
-										<button class="active" aria-label="Go to Page 1" data-go-to-page="1">1</button>
+										<button class="active" aria-label="Current Page 1" data-go-to-page="1">1</button>
 									</li>
 									<li class="pagination__list-item">
 										<button aria-label="Go to Page 2" data-go-to-page="2">2</button>
@@ -550,7 +544,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -576,7 +570,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -602,7 +596,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -628,7 +622,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -654,7 +648,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -680,7 +674,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -706,7 +700,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -732,7 +726,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -758,7 +752,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -784,7 +778,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 							<li class="card">
@@ -810,7 +804,7 @@
 										</span>
 										<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
 									</span>
-									<button class="product__cta" role="button"><label>Add to Cart</label></button>
+									<button class="product__cta">Add to Cart</button>
 								</article>
 							</li>
 						</div>
@@ -827,7 +821,7 @@
 		<footer class="footer clearfix">
 			<div class="wrapper">
 				<div class="row">
-					<nav aria-labelledby="footer-label" class="footer__nav">
+					<nav aria-label="Secondary" class="footer__nav">
 						<h2 id="footer-label" class="footer__heading footer__heading--main element-invisible">Secondary Navigation</h2>
 						<ul class="footer__list footer__list--2-column">
 							<div class="footer__column">
