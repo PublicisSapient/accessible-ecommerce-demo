@@ -1788,10 +1788,10 @@
   font-family: "Helvetica", "Arial", sans-serif; }
 
 .mini-cart__visible-label--amount {
-  top: -17px; }
+  top: 25px; }
 
 .mini-cart__visible-label--subtotal {
-  top: 25px; }
+  top: -10px; }
 
 .mini-cart__dropdown {
   position: absolute;
