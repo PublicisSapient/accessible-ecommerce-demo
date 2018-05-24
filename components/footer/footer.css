@@ -1875,7 +1875,7 @@
   text-align: center;
   line-height: 26px;
   transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  color: #6E6E6E; }
+  color: #636363; }
 
 .input__placeholder-label > input:focus + label, .input__placeholder-label > .edited + label {
   top: 26px;
