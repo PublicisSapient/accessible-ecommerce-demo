@@ -12,13 +12,20 @@
   margin-right: 0.5em; }
 
 .pdp #content .row {
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap; 
+  justify-content: space-around; }
 
 .pdp .wrapper {
   box-sizing: border-box;
   width: 100%;
   max-width: inherit;
   margin: inherit; }
+
+.pdp li {
+  list-style: none; }
+
+.pdp .product-description {
+  width: 45%; }
   
 /* Photo Gallery Style Starts */
 .modal-overlay {
@@ -166,10 +173,10 @@
 
 .accordion {
   padding: 0;
-  margin: 0; }
+  margin: 0 auto; }
 
 .accordion-panel {
-  list-style: none;
+  /* list-style: none; */
   border: 1px #c5c5c5 solid; }
 
 .accordion-panel_heading button {
@@ -204,8 +211,10 @@
 
 .accordion-panel_content {
   visibility: hidden;
+  display: none;
   padding: 15px; }
 
 .accordion-panel_content.accordion--open {
-  visibility: visible; }
+  visibility: visible; 
+  display: block; }
 /* Accordion Sizing Tables Reviews Style Ends */
