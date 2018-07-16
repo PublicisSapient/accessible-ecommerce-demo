@@ -1,19 +1,21 @@
 @import '../../scss/variables';
-@import '../../scss/flexboxgrid';
 
 /* Mobile Styles */
 .navigation {
 	background-color: $beige;
 	padding: 25px 0;
 
-	&-logo {
-		color: #333;
-		text-decoration: none;
+	&__items{
+		display: flex;
 	}
 
-	&-logo img {
-		float: left;
-    	margin: 0 15px 0 10px;
+	&__logo {
+		color: #333;
+		text-decoration: none;
+		& img{
+			float: left;
+			margin: 0 15px 0 0;
+		}
 	}
 
 	&-mini-cart, .mini-cart {
@@ -27,33 +29,19 @@
 		}
 	}
 
-	&-siteName {
+	&__siteName {
 		font-family: Georgia, Times, Palatino, serif;
     	font-size: 22px;
     	font-weight: 600;
-    	max-width: 500px;
+    	width: 400px;
     	line-height: 1.1;
     	padding: 2px 0 10px 0;
 	}
 
-	.global-nav-menu {
-		list-style: none;
-		display: flex;
-		padding: 0;
-		width: 100%;
-		justify-content: space-around; // space-between;
-		align-items: center;
-		text-align: center;
-	}
-
 	.global-nav {
-		@extend .col-md-offset-1;
-		@extend .col-md-7;
-		
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		flex: 1 1 auto;
 		order: 2;
 
 		@media only screen and (max-width:$mobile) {
@@ -61,14 +49,31 @@
 			width: 100vw;
 		}
 
-		.menu-item {
-			display: inline-block;
-			flex: 1 1 0;
-			text-align: center;
+		&__items{
+			display: flex;
+			list-style: none;
 		}
-		.menu-item a {
-			display: inline-block;
+
+		&__item {
+			display: block;
+			padding: $grid-unit $grid-unit * 3;
+			text-align: left;
+			a{
+				display: inline-block;
+				color: $rose;
+				font-size: 1.125rem;
+				text-decoration: none;
+				border-bottom: 2px solid transparent;
+				&:hover, &:focus {
+					text-decoration: none;
+					border-bottom: 2px solid $rose;
+				}
+				@media only screen and (max-width:$tablet) {
+					font-size: 0.874rem;
+				}
+			}
 		}
+
 		.has-submenu {
 			position: relative;
 		}
@@ -86,11 +91,12 @@
 			position: absolute;
 			padding: 17px;
 			width: 220px;
-			left: -50%;
-			margin: 42px 24px 0 12px;;
+			left: calc(50% - 12px);
+			margin: 42px 12px 0 12px;;
 			background: $white;
 			box-shadow: 0 4px 14px 2px rgba(0,0,0,0.31);
 			z-index: 100;
+			transform: translateX(-50%);
 			&:before {
 				top: 0;
 				left: 50%;
@@ -111,14 +117,13 @@
 		}
 	}
 
-	ul.global-nav-menu li {
+	/* .global-nav__menu-item {
 		display: block;
-		padding: 8px 5px;
-		border: none;
+		padding: $grid-unit $grid-unit * 3;
 		text-align: left;
-	}
-	
-	ul.global-nav-menu li a {
+	} */
+
+	.global-nav-menu li a {
 		color: $rose;
 		font-size: 1.125rem;
 		text-decoration: none;
@@ -131,7 +136,7 @@
 		@media only screen and (max-width:$tablet) {
 			font-size: 0.874rem;
 		}
-	}		
+	}
 }
 
 
