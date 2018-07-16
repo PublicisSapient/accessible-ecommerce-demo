@@ -1,0 +1,12 @@
+// @import _variables.scss
+@import 'variables';
+
+.wrapper, .container{
+    max-width: $max-width;
+    padding: 16px;
+    margin: 0 auto;
+    background: rgba(172, 65, 56, 0.05 );
+}
+.flex-row{
+    display: flex;
+}

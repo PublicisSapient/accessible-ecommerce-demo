@@ -3,7 +3,7 @@
 /* Global Styles */
 /* COLOURS */
 @import url("helpers.css");
-@import url("flexboxgrid.css");
+@import url("grid.css");
 /* Component Styles */
 @import url("../components/global-nav/global-nav.css");
 @import url("../components/breadcrumb/breadcrumb.css");
