@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="../../css/global.css">
 		<link rel="stylesheet" href="plp.css">
-		<link rel="stylesheet" href="../../css/plp.css">
+    <link rel="stylesheet" href="../../css/plp.css">
+    <link rel="stylesheet" href="search.css">
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119335407-1"></script>
 		<script>
@@ -236,12 +237,15 @@
 		</section>
 
 		<!-- Search Results -->
-		<main class="searchResult" aria-label="Content">
+		<section class="searchResult">
       <!-- Seach Bar -->
-      <section>
-        <p>Search!!</p>
-      </section>
-		</main>
+      <form role="search">
+        <label for="search-input" class="search-label">Search for products</label>
+        <input type="text" id="search-input" placeholder="Search for anything"/>
+        <input type="submit" value="Search">
+      </form>
+      <span id="search-liveUpdates" aria-live="assertive"></span>
+    </section>
 		<footer class="footer clearfix">
 			<div class="wrapper">
 				<div class="row">
