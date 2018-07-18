@@ -7,14 +7,19 @@
 
 	&__items{
 		display: flex;
+		align-items: flex-end;
 	}
 
 	&__logo {
+		align-items: center;
 		color: #333;
+		display: flex;
 		text-decoration: none;
-		& img{
-			float: left;
-			margin: 0 15px 0 0;
+		img{
+			margin-right: $grid-unit * 2;
+		}
+		&:hover{
+			text-decoration: none;
 		}
 	}
 
@@ -32,10 +37,9 @@
 	&__siteName {
 		font-family: Georgia, Times, Palatino, serif;
     	font-size: 22px;
-    	font-weight: 600;
-    	width: 400px;
-    	line-height: 1.1;
-    	padding: 2px 0 10px 0;
+    	font-weight: bold;
+		line-height: 1.1;
+		margin-right: $grid-unit * 4;
 	}
 
 	.global-nav {
@@ -56,12 +60,11 @@
 
 		&__item {
 			display: block;
-			padding: $grid-unit $grid-unit * 3;
+			padding: $grid-unit $grid-unit * 3 $grid-unit / 2;
 			text-align: left;
 			a{
 				display: inline-block;
-				color: $rose;
-				font-size: 1.125rem;
+				font-size: 1.8rem;
 				text-decoration: none;
 				border-bottom: 2px solid transparent;
 				&:hover, &:focus {
@@ -80,7 +83,7 @@
 		.has-submenu .submenu {
 			display: none;
 			a {
-				font-size: 14px;
+				font-size: 1.4rem;
 			}
 		}
 		.has-submenu.open .menu-item-heading {
@@ -114,27 +117,6 @@
 				transform: rotate(-225deg);
     			box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.11);
 			}
-		}
-	}
-
-	/* .global-nav__menu-item {
-		display: block;
-		padding: $grid-unit $grid-unit * 3;
-		text-align: left;
-	} */
-
-	.global-nav-menu li a {
-		color: $rose;
-		font-size: 1.125rem;
-		text-decoration: none;
-		border-bottom: 2px solid transparent;
-		&:hover, &:focus {
-			text-decoration: none;
-			border-bottom: 2px solid $rose;
-		}
-
-		@media only screen and (max-width:$tablet) {
-			font-size: 0.874rem;
 		}
 	}
 }

@@ -1,9 +1,23 @@
 /* COLOURS */
+/*
+=========================================== FONT SIZES
+
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
 .wrapper, .container {
   max-width: 1200px;
-  padding: 16px;
-  margin: 0 auto;
-  background: rgba(172, 65, 56, 0.05); }
+  padding: 0 16px;
+  margin: 0 auto; }
 
 .flex-row {
   display: flex; }
+
+.two-col > * {
+  width: 50%; }
+
+.gutters {
+  justify-content: space-between; }
+  .gutters.two-col > * {
+    width: calc(50% - 8px); }

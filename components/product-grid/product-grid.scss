@@ -1,5 +1,5 @@
 @import '../../scss/variables';
-@import '../../scss/flexboxgrid';
+// @import '../../scss/flexboxgrid';
 
 .productGrid {
 	width: 100%;
@@ -9,7 +9,7 @@
 	}
 
 	&__filters {
-		@extend .col-md-2;
+		// @extend .col-md-2;
 
 		&-wrapper {
 			padding: 16px;
@@ -17,7 +17,7 @@
 			background-color: $beige;
 
 			h2, h3 {
-				font-size: 14px;
+				font-size: 1.4rem;
 				margin-bottom: 8px;
 			}
 		}
@@ -40,7 +40,7 @@
 		}
 		
 		&-clear {
-			font-size: 14px;
+			font-size: 1.4rem;
 			border: 1px solid $black;
 			width: 100%;
 			background-color: transparent;
@@ -132,7 +132,7 @@
 
 		fieldset {
 			border: none;
-			font-size: 14px;
+			font-size: 1.4rem;
 		}
 		legend {
 			float: left;
@@ -170,10 +170,8 @@
 
 	}
 
-
-
 	&__grid {
-		@extend .col-md-8;
+		// @extend .col-md-8;
 		margin-bottom: 48px;
 		flex-basis: inherit;
 		max-width: inherit;
@@ -247,21 +245,6 @@
 	padding: 2px;
 	display: inline-block;
 }
-
-// .skip-link a {
-// 	position:absolute;
-// 	left:-10000px;
-// 	top:auto;
-// 	width:1px;
-// 	height:1px;
-// 	overflow:hidden;
-// }
-
-// .skip-link a:focus {
-// 	position:static;
-// 	width:auto;
-// 	height:auto;
-// }
 
 /* Mobile Styles */
 

@@ -1,0 +1,47 @@
+@import 'variables';
+
+.btn{
+    font-size: $font-sm;
+    padding: $grid-unit * 2;
+    border: 1px solid transparent;
+    cursor: pointer;
+    line-height: 1;
+    &:disabled{
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    &:hover{
+        text-decoration: underline;
+    }
+    &--primary{
+        background:$rose;
+        color: white;
+
+        &:hover, &:focus{
+            color:white;
+            background: $dark-rose;
+        }
+    }
+    &--black{
+        background: $black;
+        color: white;
+    }
+    &--block{
+        display: block;
+        width: 100%;
+    }
+    &--outline-primary{
+        color: $rose;
+        border: 1px solid $rose;
+        &:hover, &:focus{
+            color: $dark-rose;
+            border-color: $dark-rose;
+        }
+    }
+    &--icon{
+        font-size: 3rem;
+        padding: $grid-unit;
+        min-width: 48px;
+    }
+}
+

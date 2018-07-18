@@ -1,10 +1,19 @@
 /* Font */
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-/* Global Styles */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+/* SASS Variables */
 /* COLOURS */
+/*
+=========================================== FONT SIZES
+
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
+/* Global Styles */
 @import url("helpers.css");
 @import url("grid.css");
-/* Component Styles */
+@import url("buttons.css");
+@import url("inputs.css");
 @import url("../components/global-nav/global-nav.css");
 @import url("../components/breadcrumb/breadcrumb.css");
 @import url("../components/mini-cart/mini-cart.css");
@@ -14,13 +23,31 @@
 @import url("../components/footer/footer.css");
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
   padding: 0;
   margin: 0; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; }
+
+fieldset {
+  border: 0; }
+
 a {
-  color: #B94650; }
+  color: #B94650;
+  text-decoration: none; }
+  a:hover {
+    color: #90373D;
+    text-decoration: underline; }
+
+p {
+  line-height: 1.3; }
+
+html {
+  font-size: 62.5%; }
 
 body {
-  font-size: 16px; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em; }
+
+/* Component Styles */

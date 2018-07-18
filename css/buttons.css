@@ -1,0 +1,41 @@
+/* COLOURS */
+/*
+=========================================== FONT SIZES
+
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
+.btn {
+  font-size: 1.4rem;
+  padding: 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  line-height: 1; }
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed; }
+  .btn:hover {
+    text-decoration: underline; }
+  .btn--primary {
+    background: #B94650;
+    color: white; }
+    .btn--primary:hover, .btn--primary:focus {
+      color: white;
+      background: #90373D; }
+  .btn--black {
+    background: #19191E;
+    color: white; }
+  .btn--block {
+    display: block;
+    width: 100%; }
+  .btn--outline-primary {
+    color: #B94650;
+    border: 1px solid #B94650; }
+    .btn--outline-primary:hover, .btn--outline-primary:focus {
+      color: #90373D;
+      border-color: #90373D; }
+  .btn--icon {
+    font-size: 3rem;
+    padding: 8px;
+    min-width: 48px; }

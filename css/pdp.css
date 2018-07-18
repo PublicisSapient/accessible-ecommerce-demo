@@ -1,32 +1,27 @@
-.pdp .row {
-  max-width: inherit;
-  margin: inherit; }
-  
-.pdp .navigation .row {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  justify-content: space-between; }
+/* COLOURS */
+/*
+=========================================== FONT SIZES
 
-.pdp #breadcrumb .row {
-  margin-left: 0.5em;
-  margin-right: 0.5em; }
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
+/* COLOURS */
+/*
+=========================================== FONT SIZES
 
-.pdp #content .row {
-  flex-wrap: nowrap; 
-  justify-content: space-around; }
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
+.product-details {
+  margin-bottom: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex; }
+  .product-details > * {
+    width: calc(50% - 8px); }
 
-.pdp .wrapper {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: inherit;
-  margin: inherit; }
-
-.pdp li {
-  list-style: none; }
-
-.pdp .product-description {
-  width: 45%; }
-  
 /* Photo Gallery Style Starts */
 .modal-overlay {
   z-index: 2;
@@ -106,28 +101,33 @@
 
 .gallery__main-image__zoom {
   position: absolute;
-  bottom: 5px;
-  right: 5px; }
+  width: 100%;
+  bottom: 4px;
+  left: 0;
+  display: flex; }
 
-.gallery__main-image__zoom button {
-  font-size: 20px;
-  padding: 5px; }
+.gallery__minimize {
+  margin-left: auto; }
 
 .gallery__thumbnail-list {
   margin-top: 10px;
   list-style: none;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  overflow: hidden; }
+
+.gallery__thumbnail-list-item {
+  flex: 1 0 20%; }
 
 .gallery__thumbnail-list button {
-  width: 65px;
-  height: 65px; }
+  border: 0; }
 
 .gallery__thumbnail-list button img {
   max-width: 100%;
   max-height: 100%;
   height: auto;
-  width: auto; }
+  width: auto;
+  display: block; }
 
 @media only screen and (min-width: 600px) {
   .gallery {
@@ -140,8 +140,8 @@
     height: 100px; }
   .gallery__thumbnail-list {
     margin-top: 20px; } }
-/* Photo Gallery Style Ends */
 
+/* Photo Gallery Style Ends */
 /* Accordion Sizing Tables Reviews Style Starts */
 #toggle-size-units-button {
   padding: 10px 0;
@@ -171,37 +171,33 @@
   font-size: 1.3em;
   min-width: 90px; }
 
-.accordion {
-  padding: 0;
-  margin: 0 auto; 
-  width: 85%; }
-
 .accordion-panel {
-  /* list-style: none; */
-  border: 1px #c5c5c5 solid; }
+  list-style: none;
+  margin-bottom: 16px; }
 
 .accordion-panel_heading button {
-  border-bottom: 1px #c5c5c5 solid;
-  background-color: #c5c5c5;
+  border-width: 1px;
+  border-color: #19191E;
+  background-color: white;
   width: 100%;
   text-align: left;
-  padding: 10px;
-  font-size: 16px;
+  padding: 16px;
+  font-size: 1.4rem;
   position: relative;
   cursor: pointer; }
 
 .accordion-panel_heading button:after {
   content: '';
   position: absolute;
-  right: 15px;
+  right: 32px;
   top: 15px;
   border-style: solid;
   border-width: 0.12em 0.12em 0 0;
   display: inline-block;
-  height: 0.45em;
+  height: 0.75em;
   transform: rotate(135deg);
   vertical-align: top;
-  width: 0.45em;
+  width: 0.75em;
   transition: transform 1s; }
 
 .accordion-panel_heading.accordion--open button {
@@ -216,6 +212,7 @@
   padding: 15px; }
 
 .accordion-panel_content.accordion--open {
-  visibility: visible; 
+  visibility: visible;
   display: block; }
+
 /* Accordion Sizing Tables Reviews Style Ends */

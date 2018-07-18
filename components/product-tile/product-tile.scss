@@ -1,5 +1,5 @@
 @import '../../scss/variables';
-@import '../../scss/flexboxgrid';
+// @import '../../scss/flexboxgrid';
 
 $dollar-size: 14px;
 $cent-size: 12px;
@@ -17,13 +17,13 @@ $small-padding: 16px;
 	
 	&__heading {
 		margin: 16px 0;
-		font-size: 14px;
+		font-size: 1.4rem;
 	}
 
 	&__cta {
 		border: none;
 		background-color: $rose;
-		font-size: 14px;
+		font-size: 1.4rem;
 		color: $white;
 		padding: 8px;
 		cursor: pointer;
@@ -51,20 +51,20 @@ $small-padding: 16px;
 	&__text {
 		text-align: center;
 		border: none;
-		font-size: 14px;
+		font-size: 1.4rem;
 		display: inline-block;
 		width: 50px;
 		flex-grow: 1;
 	}
 
-	button {
+	/* button {
 		border: 1px solid $rose;
 		font-size: 22px;
 		color: $rose;
 		width: 36px; // 56px;
 		min-width: 36px; // 56px;
 		height: 32px;
-	}
+	} */
 }
 
 .price {

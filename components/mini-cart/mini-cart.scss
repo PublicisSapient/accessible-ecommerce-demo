@@ -1,10 +1,7 @@
 @import '../../scss/variables';
-@import '../../scss/flexboxgrid';
 
 $buttonSize: 2em;
 .mini-cart {
-	@extend .col-md-offset-1;
-	@extend .col-md-1;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -12,6 +9,8 @@ $buttonSize: 2em;
 
 	width: 3em;
 	height: 3em;
+
+	margin-left: auto;
 
 	&__toggle {
 		margin-top: 5px;
@@ -21,13 +20,13 @@ $buttonSize: 2em;
 		position: relative;
 	}
 
-	&__visible-label { 
+	&__visible-label {
 		&--amount,
 		&--subtotal {
 			position: absolute;
 			text-align: center;
 			color: #000;
-			
+
 			left: 0;
 			right: 0;
 			font-size: 10px;
@@ -85,7 +84,7 @@ $buttonSize: 2em;
 	&__features, &__prices {
 		width: 30%;
 		margin: 0;
-		font-size: 14px;
+		font-size: 1.4rem;
 		color: $black;
 		line-height: 22px;
 	}
@@ -115,7 +114,7 @@ $buttonSize: 2em;
 
 	&__quantity {
 		margin-top: 0;
-		font-size: 14px;
+		font-size: 1.4rem;
 		font-weight: 300;
 	}
 
@@ -144,7 +143,7 @@ $buttonSize: 2em;
 	}
 
 	&__item-title {
-		font-size: 14px;
+		font-size: 1.4rem;
 		line-height: 22px;
 		margin-top: 0;
 	}
@@ -157,7 +156,7 @@ $buttonSize: 2em;
 		border-top: 1px solid $grey;
 		padding-top: 24px;
 		width: 100%;
-		
+
 	}
 
 	&__summary-subtotal {
@@ -168,7 +167,7 @@ $buttonSize: 2em;
 
 	&__subtotal-title {
 		float: left;
-		font-size: 14px;
+		font-size: 1.4rem;
 		line-height: 22px;
 	}
 
@@ -194,19 +193,7 @@ $buttonSize: 2em;
 	}
 
 	&__checkout {
-		color: $white;
-		background-color: $rose;
-		border: 0;
-		clear: none;
-		padding: 16px;
-		text-decoration: none;
 		text-align: center;
-		width: 100%;
-		display: inline-block;
-		&:hover, &:focus {
-			background-color: $dark-rose;
-			text-decoration: underline;
-		}
 	}
 
 }

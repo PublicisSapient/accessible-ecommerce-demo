@@ -1,12 +1,20 @@
-// @import _variables.scss
 @import 'variables';
 
 .wrapper, .container{
     max-width: $max-width;
-    padding: 16px;
+    padding: 0 $grid-unit * 2;
     margin: 0 auto;
-    background: rgba(172, 65, 56, 0.05 );
+    // background: rgba(172, 65, 56, 0.05 );
 }
 .flex-row{
     display: flex;
+}
+.two-col > *{
+    width: 50%;
+}
+.gutters{
+    justify-content: space-between;
+    &.two-col > *{
+        width: calc(50% - #{$grid-unit});
+    }
 }

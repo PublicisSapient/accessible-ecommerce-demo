@@ -1,10 +1,9 @@
 @import '../../scss/variables';
-@import '../../scss/flexboxgrid';
 
 .footer {
 	background: $beige;
 	padding: 32px 0;
-	font-size: 14px;
+	font-size: 1.4rem;
 
 	.row{
 		justify-content: space-between;
@@ -18,13 +17,14 @@
 	&__nav {
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 8px;
+		flex: 1 1 auto;
+		position: relative;
 	}
 
 	&__heading {
 		&--newsletter {
 			padding: 5px;
-			font-size: 22px;
+			font-size: $font-lg;
 			margin: 0 0 16px;
 		}
 	}
@@ -32,10 +32,6 @@
 		list-style: none;
 		display: inline-block;
 		padding: 0;
-		&--2-column {
-			columns: 2;
-			margin-bottom: 20px;
-		}
 		&--legal {
 			width: 100%;
 			font-size: 12px;
@@ -48,9 +44,14 @@
 			}
 		}
 		&--social-links {
-			margin-top: 25px;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			display: flex;
+			width: 50%;
 		}
 	}
+
 	&__form {
 		display: flex;
 		flex-direction: column;
@@ -67,11 +68,11 @@
 			border: none;
 			border-bottom: 1px solid $black;
 			color: $black;
-			font-size: 14px;
-			line-height: 16px;
+			font-size: 1.4rem;
+			line-height: 1.6rem;
 		}
 		&-submit {
-			font-size: 14px;
+			font-size: 1.4rem;
 			border: 1px solid $black;
 			width: 224px;
 			background-color: transparent;
@@ -89,6 +90,11 @@
 		padding: 5px 0;
 		&--social-media {
 			display: inline-block;
+			flex-basis: 60px;
+			a{
+				width: 24px;
+				text-align: center;
+			}
 		}
 	}
 	&__column {
@@ -100,15 +106,26 @@
 		/* IE 10+ */
 	}
 	&__icon {
-		font-size: 26px;
+		font-size: 3.6rem;
 		color: $rose;
 		margin-right: 36px;
 		&:hover, &:focus {
 			color: $dark-rose;
 		}
+
 	}
 	a:hover, &:focus {
 		color: $dark-rose;
+	}
+}
+.secondary-nav{
+	display: flex;
+	height: 170px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 100%;
+	&__link{
+		width: 50%;
 	}
 }
 .input{

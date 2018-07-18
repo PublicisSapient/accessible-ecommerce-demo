@@ -19,3 +19,19 @@ $tablet: 1024px;
 
 $grid-unit: 8px;
 $max-width: 1200px;
+
+$input-size: 24px;
+
+/*
+=========================================== FONT SIZES
+
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
+$font-xxl: 4.2rem;
+$font-xl: 3.6rem;
+$font-lg: 1.8rem;
+$font-md: 1.6rem;
+$font-sm: 1.4rem;
+$font-xs: 1.2rem;
