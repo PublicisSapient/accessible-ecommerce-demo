@@ -11,8 +11,50 @@
         width: calc(70% - #{$grid-unit});
     }
     &__sidebar{
-        width: calc(30% - #{$grid-unit});
-    }
+		width: calc(30% - #{$grid-unit});
+		position: sticky;
+		align-self: flex-start;
+		top: 0;
+	}
+	&__sign-in{
+		margin-bottom: $grid-unit * 2;
+	}
+
+	.billing-address-hidden {
+		display: none;
+	}
+
+	label,
+	input {
+		display: block;
+		width: 100%;
+	}
+
+	input {
+		padding: 5px;
+	}
+
+	label {
+		margin-top: 5px;
+	}
+
+	checkbox__label,
+	checkbox__input {
+		display: inline-block;
+	}
+
+	&__button {
+		width: 224px;
+		border: 1px solid #19191E;
+		background: transparent;
+		padding: 16px;
+		cursor: pointer;
+	}
+
+	&__button:hover,
+	&__button:focus {
+		background: #CCC;
+	}
 }
 
 .checkout-mini-cart {

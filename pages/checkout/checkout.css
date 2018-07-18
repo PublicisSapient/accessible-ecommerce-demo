@@ -20,7 +20,41 @@ body is set to 1.6rem in global.scss
   width: calc(70% - 8px); }
 
 .checkout__sidebar {
-  width: calc(30% - 8px); }
+  width: calc(30% - 8px);
+  position: sticky;
+  align-self: flex-start;
+  top: 0; }
+
+.checkout__sign-in {
+  margin-bottom: 16px; }
+
+.checkout .billing-address-hidden {
+  display: none; }
+
+.checkout label,
+.checkout input {
+  display: block;
+  width: 100%; }
+
+.checkout input {
+  padding: 5px; }
+
+.checkout label {
+  margin-top: 5px; }
+
+.checkout checkbox__label,
+.checkout checkbox__input {
+  display: inline-block; }
+
+.checkout__button {
+  width: 224px;
+  border: 1px solid #19191E;
+  background: transparent;
+  padding: 16px;
+  cursor: pointer; }
+
+.checkout__button:hover, .checkout__button:focus {
+  background: #CCC; }
 
 .checkout-mini-cart {
   position: relative; }

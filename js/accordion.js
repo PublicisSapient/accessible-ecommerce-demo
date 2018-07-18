@@ -37,3 +37,10 @@ accordionPanels.forEach(function(accordionPanel) {
 	setAriaLabelForButton(accordionPanel);
 	button.addEventListener('click', onClickToggleAccordionPanel(accordionPanel));
 });
+
+var accordionPanels2 = document.querySelectorAll('.accordion-panel2');
+accordionPanels2.forEach(function(accordionPanel) {
+	var button = accordionPanel.querySelector('button');
+	setAriaLabelForButton(accordionPanel);
+	button.addEventListener('click', onClickToggleAccordionPanel(accordionPanel));
+});

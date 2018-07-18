@@ -137,8 +137,7 @@
 							<p class="mini-cart__quantity">2 item</p>
 							<ul class="mini-cart__item-list">
 								<li class="mini-cart__item">
-									<a class="mini-cart__item-link" href="https://placeholder.com"
-										aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
+									<a class="mini-cart__item-link" href="https://placeholder.com" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
 										<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">
 										<p class="mini-cart__item-title">Shirt Malo</p>
 										<div>
@@ -239,14 +238,14 @@
 		<!-- Breadcrumbs Ends -->
 
 		<!-- Main Contents Starts -->
-		<div id="content">
+		<div id="content" class="checkout">
 			<div class="wrapper">
 				<div class="checkout__content">
 					<div class="checkout__forms">
-						<ul class="accordion">
-							<li class="accordion-panel">
+						<ul class="accordion checkout__sign-in">
+							<li class="accordion-panel2">
 								<div class="accordion-panel_heading">
-									<button aria-label="Show Product Description" data-open-aria-label="Show Product Description" data-hide-aria-label="Hide Product Description">Click here to sign in</button>
+									<button aria-label="Show Login Form" data-open-aria-label="Show Login Form" data-hide-aria-label="Hide Login Form">Returning Customer? Sign In</button>
 								</div>
 								<div class="accordion-panel_content">
 									<form action="">
@@ -254,9 +253,9 @@
 										<input type="text" name="username">
 										<label for="password">Password</label>
 										<input type="text" name="password">
-										<button>Show Password</button>
+										<button type="button">Show Password</button>
 										<a href="#">Forgot Password?</a>
-										<button type="submit">Sign In</button>
+										<button class="checkout__button" type="submit">Sign In</button>
 									</form>
 								</div>
 							</li>
@@ -266,11 +265,11 @@
 							<!-- Checkout Accordion Starts -->
 							<div class="checkout-accordion">
 								<ul class="accordion">
-									<li class="accordion-panel">
-										<div class="accordion-panel_heading">
-											<button aria-label="Show Product Description" data-open-aria-label="Show Product Description" data-hide-aria-label="Hide Product Description">1. Shipping</button>
+									<li class="accordion-panel" id="shipping-accordion-panel">
+										<div class="accordion-panel_heading accordion--open">
+											<button type="button" aria-label="Show Product Description" data-open-aria-label="Show Product Description" data-hide-aria-label="Hide Product Description">1. Shipping</button>
 										</div>
-										<div class="accordion-panel_content">
+										<div class="accordion-panel_content accordion--open">
 											<h2>Shipping</h2>
 											<label for="first-name">First Name</label>
 											<input type="text" name="first-name">
@@ -278,32 +277,90 @@
 											<input type="text" name="last-name">
 											<label for="email">Email</label>
 											<input type="email" name="email">
-											<label for="address-line-1">Address Line 1</label>
-											<label for="address-line-2">Address Line 2</label>
-											<label for="city">City</label>
-											<label for="province">Province</label>
-											<label for="postal-code">Postal Code</label>
+											<div class="shipping-address">
+												<label for="shipping-address-line-1">Address Line 1</label>
+												<input type="text" name="shipping-address-line-1" id="shipping-address-line-1">
+												<label for="shipping-address-line-2">Address Line 2</label>
+												<input type="text" name="shipping-address-line-2" id="shipping-address-line-2">
+												<label for="shipping-city">City</label>
+												<input type="text" name="shipping-city" id="shipping-city">
+												<label for="shipping-province">Province</label>
+												<input type="text" name="shipping-province" id="shipping-province">
+												<label for="shipping-postal-code">Postal Code</label>
+												<input type="text" name="shipping-postal-code" id="shipping-postal-code">
+											</div>
 
-											div.billing-address																																												
+											<input type="checkbox" name="same-as-shipping" class="checkbox__input" checked="true" id="same-as-shipping">
+											<label for="same-as-shipping" class="checkbox__label">Billing address same as Shipping address</label>
+
+											<div class="billing-address billing-address-hidden" id="billing-address">
+												<label for="billing-address-line-1">Address Line 1</label>
+												<input type="text" name="billing-address-line-1" id="billing-address-line-1">
+												<label for="billing-address-line-2">Address Line 2</label>
+												<input type="text" name="billing-address-line-2" id="billing-address-line-2">
+												<label for="billing-city">City</label>
+												<input type="text" name="billing-city" id="billing-city">
+												<label for="billing-province">Province</label>
+												<input type="text" name="billing-province" id="billing-province">
+												<label for="billing-postal-code">Postal Code</label>
+												<input type="text" name="billing-postal-code" id="billing-postal-code">
+											</div>
+
+											<button class="checkout__button" type="button" id="go-to-payment-details">Next</button>
 										</div>
 									</li>
-									<li class="accordion-panel">
+									<li class="accordion-panel" id="payment-details-accordion-panel">
 										<div class="accordion-panel_heading">
-											<button aria-label="Show size chart" data-open-aria-label="Show Size Chart" data-hide-aria-label="Hide Size Chart">2. Billing</button>
-										</div>
-										<div class="accordion-panel_content">
-											<h2>Billing</h2>
-											<p>Here is a bunch of stufff <a href="#">Click here</a></p>
-										</div>
-									</li>
-									<li class="accordion-panel">
-										<div class="accordion-panel_heading">
-											<button aria-label="Show care instructions" data-open-aria-label="Show care instructions" data-hide-aria-label="Hide care instructions">2. Payment Details</button>
+											<button type="button" aria-label="Show Payment Details" data-open-aria-label="Show Payment Details" data-hide-aria-label="Hide Payment Details">2. Payment Details</button>
 										</div>
 										<div class="accordion-panel_content">
 											<h2>Payment Details</h2>
+											<p>Accepted Cards:
+												<ul class="element-invisible">
+													<li>Visa</li>
+													<li>Mastercard</li>
+													<li>American Express</li>
+												</ul>
+											</p>
+											<img src="http://via.placeholder.com/40x30?text=VISA" alt=""> <img src="http://via.placeholder.com/40x30?text=MC" alt=""> <img src="http://via.placeholder.com/40x30?text=AMEX" alt="">
+											<br>
 											<label for="credit-card-number">Credit Card Number</label>
-un											
+											<input id="credit-card-number" type="text">
+											<br>
+											<fieldset>
+												<legend>Expiry Date</legend>
+												<label for="credit-card-expiry-month" class="element-invisible">Month</label>
+												<select name="expiry-month" id="credit-card-expiry-month">
+													<option value="">Month</option>
+													<option value="01">01</option>
+													<option value="02">02</option>
+													<option value="03">03</option>
+													<option value="04">04</option>
+													<option value="05">05</option>
+													<option value="06">06</option>
+													<option value="07">07</option>
+													<option value="08">08</option>
+													<option value="09">09</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+												</select>
+												<label for="credit-card-expiry-year" class="element-invisible">Year</label>
+												<select name="credit-card-expiry-year" id="credit-card-expiry-year">
+													<option value="">Year</option>
+													<option value="">2019</option>
+													<option value="">2020</option>
+													<option value="">2021</option>
+													<option value="">2022</option>
+													<option value="">2023</option>
+													<option value="">etc.</option>
+												</select>
+											</fieldset>
+											<br>
+											<label for="credit-card-pin">PIN</label> <button type="button">? Help</button>
+											<input id="credit-card-pin" type="text">
+											<br>
+											<button class="checkout__button" type="submit">Submit Order</button>
 										</div>
 									</li>
 								</ul>
@@ -321,7 +378,7 @@ un
 
 						<!-- Checkout Mini Cart Starts -->
 						<div class="checkout-mini-cart">
-							<h2 class="mini-cart__title">Shopping Cart</h2>
+							<h2 class="mini-cart__title">Order Summary</h2>
 							<p class="mini-cart__quantity">2 item</p>
 							<ul class="mini-cart__item-list">
 								<li class="mini-cart__item">
