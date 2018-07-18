@@ -1,0 +1,63 @@
+@import '../../scss/variables';
+@import '../../scss/flexboxgrid';
+
+.cart-footer {
+    padding: 8px;
+    width: 100%;
+
+
+    &__complementary-info {
+        width: 50%;
+        float: left;
+    }
+
+    &__credit-card {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+
+    &__credit-card--list-item {
+        display: inline-block;
+    }
+
+    &__column {
+        
+        width: 50%;
+        float: left;
+        height: 200px;
+        padding: 40px 8px 8px 8px;
+
+        &:after {
+            content: " ";
+            display: table;
+            clear: both;
+        }
+
+        &--image {
+            height: 60px;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+    }
+
+    [role="definition"], [role="term"] {
+        display: inline;
+    }
+
+    
+    [role="term"] {
+        font-weight:bold;
+    }
+
+    
+    [role="definition"] {
+        font-style: italic;
+
+        &:after {
+            content: "\A";
+            white-space: pre;
+        }
+    }
+
+}

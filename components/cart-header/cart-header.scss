@@ -1,0 +1,26 @@
+@import '../../scss/variables';
+@import '../../scss/flexboxgrid';
+
+.cart-header {
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+
+    &__heading {
+        margin-bottom: 10px;
+    }
+
+    &__button {
+        background: black;
+        color: white; 
+    }
+
+    &__button {
+        display: inline-block;
+    }
+
+    &__buttons-row {
+        text-align: right;
+    }
+
+}
