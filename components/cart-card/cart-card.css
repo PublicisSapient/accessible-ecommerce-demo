@@ -1,0 +1,32 @@
+.cart-card__item-name {
+  margin-bottom: 20px; }
+
+.cart-card {
+  width: 80%;
+  height: 80%; }
+
+.cart-card__image {
+  float: left; }
+
+.cart-card__details-features {
+  float: left;
+  width: 30%;
+  line-height: 25px; }
+
+.cart-card__details-prices {
+  float: right;
+  width: 30%;
+  line-height: 25px; }
+
+.cart-card__attribute {
+  float: left; }
+
+.cart-card__item-options {
+  left: 23%;
+  top: -24px;
+  position: relative;
+  width: 80%;
+  display: inline-flex; }
+
+.cart-card__item-controls {
+  margin-right: 20px; }
