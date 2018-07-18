@@ -1,4 +1,10 @@
 /* COLOURS */
+/*
+=========================================== FONT SIZES
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
 /* Mobile Styles */
 .carousel-wrapper {
   margin-bottom: 40px;

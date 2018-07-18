@@ -15,11 +15,11 @@
   flex-wrap: nowrap; 
   justify-content: space-around; }
 
-.pdp .wrapper {
+/* .pdp .wrapper {
   box-sizing: border-box;
   width: 100%;
   max-width: inherit;
-  margin: inherit; }
+  margin: inherit; } */
 
 .pdp li {
   list-style: none; }
@@ -171,10 +171,11 @@
   font-size: 1.3em;
   min-width: 90px; }
 
-.accordion {
+/* .accordion {
   padding: 0;
   margin: 0 auto; 
-  width: 85%; }
+  width: 85%; } */
+
 
 .accordion-panel {
   /* list-style: none; */

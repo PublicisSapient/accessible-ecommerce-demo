@@ -1,0 +1,26 @@
+/* COLOURS */
+/*
+=========================================== FONT SIZES
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
+/* COLOURS */
+/*
+=========================================== FONT SIZES
+We're using REM based on a 10px root value set on html
+Makes the maths easy, e.g.: 1.6rem = 16px
+body is set to 1.6rem in global.scss
+*/
+.checkout__content {
+  display: flex;
+  justify-content: space-between; }
+
+.checkout__forms {
+  width: calc(70% - 8px); }
+
+.checkout__sidebar {
+  width: calc(30% - 8px); }
+
+.checkout-mini-cart {
+  position: relative; }

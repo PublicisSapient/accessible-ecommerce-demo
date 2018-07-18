@@ -14,14 +14,14 @@ const MiniCart = new function () {
         this.toggleMenu = this.toggleMenu.bind(this);
         this.onBodyClick = this.onBodyClick.bind(this);
 
-        console.log(el, buttonEl, dropdownEl);
+        // console.log(el, buttonEl, dropdownEl);
         /* buttonEl.addEventListener('mouseover', this.onFocus);
         buttonEl.addEventListener('mouseout', this.onBlur); */
         buttonEl.addEventListener('click', this.toggleMenu)
 
         /* buttonEl.addEventListener('focus', this.onFocus);
         buttonEl.addEventListener('blur', this.onButtonBlur); */
-        
+
         dropdownEl.addEventListener('focus', this.onFocus, true);
         dropdownEl.addEventListener('blur', this.onButtonBlur, true);
         document.addEventListener('click', this.onBodyClick, true);

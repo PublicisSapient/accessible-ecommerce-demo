@@ -1,0 +1,22 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.checkout{
+    &__content{
+        // @include flex-grid(2);
+        display: flex;
+        justify-content: space-between;
+    }
+    &__forms{
+        width: calc(70% - #{$grid-unit});
+    }
+    &__sidebar{
+        width: calc(30% - #{$grid-unit});
+    }
+}
+
+.checkout-mini-cart {
+	position: relative;
+}
+
+

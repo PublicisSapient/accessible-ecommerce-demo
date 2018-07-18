@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch --recursive ./components/ -o ./components/ | node-sass --watch --recursive ./scss/ -o ./css/"
+    "scss": "node-sass --watch --recursive ./components/ -o ./components/ | node-sass --watch --recursive ./pages/ -o ./pages/ | node-sass --watch --recursive ./scss/ -o ./css/"
   },
   "devDependencies": {
     "node-sass": "4.8.3"
