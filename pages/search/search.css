@@ -5,4 +5,43 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
+  border-radius: 25px;
+
 }
+
+.searchBox{
+  height: 60px;
+  width: 70%;
+  border-radius: 25px;
+  border: 2px solid #e74c3c;
+  padding: 20px;
+}
+
+.searchBtn{
+  border-radius: 24px;
+  background-color: #e74c3c; 
+  border: none;
+  margin-left:-115px ;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+ 
+}
+/*add focus, to css for keyboard over*/
+.searchBtn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.searchForm{
+  margin: 0 auto;
+  height: 200px;
+  width: 50%;
+ 
+}
+
+
+
