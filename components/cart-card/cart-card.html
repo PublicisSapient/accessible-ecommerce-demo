@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Component | Cart Card</title>
+		<link rel="stylesheet" href="../../css/global.css">
+		<link rel="stylesheet" href="cart-card.css">
+	</head>
+	<body>
+		<article class="cart-card">
+            <div class="cart-card__container">
+                <ul class="cart-card__item-list">
+                    <li class="cart-card__item">
+                        <a class="card-card__link"href="https://placeholder.com"
+                        aria-label="Title of product. Size: Small, Color: black, quantity: 1, Item unit price: $150.00, Item total price: $150.00">
+                        
+                        <img class="cart-card__image" alt="" src="http://via.placeholder.com/140x100">
+
+                        <p class="cart-card__item-name">Off Shoulder Top</p>
+
+                        <div class="cart-card__details-features" role="list">
+                                <div role="listitem">
+                                    <div role="term" id="def1">Size: </div>
+                                    <div role="definition" aria-labelledby="def1">S</div>
+                                </div>
+                    
+                                <div role="listitem">
+                                    <div role="term" id="def2">Color: </div>
+                                    <div role="definition" aria-labelledby="def2">Black</div>
+                                </div>
+                    
+                                <div role="listitem">
+                                    <div role="term" id="def3">Quantity: </div>
+                                    <div role="definition" aria-labelledby="def3">1</div>
+                                </div>
+                        </div>
+
+                        <div class="cart-card__item-options">
+                            <div class="cart-card__item-controls">
+                                <a href="#" class="cart-card__modify">Edit</a>
+                            </div>
+
+                            <div class="cart-card__item-controls">
+                                <a href="#" class="cart-card__modify">Remove</a>
+                            </div>
+
+                            <div class="cart-card__item-controls">
+                                <a href="#" class="cart-card__modify">Save for later</a>
+                            </div>
+                        </div>
+
+                        <div class="cart-card__details-prices" role="list">
+                            <div role="listitem">
+                                <div role="term" id="def1" class="element-invisible">Item unit price: </div>
+                                <div role="definition" aria-labelledby="def1">$100</div>
+                            </div>
+                
+                            <div role="listitem">
+                                <div role="term" id="def2" class="element-invisible">Item total price: </div>
+                                <div role="definition" aria-labelledby="def2">$100.00</div>
+                            </div>
+                
+                            <div role="listitem">
+                                <div role="term" id="def3">Quantity: </div>
+                                <div role="definition" aria-labelledby="def3">1</div>
+                            </div>
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+		<script src="cart-card.js"></script>
+	</body>
+</html>
