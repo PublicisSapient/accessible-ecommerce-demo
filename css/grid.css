@@ -7,9 +7,21 @@ Makes the maths easy, e.g.: 1.6rem = 16px
 body is set to 1.6rem in global.scss
 */
 .wrapper, .container {
-  max-width: 1200px;
+  max-width: 1440px;
   padding: 0 16px;
   margin: 0 auto; }
+  @media only screen and (min-width: 600px) {
+    .wrapper, .container {
+      padding: 0 calc((16 * 1px) + (74 - 16) * ((100vw - 600px) / (800 - 600))); } }
+  @media only screen and (min-width: 800px) {
+    .wrapper, .container {
+      padding: 0 calc(100% / 12 + 8px); } }
+  @media only screen and (min-width: 1440px) {
+    .wrapper, .container {
+      padding: 0 128px; } }
+
+.container-2 {
+  padding: 0 calc(0.025 * 100vw); }
 
 .flex-row {
   display: flex; }

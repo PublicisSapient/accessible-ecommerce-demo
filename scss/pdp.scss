@@ -201,7 +201,7 @@
 .accordion-panel_heading button {
     border-width: 1px;
     border-color:$black;
-    // border-bottom: 1px #c5c5c5 solid;
+    border-style: solid;
     background-color:white;
     width: 100%;
     text-align: left;
@@ -223,7 +223,7 @@
     transform: rotate(135deg);
     vertical-align: top;
     width: 0.75em;
-    transition: transform 1s;
+    transition: transform 0.25s ease-in-out;
 }
 
 .accordion-panel_heading.accordion--open button {

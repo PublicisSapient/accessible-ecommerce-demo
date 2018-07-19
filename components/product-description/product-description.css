@@ -15,7 +15,11 @@ Makes the maths easy, e.g.: 1.6rem = 16px
 body is set to 1.6rem in global.scss
 */
 .product-description {
-  padding-right: calc(10% - 8px); }
+  padding-right: calc((0px) + (57) * ((100vw - 600px) / (800 - 600))); }
+
+@media only screen and (min-width: 800px) {
+  .product-description {
+    padding-right: calc(10% - 8px); } }
 
 .product-description__title {
   text-transform: uppercase;

@@ -2,7 +2,10 @@
 @import '../../scss/mixins';
 
 .product-description{
-	padding-right: calc(10% - #{$grid-unit});
+	padding-right: calc((0px) + (57) * ((100vw - 600px) / (800 - 600)));
+	@media only screen and (min-width: 800px){
+		padding-right: calc(10% - #{$grid-unit});
+	}
 	&__title{
 		text-transform: uppercase;
 		font-size: $font-xxl;

@@ -178,6 +178,7 @@ body is set to 1.6rem in global.scss
 .accordion-panel_heading button {
   border-width: 1px;
   border-color: #19191E;
+  border-style: solid;
   background-color: white;
   width: 100%;
   text-align: left;
@@ -198,7 +199,7 @@ body is set to 1.6rem in global.scss
   transform: rotate(135deg);
   vertical-align: top;
   width: 0.75em;
-  transition: transform 1s; }
+  transition: transform 0.25s ease-in-out; }
 
 .accordion-panel_heading.accordion--open button {
   background-color: #e6e6e6; }

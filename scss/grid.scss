@@ -4,7 +4,18 @@
     max-width: $max-width;
     padding: 0 $grid-unit * 2;
     margin: 0 auto;
-    // background: rgba(172, 65, 56, 0.05 );
+    @media only screen and (min-width: 600px){
+        padding: 0 calc((16 * 1px) + (74 - 16) * ((100vw - 600px) / (800 - 600))); //Creates a linear transition to shrink padding smoothly between defined values
+    }
+    @media only screen and (min-width: 800px){
+        padding: 0 calc(100% / 12 + #{$grid-unit});
+    }
+    @media only screen and (min-width: $max-width){
+        padding: 0 128px;
+    }
+}
+.container-2{
+    padding: 0 calc(0.025 * 100vw);
 }
 .flex-row{
     display: flex;
@@ -18,3 +29,4 @@
         width: calc(50% - #{$grid-unit});
     }
 }
+
