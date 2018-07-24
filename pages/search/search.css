@@ -1,8 +1,18 @@
-.search-label {
+.sr-only {
   position: absolute;
   left: -10000px;
   top: auto;
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.search-autoComplete {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+}
+
+.search-autoComplete.open {
+  display: block;
 }

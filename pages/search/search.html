@@ -239,12 +239,35 @@
 		<!-- Search Results -->
 		<section class="searchResult">
       <!-- Seach Bar -->
-      <form role="search">
-        <label for="search-input" class="search-label">Search for products</label>
-        <input type="text" id="search-input" placeholder="Search for anything"/>
-        <input type="submit" value="Search">
-      </form>
-      <span id="search-liveUpdates" aria-live="assertive"></span>
+      <div class="searchBar" data-component="Search">
+        <form action="#" method="POST">
+          <label for="search-input" class="sr-only">Search for products</label>
+          <input type="text" id="search-input" class="search-bar" role="search"/>
+          <span class="search-autoComplete">
+            <ul>
+              <li>
+                <a aria-label="Shirts" role="option" href="#" tabindex="-1">Shirts</a>
+              </li>
+              <li>
+                <a aria-label="Sweaters" role="option" href="#" tabindex="-1">Sweaters</a>
+              </li>
+              <li>
+                <a aria-label="Socks" role="option" href="#" tabindex="-1">Socks</a>
+              </li>
+            </ul>
+          </span>
+          <label for="search-category-dropdown" class="sr-only">Select a category to filter your search</label>
+          <select id="search-category-dropdown">
+            <option value="all_categories" selected>All Categories</option>
+            <option>Shirts</option>
+            <option>Pants</option>
+            <option>Sweaters</option>
+          </select>
+          <input type="submit" value="Search">
+          
+        </form>
+        <span class="search-liveUpdates" aria-live="assertive"></span>
+      </div>
     </section>
 		<footer class="footer clearfix">
 			<div class="wrapper">
@@ -335,7 +358,8 @@
 		<script src="../../components/breadcrumb/breadcrumb.js"></script>
 		<script src="../../components/product-grid/product-grid.js"></script>
 		<script src="../../components/product-tile/product-tile.js"></script>
-		<script src="../../components/carousel/carousel.js"></script>
+    <script src="../../components/carousel/carousel.js"></script>
+    <script src="search.js"></script>
 		<script src="../../components/footer/footer.js"></script>
 		<script src="plp.js"></script>
 	</body>
