@@ -1,12 +1,16 @@
 /* Mini Cart Functions */
 
-const MiniCart = new function () {
+const MiniCart = function (element) {
     const rootClass = 'mini-cart'
-    const el = document.getElementsByClassName(rootClass)[0];
-    const buttonEl = el.getElementsByClassName(rootClass + "__toggle")[0];
-    const dropdownEl = el.getElementsByClassName(rootClass + "__dropdown")[0];
-    const updateElement = el.getElementsByClassName(rootClass + "__updated")[0];
-    this.init = function () {
+    this.el = element;
+    this.buttonEl = this.el.getElementsByClassName(rootClass + "__toggle")[0];
+    this.dropdownEl = this.el.getElementsByClassName(rootClass + "__dropdown")[0];
+    this.updateElement = this.el.getElementsByClassName(rootClass + "__updated")[0];
+
+    this.initEvents();
+}
+MiniCart.prototype = {
+    initEvents: function () {
         this.onFocus = this.onFocus.bind(this);
         this.onBlur = this.onBlur.bind(this);
         this.onButtonBlur = this.onButtonBlur.bind(this);
@@ -14,59 +18,52 @@ const MiniCart = new function () {
         this.toggleMenu = this.toggleMenu.bind(this);
         this.onBodyClick = this.onBodyClick.bind(this);
 
-        console.log(el, buttonEl, dropdownEl);
+        // console.log(el, buttonEl, dropdownEl);
         /* buttonEl.addEventListener('mouseover', this.onFocus);
         buttonEl.addEventListener('mouseout', this.onBlur); */
-        buttonEl.addEventListener('click', this.toggleMenu)
+        this.buttonEl.addEventListener('click', this.toggleMenu)
 
         /* buttonEl.addEventListener('focus', this.onFocus);
         buttonEl.addEventListener('blur', this.onButtonBlur); */
-        
-        dropdownEl.addEventListener('focus', this.onFocus, true);
-        dropdownEl.addEventListener('blur', this.onButtonBlur, true);
-        document.addEventListener('click', this.onBodyClick, true);
-        buttonEl.addEventListener('blur', this.onButtonBlur);
-    }
 
-    this.update = function(data) {
+        this.dropdownEl.addEventListener('focus', this.onFocus, true);
+        this.dropdownEl.addEventListener('blur', this.onButtonBlur, true);
+        document.addEventListener('click', this.onBodyClick, true);
+        this.buttonEl.addEventListener('blur', this.onButtonBlur);
+    },
+    update: function(data) {
         const message = `${data.quantity} ${data.name} has been added to your cart.`;
         updateElement.innerHTML = message;
-    }
-
-    this.onFocus = function () {
-        dropdownEl.classList.add('expanded');
-        buttonEl.setAttribute('aria-expanded', 'true');
-    }
-
-    this.onBlur = function () {
-        dropdownEl.classList.remove('expanded');
-        buttonEl.setAttribute('aria-expanded', 'false');
-    }
-
-    this.toggleMenu = function () {
-        if (dropdownEl.classList.contains('expanded')) {
+    },
+    onFocus: function () {
+        this.dropdownEl.classList.add('expanded');
+        this.buttonEl.setAttribute('aria-expanded', 'true');
+    },
+    onBlur: function () {
+        this.dropdownEl.classList.remove('expanded');
+        this.buttonEl.setAttribute('aria-expanded', 'false');
+    },
+    toggleMenu: function () {
+        if (this.dropdownEl.classList.contains('expanded')) {
             this.onBlur();
         } else {
             this.onFocus();
         }
-    }
-
-    this.onButtonBlur = function (e) {
+    },
+    onButtonBlur: function (e) {
         requestAnimationFrame(
 			this.closeIfMenuBlurred.bind(this, e.target, e.currentTarget, e.relatedTarget)
 		);
-    }
-
-    this.onBodyClick = function (e) {
+    },
+    onBodyClick: function (e) {
         const target = e.target;
 
-        if (!dropdownEl.contains(target) && target !== buttonEl) {
+        if (!this.dropdownEl.contains(target) && target !== buttonEl) {
             this.onBlur();
         }
-    }
-
-    this.closeIfMenuBlurred = function (target, currentTarget, relatedTarget) {
-        console.log('closeIfMenuBlurred', 'relatedTarget', relatedTarget, 'activeElement', document.activeElement);
+    },
+    closeIfMenuBlurred: function (target, currentTarget, relatedTarget) {
+        // console.log('closeIfMenuBlurred', 'relatedTarget', relatedTarget, 'activeElement', document.activeElement);
         const focusedElement = relatedTarget || document.activeElement;
 		const isFocusLost = (
 			focusedElement.parentNode === document.body ||
@@ -82,11 +79,14 @@ const MiniCart = new function () {
 		 * If we blurred out of the `.menu_panel`, then we must close the
 		 * menu.
 		 */
-        console.log('isFocusLost', isFocusLost)
-		if (isFocusLost || (!dropdownEl.contains(focusedElement) && focusedElement !== buttonEl)) {
+        // console.log('isFocusLost', isFocusLost)
+		if (isFocusLost || (!this.dropdownEl.contains(focusedElement) && focusedElement !== this.buttonEl)) {
 			this.onBlur();
 		}
 	}
 }
 
-MiniCart.init();
+const miniCartElements = document.querySelectorAll('.mini-cart');
+miniCartElements.forEach(function (miniCartElement) {
+	const miniCart = new MiniCart(miniCartElement);
+});

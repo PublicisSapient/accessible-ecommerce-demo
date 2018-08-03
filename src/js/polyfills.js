@@ -1,5 +1,7 @@
 /* Utility Functions */
 
+// Helper function to get all focusable children from a node
+
 /*
 * POLYFILL: NodeList.forEach
 * https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
