@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Docs | Forms</title>
+
+	<link rel="stylesheet" href="./assets/fabricator/styles/f.css">
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="./assets/toolkit/styles/toolkit.css">
+	<!-- /toolkit styles -->
+
+</head>
+<body>
+
+		<!-- fabricator icons -->
+		<svg style="display: none;">
+			<symbol id="f-icon-code" viewBox="0 0 512 512">
+				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+			</symbol>
+			<symbol id="f-icon-notes" viewBox="0 0 512 512">
+				<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+			</symbol>
+			<symbol id="f-icon-labels" viewBox="0 0 512 512">
+				<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+			</symbol>
+			<symbol id="f-icon-menu" viewBox="0 0 512 512">
+				<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+			</symbol>
+			<symbol id="f-icon-settings" viewBox="0 0 512 512">
+				<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+			</symbol>
+			<symbol id="f-icon-accessibility" viewBox="0 0 512 512">
+					<path d="M512,256C512,115.17,397.53,0,256,0S0,115.17,0,256,115.17,512,256,512,512,396.83,512,256ZM256,77.7a38.85,38.85,0,1,1-38.85,38.85C217.15,95.74,234.49,77.7,256,77.7ZM217.15,417a19.48,19.48,0,0,1-18,11.79,18.47,18.47,0,0,1-8.33-2.08,20,20,0,0,1-9.71-27.06s38.16-87.41,45.09-119.33c2.78-11.1,4.16-40.93,4.86-54.81,0-4.86-2.78-9-6.94-10.41l-86-25c-11.1-3.47-17.34-15.26-13.88-25.67s15.26-15.26,25.67-12.49c0,0,78.4,25,106.15,25s107.53-25.67,107.53-25.67c10.41-2.78,22.2,3.47,25,13.88s-3.47,22.2-13.88,25L289.3,215.76c-4.16,1.39-7.63,5.55-6.94,10.41,0.69,13.88,2.08,43.71,4.86,54.81,6.94,31.91,45.09,119.33,45.09,119.33a20.59,20.59,0,0,1-9.71,27.06,18.47,18.47,0,0,1-8.33,2.08c-7.63,0-15.26-4.16-18-11.79L256,333.7Z"/>
+			</symbol>
+		</svg>
+		<!-- /fabricator icons -->
+		<!-- fabricator menu -->
+		<div class="f-menu">
+		
+			<div class="f-controls">
+				<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+					<svg>
+						<use xlink:href="#f-icon-labels" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+					<svg>
+						<use xlink:href="#f-icon-notes" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+					<svg>
+						<use xlink:href="#f-icon-code" />
+					</svg>
+				</div>
+			</div>
+		
+			<ul>
+		
+				<li>
+					<a href="index.html" class="f-menu__heading">Overview</a>
+				</li>
+		
+				<li>
+					<a href="components.html" class="f-menu__heading">Components</a>
+					<ul>
+						<li>
+							<a href="components.html#accordion">Accordion</a>
+						</li>
+						<li>
+							<a href="components.html#breadcrumbs">Breadcrumbs</a>
+						</li>
+						<li>
+							<a href="components.html#carousel">Carousel</a>
+						</li>
+						<li>
+							<a href="components.html#filters">Filters</a>
+						</li>
+						<li>
+							<a href="components.html#gallery">Gallery</a>
+						</li>
+						<li>
+							<a href="components.html#global-nav">Global Nav</a>
+						</li>
+						<li>
+							<a href="components.html#mini-cart">Mini Cart</a>
+						</li>
+						<li>
+							<a href="components.html#modal">Modal</a>
+						</li>
+						<li>
+							<a href="components.html#pagination">Pagination</a>
+						</li>
+						<li>
+							<a href="components.html#product-tile">Product Tile</a>
+						</li>
+						<li>
+							<a href="components.html#size-chart">Size Chart</a>
+						</li>
+						<li>
+							<a href="components.html#table">Table</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="elements.html" class="f-menu__heading">Elements</a>
+					<ul>
+						<li>
+							<a href="elements.html#buttons">Buttons</a>
+						</li>
+						<li>
+							<a href="elements.html#links">Links</a>
+						</li>
+						<li>
+							<a href="elements.html#lists">Lists</a>
+						</li>
+						<li>
+							<a href="elements.html#paragraph">Paragraph</a>
+						</li>
+						<li>
+							<a href="elements.html#typography">Typography</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="forms.html" class="f-menu__heading">Forms</a>
+					<ul>
+						<li>
+							<a href="forms.html#checkbox">Checkbox</a>
+						</li>
+						<li>
+							<a href="forms.html#input">Input</a>
+						</li>
+						<li>
+							<a href="forms.html#radio">Radio</a>
+						</li>
+						<li>
+							<a href="forms.html#select">Select</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="layout.html" class="f-menu__heading">Layout</a>
+					<ul>
+						<li>
+							<a href="layout.html#grid">Grid</a>
+						</li>
+						<li>
+							<a href="layout.html#product-grid">Product Grid</a>
+						</li>
+						<li>
+							<a href="layout.html#vertical-rhythm">Vertical Rhythm</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="pages.html" class="f-menu__heading">Pages</a>
+					<ul>
+						<li>
+							<a href="pages/home.html">Home</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="docs.html" class="f-menu__heading">Docs</a>
+					<ul>
+						<li>
+							<a href="docs.html#javascript">Javascript</a>
+						</li>
+					</ul>
+				</li>
+		
+			</ul>
+		
+		
+		</div>
+		<!-- /fabricator menu -->
+		<div class="f-container">
+			<div class="f-control-bar">
+				<div class="f-control f-menu-toggle">
+					<svg>
+						<use xlink:href="#f-icon-menu" />
+					</svg>
+				</div>
+			</div>
+
+
+	
+<h1 data-f-toggle="labels">Forms</h1>
+
+
+<div class="f-item-group" id="checkbox">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Checkbox</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+				<svg>
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</span>
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-notes" data-f-toggle="notes">
+	<p>The real <strong>magic</strong> of the styled form components is mostly in the CSS:</p>
+<ul>
+<li>The <code>input</code> element is given <code>opacity: 0</code> so that it can't be seen, but is still an active
+element on the page.</li>
+<li>The <code>label</code> and the <code>input</code> are connected via <code>for</code> and <code>id</code> attributes, which allows the input to
+be triggered by clicking on the label</li>
+<li>The new checkbox UI is created with the <code>::before</code> and <code>::after</code> psuedo elements on the <code>label</code></li>
+<li>The <code>:focus</code> and <code>:checked</code> states on the <code>input</code> are passed to the <code>label</code> with the sibling selector (<code>input:checked + label</code>),
+so it <strong>important to note</strong> that the <code>input</code> element must preceed the <code>label</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Accessibility:</strong></p>
+<p>Groups of <code>checkbox</code> inputs should be wrapped in a <code>fieldset</code> and have a <code>legend</code>, which can be hidden from sighted users.</p>
+</blockquote>
+
+</div>
+<div class="f-item-preview">
+	<fieldset>
+	<legend tabindex="0" id="colorsLegend" class="visibly-hidden">Filter by Colors</legend>
+	<input id="blue" class="checkbox__input" aria-label="Filter on color blue" type="checkbox" name="colors" value="blue">
+	<label for="blue" class="checkbox__label">Blue</label>
+	<br>
+	<input id="green" class="checkbox__input" aria-label="Filter on color green" type="checkbox" name="colors" value="green">
+	<label for="green" class="checkbox__label">Green</label>
+	<br>
+	<input id="yellow" class="checkbox__input" aria-label="Filter on color yellow" type="checkbox" name="colors" value="yellow">
+	<label for="yellow" class="checkbox__label">Yellow</label>
+	<br>
+	<input id="red" class="checkbox__input" aria-label="Filter on color red" type="checkbox" name="colors" value="red">
+	<label for="red" class="checkbox__label">Red</label>
+</fieldset>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;fieldset&gt;
+	&lt;legend tabindex&#x3D;&quot;0&quot; id&#x3D;&quot;colorsLegend&quot; class&#x3D;&quot;visibly-hidden&quot;&gt;Filter by Colors&lt;/legend&gt;
+	&lt;input id&#x3D;&quot;blue&quot; class&#x3D;&quot;checkbox__input&quot; aria-label&#x3D;&quot;Filter on color blue&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;colors&quot; value&#x3D;&quot;blue&quot;&gt;
+	&lt;label for&#x3D;&quot;blue&quot; class&#x3D;&quot;checkbox__label&quot;&gt;Blue&lt;/label&gt;
+	&lt;br&gt;
+	&lt;input id&#x3D;&quot;green&quot; class&#x3D;&quot;checkbox__input&quot; aria-label&#x3D;&quot;Filter on color green&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;colors&quot; value&#x3D;&quot;green&quot;&gt;
+	&lt;label for&#x3D;&quot;green&quot; class&#x3D;&quot;checkbox__label&quot;&gt;Green&lt;/label&gt;
+	&lt;br&gt;
+	&lt;input id&#x3D;&quot;yellow&quot; class&#x3D;&quot;checkbox__input&quot; aria-label&#x3D;&quot;Filter on color yellow&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;colors&quot; value&#x3D;&quot;yellow&quot;&gt;
+	&lt;label for&#x3D;&quot;yellow&quot; class&#x3D;&quot;checkbox__label&quot;&gt;Yellow&lt;/label&gt;
+	&lt;br&gt;
+	&lt;input id&#x3D;&quot;red&quot; class&#x3D;&quot;checkbox__input&quot; aria-label&#x3D;&quot;Filter on color red&quot; type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;colors&quot; value&#x3D;&quot;red&quot;&gt;
+	&lt;label for&#x3D;&quot;red&quot; class&#x3D;&quot;checkbox__label&quot;&gt;Red&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="input">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Input</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup"></code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="radio">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Radio</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+				<svg>
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</span>
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-notes" data-f-toggle="notes">
+	<blockquote>
+<p><strong>Accessibility:</strong> <code>radio</code> buttons should be wrapped in a <code>fieldset</code> and have a <code>legend</code>, which can be hidden from sighted users.</p>
+</blockquote>
+<p>These are some normal notes</p>
+
+</div>
+<div class="f-item-preview">
+	<fieldset>
+	<legend id="color">Color Selection</legend>
+	<input type="radio" class="radio__input" value="red" name="color" id="color-red" aria-describedby="color">
+	<label for="color-red" class="radio__label"> Red</label>
+	<input type="radio" class="radio__input" value="orange" name="color" id="color-orange" aria-describedby="color">
+	<label for="color-orange" class="radio__label">Orange</label>
+	<input type="radio" class="radio__input" value="white" name="color" id="color-white" aria-describedby="color" checked>
+	<label for="color-white" class="radio__label">White</label>
+</fieldset>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;fieldset&gt;
+	&lt;legend id&#x3D;&quot;color&quot;&gt;Color Selection&lt;/legend&gt;
+	&lt;input type&#x3D;&quot;radio&quot; class&#x3D;&quot;radio__input&quot; value&#x3D;&quot;red&quot; name&#x3D;&quot;color&quot; id&#x3D;&quot;color-red&quot; aria-describedby&#x3D;&quot;color&quot;&gt;
+	&lt;label for&#x3D;&quot;color-red&quot; class&#x3D;&quot;radio__label&quot;&gt; Red&lt;/label&gt;
+	&lt;input type&#x3D;&quot;radio&quot; class&#x3D;&quot;radio__input&quot; value&#x3D;&quot;orange&quot; name&#x3D;&quot;color&quot; id&#x3D;&quot;color-orange&quot; aria-describedby&#x3D;&quot;color&quot;&gt;
+	&lt;label for&#x3D;&quot;color-orange&quot; class&#x3D;&quot;radio__label&quot;&gt;Orange&lt;/label&gt;
+	&lt;input type&#x3D;&quot;radio&quot; class&#x3D;&quot;radio__input&quot; value&#x3D;&quot;white&quot; name&#x3D;&quot;color&quot; id&#x3D;&quot;color-white&quot; aria-describedby&#x3D;&quot;color&quot; checked&gt;
+	&lt;label for&#x3D;&quot;color-white&quot; class&#x3D;&quot;radio__label&quot;&gt;White&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="select">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Select</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<select name="" id="">
+	<option value="">Option 1</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+	&lt;option value&#x3D;&quot;&quot;&gt;Option 1&lt;/option&gt;
+	&lt;option value&#x3D;&quot;&quot;&gt;Option 2&lt;/option&gt;
+	&lt;option value&#x3D;&quot;&quot;&gt;Option 3&lt;/option&gt;
+	&lt;option value&#x3D;&quot;&quot;&gt;Option 4&lt;/option&gt;
+	&lt;option value&#x3D;&quot;&quot;&gt;Option 5&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+
+
+		</div>
+	<script src="./assets/fabricator/scripts/f.js"></script>
+
+	<!-- toolkit scripts -->
+	<script src="./assets/toolkit/scripts/toolkit.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>

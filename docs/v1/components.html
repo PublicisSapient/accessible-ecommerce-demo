@@ -1,0 +1,1168 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Docs | Components</title>
+
+	<link rel="stylesheet" href="./assets/fabricator/styles/f.css">
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="./assets/toolkit/styles/toolkit.css">
+	<!-- /toolkit styles -->
+
+</head>
+<body>
+
+		<!-- fabricator icons -->
+		<svg style="display: none;">
+			<symbol id="f-icon-code" viewBox="0 0 512 512">
+				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+			</symbol>
+			<symbol id="f-icon-notes" viewBox="0 0 512 512">
+				<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+			</symbol>
+			<symbol id="f-icon-labels" viewBox="0 0 512 512">
+				<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+			</symbol>
+			<symbol id="f-icon-menu" viewBox="0 0 512 512">
+				<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+			</symbol>
+			<symbol id="f-icon-settings" viewBox="0 0 512 512">
+				<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+			</symbol>
+			<symbol id="f-icon-accessibility" viewBox="0 0 512 512">
+					<path d="M512,256C512,115.17,397.53,0,256,0S0,115.17,0,256,115.17,512,256,512,512,396.83,512,256ZM256,77.7a38.85,38.85,0,1,1-38.85,38.85C217.15,95.74,234.49,77.7,256,77.7ZM217.15,417a19.48,19.48,0,0,1-18,11.79,18.47,18.47,0,0,1-8.33-2.08,20,20,0,0,1-9.71-27.06s38.16-87.41,45.09-119.33c2.78-11.1,4.16-40.93,4.86-54.81,0-4.86-2.78-9-6.94-10.41l-86-25c-11.1-3.47-17.34-15.26-13.88-25.67s15.26-15.26,25.67-12.49c0,0,78.4,25,106.15,25s107.53-25.67,107.53-25.67c10.41-2.78,22.2,3.47,25,13.88s-3.47,22.2-13.88,25L289.3,215.76c-4.16,1.39-7.63,5.55-6.94,10.41,0.69,13.88,2.08,43.71,4.86,54.81,6.94,31.91,45.09,119.33,45.09,119.33a20.59,20.59,0,0,1-9.71,27.06,18.47,18.47,0,0,1-8.33,2.08c-7.63,0-15.26-4.16-18-11.79L256,333.7Z"/>
+			</symbol>
+		</svg>
+		<!-- /fabricator icons -->
+		<!-- fabricator menu -->
+		<div class="f-menu">
+		
+			<div class="f-controls">
+				<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+					<svg>
+						<use xlink:href="#f-icon-labels" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+					<svg>
+						<use xlink:href="#f-icon-notes" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+					<svg>
+						<use xlink:href="#f-icon-code" />
+					</svg>
+				</div>
+			</div>
+		
+			<ul>
+		
+				<li>
+					<a href="index.html" class="f-menu__heading">Overview</a>
+				</li>
+		
+				<li>
+					<a href="components.html" class="f-menu__heading">Components</a>
+					<ul>
+						<li>
+							<a href="components.html#accordion">Accordion</a>
+						</li>
+						<li>
+							<a href="components.html#breadcrumbs">Breadcrumbs</a>
+						</li>
+						<li>
+							<a href="components.html#carousel">Carousel</a>
+						</li>
+						<li>
+							<a href="components.html#filters">Filters</a>
+						</li>
+						<li>
+							<a href="components.html#gallery">Gallery</a>
+						</li>
+						<li>
+							<a href="components.html#global-nav">Global Nav</a>
+						</li>
+						<li>
+							<a href="components.html#mini-cart">Mini Cart</a>
+						</li>
+						<li>
+							<a href="components.html#modal">Modal</a>
+						</li>
+						<li>
+							<a href="components.html#pagination">Pagination</a>
+						</li>
+						<li>
+							<a href="components.html#product-tile">Product Tile</a>
+						</li>
+						<li>
+							<a href="components.html#size-chart">Size Chart</a>
+						</li>
+						<li>
+							<a href="components.html#table">Table</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="elements.html" class="f-menu__heading">Elements</a>
+					<ul>
+						<li>
+							<a href="elements.html#buttons">Buttons</a>
+						</li>
+						<li>
+							<a href="elements.html#links">Links</a>
+						</li>
+						<li>
+							<a href="elements.html#lists">Lists</a>
+						</li>
+						<li>
+							<a href="elements.html#paragraph">Paragraph</a>
+						</li>
+						<li>
+							<a href="elements.html#typography">Typography</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="forms.html" class="f-menu__heading">Forms</a>
+					<ul>
+						<li>
+							<a href="forms.html#checkbox">Checkbox</a>
+						</li>
+						<li>
+							<a href="forms.html#input">Input</a>
+						</li>
+						<li>
+							<a href="forms.html#radio">Radio</a>
+						</li>
+						<li>
+							<a href="forms.html#select">Select</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="layout.html" class="f-menu__heading">Layout</a>
+					<ul>
+						<li>
+							<a href="layout.html#grid">Grid</a>
+						</li>
+						<li>
+							<a href="layout.html#product-grid">Product Grid</a>
+						</li>
+						<li>
+							<a href="layout.html#vertical-rhythm">Vertical Rhythm</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="pages.html" class="f-menu__heading">Pages</a>
+					<ul>
+						<li>
+							<a href="pages/home.html">Home</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="docs.html" class="f-menu__heading">Docs</a>
+					<ul>
+						<li>
+							<a href="docs.html#javascript">Javascript</a>
+						</li>
+					</ul>
+				</li>
+		
+			</ul>
+		
+		
+		</div>
+		<!-- /fabricator menu -->
+		<div class="f-container">
+			<div class="f-control-bar">
+				<div class="f-control f-menu-toggle">
+					<svg>
+						<use xlink:href="#f-icon-menu" />
+					</svg>
+				</div>
+			</div>
+
+
+	
+<h1 data-f-toggle="labels">Components</h1>
+
+
+<div class="f-item-group" id="accordion">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Accordion</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+				<svg>
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</span>
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-notes" data-f-toggle="notes">
+	<p>Notes can be added for each of the components. These notes use markdown formatting like <code>button</code> or <strong>bold</strong></p>
+<blockquote>
+<p><strong>Accessibility:</strong></p>
+<p>There's an accessibility callout style, too! <em>(PSST: It's just a styled blockquote because markdown doesn't really let you add classes)</em></p>
+<p>But, yeah feel free to explain the difference between <code>aria-hidden=true</code> vs <code>role=presentation</code>, or stuff like that.</p>
+</blockquote>
+
+</div>
+<div class="f-item-preview">
+	<ul class="accordion">
+	<li class="accordion-panel">
+		<div class="accordion-panel_heading">
+			<button aria-label="Show Product Description" data-open-aria-label="Show Item One" data-hide-aria-label="Hide Item One">Item one</button>
+		</div>
+		<div class="accordion-panel_content">
+			<h2>Item One</h2>
+			<p>Paragraph copy with <a href="#">Linked Text</a> inside. Deep v 90's stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.</p>
+		</div>
+	</li>
+	<li class="accordion-panel">
+		<div class="accordion-panel_heading">
+			<button aria-label="Show Product Description" data-open-aria-label="Show Item Two" data-hide-aria-label="Hide Item Two">Item Two</button>
+		</div>
+		<div class="accordion-panel_content">
+			<h2>Item Two</h2>
+			<p>Paragraph copy with <a href="#">Linked Text</a> inside. Deep v 90's stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.</p>
+		</div>
+	</li>
+	<li class="accordion-panel">
+		<div class="accordion-panel_heading">
+			<button aria-label="Show Product Description" data-open-aria-label="Show Item Three" data-hide-aria-label="Hide Item Three">Item Three</button>
+		</div>
+		<div class="accordion-panel_content">
+			<h2>Item Three</h2>
+			<p>Paragraph copy with <a href="#">Linked Text</a> inside. Deep v 90's stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.</p>
+		</div>
+	</li>
+</ul>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;ul class&#x3D;&quot;accordion&quot;&gt;
+	&lt;li class&#x3D;&quot;accordion-panel&quot;&gt;
+		&lt;div class&#x3D;&quot;accordion-panel_heading&quot;&gt;
+			&lt;button aria-label&#x3D;&quot;Show Product Description&quot; data-open-aria-label&#x3D;&quot;Show Item One&quot; data-hide-aria-label&#x3D;&quot;Hide Item One&quot;&gt;Item one&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;accordion-panel_content&quot;&gt;
+			&lt;h2&gt;Item One&lt;/h2&gt;
+			&lt;p&gt;Paragraph copy with &lt;a href&#x3D;&quot;#&quot;&gt;Linked Text&lt;/a&gt; inside. Deep v 90&#x27;s stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/li&gt;
+	&lt;li class&#x3D;&quot;accordion-panel&quot;&gt;
+		&lt;div class&#x3D;&quot;accordion-panel_heading&quot;&gt;
+			&lt;button aria-label&#x3D;&quot;Show Product Description&quot; data-open-aria-label&#x3D;&quot;Show Item Two&quot; data-hide-aria-label&#x3D;&quot;Hide Item Two&quot;&gt;Item Two&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;accordion-panel_content&quot;&gt;
+			&lt;h2&gt;Item Two&lt;/h2&gt;
+			&lt;p&gt;Paragraph copy with &lt;a href&#x3D;&quot;#&quot;&gt;Linked Text&lt;/a&gt; inside. Deep v 90&#x27;s stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/li&gt;
+	&lt;li class&#x3D;&quot;accordion-panel&quot;&gt;
+		&lt;div class&#x3D;&quot;accordion-panel_heading&quot;&gt;
+			&lt;button aria-label&#x3D;&quot;Show Product Description&quot; data-open-aria-label&#x3D;&quot;Show Item Three&quot; data-hide-aria-label&#x3D;&quot;Hide Item Three&quot;&gt;Item Three&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;accordion-panel_content&quot;&gt;
+			&lt;h2&gt;Item Three&lt;/h2&gt;
+			&lt;p&gt;Paragraph copy with &lt;a href&#x3D;&quot;#&quot;&gt;Linked Text&lt;/a&gt; inside. Deep v 90&#x27;s stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="breadcrumbs">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Breadcrumbs</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<section id="breadcrumb">
+	<nav aria-label="Breadcrumb" class="breadcrumb">
+		<ol>
+			<li>
+				<a href="#">
+                    <abbr title="Publicis dot Sapient">P.S</abbr> Store</a>
+			</li>
+			<li>
+				<a href="#">Women</a>
+			</li>
+			<li>
+				<a href="#">Shirts &amp; Tops</a>
+			</li>
+			<li>
+				<a href="#" aria-current="page">Shirt Malo</a>
+			</li>
+		</ol>
+	</nav>
+</section>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;section id&#x3D;&quot;breadcrumb&quot;&gt;
+	&lt;nav aria-label&#x3D;&quot;Breadcrumb&quot; class&#x3D;&quot;breadcrumb&quot;&gt;
+		&lt;ol&gt;
+			&lt;li&gt;
+				&lt;a href&#x3D;&quot;#&quot;&gt;
+                    &lt;abbr title&#x3D;&quot;Publicis dot Sapient&quot;&gt;P.S&lt;/abbr&gt; Store&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href&#x3D;&quot;#&quot;&gt;Women&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href&#x3D;&quot;#&quot;&gt;Shirts &amp;amp; Tops&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href&#x3D;&quot;#&quot; aria-current&#x3D;&quot;page&quot;&gt;Shirt Malo&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/nav&gt;
+&lt;/section&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="carousel">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Carousel</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<p>
+	Paragraph copy with <a href="#">Linked Text</a> inside. Deep v 90's stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+</p>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;p&gt;
+	Paragraph copy with &lt;a href&#x3D;&quot;#&quot;&gt;Linked Text&lt;/a&gt; inside. Deep v 90&#x27;s stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+&lt;/p&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="filters">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Filters</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<p>
+	Paragraph copy with <a href="#">Linked Text</a> inside. Deep v 90's stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+</p>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;p&gt;
+	Paragraph copy with &lt;a href&#x3D;&quot;#&quot;&gt;Linked Text&lt;/a&gt; inside. Deep v 90&#x27;s stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+&lt;/p&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="gallery">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Gallery</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<p>
+	Paragraph copy with <a href="#">Linked Text</a> inside. Deep v 90's stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+</p>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;p&gt;
+	Paragraph copy with &lt;a href&#x3D;&quot;#&quot;&gt;Linked Text&lt;/a&gt; inside. Deep v 90&#x27;s stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+&lt;/p&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="global-nav">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Global Nav</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+				<svg>
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</span>
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-notes" data-f-toggle="notes">
+	<p>This header has been simplified to show just the main navigation items with dropdowns. The mini-cart has it's own section.</p>
+
+</div>
+<div class="f-item-preview">
+	<header class="navigation">
+	<div class="container">
+		<a class="skip-link" id="skip-to-main" href="#skip-to-nav">Skip navigation menu</a>
+		<div class="navigation__items">
+			<img src="https://publicissapient.github.io/accessible-ecommerce/assets/images/ps-logo.gif" alt="Publicis dot Sapient logo" width="50" height="50">
+			<nav class="global-nav" aria-label="Primary">
+				<ul class="global-nav__items">
+					<li class="global-nav__item has-submenu">
+						<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Women</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Women">All Womens</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Tops">Tops</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Pants">Pants</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Dresses">Dresses</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Shoes">Shoes</a>
+							</li>
+							<li class="submenu-item">
+								<a href="Hats">Hats</a>
+							</li>
+						</ul>
+					</li>
+					<li class="global-nav__item has-submenu">
+						<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Men</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Men">All Mens</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Tops</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Pants</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Kilts</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Shoes</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Hats</a>
+							</li>
+						</ul>
+					</li>
+					<li class="global-nav__item has-submenu">
+						<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Kids</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Tops">All Kids</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Tops</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Pants</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Dresses</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Shoes</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Hats</a>
+							</li>
+						</ul>
+					</li>
+					<li class="global-nav__item has-submenu">
+						<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Accessories</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a href="Tops">All Accessories</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Necklaces</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Belts</a>
+							</li>
+							<li class="submenu-item">
+								<a href="#">Rings</a>
+							</li>
+						</ul>
+					</li>
+					<li class="global-nav__item">
+						<a href="#">Sale</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<a class="skip-link" id="skip-to-nav" href="#skip-to-main">Return to navigation menu</a>
+	</div>
+</header>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;header class&#x3D;&quot;navigation&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;a class&#x3D;&quot;skip-link&quot; id&#x3D;&quot;skip-to-main&quot; href&#x3D;&quot;#skip-to-nav&quot;&gt;Skip navigation menu&lt;/a&gt;
+		&lt;div class&#x3D;&quot;navigation__items&quot;&gt;
+			&lt;img src&#x3D;&quot;https://publicissapient.github.io/accessible-ecommerce/assets/images/ps-logo.gif&quot; alt&#x3D;&quot;Publicis dot Sapient logo&quot; width&#x3D;&quot;50&quot; height&#x3D;&quot;50&quot;&gt;
+			&lt;nav class&#x3D;&quot;global-nav&quot; aria-label&#x3D;&quot;Primary&quot;&gt;
+				&lt;ul class&#x3D;&quot;global-nav__items&quot;&gt;
+					&lt;li class&#x3D;&quot;global-nav__item has-submenu&quot;&gt;
+						&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;menu-item-heading&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;Women&lt;/a&gt;
+						&lt;ul class&#x3D;&quot;submenu&quot;&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Women&quot;&gt;All Womens&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Tops&quot;&gt;Tops&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Pants&quot;&gt;Pants&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Dresses&quot;&gt;Dresses&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Shoes&quot;&gt;Shoes&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Hats&quot;&gt;Hats&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li class&#x3D;&quot;global-nav__item has-submenu&quot;&gt;
+						&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;menu-item-heading&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;Men&lt;/a&gt;
+						&lt;ul class&#x3D;&quot;submenu&quot;&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Men&quot;&gt;All Mens&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Tops&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Pants&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Kilts&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Shoes&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Hats&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li class&#x3D;&quot;global-nav__item has-submenu&quot;&gt;
+						&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;menu-item-heading&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;Kids&lt;/a&gt;
+						&lt;ul class&#x3D;&quot;submenu&quot;&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Tops&quot;&gt;All Kids&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Tops&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Pants&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Dresses&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Shoes&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Hats&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li class&#x3D;&quot;global-nav__item has-submenu&quot;&gt;
+						&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;menu-item-heading&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;Accessories&lt;/a&gt;
+						&lt;ul class&#x3D;&quot;submenu&quot;&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;Tops&quot;&gt;All Accessories&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Necklaces&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Belts&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class&#x3D;&quot;submenu-item&quot;&gt;
+								&lt;a href&#x3D;&quot;#&quot;&gt;Rings&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li class&#x3D;&quot;global-nav__item&quot;&gt;
+						&lt;a href&#x3D;&quot;#&quot;&gt;Sale&lt;/a&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/nav&gt;
+		&lt;/div&gt;
+		&lt;a class&#x3D;&quot;skip-link&quot; id&#x3D;&quot;skip-to-nav&quot; href&#x3D;&quot;#skip-to-main&quot;&gt;Return to navigation menu&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/header&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="mini-cart">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Mini Cart</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup"></code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="modal">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Modal</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+				<svg>
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</span>
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-notes" data-f-toggle="notes">
+	<blockquote>
+<p><strong>Accessibility:</strong></p>
+<ul>
+<li>When the modal opens, the first selected element should be the close button</li>
+<li>The tab order should be 'trapped' inside the modal so that the user doesn't end up tabbing back down into the page below the modal</li>
+</ul>
+</blockquote>
+<p>Click on the Enlarge button to trigger the modal</p>
+
+</div>
+<div class="f-item-preview">
+	<button data-modal-show="my-accessible-modal" aria-label="Enlarge the Image" class="btn">Enlarge</button>
+<div class="modal" aria-hidden="true" id="my-accessible-modal">
+	<div class="modal-overlay" tabindex="-1" data-modal-hide></div>
+	<div class="modal-content" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+		<div role="document">
+			<button data-modal-hide class="modal-close" aria-label="Close gallery modal">&times;</button>
+
+			<p id="modalDescription" class="element-invisible">Side view of product 3. Escape will cancel and close the window.</p>
+			<h2 id="modalTitle">Zoomed First Image</h2>
+			<p>These are the onscreen instructions that are not attached explicitly to a focusable element. Can screen reader users read this text with the virtual cursor?</p>
+			<button class="btn">Functionless Button</button>
+			<p>Does tabbing stay within the modal? It should only cycle between focusable elements.</p>
+		</div>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;button data-modal-show&#x3D;&quot;my-accessible-modal&quot; aria-label&#x3D;&quot;Enlarge the Image&quot; class&#x3D;&quot;btn&quot;&gt;Enlarge&lt;/button&gt;
+&lt;div class&#x3D;&quot;modal&quot; aria-hidden&#x3D;&quot;true&quot; id&#x3D;&quot;my-accessible-modal&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-overlay&quot; tabindex&#x3D;&quot;-1&quot; data-modal-hide&gt;&lt;/div&gt;
+	&lt;div class&#x3D;&quot;modal-content&quot; aria-modal&#x3D;&quot;true&quot; aria-labelledby&#x3D;&quot;modalTitle&quot; aria-describedby&#x3D;&quot;modalDescription&quot; role&#x3D;&quot;dialog&quot;&gt;
+		&lt;div role&#x3D;&quot;document&quot;&gt;
+			&lt;button data-modal-hide class&#x3D;&quot;modal-close&quot; aria-label&#x3D;&quot;Close gallery modal&quot;&gt;&amp;times;&lt;/button&gt;
+
+			&lt;p id&#x3D;&quot;modalDescription&quot; class&#x3D;&quot;element-invisible&quot;&gt;Side view of product 3. Escape will cancel and close the window.&lt;/p&gt;
+			&lt;h2 id&#x3D;&quot;modalTitle&quot;&gt;Zoomed First Image&lt;/h2&gt;
+			&lt;p&gt;These are the onscreen instructions that are not attached explicitly to a focusable element. Can screen reader users read this text with the virtual cursor?&lt;/p&gt;
+			&lt;button class&#x3D;&quot;btn&quot;&gt;Functionless Button&lt;/button&gt;
+			&lt;p&gt;Does tabbing stay within the modal? It should only cycle between focusable elements.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="pagination">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Pagination</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<p>
+	Paragraph copy with <a href="#">Linked Text</a> inside. Deep v 90's stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+</p>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;p&gt;
+	Paragraph copy with &lt;a href&#x3D;&quot;#&quot;&gt;Linked Text&lt;/a&gt; inside. Deep v 90&#x27;s stumptown listicle mixtape actually neutra pitchfork. VHS chartreuse blue bottle fixie unicorn, truffaut cronut portland godard bushwick kickstarter thundercats.
+&lt;/p&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="product-tile">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Product Tile</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<article class="productGrid__product-tile product">
+	<a class="product__details" href="#">
+		<picture>
+			<source media="(min-width: 650px)" srcset="https://via.placeholder.com/350x150">
+			<source media="(min-width: 465px)" srcset="https://via.placeholder.com/350x150">
+			<img src="https://via.placeholder.com/350x150" alt="" style="width:auto;">
+		</picture>
+		<p class="product__heading" aria-label="learn more about: Turtleneck Sweater, $127.99">Turtleneck Sweater</p>
+	</a>
+	<span class="price">
+        <span class="price__dollar" aria-hidden="true">$127</span>
+	<span class="price__cents">99</span>
+	<span class="visibly-hidden">$127.99</span>
+	</span>
+	<span class="quantity-comp">
+        <button aria-label="Decrease quantity of Turtleneck Sweater by 1" class="quantity-comp__decrease">-</button>
+        <label class="element-invisible" for="product-0-quantity">Change quantity of Turtleneck Sweater from</label>
+        <input type="text" id="product-0-quantity" placeholder="1" class="quantity-comp__text">
+        <span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected
+            <span> 1 Item</span>
+	</span>
+	<button aria-label="increase quantity of Turtleneck Sweater by 1" class="quantity-comp__increase">+</button>
+	</span>
+	<button class="product__cta btn">Add to Cart</button>
+</article>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;article class&#x3D;&quot;productGrid__product-tile product&quot;&gt;
+	&lt;a class&#x3D;&quot;product__details&quot; href&#x3D;&quot;#&quot;&gt;
+		&lt;picture&gt;
+			&lt;source media&#x3D;&quot;(min-width: 650px)&quot; srcset&#x3D;&quot;https://via.placeholder.com/350x150&quot;&gt;
+			&lt;source media&#x3D;&quot;(min-width: 465px)&quot; srcset&#x3D;&quot;https://via.placeholder.com/350x150&quot;&gt;
+			&lt;img src&#x3D;&quot;https://via.placeholder.com/350x150&quot; alt&#x3D;&quot;&quot; style&#x3D;&quot;width:auto;&quot;&gt;
+		&lt;/picture&gt;
+		&lt;p class&#x3D;&quot;product__heading&quot; aria-label&#x3D;&quot;learn more about: Turtleneck Sweater, $127.99&quot;&gt;Turtleneck Sweater&lt;/p&gt;
+	&lt;/a&gt;
+	&lt;span class&#x3D;&quot;price&quot;&gt;
+        &lt;span class&#x3D;&quot;price__dollar&quot; aria-hidden&#x3D;&quot;true&quot;&gt;$127&lt;/span&gt;
+	&lt;span class&#x3D;&quot;price__cents&quot;&gt;99&lt;/span&gt;
+	&lt;span class&#x3D;&quot;visibly-hidden&quot;&gt;$127.99&lt;/span&gt;
+	&lt;/span&gt;
+	&lt;span class&#x3D;&quot;quantity-comp&quot;&gt;
+        &lt;button aria-label&#x3D;&quot;Decrease quantity of Turtleneck Sweater by 1&quot; class&#x3D;&quot;quantity-comp__decrease&quot;&gt;-&lt;/button&gt;
+        &lt;label class&#x3D;&quot;element-invisible&quot; for&#x3D;&quot;product-0-quantity&quot;&gt;Change quantity of Turtleneck Sweater from&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;product-0-quantity&quot; placeholder&#x3D;&quot;1&quot; class&#x3D;&quot;quantity-comp__text&quot;&gt;
+        &lt;span aria-live&#x3D;&quot;assertive&quot; aria-atomic&#x3D;&quot;true&quot; class&#x3D;&quot;visibly-hidden&quot;&gt;You have now selected
+            &lt;span&gt; 1 Item&lt;/span&gt;
+	&lt;/span&gt;
+	&lt;button aria-label&#x3D;&quot;increase quantity of Turtleneck Sweater by 1&quot; class&#x3D;&quot;quantity-comp__increase&quot;&gt;+&lt;/button&gt;
+	&lt;/span&gt;
+	&lt;button class&#x3D;&quot;product__cta btn&quot;&gt;Add to Cart&lt;/button&gt;
+&lt;/article&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="size-chart">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Size Chart</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+				<svg>
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</span>
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-notes" data-f-toggle="notes">
+	<p>The toggle functionality could be abstracted into a generic component that extends to the size chart, but for now this is the only component using a toggle.</p>
+
+</div>
+<div class="f-item-preview">
+	<div class="size-chart">
+	<button class="toggle-size-units-button" aria-live="polite">
+        <span class="element-invisible">Sizes are shown in
+            <span class="units-displayed">inches</span>, click to show in
+            <span class="alternate-units-displayed">centimeters</span>
+        </span>
+        <span class="units-toggle inches selected" aria-hidden="true">Inches</span>
+        <span class="units-toggle centimeters" aria-hidden="true">Centimeters</span>
+    </button>
+	<table class="size-chart-table show-inches">
+		<caption aria-describedby="toggle-size-units-button" class="element-invisible">Size Chart</caption>
+		<tbody>
+			<tr>
+				<th scope="col">
+					<span aria-hidden="true">Size</span>
+					<span class="element-invisible">Body Areas to be Sized</span>
+				</th>
+				<th scope="col">
+					<span aria-hidden="true">S</span>
+					<span class="element-invisible">Small Size</span>
+				</th>
+				<th scope="col">
+					<span aria-hidden="true">M</span>
+					<span class="element-invisible">Medium Size</span>
+				</th>
+				<th scope="col">
+					<span aria-hidden="true">L</span>
+					<span class="element-invisible">Large Size</span>
+				</th>
+			</tr>
+			<tr class="inches">
+				<th scope="row">
+					<span aria-hidden="true">bust (in)</span>
+					<span class="element-invisible">Bust size in inches</span>
+				</th>
+				<td aria-label="30 to 32 inches">30-32</td>
+				<td aria-label="32 to 34 inches">32-34</td>
+				<td aria-label="36 inches">36</td>
+			</tr>
+			<tr class="inches">
+				<th scope="row">
+					<span aria-hidden="true">waist (in)</span>
+					<span class="element-invisible">Waist size in inches</span>
+				</th>
+				<td aria-label="23 to 24 inches">23-24</td>
+				<td aria-label="25 to 27 inches">25-27</td>
+				<td aria-label="28 to 30 inches">28-30</td>
+			</tr>
+			<tr class="inches">
+				<th scope="row">
+					<span aria-hidden="true">hips (in)</span>
+					<span class="element-invisible">Hips size in inches</span>
+				</th>
+				<td aria-label="32 to 33 inches">32-33</td>
+				<td aria-label="34 to 36 inches">34-36</td>
+				<td aria-label="37 to 39 inches">37-39</td>
+			</tr>
+			<tr class="centimeters">
+				<th scope="row">
+					<span aria-hidden="true">bust (cm)</span>
+					<span class="element-invisible">Bust size in centimeters</span>
+				</th>
+				<td aria-label="76.2 to 81.2 centimeters">76.2-81.2</td>
+				<td aria-label="81.2 to 86.36 centimeters">81.2-86.36</td>
+				<td aria-label="91.44 centimeters">91.44</td>
+			</tr>
+			<tr class="centimeters">
+				<th scope="row">
+					<span aria-hidden="true">waist (cm)</span>
+					<span class="element-invisible">Waist size in centimeters</span>
+				</th>
+				<td aria-label="56.42 to 60.96 centimeters">56.42-60.96</td>
+				<td aria-label="63.5 to 68.58 centimeters">63.5-68.58</td>
+				<td aria-label="71.12 to 76.2 centimeters">71.12-76.2</td>
+			</tr>
+			<tr class="centimeters">
+				<th scope="row">
+					<span aria-hidden="true">hips (cm)</span>
+					<span class="element-invisible">Hips size in centimeters</span>
+				</th>
+				<td aria-label="81.2 to 83.82 centimeters">81.2-83.82</td>
+				<td aria-label="86.36 to 91.44 centimeters">86.36-91.44</td>
+				<td aria-label="93.98 to 99.06 centimeters">93.98-99.06</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;size-chart&quot;&gt;
+	&lt;button class&#x3D;&quot;toggle-size-units-button&quot; aria-live&#x3D;&quot;polite&quot;&gt;
+        &lt;span class&#x3D;&quot;element-invisible&quot;&gt;Sizes are shown in
+            &lt;span class&#x3D;&quot;units-displayed&quot;&gt;inches&lt;/span&gt;, click to show in
+            &lt;span class&#x3D;&quot;alternate-units-displayed&quot;&gt;centimeters&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class&#x3D;&quot;units-toggle inches selected&quot; aria-hidden&#x3D;&quot;true&quot;&gt;Inches&lt;/span&gt;
+        &lt;span class&#x3D;&quot;units-toggle centimeters&quot; aria-hidden&#x3D;&quot;true&quot;&gt;Centimeters&lt;/span&gt;
+    &lt;/button&gt;
+	&lt;table class&#x3D;&quot;size-chart-table show-inches&quot;&gt;
+		&lt;caption aria-describedby&#x3D;&quot;toggle-size-units-button&quot; class&#x3D;&quot;element-invisible&quot;&gt;Size Chart&lt;/caption&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th scope&#x3D;&quot;col&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;Size&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Body Areas to be Sized&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;th scope&#x3D;&quot;col&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;S&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Small Size&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;th scope&#x3D;&quot;col&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;M&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Medium Size&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;th scope&#x3D;&quot;col&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;L&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Large Size&lt;/span&gt;
+				&lt;/th&gt;
+			&lt;/tr&gt;
+			&lt;tr class&#x3D;&quot;inches&quot;&gt;
+				&lt;th scope&#x3D;&quot;row&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;bust (in)&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Bust size in inches&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;td aria-label&#x3D;&quot;30 to 32 inches&quot;&gt;30-32&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;32 to 34 inches&quot;&gt;32-34&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;36 inches&quot;&gt;36&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr class&#x3D;&quot;inches&quot;&gt;
+				&lt;th scope&#x3D;&quot;row&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;waist (in)&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Waist size in inches&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;td aria-label&#x3D;&quot;23 to 24 inches&quot;&gt;23-24&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;25 to 27 inches&quot;&gt;25-27&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;28 to 30 inches&quot;&gt;28-30&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr class&#x3D;&quot;inches&quot;&gt;
+				&lt;th scope&#x3D;&quot;row&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;hips (in)&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Hips size in inches&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;td aria-label&#x3D;&quot;32 to 33 inches&quot;&gt;32-33&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;34 to 36 inches&quot;&gt;34-36&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;37 to 39 inches&quot;&gt;37-39&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr class&#x3D;&quot;centimeters&quot;&gt;
+				&lt;th scope&#x3D;&quot;row&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;bust (cm)&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Bust size in centimeters&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;td aria-label&#x3D;&quot;76.2 to 81.2 centimeters&quot;&gt;76.2-81.2&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;81.2 to 86.36 centimeters&quot;&gt;81.2-86.36&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;91.44 centimeters&quot;&gt;91.44&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr class&#x3D;&quot;centimeters&quot;&gt;
+				&lt;th scope&#x3D;&quot;row&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;waist (cm)&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Waist size in centimeters&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;td aria-label&#x3D;&quot;56.42 to 60.96 centimeters&quot;&gt;56.42-60.96&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;63.5 to 68.58 centimeters&quot;&gt;63.5-68.58&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;71.12 to 76.2 centimeters&quot;&gt;71.12-76.2&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr class&#x3D;&quot;centimeters&quot;&gt;
+				&lt;th scope&#x3D;&quot;row&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;hips (cm)&lt;/span&gt;
+					&lt;span class&#x3D;&quot;element-invisible&quot;&gt;Hips size in centimeters&lt;/span&gt;
+				&lt;/th&gt;
+				&lt;td aria-label&#x3D;&quot;81.2 to 83.82 centimeters&quot;&gt;81.2-83.82&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;86.36 to 91.44 centimeters&quot;&gt;86.36-91.44&lt;/td&gt;
+				&lt;td aria-label&#x3D;&quot;93.98 to 99.06 centimeters&quot;&gt;93.98-99.06&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="table">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Table</h2>
+		<div class="f-item-controls">
+			
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+<div class="f-item-preview">
+	<table>
+	<thead>
+		<tr>
+			<th>Table Heading 1</th>
+			<th>Table Heading 2</th>
+			<th>Table Heading 3</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>Table Footer 1</th>
+			<th>Table Footer 2</th>
+			<th>Table Footer 3</th>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr>
+			<td>Table Cell 1</td>
+			<td>Table Cell 2</td>
+			<td>Table Cell 3</td>
+		</tr>
+		<tr>
+			<td>Table Cell 1</td>
+			<td>Table Cell 2</td>
+			<td>Table Cell 3</td>
+		</tr>
+		<tr>
+			<td>Table Cell 1</td>
+			<td>Table Cell 2</td>
+			<td>Table Cell 3</td>
+		</tr>
+		<tr>
+			<td>Table Cell 1</td>
+			<td>Table Cell 2</td>
+			<td>Table Cell 3</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;table&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Table Heading 1&lt;/th&gt;
+			&lt;th&gt;Table Heading 2&lt;/th&gt;
+			&lt;th&gt;Table Heading 3&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tfoot&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Table Footer 1&lt;/th&gt;
+			&lt;th&gt;Table Footer 2&lt;/th&gt;
+			&lt;th&gt;Table Footer 3&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/tfoot&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Table Cell 1&lt;/td&gt;
+			&lt;td&gt;Table Cell 2&lt;/td&gt;
+			&lt;td&gt;Table Cell 3&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Table Cell 1&lt;/td&gt;
+			&lt;td&gt;Table Cell 2&lt;/td&gt;
+			&lt;td&gt;Table Cell 3&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Table Cell 1&lt;/td&gt;
+			&lt;td&gt;Table Cell 2&lt;/td&gt;
+			&lt;td&gt;Table Cell 3&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Table Cell 1&lt;/td&gt;
+			&lt;td&gt;Table Cell 2&lt;/td&gt;
+			&lt;td&gt;Table Cell 3&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+
+
+		</div>
+	<script src="./assets/fabricator/scripts/f.js"></script>
+
+	<!-- toolkit scripts -->
+	<script src="./assets/toolkit/scripts/toolkit.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>
