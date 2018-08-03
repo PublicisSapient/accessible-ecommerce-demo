@@ -12,10 +12,22 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch --recursive ./components/ -o ./components/ | node-sass --watch --recursive ./scss/ -o ./css/"
+    "scss": "node-sass --watch ./scss/global.scss -o ./css | node-sass --watch --recursive ./pages -o ./css | node-sass --watch --recursive ./components -o ./css/components/",
+    "move:css": "cp -R css/global.css docs/src/assets/toolkit/styles",
+    "move:js": "cp -R js/main.js docs/src/assets/toolkit/scripts",
+    "build:docs": "npm run move:css && npm run move:js && cd docs && npm run build",
+    "watch:docs": "npm run move:css && npm run move:js && cd docs && npm start",
+    "build:js": "webpack --mode development"
   },
   "devDependencies": {
-    "node-sass": "4.8.3"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "del-cli": "^1.1.0",
+    "node-sass": "4.8.3",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
     "node-sass": "^4.8.3",
