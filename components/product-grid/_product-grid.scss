@@ -1,15 +1,13 @@
 @import '../../scss/variables';
-// @import '../../scss/flexboxgrid';
+@import '../../scss/mixins';
+
+/* ============================== Product Grid */
 
 .productGrid {
-	width: 100%;
-
-	.row {
-		align-items: flex-start;
-	}
+	display: flex;
+	justify-content: space-between;
 
 	&__filters {
-		// @extend .col-md-2;
 
 		&-wrapper {
 			padding: 16px;
@@ -38,23 +36,6 @@
 				border-bottom: 0px;
 			}
 		}
-		
-		&-clear {
-			font-size: 1.4rem;
-			border: 1px solid $black;
-			width: 100%;
-			background-color: transparent;
-			padding: 16px;
-			cursor: pointer;
-
-			&:hover, &:focus {
-				color: $black-transparent;
-				text-decoration: underline;
-				border-color: $black-transparent;
-			}
-		}
-		
-
 	}
 
 	&__filter {
@@ -74,7 +55,7 @@
 
 			&:before {
 				height: 24px;
-				width: 24px;	
+				width: 24px;
 				border: 1px solid;
 				left: 0px;
 				top: 3px;
@@ -89,14 +70,14 @@
 				transform: rotate(-45deg);
 				left: 5px;
 				top: 10px;
-			}			
+			}
 		}
 	}
 
 	&__filter:focus + label::before {
 		outline: rgb(59, 153, 252) auto 5px;
 	}
-	  
+
 	&__filter + label:after {
 		content: none;
 	}
@@ -120,7 +101,7 @@
 
 		h2 {
 			font-size: 1.5rem;
-			
+
 			@media only screen and (max-width:$tablet) {
 				font-size: 1rem;
 			}
@@ -176,6 +157,28 @@
 		flex-basis: inherit;
 		max-width: inherit;
 	}
+	&__product-tiles{
+		@media only screen and (min-width:$phablet) {
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			margin: 0 -1 * $grid-unit;
+		}
+	}
+	&__product-tile{
+		margin-bottom: $grid-unit * 3;
+		@media only screen and (min-width:$phablet) {
+			margin-left: $grid-unit;
+			margin-right: $grid-unit;
+			@include flex-column(2);
+		}
+		@media only screen and (min-width:$tablet) {
+			@include flex-column(3);
+		}
+		@media only screen and (min-width:$desktop) {
+			@include flex-column(4);
+		}
+	}
 }
 
 .productsContainer{
@@ -204,7 +207,7 @@
 		}
 	}
 
-} 
+}
 
 .pagination {
 
@@ -229,7 +232,7 @@
 				text-decoration: underline;
 			}
 		}
-	
+
 		button.active{
 			background-color: $dark-grey;
 			color: $white;
@@ -245,9 +248,3 @@
 	padding: 2px;
 	display: inline-block;
 }
-
-/* Mobile Styles */
-
-/* Tablet Styles */
-
-/* Desktop Styles */

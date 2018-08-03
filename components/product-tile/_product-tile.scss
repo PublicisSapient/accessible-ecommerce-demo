@@ -1,5 +1,6 @@
 @import '../../scss/variables';
-// @import '../../scss/flexboxgrid';
+
+/* ============================== PRODUCT TILE */
 
 $dollar-size: 14px;
 $cent-size: 12px;
@@ -9,28 +10,21 @@ $small-padding: 16px;
 	border: $grey solid thin;
 	padding: $small-padding;
 	display: flex;
-	flex-direction: column;	
+	flex-direction: column;
 	justify-content: flex-start;
 	img {
 		max-width: 100%;
 	}
-	
+	&__details{
+		border: 0 !important;
+	}
 	&__heading {
 		margin: 16px 0;
 		font-size: 1.4rem;
 	}
 
 	&__cta {
-		border: none;
-		background-color: $rose;
-		font-size: 1.4rem;
-		color: $white;
-		padding: 8px;
-		cursor: pointer;
-		&:hover, &:focus {
-			background-color: $dark-rose;
-			text-decoration: underline;
-		}
+		padding: $grid-unit;
 
 		&.hide {
 			display: none;
@@ -78,8 +72,3 @@ $small-padding: 16px;
 		vertical-align: super;
 	}
 }
-
-
-/* Tablet Styles */
-
-/* Desktop Styles */

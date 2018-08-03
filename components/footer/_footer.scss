@@ -1,5 +1,6 @@
 @import '../../scss/variables';
 
+/* ============================== FOOTER */
 .footer {
 	background: $beige;
 	padding: 32px 0;
@@ -38,6 +39,7 @@
 			a {
 				text-decoration: underline;
 				padding-left: 24px;
+				border: 0;
 			}
 			>li {
 				display: inline-block;
@@ -72,18 +74,7 @@
 			line-height: 1.6rem;
 		}
 		&-submit {
-			font-size: 1.4rem;
-			border: 1px solid $black;
 			width: 224px;
-			background-color: transparent;
-			padding: 16px;
-			cursor: pointer;
-
-			&:hover, &:focus {
-				color: $black-transparent;
-				text-decoration: underline;
-				border-color: $black-transparent;
-			}
 		}
 	}
 	&__link {
@@ -94,16 +85,17 @@
 			a{
 				width: 24px;
 				text-align: center;
+				border: 0;
 			}
 		}
 	}
 	&__column {
 		-webkit-column-break-inside: avoid;
-		/* Chrome, Safari, Opera */
+		// Chrome, Safari, Opera
 		page-break-inside: avoid;
-		/* Firefox */
+		// Firefox
 		break-inside: avoid;
-		/* IE 10+ */
+		// IE 10+
 	}
 	&__icon {
 		font-size: 3.6rem;
@@ -120,7 +112,7 @@
 }
 .secondary-nav{
 	display: flex;
-	height: 170px;
+	height: 190px;
 	flex-direction: column;
 	flex-wrap: wrap;
 	width: 100%;

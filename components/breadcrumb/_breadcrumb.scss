@@ -1,5 +1,5 @@
 @import '../../scss/variables';
-/* Breadcrumb Styles */
+/* ============================================== Breadcrumb Styles */
 
 .breadcrumb {
     font-size: 1.2rem;
@@ -18,7 +18,7 @@
             content: '>';
         }
     }
-    [aria-current="page"] {
+    [aria-current="page"], a[aria-current="page"] {
         color: $dark-grey;
         text-decoration: none;
     }

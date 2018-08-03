@@ -1,14 +1,15 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
 
-/* SASS Variables */
+/* Icons */
+@import url('https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css');
+
+// SASS Variables
 @import 'variables';
 
-/* Global Styles */
+/* ============================== Global Styles */
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -16,14 +17,16 @@ h1, h2, h3, h4, h5, h6{
 }
 fieldset{
     border: 0;
+    padding: 0;
 }
 
-a {
+a:not(.btn) {
     color: $rose;
     text-decoration: none;
-    &:hover{
+    border-bottom: 2px solid transparent;
+    &:hover, &:focus{
         color: $dark-rose;
-        text-decoration: underline;
+        border-bottom-color: $dark-rose;
     }
 }
 p{
@@ -38,17 +41,26 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: $font-md; // 1.6rem (16px) for most browsers
     letter-spacing: 0.05em;
+    margin: 0;
+    color: $black;
 }
-@import url("helpers.css");
-@import url("grid.css");
-@import url("buttons.css");
-@import url("inputs.css");
+@import "helpers";
+@import "grid";
+@import "buttons";
+@import "inputs";
 
-/* Component Styles */
-@import url("../components/global-nav/global-nav.css");
-@import url("../components/breadcrumb/breadcrumb.css");
-@import url("../components/mini-cart/mini-cart.css");
-@import url("../components/product-grid/product-grid.css");
-@import url("../components/product-tile/product-tile.css");
-@import url("../components/carousel/carousel.css");
-@import url("../components/footer/footer.css");
+// Component Styles
+@import "../components/accordion/_accordion.scss";
+@import "../components/breadcrumb/_breadcrumb.scss";
+@import "../components/carousel/_carousel.scss";
+@import "../components/footer/_footer.scss";
+@import "../components/gallery/_gallery.scss";
+@import "../components/global-nav/_global-nav.scss";
+@import "../components/mini-cart/_mini-cart.scss";
+@import "../components/modal/_modal.scss";
+@import "../components/product-description/_product-description.scss";
+@import "../components/product-grid/_product-grid.scss";
+@import "../components/product-reviews/_product-reviews.scss";
+@import "../components/product-tile/_product-tile.scss";
+@import "../components/size-chart/_size-chart.scss";
+

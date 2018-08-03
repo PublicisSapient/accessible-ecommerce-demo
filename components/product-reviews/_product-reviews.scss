@@ -1,0 +1,12 @@
+@import '../../scss/variables';
+
+.rating-summary{
+    margin-bottom: $grid-unit * 3;
+}
+.user-ratings{
+    list-style: none;
+    padding: 0;
+    &__list-item{
+        margin-bottom: $grid-unit;
+    }
+}

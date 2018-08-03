@@ -1,6 +1,6 @@
 @import '../../scss/variables';
 
-/* Mobile Styles */
+/* ============================== GLOBAL NAV */
 .navigation {
 	background-color: $beige;
 	padding: 25px 0;
@@ -10,7 +10,7 @@
 		align-items: flex-end;
 	}
 
-	&__logo {
+	&__logo:not(.btn) {
 		align-items: center;
 		color: #333;
 		display: flex;
@@ -18,8 +18,8 @@
 		img{
 			margin-right: $grid-unit * 2;
 		}
-		&:hover{
-			text-decoration: none;
+		&:hover, &:focus{
+			border-bottom-color: transparent;
 		}
 	}
 
@@ -123,9 +123,3 @@
 .submenu-item{
 	list-style: none;
 }
-
-
-
-/* Tablet Styles */
-
-/* Desktop Styles */

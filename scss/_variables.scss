@@ -1,17 +1,23 @@
-/* COLOURS */
-$blue: #3575FF; 
-$dark-blue: #2A5FD2;
+// VARIABLES
+// Note because this is a file that is included across multiple scss files, don't include anything that will render out css classes
+// Also, use single line comments so that they'll be stripped out when compiling
+
+// COLOURS
+$rose: #B94650;
+$dark-rose: #90373D;
 $white: #FFFFFF;
 $light-grey: #F2F2F2;
 $grey: #C8C8C8;
+$black: #19191E;
+
+$beige: #f4f0ec;
+$blue: #3575FF; 
+$dark-blue: #2A5FD2;
 $medium-grey: #636363;
 $dark-grey: #333333;
-$black: #19191E;
-$error-red: firebrick;
 $black-transparent: rgba(25,25,30,0.75);
-$beige: #f4f0ec;
-$rose: #B94650;
-$dark-rose: #90373D;
+
+$error-red: firebrick;
 
 $mobile: 500px;
 $phablet: 800px;
@@ -23,16 +29,16 @@ $grid-unit: 8px;
 
 $input-size: 24px;
 
-/*
-=========================================== FONT SIZES
+// =========================================== FONT SIZES
 
-We're using REM based on a 10px root value set on html
-Makes the maths easy, e.g.: 1.6rem = 16px
-body is set to 1.6rem in global.scss
-*/
+// We're using REM based on a 10px root value set on html
+// Makes the maths easy, e.g.: 1.6rem = 16px
+// body is set to 1.6rem in global.scss
+
 $font-xxl: 4.2rem;
 $font-xl: 3.6rem;
 $font-lg: 1.8rem;
 $font-md: 1.6rem;
 $font-sm: 1.4rem;
 $font-xs: 1.2rem;
+

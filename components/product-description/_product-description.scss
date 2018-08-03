@@ -1,6 +1,8 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 
+/* ============================== Product Description */
+
 .product-description{
 	padding-right: calc((0px) + (57) * ((100vw - 600px) / (800 - 600)));
 	@media only screen and (min-width: 800px){
@@ -106,7 +108,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		height: 48px;
-		margin-bottom: $grid-unit * 2;
+		margin-bottom: $grid-unit;
 	}
 	&__prefix{
 		margin-right: $grid-unit * 2;

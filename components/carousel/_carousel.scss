@@ -1,5 +1,5 @@
 @import '../../scss/variables';
-/* Mobile Styles */
+/* ============================== CAROUSEL  */
 .carousel-wrapper {
 	margin-bottom: 40px;
 	box-sizing: border-box;
@@ -21,6 +21,7 @@
 		width: 40px;
 		min-height: 120px;
 		border: 1px solid black;
+		font-size: 20px;
 		cursor: pointer;
 		&:disabled{
 			cursor: not-allowed;
@@ -41,14 +42,10 @@
 		flex-flow: row nowrap;
 		padding-left: 0;
 		transition: all 1s;
+		transform: translateX(0px);
 	}
 	.card {
 		padding: 10px;
 		min-width: 270px;
 	}
 }
-
-
-/* Tablet Styles */
-
-/* Desktop Styles */
