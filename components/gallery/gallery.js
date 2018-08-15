@@ -25,15 +25,16 @@ Gallery.prototype = {
 	},
 	initEvents: function () {
 		this.thumbnailButtonEls.forEach(button => {
-			button.addEventListener('click', (e) => {
-				image = e.currentTarget.getElementsByTagName('img')[0];
-				this.mainImageEl.setAttribute("src", image.attributes["data-main-image-url"].value);
-			});
+			button.addEventListener('click', this.handleImageClick.bind(this));
 		});
 
 		this.maximizeEl.addEventListener('click', this.maximizeButtonClick.bind(this));
 		this.minimizeEl.addEventListener('click', this.minimizeButtonClick.bind(this));
-	}
+  },
+  handleImageClick: function (evt) {
+    var image = evt.currentTarget.getElementsByTagName('img')[0];
+    this.mainImageEl.setAttribute("src", image.attributes["data-main-image-url"].value);
+  }
 }
 
 var galleryElements = document.querySelectorAll('.gallery');

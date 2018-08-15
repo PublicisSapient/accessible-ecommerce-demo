@@ -28,7 +28,7 @@ MiniCart.prototype = {
 
         this.dropdownEl.addEventListener('focus', this.onFocus, true);
         this.dropdownEl.addEventListener('blur', this.onButtonBlur, true);
-        document.addEventListener('click', this.onBodyClick, true);
+        document.addEventListener('click', this.onBodyClick, true); // too global, interferes with gallery.js
         this.buttonEl.addEventListener('blur', this.onButtonBlur);
     },
     update: function(data) {
