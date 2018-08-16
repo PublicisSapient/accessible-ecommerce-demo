@@ -1,12 +1,19 @@
 var Gallery = function (element) {
-	this.element = element;
+  this.element = element;
 	this.thumbnailsEl = this.element.getElementsByClassName('gallery__thumbnail-list')[0];
 	this.thumbnailButtonEls = this.thumbnailsEl.querySelectorAll('.gallery__thumbnail-list-item button');
 	this.mainImageEl = document.getElementById('gallery__main-image');
 	this.mainImageContainerEl = this.element.getElementsByClassName('gallery__main-image__inner-container')[0];
 	this.minimizeEl = document.getElementById('gallery__minimize');
-	this.maximizeEl = document.getElementById('gallery__maximize');
+  this.maximizeEl = document.getElementById('gallery__maximize');
+  this.scrollLeftEl = document.getElementById('gallery__thumbnail-container__scroll-left');
+  this.scrollRightEl = document.getElementById('gallery__thumbnail-container__scroll-right');
 
+  this.thumbnailWidth = this.element.getElementsByClassName('gallery__thumbnail-list-item')[0].offsetWidth;
+  this.containerWidth = document.getElementsByClassName('gallery__thumbnail-container')[0].offsetWidth;
+  this.thumbnailsWidth = this.thumbnailWidth * this.thumbnailsEl.children.length;
+  this.totalOffset = Math.floor((this.containerWidth - this.thumbnailsWidth) / 100) * 100;
+  
 	this.initEvents();
 }
 
@@ -29,11 +36,50 @@ Gallery.prototype = {
 		});
 
 		this.maximizeEl.addEventListener('click', this.maximizeButtonClick.bind(this));
-		this.minimizeEl.addEventListener('click', this.minimizeButtonClick.bind(this));
+    this.minimizeEl.addEventListener('click', this.minimizeButtonClick.bind(this));
+    this.scrollLeftEl.addEventListener('mouseup', this.handleScroll.bind(this));
+    this.scrollRightEl.addEventListener('mouseup', this.handleScroll.bind(this));
   },
   handleImageClick: function (evt) {
     var image = evt.currentTarget.getElementsByTagName('img')[0];
     this.mainImageEl.setAttribute("src", image.attributes["data-main-image-url"].value);
+  },
+  handleLeftScroll: function () {
+    this.thumbnailsEl.style.marginLeft = (this.getCurrentPosition() - this.thumbnailWidth) + 'px';
+  },
+  handleRightScroll: function () {
+    this.thumbnailsEl.style.marginLeft = (this.getCurrentPosition() + this.thumbnailWidth) + 'px';
+  },
+  handleScroll: function (evt) {
+    var dir = evt.currentTarget.dataset.scrollDir;
+    if(this.canScroll()) {
+      if(dir === 'left') {
+        this.handleLeftScroll();
+      } else {
+        this.handleRightScroll();
+      }
+    }
+    this.toggleControls();
+  },
+  canScroll: function () {
+    var curPos = this.getCurrentPosition();
+    return curPos <= 0 && curPos >= this.totalOffset;
+  },
+  toggleControls: function() {
+    var curPos = this.getCurrentPosition();
+    if(curPos < 0 && curPos > this.totalOffset) {
+      this.scrollRightEl.removeAttribute('disabled');
+      this.scrollLeftEl.removeAttribute('disabled');
+    }
+    if(curPos >= 0) {
+      this.scrollLeftEl.setAttribute('disabled', true);
+    }
+    if(curPos <= this.totalOffset) {
+      this.scrollRightEl.setAttribute('disabled', true);
+    }
+  },
+  getCurrentPosition: function () {
+    return Number(this.thumbnailsEl.style.marginLeft.replace('px', '')) || 0;
   }
 }
 

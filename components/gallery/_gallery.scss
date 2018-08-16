@@ -45,9 +45,6 @@
         justify-content: space-between;
         overflow: hidden;
     }
-    &__thumbnail-list-item {
-        flex: 1 0 20%;
-    }
 }
 
 
@@ -63,6 +60,22 @@
     height: auto;
     width: auto;
     display: block;
+}
+
+.gallery__thumbnail-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .btn {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .thumbnail__scroll-right {
+    right: 0;
+  }
 }
 
 @media only screen and (min-width: 600px) {
