@@ -590,6 +590,9 @@ body {
     .navigation .global-nav__items {
       display: flex;
       list-style: none; }
+      @media only screen and (max-width: 1024px) {
+        .navigation .global-nav__items {
+          display: none; } }
     .navigation .global-nav__item {
       display: block;
       padding: 8px 24px 4px;
@@ -602,9 +605,13 @@ body {
         .navigation .global-nav__item a:hover, .navigation .global-nav__item a:focus {
           text-decoration: none;
           border-bottom: 2px solid #B94650; }
-        @media only screen and (max-width: 1024px) {
-          .navigation .global-nav__item a {
-            font-size: 0.874rem; } }
+    .navigation .global-nav .dropdown-toggle {
+      display: none; }
+      .navigation .global-nav .dropdown-toggle[aria-expanded="true"] + .global-nav__items {
+        display: block; }
+      @media only screen and (max-width: 1024px) {
+        .navigation .global-nav .dropdown-toggle {
+          display: block; } }
     .navigation .global-nav .has-submenu {
       position: relative; }
     .navigation .global-nav .has-submenu .submenu {
