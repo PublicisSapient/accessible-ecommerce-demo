@@ -2,6 +2,24 @@
 var menuItems = document.querySelectorAll('li.has-submenu > a');
 var activeMenuItem = null;
 
+
+// hamburger menu
+function GlobalNavigation() {
+  this.isMenuOpen = false;
+  this.hamburgerMenuButton = document.getElementById('button');
+  this.hamburgerMenuButton.addEventListener('click', this.handleHamburgerMenuClick.bind(this));
+}
+
+GlobalNavigation.prototype = {
+  handleHamburgerMenuClick: function (evt) {
+    this.isMenuOpen = !this.isMenuOpen;
+    this.hamburgerMenuButton.setAttribute('aria-expanded', this.isMenuOpen);
+  }
+}
+
+new GlobalNavigation();
+
+// TOOD: Move code below into GlobalNavigation object
 function onDocumentClick(event) {
 	const target = event.target;
 	if(!target.classList.contains('has-submenu') && !target.classList.contains('open') && !target.classList.contains('menu-item-heading')) {

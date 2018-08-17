@@ -55,7 +55,11 @@
 
 		&__items{
 			display: flex;
-			list-style: none;
+      list-style: none;
+      
+      @media only screen and (max-width:$tablet) {
+        display: none;
+      }
 		}
 
 		&__item {
@@ -71,11 +75,20 @@
 					text-decoration: none;
 					border-bottom: 2px solid $rose;
 				}
-				@media only screen and (max-width:$tablet) {
-					font-size: 0.874rem;
-				}
 			}
-		}
+    }
+    
+    .dropdown-toggle {
+      display: none;
+
+      &[aria-expanded="true"] + .global-nav__items {
+        display: block;
+      }
+
+      @media only screen and (max-width:$tablet) {
+        display: block;
+      }
+    }
 
 		.has-submenu {
 			position: relative;
