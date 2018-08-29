@@ -7,7 +7,7 @@
 
 	&__items{
 		display: flex;
-		align-items: flex-end;
+    align-items: center;
 	}
 
 	&__logo:not(.btn) {
@@ -20,7 +20,11 @@
 		}
 		&:hover, &:focus{
 			border-bottom-color: transparent;
-		}
+    }
+    
+    @media only screen and (max-width:$tablet) {
+      margin: auto;
+    }
 	}
 
 	&-mini-cart, .mini-cart {
@@ -51,11 +55,25 @@
 		@media only screen and (max-width:$mobile) {
 			order: 3;
 			width: 100vw;
-		}
+    }
+    
+    @media only screen and (max-width:$tablet) {
+      display: initial;
+      order: -1;
+    }
 
 		&__items{
 			display: flex;
-			list-style: none;
+      list-style: none;
+      
+      @media only screen and (max-width:$tablet) {
+        display: none;
+        background-color: $beige;
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
 		}
 
 		&__item {
@@ -71,11 +89,25 @@
 					text-decoration: none;
 					border-bottom: 2px solid $rose;
 				}
-				@media only screen and (max-width:$tablet) {
-					font-size: 0.874rem;
-				}
-			}
-		}
+      }
+      
+      @media only screen and (max-width:$tablet) {
+        padding-left: $grid-unit * 7;
+      }
+    }
+    
+    .dropdown-toggle {
+      display: none;
+
+      &[aria-expanded="true"] + .global-nav__items {
+        display: block;
+        padding: 0;
+      }
+
+      @media only screen and (max-width:$tablet) {
+        display: block;
+      }
+    }
 
 		.has-submenu {
 			position: relative;

@@ -554,7 +554,7 @@ body {
   padding: 25px 0; }
   .navigation__items {
     display: flex;
-    align-items: flex-end; }
+    align-items: center; }
   .navigation__logo:not(.btn) {
     align-items: center;
     color: #333;
@@ -564,6 +564,9 @@ body {
       margin-right: 16px; }
     .navigation__logo:not(.btn):hover, .navigation__logo:not(.btn):focus {
       border-bottom-color: transparent; }
+    @media only screen and (max-width: 1024px) {
+      .navigation__logo:not(.btn) {
+        margin: auto; } }
   .navigation-mini-cart, .navigation .mini-cart {
     align-items: right;
     display: flex;
@@ -587,9 +590,21 @@ body {
       .navigation .global-nav {
         order: 3;
         width: 100vw; } }
+    @media only screen and (max-width: 1024px) {
+      .navigation .global-nav {
+        display: initial;
+        order: -1; } }
     .navigation .global-nav__items {
       display: flex;
       list-style: none; }
+      @media only screen and (max-width: 1024px) {
+        .navigation .global-nav__items {
+          display: none;
+          background-color: #f4f0ec;
+          z-index: 2;
+          position: absolute;
+          left: 0;
+          width: 100%; } }
     .navigation .global-nav__item {
       display: block;
       padding: 8px 24px 4px;
@@ -602,9 +617,17 @@ body {
         .navigation .global-nav__item a:hover, .navigation .global-nav__item a:focus {
           text-decoration: none;
           border-bottom: 2px solid #B94650; }
-        @media only screen and (max-width: 1024px) {
-          .navigation .global-nav__item a {
-            font-size: 0.874rem; } }
+      @media only screen and (max-width: 1024px) {
+        .navigation .global-nav__item {
+          padding-left: 56px; } }
+    .navigation .global-nav .dropdown-toggle {
+      display: none; }
+      .navigation .global-nav .dropdown-toggle[aria-expanded="true"] + .global-nav__items {
+        display: block;
+        padding: 0; }
+      @media only screen and (max-width: 1024px) {
+        .navigation .global-nav .dropdown-toggle {
+          display: block; } }
     .navigation .global-nav .has-submenu {
       position: relative; }
     .navigation .global-nav .has-submenu .submenu {
