@@ -21,4 +21,4 @@ var Template = (function() {
   }
 }());
 
-document.addEventListener('DOMContentLoaded', Template.init.bind(this));
+document.addEventListener('DOMContentLoaded', Template.init);
