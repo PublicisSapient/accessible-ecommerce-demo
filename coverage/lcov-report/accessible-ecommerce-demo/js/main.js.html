@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for accessible-ecommerce-demo/js/main.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">accessible-ecommerce-demo/js</a> main.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/53</span>
+      </div>
+    </div>
+    <p class="quiet">
+      Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+    </p>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/******/ <span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>modules) { // webpackBootstrap</span>
+/******/ 	// The module cache
+/******/ 	var installedModules = <span class="cstat-no" title="statement not covered" >{};</span>
+/******/
+/******/ 	// The require function
+/******/ 	function <span class="fstat-no" title="function not covered" >__webpack_require__(moduleId) {</span>
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		<span class="cstat-no" title="statement not covered" >if(installedModules[moduleId]) {</span>
+/******/ 			<span class="cstat-no" title="statement not covered" >return installedModules[moduleId].exports;</span>
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = <span class="cstat-no" title="statement not covered" >installedModules[moduleId] = {</span>
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		<span class="cstat-no" title="statement not covered" >modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);</span>
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		<span class="cstat-no" title="statement not covered" >module.l = true;</span>
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		<span class="cstat-no" title="statement not covered" >return module.exports;</span>
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.m = modules;</span>
+/******/
+/******/ 	// expose the module cache
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.c = installedModules;</span>
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.d = <span class="fstat-no" title="function not covered" >function(</span>exports, name, getter) {</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >if(!__webpack_require__.o(exports, name)) {</span>
+/******/ 			<span class="cstat-no" title="statement not covered" >Object.defineProperty(exports, name, { enumerable: true, get: getter });</span>
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.r = <span class="fstat-no" title="function not covered" >function(</span>exports) {</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >if(typeof Symbol !== 'undefined' &amp;&amp; Symbol.toStringTag) {</span>
+/******/ 			<span class="cstat-no" title="statement not covered" >Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });</span>
+/******/ 		}
+/******/ 		<span class="cstat-no" title="statement not covered" >Object.defineProperty(exports, '__esModule', { value: true });</span>
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode &amp; 1: value is a module id, require it
+/******/ 	// mode &amp; 2: merge all properties of value into the ns
+/******/ 	// mode &amp; 4: return value when already ns object
+/******/ 	// mode &amp; 8|1: behave like require
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.t = <span class="fstat-no" title="function not covered" >function(</span>value, mode) {</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >if(mode &amp; 1) <span class="cstat-no" title="statement not covered" >v</span>alue = __webpack_require__(value);</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >if(mode &amp; 8) <span class="cstat-no" title="statement not covered" >r</span>eturn value;</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >if((mode &amp; 4) &amp;&amp; typeof value === 'object' &amp;&amp; value &amp;&amp; value.__esModule) <span class="cstat-no" title="statement not covered" >r</span>eturn value;</span>
+/******/ 		var ns = <span class="cstat-no" title="statement not covered" >Object.create(null);</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >__webpack_require__.r(ns);</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >Object.defineProperty(ns, 'default', { enumerable: true, value: value });</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >if(mode &amp; 2 &amp;&amp; typeof value != 'string') <span class="cstat-no" title="statement not covered" >for(var key in value) <span class="cstat-no" title="statement not covered" >__webpack_require__.d(ns, key, <span class="fstat-no" title="function not covered" >function(</span>key) { <span class="cstat-no" title="statement not covered" >return value[key]; }.bind(null, key));</span></span></span></span>
+/******/ 		<span class="cstat-no" title="statement not covered" >return ns;</span>
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.n = <span class="fstat-no" title="function not covered" >function(</span>module) {</span>
+/******/ 		var getter = <span class="cstat-no" title="statement not covered" >module &amp;&amp; module.__esModule ?</span>
+/******/ 			function <span class="fstat-no" title="function not covered" >getDefault() { <span class="cstat-no" title="statement not covered" >return module['default']; } :</span></span>
+/******/ 			function <span class="fstat-no" title="function not covered" >getModuleExports() { <span class="cstat-no" title="statement not covered" >return module; };</span></span>
+/******/ 		<span class="cstat-no" title="statement not covered" >__webpack_require__.d(getter, 'a', getter);</span>
+/******/ 		<span class="cstat-no" title="statement not covered" >return getter;</span>
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.o = <span class="fstat-no" title="function not covered" >function(</span>object, property) { <span class="cstat-no" title="statement not covered" >return Object.prototype.hasOwnProperty.call(object, property); };</span></span>
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	<span class="cstat-no" title="statement not covered" >__webpack_require__.p = "";</span>
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	<span class="cstat-no" title="statement not covered" >return __webpack_require__(__webpack_require__.s = "./src/js/index.js");</span>
+/******/ })
+/************************************************************************/
+/******/ ({
+&nbsp;
+/***/ "./components sync recursive \\.js$":
+/*!*******************************!*\
+  !*** ./components sync \.js$ ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >eval("var map = {\n\t\"./accordion/accordion.js\": \"./components/accordion/accordion.js\",\n\t\"./breadcrumb/breadcrumb.js\": \"./components/breadcrumb/breadcrumb.js\",\n\t\"./carousel/carousel.js\": \"./components/carousel/carousel.js\",\n\t\"./footer/footer.js\": \"./components/footer/footer.js\",\n\t\"./gallery/gallery.js\": \"./components/gallery/gallery.js\",\n\t\"./global-nav/global-nav.js\": \"./components/global-nav/global-nav.js\",\n\t\"./mini-cart/mini-cart.js\": \"./components/mini-cart/mini-cart.js\",\n\t\"./modal/modal.js\": \"./components/modal/modal.js\",\n\t\"./product-description/product-description.js\": \"./components/product-description/product-description.js\",\n\t\"./product-grid/product-grid.js\": \"./components/product-grid/product-grid.js\",\n\t\"./product-tile/product-tile.js\": \"./components/product-tile/product-tile.js\",\n\t\"./size-chart/size-chart.js\": \"./components/size-chart/size-chart.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tvar id = map[req];\n\tif(!(id + 1)) { // check for number or string\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn id;\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync recursive \\\\.js$\";\n\n//# sourceURL=webpack:///./components_sync_\\.js$?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/accordion/accordion.js":
+/*!*******************************************!*\
+  !*** ./components/accordion/accordion.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nvar Accordion = function Accordion(element) {\n\tthis.element = element;\n\tthis.accordionPanels = element.querySelectorAll('.accordion-panel');\n\n\tthis.initEvents();\n};\n\nAccordion.prototype = {\n\tsetFocusOnContent: function setFocusOnContent(accordionPanel) {\n\t\tvar accordionPanelContent = accordionPanel.querySelector('.accordion-panel_content');\n\t\taccordionPanelContent.firstElementChild.focus();\n\t},\n\n\tsetAriaLabelForButton: function setAriaLabelForButton(accordionPanel) {\n\t\tvar accordionPanelContent = accordionPanel.querySelector('.accordion-panel_content');\n\t\tvar accordionPanelButton = accordionPanel.querySelector('button');\n\n\t\tif (accordionPanelContent.classList.contains('accordion--open')) {\n\t\t\taccordionPanelButton.setAttribute('aria-label', accordionPanelButton.getAttribute('data-hide-aria-label'));\n\t\t\tthis.setFocusOnContent(accordionPanel);\n\t\t} else {\n\t\t\taccordionPanelButton.setAttribute('aria-label', accordionPanelButton.getAttribute('data-open-aria-label'));\n\t\t}\n\t},\n\n\tonClickToggleAccordionPanel: function onClickToggleAccordionPanel(accordionPanel) {\n\t\treturn function (event) {\n\t\t\tvar accordionPanelContent = accordionPanel.querySelector('.accordion-panel_content');\n\t\t\tvar accordionPanelHeading = accordionPanel.querySelector('.accordion-panel_heading');\n\n\t\t\t// toggle the open class\n\t\t\taccordionPanelContent.classList.toggle('accordion--open');\n\t\t\taccordionPanelHeading.classList.toggle('accordion--open');\n\n\t\t\tthis.setAriaLabelForButton(accordionPanel);\n\t\t};\n\t},\n\n\tinitEvents: function initEvents() {\n\t\tvar _this = this;\n\n\t\tthis.accordionPanels.forEach(function (accordionPanel) {\n\t\t\tvar button = accordionPanel.querySelector('button');\n\t\t\t_this.setAriaLabelForButton(accordionPanel);\n\t\t\tbutton.addEventListener('click', _this.onClickToggleAccordionPanel(accordionPanel).bind(_this));\n\t\t});\n\t}\n};\nvar accordionElements = document.querySelectorAll('.accordion');\naccordionElements.forEach(function (accordionElement) {\n\tvar accordion = new Accordion(accordionElement);\n});\n\n//# sourceURL=webpack:///./components/accordion/accordion.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/breadcrumb/breadcrumb.js":
+/*!*********************************************!*\
+  !*** ./components/breadcrumb/breadcrumb.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("/* Breadcrumb Functions */\n\n\n//# sourceURL=webpack:///./components/breadcrumb/breadcrumb.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/carousel/carousel.js":
+/*!*****************************************!*\
+  !*** ./components/carousel/carousel.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nvar _Utilities = __webpack_require__(/*! Utilities */ \"./src/js/utils.js\");\n\nvar Carousel = function Carousel(element) {\n\tvar _this = this;\n\n\tthis.element = element;\n\n\tthis.carouselList = element.querySelector('.carousel__items');\n\tthis.items = this.carouselList.querySelectorAll('.card');\n\tthis.buttonRight = element.querySelector('.carousel__arrow--right');\n\tthis.buttonLeft = element.querySelector('.carousel__arrow--left');\n\n\tthis.carouselPosition = 0;\n\tthis.currentPage = 0;\n\tthis.carouselWidth = function () {\n\t\treturn _this.carouselList.getBoundingClientRect().width;\n\t};\n\tthis.totalWidth = function () {\n\t\treturn _this.carouselList.scrollWidth;\n\t};\n\tthis.itemWidth = function () {\n\t\treturn _this.items[0].getBoundingClientRect().width;\n\t};\n\tthis.numItemsVisible = function () {\n\t\treturn Math.floor(_this.carouselWidth() / _this.itemWidth());\n\t};\n\tthis.minX = function () {\n\t\treturn _this.totalWidth() &gt;= _this.carouselWidth() ? -(Math.floor(_this.totalWidth() / _this.carouselWidth()) * _this.carouselWidth()) + _this.carouselWidth() - _this.totalWidth() % _this.carouselWidth() : 0;\n\t};\n\tthis.pageCount = function () {\n\t\treturn Math.ceil(_this.items.length / _this.numItemsVisible());\n\t};\n\n\tthis.shiftAmount = function () {\n\t\treturn _this.numItemsVisible() * _this.itemWidth() * -1;\n\t};\n\n\tthis.initEvents();\n\tthis.refreshCarousel();\n}; /* Carousel Functions */\n\nCarousel.prototype = {\n\tshiftCarousel: function shiftCarousel(pageIndex) {\n\t\tthis.currentPage = pageIndex;\n\t\tvar amount = this.currentPage &lt; this.pageCount() - 1 ? this.currentPage * this.shiftAmount() : this.minX();\n\t\tthis.carouselList.style.transform = 'translatex(' + amount + 'px)';\n\t\tthis.refreshArrowButtons();\n\t},\n\ttoggleButton: function toggleButton(button, isDisabled) {\n\t\treturn isDisabled ? button.setAttribute(\"disabled\", \"disabled\") : button.removeAttribute(\"disabled\");\n\t},\n\trefreshArrowButtons: function refreshArrowButtons() {\n\t\tthis.toggleButton(this.buttonLeft, this.currentPage === 0);\n\t\tthis.toggleButton(this.buttonRight, this.currentPage === this.pageCount() - 1);\n\t},\n\trefreshCarousel: function refreshCarousel() {\n\t\t/*\n  * TODO: Add a (buffered) window resize event call that will reflow the carousel if the page count needs to change\n   */\n\n\t\tthis.refreshArrowButtons();\n\t},\n\n\n\tinitEvents: function initEvents() {\n\t\tvar _this2 = this;\n\n\t\tthis.buttonRight.addEventListener('click', function (e) {\n\t\t\t_this2.shiftCarousel(_this2.currentPage + 1);\n\t\t});\n\n\t\tthis.buttonLeft.addEventListener('click', function (e) {\n\t\t\t_this2.shiftCarousel(_this2.currentPage - 1);\n\t\t});\n\n\t\tthis.items.forEach(function (card) {\n\t\t\tcard.addEventListener('focusin', function (evt) {\n\t\t\t\tvar cardIndex = (0, _Utilities.getElementIndex)(evt.target.closest(\".card\"));\n\t\t\t\tvar cardPage = Math.ceil((cardIndex + 1) / _this2.numItemsVisible()) - 1;\n\t\t\t\tif (cardPage != _this2.currentPage) {\n\t\t\t\t\t_this2.shiftCarousel(cardPage);\n\t\t\t\t}\n\t\t\t});\n\t\t});\n\t}\n};\n\nvar carouselElements = document.querySelectorAll('.carousel');\ncarouselElements.forEach(function (carouselElement) {\n\tvar carousel = new Carousel(carouselElement);\n});\n\n//# sourceURL=webpack:///./components/carousel/carousel.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/footer/footer.js":
+/*!*************************************!*\
+  !*** ./components/footer/footer.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\n/* Footer Functions */\n\n/**\n * The following group of functions are for validating the subscription email form, but it should be possible to encapsulate the code and extend it for any forms\n * Current approach is to use \"Float labels\" (https://css-tricks.com/float-labels-css/), but this hasn't been approved by UX or Accessibility :\\\n * The float labels are a CSS-only solution though, and the JS code shouln't be affected if a decision is made to not use them\n *\n * General Approach to form validation includes:\n * 1. Form fields don't show errors until the form is submitted\n * 2. If there are errors on submit, the first field with an error will receive focus\n * 3. Any fields with errors will have the error text appended to the input label so it will be read out on focus\n * 4. Once the form has entered a 'validating' state (post submit), *fields that had errors* will be re-validated on blur, and the UI will update accordingly\n */\n\n/**\n * Valid form handler\n * @todo Add success functionality\n * @param  {HTMLFormElement} form - the form element that has been validated\n */\nfunction handleValidForm(form) {\n    console.log('%c VALID FORM ', 'background: hotpink; color: white');\n}\n/**\n * Invalid form handler\n * Puts the focus onto the first field with an error\n * @todo Extend functionality to cover all types of form elements\n * @param  {HTMLInputElement} form - the form element that has been validated\n */\nfunction handleInvalidForm(form) {\n    form.querySelector('input:invalid').focus();\n}\n/**\n * Validate single form input\n * Invalid fields will inject the validation message from the &lt;input&gt; element's data-validation-message attribute into the element's label\n * Invalid inputs will get the .has-error class added to them\n * Valid inputs will clear .has-error classes and remove any injected validation messages\n * @todo Extend functionality to cover all types of form elements\n * @todo break message generation/destruction out into separate functions\n * @param  {HTMLInputElement} inputElement - input element being validated\n */\nfunction validateInputElement(inputElement) {\n    var inputElementLabel = document.querySelector('label[for=\"' + inputElement.id + '\"]');\n    if (!inputElement.checkValidity()) {\n        if (inputElementLabel.querySelector('.input__validation-message')) return;\n\n        var errorMessage = document.createElement('span');\n        errorMessage.innerHTML = \" \" + inputElement.dataset.validationMessage;\n        errorMessage.classList.add('input__validation-message');\n        inputElementLabel.appendChild(errorMessage);\n\n        inputElement.classList.add('has-error');\n    } else {\n        var _errorMessage = inputElementLabel.querySelector('.input__validation-message');\n        if (_errorMessage) _errorMessage.parentNode.removeChild(_errorMessage);\n\n        inputElement.classList.remove('has-error');\n    }\n}\n/**\n * Loop over form inputs and update the UI based on their validity\n * @param  {HTMLFormElement} form - form being validated\n */\nfunction toggleInputValidityUI(form) {\n    form.querySelectorAll('input[type=\"text\"], input[type=\"email\"]').forEach(validateInputElement);\n}\n/**\n * Adds or removes the helper CSS class .edited to form element.\n * CSS class is added if field has content\n * CSS class is removed if field has no content\n * The .edited class allows for edge-case styling when a field has content but is not valid\n * @param  {HTMLInputElement} inputElement\n */\nfunction markInputAsEdited(inputElement) {\n    if (inputElement.value) {\n        inputElement.classList.add('edited');\n    } else {\n        inputElement.classList.remove('edited');\n    }\n}\n/**\n * Prevent standard submit event, validate fields and handle valid/invalid forms accordingly\n * @param  {Event} e - Form 'submit' event\n */\nfunction submitClicked(e) {\n    e.preventDefault();\n    toggleInputValidityUI(this);\n\n    if (!this.checkValidity()) {\n        handleInvalidForm(this);\n    } else {\n        //Form is valid - clear any remnants of invalid fields\n        handleValidForm(this);\n    }\n}\n/**\n * Loop over all forms and their inputElement children to add validation Event Listeners\n * @todo Extend functionality to cover all types of form inputs\n * @param  {HTMLFormElement} form\n */\nvar formsToValidate = document.querySelectorAll('[data-validate]');\nformsToValidate.forEach(function (form) {\n    form.addEventListener('submit', submitClicked);\n\n    form.querySelectorAll('input[type=\"text\"], input[type=\"email\"]').forEach(function (inputElement) {\n        inputElement.addEventListener('blur', function () {\n            markInputAsEdited(inputElement);\n            if (inputElement.classList.contains('has-error')) {\n                validateInputElement(inputElement);\n            }\n        });\n    });\n});\n\n//# sourceURL=webpack:///./components/footer/footer.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/gallery/gallery.js":
+/*!***************************************!*\
+  !*** ./components/gallery/gallery.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nvar Gallery = function Gallery(element) {\n  this.element = element;\n  this.thumbnailsEl = this.element.getElementsByClassName('gallery__thumbnail-list')[0];\n  this.thumbnailButtonEls = this.thumbnailsEl.querySelectorAll('.gallery__thumbnail-list-item button');\n  this.mainImageEl = document.getElementById('gallery__main-image');\n  this.mainImageContainerEl = this.element.getElementsByClassName('gallery__main-image__inner-container')[0];\n  this.minimizeEl = document.getElementById('gallery__minimize');\n  this.maximizeEl = document.getElementById('gallery__maximize');\n  this.scrollLeftEl = document.getElementById('gallery__thumbnail-container__scroll-left');\n  this.scrollRightEl = document.getElementById('gallery__thumbnail-container__scroll-right');\n\n  this.thumbnailWidth = this.element.getElementsByClassName('gallery__thumbnail-list-item')[0].offsetWidth;\n  this.containerWidth = document.getElementsByClassName('gallery__thumbnail-container')[0].offsetWidth;\n  this.thumbnailsWidth = this.thumbnailWidth * this.thumbnailsEl.children.length;\n  this.totalOffset = Math.floor((this.containerWidth - this.thumbnailsWidth) / 100) * 100;\n\n  this.initEvents();\n};\n\nGallery.prototype = {\n  minimizeButtonClick: function minimizeButtonClick() {\n    this.mainImageEl.style.width = \"100%\";\n    this.mainImageContainerEl.style.overflow = \"initial\";\n    this.minimizeEl.setAttribute(\"disabled\", true);\n    this.maximizeEl.removeAttribute(\"disabled\");\n  },\n  maximizeButtonClick: function maximizeButtonClick() {\n    this.mainImageEl.style.width = \"150%\";\n    this.mainImageContainerEl.style.overflow = \"auto\";\n    this.maximizeEl.setAttribute(\"disabled\", true);\n    this.minimizeEl.removeAttribute(\"disabled\");\n  },\n  initEvents: function initEvents() {\n    var _this = this;\n\n    this.thumbnailButtonEls.forEach(function (button) {\n      button.addEventListener('click', _this.handleImageClick.bind(_this));\n    });\n\n    this.maximizeEl.addEventListener('click', this.maximizeButtonClick.bind(this));\n    this.minimizeEl.addEventListener('click', this.minimizeButtonClick.bind(this));\n    this.scrollLeftEl.addEventListener('mouseup', this.handleScroll.bind(this));\n    this.scrollRightEl.addEventListener('mouseup', this.handleScroll.bind(this));\n  },\n  handleImageClick: function handleImageClick(evt) {\n    var image = evt.currentTarget.getElementsByTagName('img')[0];\n    this.mainImageEl.setAttribute(\"src\", image.attributes[\"data-main-image-url\"].value);\n  },\n  handleLeftScroll: function handleLeftScroll() {\n    this.thumbnailsEl.style.marginLeft = this.getCurrentPosition() - this.thumbnailWidth + 'px';\n  },\n  handleRightScroll: function handleRightScroll() {\n    this.thumbnailsEl.style.marginLeft = this.getCurrentPosition() + this.thumbnailWidth + 'px';\n  },\n  handleScroll: function handleScroll(evt) {\n    var dir = evt.currentTarget.dataset.scrollDir;\n    if (this.canScroll()) {\n      if (dir === 'left') {\n        this.handleLeftScroll();\n      } else {\n        this.handleRightScroll();\n      }\n    }\n    this.toggleControls();\n  },\n  canScroll: function canScroll() {\n    var curPos = this.getCurrentPosition();\n    return curPos &lt;= 0 &amp;&amp; curPos &gt;= this.totalOffset;\n  },\n  toggleControls: function toggleControls() {\n    var curPos = this.getCurrentPosition();\n    if (curPos &lt; 0 &amp;&amp; curPos &gt; this.totalOffset) {\n      this.scrollRightEl.removeAttribute('disabled');\n      this.scrollLeftEl.removeAttribute('disabled');\n    }\n    if (curPos &gt;= 0) {\n      this.scrollLeftEl.setAttribute('disabled', true);\n    }\n    if (curPos &lt;= this.totalOffset) {\n      this.scrollRightEl.setAttribute('disabled', true);\n    }\n  },\n  getCurrentPosition: function getCurrentPosition() {\n    return Number(this.thumbnailsEl.style.marginLeft.replace('px', '')) || 0;\n  }\n};\n\nvar galleryElements = document.querySelectorAll('.gallery');\ngalleryElements.forEach(function (galleryElement) {\n  var gallery = new Gallery(galleryElement);\n});\n\n//# sourceURL=webpack:///./components/gallery/gallery.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/global-nav/global-nav.js":
+/*!*********************************************!*\
+  !*** ./components/global-nav/global-nav.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n/* Global Nav Functions */\nvar menuItems = document.querySelectorAll('li.has-submenu &gt; a');\nvar activeMenuItem = null;\n\n// hamburger menu\nfunction GlobalNavigation() {\n\tthis.isMenuOpen = false;\n\tthis.hamburgerMenuButton = document.getElementById('button');\n\tthis.hamburgerMenuButton.addEventListener('click', this.handleHamburgerMenuClick.bind(this));\n}\n\nGlobalNavigation.prototype = {\n\thandleHamburgerMenuClick: function handleHamburgerMenuClick(evt) {\n\t\tthis.isMenuOpen = !this.isMenuOpen;\n\t\tthis.hamburgerMenuButton.setAttribute('aria-expanded', this.isMenuOpen);\n\t}\n\n\t// new GlobalNavigation();\n\n\t// TOOD: Move code below into GlobalNavigation object\n};function onDocumentClick(event) {\n\tvar target = event.target;\n\tif (!target.classList.contains('has-submenu') &amp;&amp; !target.classList.contains('open') &amp;&amp; !target.classList.contains('menu-item-heading')) {\n\t\tcloseAllMenus();\n\t\tremoveOnDocumentClickEventHandler();\n\t}\n}\n\nfunction addOnDocumentClickEventHandler() {\n\tsetTimeout(function () {\n\t\twindow.addEventListener('click', onDocumentClick);\n\t}, 1);\n}\n\nfunction removeOnDocumentClickEventHandler() {\n\twindow.removeEventListener('click', onDocumentClick);\n}\n\nfunction onBlurTabableElement(event) {\n\tremoveTabOutEventHandler(activeMenuItem);\n\tcloseAllMenus();\n}\n\nfunction addTabOutEventHandler(element) {\n\tvar tabableElements = element.querySelectorAll('.submenu a');\n\tvar tabableElementsLength = tabableElements.length;\n\tif (tabableElementsLength &gt; 0) {\n\t\tvar lastElement = tabableElements[tabableElementsLength - 1];\n\t\tlastElement.addEventListener('blur', onBlurTabableElement);\n\t}\n}\n\nfunction removeTabOutEventHandler(element) {\n\tvar tabableElements = element.querySelectorAll('.submenu a');\n\tvar tabableElementsLength = tabableElements.length;\n\tif (tabableElementsLength &gt; 0) {\n\t\tvar lastElement = tabableElements[tabableElementsLength - 1];\n\t\tlastElement.removeEventListener('blur', onBlurTabableElement);\n\t}\n}\n\nfunction closeMenu(element) {\n\tif (element.parentNode.classList.contains('open')) {\n\t\telement.parentNode.classList.remove('open');\n\t\telement.setAttribute('aria-expanded', \"false\");\n\t\tactiveMenuItem = null;\n\t}\n}\n\nfunction openMenu(element) {\n\tcloseAllMenus();\n\tvar parent = element.parentNode;\n\tparent.classList.add('open');\n\telement.setAttribute('aria-expanded', \"true\");\n\tactiveMenuItem = parent;\n\taddOnDocumentClickEventHandler();\n\taddTabOutEventHandler(activeMenuItem);\n}\n\nfunction closeAllMenus() {\n\t[].forEach.call(menuItems, closeMenu);\n}\n\nfunction onClickMenuItemWithSubmenu(event) {\n\tevent.preventDefault();\n\tvar target = event.currentTarget;\n\ttarget.parentNode.classList.contains('open') ? closeMenu(target) : openMenu(target);\n\treturn false;\n}\n\nArray.prototype.forEach.call(menuItems, function (el, i) {\n\tel.addEventListener(\"click\", onClickMenuItemWithSubmenu);\n});\n\nexports.default = GlobalNavigation;\n\n//# sourceURL=webpack:///./components/global-nav/global-nav.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/mini-cart/mini-cart.js":
+/*!*******************************************!*\
+  !*** ./components/mini-cart/mini-cart.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\n/* Mini Cart Functions */\n\nvar MiniCart = function MiniCart(element) {\n    var rootClass = 'mini-cart';\n    this.el = element;\n    this.buttonEl = this.el.getElementsByClassName(rootClass + \"__toggle\")[0];\n    this.dropdownEl = this.el.getElementsByClassName(rootClass + \"__dropdown\")[0];\n    this.updateElement = this.el.getElementsByClassName(rootClass + \"__updated\")[0];\n\n    this.initEvents();\n};\nMiniCart.prototype = {\n    initEvents: function initEvents() {\n        this.onFocus = this.onFocus.bind(this);\n        this.onBlur = this.onBlur.bind(this);\n        this.onButtonBlur = this.onButtonBlur.bind(this);\n        this.closeIfMenuBlurred = this.closeIfMenuBlurred.bind(this);\n        this.toggleMenu = this.toggleMenu.bind(this);\n        this.onBodyClick = this.onBodyClick.bind(this);\n\n        // console.log(el, buttonEl, dropdownEl);\n        /* buttonEl.addEventListener('mouseover', this.onFocus);\n        buttonEl.addEventListener('mouseout', this.onBlur); */\n        this.buttonEl.addEventListener('click', this.toggleMenu);\n\n        /* buttonEl.addEventListener('focus', this.onFocus);\n        buttonEl.addEventListener('blur', this.onButtonBlur); */\n\n        this.dropdownEl.addEventListener('focus', this.onFocus, true);\n        this.dropdownEl.addEventListener('blur', this.onButtonBlur, true);\n        //document.addEventListener('click', this.onBodyClick, true); // too global, interferes with gallery.js\n        this.buttonEl.addEventListener('blur', this.onButtonBlur);\n    },\n    update: function update(data) {\n        var message = data.quantity + \" \" + data.name + \" has been added to your cart.\";\n        updateElement.innerHTML = message;\n    },\n    onFocus: function onFocus() {\n        this.dropdownEl.classList.add('expanded');\n        this.buttonEl.setAttribute('aria-expanded', 'true');\n    },\n    onBlur: function onBlur() {\n        this.dropdownEl.classList.remove('expanded');\n        this.buttonEl.setAttribute('aria-expanded', 'false');\n    },\n    toggleMenu: function toggleMenu() {\n        if (this.dropdownEl.classList.contains('expanded')) {\n            this.onBlur();\n        } else {\n            this.onFocus();\n        }\n    },\n    onButtonBlur: function onButtonBlur(e) {\n        requestAnimationFrame(this.closeIfMenuBlurred.bind(this, e.target, e.currentTarget, e.relatedTarget));\n    },\n    onBodyClick: function onBodyClick(e) {\n        var target = e.target;\n\n        if (!this.dropdownEl.contains(target) &amp;&amp; target !== buttonEl) {\n            this.onBlur();\n        }\n    },\n    closeIfMenuBlurred: function closeIfMenuBlurred(target, currentTarget, relatedTarget) {\n        // console.log('closeIfMenuBlurred', 'relatedTarget', relatedTarget, 'activeElement', document.activeElement);\n        var focusedElement = relatedTarget || document.activeElement;\n        var isFocusLost = focusedElement.parentNode === document.body || focusedElement === document.body || focusedElement === null;\n\n        /*\n         * If a user clicks anywhere within the menu that isn't a button, it\n         * shouldn't close the menu.  This happens also should happen when focus is\n         * lost (which is what the `isFocusLost` variable keeps track of).\n         *\n         * If we blurred out of the `.menu_panel`, then we must close the\n         * menu.\n         */\n        // console.log('isFocusLost', isFocusLost)\n        if (isFocusLost || !this.dropdownEl.contains(focusedElement) &amp;&amp; focusedElement !== this.buttonEl) {\n            this.onBlur();\n        }\n    }\n};\n\nvar miniCartElements = document.querySelectorAll('.mini-cart');\nminiCartElements.forEach(function (miniCartElement) {\n    var miniCart = new MiniCart(miniCartElement);\n});\n\n//# sourceURL=webpack:///./components/mini-cart/mini-cart.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/modal/modal.js":
+/*!***********************************!*\
+  !*** ./components/modal/modal.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nvar _Utilities = __webpack_require__(/*! Utilities */ \"./src/js/utils.js\");\n\nvar Modal = function Modal(element, mainSelector) {\n\tthis.element = element;\n\tthis.focusedElementBeforeModal;\n\tthis.main = document.querySelector(mainSelector) || document.body;\n\n\tthis.shown = false;\n\n\tthis.initEvents();\n}; // This script from https://www.cssscript.com/fully-accessible-modal-window-with-pure-javascript/\n// It has been reformatted to fit the in-house component coding standards\n// License: MIT\n\nModal.prototype = {\n\tonKeyDown: function onKeyDown(event) {\n\t\tif (this.shown &amp;&amp; event.which === 27) {\n\t\t\tevent.preventDefault();\n\t\t\tthis.hide();\n\t\t}\n\n\t\tif (this.shown &amp;&amp; event.which === 9) {\n\t\t\t(0, _Utilities.trapTabKey)(this.element, event);\n\t\t}\n\t},\n\tonFocus: function onFocus() {\n\t\tif (this.shown &amp;&amp; !this.element.contains(event.target)) {\n\t\t\t(0, _Utilities.setFocusToFirstItem)(this.element);\n\t\t}\n\t},\n\tshow: function show() {\n\t\tthis.shown = true;\n\t\tthis.element.setAttribute('aria-hidden', 'false');\n\t\tthis.element.setAttribute('aria-expanded', 'true');\n\t\tthis.main.setAttribute('aria-hidden', 'true');\n\t\tthis.focusedElementBeforeModal = document.activeElement;\n\t\t(0, _Utilities.setFocusToFirstItem)(this.element);\n\t},\n\thide: function hide() {\n\t\tthis.shown = false;\n\t\tthis.element.setAttribute('aria-hidden', 'true');\n\t\tthis.element.setAttribute('aria-expanded', 'false');\n\t\tthis.main.setAttribute('aria-hidden', 'false');\n\t\tthis.focusedElementBeforeModal.focus();\n\t},\n\tinitEvents: function initEvents() {\n\t\tvar _this = this;\n\n\t\tdocument.addEventListener('keydown', this.onKeyDown.bind(this));\n\n\t\tdocument.body.addEventListener('focus', this.onFocus.bind(this), true);\n\n\t\t(0, _Utilities.$$)('[data-modal-show=\"' + this.element.id + '\"]').forEach(function (opener) {\n\t\t\treturn opener.addEventListener('click', _this.show.bind(_this));\n\t\t});\n\n\t\t(0, _Utilities.$$)('[data-modal-hide]', this.element).concat((0, _Utilities.$$)('[data-modal-hide=\"' + this.element.id + '\"]')).forEach(function (closer) {\n\t\t\treturn closer.addEventListener('click', _this.hide.bind(_this));\n\t\t});\n\t}\n};\n\nvar modalElements = document.querySelectorAll('.modal');\nmodalElements.forEach(function (modalElement) {\n\tvar modal = new Modal(modalElement, '#content');\n});\n\n//# sourceURL=webpack:///./components/modal/modal.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/product-description/product-description.js":
+/*!***************************************************************!*\
+  !*** ./components/product-description/product-description.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\n//# sourceURL=webpack:///./components/product-description/product-description.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/product-grid/product-grid.js":
+/*!*************************************************!*\
+  !*** ./components/product-grid/product-grid.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nvar ProductGrid = function ProductGrid() {\n\n\t/* Product Grid Functions */\n\tvar clearFiltersButton = document.querySelector('#showingNumberProducts__clear');\n\tvar numberOfProductsInGridAriaLiveRegion = document.querySelector('#showingNumberProducts__description');\n\tvar numberOfProductsHeading = document.querySelector('#showingNumberProducts__heading');\n\tvar numberOfFiltersAppliedAriaLiveRegion = document.querySelector('#showingNumberFilters__description');\n\tvar filterInputs = document.querySelectorAll('.productGrid__filter');\n\tvar productGrid = document.querySelector('#product-grid');\n\tvar products = productGrid.querySelectorAll('.product');\n\n\t// Add click event to clear filters button\n\tclearFiltersButton.addEventListener('click', function () {\n\t\tsetTimeout(updateNumberOfAppliedFiltersAndProductsShowing, 1);\n\t});\n\n\tfilterInputs.forEach(function (filterInput) {\n\t\tfilterInput.addEventListener('change', updateNumberOfAppliedFiltersAndProductsShowing);\n\t});\n\n\tfunction updateNumberOfAppliedFiltersAndProductsShowing() {\n\t\tupdateNumberOfAppliedFilters();\n\t\tupdateNumberOfProductsShowing();\n\t}\n\n\tfunction updateNumberOfAppliedFilters() {\n\t\tvar numberOfAppliedFilters = 0;\n\t\tfilterInputs.forEach(function (filterInput) {\n\t\t\tif (filterInput.checked) {\n\t\t\t\tnumberOfAppliedFilters++;\n\t\t\t}\n\t\t});\n\t\t// if the number of filters is 1 then we need to use singlular filter\n\t\tvar filterOrFilters = numberOfAppliedFilters === 1 ? 'filter' : 'filters';\n\n\t\tshowingNumberFilters__description.innerHTML = numberOfAppliedFilters + ' ' + filterOrFilters + ' applied';\n\t\tif (numberOfAppliedFilters &gt; 0) {\n\t\t\tclearFiltersButton.setAttribute('aria-label', 'Clear ' + numberOfAppliedFilters + ' applied product ' + filterOrFilters + '.');\n\t\t} else {\n\t\t\tclearFiltersButton.setAttribute('aria-label', 'Clear product filters. There are no filters currently applied.');\n\t\t}\n\t}\n\n\tfunction updateNumberOfProductsShowing() {\n\t\t// for the demo we will generate a random number of products available between 0 and 100\n\t\tvar randomNumberOfProducts = Math.floor(Math.random() * Math.floor(100));\n\t\tnumberOfProductsInGridAriaLiveRegion.innerHTML = 'Showing ' + randomNumberOfProducts + ' products';\n\t}\n\n\tvar pagination = document.querySelectorAll('[data-go-to-page]');\n\n\tpagination.forEach(function (paginationBtn) {\n\t\tpaginationBtn.addEventListener(\"click\", function (evt) {\n\t\t\tevt.preventDefault();\n\t\t\tlocation.hash = \"!/\" + paginationBtn.dataset.goToPage;\n\t\t\t// refresh product list...\n\t\t\tproductGrid.style.opacity = 0.1;\n\t\t\tsetTimeout(function () {\n\t\t\t\tproductGrid.style.opacity = 1;\n\n\t\t\t\t// set focus state\n\t\t\t\tnumberOfProductsHeading.focus();\n\t\t\t}, 500);\n\t\t});\n\t});\n\n\tproducts.forEach(function (product, index) {\n\t\tvar addToCartButton = product.querySelector('.product__cta');\n\t\tvar quantityComponent = product.querySelector('.quantity-comp');\n\t\tvar quantityComponentValue = product.querySelector('.quantity-comp__text');\n\t\tvar productName = product.querySelector('.product__heading').innerHTML;\n\t\tvar decreaseQuantityButton = product.querySelector('.quantity-comp__decrease');\n\t\tvar increaseQuantityButton = product.querySelector('.quantity-comp__increase');\n\t\tvar productDetails = product.querySelector('.product__details');\n\n\t\taddToCartButton.addEventListener(\"click\", function (evt) {\n\t\t\t// toggle the UI to show the + - component\n\t\t\tquantityComponent.classList.add('show');\n\t\t\taddToCartButton.classList.add('hide');\n\n\t\t\t// update the mini cart with the valid info\n\t\t\tupdateMiniCart('123', quantityComponentValue.value, productName);\n\t\t\tproductDetails.focus();\n\t\t});\n\t});\n\n\tfunction updateMiniCart(sku, quantity, name) {\n\t\tMiniCart.update({\n\t\t\tsku: sku,\n\t\t\tquantity: quantity,\n\t\t\tname: name\n\t\t});\n\t}\n};\n\n//# sourceURL=webpack:///./components/product-grid/product-grid.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/product-tile/product-tile.js":
+/*!*************************************************!*\
+  !*** ./components/product-tile/product-tile.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("/* Product Tile Functions */\n\n\n//# sourceURL=webpack:///./components/product-tile/product-tile.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./components/size-chart/size-chart.js":
+/*!*********************************************!*\
+  !*** ./components/size-chart/size-chart.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nvar SizeChart = function SizeChart(element) {\n\tthis.element = element;\n\tthis.table = this.element.querySelector('.size-chart-table');\n\tthis.unitsDisplayed = this.element.querySelector('.units-displayed');\n\tthis.alternateUnits = this.element.querySelector('.alternate-units-displayed');\n\tthis.toggleChildren = this.element.querySelectorAll('.units-toggle');\n\n\tthis.initEvents();\n};\nSizeChart.prototype = {\n\tinitEvents: function initEvents() {\n\t\tthis.element.querySelector('.toggle-size-units-button').addEventListener('click', this.onToggle.bind(this));\n\t},\n\tonToggle: function onToggle() {\n\t\tvar selectedUnits = this.unitsDisplayed.textContent;\n\t\tthis.unitsDisplayed.textContent = selectedUnits === 'inches' ? 'centimeters' : 'inches';\n\t\tthis.alternateUnits.textContent = selectedUnits === 'inches' ? 'inches' : 'centimeters';\n\t\tthis.toggleChildren.forEach(function (toggle) {\n\t\t\ttoggle.classList.toggle('selected');\n\t\t});\n\n\t\tthis.table.classList.toggle('show-inches');\n\t\tthis.table.classList.toggle('show-centimeters');\n\t}\n};\nvar sizeChartElements = document.querySelectorAll('.size-chart');\nsizeChartElements.forEach(function (sizeChartElement) {\n\tvar sizeChart = new SizeChart(sizeChartElement);\n});\n\n//# sourceURL=webpack:///./components/size-chart/size-chart.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./node_modules/whatwg-fetch/fetch.js":
+/*!********************************************!*\
+  !*** ./node_modules/whatwg-fetch/fetch.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\n(function (self) {\n  'use strict';\n\n  if (self.fetch) {\n    return;\n  }\n\n  var support = {\n    searchParams: 'URLSearchParams' in self,\n    iterable: 'Symbol' in self &amp;&amp; 'iterator' in Symbol,\n    blob: 'FileReader' in self &amp;&amp; 'Blob' in self &amp;&amp; function () {\n      try {\n        new Blob();\n        return true;\n      } catch (e) {\n        return false;\n      }\n    }(),\n    formData: 'FormData' in self,\n    arrayBuffer: 'ArrayBuffer' in self\n  };\n\n  if (support.arrayBuffer) {\n    var viewClasses = ['[object Int8Array]', '[object Uint8Array]', '[object Uint8ClampedArray]', '[object Int16Array]', '[object Uint16Array]', '[object Int32Array]', '[object Uint32Array]', '[object Float32Array]', '[object Float64Array]'];\n\n    var isDataView = function isDataView(obj) {\n      return obj &amp;&amp; DataView.prototype.isPrototypeOf(obj);\n    };\n\n    var isArrayBufferView = ArrayBuffer.isView || function (obj) {\n      return obj &amp;&amp; viewClasses.indexOf(Object.prototype.toString.call(obj)) &gt; -1;\n    };\n  }\n\n  function normalizeName(name) {\n    if (typeof name !== 'string') {\n      name = String(name);\n    }\n    if (/[^a-z0-9\\-#$%&amp;'*+.\\^_`|~]/i.test(name)) {\n      throw new TypeError('Invalid character in header field name');\n    }\n    return name.toLowerCase();\n  }\n\n  function normalizeValue(value) {\n    if (typeof value !== 'string') {\n      value = String(value);\n    }\n    return value;\n  }\n\n  // Build a destructive iterator for the value list\n  function iteratorFor(items) {\n    var iterator = {\n      next: function next() {\n        var value = items.shift();\n        return { done: value === undefined, value: value };\n      }\n    };\n\n    if (support.iterable) {\n      iterator[Symbol.iterator] = function () {\n        return iterator;\n      };\n    }\n\n    return iterator;\n  }\n\n  function Headers(headers) {\n    this.map = {};\n\n    if (headers instanceof Headers) {\n      headers.forEach(function (value, name) {\n        this.append(name, value);\n      }, this);\n    } else if (Array.isArray(headers)) {\n      headers.forEach(function (header) {\n        this.append(header[0], header[1]);\n      }, this);\n    } else if (headers) {\n      Object.getOwnPropertyNames(headers).forEach(function (name) {\n        this.append(name, headers[name]);\n      }, this);\n    }\n  }\n\n  Headers.prototype.append = function (name, value) {\n    name = normalizeName(name);\n    value = normalizeValue(value);\n    var oldValue = this.map[name];\n    this.map[name] = oldValue ? oldValue + ',' + value : value;\n  };\n\n  Headers.prototype['delete'] = function (name) {\n    delete this.map[normalizeName(name)];\n  };\n\n  Headers.prototype.get = function (name) {\n    name = normalizeName(name);\n    return this.has(name) ? this.map[name] : null;\n  };\n\n  Headers.prototype.has = function (name) {\n    return this.map.hasOwnProperty(normalizeName(name));\n  };\n\n  Headers.prototype.set = function (name, value) {\n    this.map[normalizeName(name)] = normalizeValue(value);\n  };\n\n  Headers.prototype.forEach = function (callback, thisArg) {\n    for (var name in this.map) {\n      if (this.map.hasOwnProperty(name)) {\n        callback.call(thisArg, this.map[name], name, this);\n      }\n    }\n  };\n\n  Headers.prototype.keys = function () {\n    var items = [];\n    this.forEach(function (value, name) {\n      items.push(name);\n    });\n    return iteratorFor(items);\n  };\n\n  Headers.prototype.values = function () {\n    var items = [];\n    this.forEach(function (value) {\n      items.push(value);\n    });\n    return iteratorFor(items);\n  };\n\n  Headers.prototype.entries = function () {\n    var items = [];\n    this.forEach(function (value, name) {\n      items.push([name, value]);\n    });\n    return iteratorFor(items);\n  };\n\n  if (support.iterable) {\n    Headers.prototype[Symbol.iterator] = Headers.prototype.entries;\n  }\n\n  function consumed(body) {\n    if (body.bodyUsed) {\n      return Promise.reject(new TypeError('Already read'));\n    }\n    body.bodyUsed = true;\n  }\n\n  function fileReaderReady(reader) {\n    return new Promise(function (resolve, reject) {\n      reader.onload = function () {\n        resolve(reader.result);\n      };\n      reader.onerror = function () {\n        reject(reader.error);\n      };\n    });\n  }\n\n  function readBlobAsArrayBuffer(blob) {\n    var reader = new FileReader();\n    var promise = fileReaderReady(reader);\n    reader.readAsArrayBuffer(blob);\n    return promise;\n  }\n\n  function readBlobAsText(blob) {\n    var reader = new FileReader();\n    var promise = fileReaderReady(reader);\n    reader.readAsText(blob);\n    return promise;\n  }\n\n  function readArrayBufferAsText(buf) {\n    var view = new Uint8Array(buf);\n    var chars = new Array(view.length);\n\n    for (var i = 0; i &lt; view.length; i++) {\n      chars[i] = String.fromCharCode(view[i]);\n    }\n    return chars.join('');\n  }\n\n  function bufferClone(buf) {\n    if (buf.slice) {\n      return buf.slice(0);\n    } else {\n      var view = new Uint8Array(buf.byteLength);\n      view.set(new Uint8Array(buf));\n      return view.buffer;\n    }\n  }\n\n  function Body() {\n    this.bodyUsed = false;\n\n    this._initBody = function (body) {\n      this._bodyInit = body;\n      if (!body) {\n        this._bodyText = '';\n      } else if (typeof body === 'string') {\n        this._bodyText = body;\n      } else if (support.blob &amp;&amp; Blob.prototype.isPrototypeOf(body)) {\n        this._bodyBlob = body;\n      } else if (support.formData &amp;&amp; FormData.prototype.isPrototypeOf(body)) {\n        this._bodyFormData = body;\n      } else if (support.searchParams &amp;&amp; URLSearchParams.prototype.isPrototypeOf(body)) {\n        this._bodyText = body.toString();\n      } else if (support.arrayBuffer &amp;&amp; support.blob &amp;&amp; isDataView(body)) {\n        this._bodyArrayBuffer = bufferClone(body.buffer);\n        // IE 10-11 can't handle a DataView body.\n        this._bodyInit = new Blob([this._bodyArrayBuffer]);\n      } else if (support.arrayBuffer &amp;&amp; (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {\n        this._bodyArrayBuffer = bufferClone(body);\n      } else {\n        throw new Error('unsupported BodyInit type');\n      }\n\n      if (!this.headers.get('content-type')) {\n        if (typeof body === 'string') {\n          this.headers.set('content-type', 'text/plain;charset=UTF-8');\n        } else if (this._bodyBlob &amp;&amp; this._bodyBlob.type) {\n          this.headers.set('content-type', this._bodyBlob.type);\n        } else if (support.searchParams &amp;&amp; URLSearchParams.prototype.isPrototypeOf(body)) {\n          this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');\n        }\n      }\n    };\n\n    if (support.blob) {\n      this.blob = function () {\n        var rejected = consumed(this);\n        if (rejected) {\n          return rejected;\n        }\n\n        if (this._bodyBlob) {\n          return Promise.resolve(this._bodyBlob);\n        } else if (this._bodyArrayBuffer) {\n          return Promise.resolve(new Blob([this._bodyArrayBuffer]));\n        } else if (this._bodyFormData) {\n          throw new Error('could not read FormData body as blob');\n        } else {\n          return Promise.resolve(new Blob([this._bodyText]));\n        }\n      };\n\n      this.arrayBuffer = function () {\n        if (this._bodyArrayBuffer) {\n          return consumed(this) || Promise.resolve(this._bodyArrayBuffer);\n        } else {\n          return this.blob().then(readBlobAsArrayBuffer);\n        }\n      };\n    }\n\n    this.text = function () {\n      var rejected = consumed(this);\n      if (rejected) {\n        return rejected;\n      }\n\n      if (this._bodyBlob) {\n        return readBlobAsText(this._bodyBlob);\n      } else if (this._bodyArrayBuffer) {\n        return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer));\n      } else if (this._bodyFormData) {\n        throw new Error('could not read FormData body as text');\n      } else {\n        return Promise.resolve(this._bodyText);\n      }\n    };\n\n    if (support.formData) {\n      this.formData = function () {\n        return this.text().then(decode);\n      };\n    }\n\n    this.json = function () {\n      return this.text().then(JSON.parse);\n    };\n\n    return this;\n  }\n\n  // HTTP methods whose capitalization should be normalized\n  var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];\n\n  function normalizeMethod(method) {\n    var upcased = method.toUpperCase();\n    return methods.indexOf(upcased) &gt; -1 ? upcased : method;\n  }\n\n  function Request(input, options) {\n    options = options || {};\n    var body = options.body;\n\n    if (input instanceof Request) {\n      if (input.bodyUsed) {\n        throw new TypeError('Already read');\n      }\n      this.url = input.url;\n      this.credentials = input.credentials;\n      if (!options.headers) {\n        this.headers = new Headers(input.headers);\n      }\n      this.method = input.method;\n      this.mode = input.mode;\n      if (!body &amp;&amp; input._bodyInit != null) {\n        body = input._bodyInit;\n        input.bodyUsed = true;\n      }\n    } else {\n      this.url = String(input);\n    }\n\n    this.credentials = options.credentials || this.credentials || 'omit';\n    if (options.headers || !this.headers) {\n      this.headers = new Headers(options.headers);\n    }\n    this.method = normalizeMethod(options.method || this.method || 'GET');\n    this.mode = options.mode || this.mode || null;\n    this.referrer = null;\n\n    if ((this.method === 'GET' || this.method === 'HEAD') &amp;&amp; body) {\n      throw new TypeError('Body not allowed for GET or HEAD requests');\n    }\n    this._initBody(body);\n  }\n\n  Request.prototype.clone = function () {\n    return new Request(this, { body: this._bodyInit });\n  };\n\n  function decode(body) {\n    var form = new FormData();\n    body.trim().split('&amp;').forEach(function (bytes) {\n      if (bytes) {\n        var split = bytes.split('=');\n        var name = split.shift().replace(/\\+/g, ' ');\n        var value = split.join('=').replace(/\\+/g, ' ');\n        form.append(decodeURIComponent(name), decodeURIComponent(value));\n      }\n    });\n    return form;\n  }\n\n  function parseHeaders(rawHeaders) {\n    var headers = new Headers();\n    // Replace instances of \\r\\n and \\n followed by at least one space or horizontal tab with a space\n    // https://tools.ietf.org/html/rfc7230#section-3.2\n    var preProcessedHeaders = rawHeaders.replace(/\\r?\\n[\\t ]+/g, ' ');\n    preProcessedHeaders.split(/\\r?\\n/).forEach(function (line) {\n      var parts = line.split(':');\n      var key = parts.shift().trim();\n      if (key) {\n        var value = parts.join(':').trim();\n        headers.append(key, value);\n      }\n    });\n    return headers;\n  }\n\n  Body.call(Request.prototype);\n\n  function Response(bodyInit, options) {\n    if (!options) {\n      options = {};\n    }\n\n    this.type = 'default';\n    this.status = options.status === undefined ? 200 : options.status;\n    this.ok = this.status &gt;= 200 &amp;&amp; this.status &lt; 300;\n    this.statusText = 'statusText' in options ? options.statusText : 'OK';\n    this.headers = new Headers(options.headers);\n    this.url = options.url || '';\n    this._initBody(bodyInit);\n  }\n\n  Body.call(Response.prototype);\n\n  Response.prototype.clone = function () {\n    return new Response(this._bodyInit, {\n      status: this.status,\n      statusText: this.statusText,\n      headers: new Headers(this.headers),\n      url: this.url\n    });\n  };\n\n  Response.error = function () {\n    var response = new Response(null, { status: 0, statusText: '' });\n    response.type = 'error';\n    return response;\n  };\n\n  var redirectStatuses = [301, 302, 303, 307, 308];\n\n  Response.redirect = function (url, status) {\n    if (redirectStatuses.indexOf(status) === -1) {\n      throw new RangeError('Invalid status code');\n    }\n\n    return new Response(null, { status: status, headers: { location: url } });\n  };\n\n  self.Headers = Headers;\n  self.Request = Request;\n  self.Response = Response;\n\n  self.fetch = function (input, init) {\n    return new Promise(function (resolve, reject) {\n      var request = new Request(input, init);\n      var xhr = new XMLHttpRequest();\n\n      xhr.onload = function () {\n        var options = {\n          status: xhr.status,\n          statusText: xhr.statusText,\n          headers: parseHeaders(xhr.getAllResponseHeaders() || '')\n        };\n        options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');\n        var body = 'response' in xhr ? xhr.response : xhr.responseText;\n        resolve(new Response(body, options));\n      };\n\n      xhr.onerror = function () {\n        reject(new TypeError('Network request failed'));\n      };\n\n      xhr.ontimeout = function () {\n        reject(new TypeError('Network request failed'));\n      };\n\n      xhr.open(request.method, request.url, true);\n\n      if (request.credentials === 'include') {\n        xhr.withCredentials = true;\n      } else if (request.credentials === 'omit') {\n        xhr.withCredentials = false;\n      }\n\n      if ('responseType' in xhr &amp;&amp; support.blob) {\n        xhr.responseType = 'blob';\n      }\n\n      request.headers.forEach(function (value, name) {\n        xhr.setRequestHeader(name, value);\n      });\n\n      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit);\n    });\n  };\n  self.fetch.polyfill = true;\n})(typeof self !== 'undefined' ? self : undefined);\n\n//# sourceURL=webpack:///./node_modules/whatwg-fetch/fetch.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./pages/pdp/pdp.js":
+/*!**************************!*\
+  !*** ./pages/pdp/pdp.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nvar _loader = __webpack_require__(/*! ../../src/js/loader */ \"./src/js/loader.js\");\n\nvar _loader2 = _interopRequireDefault(_loader);\n\nvar _globalNav = __webpack_require__(/*! ../../components/global-nav/global-nav */ \"./components/global-nav/global-nav.js\");\n\nvar _globalNav2 = _interopRequireDefault(_globalNav);\n\nfunction _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }\n\n/* Product Details Page Functions */\nconsole.log('PDP page scripts!');\n\n// Loader.loadAll([\n//   {path: '../../components/global-nav/global-nav.html', selector: '#nav'},\n//   {path: '../../components/product-grid/product-grid.html', selector: '#nav'}])\n//   .then(comps =&gt; {\n//     console.log('components: ', comps);\n//     new GlobalNavigation();\n//   });\n\n_loader2.default.load('../../components/global-nav/global-nav.html', '#nav').then(function (output) {\n  console.log('output: ', output);\n});\n\n//# sourceURL=webpack:///./pages/pdp/pdp.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./src/js/index.js":
+/*!*************************!*\
+  !*** ./src/js/index.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\n// Manually bundle specific files in specific order\n// require('./polyfills.js');\n/* The above is commented out because it doesn't seem to work because webpack doesn't just concatenate the JS files\nThere's an interesting article here on including polyfills only when needed:\nhttps://philipwalton.com/articles/loading-polyfills-only-when-needed/\nPerhaps we could roll with a similar solution when necessary.\n*/\n__webpack_require__(/*! ./loader.js */ \"./src/js/loader.js\");\n__webpack_require__(/*! ../../pages/pdp/pdp.js */ \"./pages/pdp/pdp.js\");\n// Recursively bundle all of the JS files from the ./components directory\nvar cache = {};\nfunction importAll(r) {\n  r.keys().forEach(function (key) {\n    return cache[key] = r(key);\n  });\n}\nimportAll(__webpack_require__(\"./components sync recursive \\\\.js$\"));\n\n//# sourceURL=webpack:///./src/js/index.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./src/js/loader.js":
+/*!**************************!*\
+  !*** ./src/js/loader.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n__webpack_require__(/*! whatwg-fetch */ \"./node_modules/whatwg-fetch/fetch.js\");\n\nvar Loader = function () {\n  function load(path, selector) {\n    if (path &amp;&amp; selector) {\n      return new Promise(function (resolve) {\n        fetch(path).then(function (response) {\n          return response.text();\n        }).then(function (body) {\n          document.querySelector(selector).innerHTML = body;\n          resolve(body);\n        }).catch(function (reason) {\n          console.error(reason);\n        });\n      });\n    } else {\n      console.error('Loader error: Path and selector are required.');\n    }\n  }\n\n  function loadAll(components) {\n    var _this = this;\n\n    var promises = [];\n    if (Array.isArray(components)) {\n      components.forEach(function (obj) {\n        promises.push(_this.load(obj.path, obj.selector));\n      });\n\n      return Promise.all(promises).then(function () {\n        return Promise.resolve(components);\n      });\n    } else {\n      console.error('Loader error: loadAll argument is not iterable');\n    }\n  }\n\n  return {\n    load: load,\n    loadAll: loadAll\n  };\n}();\n\nexports.default = Loader;\n\n//# sourceURL=webpack:///./src/js/loader.js?");</span>
+&nbsp;
+/***/ }),
+&nbsp;
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (<span class="fstat-no" title="function not covered" >function(</span>module, exports, __webpack_require__) {
+&nbsp;
+"use strict";
+<span class="cstat-no" title="statement not covered" >eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.getFocusableChildren = getFocusableChildren;\nexports.$$ = $$;\nexports.trapTabKey = trapTabKey;\nexports.setFocusToFirstItem = setFocusToFirstItem;\nexports.getElementIndex = getElementIndex;\nfunction getFocusableChildren(node) {\n    var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex=\"-1\"])'];\n\n    return $$(focusableElements.join(','), node).filter(function (child) {\n        return !!(child.offsetWidth || child.offsetHeight || child.getClientRects().length);\n    });\n}\n\n// Helper function to get all nodes in context matching selector as an array\nfunction $$(selector, context) {\n    return Array.prototype.slice.call((context || document).querySelectorAll(selector) || []);\n}\n\n// Helper function trapping the tab key inside a node\nfunction trapTabKey(node, event) {\n    var focusableChildren = getFocusableChildren(node);\n    var focusedItemIndex = focusableChildren.indexOf(document.activeElement);\n\n    if (event.shiftKey &amp;&amp; focusedItemIndex === 0) {\n        focusableChildren[focusableChildren.length - 1].focus();\n        event.preventDefault();\n    } else if (!event.shiftKey &amp;&amp; focusedItemIndex === focusableChildren.length - 1) {\n        focusableChildren[0].focus();\n        event.preventDefault();\n    }\n}\n\n// Helper function to focus first focusable item in node\nfunction setFocusToFirstItem(node) {\n    var focusableChildren = getFocusableChildren(node);\n    if (focusableChildren.length) focusableChildren[0].focus();\n}\n\n/**\n * Get index of an element inside parent\n * @param  {HTMLElement} element\n */\nfunction getElementIndex(element) {\n    var index = 0;\n    while (element = element.previousElementSibling) {\n        ++index;\n    }\n    return index;\n}\n\n//# sourceURL=webpack:///./src/js/utils.js?");</span>
+&nbsp;
+/***/ })
+&nbsp;
+/******/ });</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Aug 31 2018 08:23:24 GMT-0400 (EDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+<script src="../../block-navigation.js"></script>
+</body>
+</html>

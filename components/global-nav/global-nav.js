@@ -17,7 +17,7 @@ GlobalNavigation.prototype = {
   }
 }
 
-new GlobalNavigation();
+// new GlobalNavigation();
 
 // TOOD: Move code below into GlobalNavigation object
 function onDocumentClick(event) {
@@ -95,3 +95,5 @@ function onClickMenuItemWithSubmenu(event) {
 Array.prototype.forEach.call(menuItems, function(el, i) {
 	el.addEventListener("click", onClickMenuItemWithSubmenu);
 });
+
+export default GlobalNavigation;

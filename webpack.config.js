@@ -20,7 +20,7 @@ module.exports = {
 	resolve: {
 		extensions: ['.js'],
 		alias: {
-			Utilities: path.resolve(__dirname, 'src/js/utils')
-		  }
-	  }
+      Utilities: path.resolve(__dirname, 'src/js/utils')
+		}
+  }
 }
