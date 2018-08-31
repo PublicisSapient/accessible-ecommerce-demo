@@ -12,6 +12,6 @@ console.log('PDP page scripts!');
 //     new GlobalNavigation();
 //   });
 
-HTMLLoader.load('../../components/global-nav/global-nav.html', '#nav').then(output => {
+HTMLLoader.load('../../components/global-nav/global-nav-partial.html', '[data-component="global-navigation"]').then(output => {
   new GlobalNavigation();
 })

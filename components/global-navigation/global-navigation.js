@@ -5,6 +5,7 @@ var activeMenuItem = null;
 
 // hamburger menu
 function GlobalNavigation() {
+  console.log('GlobalNavigation');
   this.isMenuOpen = false;
   this.hamburgerMenuButton = document.getElementById('button');
   this.hamburgerMenuButton.addEventListener('click', this.handleHamburgerMenuClick.bind(this));
