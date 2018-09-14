@@ -1,0 +1,83 @@
+@import 'variables';
+/* ========================== FORM INPUTS */
+.radio {
+    &__input {
+        opacity: 0;
+        position: absolute;
+        &:checked + label{
+            &::after{
+                content:"";
+            }
+        }
+    }
+    &__label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: $grid-unit;
+        margin-right: $grid-unit * 2;
+        cursor: pointer;
+        font-size: $font-xs;
+        &::before {
+            border: 1px solid;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            margin-right: $grid-unit * 2;
+            height: $input-size;
+            width: $input-size;
+        }
+        &::after{
+            background: $rose;
+            border-radius: 50%;
+            display: block;
+            left: 5px;
+            top: 5px;
+            position: absolute;
+            height: $input-size - 8px;
+            width: $input-size - 8px;
+        }
+    }
+}
+.checkbox {
+    &__input {
+        opacity: 0;
+        position: absolute;
+        &:checked + label{
+            &::after{
+                content:"";
+            }
+        }
+        &:focus + label::before{
+            outline: rgb(59, 153, 252) auto 5px;
+        }
+    }
+    &__label {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: $grid-unit;
+        margin-right: $grid-unit * 2;
+        cursor: pointer;
+        font-size: $font-xs;
+        &::before {
+            border: 1px solid;
+            content: "";
+            display: block;
+            margin-right: $grid-unit * 2;
+            height: $input-size;
+            width: $input-size;
+        }
+        &::after{
+            height: 5px;
+            width: 14px;
+            border-left: 2px solid;
+            border-bottom: 2px solid;
+            transform: rotate(-45deg);
+            left: 5px;
+            top: 8px;
+            position: absolute;
+            content: none;
+        }
+    }
+}

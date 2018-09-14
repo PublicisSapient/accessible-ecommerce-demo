@@ -1,0 +1,44 @@
+// MIXINS
+// Note because this is a file that is included across multiple scss files, don't include anything that will render out css classes
+// Also, use single line comments so that they'll be stripped out when compiling
+
+@import 'variables';
+
+@mixin flex-column($columns: 2){
+    width: calc(100% / #{$columns} - #{$grid-unit * 2});
+}
+
+// Flex Grid
+// TODO: Document features
+@mixin flex-grid($columns: 2, $gutters: true) {
+    @if $columns == 'auto'{
+        @if $gutters{
+            margin-left: -1 * $grid-unit;
+            margin-right: -1 * $grid-unit;
+            &>*{
+                margin-left: $grid-unit;
+                margin-right: $grid-unit;
+            }
+        }
+        &>*{
+            flex: 1;
+        }
+    }@else{
+        $column-width: 100% / $columns;
+        $gutter-space: ($columns - 1) * $grid-unit * 2;
+        $gutter-width: $gutter-space / $columns;
+        @if $gutters {
+            &>* {
+                width: calc(#{$column-width} - #{$gutter-width});
+            }
+            justify-content: space-between;
+        }
+        @else {
+            &>* {
+                width: $column-width;
+            }
+        }
+        flex-wrap: wrap;
+    }
+    display: flex;
+}

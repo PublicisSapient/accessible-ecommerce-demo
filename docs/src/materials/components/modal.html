@@ -1,0 +1,26 @@
+---
+notes: |
+
+  > **Accessibility:**
+  >
+  > - When the modal opens, the first selected element should be the close button
+  > - The tab order should be 'trapped' inside the modal so that the user doesn't end up tabbing back down into the page below the modal
+
+  Click on the Enlarge button to trigger the modal
+---
+<button data-modal-show="my-accessible-modal" aria-label="Enlarge the Image" class="btn">Enlarge</button>
+<div class="modal" aria-hidden="true" id="my-accessible-modal">
+    <div class="modal-overlay" tabindex="-1" data-modal-hide></div>
+    <div class="modal-content" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+        <div role="document">
+            <button data-modal-hide class="modal-close" aria-label="Close gallery modal">&times;</button>
+
+            <p id="modalDescription" class="element-invisible">Side view of product 3. Escape will cancel and close the window.</p>
+            <h2 id="modalTitle">Zoomed First Image</h2>
+            <p>These are the onscreen instructions that are not attached explicitly to a focusable element. Can screen reader
+                users read this text with the virtual cursor?</p>
+            <button class="btn">Functionless Button</button>
+            <p>Does tabbing stay within the modal? It should only cycle between focusable elements.</p>
+        </div>
+    </div>
+</div>

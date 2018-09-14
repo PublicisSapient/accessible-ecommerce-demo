@@ -1,91 +1,94 @@
-/* Product Grid Functions */
-var clearFiltersButton = document.querySelector('#showingNumberProducts__clear');
-var numberOfProductsInGridAriaLiveRegion = document.querySelector('#showingNumberProducts__description');
-var numberOfProductsHeading = document.querySelector('#showingNumberProducts__heading');
-var numberOfFiltersAppliedAriaLiveRegion = document.querySelector('#showingNumberFilters__description');
-var filterInputs = document.querySelectorAll('.productGrid__filter');
-var productGrid = document.querySelector('#product-grid');
-var products = productGrid.querySelectorAll('.product');
+var ProductGrid = function () {
 
-// Add click event to clear filters button
-clearFiltersButton.addEventListener('click', function() {
-  setTimeout(updateNumberOfAppliedFiltersAndProductsShowing, 1);
-});
+	/* Product Grid Functions */
+	var clearFiltersButton = document.querySelector('#showingNumberProducts__clear');
+	var numberOfProductsInGridAriaLiveRegion = document.querySelector('#showingNumberProducts__description');
+	var numberOfProductsHeading = document.querySelector('#showingNumberProducts__heading');
+	var numberOfFiltersAppliedAriaLiveRegion = document.querySelector('#showingNumberFilters__description');
+	var filterInputs = document.querySelectorAll('.productGrid__filter');
+	var productGrid = document.querySelector('#product-grid');
+	var products = productGrid.querySelectorAll('.product');
 
-filterInputs.forEach(function(filterInput) {
-  filterInput.addEventListener('change', updateNumberOfAppliedFiltersAndProductsShowing);
-});
+	// Add click event to clear filters button
+	clearFiltersButton.addEventListener('click', function () {
+		setTimeout(updateNumberOfAppliedFiltersAndProductsShowing, 1);
+	});
 
-function updateNumberOfAppliedFiltersAndProductsShowing() {
-  updateNumberOfAppliedFilters();
-  updateNumberOfProductsShowing();
-}
+	filterInputs.forEach(function (filterInput) {
+		filterInput.addEventListener('change', updateNumberOfAppliedFiltersAndProductsShowing);
+	});
 
-function updateNumberOfAppliedFilters() {
-  var numberOfAppliedFilters = 0;
-  filterInputs.forEach(function(filterInput) {
-    if (filterInput.checked) {
-      numberOfAppliedFilters++;
-    }
-  });
-  // if the number of filters is 1 then we need to use singlular filter
-  var filterOrFilters = numberOfAppliedFilters === 1 ? 'filter' : 'filters';
+	function updateNumberOfAppliedFiltersAndProductsShowing() {
+		updateNumberOfAppliedFilters();
+		updateNumberOfProductsShowing();
+	}
 
-  showingNumberFilters__description.innerHTML = numberOfAppliedFilters + ' ' + filterOrFilters + ' applied';
-  if (numberOfAppliedFilters > 0) {
-    clearFiltersButton.setAttribute('aria-label', 'Clear ' + numberOfAppliedFilters + ' applied product ' + filterOrFilters + '.');
-  } else {
-    clearFiltersButton.setAttribute('aria-label', 'Clear product filters. There are no filters currently applied.');
-  }
-}
+	function updateNumberOfAppliedFilters() {
+		var numberOfAppliedFilters = 0;
+		filterInputs.forEach(function (filterInput) {
+			if (filterInput.checked) {
+				numberOfAppliedFilters++;
+			}
+		});
+		// if the number of filters is 1 then we need to use singlular filter
+		var filterOrFilters = numberOfAppliedFilters === 1 ? 'filter' : 'filters';
 
-function updateNumberOfProductsShowing() {
-  // for the demo we will generate a random number of products available between 0 and 100
-  var randomNumberOfProducts = Math.floor(Math.random() * Math.floor(100));
-  numberOfProductsInGridAriaLiveRegion.innerHTML = 'Showing ' + randomNumberOfProducts + ' products';
-}
+		showingNumberFilters__description.innerHTML = numberOfAppliedFilters + ' ' + filterOrFilters + ' applied';
+		if (numberOfAppliedFilters > 0) {
+			clearFiltersButton.setAttribute('aria-label', 'Clear ' + numberOfAppliedFilters + ' applied product ' + filterOrFilters + '.');
+		} else {
+			clearFiltersButton.setAttribute('aria-label', 'Clear product filters. There are no filters currently applied.');
+		}
+	}
 
-var pagination = document.querySelectorAll('[data-go-to-page]');
+	function updateNumberOfProductsShowing() {
+		// for the demo we will generate a random number of products available between 0 and 100
+		var randomNumberOfProducts = Math.floor(Math.random() * Math.floor(100));
+		numberOfProductsInGridAriaLiveRegion.innerHTML = 'Showing ' + randomNumberOfProducts + ' products';
+	}
 
-pagination.forEach((paginationBtn) => {
-  paginationBtn.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    location.hash = "!/" + paginationBtn.dataset.goToPage;
-    // refresh product list...
-    productGrid.style.opacity = 0.1
-    setTimeout(function(){
-      productGrid.style.opacity = 1
+	var pagination = document.querySelectorAll('[data-go-to-page]');
 
-      // set focus state
-      numberOfProductsHeading.focus();
-    }, 500);
-  });
-});
+	pagination.forEach((paginationBtn) => {
+		paginationBtn.addEventListener("click", (evt) => {
+			evt.preventDefault();
+			location.hash = "!/" + paginationBtn.dataset.goToPage;
+			// refresh product list...
+			productGrid.style.opacity = 0.1
+			setTimeout(function () {
+				productGrid.style.opacity = 1
 
-products.forEach(function(product, index) {
-  var addToCartButton = product.querySelector('.product__cta');
-  var quantityComponent = product.querySelector('.quantity-comp');
-  var quantityComponentValue = product.querySelector('.quantity-comp__text');
-  var productName = product.querySelector('.product__heading').innerHTML;
-  var decreaseQuantityButton = product.querySelector('.quantity-comp__decrease');
-  var increaseQuantityButton = product.querySelector('.quantity-comp__increase');
-  var productDetails = product.querySelector('.product__details');
+				// set focus state
+				numberOfProductsHeading.focus();
+			}, 500);
+		});
+	});
 
-  addToCartButton.addEventListener("click", function (evt) {
-    // toggle the UI to show the + - component
-    quantityComponent.classList.add('show');
-    addToCartButton.classList.add('hide');
+	products.forEach(function (product, index) {
+		var addToCartButton = product.querySelector('.product__cta');
+		var quantityComponent = product.querySelector('.quantity-comp');
+		var quantityComponentValue = product.querySelector('.quantity-comp__text');
+		var productName = product.querySelector('.product__heading').innerHTML;
+		var decreaseQuantityButton = product.querySelector('.quantity-comp__decrease');
+		var increaseQuantityButton = product.querySelector('.quantity-comp__increase');
+		var productDetails = product.querySelector('.product__details');
 
-    // update the mini cart with the valid info
-    updateMiniCart('123', quantityComponentValue.value, productName);
-    productDetails.focus();
-  });
-});
+		addToCartButton.addEventListener("click", function (evt) {
+			// toggle the UI to show the + - component
+			quantityComponent.classList.add('show');
+			addToCartButton.classList.add('hide');
 
-function updateMiniCart(sku, quantity, name) {
-  MiniCart.update({
-    sku,
-    quantity,
-    name
-  });
+			// update the mini cart with the valid info
+			updateMiniCart('123', quantityComponentValue.value, productName);
+			productDetails.focus();
+		});
+	});
+
+	function updateMiniCart(sku, quantity, name) {
+		MiniCart.update({
+			sku,
+			quantity,
+			name
+		});
+	}
 }
