@@ -5,11 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Page | Product Description</title>
-		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="../../css/global.css">
-		<link rel="stylesheet" href="pdp.css">
-		<link rel="stylesheet" href="../../css/pdp.css">
-		<link rel="stylesheet" href="../../components/product-description/product-description.css">
+		<link rel="stylesheet" href="../../css/pdp/pdp.css">
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119335407-1"></script>
 		<script>
@@ -21,430 +18,431 @@
 		</script>
 	</head>
 	<body class="pdp">
-		<!-- Global Nav Starts -->
-		<header class="navigation">
-			<div class="wrapper">
-			<a class="skip-link" id="skip-to-main" href="#skip-to-nav">Skip navigation menu</a>
-			<div class="row">
-				<a class="navigation-logo" href="https://publicissapient.github.io/accessible-ecommerce/">
-					<img src="https://publicissapient.github.io/accessible-ecommerce/assets/images/ps-logo.gif" alt="Publicis dot Sapient logo" width="50" height="50">
-        			<h1 class="navigation-siteName">P.S Toronto Accessible E-Commerce Demo Store</h1>
-				</a>
-				<nav class="global-nav" aria-label="Primary">
-					<ul class="global-nav-menu">
-						<li class="menu-item has-submenu">
-							<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Women</a>
-							<ul class="submenu">
-									<li class="submenu-item">
-										<a href="Women">All Womens</a>
+		<div id="content">
+			<!-- Global Nav Starts -->
+			<header class="navigation">
+				<div class="container">
+					<a class="skip-link" id="skip-to-main" href="#skip-to-nav">Skip navigation menu</a>
+					<div class="navigation__items">
+						<a class="navigation__logo" href="https://publicissapient.github.io/accessible-ecommerce/">
+							<img src="https://publicissapient.github.io/accessible-ecommerce/assets/images/ps-logo.gif" alt="Publicis dot Sapient logo"
+								width="50" height="50">
+							<h1 class="navigation__siteName">P.S Toronto Accessible
+								<br>E-Commerce Demo Store</h1>
+						</a>
+						<nav class="global-nav" aria-label="Primary">
+              <button class="btn btn-default dropdown-toggle" type="button" id="button"
+                aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Navigation">
+                <span class="ion-ios-menu"></span>
+              </button>
+							<ul class="global-nav__items">
+								<li class="global-nav__item has-submenu">
+									<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Women</a>
+									<ul class="submenu">
+										<li class="submenu-item">
+											<a href="Women">All Womens</a>
+										</li>
+										<li class="submenu-item">
+											<a href="Tops">Tops</a>
+										</li>
+										<li class="submenu-item">
+											<a href="Pants">Pants</a>
+										</li>
+										<li class="submenu-item">
+											<a href="Dresses">Dresses</a>
+										</li>
+										<li class="submenu-item">
+											<a href="Shoes">Shoes</a>
+										</li>
+										<li class="submenu-item">
+											<a href="Hats">Hats</a>
+										</li>
+									</ul>
+								</li>
+								<li class="global-nav__item has-submenu">
+									<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Men</a>
+									<ul class="submenu">
+										<li class="submenu-item">
+											<a href="Men">All Mens</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Tops</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Pants</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Kilts</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Shoes</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Hats</a>
+										</li>
+									</ul>
+								</li>
+								<li class="global-nav__item has-submenu">
+									<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Kids</a>
+									<ul class="submenu">
+										<li class="submenu-item">
+											<a href="Tops">All Kids</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Tops</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Pants</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Dresses</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Shoes</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Hats</a>
+										</li>
+									</ul>
+								</li>
+								<li class="global-nav__item has-submenu">
+									<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Accessories</a>
+									<ul class="submenu">
+										<li class="submenu-item">
+											<a href="Tops">All Accessories</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Necklaces</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Belts</a>
+										</li>
+										<li class="submenu-item">
+											<a href="#">Rings</a>
+										</li>
+									</ul>
+								</li>
+								<li class="global-nav__item">
+									<a href="#">Sale</a>
+								</li>
+							</ul>
+						</nav>
+						<article class="mini-cart">
+							<span class="mini-cart__updated element-invisible" aria-live="assertive" aria-atomic="true"></span>
+							<button aria-label="Mini Cart, 2 items, estimated subtotal: $42.92" class="mini-cart__toggle" aria-haspopup="true" aria-expanded="false">
+								<span class="icon ion-ios-cart"></span>
+								<span aria-hidden="true" class="mini-cart__visible-label">
+									<span class="mini-cart__visible-label--amount">2</span>
+								</span>
+							</button>
+							<div class="mini-cart__dropdown">
+								<h2 class="mini-cart__title">Shopping Cart</h2>
+								<p class="mini-cart__quantity">2 item</p>
+								<ul class="mini-cart__item-list">
+									<li class="mini-cart__item">
+										<a class="mini-cart__item-link" href="https://placeholder.com" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
+											<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">
+											<p class="mini-cart__item-title">Shirt Malo</p>
+											<div>
+												<dl class="mini-cart__features">
+													<dt class="mini-cart__term">Size:</dt>
+													<dd class="mini-cart__description" aria-label="medium">M</dd>
+	
+													<dt class="mini-cart__term">Color:</dt>
+													<dd class="mini-cart__description">blue</dd>
+	
+													<dt class="mini-cart__term">Qty:</dt>
+													<dd class="mini-cart__description">2</dd>
+												</dl>
+	
+												<dl class="mini-cart__prices">
+													<dt class="element-invisible">Item unit price:</dt>
+													<dd class="mini-cart__description mini-cart__description--full">$36.95</dd>
+	
+													<dt class="element-invisible">Item total price:</dt>
+													<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
+												</dl>
+											</div>
+										</a>
 									</li>
-									<li class="submenu-item">
-										<a href="Tops">Tops</a>
-									</li>
-									<li class="submenu-item">
-										<a href="Pants">Pants</a>
-									</li>
-									<li class="submenu-item">
-										<a href="Dresses">Dresses</a>
-									</li>
-									<li class="submenu-item">
-										<a href="Shoes">Shoes</a>
-									</li>
-									<li class="submenu-item">
-										<a href="Hats">Hats</a>
+									<li class="mini-cart__item">
+										<a class="mini-cart__item-link" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09"
+											href="https://placeholder.com">
+											<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">
+											<p class="mini-cart__item-title">Shirt Malo</p>
+											<div>
+												<dl class="mini-cart__features">
+													<dt class="mini-cart__term">Size:</dt>
+													<dd class="mini-cart__description" aria-label="medium">M</dd>
+	
+													<dt class="mini-cart__term">Color:</dt>
+													<dd class="mini-cart__description">blue</dd>
+	
+													<dt class="mini-cart__term">Qty:</dt>
+													<dd class="mini-cart__description">2</dd>
+												</dl>
+	
+												<dl class="mini-cart__prices">
+													<dt class="element-invisible">Item unit price:</dt>
+													<dd class="mini-cart__description mini-cart__description--full">$36.95</dd>
+	
+													<dt class="element-invisible">Item total price:</dt>
+													<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
+												</dl>
+											</div>
+										</a>
 									</li>
 								</ul>
-						</li>
-						<li class="menu-item has-submenu">
-							<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Men</a>
-							<ul class="submenu">
-								<li class="submenu-item">
-									<a href="Men">All Mens</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Tops</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Pants</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Kilts</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Shoes</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Hats</a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item has-submenu">
-							<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Kids</a>
-							<ul class="submenu">
-								<li class="submenu-item">
-									<a href="Tops">All Kids</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Tops</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Pants</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Dresses</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Shoes</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Hats</a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item has-submenu">
-							<a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Accessories</a>
-							<ul class="submenu">
-								<li class="submenu-item">
-									<a href="Tops">All Accessories</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Necklaces</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Belts</a>
-								</li>
-								<li class="submenu-item">
-									<a href="#">Rings</a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item">
-							<a href="#">Sale</a>
-						</li>
-						</ul>
-					</nav>
-					<article class="mini-cart">
-						<span class="mini-cart__updated element-invisible" aria-live="assertive" aria-atomic="true"></span>
-						<button aria-label="Mini Cart, 2 items, estimated subtotal: $42.92" class="mini-cart__toggle" aria-haspopup="true" aria-expanded="false">
-								<span class="ion-ios-cart"></span>
-								<div aria-hidden="true" class="mini-cart__visible-label">
-									<span class="mini-cart__visible-label--amount">2</span>
-									<span class="mini-cart__visible-label--subtotal">$42.92</span>
-								</div>
-						</button>
-						<div class="mini-cart__dropdown">
-							<h2 class="mini-cart__title">Shopping Cart</h2>
-							<p class="mini-cart__quantity">2 item</p>
-							<ul class="mini-cart__item-list">
-								<li class="mini-cart__item">
-									<a class="mini-cart__item-link" href="https://placeholder.com"
-										aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09">
-										<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">
-										<p class="mini-cart__item-title">Shirt Malo</p>
-										<div>
-											<dl class="mini-cart__features">
-												<dt class="mini-cart__term">Size:</dt>
-												<dd class="mini-cart__description" aria-label="medium">M</dd>
-
-												<dt class="mini-cart__term">Color:</dt>
-												<dd class="mini-cart__description">blue</dd>
-
-												<dt class="mini-cart__term">Qty:</dt>
-												<dd class="mini-cart__description">2</dd>
-											</dl>
-
-											<dl class="mini-cart__prices">
-												<dt class="element-invisible">Item unit price:</dt>
-												<dd class="mini-cart__description mini-cart__description--full">$36.95</dd>
-
-												<dt class="element-invisible">Item total price:</dt>
-												<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
-											</dl>
-										</div>
-									</a>
-								</li>
-								<li class="mini-cart__item">
-									<a class="mini-cart__item-link"
-									aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 2, Item unit price: $36.95, Item total price: $73.09" href="https://placeholder.com">
-										<img class="mini-cart__image" alt="" src="https://via.placeholder.com/88x96">
-										<p class="mini-cart__item-title">Shirt Malo</p>
-										<div>
-											<dl class="mini-cart__features">
-												<dt class="mini-cart__term">Size:</dt>
-												<dd class="mini-cart__description" aria-label="medium">M</dd>
-
-												<dt class="mini-cart__term">Color:</dt>
-												<dd class="mini-cart__description">blue</dd>
-
-												<dt class="mini-cart__term">Qty:</dt>
-												<dd class="mini-cart__description">2</dd>
-											</dl>
-
-											<dl class="mini-cart__prices">
-												<dt class="element-invisible">Item unit price:</dt>
-												<dd class="mini-cart__description mini-cart__description--full">$36.95</dd>
-
-												<dt class="element-invisible">Item total price:</dt>
-												<dd class="mini-cart__description mini-cart__description--full">$73.09 each</dd>
-											</dl>
-										</div>
-									</a>
-								</li>
-							</ul>
-
-							<div class="mini-cart__summary">
-								<div class="mini-cart__summary-subtotal">
-									<p class="mini-cart__subtotal-title">Subtotal</p>
-									<p class="mini-cart__subtotal">$42.92</p>
-								</div>
-								<div class="mini-cart__summary-controls">
-									<a href="#" class="mini-cart__checkout">Checkout</a>
+	
+								<div class="mini-cart__summary">
+									<div class="mini-cart__summary-subtotal">
+										<p class="mini-cart__subtotal-title">Subtotal</p>
+										<p class="mini-cart__subtotal">$42.92</p>
+									</div>
+									<div class="mini-cart__summary-controls">
+										<a href="#" class="mini-cart__checkout btn btn--primary btn--block">Checkout</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="element-invisible" aria-live="assertive" role="alert"></div>
-					</article>
+							<div class="element-invisible" aria-live="assertive" role="alert"></div>
+						</article>
+					</div>
+					<a class="skip-link" id="skip-to-nav" href="#skip-to-main">Return to navigation menu</a>
 				</div>
-				<a class="skip-link" id="skip-to-nav" href="#skip-to-main">Return to navigation menu</a>
-			</div>
-		</header>
-		<!-- Global Nav Ends -->
-
-		<!-- Breadcrumbs Starts -->
-		<section id="breadcrumb">
-			<div class="wrapper">
-				<div class="row">
+			</header>
+			<!-- Global Nav Ends -->
+			<div class="container">
+				<!-- Breadcrumbs Starts -->
+				<section id="breadcrumb">
 					<nav aria-label="Breadcrumb" class="breadcrumb">
 						<ol>
 							<li>
-								<a href="#">
-									<abbr title="Publicis dot Sapient">P.S</abbr> Store
-								</a>
+								<a href="#"><abbr title="Publicis dot Sapient">P.S</abbr> Store</a>
 							</li>
 							<li>
-								<a href="#">
-									Women
-								</a>
+								<a href="#">Women</a>
 							</li>
 							<li>
-								<a href="#">
-									Shirts &amp; Tops
-								</a>
+								<a href="#">Shirts &amp; Tops</a>
 							</li>
 							<li>
-								<a href="#" aria-current="page">
-									Shirt Malo
-								</a>
+								<a href="#" aria-current="page">Shirt Malo</a>
 							</li>
 						</ol>
 					</nav>
-				</div>
-			</div>
-		</section>
-		<!-- Breadcrumbs Ends -->
+				</section>
+				<!-- Breadcrumbs Ends -->
 
-		<!-- Main Contents Starts -->
-		<div id="content">
-			<div class="wrapper">
-				<div class="row">
-					<!-- Product Description Starts -->
-					<div class="product-description">
-						<span class="product-description__title" aria-label="product title"><h1>Shirt Malo</h1></span>
+				<!-- Main Contents Starts -->
+				<div id="content">
 
-						<span class="product-description__price" aria-label="product price">
-							<span class="product-description__price-now">Price
-								<span class="price__dollar" aria-hidden="true">$16</span><span class="price__cents" aria-hidden="true">99</span>
-								<span class="element-invisible">now is $16.99</span>
+					<div class="product-details">
+						<!-- Product Description Starts -->
+						<div class="product-description">
+							<h1 class="product-description__title">Shirt Malo</h1>
+
+							<span class="product-description__price" aria-label="product price">
+								<span class="product-description__price-now">
+									<span class="price__label" aria-hidden="true">Price</span>
+									<span class="price__dollar" aria-hidden="true">$16</span><span class="price__cents" aria-hidden="true">99</span>
+									<span class="element-invisible">current price $16.99</span>
+								</span>
+
+								<span class="product-description__price-was">
+									<span class="price__label" aria-hidden="true">was</span>
+									<span class="price__dollar" aria-hidden="true">$20</span><span class="price__cents" aria-hidden="true">99</span>
+									<span class="element-invisible">was $20.99</span>
+								</span>
+								<span class="product-description__price-save">
+										<span class="price__label" aria-hidden="true">save</span>
+										<span class="price__dollar" aria-hidden="true">$4</span><span class="price__cents" aria-hidden="true">00</span>
+										<span class="element-invisible">save $4.00</span>
+								</span>
 							</span>
+							<p class="product-description__summary">
+								Readymade glossier echo park meh bicycle rights disrupt food truck. Leggings chicharrones butcher street art banh mi williamsburg farm-to-table lyft cardigan distillery thundercats typewriter wolf small batch...<a href="#">Full description</a>
+							</p>
 
-							<span class="product-description__price-was">was
-								<span class="price__dollar" aria-hidden="true">$20</span><span class="price__cents" aria-hidden="true">99</span>
-								<span class="element-invisible">was $20.99</span>
-							</span>
-							<span class="product-description__price-save">save
-								<span class="price__dollar" aria-hidden="true">$4</span><span class="price__cents" aria-hidden="true">00</span>
-								<span class="element-invisible">save $4.00</span>
-							</span>
+							<div class="product-description__color-and-size">
+								<form>
+									<fieldset>
+										<legend id="color" class="product-description__input-title">Color Selection</legend>
+										<input type="radio" class="radio__input" value="red" name="color" id="color-red" aria-describedby="color">
+										<label for="color-red" class="radio__label"> Red</label>
+										<input type="radio" class="radio__input" value="orange" name="color" id="color-orange" aria-describedby="color">
+										<label for="color-orange" class="radio__label">Orange</label>
+										<input type="radio" class="radio__input" value="white" name="color" id="color-white" aria-describedby="color" checked>
+										<label for="color-white" class="radio__label">White</label>
+									</fieldset>
+									<a href="#" class="skip-link">Jump to product gallery</a>
+								</form>
 
-						</span>
-						<p class="product-description__summary">Readymade glossier echo park meh bicycle rights disrupt food truck. Leggings chicharrones butcher street art banh mi williamsburg farm-to-table lyft cardigan distillery thundercats typewriter wolf small batch...<a href="#">Full description</a> </p>
+								<form>
+									<fieldset>
+										<legend id="size" class="product-description__input-title">Size Selection</legend>
+										<input type="radio" class="radio__input" value="small" name="size" id="size-small" aria-describedby="size" checked>
+										<label for="size-small" class="radio__label">Small</label>
 
-						<div class="product-rating">
-							<button class="product-rating__view-button">
-								<span class="product-rating__prefix">Ratings</span>
-								<span class="product-rating__star product-rating__star-full ion-android-star" aria-hidden="true"></span>
-								<span class="product-rating__star product-rating__star-full ion-android-star" aria-hidden="true"></span>
-								<span class="product-rating__star product-rating__star-full ion-android-star" aria-hidden="true"></span>
-								<span class="product-rating__star product-rating__star-half ion-android-star-half" aria-hidden="true"></span>
-								<span class="product-rating__star product-rating__star-empty ion-android-star-outline" aria-hidden="true"></span>
-								<br>
-								<span class="product-rating__value">3.5 out of 5</span>
-								<span class="product-rating__count">(156<span class="element-invisible"> reviews</span>)</span>
-								<br>
-								<span class="product-rating__view-all">View rating and reviews</span>
-							</button>
+										<input type="radio" class="radio__input" value="medium" name="size" id="size-medium" aria-describedby="size">
+										<label for="size-medium" class="radio__label">Medium</label>
+
+										<input type="radio" class="radio__input" value="large"  name="size" id="size-large" aria-describedby="size">
+										<label for="size-large" class="radio__label">Large</label>
+									</fieldset>
+									<a href="#" class="size-chart__link">View size chart</a>
+								</form>
+							</div>
+
+							<div class="product-actions">
+								<div class="product-rating">
+									<span class="product-rating__display" aria-hidden="true">
+										<span class="product-rating__prefix">Rating</span>
+										<span class="product-rating__stars">
+											<span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+											<span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+											<span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+											<span class="product-rating__star product-rating__star-half icon ion-md-star-half"></span>
+											<span class="product-rating__star product-rating__star-empty icon ion-md-star-outline"></span>
+											<br>
+											<span class="product-rating__value">3.5 out of 5</span>
+											<span class="product-rating__count">(156<span class="element-invisible"> reviews</span>)</span>
+										</span>
+									</span>
+											<button class="product-rating__view-button btn btn--black btn--block">
+													<span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
+													View rating and reviews
+											</button>
+								</div>
+
+								<div class="product-actions__cart">
+									<span class="quantity-comp">
+										<button aria-label="decrease quantity" class="quantity-comp__decrease btn btn--outline-primary btn--icon"><span class="icon ion-ios-remove"></span></button>
+										<input type="text" aria-label="quantity" value="1" class="quantity-comp__text">
+										<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">Quantity now is<span> 1 </span></span>
+										<button aria-label="increase quantity" class="quantity-comp__increase btn btn--outline-primary btn--icon"><span class="icon ion-ios-add"></span></button>
+									</span>
+									<button class="product-actions__add-to-cart btn btn--primary btn--block">Add to Cart</button>
+									<button class="product-actions__add-to-wishlist btn btn--outline-primary btn--block">Add to Wishlist</button>
+								</div>
+							</div>
 						</div>
+						<!-- Product Description Ends -->
 
-						<span class="product-description__color-and-size">
-							<form>
-								<fieldset>
-								<legend id="color">Color Selection</legend>
-								<label for="color-red">
-									<input type="radio" value="red" name="color" id="color-red" aria-describedby="color"> <span>red</span>
-								</label>
-								<label for="color-orange">
-									<input type="radio" value="orange" name="color" id="color-orange" aria-describedby="color"> <span>orange</span>
-								</label>
-								<label for="color-white">
-									<input type="radio" value="white" name="color" id="color-white" aria-describedby="color" checked> <span>white</span>
-								</label>
+						<!-- Photo Gallery Starts -->
+						<main id="main">
+							<div class="gallery">
+								<div class="gallery__main-image__container">
+									<div class="gallery__main-image__inner-container">
+										<img id="gallery__main-image" src="https://source.unsplash.com/6cHumpSxTvs/583x645" alt="" />
+									</div>
+									<div class="gallery__main-image__zoom">
+										<button data-modal-show="my-accessible-modal" aria-label="Enlarge the Image" class="btn btn--outline">Enlarge</button>
+										<button id="gallery__minimize" class="btn btn--outline btn--icon gallery__minimize" disabled aria-label="Decrease size of the image to 100%"><span class="icon ion-ios-remove"></span><span class="sr-only">Decrease size</span></button>
+										<button id="gallery__maximize" class="gallery__maximize btn btn--outline btn--icon" aria-label="Increase size of the image to 150%"><span class="icon ion-ios-add"></span><span class="sr-only">Increase size</span></button>
+									</div>
+								</div>
 
-								</fieldset>
-							</form>
-								<a href="#" class="skip-link">jump to product gallery</a>
-
-							<form>
-								<fieldset>
-								<legend id="size">Size Selection</legend>
-								<label for="size-small">
-									<input type="radio" value="small" name="size" id="size-small" aria-describedby="size"> <span>small</span>
-								</label>
-								<label for="size-medium">
-									<input type="radio" value="medium" name="size" id="size-medium" aria-describedby="size"> <span>medium</span>
-								</label>
-								<label for="size-large">
-									<input type="radio" value="large"  name="size" id="size-large" aria-describedby="size" checked> <span>large</span>
-								</label>
-								</fieldset>
-								<a href="#">view size chart</a>
-							</form>
-						</span>
-						<span class="quantity-comp">
-							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
-							<input type="text" aria-label="quantity" value="1" class="quantity-comp__text">
-							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">Quantity now is<span> 1 </span></span>
-							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
-						</span>
-						<div class="product-add-to-cart">
-							<button role="button">Add to Cart</button>
-						</div>
-						<div class="product-add-to-wishlist">
-							<button role="button">Add to Wishlist</button>
-						</div>
+                <div class="gallery__thumbnail-container">
+                  <button id="gallery__thumbnail-container__scroll-left" class="btn btn--outline btn--icon thumbnail__scroll-left" aria-hidden="false" tabindex="-1" disabled data-scroll-dir="right">
+                    <span class="icon ion-ios-arrow-back"></span>
+                  </button>
+                  <ul class="gallery__thumbnail-list">
+                    <li class="gallery__thumbnail-list-item">
+                      <button>
+                        <img src="https://source.unsplash.com/6cHumpSxTvs/105x105" data-main-image-url="https://source.unsplash.com/6cHumpSxTvs/583x645" alt="Display product view one">
+                      </button>
+                    </li>
+                    <li class="gallery__thumbnail-list-item">
+                      <button>
+                        <img src="https://source.unsplash.com/bhLMUIlIhxk/105x105" data-main-image-url="https://source.unsplash.com/bhLMUIlIhxk/583x645" alt="Display product view two">
+                      </button>
+                    </li>
+                    <li class="gallery__thumbnail-list-item">
+                      <button>
+                        <img src="https://source.unsplash.com/k1QPo3_mZr8/105x105" data-main-image-url="https://source.unsplash.com/k1QPo3_mZr8/583x645" alt="Display product view three">
+                      </button>
+                    </li>
+                    <li class="gallery__thumbnail-list-item">
+                      <button>
+                        <img src="https://source.unsplash.com/d_oa5biTJwU/105x105" data-main-image-url="https://source.unsplash.com/d_oa5biTJwU/583x645" alt="Display product view four">
+                      </button>
+                    </li>
+                    <li class="gallery__thumbnail-list-item">
+                      <button>
+                        <img src="https://source.unsplash.com/ufuk99QfQTg/105x105" data-main-image-url="https://source.unsplash.com/ufuk99QfQTg/583x645" alt="Display product view five">
+                      </button>
+                    </li>
+                    <li class="gallery__thumbnail-list-item">
+                        <button>
+                          <img src="https://source.unsplash.com/ufuk99QfQTg/105x105" data-main-image-url="https://source.unsplash.com/ufuk99QfQTg/583x645" alt="Display product view five">
+                        </button>
+                    </li>
+                    <li class="gallery__thumbnail-list-item">
+                        <button>
+                          <img src="https://source.unsplash.com/ufuk99QfQTg/105x105" data-main-image-url="https://source.unsplash.com/ufuk99QfQTg/583x645" alt="Display product view five">
+                        </button>
+                      </li>
+                  </ul>
+                  <button id="gallery__thumbnail-container__scroll-right" class="btn btn--outline btn--icon thumbnail__scroll-right" aria-hidden="false" tabindex="-1" data-scroll-dir="left">
+                    <span class="icon ion-ios-arrow-forward"></span>
+                  </button>
+                </div>
+							</div>
+						</main>
 					</div>
-					<!-- Product Description Ends -->
 
-					<!-- Photo Gallery Starts -->
-					<main id="main">
-						<div class="gallery">
-							<div class="gallery__main-image__container">
-								<div class="gallery__main-image__inner-container">
-									<img id="gallery__main-image" src="http://via.placeholder.com/600x900?text=1" alt="" />
-								</div>
-								<div class="gallery__main-image__zoom">
-									<button data-modal-show="my-accessible-modal" aria-label="Enlarge the Image">Enlarge</button>
-									<button id="gallery__minimize" disabled aria-label="Decrease size of the image to 100%">-</button>
-									<button id="gallery__maximize" aria-label="Increase size of the image to 150%">+</button>
-								</div>
-							</div>
-					
-							<ul class="gallery__thumbnail-list">
-								<li>
-									<button>
-										<img src="http://via.placeholder.com/100x100?text=1" data-main-image-url="http://via.placeholder.com/600x900?text=1" alt="Display product view one">
-									</button>
-								</li>
-								<li>
-									<button>
-										<img src="http://via.placeholder.com/100x100?text=2" data-main-image-url="http://via.placeholder.com/600x900?text=2" alt="Display product view two">
-									</button>
-								</li>
-								<li>
-									<button>
-										<img src="http://via.placeholder.com/100x100?text=3" data-main-image-url="http://via.placeholder.com/600x900?text=3" alt="Display product view three">
-									</button>
-								</li>
-								<li>
-									<button>
-										<img src="http://via.placeholder.com/100x100?text=4" data-main-image-url="http://via.placeholder.com/600x900?text=4" alt="Display product view four">
-									</button>
-								</li>
-								<li>
-									<button>
-										<img src="http://via.placeholder.com/100x100?text=5" data-main-image-url="http://via.placeholder.com/600x900?text=5" alt="Display product view five">
-									</button>
-								</li>
-							</ul>
-						</div>
-					</main> 
-						<div class="modal" aria-hidden="true" id="my-accessible-modal">
-							<div class="modal-overlay" tabindex="-1" data-modal-hide></div>
-							<div class="modal-content" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
-								<div role="document">
-									<p id="modalDescription" class="element-invisible">Side view of product 3. Escape will
-										cancel and close the window.</p>
-									<h2 id="modalTitle">Zoomed  First Image</h2>
-									<p>These are the onscreen instructions that are not attached explicitly to a focusable element. Can screen reader
-										users read this text with the virtual cursor?</p>
-									
-									<button data-modal-hide class="modal-close" aria-label="Close gallery modal">&times;</button>
-								</div>
-							</div>
-						</div>
 					<!-- Photo Gallery Ends -->
-				</div>
-
-				<div class="row">
 					<!-- Accordion Sizing Tables Reviews Starts -->
-						<!-- annouce number of drawers -->
-						<ul class="accordion">
-							<li class="accordion-panel">
-								<div class="accordion-panel_heading">
-									<button aria-label="Show Product Description" data-open-aria-label="Show Product Description" data-hide-aria-label="Hide Product Description">Product Description</button>
-								</div>
-								<div class="accordion-panel_content">
-									<h2>Product Description</h2>
-									<p>Here is a bunch of stufff <a href="#">Click here</a></p>
-								</div>
-							</li>
-							<li class="accordion-panel">
-								<div class="accordion-panel_heading">
-										<button aria-label="Show size chart" data-open-aria-label="Show Size Chart" data-hide-aria-label="Hide Size Chart">Size Chart</button>
-								</div>
-								<div class="accordion-panel_content">
-									<h2>Size Chart</h2>
+					<!-- annouce number of drawers -->
+					<ul class="accordion">
+						<li class="accordion-panel">
+							<div class="accordion-panel_heading">
+								<button aria-label="Show Product Description" data-open-aria-label="Show Product Description" data-hide-aria-label="Hide Product Description">Product Description</button>
+							</div>
+							<div class="accordion-panel_content">
+								<h2>Product Description</h2>
+								<p>Here is a bunch of stufff <a href="#">Click here</a></p>
+							</div>
+						</li>
+						<li class="accordion-panel">
+							<div class="accordion-panel_heading">
+									<button aria-label="Show size chart" data-open-aria-label="Show Size Chart" data-hide-aria-label="Hide Size Chart">Size Chart</button>
+							</div>
+							<div class="accordion-panel_content">
+								<h2>Size Chart</h2>
+								<div class="size-chart">
+									<button class="toggle-size-units-button" aria-live="polite">
+										<span class="element-invisible">Sizes are shown in
+											<span class="units-displayed">inches</span>, click to show in
+											<span class="alternate-units-displayed">centimeters</span>
+										</span>
+										<span class="units-toggle inches selected" aria-hidden="true">Inches</span>
+										<span class="units-toggle centimeters" aria-hidden="true">Centimeters</span>
+									</button>
 									<!-- Table START -->
-									<table id="size-chart-table" class="show-inches">
+									<table class="size-chart-table show-inches">
 										<caption aria-describedby="toggle-size-units-button" class="element-invisible">Size Chart</caption>
-										<button id="toggle-size-units-button" aria-live="true">
-											<span class="element-invisible">Sizes are shown in
-												<span id="units-displayed">inches</span>, click to show in
-												<span id="alternate-units-displayed">centimeters</span>
-											</span>
-											<span class="units-toggle inches selected" aria-hidden="true">Inches</span>
-											<span class="units-toggle centimeters" aria-hidden="true">Centimeters</span>
-										</button>
 										<tbody>
 											<tr>
-												<th scope=“col”>
+												<th scope="col">
 													<span aria-hidden="true">Size</span>
 													<span class="element-invisible">Body Areas to be Sized</span>
 												</th>
-												<th scope=“col”>
+												<th scope="col">
 													<span aria-hidden="true">S</span>
 													<span class="element-invisible">Small Size</span>
 												</th>
-												<th scope=“col”>
+												<th scope="col">
 													<span aria-hidden="true">M</span>
 													<span class="element-invisible">Medium Size</span>
 												</th>
-												<th scope=“col”>
+												<th scope="col">
 													<span aria-hidden="true">L</span>
 													<span class="element-invisible">Large Size</span>
 												</th>
 											</tr>
 											<tr class="inches">
-												<th scope=“row”>
+												<th scope="row">
 													<span aria-hidden="true">bust (in)</span>
 													<span class="element-invisible">Bust size in inches</span>
 												</th>
@@ -453,7 +451,7 @@
 												<td aria-label="36 inches">36</td>
 											</tr>
 											<tr class="inches">
-												<th scope=“row”>
+												<th scope="row">
 													<span aria-hidden="true">waist (in)</span>
 													<span class="element-invisible">Waist size in inches</span>
 												</th>
@@ -462,7 +460,7 @@
 												<td aria-label="28 to 30 inches">28-30</td>
 											</tr>
 											<tr class="inches">
-												<th scope=“row”>
+												<th scope="row">
 													<span aria-hidden="true">hips (in)</span>
 													<span class="element-invisible">Hips size in inches</span>
 												</th>
@@ -471,7 +469,7 @@
 												<td aria-label="37 to 39 inches">37-39</td>
 											</tr>
 											<tr class="centimeters">
-												<th scope=“row”>
+												<th scope="row">
 													<span aria-hidden="true">bust (cm)</span>
 													<span class="element-invisible">Bust size in centimeters</span>
 												</th>
@@ -480,7 +478,7 @@
 												<td aria-label="91.44 centimeters">91.44</td>
 											</tr>
 											<tr class="centimeters">
-												<th scope=“row”>
+												<th scope="row">
 													<span aria-hidden="true">waist (cm)</span>
 													<span class="element-invisible">Waist size in centimeters</span>
 												</th>
@@ -489,7 +487,7 @@
 												<td aria-label="71.12 to 76.2 centimeters">71.12-76.2</td>
 											</tr>
 											<tr class="centimeters">
-												<th scope=“row”>
+												<th scope="row">
 													<span aria-hidden="true">hips (cm)</span>
 													<span class="element-invisible">Hips size in centimeters</span>
 												</th>
@@ -500,255 +498,261 @@
 										</tbody>
 									</table>
 								</div>
-							</li>
-							<li class="accordion-panel">
-								<div class="accordion-panel_heading">
-										<button aria-label="Show care instructions" data-open-aria-label="Show care instructions" data-hide-aria-label="Hide care instructions">Care Instructions</button>
-								</div>
-								<div class="accordion-panel_content">
-									<h2>Care Instructions</h2>
-									<p>Here is a bunch of stufff <a href="#">Click here</a></p>
-								</div>
-							</li>
-							<li class="accordion-panel">
-								<div class="accordion-panel_heading">
-									<button aria-label="Show Ratings and Reviews" data-open-aria-label="Show ratings and reviews" data-hide-aria-label="Hide ratings and reviews">Ratings and Reviews</button>
-								</div>
-								<div class="accordion-panel_content">
-									<!-- Reviews START -->
-									<div id="reviews">
-										<div class="rating-summary">
-											<div class="rating-stars" aria-hidden="true">
-												<span class="ion-android-star"></span>
-												<span class="ion-android-star"></span>
-												<span class="ion-android-star"></span>
-												<span class="product-rating__star product-rating__star-half ion-android-star-half" aria-hidden="true"></span>
-												<span class="ion-android-star-outline" ></span>
-											</div>
-
-											<div class="element-invisible">3.5 out of 5 stars</div>
-											<div class="element-invisible">based on</div>
-											<b>156 Reviews</b>
-											<div aria-hidden="true">3.5 out of 5 stars</div>
+							</div>
+						</li>
+						<li class="accordion-panel">
+							<div class="accordion-panel_heading">
+									<button aria-label="Show care instructions" data-open-aria-label="Show care instructions" data-hide-aria-label="Hide care instructions">Care Instructions</button>
+							</div>
+							<div class="accordion-panel_content">
+								<h2>Care Instructions</h2>
+								<p>Here is a bunch of stufff <a href="#">Click here</a></p>
+							</div>
+						</li>
+						<li class="accordion-panel">
+							<div class="accordion-panel_heading">
+								<button aria-label="Show Ratings and Reviews" data-open-aria-label="Show ratings and reviews" data-hide-aria-label="Hide ratings and reviews">Ratings and Reviews</button>
+							</div>
+							<div class="accordion-panel_content">
+								<!-- Reviews START -->
+								<div id="reviews">
+									<div class="rating-summary">
+										<div class="rating-stars" aria-hidden="true">
+											<span class="icon ion-md-star"></span>
+											<span class="icon ion-md-star"></span>
+											<span class="icon ion-md-star"></span>
+											<span class="icon ion-md-star-half" aria-hidden="true"></span>
+											<span class="icon ion-md-star-outline" ></span>
 										</div>
 
-										<ul id="customer-reviews" aria-labelledby="customer-review-title">
-
-											<li class="user-rating-container">
-												<div class="element-invisible">Customer review 1 of 5</div>
-
-												<div class="rating-stars" aria-hidden="true">
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star-outline" ></span>
-												</div>
-												<div class="element-invisible">4 out of 5 stars</div>
-												<b>Not so great</b>
-
-												<div class="review-details">
-													by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
-												</div>
-
-												<div class="review-text">
-													Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
-												</div>
-											</li>
-
-											<li class="user-rating-container">
-												<div class="element-invisible">Customer review 2 of 5</div>
-
-												<div class="rating-stars" aria-hidden="true">
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star-outline" ></span>
-												</div>
-												<div class="element-invisible">4 out of 5 stars</div>
-												<b>Not so great</b>
-
-												<div class="review-details">
-													by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
-												</div>
-
-												<div class="review-text">
-													Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
-												</div>
-											</li>
-											<li class="user-rating-container">
-												<div class="element-invisible">Customer review 3 of 5</div>
-
-												<div class="rating-stars" aria-hidden="true">
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star-outline" ></span>
-												</div>
-												<div class="element-invisible">4 out of 5 stars</div>
-												<b>Not so great</b>
-
-												<div class="review-details">
-													by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
-												</div>
-
-												<div class="review-text">
-													Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
-												</div>
-											</li>
-											<li class="user-rating-container">
-												<div class="element-invisible">Customer review 4 of 5</div>
-
-												<div class="rating-stars" aria-hidden="true">
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star-outline" ></span>
-												</div>
-												<div class="element-invisible">4 out of 5 stars</div>
-												<b>Not so great</b>
-
-												<div class="review-details">
-													by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
-												</div>
-
-												<div class="review-text">
-													Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
-												</div>
-											</li>
-
-											<li class="user-rating-container">
-												<div class="element-invisible">Customer review 5 of 5</div>
-
-												<div class="rating-stars" aria-hidden="true">
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star"></span>
-													<span class="ion-android-star-outline" ></span>
-												</div>
-												<div class="element-invisible">3.5 out of 5 stars</div>
-												<b>Not so great</b>
-
-												<div class="review-details">
-													by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
-												</div>
-
-												<div class="review-text">
-													Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
-												</div>
-											</li>						
-										</ul>
+										<div class="element-invisible">3.5 out of 5 stars</div>
+										<div class="element-invisible">based on</div>
+										<b>156 Reviews</b>
+										<div aria-hidden="true">3.5 out of 5 stars</div>
 									</div>
 
-									<!-- Reviews END -->
+									<ul class="user-ratings" aria-labelledby="customer-review-title">
+
+										<li class="user-ratings__list-item">
+											<div class="element-invisible">Customer review 1 of 5</div>
+
+											<div class="rating-stars" aria-hidden="true">
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star-outline" ></span>
+											</div>
+											<div class="element-invisible">4 out of 5 stars</div>
+											<b>Not so great</b>
+
+											<div class="review-details">
+												by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
+											</div>
+
+											<div class="review-text">
+												Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
+											</div>
+										</li>
+
+										<li class="user-ratings__list-item">
+											<div class="element-invisible">Customer review 2 of 5</div>
+
+											<div class="rating-stars" aria-hidden="true">
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star-outline" ></span>
+											</div>
+											<div class="element-invisible">4 out of 5 stars</div>
+											<b>Not so great</b>
+
+											<div class="review-details">
+												by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
+											</div>
+
+											<div class="review-text">
+												Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
+											</div>
+										</li>
+										<li class="user-ratings__list-item">
+											<div class="element-invisible">Customer review 3 of 5</div>
+
+											<div class="rating-stars" aria-hidden="true">
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star-outline" ></span>
+											</div>
+											<div class="element-invisible">4 out of 5 stars</div>
+											<b>Not so great</b>
+
+											<div class="review-details">
+												by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
+											</div>
+
+											<div class="review-text">
+												Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
+											</div>
+										</li>
+										<li class="user-ratings__list-item">
+											<div class="element-invisible">Customer review 4 of 5</div>
+
+											<div class="rating-stars" aria-hidden="true">
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star-outline" ></span>
+											</div>
+											<div class="element-invisible">4 out of 5 stars</div>
+											<b>Not so great</b>
+
+											<div class="review-details">
+												by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
+											</div>
+
+											<div class="review-text">
+												Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
+											</div>
+										</li>
+
+										<li class="user-ratings__list-item">
+											<div class="element-invisible">Customer review 5 of 5</div>
+
+											<div class="rating-stars" aria-hidden="true">
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star"></span>
+												<span class="icon ion-md-star-outline" ></span>
+											</div>
+											<div class="element-invisible">3.5 out of 5 stars</div>
+											<b>Not so great</b>
+
+											<div class="review-details">
+												by <a href="#"><span class="element-invisible">Reviewer's Profile</span>[User]</a> on May 2, 2018
+											</div>
+
+											<div class="review-text">
+												Too hard to cut for adjustment. would be great if it had lines so we could bend and crack it or follow to them for the cut. Ended up in the garbage.
+											</div>
+										</li>
+									</ul>
 								</div>
-							</li>
-						</ul>					
+
+								<!-- Reviews END -->
+							</div>
+						</li>
+					</ul>
 					<!-- Accordion Sizing Tables Reviews Ends -->
+				</div>
+				<!-- Main Contents Ends -->
+			</div>
+			<!-- Footer Starts -->
+			<footer class="footer clearfix">
+				<div class="container">
+					<div class="flex-row">
+						<nav aria-label="Secondary" class="footer__nav">
+							<h2 id="footer-label" class="footer__heading footer__heading--main element-invisible">Secondary Navigation</h2>
+							<ul class="footer__list secondary-nav">
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">About</a>
+									</li>
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">Contact Us</a>
+									</li>
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">Press release</a>
+									</li>
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">Careers</a>
+									</li>
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">Site map</a>
+									</li>
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">Returns</a>
+									</li>
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">Shipping</a>
+									</li>
+									<li class="footer__link secondary-nav__link">
+										<a href="https://placeholder.com">Gift Cards</a>
+									</li>
+							</ul>
+							<h3 class="element-invisible footer__heading">Social Media Links</h3>
+							<ul class="footer__list footer__list--social-links">
+								<li class="footer__link footer__link--social-media">
+									<a href="https://placeholder.com">
+										<span class="footer__icon icon ion-logo-facebook"></span>
+										<span class="element-invisible">Follow us on Facebook</span>
+									</a>
+								</li>
+								<li class="footer__link footer__link--social-media">
+									<a href="https://placeholder.com">
+										<span class="footer__icon icon ion-logo-twitter"></span>
+										<span class="element-invisible">Follow us on Twitter</span>
+									</a>
+								</li>
+								<li class="footer__link footer__link--social-media">
+									<a href="https://placeholder.com">
+										<span class="footer__icon icon ion-logo-instagram"></span>
+										<span class="element-invisible">Follow us on Instagram</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<form class="footer__form" data-validate novalidate>
+							<h3 class="footer__heading footer__heading--newsletter">Subscribe to our Newsletter!</h3>
+							<div class="input__placeholder-label">
+								<input class="footer__form-input" id="newsletter-sign-up" type="email" data-validation-message="Please enter a valid email address" required>
+								<label for="newsletter-sign-up">Enter your email address</label>
+							</div>
+							<input class="footer__form-submit btn btn--outline-black" type="submit" value="Subscribe Now">
+						</form>
+					</div>
+					<div>
+						<h3 class="element-invisible footer__heading">Legal Information</h3>
+						<ul class="footer__list footer__list--legal">
+							<li>
+								<p>&copy;2018 SR Fashion Inc.</p>
+							</li>
+							<li class="footer__link">
+								<a href="https://placeholder.com">Privacy Policy</a>
+							</li>
+							<li class="footer__link">
+								<a href="https://placeholder.com">Terms of Use</a>
+							</li>
+							<li class="footer__link">
+								<a href="https://placeholder.com">Accessibility</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+			<!-- Footer Ends -->
+		</div>
+
+		<div class="modal" aria-hidden="true" id="my-accessible-modal">
+			<div class="modal-overlay" tabindex="-1" data-modal-hide></div>
+			<div class="modal-content" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
+				<div role="document">
+					<button data-modal-hide class="modal-close" aria-label="Close gallery modal">&times;</button>
+
+					<p id="modalDescription" class="element-invisible">Side view of product 3. Escape will cancel and close the window.</p>
+					<h2 id="modalTitle">Zoomed First Image</h2>
+					<p>These are the onscreen instructions that are not attached explicitly to a focusable element. Can screen reader users read
+						this text with the virtual cursor?</p>
+					<button class="btn">Functionless Button</button>
+					<p>Does tabbing stay within the modal? It should only cycle between focusable elements.</p>
 				</div>
 			</div>
 		</div>
-		<!-- Main Contents Ends -->
-		
-		<!-- Footer Starts -->
-		<footer class="footer clearfix">
-			<div class="wrapper">
-				<div class="row">
-					<nav aria-label="Secondary" class="footer__nav">
-						<h2 id="footer-label" class="footer__heading footer__heading--main element-invisible">Secondary Navigation</h2>
-						<ul class="footer__list footer__list--2-column">
-							<div class="footer__column">
-								<li class="footer__link">
-									<a href="https://placeholder.com">About</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Contact Us</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Press release</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Careers</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Site map</a>
-								</li>
-							</div>
-							<div class="footer__column">
-								<li class="footer__link">
-									<a href="https://placeholder.com">Returns</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Shipping</a>
-								</li>
-								<li class="footer__link">
-									<a href="https://placeholder.com">Gift Cards</a>
-								</li>
-								<h3 class="element-invisible footer__heading">Social Media Links</h3>
-								<ul class="footer__list footer__list--social-links">
-									<li class="footer__link footer__link--social-media">
-										<a href="https://placeholder.com">
-											<span class="footer__icon ion-social-facebook"></span>
-											<span class="element-invisible">Follow us on Facebook</span>
-										</a>
-									</li>
-									<li class="footer__link footer__link--social-media">
-										<a href="https://placeholder.com">
-											<span class="footer__icon ion-social-twitter"></span>
-											<span class="element-invisible">Follow us on Twitter</span>
-										</a>
-									</li>
-									<li class="footer__link footer__link--social-media">
-										<a href="https://placeholder.com">
-											<span class="footer__icon ion-social-instagram"></span>
-											<span class="element-invisible">Follow us on Instagram</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</ul>
-					</nav>
-					<form class="footer__form" data-validate novalidate>
-						<h3 class="footer__heading footer__heading--newsletter">Subscribe to our Newsletter!</h3>
-						<div class="input__placeholder-label">
-							<input class="footer__form-input" id="newsletter-sign-up" type="email" data-validation-message="Please enter a valid email address" required>
-							<label for="newsletter-sign-up">Enter your email address</label>
-						</div>
-						<input class="footer__form-submit" type="submit" value="Subscribe Now">
-					</form>
-					<h3 class="element-invisible footer__heading">Legal Information</h3>
-					<ul class="footer__list footer__list--legal">
-						<li>
-							<p>&copy;2018 SR Fashion Inc.</p>
-						</li>
-						<li class="footer__link">
-							<a href="https://placeholder.com">Privacy Policy</a>
-						</li>
-						<li class="footer__link">
-							<a href="https://placeholder.com">Terms of Use</a>
-						</li>
-						<li class="footer__link">
-							<a href="https://placeholder.com">Accessibility</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</footer>
-		<!-- Footer Ends -->
 
-		<script src="../../js/utils.js"></script>
-		<script src="../../components/global-nav/global-nav.js"></script>
-		<script src="../../components/mini-cart/mini-cart.js"></script>
-		<script src="../../components/breadcrumb/breadcrumb.js"></script>
-		<script src="../../js/modal.js"></script>
-		<script src="../../js/gallery.js"></script>
-		<script src="../../js/gallery.js"></script>
-		<script src="../../js/accordion-sizing-table-reviews.js"></script>
-		<script src="../../components/footer/footer.js"></script>
+		<script src="../../js/main.js"></script>
 		<script src="pdp.js"></script>
 	</body>
 </html>

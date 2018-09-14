@@ -1,0 +1,250 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+/* ============================== Product Grid */
+
+.productGrid {
+	display: flex;
+	justify-content: space-between;
+
+	&__filters {
+
+		&-wrapper {
+			padding: 16px;
+			font-size: 12px;
+			background-color: $beige;
+
+			h2, h3 {
+				font-size: 1.4rem;
+				margin-bottom: 8px;
+			}
+		}
+
+		&-info {
+			padding-bottom: 16px;
+			margin-bottom: 8px;
+			line-height: 22px;
+			border-bottom: 1px solid $dark-grey;
+		}
+
+		fieldset {
+			border: 0;
+			padding-bottom: 16px;
+			margin-bottom: 8px;
+			border-bottom: 1px solid $dark-grey;
+			&:last-of-type {
+				border-bottom: 0px;
+			}
+		}
+	}
+
+	&__filter {
+		opacity: 0;
+		position: absolute;
+
+		&-label {
+			position: relative;
+			display: inline-block;
+			padding-left: 38px;
+			line-height: 33px;
+
+			&:before, &:after {
+				position: absolute;
+				display: inline-block;
+			}
+
+			&:before {
+				height: 24px;
+				width: 24px;
+				border: 1px solid;
+				left: 0px;
+				top: 3px;
+				content: "";
+			}
+
+			&:after {
+				height: 5px;
+				width: 14px;
+				border-left: 2px solid;
+				border-bottom: 2px solid;
+				transform: rotate(-45deg);
+				left: 5px;
+				top: 10px;
+			}
+		}
+	}
+
+	&__filter:focus + label::before {
+		outline: rgb(59, 153, 252) auto 5px;
+	}
+
+	&__filter + label:after {
+		content: none;
+	}
+
+	&__filter:checked + label:after {
+		content: "";
+	}
+
+	&__sort-menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: $beige;
+		padding: 8px 16px;
+		margin-bottom: 16px;
+
+		@media only screen and (max-width:1024px) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+
+			@media only screen and (max-width:$tablet) {
+				font-size: 1rem;
+			}
+
+			@media only screen and (max-width:$phablet) {
+				font-size: 0.75rem;
+			}
+		}
+
+		fieldset {
+			border: none;
+			font-size: 1.4rem;
+		}
+		legend {
+			float: left;
+		}
+		ul {
+			list-style: none;
+			float: right;
+			display: flex;
+			li {
+				padding-left: 24px;
+				color: $rose;
+			}
+		}
+
+		button {
+			padding: 0.5em;
+		}
+
+		&-heading {
+			margin-bottom: 0;
+			font-size: 0.875rem;
+
+			@media only screen and (max-width:$tablet) {
+				font-size: 0.667rem;
+				margin-left: 1em;
+			}
+		}
+		input {
+			opacity: 0;
+			width: 0;
+		}
+		input:checked + label, input:focus + label {
+			text-decoration: underline;
+		}
+
+	}
+
+	&__grid {
+		// @extend .col-md-8;
+		margin-bottom: 48px;
+		flex-basis: inherit;
+		max-width: inherit;
+	}
+	&__product-tiles{
+		@media only screen and (min-width:$phablet) {
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			margin: 0 -1 * $grid-unit;
+		}
+	}
+	&__product-tile{
+		margin-bottom: $grid-unit * 3;
+		@media only screen and (min-width:$phablet) {
+			margin-left: $grid-unit;
+			margin-right: $grid-unit;
+			@include flex-column(2);
+		}
+		@media only screen and (min-width:$tablet) {
+			@include flex-column(3);
+		}
+		@media only screen and (min-width:$desktop) {
+			@include flex-column(4);
+		}
+	}
+}
+
+.productsContainer{
+	display: flex;
+	flex-wrap: wrap;
+
+	.product {
+		flex-basis: calc(25% - 16px);
+		max-width: calc(25% - 16px);
+		margin: 0 8px 16px;
+
+
+		@media only screen and (max-width:$tablet) {
+			flex-basis: calc(33% - 16px);
+			max-width: calc(33% - 16px);
+		}
+
+		@media only screen and (max-width:$phablet) {
+			flex-basis: calc(50% - 16px);
+			max-width: calc(50% - 16px);
+		}
+
+		@media only screen and (max-width:$mobile) {
+			flex-basis: calc(100% - 16px);
+			max-width: calc(100% - 16px);
+		}
+	}
+
+}
+
+.pagination {
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		list-style: none;
+		justify-content: center;
+	}
+
+	&__list-item {
+
+		button{
+			color: $rose;
+			width: 32px;
+			height: 32px;
+			border: none;
+			margin: 0 16px;
+			cursor: pointer;
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
+
+		button.active{
+			background-color: $dark-grey;
+			color: $white;
+		}
+	}
+}
+
+.product-card {
+	height: 200px;
+	width: 200px;
+	border: 1px solid #666;
+	margin: 4px;
+	padding: 2px;
+	display: inline-block;
+}

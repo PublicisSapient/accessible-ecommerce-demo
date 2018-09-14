@@ -1,32 +1,65 @@
 /* Font */
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
 
-/* Global Styles */
+/* Icons */
+@import url('https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css');
+
+// SASS Variables
 @import 'variables';
-@import url("helpers.css");
-@import url("flexboxgrid.css");
 
-/* Component Styles */
-@import url("../components/global-nav/global-nav.css");
-@import url("../components/breadcrumb/breadcrumb.css");
-@import url("../components/mini-cart/mini-cart.css");
-@import url("../components/product-grid/product-grid.css");
-@import url("../components/product-tile/product-tile.css");
-@import url("../components/carousel/carousel.css");
-@import url("../components/footer/footer.css");
-
+/* ============================== Global Styles */
 * {
-   box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
-   font-weight: 500;
-   padding: 0;
-   margin: 0;
+    box-sizing: border-box;
 }
 
-a {
-   color: $rose;
+h1, h2, h3, h4, h5, h6{
+    font-weight: 500;
+}
+fieldset{
+    border: 0;
+    padding: 0;
+}
+
+a:not(.btn) {
+    color: $rose;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    &:hover, &:focus{
+        color: $dark-rose;
+        border-bottom-color: $dark-rose;
+    }
+}
+p{
+    line-height: 1.3;
+}
+
+html {
+    font-size: 62.5%; // (for REM): 62.5% = 10px for most browsers if the default font size is 16px.
 }
 
 body {
-  font-size: 16px; // for REM
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-md; // 1.6rem (16px) for most browsers
+    letter-spacing: 0.05em;
+    margin: 0;
+    color: $black;
 }
+@import "helpers";
+@import "grid";
+@import "buttons";
+@import "inputs";
+
+// Component Styles
+@import "../components/accordion/_accordion.scss";
+@import "../components/breadcrumb/_breadcrumb.scss";
+@import "../components/carousel/_carousel.scss";
+@import "../components/footer/_footer.scss";
+@import "../components/gallery/_gallery.scss";
+@import "../components/global-nav/_global-nav.scss";
+@import "../components/mini-cart/_mini-cart.scss";
+@import "../components/modal/_modal.scss";
+@import "../components/product-description/_product-description.scss";
+@import "../components/product-grid/_product-grid.scss";
+@import "../components/product-reviews/_product-reviews.scss";
+@import "../components/product-tile/_product-tile.scss";
+@import "../components/size-chart/_size-chart.scss";

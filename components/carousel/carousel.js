@@ -1,70 +1,80 @@
 /* Carousel Functions */
-const carouselList = document.querySelector('.carousel__items');
-const items = carouselList.querySelectorAll('.card');
-const buttonRight = document.querySelector('.carousel__arrow--right');
-const buttonLeft = document.querySelector('.carousel__arrow--left');
 
-let carouselPosition = 0;
-let currentPage = 0;
-let carouselWidth = () => carouselList.getBoundingClientRect().width;
-let totalWidth = () => carouselList.scrollWidth;
-let itemWidth = () => items[0].getBoundingClientRect().width;
-let numItemsVisible = () => Math.floor(carouselWidth() / itemWidth());
-let minX = () => (totalWidth() >= carouselWidth()) ? -(Math.floor(totalWidth()/carouselWidth()) * carouselWidth()) + carouselWidth() - (totalWidth() % carouselWidth()) : 0;
-let pageCount = () => Math.ceil(items.length / numItemsVisible());
+import { getElementIndex } from 'Utilities';
 
-let shiftAmount = () => {
-	return numItemsVisible() * itemWidth() * -1;
-}
+var Carousel = function (element) {
+	this.element = element;
 
-/**
- * Get index of an element inside parent
- * @param  {HTMLElement} element
- */
-function getElementIndex(element) {
-	var index = 0;
-	while ((element = element.previousElementSibling)) {
-		++index;
+	this.carouselList = element.querySelector('.carousel__items');
+	this.items = this.carouselList.querySelectorAll('.card');
+	this.buttonRight = element.querySelector('.carousel__arrow--right');
+	this.buttonLeft = element.querySelector('.carousel__arrow--left');
+
+	this.carouselPosition = 0;
+	this.currentPage = 0;
+	this.carouselWidth = () => this.carouselList.getBoundingClientRect().width;
+	this.totalWidth = () => this.carouselList.scrollWidth;
+	this.itemWidth = () => this.items[0].getBoundingClientRect().width;
+	this.numItemsVisible = () => Math.floor(this.carouselWidth() / this.itemWidth());
+	this.minX = () => (this.totalWidth() >= this.carouselWidth()) ? -(Math.floor(this.totalWidth() / this.carouselWidth()) * this.carouselWidth()) + this.carouselWidth() - (this.totalWidth() % this.carouselWidth()) : 0;
+	this.pageCount = () => Math.ceil(this.items.length / this.numItemsVisible());
+
+	this.shiftAmount = () => {
+		return this.numItemsVisible() * this.itemWidth() * -1;
 	}
-	return index;
-}
-function shiftCarousel(pageIndex) {
-	currentPage = pageIndex;
-	let amount = (currentPage < pageCount() -1) ? currentPage * shiftAmount() : minX();
-	carouselList.style.transform = `translatex(${amount}px)`;
-	refreshArrowButtons();
-}
-function toggleButton(button, isDisabled){
-	return isDisabled ? button.setAttribute("disabled", "disabled") : button.removeAttribute("disabled");
-}
-function refreshArrowButtons(){
-	toggleButton(buttonLeft, currentPage === 0);
-	toggleButton(buttonRight, currentPage === pageCount() - 1);
-}
-function refreshCarousel(){
-	/*
-	* TODO: Add a (buffered) window resize event call that will reflow the carousel if the page count needs to change
-	 */
-	refreshArrowButtons();
+
+	this.initEvents();
+	this.refreshCarousel();
+};
+
+Carousel.prototype = {
+
+	shiftCarousel(pageIndex) {
+		this.currentPage = pageIndex;
+		let amount = (this.currentPage < this.pageCount() - 1) ? this.currentPage * this.shiftAmount() : this.minX();
+		this.carouselList.style.transform = `translatex(${amount}px)`;
+		this.refreshArrowButtons();
+	},
+
+	toggleButton(button, isDisabled) {
+		return isDisabled ? button.setAttribute("disabled", "disabled") : button.removeAttribute("disabled");
+	},
+
+	refreshArrowButtons() {
+		this.toggleButton(this.buttonLeft, this.currentPage === 0);
+		this.toggleButton(this.buttonRight, this.currentPage === this.pageCount() - 1);
+	},
+
+	refreshCarousel() {
+		/*
+		* TODO: Add a (buffered) window resize event call that will reflow the carousel if the page count needs to change
+		 */
+
+		this.refreshArrowButtons();
+	},
+
+	initEvents: function () {
+		this.buttonRight.addEventListener('click', (e) => {
+			this.shiftCarousel(this.currentPage + 1);
+		});
+
+		this.buttonLeft.addEventListener('click', (e) => {
+			this.shiftCarousel(this.currentPage - 1);
+		});
+
+		this.items.forEach(card => {
+			card.addEventListener('focusin', evt => {
+				const cardIndex = getElementIndex(evt.target.closest(".card"));
+				const cardPage = Math.ceil((cardIndex + 1) / this.numItemsVisible()) - 1;
+				if (cardPage != this.currentPage) {
+					this.shiftCarousel(cardPage);
+				}
+			});
+		});
+	}
 }
 
-// UI State + Interactions
-buttonRight.addEventListener('click', (e) => {
-	shiftCarousel(currentPage + 1);
+var carouselElements = document.querySelectorAll('.carousel');
+carouselElements.forEach(function (carouselElement) {
+	var carousel = new Carousel(carouselElement);
 });
-buttonLeft.addEventListener('click', (e) => {
-	shiftCarousel(currentPage -1);
-});
-
-// setup card focus listeners
-items.forEach( card => {
-	card.addEventListener('focusin', evt => {
-		const cardIndex = getElementIndex(evt.target.closest(".card"));
-		const cardPage = Math.ceil((cardIndex + 1) / numItemsVisible()) - 1;
-		if(cardPage != currentPage){
-			shiftCarousel(cardPage);
-		}
-	});
-});
-
-refreshCarousel();

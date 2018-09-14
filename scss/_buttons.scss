@@ -1,0 +1,64 @@
+@import 'variables';
+
+/* ====================================== BUTTONS */
+
+.btn{
+    font-size: $font-sm;
+    padding: $grid-unit * 2;
+    border: 1px solid transparent;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+    background:$rose;
+    color: white;
+    vertical-align: middle;
+    border-radius: 0;
+    &:not(:disabled):hover, &:focus{
+        color:white;
+        background: $dark-rose;
+        text-decoration: underline;
+    }
+    &:disabled{
+        background: $grey;
+        cursor: not-allowed;
+    }
+    &--black{
+        background: $black;
+        &:not(:disabled):hover, &:focus{
+            background: $dark-grey;
+        }
+    }
+    &--outline{
+        color: $rose;
+        background: transparent;
+        border: 1px solid $rose;
+        &:not(:disabled):hover, &:focus{
+            color: $dark-rose;
+            border-color: $dark-rose;
+            background: rgba($black, 0.05);
+        }
+    }
+    &--outline-black{
+        color: $black;
+        background: transparent;
+        border: 1px solid $black;
+        &:not(:disabled):hover, &:focus{
+            color: $dark-grey;
+            border-color: $dark-grey;
+            background: rgba($black, 0.05);
+        }
+    }
+    &--icon{
+        font-size: 3rem;
+        padding: $grid-unit;
+        min-width: 48px;
+        &:disabled{
+            opacity: 0.6;
+        }
+    }
+    &--block{
+        display: block;
+        width: 100%;
+    }
+}
+

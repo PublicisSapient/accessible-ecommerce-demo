@@ -1,0 +1,74 @@
+@import '../../scss/variables';
+
+/* ============================== PRODUCT TILE */
+
+$dollar-size: 14px;
+$cent-size: 12px;
+$small-padding: 16px;
+
+.product {
+	border: $grey solid thin;
+	padding: $small-padding;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	img {
+		max-width: 100%;
+	}
+	&__details{
+		border: 0 !important;
+	}
+	&__heading {
+		margin: 16px 0;
+		font-size: 1.4rem;
+	}
+
+	&__cta {
+		padding: $grid-unit;
+
+		&.hide {
+			display: none;
+		}
+
+	}
+}
+
+.quantity-comp {
+	display: none;
+	align-items: center;
+	margin-bottom: 16px;
+
+	&.show {
+		display: flex;
+	}
+
+	&__text {
+		text-align: center;
+		border: none;
+		font-size: 1.4rem;
+		display: inline-block;
+		width: 50px;
+		flex-grow: 1;
+	}
+
+	/* button {
+		border: 1px solid $rose;
+		font-size: 22px;
+		color: $rose;
+		width: 36px; // 56px;
+		min-width: 36px; // 56px;
+		height: 32px;
+	} */
+}
+
+.price {
+	margin: 16px 0;
+
+	&__dollar {
+		font-size: $dollar-size;
+	}
+	&__cents {
+		font-size: $cent-size;
+		vertical-align: super;
+	}
+}
