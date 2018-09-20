@@ -1,4 +1,7 @@
 import HTMLLoader from './loader';
+import { normalizeName } from './utils';
+
+window.SR = {};
 
 var Template = (function() {
   function init() {
@@ -11,7 +14,7 @@ var Template = (function() {
     HTMLLoader.loadAll(components).then(comps => { 
       comps.forEach(comp => {
         const component = require(`../../components/${comp.js}/${comp.js}.js`);
-        new component.default();
+        window.SR[normalizeName(comp.js)] = new component.default();
       });
     });
   }
