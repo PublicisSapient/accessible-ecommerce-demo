@@ -17,7 +17,9 @@ const Template = (function() {
     HTMLLoader.loadAll(components).then(comps => { 
       comps.forEach(comp => {
         const component = require(`../../components/${comp.js}/${comp.js}.js`);
-        loadedComponents[normalizeName(comp.js)] = new component.default();
+        if(component.default) {
+          loadedComponents[normalizeName(comp.js)] = new component.default();
+        }
       });
     });
 

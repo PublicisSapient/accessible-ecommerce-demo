@@ -18,8 +18,7 @@
     "move:js": "cp -R js/main.js docs/src/assets/toolkit/scripts",
     "build:docs": "npm run move:css && npm run move:js && cd docs && npm run build",
     "watch:docs": "npm run move:css && npm run move:js && cd docs && npm start",
-    "build:js": "webpack --mode development",
-    "build:template": "npx babel pages --out-file js/templates.js --presets=env"
+    "build:js": "webpack --mode development"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
