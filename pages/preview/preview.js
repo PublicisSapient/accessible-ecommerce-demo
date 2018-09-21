@@ -1,9 +1,6 @@
 import Template from '../../src/js/template';
 
-/* Product Details Page Functions */
-console.log('PDP page scripts! ', Template);
-
-const PDP = (function() {
+const Preview = (function() {
   function init() {
     const components = Template.getComponents();
     const loadedComponents = Template.load(components);
@@ -16,4 +13,4 @@ const PDP = (function() {
   }
 }());
 
-PDP.init();
+Preview.init();

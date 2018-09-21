@@ -81,21 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./pages/pdp/pdp.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./components sync recursive \\.js$":
-/*!*******************************!*\
-  !*** ./components sync \.js$ ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./accordion/accordion.js\": \"./components/accordion/accordion.js\",\n\t\"./breadcrumb/breadcrumb.js\": \"./components/breadcrumb/breadcrumb.js\",\n\t\"./carousel/carousel.js\": \"./components/carousel/carousel.js\",\n\t\"./footer/footer.js\": \"./components/footer/footer.js\",\n\t\"./gallery/gallery.js\": \"./components/gallery/gallery.js\",\n\t\"./global-navigation/global-navigation.js\": \"./components/global-navigation/global-navigation.js\",\n\t\"./mini-cart/mini-cart.js\": \"./components/mini-cart/mini-cart.js\",\n\t\"./modal/modal.js\": \"./components/modal/modal.js\",\n\t\"./product-description/product-description.js\": \"./components/product-description/product-description.js\",\n\t\"./product-grid/product-grid.js\": \"./components/product-grid/product-grid.js\",\n\t\"./product-tile/product-tile.js\": \"./components/product-tile/product-tile.js\",\n\t\"./size-chart/size-chart.js\": \"./components/size-chart/size-chart.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tvar id = map[req];\n\tif(!(id + 1)) { // check for number or string\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn id;\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync recursive \\\\.js$\";\n\n//# sourceURL=webpack:///./components_sync_\\.js$?");
-
-/***/ }),
 
 /***/ "./components sync recursive ^\\.\\/.*\\.js$":
 /*!**************************************!*\
@@ -252,15 +241,15 @@ eval("\n\nvar SizeChart = function SizeChart(element) {\n\tthis.element = elemen
 
 /***/ }),
 
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
+/***/ "./pages/pdp/pdp.js":
+/*!**************************!*\
+  !*** ./pages/pdp/pdp.js ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n// Manually bundle specific files in specific order\n// require('./polyfills.js');\n/* The above is commented out because it doesn't seem to work because webpack doesn't just concatenate the JS files\nThere's an interesting article here on including polyfills only when needed:\nhttps://philipwalton.com/articles/loading-polyfills-only-when-needed/\nPerhaps we could roll with a similar solution when necessary.\n*/\n__webpack_require__(/*! ./loader.js */ \"./src/js/loader.js\");\n__webpack_require__(/*! ./template.js */ \"./src/js/template.js\");\n// Recursively bundle all of the JS files from the ./components directory\nvar cache = {};\nfunction importAll(r) {\n  r.keys().forEach(function (key) {\n    return cache[key] = r(key);\n  });\n}\nimportAll(__webpack_require__(\"./components sync recursive \\\\.js$\"));\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("\n\nvar _template = __webpack_require__(/*! ../../src/js/template */ \"./src/js/template.js\");\n\nvar _template2 = _interopRequireDefault(_template);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/* Product Details Page Functions */\nconsole.log('PDP page scripts! ', _template2.default);\n\nvar PDP = function () {\n  function init() {\n    var components = _template2.default.getComponents();\n    var loadedComponents = _template2.default.load(components);\n\n    console.log('loadedComponent: ', loadedComponents);\n  }\n\n  return {\n    init: init\n  };\n}();\n\nPDP.init();\n\n//# sourceURL=webpack:///./pages/pdp/pdp.js?");
 
 /***/ }),
 
@@ -284,7 +273,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _loader = __webpack_require__(/*! ./loader */ \"./src/js/loader.js\");\n\nvar _loader2 = _interopRequireDefault(_loader);\n\nvar _utils = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nwindow.SR = {};\n\nvar Template = function () {\n  function init() {\n    var componentElements = Array.prototype.slice.call(document.querySelectorAll('[data-component]'));\n    var components = componentElements.map(function (el) {\n      var component = el.dataset.component;\n      return { path: '../../components/' + component + '/' + component + '.html', selector: '[data-component=' + component + ']', js: component };\n    });\n\n    _loader2.default.loadAll(components).then(function (comps) {\n      comps.forEach(function (comp) {\n        var component = __webpack_require__(\"./components sync recursive ^\\\\.\\\\/.*\\\\.js$\")(\"./\" + comp.js + '/' + comp.js + '.js');\n        window.SR[(0, _utils.normalizeName)(comp.js)] = new component.default();\n      });\n    });\n  }\n\n  return {\n    init: init\n  };\n}();\n\ndocument.addEventListener('DOMContentLoaded', Template.init);\n\n//# sourceURL=webpack:///./src/js/template.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _loader = __webpack_require__(/*! ./loader */ \"./src/js/loader.js\");\n\nvar _loader2 = _interopRequireDefault(_loader);\n\nvar _utils = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Template = function () {\n  function getComponents() {\n    var componentElements = Array.prototype.slice.call(document.querySelectorAll('[data-component]'));\n    var components = componentElements.map(function (el) {\n      var component = el.dataset.component;\n      return { path: '../../components/' + component + '/' + component + '.html', selector: '[data-component=' + component + ']', js: component };\n    });\n\n    return components;\n  }\n\n  function load(components) {\n    var loadedComponents = {};\n    _loader2.default.loadAll(components).then(function (comps) {\n      comps.forEach(function (comp) {\n        var component = __webpack_require__(\"./components sync recursive ^\\\\.\\\\/.*\\\\.js$\")(\"./\" + comp.js + '/' + comp.js + '.js');\n        loadedComponents[(0, _utils.normalizeName)(comp.js)] = new component.default();\n      });\n    });\n\n    return loadedComponents;\n  }\n\n  return {\n    getComponents: getComponents,\n    load: load\n  };\n}();\n\nexports.default = Template;\n\n//# sourceURL=webpack:///./src/js/template.js?");
 
 /***/ }),
 

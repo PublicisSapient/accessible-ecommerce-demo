@@ -5,8 +5,7 @@ There's an interesting article here on including polyfills only when needed:
 https://philipwalton.com/articles/loading-polyfills-only-when-needed/
 Perhaps we could roll with a similar solution when necessary.
 */
-require('./loader.js');
-require('./template.js');
+
 // Recursively bundle all of the JS files from the ./components directory
 var cache = {};
 function importAll (r) {
