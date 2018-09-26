@@ -1,8 +1,8 @@
 /* ===================================== PRODUCT DETAILS PAGE */
-.product-details {
-  margin-bottom: 40px;
+.content-container {
   justify-content: space-between;
-  flex-wrap: wrap;
-  display: flex; }
-  .product-details > * {
-    width: calc(50% - 8px); }
+  display: flex;
+}
+.product-details {
+  margin-bottom: 40px; 
+}
