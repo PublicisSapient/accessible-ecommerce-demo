@@ -1,7 +1,6 @@
 import Template from '../../src/js/template';
 
 /* Product Details Page Functions */
-console.log('PDP page scripts! ', Template);
 
 const PDP = (function() {
   function init() {
@@ -14,6 +13,8 @@ const PDP = (function() {
   return {
     init: init
   }
-}());
+})();
 
-PDP.init();
+document.addEventListener("mainReady", function(e) {
+  PDP.init();
+});
