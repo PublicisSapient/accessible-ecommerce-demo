@@ -1,63 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Component | Carousel</title>
-		<link rel="stylesheet" href="../../css/global.css">
-		<link rel="stylesheet" href="carousel.css">
-	</head>
-	<body>
-		<section class="carousel-wrapper">
-				<h1>Product Recommendations</h1>
-				<a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="element-invisible">Skip product recommendations carousel</a>
-				<div class="carousel">
-					<button class="carousel__arrow carousel__arrow--left ion-arrow-left-b" tabindex="-1">
-						<span class="element-invisible" tabindex="-1">Previous arrow</span>
-					</button>
-					<div class="carousel__container">
-						<ul class="carousel__items">
-							<li class="card card--active">
-								<a href="https://placeholder.com">
-									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
-									<span class="card__title">Product Title 1</span>
+<section class="carousel-wrapper">
+	<h2>Product Recommendations</h2>
+	<a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="skip-link">
+		Skip product recommendations carousel
+	</a>
+	<div class="carousel">
+		<button class="carousel__arrow carousel__arrow--left icon ion-ios-arrow-back" tabindex="-1">
+			<span class="element-invisible" tabindex="-1">Previous arrow</span>
+		</button>
+		<div class="carousel__container">
+			<div class="carousel__items">
+				<li class="card card--active">
+					<article class="product">
+						<a class="product__details" href="#">
+							<picture>
+								<img src="/images/sleeve-detail-ribbed-t-shirt.jpg">
+							</picture>
+							<p class="product__heading" aria-label="learn more aboutS sleeve detail ribbed t-shirt, $32.99">Sleeve detail ribbed t-shirt</p>
+						</a>
+						<span class="price">
+							<span class="price__dollar" aria-hidden="true">$32</span><span class="price__cents">99</span>
+							<span class="visibly-hidden">$32.99</span>
+						</span>
+						<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+						<a class="product__details" href="#">
+							<picture>
+								<img src="/images/mercerised-t-shirt.jpg">
+							</picture>
+							<p class="product__heading" aria-label="learn more about: Mercerised t-shirt, $65.99">Mercerised t-shirt</p>
+						</a>
+						<span class="price">
+							<span class="price__dollar" aria-hidden="true">$65</span><span class="price__cents">99</span>
+							<span class="visibly-hidden">$65.99</span>
+						</span>
+						<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+						<a class="product__details" href="#">
+							<picture>
+								<img src="/images/modal-t-shirt.jpg">
+							</picture>
+							<p class="product__heading" aria-label="learn more about: Modal t-shirt, $46.99">Modal t-shirt</p>
+						</a>
+						<span class="price">
+							<span class="price__dollar" aria-hidden="true">$46</span><span class="price__cents">99</span>
+							<span class="visibly-hidden">$46.99</span>
+						</span>
+						<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+						<a class="product__details" href="#">
+							<picture>
+								<img src="/images/ruffled-sleeve-t-shirt.jpg">
+							</picture>
+							<p class="product__heading" aria-label="learn more about: Ruffled sleeve t-shirt, $38.99">Ruffled sleeve t-shirt</p>
+						</a>
+						<span class="price">
+							<span class="price__dollar" aria-hidden="true">$38</span><span class="price__cents">99</span>
+							<span class="visibly-hidden">$38.99</span>
+						</span>
+						<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+							<a class="product__details" href="#">
+									<picture>
+										<img src="/images/striped-knit-top.jpg">
+									</picture>
+									<p class="product__heading" aria-label="learn more about: Striped knit top, $47.99">Striped knit top</p>
 								</a>
-							</li>
-							<li class="card">
-								<a href="https://placeholder.com">
-									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
-									<span class="card__title">Product Title 2</span>
+								<span class="price">
+									<span class="price__dollar" aria-hidden="true">$47</span><span class="price__cents">99</span>
+									<span class="visibly-hidden">$47.99</span>
+								</span>
+										<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+							<a class="product__details" href="#">
+									<picture>
+										<img src="/images/lace-t-shirt.jpg">
+									</picture>
+									<p class="product__heading" aria-label="learn more about: Lace t-shirt, $36.99">Lace t-shirt</p>
 								</a>
-							</li>
-							<li class="card">
-								<a href="https://placeholder.com">
-									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
-									<span class="card__title">Product Title 3</span>
+								<span class="price">
+									<span class="price__dollar" aria-hidden="true">$36</span><span class="price__cents">99</span>
+									<span class="visibly-hidden">$36.99</span>
+								</span>
+										<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+							<a class="product__details" href="#">
+									<picture>
+										<img src="/images/before-t-shirt.jpg">
+									</picture>
+									<p class="product__heading" aria-label="learn more about: Before t-shirt, $24.99">Before t-shirt</p>
 								</a>
-							</li>
-							<li class="card">
-								<a href="https://placeholder.com">
-									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
-									<span class="card__title">Product Title 4</span>
+								<span class="price">
+									<span class="price__dollar" aria-hidden="true">$24</span><span class="price__cents">99</span>
+									<span class="visibly-hidden">$24.99</span>
+								</span>
+										<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+							<a class="product__details" href="#">
+									<picture>
+										<img src="/images/fringed-edges-top.jpg">
+									</picture>
+									<p class="product__heading" aria-label="learn more about: Fringed edges top, $58.99">Fringed edges top</p>
 								</a>
-							</li>
-							<li class="card">
-								<a href="https://placeholder.com">
-									<img class="card__image" alt="product image" src="http://via.placeholder.com/200x150">
-									<span class="card__title">Product Title 5</span>
+								<span class="price">
+									<span class="price__dollar" aria-hidden="true">$58</span><span class="price__cents">99</span>
+									<span class="visibly-hidden">$58.99</span>
+								</span>
+										<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+							<a class="product__details" href="#">
+									<picture>
+										<img src="/images/green-tank-top.jpg">
+									</picture>
+				
+									<p class="product__heading" aria-label="learn more about: Green tank top, $52.99">Green tank top</p>
 								</a>
-							</li>
-						</ul>
-					</div>
-			
-					<button class="carousel__arrow carousel__arrow--right ion-arrow-right-b" tabindex="-1">
-						<span class="element-invisible" tabindex="-1">Next arrow</span>
-					</button>
-				</div>
-			
-				<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="element-invisible">Jump to start of product recommendations carousel</a>
-		</section>
-		<script src="carousel.js"></script>
-	</body>
-</html>
+								<span class="price">
+									<span class="price__dollar" aria-hidden="true">$52</span><span class="price__cents">99</span>
+									<span class="visibly-hidden">$52.99</span>
+								</span>
+										<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+							<a class="product__details" href="#">
+									<picture>
+										<img src="/images/linen-t-shirt.jpg">
+									</picture>
+				
+									<p class="product__heading" aria-label="learn more about: Linen t-shirt, $39.99">Linen t-shirt</p>
+								</a>
+								<span class="price">
+									<span class="price__dollar" aria-hidden="true">$39</span><span class="price__cents">99</span>
+									<span class="visibly-hidden">$39.99</span>
+								</span>
+										<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+				<li class="card card--active">
+					<article class="product">
+							<a class="product__details" href="#">
+									<picture>
+										<img src="/images/metallic-net-top.jpg">
+									</picture>
+				
+									<p class="product__heading" aria-label="learn more about: Metallic net top, $15.99">Metallic net top</p>
+								</a>
+								<span class="price">
+									<span class="price__dollar" aria-hidden="true">$15</span><span class="price__cents">99</span>
+									<span class="visibly-hidden">$15.99</span>
+								</span>
+										<span class="quantity-comp">
+							<button aria-label="decrease quantity" class="quantity-comp__decrease">-</button>
+							<label class="element-invisible" for="product-1-quantity">Change quantity</label>
+							<input type="text" id="product-1-quantity" placeholder="1" class="quantity-comp__text">
+							<span aria-live="assertive" aria-atomic="true" class="visibly-hidden">You have now selected<span> 1 Item</span></span>
+							<button aria-label="increase quantity" class="quantity-comp__increase">+</button>
+						</span>
+
+					</article>
+				</li>
+
+			</div>
+		</div>
+
+		<button class="carousel__arrow carousel__arrow--right icon ion-ios-arrow-forward" tabindex="-1">
+			<span class="element-invisible">Next arrow</span>
+		</button>
+	</div>
+
+	<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="skip-link">
+		Jump to start of product recommendations carousel
+	</a>
+</section>

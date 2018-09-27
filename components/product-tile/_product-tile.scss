@@ -19,8 +19,9 @@ $small-padding: 16px;
 		border: 0 !important;
 	}
 	&__heading {
-		margin: 16px 0;
+		margin: 16px 0 0;
 		font-size: 1.4rem;
+		min-height: 3.6rem;
 	}
 
 	&__cta {
