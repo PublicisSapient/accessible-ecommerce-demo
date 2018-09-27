@@ -4,22 +4,27 @@ var Accordion = function (element, panels) {
   this.element = element;
   this.panels = panels;
   this.accordionPanels = {};
+  this.content = [];
 	
   this.loadPanels();
-  this.initEvents();
 }
 
 Accordion.prototype = {
   loadPanels: function() {
+    const promises = [];
     for(let i = 0; i < this.panels; i++) {
       let id = `panel${i}`;
       let li = document.createElement('li');
       li.setAttribute('class', 'accordion-panel');
       li.setAttribute('id', id);
       this.element.appendChild(li);
-      HTMLLoader.load(`../../components/accordion/pdp-content/panel${i + 1}.html`, `#${id}`);
+      promises.push(HTMLLoader.load(`../../components/accordion/pdp-content/panel${i + 1}.html`, `#${id}`));
     }
-    this.accordionPanels = this.element.querySelectorAll('.accordion-panel');
+
+    Promise.all(promises).then(() => {
+      this.accordionPanels = this.element.querySelectorAll('.accordion-panel');
+      this.initEvents();
+    });
   },
 
 	setFocusOnContent: function(accordionPanel) {
@@ -30,7 +35,7 @@ Accordion.prototype = {
 	setAriaLabelForButton: function(accordionPanel) {
 		var accordionPanelContent = accordionPanel.querySelector('.accordion-panel_content');
 		var accordionPanelButton = accordionPanel.querySelector('button');
-    console.log('accordionPanel: ', accordionPanel);
+    // console.log('accordionPanel: ', accordionPanelContent);
 		if (accordionPanelContent.classList.contains('accordion--open')) {
 			accordionPanelButton.setAttribute('aria-label', accordionPanelButton.getAttribute('data-hide-aria-label'));
 			this.setFocusOnContent(accordionPanel);
