@@ -9,6 +9,7 @@ const PDP = (function() {
     const loadedComponents = Template.load(components);
 
     console.log('loadedComponent: ', loadedComponents);
+    
   }
 
   return {
