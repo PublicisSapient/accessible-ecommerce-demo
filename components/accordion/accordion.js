@@ -1,7 +1,8 @@
 import HTMLLoader from '../../src/js/loader';
 
-var Accordion = function (element, panels) {
-  this.element = element;
+var Accordion = function (element, path, panels) {
+  this.element = element; 
+  this.path = path;
   this.panels = panels;
   this.accordionPanels = {};
   this.content = [];
@@ -18,7 +19,7 @@ Accordion.prototype = {
       li.setAttribute('class', 'accordion-panel');
       li.setAttribute('id', id);
       this.element.appendChild(li);
-      promises.push(HTMLLoader.load(`../../components/accordion/pdp-content/panel${i + 1}.html`, `#${id}`));
+      promises.push(HTMLLoader.load(`${this.path}panel${i + 1}.html`, `#${id}`));
     }
 
     Promise.all(promises).then(() => {
@@ -67,5 +68,5 @@ Accordion.prototype = {
 }
 var accordionElements = document.querySelectorAll('.accordion');
 accordionElements.forEach(function (accordionElement) {
-	var accordion = new Accordion(accordionElement, 4);
+	var accordion = new Accordion(accordionElement, '../../components/accordion/pdp-content/', 4);
 });
