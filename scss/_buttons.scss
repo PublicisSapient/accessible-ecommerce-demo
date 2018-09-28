@@ -13,6 +13,8 @@
     color: white;
     vertical-align: middle;
     border-radius: 0;
+    text-decoration: none;
+    margin: 0;
     &:not(:disabled):hover, &:focus{
         color:white;
         background: $dark-rose;
