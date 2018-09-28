@@ -1,7 +1,7 @@
 /* Global Nav Functions */
 var menuItems = document.querySelectorAll('li.has-submenu > a');
 var activeMenuItem = null;
-
+const MiniCart = require(`../../components/mini-cart/mini-cart.js`);
 
 // hamburger menu
 function GlobalNavigation() {

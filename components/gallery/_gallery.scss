@@ -1,3 +1,4 @@
+@import '../../scss/variables';
 /* ==================================== GALLERY */
 
 .gallery {
@@ -81,6 +82,7 @@
 @media only screen and (min-width: 600px) {
     .gallery {
         max-width: 600px;
+        margin-top: $grid-unit * 4;
     }
     .gallery__main-image__inner-container {
         max-width: 600px;

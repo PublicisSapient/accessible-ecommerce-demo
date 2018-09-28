@@ -9,6 +9,9 @@
                 content:"";
             }
         }
+        &:focus + label::before{
+            outline: rgb(59, 153, 252) auto 5px;
+        }
     }
     &__label {
         position: relative;
@@ -85,7 +88,7 @@
 select {
     width: auto;
     padding: 0 40px 0 8px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid $black;
     height: 48px;
     -webkit-appearance: none;
