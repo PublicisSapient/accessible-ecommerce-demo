@@ -69,22 +69,13 @@
 	<section aria-label="Product Grid" class="productGrid__grid" id="product-grid" name="product-grid" tabindex="-1"
 	 aria-describedby="showingNumberProducts__heading">
 		<section class="productGrid__sort-menu" id="product-sort" name="product-sort">
-			<h2 id="sort-products=">Sort by</h2>
-			<ul>
-				<li>
-					<button type="button" name="product-sort" class="sort-option" id="sort-low-high" aria-label="Sort products by price, lowest to highest">Price
-						low to high</button>
-				</li>
-				<li>
-					<button type="button" name="product-sort" class="sort-option" id="sort-high-low" aria-label="Sort products by price, highest to lowest">Price
-						high to low</button>
-				</li>
-				<li>
-					<button type="button" name="product-sort" class="sort-option" id="sort-newest" aria-label="Sort products from newest to oldest">Newest
-						to Top</button>
-				</li>
-			</ul>
-			<div class="productGrid__sort-menu-heading" id="showingNumberProducts__heading">Showing products X of X</div>
+			<h2 id="sort-products"><label for="productSort">Sort by</label></h2>
+			<select name="product-sort" id="productSort">
+				<option value="low_to_high">Price low to high</option>
+				<option value="high_to_low">Price high to low</option>
+				<option value="newest_to_top">Newest to top</option>
+			</select>
+			<div class="productGrid__sort-menu-heading" id="showingNumberProducts__heading"><span class="element-invisible">Showing products</span> 12 of 96</div>
 		</section>
 		<section class="productGrid__product-tiles">
 			<article class="productGrid__product-tile product">
