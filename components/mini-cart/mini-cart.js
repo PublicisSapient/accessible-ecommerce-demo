@@ -6,7 +6,7 @@ const MiniCart = function (element) {
     this.buttonEl = this.el.getElementsByClassName(rootClass + "__toggle")[0];
     this.dropdownEl = this.el.getElementsByClassName(rootClass + "__dropdown")[0];
     this.updateElement = this.el.getElementsByClassName(rootClass + "__updated")[0];
-
+    // debugger;
     this.initEvents();
 }
 MiniCart.prototype = {
@@ -18,18 +18,12 @@ MiniCart.prototype = {
         this.toggleMenu = this.toggleMenu.bind(this);
         this.onBodyClick = this.onBodyClick.bind(this);
 
-        // console.log(el, buttonEl, dropdownEl);
-        /* buttonEl.addEventListener('mouseover', this.onFocus);
-        buttonEl.addEventListener('mouseout', this.onBlur); */
         this.buttonEl.addEventListener('click', this.toggleMenu)
-
-        /* buttonEl.addEventListener('focus', this.onFocus);
-        buttonEl.addEventListener('blur', this.onButtonBlur); */
 
         this.dropdownEl.addEventListener('focus', this.onFocus, true);
         this.dropdownEl.addEventListener('blur', this.onButtonBlur, true);
-        //document.addEventListener('click', this.onBodyClick, true); // too global, interferes with gallery.js
-        this.buttonEl.addEventListener('blur', this.onButtonBlur);
+        document.addEventListener('click', this.onBodyClick.bind(this), true); // too global, interferes with gallery.js
+        this.buttonEl.addEventListener('blur', this.onButtonBlur.bind(this));
     },
     update: function(data) {
         const message = `${data.quantity} ${data.name} has been added to your cart.`;
@@ -57,8 +51,7 @@ MiniCart.prototype = {
     },
     onBodyClick: function (e) {
         const target = e.target;
-
-        if (!this.dropdownEl.contains(target) && target !== buttonEl) {
+        if (this.buttonEl && !this.dropdownEl.contains(target) && target !== this.buttonEl) {
             this.onBlur();
         }
     },

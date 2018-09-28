@@ -65,6 +65,9 @@
 			line-height: 1.2;
 		}
 	}
+	.quantity-comp {
+		display: flex;
+	}
 }
 .price{
 	&__label{
@@ -78,6 +81,7 @@
 .size-chart{
 	&__link{
 		font-size: $font-xs;
+		width:auto;
 	}
 }
 .product-actions{
@@ -108,7 +112,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		height: 48px;
-		margin-bottom: $grid-unit;
+		margin-bottom: $grid-unit * 2;
 	}
 	&__prefix{
 		margin-right: $grid-unit * 2;

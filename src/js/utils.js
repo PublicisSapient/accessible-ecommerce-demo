@@ -42,3 +42,7 @@ export function getElementIndex(element) {
     }
     return index;
 }
+
+export function normalizeName(str) {
+  return str.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+}

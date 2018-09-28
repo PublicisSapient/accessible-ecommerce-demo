@@ -1,10 +1,14 @@
 var path = require('path');
 module.exports = {
-	entry: './src/js/index.js',
+	entry: {
+    components: './src/js/index.js',
+    pdp: './pages/pdp/pdp.js',
+    preview: './pages/preview/preview.js'
+  },
 	watch: true,
 	output: {
 		path: __dirname + '/js',
-		filename: 'main.js'
+		filename: '[name].js'
 	},
 	module: {
 		rules: [
@@ -20,7 +24,9 @@ module.exports = {
 	resolve: {
 		extensions: ['.js'],
 		alias: {
-			Utilities: path.resolve(__dirname, 'src/js/utils')
-		  }
-	  }
+      Utilities: path.resolve(__dirname, 'src/js/utils'),
+      HTMLLoader: path.resolve(__dirname, 'src/js/loader'),
+      Template: path.resolve(__dirname, 'src/js/Template')
+		}
+  }
 }

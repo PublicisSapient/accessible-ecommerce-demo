@@ -1,10 +1,11 @@
 /* Global Nav Functions */
 var menuItems = document.querySelectorAll('li.has-submenu > a');
 var activeMenuItem = null;
-
+const MiniCart = require(`../../components/mini-cart/mini-cart.js`);
 
 // hamburger menu
 function GlobalNavigation() {
+  console.log('GlobalNavigation');
   this.isMenuOpen = false;
   this.hamburgerMenuButton = document.getElementById('button');
   this.hamburgerMenuButton.addEventListener('click', this.handleHamburgerMenuClick.bind(this));
@@ -17,7 +18,7 @@ GlobalNavigation.prototype = {
   }
 }
 
-new GlobalNavigation();
+// new GlobalNavigation();
 
 // TOOD: Move code below into GlobalNavigation object
 function onDocumentClick(event) {
@@ -95,3 +96,5 @@ function onClickMenuItemWithSubmenu(event) {
 Array.prototype.forEach.call(menuItems, function(el, i) {
 	el.addEventListener("click", onClickMenuItemWithSubmenu);
 });
+
+export default GlobalNavigation;
