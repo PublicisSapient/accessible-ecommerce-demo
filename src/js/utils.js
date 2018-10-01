@@ -46,3 +46,7 @@ export function getElementIndex(element) {
 export function normalizeName(str) {
   return str.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
 }
+
+export function capitalize(str) {
+  return str.replace(/^\w/, c => c.toUpperCase());
+}

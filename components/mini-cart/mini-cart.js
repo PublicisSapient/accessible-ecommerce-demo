@@ -1,8 +1,10 @@
 /* Mini Cart Functions */
+import { capitalize } from 'Utilities';
 
 const MiniCart = function (element) {
     const rootClass = 'mini-cart'
     this.el = element;
+    this.quantity = 0;
     this.buttonEl = this.el.getElementsByClassName(rootClass + "__toggle")[0];
     this.dropdownEl = this.el.getElementsByClassName(rootClass + "__dropdown")[0];
     this.updateElement = this.el.getElementsByClassName(rootClass + "__updated")[0];
@@ -24,10 +26,30 @@ MiniCart.prototype = {
         this.dropdownEl.addEventListener('blur', this.onButtonBlur, true);
         document.addEventListener('click', this.onBodyClick.bind(this), true); // too global, interferes with gallery.js
         this.buttonEl.addEventListener('blur', this.onButtonBlur.bind(this));
+
+        document.addEventListener('update:cart', this.update.bind(this));
     },
-    update: function(data) {
-        const message = `${data.quantity} ${data.name} has been added to your cart.`;
-        updateElement.innerHTML = message;
+    update: function(evt) {
+      console.log('update: ', evt.detail);
+        const message = `${evt.detail.quantity} ${evt.detail.name} has been added to your cart.`;
+        const newQty = this.updateQuantity(evt.detail.quantity);
+        // updateElement.innerHTML = message;
+        this.el.querySelector('.mini-cart__visible-label--amount').innerHTML = newQty
+        this.el.querySelector('.mini-cart__aria span').innerHTML = newQty;
+        this.el.querySelector('.mini-cart__item-title').innerHTML = evt.detail.name;
+        this.el.querySelector('.mini-cart__size').innerHTML = capitalize(evt.detail.size);
+        this.el.querySelector('.mini-cart__color').innerHTML = capitalize(evt.detail.color);
+        this.el.querySelector('.mini-cart__total-quantity span').innerHTML = evt.detail.quantity;
+        this.el.querySelector('.mini-cart__quantity span').innerHTML = evt.detail.quantity;
+        this.el.querySelector('.mini-cart__description--full').innerHTML = `$${evt.detail.price}`;
+        this.el.querySelector('.mini-cart__subtotal').innerHTML = this.calculateSubtotal(evt.detail.price);
+    },
+    updateQuantity: function (qty) {
+      this.quantity += Number(qty);
+      return this.quantity;
+    },
+    calculateSubtotal: function (price) {
+      return `$${this.quantity * price}`;
     },
     onFocus: function () {
         this.dropdownEl.classList.add('expanded');
@@ -57,12 +79,12 @@ MiniCart.prototype = {
     },
     closeIfMenuBlurred: function (target, currentTarget, relatedTarget) {
         // console.log('closeIfMenuBlurred', 'relatedTarget', relatedTarget, 'activeElement', document.activeElement);
-        const focusedElement = relatedTarget || document.activeElement;
-		const isFocusLost = (
-			focusedElement.parentNode === document.body ||
-			focusedElement === document.body ||
-			focusedElement === null
-		);
+      const focusedElement = relatedTarget || document.activeElement;
+      const isFocusLost = (
+        focusedElement.parentNode === document.body ||
+        focusedElement === document.body ||
+        focusedElement === null
+      );
 
 		/*
 		 * If a user clicks anywhere within the menu that isn't a button, it
@@ -79,7 +101,4 @@ MiniCart.prototype = {
 	}
 }
 
-const miniCartElements = document.querySelectorAll('.mini-cart');
-miniCartElements.forEach(function (miniCartElement) {
-	const miniCart = new MiniCart(miniCartElement);
-});
+export default MiniCart;
