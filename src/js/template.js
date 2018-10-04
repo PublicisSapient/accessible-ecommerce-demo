@@ -29,7 +29,7 @@ const Template = (function() {
   return {
     getComponents: getComponents,
     load: load
-  }
+  };
 }());
 
 export default Template;
