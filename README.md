@@ -107,7 +107,7 @@ NOTE: Hyphenated names aren't normalized for class names. So if you have a hyphe
 
 ### Previewing your component
 
-You can quickly and easily preview your component by navigating to your local site with the URL param: component=<your_component_name>.
+You can quickly and easily preview your component by navigating to your local site's preview.html page with the URL param: component=<your_component_name>.
 
 For example:
 
