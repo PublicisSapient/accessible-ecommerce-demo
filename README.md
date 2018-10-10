@@ -104,3 +104,13 @@ The next prompt will ask you for the component or page name. Type in the name, a
 Your component will be located in the `components` directory if you chose to build a component, or in the `pages` directory for pages.
 
 NOTE: Hyphenated names aren't normalized for class names. So if you have a hyphenated name, you need to replace the hyphen and capitalize the second word. For example: `component-name` needs to be changed to `ComponentName`.
+
+### Previewing your component
+
+You can quickly and easily preview your component by navigating to your local site with the URL param: component=<your_component_name>.
+
+For example:
+
+```HTML
+http://localhost:8080/preview.html?component=global-navigation
+```
