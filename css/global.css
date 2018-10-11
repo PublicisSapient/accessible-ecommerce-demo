@@ -500,7 +500,9 @@ select {
       display: block; }
     .footer__form {
       float: left;
-      width: 100%; } }
+      width: 100%; }
+    .footer .flex-row {
+      display: block; } }
 
 /* ==================================== GALLERY */
 .gallery {
