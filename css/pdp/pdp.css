@@ -2,7 +2,7 @@
 .product-details {
   margin-bottom: 40px; }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1024px) {
   .content-container {
     justify-content: space-between;
     display: flex; }

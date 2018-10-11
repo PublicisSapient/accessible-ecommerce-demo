@@ -1007,7 +1007,7 @@ select {
     padding: 10px;
     display: inline-block; }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1024px) {
   .product-description__title {
     display: block; }
   .product-description__price {
@@ -1283,7 +1283,7 @@ select {
   font-size: 4.2rem;
   margin-bottom: 24px; }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1024px) {
   .product-title {
     display: none; } }
 
