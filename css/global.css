@@ -575,10 +575,22 @@ select {
 /* ============================== GLOBAL NAV */
 .navigation {
   background-color: #f4f0ec;
-  padding: 25px 0; }
+  padding: 1px 0 25px; }
+  .navigation .top-banner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    .navigation .top-banner__text {
+      margin: 0; }
+  @media only screen and (max-width: 1024px) {
+    .navigation .header-actions .language-selector {
+      display: none; } }
   .navigation__items {
     display: flex;
     align-items: center; }
+  @media only screen and (max-width: 1024px) {
+    .navigation__item-group {
+      border-bottom: 1px solid black; } }
   .navigation__logo:not(.btn) {
     align-items: center;
     color: #333;
@@ -616,8 +628,7 @@ select {
         width: 100vw; } }
     @media only screen and (max-width: 1024px) {
       .navigation .global-nav {
-        display: initial;
-        order: -1; } }
+        display: initial; } }
     .navigation .global-nav__items {
       display: flex;
       list-style: none; }
@@ -1297,3 +1308,8 @@ select {
 .size-chart-table tr:first-of-type th {
   font-size: 1.3em;
   min-width: 90px; }
+
+.search-bar label,
+.search-bar input,
+.search-bar button {
+  display: inline-block; }
