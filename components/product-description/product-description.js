@@ -4,7 +4,7 @@ var AddToCart = function (element) {
   this.quantityInput = document.getElementById('quantity');
   this.ariaQuantity = this.element.querySelector('.quantity-comp__aria span');
   this.initEvents();
-}
+};
 
 AddToCart.prototype = {
   initEvents: function () {
@@ -29,21 +29,21 @@ AddToCart.prototype = {
     });
     document.dispatchEvent(event);
   },
-  increment: function() {
-    console.log('increment: ', this.quantity);
+  increment: function () {
     this.quantity++;
     this.quantityInput.value = this.quantity;
     this.ariaQuantity.innerHTML = this.quantity;
   },
-  decrement: function() {
-    if(this.quantity > 1) {
+  decrement: function () {
+    if (this.quantity > 1) {
       this.quantity--;
       this.quantityInput.value = this.quantity;
       this.ariaQuantity.innerHTML = this.quantity;
     }
   }
-}
+};
+
 var productForms = document.querySelectorAll('.product-form');
 productForms.forEach(function (productForm) {
-  var newProductForm = new AddToCart(productForm);
+  new AddToCart(productForm);
 });
