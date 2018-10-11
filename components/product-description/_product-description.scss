@@ -18,7 +18,8 @@
 		display: block;
 		line-height: 1;
 		display: flex;
-		margin-bottom: $grid-unit * 6;
+		margin-bottom: $grid-unit * 3;
+		margin-top: $grid-unit * 3;
 	}
 	&__price-now {
 		display: block;
@@ -149,6 +150,10 @@
 	.product-description {
 		&__title {
 			display: block;
+		}
+		&__price {
+			margin-bottom: $grid-unit * 6;
+			margin-top: 0;
 		}
 	}
 }

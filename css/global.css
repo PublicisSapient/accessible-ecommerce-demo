@@ -905,7 +905,8 @@ select {
     display: block;
     line-height: 1;
     display: flex;
-    margin-bottom: 48px; }
+    margin-bottom: 24px;
+    margin-top: 24px; }
   .product-description__price-now {
     display: block;
     flex-basis: 50%;
@@ -1008,7 +1009,10 @@ select {
 
 @media only screen and (min-width: 600px) {
   .product-description__title {
-    display: block; } }
+    display: block; }
+  .product-description__price {
+    margin-bottom: 48px;
+    margin-top: 0; } }
 
 /* ============================== Product Grid */
 .productGrid {
