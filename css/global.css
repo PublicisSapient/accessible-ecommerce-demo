@@ -490,7 +490,8 @@ select {
 
 @media screen and (max-width: 600px) {
   .footer {
-    text-align: center; }
+    text-align: center;
+    overflow: hidden; }
     .footer__list--2-column {
       width: 100%;
       columns: 1;

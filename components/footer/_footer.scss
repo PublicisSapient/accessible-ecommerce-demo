@@ -160,7 +160,8 @@
 
 @media screen and (max-width: 600px) {
 	.footer {
-		text-align: center;
+    text-align: center;
+    overflow: hidden;
 		&__list {
 			&--2-column {
 				width: 100%;
