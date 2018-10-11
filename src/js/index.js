@@ -1,3 +1,5 @@
+/*global require*/
+
 /*
 The following is an implementation for polyfills as outlined here:
 https://philipwalton.com/articles/loading-polyfills-only-when-needed/
@@ -26,14 +28,13 @@ if (browserSupportsAllFeatures()) {
 } else {
   // All other browsers loads polyfills and then run `main()`.
   // Append the required features onto the URL as required
-  console.log('load polyfills');
   loadPolyfill(
     'https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Symbol,Array.prototype.@@iterator',
     main
   );
 }
 
-function main(err) {
+function main() {
   // Initiate all other code paths.
   // If there's an error loading the polyfills, handle that
   // case gracefully and track that the error occurred.
@@ -45,7 +46,7 @@ function main(err) {
   importAll(require.context('../../components', true, /\.js$/));
 
   // create and dispatch the event
-  var event = new CustomEvent("mainReady");
+  var event = new CustomEvent('mainReady');
   document.dispatchEvent(event);
 }
 

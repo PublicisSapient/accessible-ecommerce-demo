@@ -7,7 +7,6 @@ var activeMenuItem = null;
 
 // hamburger menu
 function GlobalNavigation() {
-  console.log('GlobalNavigation');
   this.miniCart = {};
   this.isMenuOpen = false;
   this.hamburgerMenuButton = document.getElementById('button');
@@ -21,10 +20,10 @@ GlobalNavigation.prototype = {
     HTMLLoader.load('../../components/mini-cart/mini-cart', '[data-component="mini-cart"]').then(() => {
       const miniCartElement = document.querySelector('.mini-cart');
       this.miniCart = new MiniCart(miniCartElement);
-    })
+    });
   },
 
-  handleHamburgerMenuClick: function (evt) {
+  handleHamburgerMenuClick: function () {
     this.isMenuOpen = !this.isMenuOpen;
     this.hamburgerMenuButton.setAttribute('aria-expanded', this.isMenuOpen);
   },
@@ -32,24 +31,24 @@ GlobalNavigation.prototype = {
   onDocumentClick: function(event) {
     const target = event.target;
     if(!target.classList.contains('has-submenu') && !target.classList.contains('open') && !target.classList.contains('menu-item-heading')) {
-      closeAllMenus();
-      removeOnDocumentClickEventHandler();
+      this.closeAllMenus();
+      this.removeOnDocumentClickEventHandler();
     }
   },
 
   addOnDocumentClickEventHandler: function() {
     setTimeout(function() {
-      window.addEventListener('click', onDocumentClick);
+      window.addEventListener('click', this.onDocumentClick);
     }, 1);
   },
 
   removeOnDocumentClickEventHandler: function() {
-    window.removeEventListener('click', onDocumentClick);
+    window.removeEventListener('click', this.onDocumentClick);
   },
 
-  onBlurTabableElement: function(event) {
-    removeTabOutEventHandler(activeMenuItem);
-    closeAllMenus();
+  onBlurTabableElement: function() {
+    this.removeTabOutEventHandler(activeMenuItem);
+    this.closeAllMenus();
   },
 
   addTabOutEventHandler: function(element) {
@@ -57,7 +56,7 @@ GlobalNavigation.prototype = {
     const tabableElementsLength = tabableElements.length;
     if (tabableElementsLength > 0) {
       const lastElement = tabableElements[tabableElementsLength-1];
-      lastElement.addEventListener('blur', onBlurTabableElement);
+      lastElement.addEventListener('blur', this.onBlurTabableElement);
     }
   },
 
@@ -66,44 +65,44 @@ GlobalNavigation.prototype = {
     const tabableElementsLength = tabableElements.length;
     if (tabableElementsLength > 0) {
       const lastElement = tabableElements[tabableElementsLength-1];
-      lastElement.removeEventListener('blur', onBlurTabableElement);
+      lastElement.removeEventListener('blur', this.onBlurTabableElement);
     }
   },
 
   closeMenu: function(element) {
     if (element.parentNode.classList.contains('open')) {
       element.parentNode.classList.remove('open');
-      element.setAttribute('aria-expanded', "false");
+      element.setAttribute('aria-expanded', 'false');
       activeMenuItem = null;
     }
   },
 
   openMenu: function(element) {
-    closeAllMenus();
+    this.closeAllMenus();
     const parent = element.parentNode;
     parent.classList.add('open');
-    element.setAttribute('aria-expanded', "true");
+    element.setAttribute('aria-expanded', 'true');
     activeMenuItem = parent;
-    addOnDocumentClickEventHandler();
-    addTabOutEventHandler(activeMenuItem);
+    this.addOnDocumentClickEventHandler();
+    this.addTabOutEventHandler(activeMenuItem);
   },
 
   closeAllMenus: function() {
-    [].forEach.call(menuItems, closeMenu);
+    [].forEach.call(menuItems, this.closeMenu);
   },
 
   onClickMenuItemWithSubmenu: function(event) {
     event.preventDefault();
     const target = event.currentTarget;
     target.parentNode.classList.contains('open') ?
-      closeMenu(target) :
-      openMenu(target);
+      this.closeMenu(target) :
+      this.openMenu(target);
     return false;
   }
-}
+};
 
-Array.prototype.forEach.call(menuItems, function(el, i) {
-	el.addEventListener("click", GlobalNavigation.onClickMenuItemWithSubmenu);
+Array.prototype.forEach.call(menuItems, function(el) {
+  el.addEventListener('click', GlobalNavigation.onClickMenuItemWithSubmenu);
 });
 
 export default GlobalNavigation;
