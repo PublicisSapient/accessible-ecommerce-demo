@@ -1,8 +1,12 @@
 /* ===================================== PRODUCT DETAILS PAGE */
-.content-container {
-  justify-content: space-between;
-  display: flex;
-}
 .product-details {
-  margin-bottom: 40px; 
-}
+  margin-bottom: 40px; }
+
+@media only screen and (min-width: 600px) {
+  .content-container {
+    justify-content: space-between;
+    display: flex; }
+  .gallery-container {
+    order: 2; }
+  .description-container {
+    order: 1; } }

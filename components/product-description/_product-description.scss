@@ -8,10 +8,11 @@
 	@media only screen and (min-width: 800px){
 		padding-right: calc(10% - #{$grid-unit});
 	}
-	&__title{
+	&__title {
 		text-transform: uppercase;
 		font-size: $font-xxl;
 		margin-bottom: $grid-unit * 3;
+		display: none;
 	}
 	&__price {
 		display: block;
@@ -141,5 +142,13 @@
 		background-color: grey;
 		padding: 10px;
 		display: inline-block;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.product-description {
+		&__title {
+			display: block;
+		}
 	}
 }

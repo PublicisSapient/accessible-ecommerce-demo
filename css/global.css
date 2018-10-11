@@ -899,7 +899,8 @@ select {
   .product-description__title {
     text-transform: uppercase;
     font-size: 4.2rem;
-    margin-bottom: 24px; }
+    margin-bottom: 24px;
+    display: none; }
   .product-description__price {
     display: block;
     line-height: 1;
@@ -1004,6 +1005,10 @@ select {
     background-color: grey;
     padding: 10px;
     display: inline-block; }
+
+@media only screen and (min-width: 600px) {
+  .product-description__title {
+    display: block; } }
 
 /* ============================== Product Grid */
 .productGrid {
@@ -1268,6 +1273,15 @@ select {
   .price__cents {
     font-size: 12px;
     vertical-align: super; }
+
+.product-title {
+  text-transform: uppercase;
+  font-size: 4.2rem;
+  margin-bottom: 24px; }
+
+@media only screen and (min-width: 600px) {
+  .product-title {
+    display: none; } }
 
 /* ========================================= SIZE CHART */
 .toggle-size-units-button {
