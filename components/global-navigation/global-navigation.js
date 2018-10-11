@@ -1,26 +1,69 @@
 /* Global Nav Functions */
 import HTMLLoader from '../../src/js/loader';
 import MiniCart from '../mini-cart/mini-cart';
+import SearchBar from '../search-bar/search-bar';
+import LanguageSelector from '../language-selector/language-selector';
 
-var menuItems = document.querySelectorAll('li.has-submenu > a');
+var menuItems = document.querySelectorAll('li.has-submenu > button');
 var activeMenuItem = null;
 
 // hamburger menu
-function GlobalNavigation() {
+const GlobalNavigation = function() {
   this.miniCart = {};
+  this.searchBar = {};
+  this.languageSelector = {};
   this.isMenuOpen = false;
-  this.hamburgerMenuButton = document.getElementById('button');
-  this.hamburgerMenuButton.addEventListener('click', this.handleHamburgerMenuClick.bind(this));
 
-  this.loadMiniCart();
-}
+  this.initEvents();
+};
 
 GlobalNavigation.prototype = {
+  initEvents: function() {
+    this.loadMiniCart = this.loadMiniCart.bind(this);
+    this.loadSearchBar = this.loadSearchBar.bind(this);
+    this.loadLanguageSelector = this.loadLanguageSelector.bind(this);
+    this.handleHamburgerMenuClick = this.handleHamburgerMenuClick.bind(this);
+    this.onDocumentClick = this.onDocumentClick.bind(this);
+    this.addOnDocumentClickEventHandler = this.addOnDocumentClickEventHandler.bind(this);
+    this.removeOnDocumentClickEventHandler = this.removeOnDocumentClickEventHandler.bind(this);
+    this.onBlurTabableElement = this.onBlurTabableElement.bind(this);
+    this.addTabOutEventHandler = this.addTabOutEventHandler.bind(this);
+    this.removeTabOutEventHandler = this.removeTabOutEventHandler.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+    this.openMenu = this.openMenu.bind(this);
+    this.closeAllMenus = this.closeAllMenus.bind(this);
+
+    this.hamburgerMenuButton = document.getElementById('button');
+    this.hamburgerMenuButton.addEventListener('click', this.handleHamburgerMenuClick);
+    
+    for (var i = 0; i < menuItems.length; i++) {
+        menuItems[i].addEventListener("click", this.onClickMenuItemWithSubmenu.bind(this));
+	}
+	
+	this.loadMiniCart();
+	this.loadSearchBar();
+	this.loadLanguageSelector();
+  },
+
   loadMiniCart: function() {
     HTMLLoader.load('../../components/mini-cart/mini-cart', '[data-component="mini-cart"]').then(() => {
       const miniCartElement = document.querySelector('.mini-cart');
       this.miniCart = new MiniCart(miniCartElement);
     });
+  },
+
+  loadSearchBar: function() {
+      HTMLLoader.load('../../components/search-bar/search-bar', '[data-component="search-bar"]').then(() => {
+          const searchBarElement = document.querySelector('.search-bar');
+          this.searchBar = new SearchBar(searchBarElement);
+      });
+  },
+
+  loadLanguageSelector: function() {
+      HTMLLoader.load('../../components/language-selector/language-selector', '[data-component="language-selector"]').then(() => {
+          const languageSelectorElement = document.querySelector('.language-selector');
+          this.languageSelector = new LanguageSelector(languageSelectorElement);
+      });
   },
 
   handleHamburgerMenuClick: function () {
@@ -98,11 +141,7 @@ GlobalNavigation.prototype = {
       this.closeMenu(target) :
       this.openMenu(target);
     return false;
-  }
+  },
 };
-
-Array.prototype.forEach.call(menuItems, function(el) {
-  el.addEventListener('click', GlobalNavigation.onClickMenuItemWithSubmenu);
-});
 
 export default GlobalNavigation;
