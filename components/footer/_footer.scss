@@ -40,7 +40,10 @@
 				text-decoration: underline;
 				padding-left: 24px;
 				border: 0;
-			}
+      }
+      label {
+        padding-left: 24px;
+      }
 			>li {
 				display: inline-block;
 			}
@@ -160,7 +163,8 @@
 
 @media screen and (max-width: 600px) {
 	.footer {
-		text-align: center;
+    text-align: center;
+    overflow: hidden;
 		&__list {
 			&--2-column {
 				width: 100%;
@@ -176,6 +180,10 @@
 		&__form {
 			float: left;
 			width: 100%;
-		}
+    }
+    
+    .flex-row {
+      display: block;
+    }
 	}
 }

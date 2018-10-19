@@ -8,16 +8,18 @@
 	@media only screen and (min-width: 800px){
 		padding-right: calc(10% - #{$grid-unit});
 	}
-	&__title{
+	&__title {
 		text-transform: uppercase;
 		font-size: $font-xxl;
 		margin-bottom: $grid-unit * 3;
+		display: none;
 	}
 	&__price {
 		display: block;
 		line-height: 1;
 		display: flex;
-		margin-bottom: $grid-unit * 6;
+		margin-bottom: $grid-unit * 3;
+		margin-top: $grid-unit * 3;
 	}
 	&__price-now {
 		display: block;
@@ -141,5 +143,17 @@
 		background-color: grey;
 		padding: 10px;
 		display: inline-block;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.product-description {
+		&__title {
+			display: block;
+		}
+		&__price {
+			margin-bottom: $grid-unit * 6;
+			margin-top: 0;
+		}
 	}
 }

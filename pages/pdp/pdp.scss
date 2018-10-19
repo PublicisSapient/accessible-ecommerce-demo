@@ -2,6 +2,20 @@
 @import '../../scss/mixins';
 /* ===================================== PRODUCT DETAILS PAGE */
 .product-details {
-    margin-bottom: $grid-unit * 5;
-    @include flex-grid(2);
+	margin-bottom: 40px; 
+}
+
+@media only screen and (min-width: 1024px) {
+	.content-container {
+		justify-content: space-between;
+		display: flex;
+	}
+
+	.gallery-container {
+		order: 2;
+	}
+
+	.description-container {
+		order: 1;
+	}
 }
