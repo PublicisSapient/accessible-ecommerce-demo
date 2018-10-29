@@ -6,3 +6,4 @@ package-lock.json
 # build directories
 js/
 css/
+!src/js/
