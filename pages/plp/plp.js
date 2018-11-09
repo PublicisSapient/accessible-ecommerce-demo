@@ -7,14 +7,14 @@ const PLP = (function() {
     const components = Template.getComponents();
     const loadedComponents = Template.load(components);
 
-    console.log('loadedComponent: ', loadedComponents);
+    console.log('loadedComponent: ', loadedComponents); // eslint-disable-line no-console
   }
 
   return {
     init: init
-  }
+  };
 })();
 
-document.addEventListener("mainReady", function(e) {
+document.addEventListener('mainReady', function() {
   PLP.init();
 });

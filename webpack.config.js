@@ -1,3 +1,5 @@
+/* global module, __dirname */
+
 var path = require('path');
 module.exports = {
   entry: {

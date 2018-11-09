@@ -5,12 +5,12 @@ const Preview = (function() {
     const components = Template.getComponents();
     const loadedComponents = Template.load(components);
 
-    console.log('loadedComponent: ', loadedComponents);
+    console.log('loadedComponent: ', loadedComponents); // eslint-disable-line no-console
   }
 
   return {
     init: init
-  }
+  };
 }());
 
 Preview.init();
