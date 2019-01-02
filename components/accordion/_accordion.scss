@@ -10,31 +10,33 @@
 }
 
 .accordion-panel_heading button {
-    border-width: 1px;
-    border-color:$black;
-    border-style: solid;
-    background-color:white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #D8D8D8;
+    background-color: transparent;
     width: 100%;
     text-align: left;
     padding: $grid-unit *2;
-    font-size: $font-sm;
+    font-size: $font-lg;
+    font-weight: bold;
     position: relative;
     cursor: pointer;
 }
 
 .accordion-panel_heading button:after {
-    content: '';
-    position: absolute;
-    right: $grid-unit * 4;
-    top: 15px;
-    border-style: solid;
-    border-width: 0.12em 0.12em 0 0;
+    content: '\f12d';
     display: inline-block;
-    height: 0.75em;
-    transform: rotate(135deg);
-    vertical-align: top;
-    width: 0.75em;
-    transition: transform 0.25s ease-in-out;
+    font-family: "Ionicons";
+    font-size: 32px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    float: right;
 }
 
 .accordion-panel_heading.accordion--open button {
@@ -42,7 +44,7 @@
 }
 
 .accordion-panel_heading.accordion--open button:after {
-    transform: rotate(-45deg);
+    content: '\f125';
 }
 
 .accordion-panel_content {

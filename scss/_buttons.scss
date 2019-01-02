@@ -3,22 +3,27 @@
 /* ====================================== BUTTONS */
 
 .btn{
-    font-size: $font-sm;
+    font-size: $font-xs;
+    font-weight: bold;
+    text-transform: uppercase;
     padding: $grid-unit * 2;
     border: 1px solid transparent;
     cursor: pointer;
     line-height: 1;
     display: inline-block;
-    background:$rose;
+    background:$black;
     color: white;
     vertical-align: middle;
-    border-radius: 0;
+    border-radius: 25px;
     text-decoration: none;
     margin: 0;
     &:not(:disabled):hover, &:focus{
         color:white;
         background: $dark-rose;
         text-decoration: underline;
+    }
+    &::before {
+      font-size: 1.6rem;
     }
     &:disabled{
         background: $grey;
@@ -29,6 +34,10 @@
         &:not(:disabled):hover, &:focus{
             background: $dark-grey;
         }
+    }
+    &--black-inverted {
+      background: $white;
+      color: $pure-black;
     }
     &--outline{
         color: $rose;
@@ -50,10 +59,27 @@
             background: rgba($black, 0.05);
         }
     }
+    &--favorites {
+      width: 40px;
+      height: 40px;
+      border-radius: $grid-unit * 4;
+      color: $heart-red;
+      background-color: $pink;
+    }
+    &--secondary {
+      color: $pure-black;
+      height: 40px;
+      width: 40px;
+      opacity: 0.9;
+      border-radius: 24px;
+      background-color: $white;
+      box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
+    }
     &--icon{
-        font-size: 3rem;
-        padding: $grid-unit;
-        min-width: 48px;
+        font-size: 2rem;
+        padding: 0;
+        min-height: 32px;
+        min-width: 32px;
         &:disabled{
             opacity: 0.6;
         }
@@ -63,4 +89,3 @@
         width: 100%;
     }
 }
-

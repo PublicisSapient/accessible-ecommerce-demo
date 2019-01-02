@@ -22,16 +22,17 @@
         cursor: pointer;
         font-size: $font-xs;
         &::before {
-            border: 1px solid;
-            border-radius: 50%;
-            content: "";
-            display: block;
-            margin-right: $grid-unit * 2;
-            height: $input-size;
-            width: $input-size;
+          background-color: $white;
+          border: 1px solid;
+          border-radius: 50%;
+          content: "";
+          display: block;
+          margin-right: $grid-unit * 2;
+          height: $input-size;
+          width: $input-size;
         }
         &::after{
-            background: $rose;
+            background: $black;
             border-radius: 50%;
             display: block;
             left: 5px;

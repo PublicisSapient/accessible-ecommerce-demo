@@ -5,6 +5,9 @@
     font-size: 1.2rem;
     margin: $grid-unit * 2 0 $grid-unit * 4;
     color: $dark-grey;
+    a:not(.btn) {
+      color: $black;
+    }
     ol {
         margin: 0;
         padding-left: 0;

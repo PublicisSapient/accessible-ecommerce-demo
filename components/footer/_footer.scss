@@ -1,8 +1,10 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 /* ============================== FOOTER */
 .footer {
-	background: $beige;
+  background: $black;
+  color: $white;
 	padding: 32px 0;
 	font-size: 1.4rem;
 
@@ -11,179 +13,33 @@
 	}
 
 	a {
+    color: $white;
 		text-decoration: none;
 		margin-bottom: 8px;
 		display: inline-block;
-	}
-	&__nav {
-		display: flex;
-		flex-wrap: wrap;
-		flex: 1 1 auto;
-		position: relative;
-	}
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-	&__heading {
-		&--newsletter {
-			padding: 5px;
-			font-size: $font-lg;
-			margin: 0 0 16px;
-		}
-	}
-	&__list {
-		list-style: none;
-		display: inline-block;
-		padding: 0;
-		&--legal {
-			width: 100%;
-			font-size: 12px;
-			a {
-				text-decoration: underline;
-				padding-left: 24px;
-				border: 0;
-      }
-      label {
-        padding-left: 24px;
-      }
-			>li {
-				display: inline-block;
-			}
-		}
-		&--social-links {
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			display: flex;
-			width: 50%;
-		}
-	}
+  li {
+    display: inline-block;
+  }
 
-	&__form {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		padding: 0 60px;
+  &__main-links li {
+    min-width: $grid-unit * 20;
+  }
 
-		&-input {
-			display: block;
-			padding: 5px;
-			width: 280px;
-			margin: 0 auto 48px;
-			background-color: transparent;
-			border: none;
-			border-bottom: 1px solid $black;
-			color: $black;
-			font-size: 1.4rem;
-			line-height: 1.6rem;
-		}
-		&-submit {
-			width: 224px;
-		}
-	}
-	&__link {
-		padding: 5px 0;
-		&--social-media {
-			display: inline-block;
-			flex-basis: 60px;
-			a{
-				width: 24px;
-				text-align: center;
-				border: 0;
-			}
-		}
-	}
-	&__column {
-		-webkit-column-break-inside: avoid;
-		// Chrome, Safari, Opera
-		page-break-inside: avoid;
-		// Firefox
-		break-inside: avoid;
-		// IE 10+
-	}
-	&__icon {
-		font-size: 3.6rem;
-		color: $rose;
-		margin-right: 36px;
-		&:hover, &:focus {
-			color: $dark-rose;
-		}
+  &__secondary-links {
+    font-size: $font-xs;
+    font-weight: normal;
+  }
 
-	}
-	a:hover, &:focus {
-		color: $dark-rose;
-	}
-}
-.secondary-nav{
-	display: flex;
-	height: 190px;
-	flex-direction: column;
-	flex-wrap: wrap;
-	width: 100%;
-	&__link{
-		width: 50%;
-	}
-}
-.input{
-	&__placeholder-label{
-		position: relative;
-		> label{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			text-align: center;
-			line-height: 26px;
-			transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-			color: $medium-grey;
-		}
-		> input:focus, > .edited{
-			+label {
-				top: 26px;
-				font-size: 12px;
-				color: $dark-grey;
-			}
-			&.has-error + label{
-				color: $error-red;
-			}
-		}
-	}
-	&__validation-message{
-		position: absolute;
-		width: 100%;
-		left: 0;
-		bottom: -26px;
-		font-size: 12px;
-		color: $error-red;
-		input:focus + label &, .edited + label &{
-			bottom: -16px;
-		}
-	}
-}
-
-
-@media screen and (max-width: 600px) {
-	.footer {
-    text-align: center;
-    overflow: hidden;
-		&__list {
-			&--2-column {
-				width: 100%;
-				columns: 1;
-				margin-right: 0;
-			}
-			&--legal {
-				>li {
-					display: block;
-				}
-			}
-		}
-		&__form {
-			float: left;
-			width: 100%;
-    }
-    
-    .flex-row {
-      display: block;
-    }
-	}
+  &__link-container,
+  &__feedback-container {
+    display: inline-block;
+    @include flex-column();
+  }
 }

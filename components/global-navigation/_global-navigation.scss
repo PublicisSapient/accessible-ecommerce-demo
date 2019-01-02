@@ -2,8 +2,29 @@
 
 /* ============================== GLOBAL NAV */
 .navigation {
-	background-color: $beige;
-	padding: 25px 0;
+	background-color: $black;
+  padding: 25px 0;
+
+  #global-nav-search {
+    background-color: transparent;
+    height: 32px;	
+    width: 224px;	
+    border: 1px solid $white;	
+    border-radius: 16px;
+  }
+  
+  &__siteIcon {
+    color: $white;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: 2px solid #FFFFFF;
+    border-radius: 1.6rem;
+    text-align: center;
+    margin-right: 1.2rem;
+    padding: 1px 0 0 2px;
+  }
 
 	&__items{
 		display: flex;
@@ -12,12 +33,8 @@
 
 	&__logo:not(.btn) {
 		align-items: center;
-		color: #333;
 		display: flex;
 		text-decoration: none;
-		img{
-			margin-right: $grid-unit * 2;
-		}
 		&:hover, &:focus{
 			border-bottom-color: transparent;
     }
@@ -28,10 +45,6 @@
 	}
 
 	&-mini-cart, .mini-cart {
-		align-items: right;
-		display: flex;
-		order: 3;
-
 		@media only screen and (max-width:$tablet) {
 			order: 2;
 			padding-right: 0.5em;
@@ -39,18 +52,25 @@
 	}
 
 	&__siteName {
-		font-family: Georgia, Times, Palatino, serif;
-    	font-size: 22px;
-    	font-weight: bold;
-		line-height: 1.1;
+    color: $white;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: $font-xs;
+    letter-spacing: 1px;	
+    line-height: 1.3;
 		margin-right: $grid-unit * 4;
-	}
+  }
+  
+  a {
+    color: $white;
+    display: inline-block;
+    font-size: $font-xs;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
 
 	.global-nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		order: 2;
+    color: $white;
+    width: 100%;
 
 		@media only screen and (max-width:$mobile) {
 			order: 3;
@@ -62,9 +82,24 @@
       order: -1;
     }
 
+    &__account-cart {
+      float: right;
+    }
+  
+    &__stores-contact {
+      float: right;
+    }
+
 		&__items{
-			display: flex;
+      display: inline;
       list-style: none;
+      padding: 0;
+
+      a:hover, a:focus {
+        text-decoration: none;
+        background-color: $white;
+        color: $pure-black;
+      }
       
       @media only screen and (max-width:$tablet) {
         display: none;
@@ -77,19 +112,9 @@
 		}
 
 		&__item {
-			display: block;
+			display: inline-block;
 			padding: $grid-unit $grid-unit * 3 $grid-unit / 2;
-			text-align: left;
-			a{
-				display: inline-block;
-				font-size: 1.8rem;
-				text-decoration: none;
-				border-bottom: 2px solid transparent;
-				&:hover, &:focus {
-					text-decoration: none;
-					border-bottom: 2px solid $rose;
-				}
-      }
+      text-align: left;
       
       @media only screen and (max-width:$tablet) {
         padding-left: $grid-unit * 7;
@@ -149,7 +174,11 @@
 				transform: rotate(-225deg);
     			box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.11);
 			}
-		}
+    }
+    
+    .row {
+      width: 100%;
+    }
 	}
 }
 .submenu-item{

@@ -1,5 +1,14 @@
 /* ========================================= SIZE CHART */
 
+.size-chart{
+	&__link{
+    display: block;
+    font-size: $font-xs;
+    margin-top: $grid-unit * 2;
+		width:auto;
+	}
+}
+
 .toggle-size-units-button {
     padding: 10px 0;
     border: 2px solid black;

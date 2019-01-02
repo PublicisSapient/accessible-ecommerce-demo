@@ -8,8 +8,11 @@ $dark-rose: #90373D;
 $white: #FFFFFF;
 $light-grey: #F2F2F2;
 $grey: #C8C8C8;
-$black: #19191E;
-
+$black: #1F1F1F;
+$pure-black: #000000;
+$warm-grey: #F0F2F2;
+$heart-red: #C30007;
+$pink: #FABFC1;
 $beige: #f4f0ec;
 $blue: #3575FF; 
 $dark-blue: #2A5FD2;
@@ -25,7 +28,7 @@ $tablet: 1024px;
 $desktop: 1200px;
 $max-width: 1440px;
 
-$grid-unit: 8px;
+$grid-unit: 6px;
 
 $input-size: 24px;
 
@@ -35,8 +38,8 @@ $input-size: 24px;
 // Makes the maths easy, e.g.: 1.6rem = 16px
 // body is set to 1.6rem in global.scss
 
-$font-xxl: 4.2rem;
-$font-xl: 3.6rem;
+$font-xxl: 2.4rem;
+$font-xl: 2rem;
 $font-lg: 1.8rem;
 $font-md: 1.6rem;
 $font-sm: 1.4rem;
