@@ -3,7 +3,7 @@
 /* ============================== GLOBAL NAV */
 .navigation {
 	background-color: $black;
-  padding: 25px 0;
+  padding: 25px 0 0;
 
   #global-nav-search {
     background-color: transparent;
@@ -65,12 +65,12 @@
     display: inline-block;
     font-size: $font-xs;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
   }
 
 	.global-nav {
     color: $white;
     width: 100%;
+    margin-left: 80px;
 
 		@media only screen and (max-width:$mobile) {
 			order: 3;
@@ -82,18 +82,32 @@
       order: -1;
     }
 
-    &__account-cart {
+    &__account-cart,
+    &__stores-contact  {
+      width: 250px;
       float: right;
     }
-  
-    &__stores-contact {
-      float: right;
+
+    &__search {
+      label {
+        font-size: $font-xs;
+      }
+    }
+
+    &__bottom-row {
+      margin-top: 34px;
+    }
+
+    .stores-btn,
+    .account-btn {
+      width: 125px;
     }
 
 		&__items{
       display: inline;
       list-style: none;
       padding: 0;
+      margin-left: -22px;
 
       a:hover, a:focus {
         text-decoration: none;
@@ -113,8 +127,8 @@
 
 		&__item {
 			display: inline-block;
-			padding: $grid-unit $grid-unit * 3 $grid-unit / 2;
-      text-align: left;
+			// padding: $grid-unit $grid-unit * 3 $grid-unit / 2;
+      text-align: center;
       
       @media only screen and (max-width:$tablet) {
         padding-left: $grid-unit * 7;
@@ -179,7 +193,13 @@
     .row {
       width: 100%;
     }
-	}
+  }
+  
+  .menu-item-heading {
+    padding-top: 6px;
+    height: 38px;	
+    width: 93px;
+  }
 }
 .submenu-item{
 	list-style: none;

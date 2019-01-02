@@ -48,6 +48,8 @@
 }
 
 .accordion-panel_content {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: $font-sm;
     visibility: hidden;
     display: none;
     padding: 15px;

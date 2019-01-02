@@ -322,6 +322,8 @@ select {
   content: '\f125'; }
 
 .accordion-panel_content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.4rem;
   visibility: hidden;
   display: none;
   padding: 15px; }
@@ -522,7 +524,7 @@ select {
 /* ============================== GLOBAL NAV */
 .navigation {
   background-color: #1F1F1F;
-  padding: 25px 0; }
+  padding: 25px 0 0; }
   .navigation #global-nav-search {
     background-color: transparent;
     height: 32px;
@@ -567,11 +569,11 @@ select {
     color: #FFFFFF;
     display: inline-block;
     font-size: 1.2rem;
-    text-decoration: none;
-    border-bottom: 2px solid transparent; }
+    text-decoration: none; }
   .navigation .global-nav {
     color: #FFFFFF;
-    width: 100%; }
+    width: 100%;
+    margin-left: 80px; }
     @media only screen and (max-width: 500px) {
       .navigation .global-nav {
         order: 3;
@@ -580,14 +582,21 @@ select {
       .navigation .global-nav {
         display: initial;
         order: -1; } }
-    .navigation .global-nav__account-cart {
+    .navigation .global-nav__account-cart, .navigation .global-nav__stores-contact {
+      width: 250px;
       float: right; }
-    .navigation .global-nav__stores-contact {
-      float: right; }
+    .navigation .global-nav__search label {
+      font-size: 1.2rem; }
+    .navigation .global-nav__bottom-row {
+      margin-top: 34px; }
+    .navigation .global-nav .stores-btn,
+    .navigation .global-nav .account-btn {
+      width: 125px; }
     .navigation .global-nav__items {
       display: inline;
       list-style: none;
-      padding: 0; }
+      padding: 0;
+      margin-left: -22px; }
       .navigation .global-nav__items a:hover, .navigation .global-nav__items a:focus {
         text-decoration: none;
         background-color: #FFFFFF;
@@ -602,8 +611,7 @@ select {
           width: 100%; } }
     .navigation .global-nav__item {
       display: inline-block;
-      padding: 6px 18px 3px;
-      text-align: left; }
+      text-align: center; }
       @media only screen and (max-width: 1024px) {
         .navigation .global-nav__item {
           padding-left: 42px; } }
@@ -652,6 +660,10 @@ select {
         box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.11); }
     .navigation .global-nav .row {
       width: 100%; }
+  .navigation .menu-item-heading {
+    padding-top: 6px;
+    height: 38px;
+    width: 93px; }
 
 .submenu-item {
   list-style: none; }
