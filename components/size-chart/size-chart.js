@@ -17,6 +17,8 @@ SizeChart.prototype = {
     this.alternateUnits.textContent = (selectedUnits === 'inches') ? 'inches' : 'centimeters';
     this.toggleChildren.forEach(toggle => {
       toggle.classList.toggle('selected');
+      toggle.classList.toggle('btn');
+      toggle.classList.toggle('btn-primary');
     });
 
     this.table.classList.toggle('show-inches');

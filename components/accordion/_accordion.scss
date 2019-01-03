@@ -39,10 +39,6 @@
     float: right;
 }
 
-.accordion-panel_heading.accordion--open button {
-    background-color: #e6e6e6;
-}
-
 .accordion-panel_heading.accordion--open button:after {
     content: '\f125';
 }

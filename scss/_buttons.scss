@@ -20,7 +20,6 @@
     &:not(:disabled):hover, &:focus{
         color:white;
         background: $dark-rose;
-        text-decoration: underline;
     }
     &::before {
       font-size: 1.6rem;

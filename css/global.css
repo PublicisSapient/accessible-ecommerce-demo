@@ -137,8 +137,7 @@ body {
   margin: 0; }
   .btn:not(:disabled):hover, .btn:focus {
     color: white;
-    background: #90373D;
-    text-decoration: underline; }
+    background: #90373D; }
   .btn::before {
     font-size: 1.6rem; }
   .btn:disabled {
@@ -314,9 +313,6 @@ select {
   text-rendering: auto;
   line-height: 1;
   float: right; }
-
-.accordion-panel_heading.accordion--open button {
-  background-color: #e6e6e6; }
 
 .accordion-panel_heading.accordion--open button:after {
   content: '\f125'; }
@@ -1193,14 +1189,30 @@ select {
   padding: 2px;
   display: inline-block; }
 
-.rating-summary {
-  margin-bottom: 18px; }
-
-.user-ratings {
-  list-style: none;
-  padding: 0; }
-  .user-ratings__list-item {
-    margin-bottom: 6px; }
+.product-reviews {
+  font-size: 1.4rem; }
+  .product-reviews .review-details,
+  .product-reviews .rating-stars {
+    margin: 6px 0; }
+  .product-reviews .rating-summary {
+    margin-bottom: 18px; }
+    .product-reviews .rating-summary .rating-stars,
+    .product-reviews .rating-summary .rating-total {
+      display: inline-block; }
+    .product-reviews .rating-summary .rating-stars {
+      font-size: 2.4rem; }
+    .product-reviews .rating-summary .rating-total {
+      vertical-align: super;
+      margin-left: 10px; }
+    .product-reviews .rating-summary .review-total {
+      font-weight: bold; }
+  .product-reviews .user-ratings {
+    list-style: none;
+    padding: 0; }
+    .product-reviews .user-ratings__list-item {
+      margin-bottom: 18px; }
+    .product-reviews .user-ratings a {
+      font-weight: bold; }
 
 /* ============================== PRODUCT TILE */
 .product {
@@ -1264,22 +1276,26 @@ select {
 .size-chart__link {
   display: block;
   font-size: 1.2rem;
-  margin-top: 12px;
-  width: auto; }
+  margin-top: 12px; }
+
+.size-chart .btn {
+  min-width: 170px; }
 
 .toggle-size-units-button {
-  padding: 10px 0;
-  border: 2px solid black;
-  background: none;
-  border-radius: 5px; }
+  border-radius: 24px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 34px;
+  padding: 1px 3px; }
 
 .toggle-size-units-button .units-toggle {
+  display: inline-block;
+  width: 150px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
   padding: 10px; }
-
-.toggle-size-units-button .selected {
-  color: red;
-  background: #CCC;
-  border-radius: 5px; }
 
 .show-centimeters tr.inches {
   display: none; }
@@ -1287,10 +1303,26 @@ select {
 .show-inches tr.centimeters {
   display: none; }
 
-.size-chart-table th,
-.size-chart-table td {
-  border: 1px solid black; }
-
-.size-chart-table tr:first-of-type th {
-  font-size: 1.3em;
-  min-width: 90px; }
+.size-chart-table {
+  border-spacing: 0;
+  border: none; }
+  .size-chart-table td {
+    text-align: center;
+    font-size: 1.4rem;
+    height: 48px;
+    width: 150px; }
+  .size-chart-table th {
+    text-align: center; }
+  .size-chart-table td:not(:last-child),
+  .size-chart-table th:not(:last-child) {
+    border-right: 1px solid #d8d8d8; }
+  .size-chart-table .divider td,
+  .size-chart-table .divider th {
+    border-bottom: 1px solid #d8d8d8; }
+  .size-chart-table .highlight {
+    background-color: #FFFFFF; }
+  .size-chart-table tr:first-of-type th {
+    font-size: 1.4rem;
+    height: 48px;
+    min-width: 90px;
+    text-align: center; }
