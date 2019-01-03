@@ -16,30 +16,43 @@
     color: $white;
 		text-decoration: none;
 		margin-bottom: 8px;
-		display: inline-block;
   }
   
   ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
   }
 
   li {
     display: inline-block;
   }
 
-  &__main-links li {
-    min-width: $grid-unit * 20;
+  label,
+  button {
+    display: block;
+  }
+
+  &__link-container {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      min-width: 124px;
+      margin-right: 24px;
+    }
+
+    textarea {
+      margin: 17px 0;
+      width: 296px;
+      height: 72px;
+      resize: none;
+      background: transparent;
+    }
   }
 
   &__secondary-links {
     font-size: $font-xs;
     font-weight: normal;
-  }
-
-  &__link-container,
-  &__feedback-container {
-    display: inline-block;
-    @include flex-column();
   }
 }

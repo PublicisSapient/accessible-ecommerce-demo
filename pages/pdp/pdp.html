@@ -18,22 +18,19 @@
 		</script>
 	</head>
 	<body class="pdp">
-		<div id="content">
+		<main id="content">
 			<!-- Global Nav Starts -->
       <div data-component="global-navigation"></div>
       <div class="container">
         <div data-component="breadcrumb"></div>
-        <div id="content">
-          <div class="content-container">
-            <div data-component="product-title"></div>
-            <div class="gallery-container" data-component="gallery"></div>
-            <div class="description-container"data-component="product-description"></div>
-          </div>
+        <section id="content" class="main-content">
+          <div class="description-container" data-component="product-description"></div>
+          <div class="gallery-container" data-component="gallery"></div>
           <div data-component="accordion"></div>
-        </div>
+        </section>
       </div>
       <div data-component="footer"></div>
-		</div>
+    </main>
     <div data-component="modal"></div>
     <script src="../../js/pdp.js"></script>
     <script src="../../js/components.js"></script>
