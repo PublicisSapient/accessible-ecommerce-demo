@@ -10,6 +10,7 @@ $buttonSize: 2em;
     font-size: $font-xs;
     font-weight: bold;
     color: $white;
+    margin-right: 8px;
   }
 
 	&__toggle {
@@ -22,9 +23,6 @@ $buttonSize: 2em;
 	}
 
 	&__visible-label {
-    margin: 0 $grid-unit * 2;
-    position: relative;
-    top: -6px;
 
 		&--amount,
 		&--subtotal {

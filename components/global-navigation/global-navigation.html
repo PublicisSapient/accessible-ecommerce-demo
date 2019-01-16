@@ -17,11 +17,14 @@
         </button>
         <div class="global-nav__top-row row">
           <span class="global-nav__search">
-              <label for="global-nav-search">Search</label>
-              <input type="text" id="global-nav-search" />
+              <form action="" id="nav-search">
+                <label for="global-nav-search">Search</label>
+                <input type="text" id="global-nav-search" />
+                <input type="image" alt="submit" src="../../images/magnifying-glass.svg" class="submit-icon" />
+              </form>
           </span>
           <span class="global-nav__account-cart">
-              <a href="#" class="account-btn ion-ios-contact">Account</a>
+              <a href="#" class="account-btn"><img src="../../images/account.svg" class="icon" aria-hidden="true"/>Account</a>
               <span class="mini-cart" data-component="mini-cart"></span>
           </span>
         </div>
@@ -98,8 +101,8 @@
             </li>
           </ul>
           <span class="global-nav__stores-contact">
-            <a href="#" class="stores-btn ion-ios-pin">Stores</a>
-            <a href="#" class="ion-ios-chatbubbles">Contact</a>
+            <a href="#" class="stores-btn"><img src="../../images/stores.svg" class="icon" aria-hidden="true" />Stores</a>
+            <a href="#"><img src="../../images/contact.svg" class="icon" aria-hidden="true" />Contact</a>
           </span>
         </div>
       </nav>

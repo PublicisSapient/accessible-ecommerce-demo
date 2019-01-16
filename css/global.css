@@ -50,6 +50,9 @@ body {
 .divider {
   margin: 23px 0; }
 
+.icon {
+  margin: 0 8px -5px; }
+
 .skip-link {
   color: transparent;
   font-size: 12px;
@@ -530,7 +533,7 @@ select {
 /* ============================== GLOBAL NAV */
 .navigation {
   background-color: #1F1F1F;
-  padding: 25px 0 0;
+  padding: 14px 0 0;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2); }
   .navigation #global-nav-search {
     background-color: transparent;
@@ -538,6 +541,17 @@ select {
     width: 224px;
     border: 1px solid #FFFFFF;
     border-radius: 16px; }
+  .navigation #nav-search {
+    display: inline-block; }
+  .navigation .submit-icon {
+    position: relative;
+    left: -36px;
+    top: 8px;
+    padding: 5px;
+    border-radius: 25px;
+    width: 25px;
+    background-color: #FFFFFF;
+    height: 25px; }
   .navigation__siteIcon {
     color: #FFFFFF;
     font-size: 2rem;
@@ -553,6 +567,7 @@ select {
     display: flex;
     align-items: center; }
   .navigation__logo:not(.btn) {
+    margin-top: -20px;
     align-items: center;
     display: flex;
     text-decoration: none; }
@@ -603,7 +618,7 @@ select {
       display: inline;
       list-style: none;
       padding: 0;
-      margin-left: -22px; }
+      margin-left: -14px; }
       .navigation .global-nav__items a:hover, .navigation .global-nav__items a:focus {
         text-decoration: none;
         background-color: #FFFFFF;
@@ -681,31 +696,28 @@ select {
   .mini-cart__text {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    margin-right: 8px; }
   .mini-cart__toggle {
     min-width: 72px;
     background-color: transparent;
     padding: 0;
     border: none;
     position: relative; }
-  .mini-cart__visible-label {
-    margin: 0 12px;
-    position: relative;
-    top: -6px; }
-    .mini-cart__visible-label--amount, .mini-cart__visible-label--subtotal {
-      position: absolute;
-      text-align: center;
-      color: #000; }
-    .mini-cart__visible-label--amount {
-      background-color: #FFFFFF;
-      color: #1F1F1F;
-      border-radius: 50%;
-      font-size: 1.4rem;
-      width: 2.4rem;
-      height: 2.4rem;
-      line-height: 2.4rem; }
-    .mini-cart__visible-label--subtotal {
-      top: 25px; }
+  .mini-cart__visible-label--amount, .mini-cart__visible-label--subtotal {
+    position: absolute;
+    text-align: center;
+    color: #000; }
+  .mini-cart__visible-label--amount {
+    background-color: #FFFFFF;
+    color: #1F1F1F;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem; }
+  .mini-cart__visible-label--subtotal {
+    top: 25px; }
   .mini-cart__dropdown {
     position: absolute;
     top: 82px;
