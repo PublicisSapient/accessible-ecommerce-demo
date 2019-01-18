@@ -7,21 +7,24 @@ $cent-size: 12px;
 $small-padding: 16px;
 
 .product {
-	border: $grey solid thin;
 	padding: $small-padding;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+  justify-content: flex-start;
+  background-color: $white;
+  border-radius: 4px;
 	img {
 		max-width: 100%;
 	}
 	&__details{
-		border: 0 !important;
+    border: 0 !important;
+    text-decoration: none;
 	}
 	&__heading {
 		margin: 16px 0 0;
-		font-size: 1.4rem;
-		min-height: 3.6rem;
+    min-height: 3.6rem;
+    font-weight: bold;
+    font-size: $font-sm;
 	}
 
 	&__cta {
@@ -65,10 +68,7 @@ $small-padding: 16px;
 	margin: 16px 0;
 
 	&__dollar {
-		font-size: $dollar-size;
-	}
-	&__cents {
-		font-size: $cent-size;
-		vertical-align: super;
+    font-weight: bold;
+		font-size: $font-lg;
 	}
 }

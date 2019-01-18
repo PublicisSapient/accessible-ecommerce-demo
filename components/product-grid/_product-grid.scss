@@ -12,7 +12,8 @@
 		&-wrapper {
 			padding: 16px;
 			font-size: 12px;
-			background-color: $beige;
+      background-color: $white;
+      border-radius: 4px;
 
 			h2, h3 {
 				font-size: 1.4rem;
@@ -40,7 +41,15 @@
 
 	&__filter {
 		opacity: 0;
-		position: absolute;
+    position: absolute;
+
+    &:checked + label {
+      font-weight: bold;
+
+      &:before {
+        background-color: $black;
+      }
+    }
 
 		&-label {
 			position: relative;
@@ -56,17 +65,19 @@
 			&:before {
 				height: 24px;
 				width: 24px;
-				border: 1px solid;
+        border: 1px solid;
+        border-radius: 4px;
 				left: 0px;
 				top: 3px;
-				content: "";
-			}
+        content: "";
+      }
 
 			&:after {
+        color: $white;
 				height: 5px;
 				width: 14px;
 				border-left: 2px solid;
-				border-bottom: 2px solid;
+        border-bottom: 2px solid;
 				transform: rotate(-45deg);
 				left: 5px;
 				top: 10px;
@@ -90,9 +101,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background-color: $beige;
+		background-color: $white;
 		padding: 8px 16px;
-		margin-bottom: 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
 
 		@media only screen and (max-width:1024px) {
 			padding-left: 8px;
@@ -191,7 +203,6 @@
 		max-width: calc(25% - 16px);
 		margin: 0 8px 16px;
 
-
 		@media only screen and (max-width:$tablet) {
 			flex-basis: calc(33% - 16px);
 			max-width: calc(33% - 16px);
@@ -221,14 +232,10 @@
 	}
 
 	&__nav{
-		border: 1px solid $rose;
-		color: $rose;
-		width: 50px;
-		height: 32px;
-		border: 1px solid $rose;
-		background: #fff;
 		margin: 0 16px;
-		font-size: 20px;
+    font-size: $font-xs;
+    min-width: 88px;
+    text-transform: none;
 		&:disabled{
 			opacity: 0.5;
 			cursor: not-allowed;
@@ -239,16 +246,19 @@
 		color: $rose;
 			width: 32px;
 			height: 32px;
-			border: 0;
-			background: #fff;
-			margin: 0 16px;
+			color: $black;
+      margin: 0 16px;
+      border: none;
+      background-color: transparent;
 			cursor: pointer;
 			&:hover, &:focus {
 				text-decoration: underline;
 			}
 			&.active{
-				border: 1px solid $black;
-				color: $black;
+        color: $white;
+        font-weight: bold;
+        background-color: $black;
+        border-radius: 25px;
 			}
 	}
 

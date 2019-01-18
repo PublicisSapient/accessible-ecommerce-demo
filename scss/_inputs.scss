@@ -91,11 +91,11 @@ select {
     padding: 0 40px 0 8px;
     font-size: 14px;
     border: 1px solid $black;
+    border-radius: 4px;
     height: 48px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 0;
     background-color: transparent;
     background-image: url('../images/arrow.svg');
     background-repeat: no-repeat;

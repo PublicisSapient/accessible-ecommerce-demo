@@ -1,9 +1,4 @@
 /* ===================================== PRODUCT DETAILS PAGE */
-@media only screen and (min-width: 1024px) {
-  .main-content {
-    width: 1020px;
-    margin: 50px auto; } }
-
 .main-content .description-container,
 .main-content .gallery-container {
   display: inline-block; }

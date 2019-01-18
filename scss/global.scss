@@ -43,6 +43,7 @@ body {
 @import "grid";
 @import "buttons";
 @import "inputs";
+@import "template";
 
 // Component Styles
 @import "../components/accordion/_accordion.scss";
@@ -59,3 +60,4 @@ body {
 @import "../components/product-tile/_product-tile.scss";
 @import "../components/product-title/_product-title.scss";
 @import "../components/size-chart/_size-chart.scss";
+
