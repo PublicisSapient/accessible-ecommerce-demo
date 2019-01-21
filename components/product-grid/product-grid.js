@@ -33,7 +33,7 @@ var ProductGrid = function () {
     // if the number of filters is 1 then we need to use singlular filter
     var filterOrFilters = numberOfAppliedFilters === 1 ? 'filter' : 'filters';
 
-    showingNumberFilters__description.innerHTML = numberOfAppliedFilters + ' ' + filterOrFilters + ' applied';
+    numberOfFiltersAppliedAriaLiveRegion.innerHTML = numberOfAppliedFilters + ' ' + filterOrFilters + ' applied';
     if (numberOfAppliedFilters > 0) {
       clearFiltersButton.setAttribute('aria-label', 'Clear ' + numberOfAppliedFilters + ' applied product ' + filterOrFilters + '.');
     } else {
@@ -64,13 +64,11 @@ var ProductGrid = function () {
     });
   });
 
-  products.forEach(function (product, index) {
+  products.forEach(function (product) {
     var addToCartButton = product.querySelector('.product__cta');
     var quantityComponent = product.querySelector('.quantity-comp');
     var quantityComponentValue = product.querySelector('.quantity-comp__text');
     var productName = product.querySelector('.product__heading').innerHTML;
-    var decreaseQuantityButton = product.querySelector('.quantity-comp__decrease');
-    var increaseQuantityButton = product.querySelector('.quantity-comp__increase');
     var productDetails = product.querySelector('.product__details');
 
     addToCartButton.addEventListener("click", function (evt) {

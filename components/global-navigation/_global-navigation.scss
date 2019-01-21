@@ -55,10 +55,6 @@
 		&:hover, &:focus{
 			border-bottom-color: transparent;
     }
-    
-    @media only screen and (max-width:$tablet) {
-      margin: auto;
-    }
 	}
 
 	&-mini-cart, .mini-cart {
@@ -74,7 +70,11 @@
     font-size: $font-xs;
     letter-spacing: 1px;	
     line-height: 1.3;
-		margin-right: $grid-unit * 4;
+    margin-right: $grid-unit * 4;
+    
+    @media only screen and (max-width:$mobile) {
+      display: none;
+    }
   }
   
   a {
@@ -87,16 +87,10 @@
 	.global-nav {
     color: $white;
     width: 100%;
-    margin-left: 80px;
+   
 
-		@media only screen and (max-width:$mobile) {
-			order: 3;
-			width: 100vw;
-    }
-    
-    @media only screen and (max-width:$tablet) {
-      display: initial;
-      order: -1;
+    @media only screen and (min-width:$tablet) {
+      margin-left: 80px;
     }
 
     &__account-cart,
@@ -157,7 +151,8 @@
     
     .dropdown-toggle {
       display: none;
-
+      font-size:$font-xxl;
+      
       &[aria-expanded="true"] + .global-nav__items {
         display: block;
         padding: 0;
@@ -165,6 +160,7 @@
 
       @media only screen and (max-width:$tablet) {
         display: block;
+        float: right;
       }
     }
 
@@ -189,6 +185,10 @@
     
     .row {
       width: 100%;
+
+      @media only screen and (max-width:$mobile) {
+        display: none;
+      }
     }
   }
   
@@ -199,6 +199,7 @@
     width: 93px;
   }
 }
+
 .submenu-item{
   list-style: none;
   

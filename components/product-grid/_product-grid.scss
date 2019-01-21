@@ -9,11 +9,16 @@
 
 	&__filters {
 
+    &-apply {
+      width: 100%;
+    }
+
 		&-wrapper {
 			padding: 16px;
 			font-size: 12px;
       background-color: $white;
       border-radius: 4px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.08);
 
 			h2, h3 {
 				font-size: 1.4rem;
@@ -105,6 +110,7 @@
 		padding: 8px 16px;
     margin-bottom: 16px;
     border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.08);
 
 		@media only screen and (max-width:1024px) {
 			padding-left: 8px;
@@ -179,7 +185,8 @@
 		}
 	}
 	&__product-tile{
-		margin-bottom: $grid-unit * 3;
+    margin-bottom: $grid-unit * 3;
+    
 		@media only screen and (min-width:$phablet) {
 			margin-left: $grid-unit;
 			margin-right: $grid-unit;

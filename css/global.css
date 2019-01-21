@@ -376,7 +376,8 @@ select {
   margin-bottom: 40px;
   box-sizing: border-box; }
   .carousel-wrapper h2 {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
+    font-weight: bold;
     margin-bottom: 8px; }
 
 .carousel {
@@ -386,11 +387,6 @@ select {
   align-items: center;
   flex-flow: row nowrap; }
   .carousel__arrow {
-    width: 40px;
-    min-height: 120px;
-    border: 1px solid black;
-    font-size: 20px;
-    background: #fff;
     cursor: pointer; }
     .carousel__arrow:disabled {
       cursor: not-allowed;
@@ -446,6 +442,12 @@ select {
       height: 72px;
       resize: none;
       background: transparent; }
+      @media only screen and (max-width: 500px) {
+        .footer__link-container textarea {
+          width: auto; } }
+    @media only screen and (max-width: 500px) {
+      .footer__link-container {
+        display: block; } }
   .footer__secondary-links {
     font-size: 1.2rem;
     font-weight: normal; }
@@ -588,9 +590,6 @@ select {
     text-decoration: none; }
     .navigation__logo:not(.btn):hover, .navigation__logo:not(.btn):focus {
       border-bottom-color: transparent; }
-    @media only screen and (max-width: 1024px) {
-      .navigation__logo:not(.btn) {
-        margin: auto; } }
   @media only screen and (max-width: 1024px) {
     .navigation-mini-cart, .navigation .mini-cart {
       order: 2;
@@ -602,6 +601,9 @@ select {
     letter-spacing: 1px;
     line-height: 1.3;
     margin-right: 24px; }
+    @media only screen and (max-width: 500px) {
+      .navigation__siteName {
+        display: none; } }
   .navigation a {
     color: #FFFFFF;
     display: inline-block;
@@ -609,16 +611,10 @@ select {
     text-decoration: none; }
   .navigation .global-nav {
     color: #FFFFFF;
-    width: 100%;
-    margin-left: 80px; }
-    @media only screen and (max-width: 500px) {
+    width: 100%; }
+    @media only screen and (min-width: 1024px) {
       .navigation .global-nav {
-        order: 3;
-        width: 100vw; } }
-    @media only screen and (max-width: 1024px) {
-      .navigation .global-nav {
-        display: initial;
-        order: -1; } }
+        margin-left: 80px; } }
     .navigation .global-nav__account-cart, .navigation .global-nav__stores-contact {
       width: 250px;
       float: right; }
@@ -656,13 +652,15 @@ select {
         .navigation .global-nav__item {
           padding-left: 42px; } }
     .navigation .global-nav .dropdown-toggle {
-      display: none; }
+      display: none;
+      font-size: 2.4rem; }
       .navigation .global-nav .dropdown-toggle[aria-expanded="true"] + .global-nav__items {
         display: block;
         padding: 0; }
       @media only screen and (max-width: 1024px) {
         .navigation .global-nav .dropdown-toggle {
-          display: block; } }
+          display: block;
+          float: right; } }
     .navigation .global-nav .has-submenu {
       position: relative; }
     .navigation .global-nav .has-submenu .submenu {
@@ -677,6 +675,9 @@ select {
       display: block; }
     .navigation .global-nav .row {
       width: 100%; }
+      @media only screen and (max-width: 500px) {
+        .navigation .global-nav .row {
+          display: none; } }
   .navigation .menu-item-heading {
     color: #FFFFFF;
     padding-top: 6px;
@@ -1021,11 +1022,14 @@ select {
 .productGrid {
   display: flex;
   justify-content: space-between; }
+  .productGrid__filters-apply {
+    width: 100%; }
   .productGrid__filters-wrapper {
     padding: 16px;
     font-size: 12px;
     background-color: #FFFFFF;
-    border-radius: 4px; }
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08); }
     .productGrid__filters-wrapper h2, .productGrid__filters-wrapper h3 {
       font-size: 1.4rem;
       margin-bottom: 8px; }
@@ -1086,7 +1090,8 @@ select {
     background-color: #FFFFFF;
     padding: 8px 16px;
     margin-bottom: 16px;
-    border-radius: 4px; }
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08); }
     @media only screen and (max-width: 1024px) {
       .productGrid__sort-menu {
         padding-left: 8px;
@@ -1261,7 +1266,8 @@ select {
   flex-direction: column;
   justify-content: flex-start;
   background-color: #FFFFFF;
-  border-radius: 4px; }
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08); }
   .product img {
     max-width: 100%; }
   .product__details {

@@ -48,6 +48,14 @@
       height: 72px;
       resize: none;
       background: transparent;
+
+      @media only screen and (max-width:$mobile) {
+        width: auto;
+      }
+    }
+
+    @media only screen and (max-width:$mobile) {
+      display: block;
     }
   }
 
