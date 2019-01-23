@@ -19,7 +19,6 @@
     margin: 0;
     &:not(:disabled):hover, &:focus{
         color:white;
-        background: $dark-rose;
     }
     &::before {
       font-size: 1.6rem;

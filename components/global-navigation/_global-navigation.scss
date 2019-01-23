@@ -18,6 +18,12 @@
     display: inline-block;
   }
 
+  .btn {
+    @media only screen and (max-width:$tablet) {
+      padding: 7px 0;
+    }
+  }
+
   .submit-icon {
     position: relative;
     left: -36px;
@@ -54,6 +60,10 @@
 		text-decoration: none;
 		&:hover, &:focus{
 			border-bottom-color: transparent;
+    }
+
+    @media only screen and (max-width:$tablet) {
+      margin: auto 13px;
     }
 	}
 
@@ -99,14 +109,21 @@
       float: right;
     }
 
-    &__search {
-      label {
-        font-size: $font-xs;
+    &__stores-contact,
+    &__top-row {
+      @media only screen and (max-width:$mobile) {
+        display: none;
       }
     }
 
     &__bottom-row {
-      margin-top: 34px;
+      margin-top: 42px;
+    }
+
+    &__search {
+      label {
+        font-size: $font-xs;
+      }
     }
 
     .stores-btn,
@@ -124,18 +141,21 @@
       .menu-item-heading:focus,
       .selected {
         text-decoration: none;
-        color: $pure-black;
-        font-weight: bold;
-        background-color: $white;
+
+        @media only screen and (min-width:$tablet) {
+          color: $pure-black;
+          font-weight: bold;
+          background-color: $white;
+        }
       }
       
       @media only screen and (max-width:$tablet) {
         display: none;
-        background-color: $beige;
         z-index: 2;
         position: absolute;
         left: 0;
         width: 100%;
+        margin-left: 0;
       }
 		}
 
@@ -145,22 +165,57 @@
       text-align: center;
       
       @media only screen and (max-width:$tablet) {
-        padding-left: $grid-unit * 7;
+        min-height: 57px;
+        width: 100%;
+        background-color: $black;
+        border-top: 1px solid white;
       }
     }
     
     .dropdown-toggle {
       display: none;
-      font-size:$font-xxl;
+      text-transform: none;
+
+      .ion-ios-menu {
+        font-size: 3rem;
+      }
       
-      &[aria-expanded="true"] + .global-nav__items {
-        display: block;
-        padding: 0;
+      &[aria-expanded="true"] {
+        border-left: 1px solid $white;
+        border-bottom: 1px solid $black;
+
+        &+ button + div + .global-nav__bottom-row .global-nav__items {
+          display: block;
+          padding: 0;
+        }
       }
 
       @media only screen and (max-width:$tablet) {
         display: block;
         float: right;
+        margin-right: -12px;
+        width: 60px;
+        border-radius: 0;
+        position: relative;
+        top: 1px;
+        z-index: 3;
+      }
+    }
+
+    .btn-mobile-search {
+      display: none;
+      float: right;
+      width: 60px;
+      text-transform: initial;
+      margin-top: 1px;
+
+      .mobile-search-icon {
+        padding: 5px;
+        width: 28px;
+      }
+
+      @media only screen and (max-width:$tablet) {
+        display: block;
       }
     }
 
@@ -172,31 +227,57 @@
       display: none;
       position: absolute;
       padding: 0;
+      @media only screen and (max-width:$tablet) {
+        position: initial;
+      }
+
 			a {
         font-size: $font-xs;
+
+        @media only screen and (max-width:$tablet) {
+          font-size: $font-md;
+          width: 100%;
+          padding-left: 28px;
+        }
 			}
-		}
-		.has-submenu.open .menu-item-heading {
-			border-bottom: 2px solid $rose;
-		}
+    }
+    
 		.has-submenu.open .submenu {
-			display: block;
+      display: block;
+
+      @media only screen and (max-width:$tablet) {
+        width: 100%;
+      }
     }
     
     .row {
       width: 100%;
-
-      @media only screen and (max-width:$mobile) {
-        display: none;
-      }
     }
   }
   
   .menu-item-heading {
     color: $white;
     padding-top: 6px;
-    height: 38px;	
-    width: 93px;
+    height: 3.8rem;	
+    width: 9.3rem;
+
+    @media only screen and (max-width:$tablet) {
+      padding: 17px 23px;
+      height: auto;
+      font-size: $font-lg;
+      width: 100%;
+      text-align: left;
+    }
+
+    .ion-ios-arrow-down {
+      @media only screen and (max-width:$tablet) {
+        float: right;
+      }
+    }
+  }
+
+  @media only screen and (max-width:$tablet) {
+    padding: 0 0 1px 0;
   }
 }
 

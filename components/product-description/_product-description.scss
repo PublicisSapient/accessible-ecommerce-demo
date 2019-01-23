@@ -22,9 +22,10 @@
 		margin-top: $grid-unit * 3;
 	}
 	&__price-now {
-		display: block;
+    display: block;
+    font-weight: bold;
 		flex-basis: 50%;
-		font-weight: bold;
+
 		& .price{
 			&__dollar{
 				font-size: $font-xl;
@@ -36,7 +37,8 @@
 	}
 	&__price-was {
     display: block;
-		flex-basis: 25%;
+    flex-basis: 25%;
+    
 		& .price{
 			&__dollar{
 				font-size: $font-md;
@@ -52,7 +54,7 @@
 		flex-basis: 25%;
 		& .price{
 			&__dollar{
-				font-size: $font-lg;
+				font-size: $font-md;
 			}
 			&__cents{
 				font-size: $font-sm;
