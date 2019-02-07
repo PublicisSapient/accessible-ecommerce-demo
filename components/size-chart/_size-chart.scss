@@ -1,20 +1,33 @@
 /* ========================================= SIZE CHART */
 
+.size-chart{
+	&__link{
+    display: block;
+    font-size: $font-xs;
+    margin-top: $grid-unit * 2;
+  }
+  
+  .btn {
+    min-width: 170px;
+  }
+}
+
 .toggle-size-units-button {
-    padding: 10px 0;
-    border: 2px solid black;
-    background: none;
-    border-radius: 5px;
+  border-radius: 24px;	
+  background-color: $white;	
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.1);
+  text-align: center;
+  margin-bottom: 34px;
+  padding: 1px 3px;
 }
 
 .toggle-size-units-button .units-toggle {
-    padding: 10px;
-}
-
-.toggle-size-units-button .selected {
-    color: red;
-    background: #CCC;
-    border-radius: 5px;
+  display: inline-block;
+  width: 150px;
+  font-size: $font-xs;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .show-centimeters tr.inches {
@@ -25,12 +38,40 @@
     display: none;
 }
 
-.size-chart-table th,
-.size-chart-table td {
-    border: 1px solid black;
-}
+.size-chart-table 
+{
+  border-spacing: 0;
+  border: none;
 
-.size-chart-table tr:first-of-type th {
-    font-size: 1.3em;
+  td {
+    text-align: center;
+    font-size: $font-sm;
+    height: 48px;
+    width: 150px;
+  }
+
+  th {
+    text-align: center;
+  }
+
+  td:not(:last-child), 
+  th:not(:last-child) {
+    border-right: 1px solid #d8d8d8;
+  }
+
+  .divider td,
+  .divider th { 
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  .highlight {
+    background-color: $white;
+  }
+
+  tr:first-of-type th {
+    font-size: $font-sm;
+    height: 48px;
     min-width: 90px;
+    text-align: center;
+  }
 }

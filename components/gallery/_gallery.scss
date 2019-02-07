@@ -20,12 +20,13 @@
     max-height: 600px;
 }
 
-.gallery{
+.gallery {
     &__main-image{
         &__zoom {
             position: absolute;
             width: 100%;
-            bottom: 0px;
+            bottom: $grid-unit * 2;
+            padding: 0 $grid-unit * 2;
             left: 0;
             display: flex;
             .btn--outline{
@@ -35,9 +36,27 @@
                 }
             }
         }
+        &__zoom-group {
+          display: flex;
+          padding: 3px;
+          height: 40px;
+          width: 111px;
+          opacity: 0.9;
+          border-radius: 24px;
+          background-color: #FFFFFF;
+          box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
+          position: absolute;
+          right: $grid-unit * 2;
+        }
     }
-    &__minimize{
-        margin-left: auto;
+    &__zoom-icon {
+      text-align: center;
+      align-self: center;
+      width: 33.3%;
+
+      &::before {
+        font-size: 20px;
+      }
     }
     &__thumbnail-list {
         margin-top: 10px;
@@ -46,13 +65,15 @@
         justify-content: space-between;
         overflow: hidden;
     }
+    &__minimize {
+      margin: 0 3px;
+    }
 }
 
 
 .gallery__thumbnail-list button {
-    // width: 65px;
-    // height: 65px;
     border: 0;
+    padding: 0;
 }
 
 .gallery__thumbnail-list button img {
@@ -89,8 +110,13 @@
         max-height: 900px;
     }
     .gallery__thumbnail-list button {
-        width: 100px;
-        height: 100px;
+        width: $grid-unit * 14;
+        height: $grid-unit * 14;
+        margin: 0 $grid-unit * 2;
+
+        &.selected {
+          border: 2px solid $pure-black;
+        }
     }
     .gallery__thumbnail-list {
         margin-top: 20px;

@@ -1,21 +1,24 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 /* ===================================== PRODUCT DETAILS PAGE */
-.product-details {
-	margin-bottom: 40px; 
-}
 
-@media only screen and (min-width: 1024px) {
-	.content-container {
-		justify-content: space-between;
-		display: flex;
-	}
+.main-content {
 
-	.gallery-container {
-		order: 2;
+  .description-container,
+  .gallery-container {
+    display: inline-block;
+  }
+
+  .gallery-container {
+		width: 50%;
 	}
 
 	.description-container {
-		order: 1;
+    vertical-align: top;
+		width: 49%;
 	}
+}
+
+.product-details {
+	margin-bottom: 40px; 
 }

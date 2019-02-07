@@ -4,90 +4,103 @@
 		<span class="product-description__price" aria-label="product price">
 			<span class="product-description__price-now">
 				<span class="price__label" aria-hidden="true">Price</span>
-				<span class="price__dollar" aria-hidden="true">$16</span><span class="price__cents" aria-hidden="true">99</span>
+				<span class="price__dollar" aria-hidden="true">$16.99</span>
 				<span class="element-invisible">current price $16.99</span>
 			</span>
 
 			<span class="product-description__price-was">
 				<span class="price__label" aria-hidden="true">was</span>
-				<span class="price__dollar" aria-hidden="true">$20</span><span class="price__cents" aria-hidden="true">99</span>
+				<span class="price__dollar" aria-hidden="true">$20.99</span>
 				<span class="element-invisible">was $20.99</span>
 			</span>
 			<span class="product-description__price-save">
 				<span class="price__label" aria-hidden="true">save</span>
-				<span class="price__dollar" aria-hidden="true">$4</span><span class="price__cents" aria-hidden="true">00</span>
+				<span class="price__dollar" aria-hidden="true">$4.00</span>
 				<span class="element-invisible">save $4.00</span>
 			</span>
 		</span>
 		<p class="product-description__summary">
 			Readymade glossier echo park meh bicycle rights disrupt food truck. Leggings chicharrones butcher street art banh
-			mi williamsburg farm-to-table lyft cardigan distillery thundercats typewriter wolf small batch...<a href="#">Full
-				description</a>
-		</p>
+      mi williamsburg farm-to-table lyft cardigan distillery thundercats typewriter wolf small batch...<br />
+      <a href="#">Read More</a>
+    </p>
+    
 		<form class="product-form">
+        <hr class="divider" />
+        <div class="product-rating">
+            <div class="product-rating__prefix">Rating</div>
+            <div class="product-rating__display" aria-hidden="true">
+              <div class="product-rating__stars">
+                <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+                <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+                <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+                <span class="product-rating__star product-rating__star-half icon ion-md-star-half"></span>
+                <span class="product-rating__star product-rating__star-empty icon ion-md-star-outline"></span>
+                <span class="product-rating__value">3.5 out of 5</span>
+                <span class="product-rating__count">(156<span class="element-invisible"> reviews</span>)</span>
+              </div>
+            </div>
+            <a class="product-rating__view-button" href="#ratings">
+              <span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
+              View Rating and Reviews
+            </a>
+          </div>
+          <hr class="divider" />
 			<input type="hidden" name="name" value="Shirt Malo">
 			<div class="product-description__color-and-size">
 
-				<fieldset>
-					<legend id="color" class="product-description__input-title">Color Selection</legend>
-					<input type="radio" class="radio__input" value="red" name="color" id="color-red" aria-describedby="color">
-					<label for="color-red" class="radio__label"> Red</label>
-					<input type="radio" class="radio__input" value="orange" name="color" id="color-orange" aria-describedby="color">
-					<label for="color-orange" class="radio__label">Orange</label>
-					<input type="radio" class="radio__input" value="white" name="color" id="color-white" aria-describedby="color"
-					 checked>
-					<label for="color-white" class="radio__label">White</label>
+				<fieldset class="product-description__color">
+          <legend id="color" class="product-description__input-title">Select Color</legend>
+          <div class="product-description__radio-group">
+            <input type="radio" class="radio__input" value="red" name="color" id="color-red" aria-describedby="color">
+            <label for="color-red" class="radio__label"> Red</label>
+          </div>
+          <div class="product-description__radio-group">
+            <input type="radio" class="radio__input" value="orange" name="color" id="color-orange" aria-describedby="color">
+            <label for="color-orange" class="radio__label">Orange</label>
+          </div>
+          <div class="product-description__radio-group">
+            <input type="radio" class="radio__input" value="white" name="color" id="color-white" aria-describedby="color"
+            checked>
+            <label for="color-white" class="radio__label">White</label>
+          </div>
 					<a href="#" class="skip-link">Jump to product gallery</a>
 				</fieldset>
 
-				<fieldset>
-					<legend id="size" class="product-description__input-title">Size Selection</legend>
-					<input type="radio" class="radio__input" value="small" name="size" id="size-small" aria-describedby="size" checked>
-					<label for="size-small" class="radio__label">Small</label>
-
-					<input type="radio" class="radio__input" value="medium" name="size" id="size-medium" aria-describedby="size">
-					<label for="size-medium" class="radio__label">Medium</label>
-
-					<input type="radio" class="radio__input" value="large" name="size" id="size-large" aria-describedby="size">
-					<label for="size-large" class="radio__label">Large</label>
-					<a href="#" class="size-chart__link">View size chart</a>
+				<fieldset class="product-description__size">
+          <legend id="size" class="product-description__input-title">Select Size</legend>
+          <div class="product-description__radio-group">
+            <input type="radio" class="radio__input" value="small" name="size" id="size-small" aria-describedby="size" checked>
+            <label for="size-small" class="radio__label">Small</label>
+          </div>
+          <div class="product-description__radio-group">
+            <input type="radio" class="radio__input" value="medium" name="size" id="size-medium" aria-describedby="size">
+            <label for="size-medium" class="radio__label">Medium</label>
+          </div>
+          <div class="product-description__radio-group">
+            <input type="radio" class="radio__input" value="large" name="size" id="size-large" aria-describedby="size">
+            <label for="size-large" class="radio__label">Large</label>
+          </div>
+					<a href="#" class="size-chart__link"><img src="../../images/ruler.svg" class="icon" />View size chart</a>
 				</fieldset>
-
+        
 			</div>
-
+      <hr class="divider" />
 			<div class="product-actions">
-				<div class="product-rating">
-					<span class="product-rating__display" aria-hidden="true">
-						<span class="product-rating__prefix">Rating</span>
-						<span class="product-rating__stars">
-							<span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
-							<span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
-							<span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
-							<span class="product-rating__star product-rating__star-half icon ion-md-star-half"></span>
-							<span class="product-rating__star product-rating__star-empty icon ion-md-star-outline"></span>
-							<br>
-							<span class="product-rating__value">3.5 out of 5</span>
-							<span class="product-rating__count">(156<span class="element-invisible"> reviews</span>)</span>
-						</span>
-					</span>
-					<a class="product-rating__view-button btn btn--black btn--block" href="#ratings">
-						<span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
-						View rating and reviews
-					</a>
-				</div>
+				
 
 				<div class="product-actions__cart">
 					<span class="quantity-comp">
-						<button aria-label="decrease quantity" class="quantity-comp__decrease btn btn--outline btn--icon" type="button"><span
+						<button aria-label="decrease quantity" class="quantity-comp__decrease btn btn--black btn--icon" type="button"><span
 							 class="icon ion-ios-remove"></span></button>
 						<!-- <label for="quantity">Qty:</label> -->
 						<input type="text" aria-label="quantity" value="1" class="quantity-comp__text" name="quantity" id="quantity">
 						<span aria-live="assertive" aria-atomic="true" class="element-invisible quantity-comp__aria">Quantity is now <span> 1 </span></span>
-						<button aria-label="increase quantity" class="quantity-comp__increase btn btn--outline btn--icon" type="button"><span
+						<button aria-label="increase quantity" class="quantity-comp__increase btn btn--black btn--icon" type="button"><span
 							 class="icon ion-ios-add"></span></button>
 					</span>
-					<button class="product-actions__add-to-cart btn btn--primary btn--block" type="submit">Add to Cart</button>
-					<button class="product-actions__add-to-wishlist btn btn--outline-primary btn--block" type="button">Add to Wishlist</button>
+					<button class="product-actions__add-to-cart btn btn--primary" type="submit">Add to Cart</button>
+					<button class="product-actions__add-to-wishlist btn btn--favorites ion-ios-heart" type="button"><span class="sr-only">Add to Wishlist</span></button>
 				</div>
 			</div>
 		</form>

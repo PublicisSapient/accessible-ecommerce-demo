@@ -2,17 +2,17 @@
 import HTMLLoader from '../../src/js/loader';
 import MiniCart from '../mini-cart/mini-cart';
 
-var menuItems = document.querySelectorAll('li.has-submenu > a');
-var activeMenuItem = null;
-
 // hamburger menu
 function GlobalNavigation() {
+  this.menuItems = document.querySelectorAll('li.has-submenu > a');
+  this.activeMenuItem = null;
   this.miniCart = {};
   this.isMenuOpen = false;
   this.hamburgerMenuButton = document.getElementById('button');
   this.hamburgerMenuButton.addEventListener('click', this.handleHamburgerMenuClick.bind(this));
 
   this.loadMiniCart();
+  this.bindEvents();
 }
 
 GlobalNavigation.prototype = {
@@ -20,6 +20,12 @@ GlobalNavigation.prototype = {
     HTMLLoader.load('../../components/mini-cart/mini-cart', '[data-component="mini-cart"]').then(() => {
       const miniCartElement = document.querySelector('.mini-cart');
       this.miniCart = new MiniCart(miniCartElement);
+    });
+  },
+
+  bindEvents: function() {
+    this.menuItems.forEach(el => {
+      el.addEventListener('click', this.onClickMenuItemWithSubmenu.bind(this));
     });
   },
 
@@ -47,7 +53,7 @@ GlobalNavigation.prototype = {
   },
 
   onBlurTabableElement: function() {
-    this.removeTabOutEventHandler(activeMenuItem);
+    this.removeTabOutEventHandler(this.activeMenuItem);
     this.closeAllMenus();
   },
 
@@ -73,36 +79,32 @@ GlobalNavigation.prototype = {
     if (element.parentNode.classList.contains('open')) {
       element.parentNode.classList.remove('open');
       element.setAttribute('aria-expanded', 'false');
-      activeMenuItem = null;
+      this.activeMenuItem = null;
     }
   },
 
   openMenu: function(element) {
-    this.closeAllMenus();
     const parent = element.parentNode;
+    this.closeAllMenus();
     parent.classList.add('open');
     element.setAttribute('aria-expanded', 'true');
-    activeMenuItem = parent;
+    this.activeMenuItem = parent;
     this.addOnDocumentClickEventHandler();
-    this.addTabOutEventHandler(activeMenuItem);
+    this.addTabOutEventHandler(this.activeMenuItem);
   },
 
   closeAllMenus: function() {
-    [].forEach.call(menuItems, this.closeMenu);
+    [].forEach.call(this.menuItems, this.closeMenu);
   },
 
   onClickMenuItemWithSubmenu: function(event) {
     event.preventDefault();
-    const target = event.currentTarget;
+    const target = event.target;
     target.parentNode.classList.contains('open') ?
       this.closeMenu(target) :
       this.openMenu(target);
     return false;
   }
 };
-
-Array.prototype.forEach.call(menuItems, function(el) {
-  el.addEventListener('click', GlobalNavigation.onClickMenuItemWithSubmenu);
-});
 
 export default GlobalNavigation;

@@ -1,12 +1,44 @@
 @import '../../scss/variables';
 
-.rating-summary{
+.product-reviews {
+  font-size: $font-sm;
+
+  .review-details,
+  .rating-stars {
+    margin: $grid-unit 0;
+  }
+
+  .rating-summary{
     margin-bottom: $grid-unit * 3;
-}
-.user-ratings{
-    list-style: none;
-    padding: 0;
-    &__list-item{
-        margin-bottom: $grid-unit;
+
+    .rating-stars,
+    .rating-total {
+      display: inline-block;
     }
+
+    .rating-stars {
+      font-size: $font-xxl;
+    }
+
+    .rating-total {
+      vertical-align: super;
+      margin-left: 10px;
+    }
+
+    .review-total {
+      font-weight: bold;
+    }
+  }
+  .user-ratings{
+      list-style: none;
+      padding: 0;
+
+      &__list-item{
+          margin-bottom: $grid-unit * 3;
+      }
+
+      a {
+        font-weight: bold;
+      }
+  }
 }
