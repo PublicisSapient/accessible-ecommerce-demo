@@ -1,112 +1,119 @@
 <header class="navigation">
-<div class="container">
-  <a class="skip-link" id="skip-to-main" href="#skip-to-nav">Skip navigation menu</a>
-  <div class="navigation__items">
-    <a class="navigation__logo" href="https://publicissapient.github.io/accessible-ecommerce/">
-      <img src="https://publicissapient.github.io/accessible-ecommerce/assets/images/ps-logo.gif" alt="Publicis dot Sapient logo"
-        width="50" height="50">
-      <h1 class="navigation__siteName">P.S Toronto Accessible
-        <br>E-Commerce Demo Store</h1>
-    </a>
-    <nav class="global-nav" aria-label="Primary">
-      <button class="btn btn-default dropdown-toggle" type="button" id="button"
-        aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Navigation">
-        <span class="ion-ios-menu"></span>
-      </button>
-      <ul class="global-nav__items">
-        <li class="global-nav__item has-submenu">
-          <a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Women</a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="Women">All Womens</a>
+  <div class="container">
+    <a class="skip-link" id="skip-to-main" href="#skip-to-nav">Skip navigation menu</a>
+    <div class="navigation__items">
+      <a class="navigation__logo" href="https://publicissapient.github.io/accessible-ecommerce/">
+        <span class="navigation__siteIcon">A</span>
+        <h1 class="navigation__siteName">
+          the<br/>
+          accessible<br />
+          eStore
+        </h1>
+      </a>
+      <nav class="global-nav" aria-label="Primary">
+        <button class="btn btn-default dropdown-toggle" type="button" id="button"
+          aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Navigation">
+          <div class="menu-title">Menu</div>
+          <div class="ion-ios-menu"></div>
+        </button>
+        <button class="btn btn-default btn-mobile-search" type="button" id="button"
+          aria-haspopup="true" aria-expanded="false" aria-controls="search" aria-label="search">
+          <div class="menu-title">Search</div>
+          <image src="../../images/magnifying-glass-white.svg" class="mobile-search-icon" aria-hidden="true"/>
+        </button>
+        
+        <div class="global-nav__top-row row">
+          <span class="global-nav__search">
+              <form action="" id="nav-search">
+                <label for="global-nav-search">Search</label>
+                <input type="text" id="global-nav-search" />
+                <input type="image" alt="submit" src="../../images/magnifying-glass.svg" class="submit-icon" />
+              </form>
+          </span>
+          <span class="global-nav__account-cart">
+              <a href="#" class="account-btn"><img src="../../images/account.svg" class="icon" aria-hidden="true"/>Account</a>
+              <span class="mini-cart" data-component="mini-cart"></span>
+          </span>
+        </div>
+        <div class="global-nav__bottom-row row">
+          <ul class="global-nav__items">
+            <li class="global-nav__item has-submenu">
+              <a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Women <span class="ion-ios-arrow-down" aria-hidden="true"></span></a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="Women">Womens</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="Tops">Tops</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="Pants">Pants</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="Dresses">Dresses</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="Shoes">Shoes</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="Hats">Hats</a>
+                </li>
+              </ul>
             </li>
-            <li class="submenu-item">
-              <a href="Tops">Tops</a>
+            <li class="global-nav__item has-submenu">
+              <a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Men <span class="ion-ios-arrow-down" aria-hidden="true"></span></a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="Men">Mens</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Tops</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Pants</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Kilts</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Shoes</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Hats</a>
+                </li>
+              </ul>
             </li>
-            <li class="submenu-item">
-              <a href="Pants">Pants</a>
-            </li>
-            <li class="submenu-item">
-              <a href="Dresses">Dresses</a>
-            </li>
-            <li class="submenu-item">
-              <a href="Shoes">Shoes</a>
-            </li>
-            <li class="submenu-item">
-              <a href="Hats">Hats</a>
+            <li class="global-nav__item has-submenu">
+              <a href="#" class="menu-item-heading selected" aria-haspopup="true" aria-expanded="false">Kids <span class="ion-ios-arrow-down" aria-hidden="true"></span></a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="Tops">Kids</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Tops</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Pants</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Dresses</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Shoes</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="#">Hats</a>
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
-        <li class="global-nav__item has-submenu">
-          <a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Men</a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="Men">All Mens</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Tops</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Pants</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Kilts</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Shoes</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Hats</a>
-            </li>
-          </ul>
-        </li>
-        <li class="global-nav__item has-submenu">
-          <a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Kids</a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="Tops">All Kids</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Tops</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Pants</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Dresses</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Shoes</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Hats</a>
-            </li>
-          </ul>
-        </li>
-        <li class="global-nav__item has-submenu">
-          <a href="#" class="menu-item-heading" aria-haspopup="true" aria-expanded="false">Accessories</a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <a href="Tops">All Accessories</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Necklaces</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Belts</a>
-            </li>
-            <li class="submenu-item">
-              <a href="#">Rings</a>
-            </li>
-          </ul>
-        </li>
-        <li class="global-nav__item">
-          <a href="#">Sale</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="mini-cart" data-component="mini-cart"></div>
+          <span class="global-nav__stores-contact">
+            <a href="#" class="stores-btn"><img src="../../images/stores.svg" class="icon" aria-hidden="true" />Stores</a>
+            <a href="#"><img src="../../images/contact.svg" class="icon" aria-hidden="true" />Contact</a>
+          </span>
+        </div>
+      </nav>
+    </div>
+    <a class="skip-link" id="skip-to-nav" href="#skip-to-main">Return to navigation menu</a>
   </div>
-  <a class="skip-link" id="skip-to-nav" href="#skip-to-main">Return to navigation menu</a>
-</div>
 </header>

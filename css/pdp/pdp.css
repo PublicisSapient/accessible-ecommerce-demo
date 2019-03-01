@@ -1,8 +1,14 @@
 /* ===================================== PRODUCT DETAILS PAGE */
-.content-container {
-  justify-content: space-between;
-  display: flex;
-}
+.main-content .description-container,
+.main-content .gallery-container {
+  display: inline-block; }
+
+.main-content .gallery-container {
+  width: 50%; }
+
+.main-content .description-container {
+  vertical-align: top;
+  width: 49%; }
+
 .product-details {
-  margin-bottom: 40px; 
-}
+  margin-bottom: 40px; }

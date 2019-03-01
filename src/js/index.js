@@ -26,7 +26,6 @@ if (browserSupportsAllFeatures()) {
 } else {
   // All other browsers loads polyfills and then run `main()`.
   // Append the required features onto the URL as required
-  console.log('load polyfills');
   loadPolyfill(
     'https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Symbol,Array.prototype.@@iterator',
     main

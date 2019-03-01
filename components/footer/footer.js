@@ -17,8 +17,8 @@
  * @todo Add success functionality
  * @param  {HTMLFormElement} form - the form element that has been validated
  */
-function handleValidForm(form) {
-    console.log('%c VALID FORM ', 'background: hotpink; color: white');
+function handleValidForm() {
+  console.log('%c VALID FORM ', 'background: hotpink; color: white'); // eslint-disable-line
 }
 /**
  * Invalid form handler
@@ -26,8 +26,8 @@ function handleValidForm(form) {
  * @todo Extend functionality to cover all types of form elements
  * @param  {HTMLInputElement} form - the form element that has been validated
  */
-function handleInvalidForm(form){
-    form.querySelector('input:invalid').focus();
+function handleInvalidForm(form) {
+  form.querySelector('input:invalid').focus();
 }
 /**
  * Validate single form input
@@ -38,30 +38,30 @@ function handleInvalidForm(form){
  * @todo break message generation/destruction out into separate functions
  * @param  {HTMLInputElement} inputElement - input element being validated
  */
-function validateInputElement(inputElement){
-    let inputElementLabel = document.querySelector('label[for="'+inputElement.id+'"]');
-    if (!inputElement.checkValidity()) {
-        if (inputElementLabel.querySelector('.input__validation-message')) return;
+function validateInputElement(inputElement) {
+  let inputElementLabel = document.querySelector('label[for="' + inputElement.id + '"]');
+  if (!inputElement.checkValidity()) {
+    if (inputElementLabel.querySelector('.input__validation-message')) return;
 
-        let errorMessage = document.createElement('span');
-        errorMessage.innerHTML = " " + inputElement.dataset.validationMessage;
-        errorMessage.classList.add('input__validation-message');
-        inputElementLabel.appendChild(errorMessage);
+    let errorMessage = document.createElement('span');
+    errorMessage.innerHTML = ' ' + inputElement.dataset.validationMessage;
+    errorMessage.classList.add('input__validation-message');
+    inputElementLabel.appendChild(errorMessage);
 
-        inputElement.classList.add('has-error');
-    } else {
-        let errorMessage = inputElementLabel.querySelector('.input__validation-message');
-        if(errorMessage) errorMessage.parentNode.removeChild(errorMessage);
+    inputElement.classList.add('has-error');
+  } else {
+    let errorMessage = inputElementLabel.querySelector('.input__validation-message');
+    if (errorMessage) errorMessage.parentNode.removeChild(errorMessage);
 
-        inputElement.classList.remove('has-error');
-    }
+    inputElement.classList.remove('has-error');
+  }
 }
 /**
  * Loop over form inputs and update the UI based on their validity
  * @param  {HTMLFormElement} form - form being validated
  */
 function toggleInputValidityUI(form) {
-    form.querySelectorAll('input[type="text"], input[type="email"]').forEach(validateInputElement);
+  form.querySelectorAll('input[type="text"], input[type="email"]').forEach(validateInputElement);
 }
 /**
  * Adds or removes the helper CSS class .edited to form element.
@@ -71,26 +71,26 @@ function toggleInputValidityUI(form) {
  * @param  {HTMLInputElement} inputElement
  */
 function markInputAsEdited(inputElement) {
-    if (inputElement.value) {
-        inputElement.classList.add('edited');
-    } else {
-        inputElement.classList.remove('edited');
-    }
+  if (inputElement.value) {
+    inputElement.classList.add('edited');
+  } else {
+    inputElement.classList.remove('edited');
+  }
 }
 /**
  * Prevent standard submit event, validate fields and handle valid/invalid forms accordingly
  * @param  {Event} e - Form 'submit' event
  */
-function submitClicked(e){
-    e.preventDefault();
-    toggleInputValidityUI(this);
+function submitClicked(e) {
+  e.preventDefault();
+  toggleInputValidityUI(this);
 
-    if(!this.checkValidity()){
-        handleInvalidForm(this);
-    }else{
-        //Form is valid - clear any remnants of invalid fields
-        handleValidForm(this);
-    }
+  if (!this.checkValidity()) {
+    handleInvalidForm(this);
+  } else {
+    //Form is valid - clear any remnants of invalid fields
+    handleValidForm(this);
+  }
 }
 /**
  * Loop over all forms and their inputElement children to add validation Event Listeners
@@ -99,14 +99,14 @@ function submitClicked(e){
  */
 let formsToValidate = document.querySelectorAll('[data-validate]');
 formsToValidate.forEach(function (form) {
-    form.addEventListener('submit', submitClicked);
+  form.addEventListener('submit', submitClicked);
 
-    form.querySelectorAll('input[type="text"], input[type="email"]').forEach(inputElement => {
-        inputElement.addEventListener('blur', ()=>{
-            markInputAsEdited(inputElement);
-            if(inputElement.classList.contains('has-error')){
-                validateInputElement(inputElement)
-            }
-        });
+  form.querySelectorAll('input[type="text"], input[type="email"]').forEach(inputElement => {
+    inputElement.addEventListener('blur', () => {
+      markInputAsEdited(inputElement);
+      if (inputElement.classList.contains('has-error')) {
+        validateInputElement(inputElement);
+      }
     });
+  });
 });

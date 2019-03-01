@@ -9,11 +9,10 @@ const HTMLLoader = (function() {
           .then(body => {
             document.querySelector(selector).innerHTML = body;
             resolve(body);
-          })
-        }
-      );
+          });
+      });
     } else {
-      console.error('Loader error: Path and selector are required.');
+      console.error('Loader error: Path and selector are required.'); // eslint-disable-line no-console
     }
   }
 
@@ -26,16 +25,16 @@ const HTMLLoader = (function() {
 
       return Promise.all(promises).then(() => {
         return components;
-      })
+      });
     } else {
-      console.error('Loader error: loadAll argument is not an iterable array');
+      console.error('Loader error: loadAll argument is not an iterable array'); // eslint-disable-line no-console
     }
   }
 
   return {
     load: load,
     loadAll: loadAll
-  }
+  };
 }());
 
 export default HTMLLoader;

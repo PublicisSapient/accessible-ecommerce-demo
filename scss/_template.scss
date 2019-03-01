@@ -1,0 +1,13 @@
+.main-content {
+
+  @media only screen and (min-width:1024px) {
+    width: 1020px;
+    margin: 50px auto;
+  }
+
+}
+
+.template-heading {
+  font-size: $font-xxl;
+  font-weight: bold;
+}

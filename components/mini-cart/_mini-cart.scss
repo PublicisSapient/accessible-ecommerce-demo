@@ -4,27 +4,26 @@
 
 $buttonSize: 2em;
 .mini-cart {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	position: relative;
-	margin-left: auto;
+	display: inline-block;
+  
+  &__text {
+    font-size: $font-xs;
+    font-weight: bold;
+    color: $white;
+    margin-right: 8px;
+  }
 
 	&__toggle {
-		// margin-top: 5px;
+    // margin-top: 5px;
+    min-width: $grid-unit * 12;
 		background-color: transparent;
-		background-image: url('../images/cart.svg');
-		background-repeat: no-repeat;
-		background-size: 30px;
 		padding: 0;
-		width: 46px;
-		height: 44px;
 		border: none;
 		position: relative;
-		background-position: left bottom;
 	}
 
 	&__visible-label {
+
 		&--amount,
 		&--subtotal {
 			position: absolute;
@@ -33,10 +32,8 @@ $buttonSize: 2em;
 		}
 
 		&--amount {
-			top: 0;
-			right: 0;
-			background-color: $rose;
-			color: #fff;
+			background-color: $white;
+			color: $black;
 			border-radius: 50%;
 			font-size: 1.4rem;
 			width: 2.4rem;

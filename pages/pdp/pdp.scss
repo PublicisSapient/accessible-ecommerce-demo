@@ -1,7 +1,24 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 /* ===================================== PRODUCT DETAILS PAGE */
+
+.main-content {
+
+  .description-container,
+  .gallery-container {
+    display: inline-block;
+  }
+
+  .gallery-container {
+		width: 50%;
+	}
+
+	.description-container {
+    vertical-align: top;
+		width: 49%;
+	}
+}
+
 .product-details {
-    margin-bottom: $grid-unit * 5;
-    @include flex-grid(2);
+	margin-bottom: 40px; 
 }
