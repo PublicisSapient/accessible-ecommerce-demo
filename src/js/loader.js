@@ -9,6 +9,9 @@ const HTMLLoader = (function() {
           .then(body => {
             document.querySelector(selector).innerHTML = body;
             resolve(body);
+            //console.log(selector + 'Ready');
+            var event = new CustomEvent(selector + 'Ready');
+            document.dispatchEvent(event);
           });
       });
     } else {

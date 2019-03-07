@@ -13,16 +13,16 @@
 				<p>
 					<fieldset>
 						<legend tabindex="0" id="colorsLegend" class="visibly-hidden">Filter by Colors</legend>
-						<input id="blue" class="productGrid__filter" aria-label="Filter on color blue" type="checkbox" name="colors"
+						<input id="blue" class="productGrid__filter" aria-label="Filter on color blue" type="checkbox" name="color"
 						 value="blue">
 						<label for="blue" class="productGrid__filter-label">Blue</label><br>
-						<input id="green" class="productGrid__filter" aria-label="Filter on color green" type="checkbox" name="colors"
+						<input id="green" class="productGrid__filter" aria-label="Filter on color green" type="checkbox" name="color"
 						 value="green">
 						<label for="green" class="productGrid__filter-label">Green</label><br>
-						<input id="yellow" class="productGrid__filter" aria-label="Filter on color yellow" type="checkbox" name="colors"
+						<input id="yellow" class="productGrid__filter" aria-label="Filter on color yellow" type="checkbox" name="color"
 						 value="yellow">
 						<label for="yellow" class="productGrid__filter-label">Yellow</label><br>
-						<input id="red" class="productGrid__filter" aria-label="Filter on color red" type="checkbox" name="colors" value="red">
+						<input id="red" class="productGrid__filter" aria-label="Filter on color red" type="checkbox" name="color" value="red">
 						<label for="red" class="productGrid__filter-label">Red</label>
 					</fieldset>
 				</p>
@@ -31,13 +31,13 @@
 				<p>
 					<fieldset>
 						<legend tabindex="0" id="sizeLegend" class="visibly-hidden">Filter by Size</legend>
-						<input id="large" class="productGrid__filter" aria-label="Filter on size large" type="checkbox" name="sizes"
+						<input id="large" class="productGrid__filter" aria-label="Filter on size large" type="checkbox" name="size"
 						 value="large" />
 						<label for="large" class="productGrid__filter-label">Large</label><br>
-						<input id="medium" class="productGrid__filter" aria-label="Filter on size medium" type="checkbox" name="sizes"
+						<input id="medium" class="productGrid__filter" aria-label="Filter on size medium" type="checkbox" name="size"
 						 value="medium">
 						<label for="medium" class="productGrid__filter-label">Medium</label><br>
-						<input id="small" class="productGrid__filter" aria-label="Filter on size small" type="checkbox" name="sizes"
+						<input id="small" class="productGrid__filter" aria-label="Filter on size small" type="checkbox" name="size"
 						 value="small">
 						<label for="small" class="productGrid__filter-label">Small</label><br>
 					</fieldset>
@@ -47,16 +47,16 @@
 				<p>
 					<fieldset>
 						<legend tabindex="0" id="brandLegend" class="visibly-hidden">Filter by Brand</legend>
-						<input id="brand1" class="productGrid__filter" aria-label="Filter on brand Brand 1" type="checkbox" name="brands"
+						<input id="brand1" class="productGrid__filter" aria-label="Filter on brand Brand 1" type="checkbox" name="brand"
 						 value="brand1" />
 						<label for="brand1" class="productGrid__filter-label">Brand 1</label><br>
-						<input id="brand2" class="productGrid__filter" aria-label="Filter on brand Brand 2" type="checkbox" name="brands"
+						<input id="brand2" class="productGrid__filter" aria-label="Filter on brand Brand 2" type="checkbox" name="brand"
 						 value="brand2">
 						<label for="brand2" class="productGrid__filter-label">Brand 2</label><br>
-						<input id="brand3" class="productGrid__filter" aria-label="Filter on brand Brand 3" type="checkbox" name="brands"
+						<input id="brand3" class="productGrid__filter" aria-label="Filter on brand Brand 3" type="checkbox" name="brand"
 						 value="brand3">
 						<label for="brand3" class="productGrid__filter-label">Brand 3</label><br>
-						<input id="brand4" class="productGrid__filter" aria-label="Filter on brand Brand 4" type="checkbox" name="brands"
+						<input id="brand4" class="productGrid__filter" aria-label="Filter on brand Brand 4" type="checkbox" name="brand"
 						 value="brand4">
 						<label for="brand4" class="productGrid__filter-label">Brand 4</label>
 					</fieldset>
@@ -79,8 +79,8 @@
 			</select>
 			<div class="productGrid__sort-menu-heading" id="showingNumberProducts__heading"><span class="element-invisible">Showing products</span> 12 of 96</div>
 		</section>
-		<section class="productGrid__product-tiles">
-			<article class="productGrid__product-tile product">
+		<section class="productGrid__product-tiles" id="product-grid-tiles">
+			<!-- <article class="productGrid__product-tile product">
 				<a class="product__details" href="../pdp/pdp.html">
 					<picture>
 						<img src="../../images/satin-shirt.jpg">
@@ -234,7 +234,8 @@
 				</span>
 			
 
-			</article>
+			</article> -->
+
 		</section>
 		<nav aria-label="Products list Pagination">
 			<h2 class="visibly-hidden">Pagination</h2>
@@ -264,3 +265,33 @@
 		</nav>
 	</section>
 </main>
+<script id="product-grid-template" type="text/x-handlebars-template">
+	{{#each product}}
+	<article class="productGrid__product-tile product">
+		<a class="product__details" href="../pdp/pdp.html">
+			<picture>
+				<img src="../../images/contrast-trim-t-shirt.jpg">
+			</picture>
+			<p class="product__heading" aria-label="learn more about: Contrast trim t-shirt, $42.99">{{doc.name}}</p>
+		</a>
+		<span class="price">
+			<span class="price__dollar">${{doc.price}}</span>
+		</span>
+	</article>
+	{{/each}}
+</script>
+<script id="product-grid-template-2" type="text/x-handlebars-template">
+	{{#each product}}
+	<article class="productGrid__product-tile product">
+		<a class="product__details" href="../pdp/pdp.html">
+			<picture>
+				<img src="../../images/contrast-trim-t-shirt.jpg">
+			</picture>
+			<p class="product__heading" aria-label="learn more about: Contrast trim t-shirt, $42.99">{{name}}</p>
+		</a>
+		<span class="price">
+			<span class="price__dollar">${{price}}</span>
+		</span>
+	</article>
+	{{/each}}
+</script>

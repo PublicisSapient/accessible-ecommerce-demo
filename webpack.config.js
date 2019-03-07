@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     components: './src/js/index.js',
     pdp: './pages/pdp/pdp.js',
+    plp: './pages/plp/plp.js',
     preview: './pages/preview/preview.js'
   },
   watch: true,
