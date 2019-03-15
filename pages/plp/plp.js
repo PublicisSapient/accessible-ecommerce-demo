@@ -97,6 +97,7 @@ const PLP = (function() {
   }
   function getAllProducts() {
     PouchDB.allDocs({include_docs: true}).then(function(doc){
+      console.log(doc);
       var compiledHtml = productGridTemplate({'product': doc.rows});
       $('#product-grid-tiles').html(compiledHtml);
     }).catch(function(err){

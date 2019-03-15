@@ -268,14 +268,14 @@
 <script id="product-grid-template" type="text/x-handlebars-template">
 	{{#each product}}
 	<article class="productGrid__product-tile product">
-		<a class="product__details" href="../pdp/pdp.html">
+		<a class="product__details" href="../pdp/pdp.html?product_id={{doc._id}}"">
 			<picture>
-				<img src="../../images/contrast-trim-t-shirt.jpg">
+				<img src="{{doc.thumbnail_url}}?text={{doc.product_name}}">
 			</picture>
-			<p class="product__heading" aria-label="learn more about: Contrast trim t-shirt, $42.99">{{doc.name}}</p>
+			<p class="product__heading" aria-label="learn more about: Contrast trim t-shirt, $42.99">{{doc.product_name}}</p>
 		</a>
 		<span class="price">
-			<span class="price__dollar">${{doc.price}}</span>
+			<span class="price__dollar">${{doc.price_sale}}</span>
 		</span>
 	</article>
 	{{/each}}
@@ -283,14 +283,14 @@
 <script id="product-grid-template-2" type="text/x-handlebars-template">
 	{{#each product}}
 	<article class="productGrid__product-tile product">
-		<a class="product__details" href="../pdp/pdp.html">
+		<a class="product__details" href="../pdp/pdp.html?product_id={{_id}}">
 			<picture>
-				<img src="../../images/contrast-trim-t-shirt.jpg">
+				<img src="{{thumbnail_url}}?text={{product_name}}">
 			</picture>
-			<p class="product__heading" aria-label="learn more about: Contrast trim t-shirt, $42.99">{{name}}</p>
+			<p class="product__heading" aria-label="learn more about: Contrast trim t-shirt, $42.99">{{product_name}}</p>
 		</a>
 		<span class="price">
-			<span class="price__dollar">${{price}}</span>
+			<span class="price__dollar">${{price_sale}}</span>
 		</span>
 	</article>
 	{{/each}}

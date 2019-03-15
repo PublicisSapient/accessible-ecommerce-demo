@@ -1,3 +1,5 @@
+import PouchDB from '../../src/js/pouchdb';
+
 var AddToCart = function (element) {
   this.element = element;
   this.quantity = 1;
@@ -43,7 +45,30 @@ AddToCart.prototype = {
   }
 };
 
-var productForms = document.querySelectorAll('.product-form');
-productForms.forEach(function (productForm) {
-  new AddToCart(productForm);
+const urlParams = new URLSearchParams(window.location.search);
+const product_id = urlParams.get('product_id');
+var product_data;
+
+PouchDB.find({
+  include_docs: true,
+  selector: {
+    _id: product_id
+  } 
+}).then(function(doc){
+  product_data = doc.docs;
+  //console.log("product data: ", product_data);
+}).then(function(){
+  var productDescriptionTemplate = Handlebars.compile(document.getElementById('product-description-template').innerHTML);
+  var compiledHtml = productDescriptionTemplate(product_data[0]);
+  document.getElementById('product-description').innerHTML = compiledHtml;
+}).then(function(){
+  var productForms = document.querySelectorAll('.product-form');
+  productForms.forEach(function (productForm) {
+    //console.log("productForms");
+    new AddToCart(productForm);
+  });
 });
+
+
+
+

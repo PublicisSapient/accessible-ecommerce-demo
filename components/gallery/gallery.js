@@ -1,3 +1,5 @@
+import PouchDB from '../../src/js/pouchdb';
+
 var Gallery = function (element) {
   this.element = element;
 	this.thumbnailsEl = this.element.getElementsByClassName('gallery__thumbnail-list')[0];
@@ -82,8 +84,26 @@ Gallery.prototype = {
     return Number(this.thumbnailsEl.style.marginLeft.replace('px', '')) || 0;
   }
 }
+const urlParams = new URLSearchParams(window.location.search);
+const product_id = urlParams.get('product_id');
+var product_data;
 
-var galleryElements = document.querySelectorAll('.gallery');
-galleryElements.forEach(function (galleryElement) {
-	var gallery = new Gallery(galleryElement);
+PouchDB.find({
+  include_docs: true,
+  selector: {
+    _id: product_id
+  } 
+}).then(function(doc){
+  product_data = doc.docs;
+  //console.log("product data: ", product_data[0]);
+}).then(function(){
+  var productGalleryTemplate = Handlebars.compile(document.getElementById('product-gallery-template').innerHTML);
+  var compiledHtml = productGalleryTemplate(product_data[0]);
+  document.getElementById('gallery').innerHTML = compiledHtml;
+}).then(function(){
+  var galleryElements = document.querySelectorAll('.gallery');
+  galleryElements.forEach(function (galleryElement) {
+    new Gallery(galleryElement);
+  });
 });
+

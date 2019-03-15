@@ -1,8 +1,11 @@
 <main id="main">
-    <div class="gallery">
+  <div id="gallery" class="gallery">
+  </div>
+</main>
+<script id="product-gallery-template" type="text/x-handlebars-template">
       <div class="gallery__main-image__container">
         <div class="gallery__main-image__inner-container">
-          <img id="gallery__main-image" src="https://source.unsplash.com/6cHumpSxTvs/583x645" alt="" />
+          <img id="gallery__main-image" src="{{image_url}}?text={{product_name}}" alt="" />
         </div>
         <div class="gallery__main-image__zoom">
           <button data-modal-show="my-accessible-modal" aria-label="Enlarge the Image" class="btn btn--secondary ion-ios-expand"><span class="sr-only">enlarge</span></button>
@@ -59,5 +62,5 @@
           <span class="icon ion-ios-arrow-forward"></span>
         </button>
       </div>
-    </div>
-  </main>
+
+</script>
