@@ -1,29 +1,33 @@
 import Template from '../../src/js/template';
-//import PouchDB from '../../src/js/pouchdb';
+import PouchDB from '../../src/js/pouchdb';
 
 /* Product Details Page Functions */
 
 const PDP = (function() {
   function init() {
-    const components = Template.getComponents();
-    const loadedComponents = Template.load(components);
+    const urlParams = new URLSearchParams(window.location.search);
+    const product_id = urlParams.get('product_id');
 
-    console.log('loadedComponent: ', loadedComponents); // eslint-disable-line no-console
+    PouchDB.find({
+      include_docs: true,
+      selector: {
+        _id: product_id
+      } 
+    }).then(function(doc){
+      window.product_data = doc.docs;
+      console.log("product data: ", window.product_data);
+    }).then(function(){
+      const components = Template.getComponents();
+      const loadedComponents = Template.load(components);
+      console.log('loadedComponent: ', loadedComponents); // eslint-disable-line no-console
+    });
   }
-
-
-
   return {
     init: init
-    // getProduct: getProduct
   };
 })();
 
-document.addEventListener('mainReady', function() {
-  console.log('mainReady');
+// document.addEventListener('mainReady', function() {
+//   console.log('mainReady');
   PDP.init();
-});
-// document.addEventListener('[data-component=product-description]Ready', function() {
-//   console.log('[data-component=product-description]Ready');
-//   PDP.getProduct();
 // });

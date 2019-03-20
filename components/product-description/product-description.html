@@ -31,34 +31,33 @@
   </p>
   
   <form class="product-form">
-      <hr class="divider" />
-      <div class="product-rating">
-          <div class="product-rating__prefix">Rating</div>
-          <div class="product-rating__display" aria-hidden="true">
-            <div class="product-rating__stars">
-              <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
-              <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
-              <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
-              <span class="product-rating__star product-rating__star-half icon ion-md-star-half"></span>
-              <span class="product-rating__star product-rating__star-empty icon ion-md-star-outline"></span>
-              <span class="product-rating__value">3.5 out of 5</span>
-              <span class="product-rating__count">(156<span class="element-invisible"> reviews</span>)</span>
-            </div>
-          </div>
-          <a class="product-rating__view-button" href="#ratings">
-            <span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
-            View Rating and Reviews
-          </a>
+    <hr class="divider" />
+    <div class="product-rating">
+      <div class="product-rating__prefix">Rating</div>
+      <div class="product-rating__display" aria-hidden="true">
+        <div class="product-rating__stars">
+          <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+          <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+          <span class="product-rating__star product-rating__star-full icon ion-md-star"></span>
+          <span class="product-rating__star product-rating__star-half icon ion-md-star-half"></span>
+          <span class="product-rating__star product-rating__star-empty icon ion-md-star-outline"></span>
+          <span class="product-rating__value">3.5 out of 5</span>
+          <span class="product-rating__count">(156<span class="element-invisible"> reviews</span>)</span>
         </div>
-        <hr class="divider" />
-    <input type="hidden" name="name" value="Shirt Malo">
+      </div>
+      <a class="product-rating__view-button" href="#ratings">
+        <span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
+        View Rating and Reviews
+      </a>
+    </div>
+    <hr class="divider" />
     <div class="product-description__color-and-size">
 
       <fieldset class="product-description__color">
         <legend id="color" class="product-description__input-title">Select Color</legend>
         {{#each color}}
           <div class="product-description__radio-group">
-            <input type="radio" class="radio__input" value="{{this}}" name="color" id="color-{{this}}" aria-describedby="color">
+            <input type="radio" class="radio__input" value="{{this}}" name="color" id="color-{{this}}" aria-describedby="color" {{#if @first}}checked{{/if}}>
             <label for="color-{{this}}" class="radio__label">{{this}}</label>
           </div>
         {{/each}}
@@ -69,7 +68,7 @@
         <legend id="size" class="product-description__input-title">Select Size</legend>
         {{#each size}}
           <div class="product-description__radio-group">
-            <input type="radio" class="radio__input" value="{{this}}" name="size" id="size-{{this}}" aria-describedby="size">
+            <input type="radio" class="radio__input" value="{{this}}" name="size" id="size-{{this}}" aria-describedby="size" {{#if @first}}checked{{/if}}>
             <label for="size-{{this}}" class="radio__label">{{this}}</label>
           </div>
           {{/each}}
@@ -95,5 +94,9 @@
         <button class="product-actions__add-to-wishlist btn btn--favorites ion-ios-heart" type="button"><span class="sr-only">Add to Wishlist</span></button>
       </div>
     </div>
+    <input type="hidden" name="name" value="{{product_name}}">
+    <input type="hidden" name="price" value="{{price_sale}}" />
+    <input type="hidden" name="thumbnail_url" value="{{thumbnail_url}}" />
+    
   </form>
 </script>

@@ -1,5 +1,3 @@
-import PouchDB from '../../src/js/pouchdb';
-
 var AddToCart = function (element) {
   this.element = element;
   this.quantity = 1;
@@ -23,13 +21,16 @@ AddToCart.prototype = {
       quantity: this.element.querySelector('[name=quantity]').value,
       color: this.element.querySelector('[name=color]:checked').value,
       size: this.element.querySelector('[name=size]:checked').value,
-      price: 16.99
+      price: this.element.querySelector('[name=price]').value,
+      thumbnail_url: this.element.querySelector('[name=thumbnail_url]').value
+      //price: 16.99
     };
     const event = new CustomEvent('update:cart', {
       bubbles: true,
       detail: formData
     });
     document.dispatchEvent(event);
+    console.log("formData: ", formData);
   },
   increment: function () {
     this.quantity++;
@@ -45,29 +46,21 @@ AddToCart.prototype = {
   }
 };
 
-const urlParams = new URLSearchParams(window.location.search);
-const product_id = urlParams.get('product_id');
-var product_data;
 
-PouchDB.find({
-  include_docs: true,
-  selector: {
-    _id: product_id
-  } 
-}).then(function(doc){
-  product_data = doc.docs;
-  //console.log("product data: ", product_data);
-}).then(function(){
+var setUpProduct = function(){
   var productDescriptionTemplate = Handlebars.compile(document.getElementById('product-description-template').innerHTML);
-  var compiledHtml = productDescriptionTemplate(product_data[0]);
+  var compiledHtml = productDescriptionTemplate(window.product_data[0]);
   document.getElementById('product-description').innerHTML = compiledHtml;
-}).then(function(){
+
   var productForms = document.querySelectorAll('.product-form');
+  //console.log("productForms: ", productForms.length);
   productForms.forEach(function (productForm) {
     //console.log("productForms");
     new AddToCart(productForm);
   });
-});
+}
+
+setUpProduct();
 
 
 

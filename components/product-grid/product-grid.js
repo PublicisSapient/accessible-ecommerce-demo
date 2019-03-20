@@ -1,3 +1,5 @@
+import PouchDB from '../../src/js/pouchdb';
+
 var ProductGrid = function () {
 
   /* Product Grid Functions */
@@ -71,7 +73,7 @@ var ProductGrid = function () {
     var productName = product.querySelector('.product__heading').innerHTML;
     var productDetails = product.querySelector('.product__details');
 
-    addToCartButton.addEventListener("click", function (evt) {
+    addToCartButton.addEventListener('click', function (evt) {
       // toggle the UI to show the + - component
       quantityComponent.classList.add('show');
       addToCartButton.classList.add('hide');
@@ -90,3 +92,100 @@ var ProductGrid = function () {
     });
   }
 }
+
+var setUpProductGrid = function() {
+  getAllProducts();
+
+  var checkboxes = document.querySelectorAll('.productGrid__filters input[type=checkbox]');
+  checkboxes.forEach(function(element){
+    element.addEventListener('click', function(e){
+
+      //console.log("e", e.currentTarget);
+      // const currElem = e.currentTarget;
+      // const currVal = currElem.value;
+
+      var filter_names = ['color','size','brand'];
+      var selector_query = {};
+      selector_query.$and = [];
+      var color_query = {};
+      color_query.color = {};
+      color_query.color.$elemMatch = {};
+      color_query.color.$elemMatch.$in = [];
+      var size_query = {};
+      size_query.size = {};
+      size_query.size.$elemMatch = {};
+      size_query.size.$elemMatch.$in = [];
+      var brand_query = {};
+      brand_query.brand = {};
+      brand_query.brand.$in = [];
+      
+      filter_names.forEach(function(filter_name){
+        //console.log(filter_name);
+        var filters = document.querySelectorAll('input[name='+filter_name+']');
+        //console.log("filters: ",filters);
+        filters.forEach(function(filter){
+          //console.log("filter:", filter.checked);
+          if(filter.checked){
+            if(filter_name == 'color'){
+              color_query.color.$elemMatch.$in.push(filter.value);
+            }
+            if(filter_name == 'size'){
+              size_query.size.$elemMatch.$in.push(filter.value);
+            }
+            if(filter_name == 'brand'){
+              brand_query.brand.$in.push(filter.value);
+            }
+          }
+        });
+      });
+
+      if(color_query.color.$elemMatch.$in.length>0)
+        selector_query.$and.push(color_query);
+      if(size_query.size.$elemMatch.$in.length>0)
+        selector_query.$and.push(size_query);
+      if(brand_query.brand.$in.length>0)
+        selector_query.$and.push(brand_query);
+
+      //console.log(selector_query);
+      PouchDB.find({
+        include_docs: true,
+        selector: selector_query,
+        limit: 12
+        // selector: {
+        //   '$and': [{
+        //     color_query
+        //     'color': { 
+        //       '$elemMatch': {
+        //         '$in': ['blue']
+        //       }
+        //     }
+        //   },
+        //   {
+        //     'size': { 
+        //       '$elemMatch': {
+        //         '$in': ['large','small']
+        //       }
+        //     }
+        //   },
+        //   {
+        //     'brand': { 
+        //       '$in': ['brand1']
+        //     }
+        //   }]
+        // }
+      }).then(function(doc){
+        //console.log(doc.docs);
+        const productGridTemplate2 = Handlebars.compile(document.getElementById('product-grid-template-2').innerHTML);
+        var compiledHtml = productGridTemplate2({'product': doc.docs});
+        document.getElementById('product-grid-tiles').innerHTML = compiledHtml;
+      });
+    });
+  });
+}
+function getAllProducts() {
+  const productGridTemplate = Handlebars.compile(document.getElementById('product-grid-template').innerHTML);
+  var compiledHtml = productGridTemplate({'product': window.all_product_data.rows});
+  document.getElementById('product-grid-tiles').innerHTML = compiledHtml;
+}
+
+setUpProductGrid();
