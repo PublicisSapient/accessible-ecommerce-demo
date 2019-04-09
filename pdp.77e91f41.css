@@ -1,0 +1,11 @@
+.pdp .main-content {
+  display: flex; }
+
+.pdp .product-details, .pdp .gallery {
+  flex: 1 0 50%; }
+
+.pdp .gallery {
+  max-width: 50%; }
+
+
+/*# sourceMappingURL=/pdp.77e91f41.css.map */
