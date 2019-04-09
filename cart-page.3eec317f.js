@@ -9,4 +9,4 @@ var t,e=arguments[3];!function(e,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"2K4N"}],"qEEx":[function(require,module,exports) {
 "use strict";var t=require("../../components/cart/cart"),e=r(require("./cart-items.hbs"));function r(t){return t&&t.__esModule?t:{default:t}}!function(){var r=(0,t.getCartFromStorage)();document.querySelector('[data-template="cart-items"]').outerHTML=(0,e.default)(r)}();
 },{"../../components/cart/cart":"csLs","./cart-items.hbs":"3dGY"}]},{},["qEEx"], null)
-//# sourceMappingURL=accessible-ecommerce-demo/cart-page.3eec317f.js.map
+//# sourceMappingURL=cart-page.3eec317f.js.map
