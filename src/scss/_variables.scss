@@ -1,0 +1,68 @@
+// VARIABLES
+// Note because this is a file that is included across multiple scss files, don't include anything that will render out css classes
+// Also, use single line comments so that they'll be stripped out when compiling
+
+// COLOURS
+$white: #ffffff;
+$black: #1f1f1f;
+
+$light-grey: #e7e7e7;
+$grey: #d8d8d8;
+$yet-another-grey: #b5b5b5;
+$medium-grey: #9b9b9b;
+
+$rose: #b94650;
+$dark-rose: #90373d;
+// $light-grey: #F2F2F2;
+$pure-black: #000000;
+$warm-grey: #f0f2f2;
+$heart-red: #c30007;
+$pink: #fabfc1;
+$beige: #f4f0ec;
+$blue: #3575ff;
+$dark-blue: #2a5fd2;
+$dark-grey: #333333;
+$black-transparent: rgba(25, 25, 30, 0.75);
+
+$error-red: firebrick;
+
+// Breakpoints
+$mobile: 500px;
+$phablet: 760px;
+$tablet: 1024px;
+$desktop: 1200px;
+$max-width: 1280px;
+
+// Convenience breakpoints
+$logo-collapse: 900px;
+$footer-collapse: 560px;
+$menu-collapse: $phablet;
+$filters-collapse: $phablet;
+$pagination-collapse: $phablet;
+
+$grid-unit: 6px;
+
+$input-size: 24px;
+
+$font-sans: Verdana, Geneva, Tahoma, sans-serif;
+
+// =========================================== FONT SIZES
+
+// We're using REM based on a 10px root value set on html
+// Makes the maths easy, e.g.: 1.6rem = 16px
+// body is set to 1.6rem in global.scss
+
+$font-xxl: 2.4rem;
+$font-xl: 2rem;
+$font-lg: 1.8rem;
+$font-md: 1.6rem;
+$font-sm: 1.4rem;
+$font-xs: 1.2rem;
+
+// =========================================== Z - INDEXES
+
+// Sometimes you want an element to be above the menu, or above a modal, tooltip, etc
+// Use these defined levels and add +1
+// This prevents the z-index nuclear arms race with values like z-index: 9999999
+
+$layer-menu: 100;

@@ -1,0 +1,78 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.page-plp {
+  .main-content {
+    padding-bottom: 72px;
+    border-bottom: 1px solid $grey;
+    margin-bottom: 24px;
+    @media only screen and (min-width: $filters-collapse) {
+      display: grid;
+      grid-column-gap: 24px;
+      grid-template-columns: 190px 1fr;
+    }
+
+    @media only screen and (min-width: 900px) {
+      grid-template-columns: between(190px, 250px, 900px, $max-width) 1fr;
+      grid-column-gap: between(24px, 50px, 900px, $max-width);
+      padding-right: between(0px, 50px, 900px, $max-width);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      grid-template-columns: 250px 1fr;
+      grid-column-gap: 50px;
+      padding-right: 50px;
+    }
+  }
+  .template-heading {
+    grid-column: 1 / span 2;
+  }
+  .product-filters {
+    display: none;
+    grid-row: 2 / 6;
+    align-self: start;
+  }
+  .product-grid {
+    margin-bottom: 40px;
+  }
+  .product-sort {
+    display: none;
+    grid-column: 2 / span 1;
+    margin-bottom: 48px;
+  }
+
+  .mobile-filters {
+    margin: 0 -24px 24px;
+    padding: 0 24px;
+    background: #fff;
+    @include soft-shadow;
+    display: flex;
+  }
+  .mobile-filter {
+    flex: 1;
+    padding: 16px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: $font-md;
+    font-weight: bold;
+    display: flex;
+    &:not(:first-child) {
+      border-left: 1px solid $medium-grey;
+    }
+    .icon {
+      margin-left: auto;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  @media only screen and (min-width: $filters-collapse) {
+    .mobile-filters {
+      display: none;
+    }
+    .product-filters,
+    .product-sort {
+      display: block;
+    }
+  }
+}
