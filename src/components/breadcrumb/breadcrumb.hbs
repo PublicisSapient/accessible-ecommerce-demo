@@ -1,0 +1,17 @@
+<div class="container">
+    <section>
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol>
+                {{#each breadcrumbs}}
+                <li>
+                    {{#if link}}
+                    <a href="{{link}}">{{label}}</a>
+                    {{else}}
+                    <a href="./test.html" aria-current="page">{{label}}</a>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ol>
+        </nav>
+    </section>
+</div>

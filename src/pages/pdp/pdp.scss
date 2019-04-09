@@ -1,0 +1,11 @@
+.pdp{
+  .main-content{
+    display: flex;
+  }
+  .product-details, .gallery{
+    flex: 1 0 50%;
+  }
+  .gallery{
+    max-width: 50%;
+  }
+}

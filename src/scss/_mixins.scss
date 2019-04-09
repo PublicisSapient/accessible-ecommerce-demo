@@ -1,0 +1,30 @@
+// MIXINS
+// Note because this is a file that is included across multiple scss files, don't include anything that will render out css classes
+// Also, use single line comments so that they'll be stripped out when compiling
+
+@import './variables';
+
+@mixin flex-column($columns: 2) {
+  width: calc(100% / #{$columns} - #{$grid-unit * 2});
+}
+
+@mixin medium-shadow {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+@mixin soft-shadow {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+@mixin component-panel {
+  background: #fff;
+  border-radius: 4px;
+  @include soft-shadow;
+}
+
+// Linear interpolation
+// https://css-tricks.com/between-the-lines/
+@function between($from, $to, $fromWidth, $toWidth) {
+  $slope: ($to - $from) / ($toWidth - $fromWidth);
+  $base: $from - $slope * $fromWidth;
+
+  @return calc(#{$base} + #{100vw * $slope});
+}

@@ -1,0 +1,47 @@
+<p class="mini-cart__total-quantity">{{cartItemCount}} {{cartItemsLabel}}</p>
+<ul class="mini-cart__item-list">
+  {{#each cartItems}}
+  <li class="mini-cart__item">
+    <a class="mini-cart__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 1, Item unit price: $36.95, Item total price: $36.95">
+      <img class="mini-cart__image" alt="" src="{{thumbnail_url}}">
+      <div class="mini-cart__description">
+        <p class="mini-cart__item-title">{{product_name}}</p>
+        <dl class="mini-cart__details">
+          <div class="mini-cart__detail">
+            <dt>Price</dt>
+            <dd class="detail__price">${{price_sale}}</dd>
+          </div>
+          <div class="mini-cart__detail">
+            <dt>Color</dt>
+            <dd>{{color}}</dd>
+          </div>
+          <div class="mini-cart__detail">
+            <dt>Size</dt>
+            <dd>{{size}}</dd>
+          </div>
+        </dl>
+        <dl class="mini-cart__details">
+          <div class="mini-cart__detail">
+            <dt>Qty</dt>
+            <dd>{{quantity}}</dd>
+          </div>
+          <div class="mini-cart__detail">
+            <dt>Total</dt>
+            <dd class="detail__price">${{total_price}}</dd>
+          </div>
+        </dl>
+      </div>
+    </a>
+    <div class="mini-cart__controls">
+        <button class="mini-cart__control btn--link" data-remove="{{cart_id}}">Remove</button>
+        <a class="mini-cart__control btn--link" href="../pdp/index.html?product_id={{product_id}}">Edit</a>
+        <button class="mini-cart__control btn--link" >Save</button>
+    </div>
+  </li>
+  {{/each}}
+</ul>
+
+<div class="mini-cart__summary-subtotal">
+  <p class="mini-cart__subtotal-title">Estimated Total</p>
+  <p class="mini-cart__subtotal">${{cartSubtotal}}</p>
+</div>

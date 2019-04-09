@@ -1,0 +1,94 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+/* ============================== FOOTER */
+.footer {
+  background: $black;
+  color: $white;
+	padding: 32px 0;
+  font-size: 1.4rem;
+
+  &__main-links{
+    flex: 0 0 50%;
+  }
+  &__main-link-item{
+    display: block;
+    margin-bottom: 16px;
+  }
+  &__main-link{
+    display: block;
+    font-size: $font-lg;
+    font-weight: bold;
+  }
+
+	.row{
+		justify-content: space-between;
+	}
+
+	a {
+    color: $white;
+		text-decoration: none;
+		margin-bottom: 8px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  label,
+  button {
+    display: block;
+  }
+
+  &__link-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+
+    li {
+      min-width: 124px;
+      margin-right: 24px;
+    }
+
+    textarea {
+      margin: 17px 0;
+      width: 296px;
+      height: 72px;
+      resize: none;
+      background: transparent;
+
+      @media only screen and (max-width:$footer-collapse) {
+        width: auto;
+      }
+    }
+
+    @media only screen and (max-width:$footer-collapse) {
+      display: block;
+    }
+  }
+
+  &__secondary-links {
+    font-size: $font-xs;
+    font-weight: normal;
+  }
+  &__secondary-link-item{
+    display: inline-block;
+  }
+}
+.feedback{
+  flex: 0 1 420px;
+  &__heading{
+    margin-top: 0;
+    font-size: $font-lg;
+    font-weight: bold;
+  }
+  &__copy{
+    font-size: $font-sm;
+    line-height: 2.2rem;
+    @media only screen and (min-width:$footer-collapse+1) {
+      margin-bottom: 32px;
+    }
+  }
+}
