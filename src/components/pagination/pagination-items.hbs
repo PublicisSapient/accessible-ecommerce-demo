@@ -1,0 +1,18 @@
+<li class="pagination__list-item">
+  <button type="button" aria-label="Previous Page" {{isDisabled prevDisabled}} data-go-to-page="{{prevPage}}" class="pagination__nav pagination__prev btn btn--black-inverted">
+    <svg class="icon--pagination-btn"><use xlink:href="../sprite.svg#chevron"></use></svg>
+    <span class="pagination__nav-label">Previous</span>
+  </button>
+</li>
+{{#each pages}}
+<li class="pagination__list-item">
+  <button type="button" class="pagination__index {{activeClass isCurrent}}" aria-label="Current Page {{label}}" data-go-to-page="{{label}}">
+    {{label}}
+  </button>
+</li>
+{{/each }}
+<li class="pagination__list-item">
+  <button type="button" aria-label="Next Page" {{isDisabled nextDisabled}} data-go-to-page="{{nextPage}}" class="pagination__nav pagination__next btn btn--black-inverted">
+    <span class="pagination__nav-label">Next</span><svg class="icon--pagination-btn rotate-180"><use xlink:href="../sprite.svg#chevron"></use></svg>
+  </button>
+</li>

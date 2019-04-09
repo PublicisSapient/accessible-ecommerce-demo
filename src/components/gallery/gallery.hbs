@@ -1,0 +1,65 @@
+<div class="gallery" data-component="gallery">
+  <div class="gallery__main-image__container">
+    <div class="gallery__main-image__inner-container">
+      <img id="gallery__main-image" src="https://source.unsplash.com/6cHumpSxTvs/583x645" alt="" />
+    </div>
+    <div class="gallery__main-image__zoom">
+      <button data-modal-show="my-accessible-modal" aria-label="Enlarge the Image" class="btn btn--secondary ion-ios-expand"><span class="sr-only">enlarge</span></button>
+      <div class="gallery__main-image__zoom-group">
+        <span class="gallery__zoom-icon ion-ios-search"></span>
+        <button id="gallery__minimize" class="btn btn--black btn--icon gallery__minimize" disabled aria-label="Decrease size of the image to 100%">
+          <span class="icon ion-ios-remove"></span><span class="sr-only">Decrease size</span>
+        </button>
+        <button id="gallery__maximize" class="gallery__maximize btn btn--black btn--icon" aria-label="Increase size of the image to 150%">
+          <span class="icon ion-ios-add"></span><span class="sr-only">Increase size</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery__thumbnail-container">
+    <button id="gallery__thumbnail-container__scroll-left" class="btn btn--black btn--icon thumbnail__scroll-left" aria-hidden="false" tabindex="-1" disabled data-scroll-dir="right">
+      <span class="icon ion-ios-arrow-back"></span>
+    </button>
+    <ul class="gallery__thumbnail-list">
+      <li class="gallery__thumbnail-list-item">
+        <button class="selected">
+          <img src="https://source.unsplash.com/6cHumpSxTvs/105x105" data-main-image-url="https://source.unsplash.com/6cHumpSxTvs/583x645" alt="Display product view one">
+        </button>
+      </li>
+      <li class="gallery__thumbnail-list-item">
+        <button>
+          <img src="https://source.unsplash.com/bhLMUIlIhxk/105x105" data-main-image-url="https://source.unsplash.com/bhLMUIlIhxk/583x645" alt="Display product view two">
+        </button>
+      </li>
+      <li class="gallery__thumbnail-list-item">
+        <button>
+          <img src="https://source.unsplash.com/k1QPo3_mZr8/105x105" data-main-image-url="https://source.unsplash.com/k1QPo3_mZr8/583x645" alt="Display product view three">
+        </button>
+      </li>
+      <li class="gallery__thumbnail-list-item">
+        <button>
+          <img src="https://source.unsplash.com/d_oa5biTJwU/105x105" data-main-image-url="https://source.unsplash.com/d_oa5biTJwU/583x645" alt="Display product view four">
+        </button>
+      </li>
+      <li class="gallery__thumbnail-list-item">
+        <button>
+          <img src="https://source.unsplash.com/ufuk99QfQTg/105x105" data-main-image-url="https://source.unsplash.com/ufuk99QfQTg/583x645" alt="Display product view five">
+        </button>
+      </li>
+      <li class="gallery__thumbnail-list-item">
+        <button>
+          <img src="https://source.unsplash.com/ufuk99QfQTg/105x105" data-main-image-url="https://source.unsplash.com/ufuk99QfQTg/583x645" alt="Display product view five">
+        </button>
+      </li>
+      <li class="gallery__thumbnail-list-item">
+        <button>
+          <img src="https://source.unsplash.com/ufuk99QfQTg/105x105" data-main-image-url="https://source.unsplash.com/ufuk99QfQTg/583x645" alt="Display product view five">
+        </button>
+      </li>
+    </ul>
+    <button id="gallery__thumbnail-container__scroll-right" class="btn btn--black btn--icon thumbnail__scroll-right" aria-hidden="false" tabindex="-1" data-scroll-dir="left">
+      <span class="icon ion-ios-arrow-forward"></span>
+    </button>
+  </div>
+</div>

@@ -1,34 +1,86 @@
-export function getFocusableChildren(node) {
-    var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex="-1"])'];
+import Handlebars from 'handlebars/dist/handlebars.runtime';
 
-    return $$(focusableElements.join(','), node).filter(function (child) {
-        return !!(child.offsetWidth || child.offsetHeight || child.getClientRects().length);
+export function handlebarsHelper(helperName, helperFunc){
+  return Handlebars.registerHelper(helperName, helperFunc);
+}
+export function handlebarsPartial(partialName, partialTemplate){
+  return Handlebars.registerPartial(partialName, partialTemplate);
+}
+
+export function activeElementMatches(matchList){
+  // the active element (with focus) isn't available yet when the blur event fires
+  // so we kick this function down the stack a little with requestAnimationFrame
+  return new Promise(function(resolve) {
+    window.requestAnimationFrame(function(){
+      const activeFocusElement = document.activeElement;
+      resolve(activeFocusElement.matches(matchList));
     });
+  });
+}
+
+/**
+ * Breaks a long array into an array of subset arrays of specified size
+ * @param {array} items
+ * @param {number} size - number of items to put in each 'chunk'
+ */
+export function chunk(items, size){
+  if (size === 0) return [[...items]];
+  let chunked = [];
+  let index = 0;
+  while (index < items.length){
+    chunked.push(items.slice(index, index + size));
+    index +=size;
+  }
+  return chunked;
+}
+
+/**
+ * Takes an array and returns a randomized subset array
+ * @param {array} items
+ * @param {number} length - Size of subset array to return
+ * @returns {array}
+ */
+export function getRandomSubset(items, length){
+  let tempItems = [...items];
+  let randomSubset = [];
+  for (let i = 0; i<length; i++){
+    let randomIndex = Math.floor(Math.random()*tempItems.length);
+    randomSubset.push(tempItems.splice(randomIndex, 1)[0]);
+  }
+  return randomSubset;
+}
+
+export function getFocusableChildren(node) {
+  var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex="-1"])'];
+
+  return $$(focusableElements.join(','), node).filter(function (child) {
+    return !!(child.offsetWidth || child.offsetHeight || child.getClientRects().length);
+  });
 }
 
 // Helper function to get all nodes in context matching selector as an array
 export function $$(selector, context) {
-    return Array.prototype.slice.call((context || document).querySelectorAll(selector) || []);
+  return Array.prototype.slice.call((context || document).querySelectorAll(selector) || []);
 }
 
 // Helper function trapping the tab key inside a node
 export function trapTabKey(node, event) {
-    var focusableChildren = getFocusableChildren(node);
-    var focusedItemIndex = focusableChildren.indexOf(document.activeElement);
+  var focusableChildren = getFocusableChildren(node);
+  var focusedItemIndex = focusableChildren.indexOf(document.activeElement);
 
-    if (event.shiftKey && focusedItemIndex === 0) {
-        focusableChildren[focusableChildren.length - 1].focus();
-        event.preventDefault();
-    } else if (!event.shiftKey && focusedItemIndex === focusableChildren.length - 1) {
-        focusableChildren[0].focus();
-        event.preventDefault();
-    }
+  if (event.shiftKey && focusedItemIndex === 0) {
+    focusableChildren[focusableChildren.length - 1].focus();
+    event.preventDefault();
+  } else if (!event.shiftKey && focusedItemIndex === focusableChildren.length - 1) {
+    focusableChildren[0].focus();
+    event.preventDefault();
+  }
 }
 
 // Helper function to focus first focusable item in node
 export function setFocusToFirstItem(node) {
-    var focusableChildren = getFocusableChildren(node);
-    if (focusableChildren.length) focusableChildren[0].focus();
+  var focusableChildren = getFocusableChildren(node);
+  if (focusableChildren.length) focusableChildren[0].focus();
 }
 
 /**
@@ -36,11 +88,11 @@ export function setFocusToFirstItem(node) {
  * @param  {HTMLElement} element
  */
 export function getElementIndex(element) {
-    var index = 0;
-    while ((element = element.previousElementSibling)) {
-        ++index;
-    }
-    return index;
+  var index = 0;
+  while ((element = element.previousElementSibling)) {
+    ++index;
+  }
+  return index;
 }
 
 export function normalizeName(str) {

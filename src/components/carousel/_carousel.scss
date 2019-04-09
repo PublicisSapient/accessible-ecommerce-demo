@@ -1,0 +1,56 @@
+@import '../../scss/variables';
+/* ============================== CAROUSEL  */
+.carousel-wrapper {
+	margin-bottom: 40px;
+	box-sizing: border-box;
+
+	h2 {
+    font-size: $font-xxl;
+    font-weight: bold;
+		margin-bottom: 8px;
+	}
+}
+
+.carousel {
+	max-width: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+
+	&__arrow {
+		cursor: pointer;
+		&:disabled{
+			cursor: not-allowed;
+			opacity: 0.25;
+			color:$black;
+		}
+		&--right{
+			.icon{
+				transform: rotate(180deg);
+			}
+		}
+	}
+	&__container {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	&__items {
+		list-style: none;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-flow: row nowrap;
+		padding-left: 0;
+		transition: all 1s;
+		transform: translateX(0px);
+	}
+	&__header{
+		display: inline-block;
+	}
+	.card {
+		padding: 10px;
+		min-width: 270px;
+	}
+}

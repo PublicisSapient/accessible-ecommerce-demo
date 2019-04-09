@@ -1,0 +1,9 @@
+<ul class="active-filters">
+  {{#each activeFilters}}
+    <li class="active-filter">
+      <button class="active-filter__remove-btn" data-remove-filter="{{this.filterId}}">
+        <svg class="icon--close-btn"><use xlink:href="../sprite.svg#close"></use></svg> {{this.label}}
+      </button>
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,28 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.product-sort {
+  @include component-panel;
+  padding: 24px;
+  &__options{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__option{
+    flex: 0 1 33%;
+    &:not(:first-child){
+      margin-left: 24px;
+    }
+  }
+  .heading {
+    display: inline;
+    margin-right: 8px;
+  }
+}
+
+
+.sort {
+  &__showing-count{
+    font-size: $font-sm;
+  }
+}
