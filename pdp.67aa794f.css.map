@@ -1,0 +1,1 @@
+{"version":3,"sources":["pdp/pdp.scss"],"names":[],"mappings":"AAAA,mBAEI,YAAa,CAFjB,oCAKI,YAAa,CALjB,cAQI,aAAc","file":"pdp.67aa794f.css","sourceRoot":"../src/pages","sourcesContent":[".pdp{\n  .main-content{\n    display: flex;\n  }\n  .product-details, .gallery{\n    flex: 1 0 50%;\n  }\n  .gallery{\n    max-width: 50%;\n  }\n}"]}
