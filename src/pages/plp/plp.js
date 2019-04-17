@@ -5,7 +5,7 @@ import * as productSort from '../../components/product-sort/product-sort';
 import * as productGrid from '../../components/product-grid/product-grid';
 import * as pagination from '../../components/pagination/pagination';
 import * as carousel from '../../components/product-carousel/product-carousel';
-import { chunk, getRandomSubset } from '../../js/utils';
+import { chunk, getRandomSubset, setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
 
 (function plpPage() {
@@ -75,12 +75,13 @@ import * as productDB from '../../js/pouchdb';
   }
 
   function fetchComponentData() {
-    productDB.query(['rating'], currentQuery).then(function(result) {
+    productDB.query(['rating'], currentQuery).then(function (result) {
       updateAllProducts(result);
       const carouselItems = getRandomSubset(allProducts, CAROUSEL_ITEM_COUNT);
       carousel.update(carouselItems);
     });
   }
 
+  setPageTitle(['Women', 'Women’s Tops']);
   productDB.init().then(fetchComponentData);
 })();

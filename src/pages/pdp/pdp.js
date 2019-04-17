@@ -2,6 +2,7 @@ import * as breadcrumb from '../../components/breadcrumb/breadcrumb';
 import * as productDetails from '../../components/product-details/product-details';
 import * as productGallery from '../../components/gallery/gallery';
 import * as productForm from '../../components/product-form/product-form';
+import { setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
 
 (function pdpPage() {
@@ -14,7 +15,7 @@ import * as productDB from '../../js/pouchdb';
   }
 
   function loadProductData() {
-    productDB.getSingleRow(product_id).then(function(res) {
+    productDB.getSingleRow(product_id).then(function (res) {
       const productData = res.docs[0];
       const breadcrumbs = [
         { label: 'Home', link: '../index.html' },
@@ -22,6 +23,7 @@ import * as productDB from '../../js/pouchdb';
         { label: productData.subcategory, link: '../plp/index.html' },
         { label: productData.product_name }
       ];
+      setPageTitle(['Women', 'Women’s Tops', productData.product_name]);
       breadcrumb.init(breadcrumbs);
       productDetails.init(productData);
       productGallery.init(productData);
