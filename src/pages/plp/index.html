@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-		<title>Document</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-		<link rel="stylesheet" href="../../styles.scss" />
-		<link rel="stylesheet" href="./plp.scss" />
-	</head>
+    <title>The Accessible eStore</title>
 
-	<body class="page-plp">
-		<header data-template="global-header"></header>
-		<div data-template="breadcrumb"></div>
-		<div class="container">
-			<section id="content" class="main-content">
-				<h1 id="page-title" class="template-heading">Women’s Tops</h1>
-				<div class="mobile-filters">
-					<button class="mobile-filter" type="button" data-modal="filters">
-						Filters (6)
-						<svg class="icon icon--add" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="../../assets/sprite.svg#add"></use></svg>
-					</button>
-					<button class="mobile-filter" type="button" data-modal="sort">
-						Sort
-						<svg class="icon icon--add" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="../../assets/sprite.svg#add"></use></svg>
-					</button>
-				</div>
-				<div data-template="filters"></div>
-				<div data-template="sort"></div>
-				<div data-template="grid"></div>
-				<div data-template="pagination"></div>
-			</section>
-			<section data-template="carousel"></section>
-		</div>
-		<footer data-template="footer"></footer>
-		<div data-template="modal"></div>
-		<script src="../../scripts.js"></script>
-		<script src="./plp.js"></script>
-	</body>
+    <link rel="stylesheet" href="../../styles.scss" />
+    <link rel="stylesheet" href="./plp.scss" />
+</head>
+
+<body class="page-plp">
+    <header data-template="global-header"></header>
+    <div data-template="breadcrumb"></div>
+    <div class="container">
+        <section id="content" class="main-content">
+            <h1 id="page-title" class="template-heading">Women’s Tops</h1>
+            <div class="mobile-filters">
+                <button class="mobile-filter" type="button" data-modal="filters">
+                    Filters (6)
+                    <svg class="icon icon--add" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="../../assets/sprite.svg#add"></use>
+                    </svg>
+                </button>
+                <button class="mobile-filter" type="button" data-modal="sort">
+                    Sort
+                    <svg class="icon icon--add" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="../../assets/sprite.svg#add"></use>
+                    </svg>
+                </button>
+            </div>
+            <div data-template="filters"></div>
+            <div data-template="sort"></div>
+            <div data-template="grid"></div>
+            <div data-template="pagination"></div>
+        </section>
+        <section data-template="carousel"></section>
+    </div>
+    <footer data-template="footer"></footer>
+    <div data-template="modal"></div>
+    <script src="../../scripts.js"></script>
+    <script src="./plp.js"></script>
+</body>
+
 </html>

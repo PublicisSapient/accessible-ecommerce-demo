@@ -1,17 +1,17 @@
 import Handlebars from 'handlebars/dist/handlebars.runtime';
 
-export function handlebarsHelper(helperName, helperFunc){
+export function handlebarsHelper(helperName, helperFunc) {
   return Handlebars.registerHelper(helperName, helperFunc);
 }
-export function handlebarsPartial(partialName, partialTemplate){
+export function handlebarsPartial(partialName, partialTemplate) {
   return Handlebars.registerPartial(partialName, partialTemplate);
 }
 
-export function activeElementMatches(matchList){
+export function activeElementMatches(matchList) {
   // the active element (with focus) isn't available yet when the blur event fires
   // so we kick this function down the stack a little with requestAnimationFrame
-  return new Promise(function(resolve) {
-    window.requestAnimationFrame(function(){
+  return new Promise(function (resolve) {
+    window.requestAnimationFrame(function () {
       const activeFocusElement = document.activeElement;
       resolve(activeFocusElement.matches(matchList));
     });
@@ -23,13 +23,13 @@ export function activeElementMatches(matchList){
  * @param {array} items
  * @param {number} size - number of items to put in each 'chunk'
  */
-export function chunk(items, size){
+export function chunk(items, size) {
   if (size === 0) return [[...items]];
   let chunked = [];
   let index = 0;
-  while (index < items.length){
+  while (index < items.length) {
     chunked.push(items.slice(index, index + size));
-    index +=size;
+    index += size;
   }
   return chunked;
 }
@@ -40,11 +40,11 @@ export function chunk(items, size){
  * @param {number} length - Size of subset array to return
  * @returns {array}
  */
-export function getRandomSubset(items, length){
+export function getRandomSubset(items, length) {
   let tempItems = [...items];
   let randomSubset = [];
-  for (let i = 0; i<length; i++){
-    let randomIndex = Math.floor(Math.random()*tempItems.length);
+  for (let i = 0; i < length; i++) {
+    let randomIndex = Math.floor(Math.random() * tempItems.length);
     randomSubset.push(tempItems.splice(randomIndex, 1)[0]);
   }
   return randomSubset;
@@ -97,4 +97,14 @@ export function getElementIndex(element) {
 
 export function normalizeName(str) {
   return str.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+}
+/**
+ * Set the document title
+ * @param  {Array} [terms] - list of terms to add after the site name
+ */
+export function setPageTitle(terms) {
+  const siteName = 'The Accessible eStore';
+  document.title = (terms)
+    ? `${siteName}, ${terms.join(', ')}`
+    : siteName;
 }
