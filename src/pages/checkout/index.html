@@ -11,15 +11,76 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="../../styles.scss">
+    <link rel="stylesheet" href="./checkout.scss">
 </head>
 
-<body class="pdp">
+<body class="checkout">
     <header class="navigation" data-template="global-header"></header>
     <div class="main">
         <div data-component="breadcrumb"></div>
         <div class="container">
-            <section id="content" class="main-content">
+            <section class="checkout__sign-in-checkout">
                 <h1 class="template-heading">Checkout</h1>
+                <span>* Required</span>
+                <h2>Contact Information</h2>
+                <hr />
+                <form action="/sign-in" class="checkout__checkout-form">
+                    <span>Sign In</span>
+                    <hr class="hr-2" />
+                    <label for="sign-in-email">Email *</label>
+                    <input name="email" id="sign-in-email" type="text" value="">
+                    <label for="sign-in-password">Password *</label>
+                    <input name="password" id="sign-in-password" type="password" value="">
+                    <button class="" type="submit">Sign In</button>
+                </form>
+                <span>Or Guest Information</span>
+                <hr class="hr-2" />
+                <label for="guest-sign-in-email">Email *</label>
+                <input name="guest-sign-in-email" id="guest-sign-in-email" type="text" value="">
+                <button class="">Proceed to Shipping Information</button>
+            </section>
+            <section class="shipping-information">
+                <form action="/">
+                    <h2>Shipping Information</h2>
+                    <hr />
+                    <span>Shipping Address</span>
+                    <hr class="hr-2" />
+                    <label for="first-name">First Name *</label>
+                    <input name="first-name" id="first-name" type="text" value="" required>
+                    <label for="last-name">Last Name *</label>
+                    <input name="last-name" id="last-name" type="text" value="" required>
+                    <label for="address">Address *</label>
+                    <input name="address" id="address" type="text" value="" required>
+                    <label for="apt-suite">Apt / Suite</label>
+                    <input name="apt-suite" id="apt-suite" type="text" value="">
+                    <label for="city">City *</label>
+                    <input name="city" id="city" type="text" value="">
+                    <label for="province">Province *</label>
+                    <div class="form-row">
+                        <select id="province" name="province" required>
+                            <option value="" selected>Select a Province</option>
+                            <option value="ab">Alberta</option>
+                            <option value="bc">British Columbia</option>
+                            <option value="mb">Manitoba</option>
+                            <option value="nb">New Brunswick</option>
+                            <option value="nl">Newfoundland and Labrador</option>
+                            <option value="ns">Nova Scotia</option>
+                            <option value="on">Ontario</option>
+                            <option value="pe">Prince Edward Island</option>
+                            <option value="qc">Quebec</option>
+                            <option value="sk">Saskatchewan</option>
+                            <option value="nt">Northwest Territories</option>
+                            <option value="nu">Nunavut</option>
+                            <option value="yt">Yukon</option>
+                        </select>
+                        <label for="postal-code">Postal Code</label>
+                        <input type="text" value="" id="postal-code" name="postal-code" required>
+                    </div>
+                    <label for="phone-number">Phone Number *</label>
+                    <input type="text" value="" id="phone-number" name="phone-number" required>
+                </form>
             </section>
         </div>
     </div>
