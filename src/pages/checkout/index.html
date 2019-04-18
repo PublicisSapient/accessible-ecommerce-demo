@@ -21,7 +21,7 @@
     <main>
         <div data-component="breadcrumb"></div>
         <div class="container checkout">
-            <section class="checkout__sign-in-checkout">
+            <section class="checkout__sign-in sign-in">
                 <header>
                     <h1 class="template-heading">Checkout</h1>
                     <span>* Required</span>
@@ -48,7 +48,7 @@
                     <button class="btn btn--black guest-sign-in__submit">Proceed to Shipping Information</button>
                 </form>
             </section>
-            <section class="shipping-information">
+            <section class="checkout__shipping-information shipping-information">
                 <form action="/" class="checkout__shipping-form shipping-form">
                     <h2>Shipping Information</h2>
                     <hr />
@@ -92,12 +92,26 @@
                         </div>
                         <div class="shipping-form__column shipping-form__column--3">
                             <label for="postal-code">Postal Code</label>
-                            <input type="text" value="" id="postal-code" name="postal-code" data-required="true">
+                            <input
+                                type="text"
+                                value=""
+                                id="postal-code"
+                                name="postal-code"
+                                data-required="true"
+                                data-input-type="postal-code"
+                                pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+                            >
                             <span class="error-msg">Please input a postal code</span>
                         </div>
                     </div>
                     <label for="phone-number">Phone Number *</label>
-                    <input type="text" value="" id="phone-number" name="phone-number" data-required="true">
+                    <input
+                        type="tel"
+                        id="phone-number"
+                        name="phone-number"
+                        data-required="true"
+                        data-input-type="phone-number"
+                    >
                     <span class="error-msg">Please enter a phone number</span>
                     <h3>Shipping Method</h3>
                     <hr class="hr-2" />
@@ -122,6 +136,55 @@
                         $20.00 Canada Post - Priority Delivery. Delivers in 24 hours.
                     </label>
                     <button class="btn btn--black shipping-form__submit">Proceed to Payment Information</button>
+                </form>
+            </section>
+            <section class="checkout__payment-information payment-information">
+                <form action="/" class="checkout__payment-form payment-form">
+                    <h2>Payment Information</h2>
+                    <hr />
+                    <h3>Card Information</h3>
+                    <hr class="hr-2" />
+                    <label>Accepted Cards</label>
+                    <img height="20">
+                    <img height="20">
+                    <img height="20">
+                    <img height="20">
+                    <label for="credit-card-number">Credit Card Number *</label>
+                    <input
+                        type="text"
+                        id="credit-card-number"
+                        name="credit-card-number"
+                        data-required="true"
+                        data-input-type="credit-card-number"
+                    >
+                    <span class="error-msg">Please enter a valid credit card number</span>
+                    <div class="payment-information__form-row">
+                        <div class="payment-information__column">
+                            <label for="expiry-date">Expiry Date (MM/YY) *</label>
+                            <input
+                                type="text"
+                                id="expiry-date"
+                                name="expiry-date"
+                                data-required="true"
+                                data-input-type="expiry-date"
+                            >
+                            <span class="error-msg">Please enter a valid expiry date</span>
+                        </div>
+                        <div class="payment-information__column">
+                            <label for="security-code">Security Code *</label>
+                            <input
+                                type="text"
+                                id="security-code"
+                                name="security-code"
+                                data-required="true"
+                                data-input-type="ccv"
+                            >
+                            <span class="error-msg">Please enter a valid security code</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn--black payment-information__submit">
+                        Finish and Review
+                    </button>
                 </form>
             </section>
         </div>

@@ -16,6 +16,9 @@
 
     + .error-msg {
       display: block;
+      margin-top: 10px;
+      color: red;
+      font-size: 12px;
     }
   }
 }
@@ -25,7 +28,8 @@
 .checkout {
   &__sign-in-form,
   &__guest-sign-in,
-  &__shipping-form {
+  &__shipping-form,
+  &__payment-form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -58,11 +62,7 @@
   }
 
   input {
-    &[type=text],
-    &[type=password],
-    &[type=email] {
-      @include inputField;
-    }
+    @include inputField;
   }
 
   select {
@@ -76,6 +76,20 @@
     line-height: 18px;
     display: inline-block;
     padding: 1.333rem 0 0.666rem;
+  }
+
+  .payment-information {
+    &__form-row {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 250px;
+      grid-column-gap: 50px;
+    }
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .shipping-form {
@@ -115,6 +129,10 @@
           &:after {
             display: block;
           }
+        }
+
+        &:focus ~ .custom-radio {
+          outline: 1px dotted currentColor;
         }
 
       }
