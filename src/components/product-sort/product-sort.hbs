@@ -1,32 +1,36 @@
 <section class="product-sort" id="product-sort" data-component="sort">
-  <h2 class="heading heading--section">Sort</h2>
-  <span class="sort__showing-count" data-template="showing-count"></span>
-  <div class="product-sort__options">
-    <div class="product-sort__option">
-      <h3 class="form--label"><label for="sortBy">Sort By</label></h3>
-      <select class="sort-menu__select select--block" data-js="update-sort" name="sort-by" id="sortBy">
-        <option value="rating:desc">Newest</option>
-        <option value="price_sale:desc">Price high to low</option>
-        <option value="price_sale:asc">Price low to high</option>
-      </select>
-      <a id="skip-to-sort" href="#skip-to-products-from-sort" class="skip-link">Skip to products</a>
+    <h2 class="heading heading--section">Sort</h2>
+    <span class="sort__showing-count" aria-live="polite" aria-atomic="true">
+        Showing
+        <span data-js="showing-count"></span>
+        <span class="sr-only">products</span>
+    </span>
+    <div class="product-sort__options">
+        <div class="product-sort__option">
+            <h3 class="form--label"><label for="sortBy">Sort By</label></h3>
+            <select class="sort-menu__select select--block" data-js="update-sort" name="sort-by" id="sortBy">
+                <option value="rating:desc">Newest</option>
+                <option value="price_sale:desc">Price high to low</option>
+                <option value="price_sale:asc">Price low to high</option>
+            </select>
+            <a id="skip-to-sort" href="#skip-to-products-from-sort" class="skip-link">Skip to products</a>
+        </div>
+        <div class="product-sort__option">
+            <h3 class="form--label"><label for="itemsPerPage">Items Per Page</label></h3>
+            <select class="sort-menu__select select--block" data-js="update-ipp" name="items-per-page" id="itemsPerPage">
+                <option value="12">12</option>
+                <option value="24">24</option>
+                <option value="0">All</option>
+            </select>
+            <a href="#skip-to-products-from-sort" class="skip-link">Skip to products</a>
+        </div>
+        <div class="product-sort__option">
+            <h3 class="form--label"><label for="viewBy">View By</label></h3>
+            <select class="sort-menu__select select--block" data-js="update-view" name="view-by" id="viewBy">
+                <option value="grid_view">Grid View</option>
+                <option value="list_view">List View</option>
+            </select>
+            <a href="#skip-to-products-from-sort" class="skip-link">Skip to products</a>
+        </div>
     </div>
-    <div class="product-sort__option">
-      <h3 class="form--label"><label for="itemsPerPage">Items Per Page</label></h3>
-      <select class="sort-menu__select select--block" data-js="update-ipp" name="items-per-page" id="itemsPerPage">
-        <option value="12">12</option>
-        <option value="24">24</option>
-        <option value="0">All</option>
-      </select>
-      <a href="#skip-to-products-from-sort" class="skip-link">Skip to products</a>
-    </div>
-    <div class="product-sort__option">
-      <h3 class="form--label"><label for="viewBy">View By</label></h3>
-      <select class="sort-menu__select select--block" data-js="update-view" name="view-by" id="viewBy">
-        <option value="grid_view">Grid View</option>
-        <option value="list_view">List View</option>
-      </select>
-      <a href="#skip-to-products-from-sort" class="skip-link">Skip to products</a>
-    </div>
-  </div>
 </section>
