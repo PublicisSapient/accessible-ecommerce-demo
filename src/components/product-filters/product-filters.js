@@ -4,8 +4,7 @@ import renderActiveFilters from './active-filters.hbs';
 // Private vars
 let componentEl;
 let activeFiltersEl;
-let pluralEl;
-let filterCountEl;
+let filterCountEls;
 
 // Private functions
 function pushFilterUpdateEvent() {
@@ -16,21 +15,21 @@ function pushFilterUpdateEvent() {
 
 function getActiveFilters() {
   const selectedFilters = componentEl.querySelectorAll('[type=checkbox]:checked');
-  return [...selectedFilters].map(function(filter){
+  return [...selectedFilters].map(function (filter) {
     return {
       label: componentEl.querySelector(`label[for="${filter.id}"]`).innerHTML,
       filterId: filter.id
-    }
+    };
   });
 }
 
-function getformattedFilters(){
+function getformattedFilters() {
   const selectedFilters = componentEl.querySelectorAll('[type=checkbox]:checked');
-  return [...selectedFilters].reduce(function(accumulator, filter){
+  return [...selectedFilters].reduce(function (accumulator, filter) {
     let filterValue = filter.value;
-    if(accumulator[filter.name]){
+    if (accumulator[filter.name]) {
       accumulator[filter.name].$elemMatch.$in.push(filterValue);
-    }else{
+    } else {
       accumulator[filter.name] = {
         $elemMatch: {
           $in: [filterValue]
@@ -41,19 +40,21 @@ function getformattedFilters(){
   }, {});
 }
 
-function updateFilters(){
+function updateFilters() {
   const activeFilters = getActiveFilters();
-  activeFiltersEl.innerHTML = renderActiveFilters({activeFilters});
-  filterCountEl.innerHTML = activeFilters.length;
-  if(activeFilters.length === 1){
-    pluralEl.classList.add('hidden');
-  }else{
-    pluralEl.classList.remove('hidden');
-  }
+  let filterText = (activeFilters.length === 1)
+    ? 'filter'
+    : 'filters';
+
+  filterCountEls.forEach(element =>
+    element.innerHTML =
+    `${activeFilters.length} ${filterText} applied`
+  );
+  activeFiltersEl.innerHTML = renderActiveFilters({ activeFilters });
   pushFilterUpdateEvent();
 }
 
-function onActiveFilterClick(event){
+function onActiveFilterClick(event) {
   const element = event.target;
   if (element.matches('[data-remove-filter]')) {
     const targetCheckbox = document.getElementById(element.dataset.removeFilter);
@@ -61,9 +62,9 @@ function onActiveFilterClick(event){
   }
 }
 
-function clearFilters(){
+function clearFilters() {
   const selectedCheckboxes = document.querySelectorAll('[type=checkbox]:checked');
-  selectedCheckboxes.forEach(function(filter){
+  selectedCheckboxes.forEach(function (filter) {
     filter.checked = false;
   });
   updateFilters();
@@ -75,8 +76,7 @@ function init() {
   if (element) element.outerHTML = renderFilters();
 
   componentEl = document.querySelector('[data-component="filters"]');
-  filterCountEl = componentEl.querySelector('[data-js="filter-count"]');
-  pluralEl = componentEl.querySelector('[data-js="plural"]');
+  filterCountEls = componentEl.querySelectorAll('[data-js="filter-count"]');
   activeFiltersEl = componentEl.querySelector('[data-component="active-filters"]');
 
   activeFiltersEl.addEventListener('click', onActiveFilterClick);
