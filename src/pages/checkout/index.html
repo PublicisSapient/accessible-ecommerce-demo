@@ -54,65 +54,7 @@
                     <hr />
                     <span>Shipping Address</span>
                     <hr class="hr-2" />
-                    <label for="first-name">First Name *</label>
-                    <input name="first-name" id="first-name" type="text" data-required="true">
-                    <span class="error-msg">Please input a first name</span>
-                    <label for="last-name">Last Name *</label>
-                    <input name="last-name" id="last-name" type="text" data-required="true">
-                    <span class="error-msg">Please input a last name</span>
-                    <label for="address">Address *</label>
-                    <input name="address" id="address" type="text" data-required="true">
-                    <span class="error-msg">Please input an address</span>
-                    <label for="apt-suite">Apt / Suite</label>
-                    <input name="apt-suite" id="apt-suite" type="text">
-                    <label for="city">City *</label>
-                    <input name="city" id="city" type="text" data-required="true">
-                    <span class="error-msg">Please input a city name</span>
-
-                    <div class="shipping-form__form-row">
-                        <div class="shipping-form__column shipping-form__column--5">
-                            <label for="province">Province *</label>
-                            <select id="province" name="province" data-required="true">
-                                <option value="" selected>Select a Province</option>
-                                <option value="ab">Alberta</option>
-                                <option value="bc">British Columbia</option>
-                                <option value="mb">Manitoba</option>
-                                <option value="nb">New Brunswick</option>
-                                <option value="nl">Newfoundland and Labrador</option>
-                                <option value="ns">Nova Scotia</option>
-                                <option value="on">Ontario</option>
-                                <option value="pe">Prince Edward Island</option>
-                                <option value="qc">Quebec</option>
-                                <option value="sk">Saskatchewan</option>
-                                <option value="nt">Northwest Territories</option>
-                                <option value="nu">Nunavut</option>
-                                <option value="yt">Yukon</option>
-                            </select>
-                            <span class="error-msg">Please select a province</span>
-                        </div>
-                        <div class="shipping-form__column shipping-form__column--3">
-                            <label for="postal-code">Postal Code</label>
-                            <input
-                                type="text"
-                                value=""
-                                id="postal-code"
-                                name="postal-code"
-                                data-required="true"
-                                data-input-type="postal-code"
-                                pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
-                            >
-                            <span class="error-msg">Please input a postal code</span>
-                        </div>
-                    </div>
-                    <label for="phone-number">Phone Number *</label>
-                    <input
-                        type="tel"
-                        id="phone-number"
-                        name="phone-number"
-                        data-required="true"
-                        data-input-type="phone-number"
-                    >
-                    <span class="error-msg">Please enter a phone number</span>
+                    <div data-template="address"></div>
                     <h3>Shipping Method</h3>
                     <hr class="hr-2" />
                     <label class="shipping-form__shipping-type">
@@ -186,6 +128,7 @@
                         Finish and Review
                     </button>
                 </form>
+                <div data-template="address"></div>
             </section>
         </div>
     </main>
