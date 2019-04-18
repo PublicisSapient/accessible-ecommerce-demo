@@ -1,9 +1,11 @@
 <ul class="active-filters">
-  {{#each activeFilters}}
+    {{#each activeFilters}}
     <li class="active-filter">
-      <button class="active-filter__remove-btn" data-remove-filter="{{this.filterId}}">
-        <svg class="icon--close-btn"><use xlink:href="../sprite.svg#close"></use></svg> {{this.label}}
-      </button>
+        <button class="active-filter__remove-btn" data-remove-filter="{{this.filterId}}" aria-describedby="remove-filter-description">
+            <svg class="icon--close-btn">
+                <use xlink:href="../sprite.svg#close"></use>
+            </svg> {{this.label}}
+        </button>
     </li>
-  {{/each}}
+    {{/each}}
 </ul>
