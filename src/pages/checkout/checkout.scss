@@ -1,15 +1,158 @@
-.checkout {
-  &__checkout-form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+@mixin inputField {
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid #D8D8D8;
+  width: 100%;
+  font-size: 14px;
+  box-shadow: none;
+  background-color: #fff;
 
-
+  + .error-msg {
+    display: none;
   }
 
-  input,
-  label {
-    flex: 1;
+  &.invalid {
+    box-shadow: 0 0 3px red;
+
+    + .error-msg {
+      display: block;
+    }
+  }
+}
+
+
+
+.checkout {
+  &__sign-in-form,
+  &__guest-sign-in,
+  &__shipping-form {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  hr {
+    width: 100%;
+    border-top-width: 2px;
+    &.hr-2 {
+      border-top: 1px solid #9b9b9b;
+    }
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  label {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  input {
+    &[type=text],
+    &[type=password],
+    &[type=email] {
+      @include inputField;
+    }
+  }
+
+  select {
+    @include inputField;
+    font-weight: bold;
+  }
+
+  label {
+    color: black;
+    font-weight: bold;
+    line-height: 18px;
+    display: inline-block;
+    padding: 1.333rem 0 0.666rem;
+  }
+
+  .shipping-form {
+    &__form-row {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 250px;
+      grid-column-gap: 50px;
+    }
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__shipping-type {
+      display: flex;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: normal;
+
+      &:hover input ~ .custom-radio {
+        background-color: #ccc;
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .custom-radio {
+          background-color: white;
+
+          &:after {
+            display: block;
+          }
+        }
+
+      }
+
+      .custom-radio {
+        position: absolute;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        margin-top: -3px;
+        background-color: white;
+        border: 1px solid #b5b5b5;
+        border-radius: 50%;
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 6px;
+          left: 6px;
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          background: black;
+        }
+      }
+    }
+
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  .btn {
+    margin-top: 25px;
+    padding-right: 75px;
+    padding-left: 75px;
+    flex: 0;
+    align-self: flex-end;
   }
 }

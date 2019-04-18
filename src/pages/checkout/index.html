@@ -16,74 +16,116 @@
     <link rel="stylesheet" href="./checkout.scss">
 </head>
 
-<body class="checkout">
+<body>
     <header class="navigation" data-template="global-header"></header>
-    <div class="main">
+    <main>
         <div data-component="breadcrumb"></div>
-        <div class="container">
+        <div class="container checkout">
             <section class="checkout__sign-in-checkout">
-                <h1 class="template-heading">Checkout</h1>
-                <span>* Required</span>
+                <header>
+                    <h1 class="template-heading">Checkout</h1>
+                    <span>* Required</span>
+                </header>
                 <h2>Contact Information</h2>
                 <hr />
-                <form action="/sign-in" class="checkout__checkout-form">
-                    <span>Sign In</span>
+                <form action="/sign-in" class="checkout__sign-in-form sign-in-form">
+                    <h3>Sign In</h3>
                     <hr class="hr-2" />
                     <label for="sign-in-email">Email *</label>
-                    <input name="email" id="sign-in-email" type="text" value="">
+                    <input name="email" id="sign-in-email" type="email" data-required="true">
+                    <span class="error-msg">Please input a valid email</span>
                     <label for="sign-in-password">Password *</label>
-                    <input name="password" id="sign-in-password" type="password" value="">
-                    <button class="" type="submit">Sign In</button>
+                    <input name="password" id="sign-in-password" type="password" data-required="true">
+                    <span class="error-msg">Please input a password</span>
+                    <button class="btn btn--black sign-in-form__submit" type="submit">Sign In</button>
                 </form>
-                <span>Or Guest Information</span>
-                <hr class="hr-2" />
-                <label for="guest-sign-in-email">Email *</label>
-                <input name="guest-sign-in-email" id="guest-sign-in-email" type="text" value="">
-                <button class="">Proceed to Shipping Information</button>
+                <form class="checkout__guest-sign-in guest-sign-in" action="/guest-sign-in">
+                    <h3>Or Guest Information</h3>
+                    <hr class="hr-2" />
+                    <label for="guest-sign-in-email">Email *</label>
+                    <input name="guest-sign-in-email" id="guest-sign-in-email" type="email" data-required="true">
+                    <span class="error-msg">Please input a valid email</span>
+                    <button class="btn btn--black guest-sign-in__submit">Proceed to Shipping Information</button>
+                </form>
             </section>
             <section class="shipping-information">
-                <form action="/">
+                <form action="/" class="checkout__shipping-form shipping-form">
                     <h2>Shipping Information</h2>
                     <hr />
                     <span>Shipping Address</span>
                     <hr class="hr-2" />
                     <label for="first-name">First Name *</label>
-                    <input name="first-name" id="first-name" type="text" value="" required>
+                    <input name="first-name" id="first-name" type="text" data-required="true">
+                    <span class="error-msg">Please input a first name</span>
                     <label for="last-name">Last Name *</label>
-                    <input name="last-name" id="last-name" type="text" value="" required>
+                    <input name="last-name" id="last-name" type="text" data-required="true">
+                    <span class="error-msg">Please input a last name</span>
                     <label for="address">Address *</label>
-                    <input name="address" id="address" type="text" value="" required>
+                    <input name="address" id="address" type="text" data-required="true">
+                    <span class="error-msg">Please input an address</span>
                     <label for="apt-suite">Apt / Suite</label>
-                    <input name="apt-suite" id="apt-suite" type="text" value="">
+                    <input name="apt-suite" id="apt-suite" type="text">
                     <label for="city">City *</label>
-                    <input name="city" id="city" type="text" value="">
-                    <label for="province">Province *</label>
-                    <div class="form-row">
-                        <select id="province" name="province" required>
-                            <option value="" selected>Select a Province</option>
-                            <option value="ab">Alberta</option>
-                            <option value="bc">British Columbia</option>
-                            <option value="mb">Manitoba</option>
-                            <option value="nb">New Brunswick</option>
-                            <option value="nl">Newfoundland and Labrador</option>
-                            <option value="ns">Nova Scotia</option>
-                            <option value="on">Ontario</option>
-                            <option value="pe">Prince Edward Island</option>
-                            <option value="qc">Quebec</option>
-                            <option value="sk">Saskatchewan</option>
-                            <option value="nt">Northwest Territories</option>
-                            <option value="nu">Nunavut</option>
-                            <option value="yt">Yukon</option>
-                        </select>
-                        <label for="postal-code">Postal Code</label>
-                        <input type="text" value="" id="postal-code" name="postal-code" required>
+                    <input name="city" id="city" type="text" data-required="true">
+                    <span class="error-msg">Please input a city name</span>
+
+                    <div class="shipping-form__form-row">
+                        <div class="shipping-form__column shipping-form__column--5">
+                            <label for="province">Province *</label>
+                            <select id="province" name="province" data-required="true">
+                                <option value="" selected>Select a Province</option>
+                                <option value="ab">Alberta</option>
+                                <option value="bc">British Columbia</option>
+                                <option value="mb">Manitoba</option>
+                                <option value="nb">New Brunswick</option>
+                                <option value="nl">Newfoundland and Labrador</option>
+                                <option value="ns">Nova Scotia</option>
+                                <option value="on">Ontario</option>
+                                <option value="pe">Prince Edward Island</option>
+                                <option value="qc">Quebec</option>
+                                <option value="sk">Saskatchewan</option>
+                                <option value="nt">Northwest Territories</option>
+                                <option value="nu">Nunavut</option>
+                                <option value="yt">Yukon</option>
+                            </select>
+                            <span class="error-msg">Please select a province</span>
+                        </div>
+                        <div class="shipping-form__column shipping-form__column--3">
+                            <label for="postal-code">Postal Code</label>
+                            <input type="text" value="" id="postal-code" name="postal-code" data-required="true">
+                            <span class="error-msg">Please input a postal code</span>
+                        </div>
                     </div>
                     <label for="phone-number">Phone Number *</label>
-                    <input type="text" value="" id="phone-number" name="phone-number" required>
+                    <input type="text" value="" id="phone-number" name="phone-number" data-required="true">
+                    <span class="error-msg">Please enter a phone number</span>
+                    <h3>Shipping Method</h3>
+                    <hr class="hr-2" />
+                    <label class="shipping-form__shipping-type">
+                        <input type="radio" name="shipping-method" id="cp-10-day" value="cp-10-day" checked>
+                        <span class="custom-radio"></span>
+                        $0.00 Canada Post - Free Shipping. Delivers in 10 days.
+                    </label>
+                    <label class="shipping-form__shipping-type">
+                        <input type="radio" name="shipping-method" id="ex-5-day" value="ex-5-day">
+                        <span class="custom-radio"></span>
+                        $8.00 Canada Post - Express Shipping. Delivers in 5 days.
+                    </label>
+                    <label class="shipping-form__shipping-type">
+                        <input type="radio" name="shipping-method" id="xp-2-3-day" value="xp-2-3-day">
+                        <span class="custom-radio"></span>
+                        $14.00 Canada Post - Xpresspost. Delivers in 2 - 3 days.
+                    </label>
+                    <label class="shipping-form__shipping-type">
+                        <input type="radio" name="shipping-method" id="pr-1-day" value="pr-1-day">
+                        <span class="custom-radio"></span>
+                        $20.00 Canada Post - Priority Delivery. Delivers in 24 hours.
+                    </label>
+                    <button class="btn btn--black shipping-form__submit">Proceed to Payment Information</button>
                 </form>
             </section>
         </div>
-    </div>
+    </main>
     <div data-template="footer"></div>
     <div data-component="modal"></div>
     <script src="./checkout.js"></script>
