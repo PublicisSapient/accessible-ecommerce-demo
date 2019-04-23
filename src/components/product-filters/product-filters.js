@@ -5,10 +5,15 @@ import renderActiveFilters from './active-filters.hbs';
 let componentEl;
 let activeFiltersEl;
 let filterCountEls;
+let priceFilterForm;
+let priceFromField;
+let priceToField;
+let priceFilterFrom;
+let priceFilterTo;
 
 // Private functions
 function pushFilterUpdateEvent() {
-  const detail = getformattedFilters();
+  const detail = { ...getCheckboxFilters(), ...getPriceRangeFilter() };
   const event = new CustomEvent('update:filters', { detail });
   document.dispatchEvent(event);
 }
@@ -23,7 +28,7 @@ function getActiveFilters() {
   });
 }
 
-function getformattedFilters() {
+function getCheckboxFilters() {
   const selectedFilters = componentEl.querySelectorAll('[type=checkbox]:checked');
   return [...selectedFilters].reduce(function (accumulator, filter) {
     let filterValue = filter.value;
@@ -38,6 +43,18 @@ function getformattedFilters() {
     }
     return accumulator;
   }, {});
+}
+
+function getPriceRangeFilter() {
+  const priceFrom = Number(priceFilterFrom.value);
+  const priceTo = Number(priceFilterTo.value);
+  const priceRangeFilter = (priceFrom && priceTo)
+    ? { $gte: Number(priceFilterFrom.value), $lte: Number(priceFilterTo.value) }
+    : { $gt: null };
+
+  return {
+    price_sale: priceRangeFilter
+  };
 }
 
 function updateFilters() {
@@ -62,6 +79,21 @@ function onActiveFilterClick(event) {
   }
 }
 
+function onPriceFilterSubmit(event) {
+  event.preventDefault();
+  priceFilterFrom.value = priceFromField.value
+  priceFilterTo.value = priceToField.value
+  updateFilters();
+}
+
+function onPriceFilterClear() {
+  priceFilterFrom.value = '';
+  priceFilterTo.value = '';
+  priceFromField.value = '';
+  priceToField.value = '';
+  updateFilters();
+}
+
 function clearFilters() {
   const selectedCheckboxes = document.querySelectorAll('[type=checkbox]:checked');
   selectedCheckboxes.forEach(function (filter) {
@@ -78,8 +110,16 @@ function init() {
   componentEl = document.querySelector('[data-component="filters"]');
   filterCountEls = componentEl.querySelectorAll('[data-js="filter-count"]');
   activeFiltersEl = componentEl.querySelector('[data-component="active-filters"]');
+  priceFilterForm = componentEl.querySelector('[data-js="price-filter"]');
+  priceFromField = priceFilterForm.querySelector('#priceFrom');
+  priceToField = priceFilterForm.querySelector('#priceTo');
+  priceFilterFrom = priceFilterForm.querySelector('#priceFilterFrom');
+  priceFilterTo = priceFilterForm.querySelector('#priceFilterTo');
 
   activeFiltersEl.addEventListener('click', onActiveFilterClick);
+  priceFilterForm.addEventListener('submit', onPriceFilterSubmit);
+  priceFilterForm.querySelector('[data-js="price-range-clear"]').addEventListener('click', onPriceFilterClear);
+
 
   const filterInputs = componentEl.querySelectorAll('[data-js="filter"]');
   filterInputs.forEach(function (filterInput) {
