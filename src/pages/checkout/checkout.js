@@ -31,7 +31,7 @@ const prefillBillingAddress = () => {
       billingInput.value = input.value;
     }
   });
-}
+};
 
 const hideShowBillingAddress = () => {
   billingForm.classList.toggle('checkout__billing-address-form--hidden');
@@ -60,7 +60,9 @@ const checkForm = (e) => {
 
   inputs.forEach(checkIfInputIsValid);
 
-  formValid && form.submit();
+  if (formValid) {
+    form.submit();
+  }
 };
 
 const addListeners = (submitButtons = [], callBack = checkForm) => {
@@ -70,7 +72,6 @@ const addListeners = (submitButtons = [], callBack = checkForm) => {
 };
 
 const findButtons = (...selectors) => selectors.map(button => document.querySelector(button));
-
 
 window.onload = () => {
   // Validation Listeners
