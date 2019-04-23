@@ -8,11 +8,16 @@ let componentEl;
  * PRIVATE FUNCTIONS
  */
 
-handlebarsHelper('isDisabled', function(buttonStatus) {
+handlebarsHelper('isDisabled', function (buttonStatus) {
   return buttonStatus ? 'disabled' : '';
 });
-handlebarsHelper('activeClass', function(isCurrent) {
+handlebarsHelper('activeClass', function (isCurrent) {
   return isCurrent ? 'active' : '';
+});
+handlebarsHelper('getAriaLabel', function (isCurrent, index) {
+  return isCurrent
+    ? `Current page ${index}`
+    : `Page ${index}, display results`;
 });
 
 function createPages(paginationData) {
@@ -47,7 +52,7 @@ function update(paginationData) {
   componentEl.innerHTML = renderPagination(paginationData);
 
   const paginationButtons = componentEl.querySelectorAll('[data-go-to-page]');
-  paginationButtons.forEach(function(button) {
+  paginationButtons.forEach(function (button) {
     button.addEventListener('click', onClickPagination);
   });
 }
