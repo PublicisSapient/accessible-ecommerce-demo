@@ -1,0 +1,26 @@
+@import '../../scss/mixins';
+
+.product-tile{
+  @include component-panel;
+  &__image{
+    max-width: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+  &__link{
+    color: $black;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 24px;
+  }
+  &__product-name{
+    font-weight: bold;
+    font-size: $font-sm;
+    padding: 0 24px;
+    min-height: 38px;
+  }
+  &__price{
+    font-size: $font-lg;
+    padding: 0 24px;
+  }
+}
