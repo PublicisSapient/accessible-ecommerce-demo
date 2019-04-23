@@ -60,9 +60,7 @@ const checkForm = (e) => {
 
   inputs.forEach(checkIfInputIsValid);
 
-  if (formValid) {
-    form.submit();
-  }
+  formValid && form.submit();
 };
 
 const addListeners = (submitButtons = [], callBack = checkForm) => {
