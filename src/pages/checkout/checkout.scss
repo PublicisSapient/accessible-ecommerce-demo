@@ -23,16 +23,23 @@
   }
 }
 
-
-
 .checkout {
   &__sign-in-form,
   &__guest-sign-in,
   &__shipping-form,
+  &__billing-address-form,
   &__payment-form {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  &__billing-address-form {
+    margin-bottom: 80px;
+
+    &--hidden {
+      display: none;
+    }
   }
 
   hr {
@@ -89,6 +96,49 @@
     &__column {
       display: flex;
       flex-direction: column;
+    }
+
+    &__tooltip {
+      &--visible {
+        .payment-information__tooltip-popup {
+          display: block;
+        }
+      }
+    }
+
+    &__tooltip-popup {
+      display: none;
+      position: absolute;
+      background-color: white;
+      right: 24px;
+    }
+
+    &__tooltip-icon {
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      color: white;
+      background-color: black;
+      display: inline-block;
+      font-size: 1.25rem;
+      text-align: center;
+      font-style: normal;
+      line-height: 1.1;
+      cursor: pointer;
+
+    }
+
+    &__label-tooltip {
+      display: flex;
+      align-items: center;
+
+      label {
+        flex: 0;
+        min-width: 140px;
+      }
     }
   }
 
@@ -168,9 +218,63 @@
 
   .btn {
     margin-top: 25px;
-    padding-right: 75px;
-    padding-left: 75px;
+    padding-right: 50px;
+    padding-left: 50px;
     flex: 0;
     align-self: flex-end;
+  }
+
+  &__billing-address-form {
+    &--hidden {
+      display: none;
+    }
+  }
+
+  .billing-address {
+    margin-bottom: 80px;
+
+    &__billing-address-check {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      input {
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        width: auto;
+
+        &:checked ~ .billing-address__billing-address-custom-checkbox {
+          &:before {
+            content: '';
+          }
+        }
+      }
+    }
+
+    &__billing-address-custom-checkbox {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #B5B5B5;
+      border-radius: 4px;
+      display: inline-block;
+      background-color: white;
+      position: relative;
+      margin-right: 1rem;
+
+      &:before {
+        position: absolute;
+        width: 6px;
+        height: 11px;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        transform: rotate(35deg);
+        top: 2px;
+        left: 6px;
+        margin-right: 1rem;
+      }
+    }
   }
 }

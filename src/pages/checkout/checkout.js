@@ -1,4 +1,7 @@
-import addressTemplate from './address.hbs';
+import addressTemplate from './address-form.hbs';
+
+let billingForm;
+let securityCodeTooltip;
 
 const regex = {
   email: /^([A-Za-z0-9\-\/\:\;\(\)\$\&\"\=\,\?\*\#\%\^\+\_\.\|\[\]\{\}\<\>\\\')+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,16})$/,
@@ -7,6 +10,19 @@ const regex = {
   'credit-card-number': /^$[0-9]{14}/,
   'expiry-date': /^[0-9]{2}[-\s\/\\]?[0-9]{2}$/,
   ccv: /^[0-9]{3,4}$/,
+};
+
+const showHideSecurityCodeTooltip = (e) => {
+  e.preventDefault();
+  securityCodeTooltip.classList.toggle('payment-information__tooltip--visible');
+};
+
+const uncheckBillingAddress = ([el]) => {
+  el.checked = false;
+};
+
+const hideShowBillingAddress = () => {
+  billingForm.classList.toggle('checkout__billing-address-form--hidden');
 };
 
 const checkForm = (e) => {
@@ -32,9 +48,9 @@ const checkForm = (e) => {
   formValid && form.submit();
 };
 
-const addListeners = (submitButtons = []) => {
+const addListeners = (submitButtons = [], callBack = checkForm) => {
   submitButtons.forEach(button => {
-    button && button.addEventListener('click', checkForm);
+    button && button.addEventListener('click', callBack);
   });
 };
 
@@ -45,6 +61,7 @@ const addtemplate = () => document.querySelectorAll('[data-template="address"]')
 
 window.onload = () => {
   addtemplate();
+  // Validation Listeners
   addListeners(
     findButtons(
       '.sign-in-form__submit',
@@ -52,5 +69,27 @@ window.onload = () => {
       '.shipping-form__submit',
       '.payment-information__submit'
     )
-  )
+  );
+
+  billingForm = document.querySelector('.checkout__billing-address-form');
+  securityCodeTooltip = document.querySelector('.payment-information__tooltip');
+
+  // other listeners
+  const billingAddressCheckbox = findButtons(
+    '.billing-address__billing-address-checkbox'
+  );
+
+  uncheckBillingAddress(billingAddressCheckbox);
+
+  addListeners(
+    billingAddressCheckbox,
+    hideShowBillingAddress
+  );
+
+  addListeners(
+    findButtons(
+      '.payment-information__tooltip'
+    ),
+    showHideSecurityCodeTooltip
+  );
 };
