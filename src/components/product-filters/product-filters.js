@@ -10,6 +10,7 @@ let priceFromField;
 let priceToField;
 let priceFilterFrom;
 let priceFilterTo;
+const nonCurrencyChars = /[^0-9.-]+/g;
 
 // Private functions
 function pushFilterUpdateEvent() {
@@ -81,8 +82,8 @@ function onActiveFilterClick(event) {
 
 function onPriceFilterSubmit(event) {
   event.preventDefault();
-  priceFilterFrom.value = priceFromField.value
-  priceFilterTo.value = priceToField.value
+  priceFilterFrom.value = priceFromField.value.replace(nonCurrencyChars, '');
+  priceFilterTo.value = priceToField.value.replace(nonCurrencyChars, '');
   updateFilters();
 }
 
