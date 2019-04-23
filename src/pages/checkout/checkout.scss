@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 @mixin inputField {
   height: 50px;
   border-radius: 4px;
@@ -24,6 +26,9 @@
 }
 
 .checkout {
+  margin-bottom: 80px;
+
+  form,
   &__sign-in-form,
   &__guest-sign-in,
   &__shipping-form,
@@ -35,8 +40,6 @@
   }
 
   &__billing-address-form {
-    margin-bottom: 80px;
-
     &--hidden {
       display: none;
     }
@@ -99,6 +102,8 @@
     }
 
     &__tooltip {
+      position: relative;
+
       &--visible {
         .payment-information__tooltip-popup {
           display: block;
@@ -109,8 +114,48 @@
     &__tooltip-popup {
       display: none;
       position: absolute;
+      left: 24px;
+
+      h1 {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    &__tooltip-popup-arrow {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+      border-right: 2px solid white;
+      left: -16px;
+      top: -16px;
+
+      &:before {
+        position: absolute;
+        right: -27px;
+        width: 24px;
+        content: '';
+        top: 0;
+        height: 24px;
+        transform: rotate(45deg) skew(-25deg, -25deg) translate(-12px,-1px);
+        background-color: #fff;
+        border: 1px solid #b5b5b5;
+      }
+    }
+
+    &__tooltip-popup-background {
       background-color: white;
-      right: 24px;
+      width: 300px;
+      padding: 24px;
+      top: -50px;
+      border: 1px solid #b5b5b5;
+      position: absolute;
+      left: 5px;
     }
 
     &__tooltip-icon {
@@ -251,6 +296,10 @@
             content: '';
           }
         }
+
+        &:focus ~ .billing-address__billing-address-custom-checkbox {
+          outline: 1px dotted currentColor;
+        }
       }
     }
 
@@ -274,6 +323,22 @@
         top: 2px;
         left: 6px;
         margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .checkout {
+    .payment-information {
+      &__form-row {
+        display: flex;
+      }
+
+      &__label-tooltip {
+        label {
+          min-width: auto;
+        }
       }
     }
   }

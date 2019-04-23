@@ -1,6 +1,5 @@
-import addressTemplate from './address-form.hbs';
-
 let billingForm;
+let shippingForm;
 let securityCodeTooltip;
 
 const regex = {
@@ -21,8 +20,24 @@ const uncheckBillingAddress = ([el]) => {
   el.checked = false;
 };
 
+const prefillBillingAddress = () => {
+  const inputs = shippingForm.querySelectorAll('input, select');
+
+  inputs.forEach(input => {
+    const { className } = input;
+    const billingInput = className ? billingForm.querySelector(`.${className}`) : null;
+
+    if (billingInput) {
+      billingInput.value = input.value;
+    }
+  });
+}
+
 const hideShowBillingAddress = () => {
   billingForm.classList.toggle('checkout__billing-address-form--hidden');
+  if (billingForm.classList.contains('checkout__billing-address-form--hidden')) {
+    prefillBillingAddress();
+  }
 };
 
 const checkForm = (e) => {
@@ -56,11 +71,8 @@ const addListeners = (submitButtons = [], callBack = checkForm) => {
 
 const findButtons = (...selectors) => selectors.map(button => document.querySelector(button));
 
-const addtemplate = () => document.querySelectorAll('[data-template="address"]')
-    .forEach(el => el.outerHTML = addressTemplate());
 
 window.onload = () => {
-  addtemplate();
   // Validation Listeners
   addListeners(
     findButtons(
@@ -72,6 +84,7 @@ window.onload = () => {
   );
 
   billingForm = document.querySelector('.checkout__billing-address-form');
+  shippingForm = document.querySelector('.checkout__shipping-form');
   securityCodeTooltip = document.querySelector('.payment-information__tooltip');
 
   // other listeners
