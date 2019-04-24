@@ -13,54 +13,67 @@
     </button>
     <a id="skip-to-filters" class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
 
-    <form action="">
-        <ul class="accordion filters__accordion">
-            <li class="accordion-panel filter">
-                <button class="accordion-panel__heading filter__heading" type="button">
-                    <h3 class="form--label">Colors</h3>
-                </button>
-                <fieldset class="accordion-panel__content filter__options">
-                    <legend tabindex="0" id="colorLegend" class="visibly-hidden">Filter by Colors</legend>
-                    <input id="blue" data-js="filter" class="checkbox__input" aria-label="Filter on color blue" type="checkbox" name="color" value="blue">
-                    <label for="blue" class="checkbox__label">Blue</label><br>
-                    <input id="green" data-js="filter" class="checkbox__input" aria-label="Filter on color green" type="checkbox" name="color" value="green">
-                    <label for="green" class="checkbox__label">Green</label><br>
-                    <input id="yellow" data-js="filter" class="checkbox__input" aria-label="Filter on color yellow" type="checkbox" name="color" value="yellow">
-                    <label for="yellow" class="checkbox__label">Yellow</label><br>
-                    <input id="red" data-js="filter" class="checkbox__input" aria-label="Filter on color red" type="checkbox" name="color" value="red">
-                    <label for="red" class="checkbox__label">Red</label>
+
+    <ul class="accordion filters__accordion">
+        <li class="accordion-panel filter">
+            <button class="accordion-panel__heading filter__heading" type="button">
+                <h3 class="form--label">Colors</h3>
+            </button>
+            <fieldset class="accordion-panel__content filter__options">
+                <legend id="colorLegend" class="visibly-hidden">Filter by Colors</legend>
+                <input id="blue" data-js="filter" class="checkbox__input" aria-label="Filter on color blue" type="checkbox" name="color" value="blue">
+                <label for="blue" class="checkbox__label">Blue</label><br>
+                <input id="green" data-js="filter" class="checkbox__input" aria-label="Filter on color green" type="checkbox" name="color" value="green">
+                <label for="green" class="checkbox__label">Green</label><br>
+                <input id="yellow" data-js="filter" class="checkbox__input" aria-label="Filter on color yellow" type="checkbox" name="color" value="yellow">
+                <label for="yellow" class="checkbox__label">Yellow</label><br>
+                <input id="red" data-js="filter" class="checkbox__input" aria-label="Filter on color red" type="checkbox" name="color" value="red">
+                <label for="red" class="checkbox__label">Red</label>
+            </fieldset>
+            <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
+        </li>
+        <li class="accordion-panel filter">
+            <button class="accordion-panel__heading filter__heading" type="button">
+                <h3 class="form--label">Size</h3>
+            </button>
+            <fieldset class="accordion-panel__content filter__options">
+                <legend id="sizeLegend" class="visibly-hidden">Filter by Size</legend>
+                <input id="large" data-js="filter" class="checkbox__input" aria-label="Filter on size large" type="checkbox" name="size" value="large" />
+                <label for="large" class="checkbox__label">Large</label><br>
+                <input id="medium" data-js="filter" class="checkbox__input" aria-label="Filter on size medium" type="checkbox" name="size" value="medium">
+                <label for="medium" class="checkbox__label">Medium</label><br>
+                <input id="small" data-js="filter" class="checkbox__input" aria-label="Filter on size small" type="checkbox" name="size" value="small">
+                <label for="small" class="checkbox__label">Small</label><br>
+            </fieldset>
+            <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
+        </li>
+        <li class="accordion-panel filter">
+            <button class="accordion-panel__heading filter__heading" type="button">
+                <h3 class="form--label">Price Range</h3>
+            </button>
+            <form data-js="price-filter" class="price-filter__form accordion-panel__content filter__options">
+                <input type="hidden" name="priceFilterFrom" id="priceFilterFrom" value="">
+                <input type="hidden" name="priceFilterTo" id="priceFilterTo" value="">
+                <fieldset class="price-filter__fieldset">
+                    <legend id="priceLegend" class="visibly-hidden">Filter by Price</legend>
+                    <label for="priceFrom" class="price-filter__label">
+                        From <input type="text" name="priceFrom" id="priceFrom" class="price-filter__input">
+                    </label>
+                    <label for="priceTo" class="price-filter__label">
+                        To <input type="text" name="priceTo" id="priceTo" class="price-filter__input">
+                    </label>
                 </fieldset>
-                <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
-            </li>
-            <li class="accordion-panel filter">
-                <button class="accordion-panel__heading filter__heading" type="button">
-                    <h3 class="form--label">Size</h3>
+                <button type="submit" class="price-filter__submit btn btn--outline-black">Update Range</button>
+                <button class="btn btn--link price-filter__clear-btn" type="button" data-js="price-range-clear">
+                    Clear price range
                 </button>
-                <fieldset class="accordion-panel__content filter__options">
-                    <legend tabindex="0" id="sizeLegend" class="visibly-hidden">Filter by Size</legend>
-                    <input id="large" data-js="filter" class="checkbox__input" aria-label="Filter on size large" type="checkbox" name="size" value="large" />
-                    <label for="large" class="checkbox__label">Large</label><br>
-                    <input id="medium" data-js="filter" class="checkbox__input" aria-label="Filter on size medium" type="checkbox" name="size" value="medium">
-                    <label for="medium" class="checkbox__label">Medium</label><br>
-                    <input id="small" data-js="filter" class="checkbox__input" aria-label="Filter on size small" type="checkbox" name="size" value="small">
-                    <label for="small" class="checkbox__label">Small</label><br>
-                </fieldset>
-                <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
-            </li>
-            <li class="accordion-panel filter">
-                <button class="accordion-panel__heading filter__heading" type="button">
-                    <h3 class="form--label">Price Range</h3>
-                </button>
-                <fieldset class="accordion-panel__content filter__options">
-                    Price range
-                </fieldset>
-                <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
-            </li>
-        </ul>
-        <button class="btn btn--link active-filters__clear-btn" data-js="clear-filters" type="button">
-            Clear filters
-            <span class="sr-only">, </span>
-            <span class="sr-only" data-js="filter-count">0 filters applied</span>
-        </button>
-    </form>
+            </form>
+            <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
+        </li>
+    </ul>
+    <button class="btn btn--link active-filters__clear-btn" data-js="clear-filters" type="button">
+        Clear filters
+        <span class="sr-only">, </span>
+        <span class="sr-only" data-js="filter-count">0 filters applied</span>
+    </button>
 </section>
