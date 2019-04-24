@@ -10,14 +10,17 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "parcel src/pages/index.html src/pages/**/*.html --no-cache",
 		"build": "parcel build src/pages/index.html src/pages/**/*.html --no-cache --public-url /accessible-ecommerce-demo/",
-		"deploy": "gh-pages -d dist"
+		"deploy": "gh-pages -d dist",
+		"pa11y": "./node_modules/.bin/pa11y-ci"
 	},
 	"devDependencies": {
 		"gh-pages": "^2.0.1",
 		"handlebars": "^4.1.1",
+		"pa11y-ci": "^2.2.0",
 		"parcel": "1.12.2",
 		"parcel-plugin-asset-copier": "^1.0.0",
-		"parcel-plugin-handlebars-precompile": "aevanson/parcel-plugin-handlebars-precompile"
+		"parcel-plugin-handlebars-precompile": "aevanson/parcel-plugin-handlebars-precompile",
+		"sass": "^1.19.0"
 	},
 	"dependencies": {
 		"pouchdb": "^7.0.0",
