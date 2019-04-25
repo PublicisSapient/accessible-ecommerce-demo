@@ -7,14 +7,17 @@
 		"url": "git+https://github.com/PublicisSapient/accessible-ecommerce-demo.git"
 	},
 	"scripts": {
-		"test": "start-server-and-test start-server http://127.0.0.1:8080 pa11y",
-		"start": "parcel src/pages/index.html src/pages/**/*.html --no-cache",
-		"build": "parcel build src/pages/index.html src/pages/**/*.html --no-cache --public-url /accessible-ecommerce-demo/",
+		"start": "npm run delete-dist; parcel src/pages/index.html src/pages/**/*.html --no-cache",
+		"build": "npm run delete-dist; parcel build src/pages/index.html src/pages/**/*.html --no-cache --public-url /accessible-ecommerce-demo/",
 		"deploy": "gh-pages -d dist",
+		"test": "npm run test-build; start-server-and-test start-server http://127.0.0.1:8080 pa11y",
+		"test-build": "npm run delete-dist; parcel build src/pages/index.html src/pages/**/*.html --no-cache",
+		"start-server": "http-server ./dist -c-1",
 		"pa11y": "pa11y-ci",
-		"start-server": "http-server ./dist"
+		"delete-dist": "del-cli ./dist"
 	},
 	"devDependencies": {
+		"del-cli": "^1.1.0",
 		"gh-pages": "^2.0.1",
 		"handlebars": "^4.1.1",
 		"http-server": "^0.11.1",
