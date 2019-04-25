@@ -86,7 +86,6 @@ The header/main nav and PLP page are using CSS Grid and Flexbox. CSS Grid is ama
 ### Automated testing with Pa11y
 An automated accessibility test can be run to look for major accessibility or HTML validity errors. The test is run using pa11y-ci (https://github.com/pa11y/pa11y-ci).
 
-```
 To run the test, stop any runner parcel server (Control + C) enter the following into Terminal:
 ```bash
 npm run test
