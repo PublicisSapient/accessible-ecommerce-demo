@@ -1,0 +1,13 @@
+{
+  "defaults": {
+    "timeout": 10000
+  },
+  "urls": [
+    "http://127.0.0.1:8080/plp/index.html",
+    "http://127.0.0.1:8080/pdp/index.html?product_id=1",
+    "http://127.0.0.1:8080/cart/index.html",
+    "http://127.0.0.1:8080/checkout/index.html",
+    "http://127.0.0.1:8080/review-order/index.html",
+    "http://127.0.0.1:8080/order-confirmation/index.html"
+  ]
+}
