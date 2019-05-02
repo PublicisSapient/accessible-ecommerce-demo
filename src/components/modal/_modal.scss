@@ -11,7 +11,7 @@
     background-color: rgba(31,31,31,0.75); 
 
   
-    .modal-content {
+    &__content {
         margin: 15% auto; 
         padding: 40px;
         width: 420px;	
@@ -35,23 +35,22 @@
             letter-spacing: -0.5px;	
             line-height: 24px;
         }
-  
-        .close {
-            position: absolute;
-            right: -16px;
-            top: -16px;
-            height: 32px;
-            width: 32px;
-            border-radius: 16px;
-            border-width: 0;
-            color: #000000;
-            float: right;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 0 4px 0 rgba(0,0,0,0.3);
-        }
-        .btn {
-            width: 178px;
-        }
+    }
+    &__close {
+        position: absolute;
+        right: -16px;
+        top: -16px;
+        height: 32px;
+        width: 32px;
+        border-radius: 16px;
+        border-width: 0;
+        color: #000000;
+        float: right;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,0.3);
+    }
+    .btn {
+        width: 178px;
     }
 }
