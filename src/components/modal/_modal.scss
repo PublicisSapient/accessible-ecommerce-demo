@@ -1,3 +1,6 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
 .modal {
     display: none; 
     position: fixed; 
@@ -15,13 +18,12 @@
         margin: 15% auto; 
         padding: 40px;
         width: 420px;	
-        background-color: #FFFFFF; 
+        background-color: $white; 
         position: relative;
 
         h2 {
-            color: #000000;	
-            font-family: Verdana;	
-            font-size: 24px;	
+            color: $black;	
+            font-size: $font-xxl;	
             font-weight: bold;	
             letter-spacing: -0.9px;	
             line-height: 29px;
@@ -30,8 +32,6 @@
 
         p {
             color: #000000;	
-            font-family: Verdana;	
-            font-size: 16px;	
             letter-spacing: -0.5px;	
             line-height: 24px;
         }
@@ -45,10 +45,9 @@
         border-radius: 16px;
         border-width: 0;
         color: #000000;
-        float: right;
         font-size: 18px;
         font-weight: bold;
-        box-shadow: 0 0 4px 0 rgba(0,0,0,0.3);
+        @include medium-shadow;
     }
     .btn {
         width: 178px;
