@@ -1,5 +1,6 @@
 import * as breadcrumb from '../../components/breadcrumb/breadcrumb';
 import * as productDetails from '../../components/product-details/product-details';
+import * as productDetailsAccordion from '../../components/product-details-accordion/product-details-accordion';
 import * as productGallery from '../../components/gallery/gallery';
 import * as productForm from '../../components/product-form/product-form';
 import { setPageTitle } from '../../js/utils';
@@ -32,6 +33,7 @@ import * as productDB from '../../js/pouchdb';
         '[data-component="product-form"]'
       );
       productForm.init(productFormEl);
+      productDetailsAccordion.init(productData);
     });
   }
 

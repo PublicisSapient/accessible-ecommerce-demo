@@ -1,11 +1,16 @@
-.pdp{
-  .main-content{
+@import '../../scss/variables';
+
+.pdp {
+  .main-content {
     display: flex;
   }
-  .product-details, .gallery{
+
+  .product-details,
+  .gallery {
     flex: 1 0 50%;
   }
-  .gallery{
+
+  .gallery {
     max-width: 50%;
   }
 }

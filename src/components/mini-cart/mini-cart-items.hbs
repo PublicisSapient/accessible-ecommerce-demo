@@ -33,9 +33,24 @@
       </div>
     </a>
     <div class="mini-cart__controls">
-        <button class="mini-cart__control btn--link" data-remove="{{cart_id}}">Remove</button>
-        <a class="mini-cart__control btn--link" href="../pdp/index.html?product_id={{product_id}}">Edit</a>
-        <button class="mini-cart__control btn--link" >Save</button>
+      <button class="mini-cart__control btn--link" data-remove="{{cart_id}}">
+        <svg class="icon mini-cart__control-icon">
+          <use xlink:href="../sprite.svg#trash"></use>
+        </svg>
+        Remove
+      </button>
+      <a class="mini-cart__control btn--link" href="../pdp/index.html?product_id={{product_id}}">
+        <svg class="icon mini-cart__control-icon">
+          <use xlink:href="../sprite.svg#edit"></use>
+        </svg>
+        Edit
+      </a>
+      <button class="mini-cart__control btn--link">
+        <svg class="icon mini-cart__control-icon">
+          <use xlink:href="../sprite.svg#heart"></use>
+        </svg>
+        Save
+      </button>
     </div>
   </li>
   {{/each}}
