@@ -55,6 +55,13 @@
         font-size: 18px;
         font-weight: bold;
         @include medium-shadow;
+        cursor: pointer;
+
+        .icon-close {
+            height: 18px;
+            width: 18px;
+            margin-top: 5px;
+        }
     }
     .btn {
         width: 178px;
