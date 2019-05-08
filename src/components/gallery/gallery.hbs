@@ -7,7 +7,11 @@
     <div class="gallery__main-image__zoom">
       <button data-modal-show="gallery-modal" aria-label="Enlarge the Image" class="btn btn--secondary ion-ios-expand"><span class="sr-only">enlarge</span></button>
       <div class="gallery__main-image__zoom-group">
-        <span class="gallery__zoom-icon ion-ios-search"></span>
+        <span class="gallery__zoom-icon ion-ios-search">        
+          <svg class="icon">
+            <use xlink:href="../sprite.svg#search"></use>
+          </svg>
+        </span>
         <button id="gallery__minimize" class="btn btn--black btn--icon gallery__minimize" disabled aria-label="Decrease size of the image to 100%">
           <span class="icon ion-ios-remove"></span><span class="sr-only">Decrease size</span>
         </button>
