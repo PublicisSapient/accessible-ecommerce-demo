@@ -1,16 +1,25 @@
-.accordion{
+.accordion {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-.accordion-panel{
-  &__heading{
-    display: block;
-    width: 100%;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
     text-align: left;
+    width: 100%;
     border: 0;
     background: transparent;
-    padding: 0;
     cursor: pointer;
+
+    .icon--toggle-btn {
+      margin-left: auto;
+    }
+  }
+
+  &__panel {
+    .collapsed+& {
+      display: none;
+    }
   }
 }

@@ -1,5 +1,6 @@
 import renderFilters from './product-filters.hbs';
 import renderActiveFilters from './active-filters.hbs';
+import * as accordion from '../accordion/accordion';
 
 // Private vars
 let componentEl;
@@ -117,6 +118,7 @@ function init() {
   priceFilterFrom = priceFilterForm.querySelector('#priceFilterFrom');
   priceFilterTo = priceFilterForm.querySelector('#priceFilterTo');
 
+  accordion.enableToggles(componentEl);
   activeFiltersEl.addEventListener('click', onActiveFilterClick);
   priceFilterForm.addEventListener('submit', onPriceFilterSubmit);
   priceFilterForm.querySelector('[data-js="price-range-clear"]').addEventListener('click', onPriceFilterClear);
