@@ -13,11 +13,15 @@
     background-color: rgb(31,31,31); 
     background-color: rgba(31,31,31,0.75); 
 
+    &__flex {
+        display: flex;
+        justify-content: center;
+    }
+
   
     &__content {
-        margin: 15% auto; 
+        margin-top: 5rem; 
         padding: 40px;
-        width: 420px;	
         background-color: $white; 
         position: relative;
 
@@ -35,6 +39,9 @@
             letter-spacing: -0.5px;	
             line-height: 24px;
         }
+    }
+    #construction-modal &__content {
+        width: 420px;	
     }
     &__close {
         position: absolute;
