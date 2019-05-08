@@ -5,18 +5,29 @@
       <img id="gallery__main-image" src="https://source.unsplash.com/6cHumpSxTvs/583x645" alt="" />
     </div>
     <div class="gallery__main-image__zoom">
-      <button data-modal-show="gallery-modal" aria-label="Enlarge the Image" class="btn btn--secondary ion-ios-expand"><span class="sr-only">enlarge</span></button>
+      <button data-modal-show="gallery-modal" class="btn btn--secondary gallery__btn--zoom">
+        <span class="sr-only">Enlarge the Image</span>
+        <svg class="icon">
+          <use xlink:href="../sprite.svg#zoom-out"></use>
+        </svg>
+      </button>
       <div class="gallery__main-image__zoom-group">
-        <span class="gallery__zoom-icon ion-ios-search">        
+        <span class="gallery__zoom-icon">
           <svg class="icon">
             <use xlink:href="../sprite.svg#search"></use>
           </svg>
         </span>
         <button id="gallery__minimize" class="btn btn--black btn--icon gallery__minimize" disabled aria-label="Decrease size of the image to 100%">
-          <span class="icon ion-ios-remove"></span><span class="sr-only">Decrease size</span>
+          <span class="sr-only">Decrease size</span>
+          <svg class="icon">
+            <use xlink:href="../sprite.svg#remove"></use>
+          </svg>
         </button>
         <button id="gallery__maximize" class="gallery__maximize btn btn--black btn--icon" aria-label="Increase size of the image to 150%">
-          <span class="icon ion-ios-add"></span><span class="sr-only">Increase size</span>
+          <span class="sr-only">Increase size</span>
+          <svg class="icon">
+            <use xlink:href="../sprite.svg#add"></use>
+          </svg>
         </button>
       </div>
     </div>
