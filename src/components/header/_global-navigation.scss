@@ -7,12 +7,15 @@
   display: block;
   padding: 8px;
   text-align: center;
+  outline-offset: -2px;
 }
+
 #skip-to-nav {
   display: block;
   text-align: center;
   margin: 0;
   padding: 8px;
+  outline-offset: -2px;
 }
 
 .global-header {
@@ -31,10 +34,9 @@
     padding: 0 between(24px, 60px, $menu-collapse, $max-width);
     height: 140px;
     grid-template-columns:
-      minmax(72px, 220px)
-      minmax(428px, 740px)
-      minmax(165px, 200px);
+      minmax(72px, 220px) minmax(428px, 740px) minmax(195px, 216px);
   }
+
   @media only screen and (min-width: $max-width) {
     padding: 0 24px;
   }
@@ -49,12 +51,13 @@
     color: #fff;
     text-decoration: none;
     margin-left: 24px;
+
     @media only screen and (min-width: $menu-collapse) {
       margin-left: 0;
       grid-row: 1 / 3;
     }
-    @media only screen and (min-width: $logo-collapse) {
-    }
+
+    @media only screen and (min-width: $logo-collapse) {}
   }
 
   &__site-icon {
@@ -85,8 +88,10 @@
       display: block;
     }
   }
+
   &__mobile-toggles {
     justify-self: end;
+
     @media only screen and (min-width: $menu-collapse) {
       display: none;
     }
@@ -100,12 +105,14 @@
     background: transparent;
     position: relative;
     top: 1px;
+
     .icon {
       width: 24px;
       height: 24px;
       margin-top: 5px;
     }
   }
+
   .btn--menu-toggle {
     &[aria-expanded='true'] {
       border-left: 1px solid $grey;
@@ -113,6 +120,7 @@
       z-index: $layer-menu + 1;
     }
   }
+
   .btn--mobile-search {
     margin-left: auto;
   }
@@ -130,6 +138,7 @@
     display: none;
     grid-column: 2 / 3;
     align-self: start;
+
     @media only screen and (min-width: $menu-collapse) {
       display: flex;
       max-width: 560px;
@@ -181,7 +190,9 @@
     }
   }
 }
+
 @media only screen and (max-width: $menu-collapse - 1) {
+
   .primary-nav,
   .secondary-nav {
     &.open {
@@ -209,6 +220,7 @@
     height: 16px;
     width: 6px;
   }
+
   &__items {
     list-style: none;
     padding: 0;
@@ -217,11 +229,13 @@
     flex-direction: column;
     width: 100%;
     background: $black;
+
     @media only screen and (min-width: $menu-collapse) {
       flex-direction: row;
       justify-content: space-between;
     }
   }
+
   &__heading {
     color: $white;
     font-size: $font-md;
@@ -244,33 +258,42 @@
       margin-left: 4px;
       float: right;
     }
+
     @media only screen and (min-width: $menu-collapse) {
       font-size: $font-lg;
       border-bottom: 8px solid transparent;
       padding: 0 0 8px;
+
       .icon--chevron {
         width: 6px;
         float: none;
       }
+
       &.active {
         border-color: #fff;
       }
     }
   }
+
   &__item {
     border-top: 1px solid $grey;
+
     @media only screen and (min-width: $menu-collapse) {
       border: 0;
     }
+
     &.has-submenu {
       position: relative;
     }
   }
+
   &__submenu {
     display: none;
+
     @media only screen and (min-width: $menu-collapse) {
       position: absolute;
     }
+
     .has-submenu.open & {
       display: block;
       padding: 0;
@@ -279,6 +302,7 @@
     }
   }
 }
+
 .submenu-item {
   list-style: none;
 
@@ -305,6 +329,7 @@
     border-bottom: none;
   }
 }
+
 .secondary-nav {
   display: none;
   grid-row: 3 / 4;
@@ -327,24 +352,31 @@
     width: 100%;
     background: $black;
     list-style: none;
+
     @media only screen and (min-width: $menu-collapse) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       height: 100%;
+      border-left: 1px solid $medium-grey;
+      padding-left: 16px;
     }
   }
+
   &__item {
     border-top: 1px solid $grey;
+
     @media only screen and (min-width: $menu-collapse) {
       border: 0;
     }
   }
 
   @media only screen and (min-width: $menu-collapse) {
+
     &__mini-cart,
     &__contact {
       justify-self: end;
     }
+
     &__stores,
     &__contact {
       align-self: end;
@@ -361,11 +393,13 @@
     background: transparent;
     color: #fff;
     cursor: pointer;
+
     .icon {
       width: 18px;
       height: 18px;
       margin-right: 6px;
     }
+
     @media only screen and (min-width: $menu-collapse) {
       font-size: $font-sm;
       height: 24px;
