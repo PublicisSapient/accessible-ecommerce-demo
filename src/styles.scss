@@ -3,6 +3,7 @@
 
 // SASS Variables
 @import './scss/variables';
+@import './scss/mixins';
 
 /* ============================== Global Styles */
 * {
@@ -58,8 +59,7 @@ input,
 select,
 a {
   &:focus {
-    outline: 2px solid $focus-indicator;
-    outline-offset: 2px;
+    @include focus-outline;
   }
 
   // Firefox hack :(
@@ -99,7 +99,7 @@ select::-moz-focus-inner {
 
 @import "./components/accordion/accordion";
 @import "./components/modal/_modal.scss";
-/* 
+/*
 @import "../components/product-grid/_product-grid.scss";
 @import "../components/product-reviews/_product-reviews.scss";
 @import "../components/product-tile/_product-tile.scss";
