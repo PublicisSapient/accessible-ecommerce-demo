@@ -9,11 +9,18 @@ import * as Modal from './components/modal/modal';
 const headerDOM = document.querySelector('[data-template="global-header"]');
 const footerDOM = document.querySelector('[data-template="footer"]');
 const constructionModalDOM = document.querySelector('[data-template="construction-modal"]');
-if (headerDOM) headerDOM.outerHTML = headerTemplate();
+const header = {
+  rootPath: (
+    window.location.pathname === '/index.html'
+    || window.location.pathname === '/accessible-ecommerce-demo/'
+    || window.location.pathname === '/accessible-ecommerce-demo/index.html'
+  ) ? '.' : '..'
+};
+if (headerDOM) headerDOM.outerHTML = headerTemplate(header);
 if (footerDOM) footerDOM.outerHTML = footerTemplate();
 if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemplate();
 
 // Global components
 GlobalNav.init();
 MiniCart.init();
-Modal.init("construction-modal");
+Modal.init('construction-modal');
