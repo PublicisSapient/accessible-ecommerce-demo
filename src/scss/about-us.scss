@@ -1,0 +1,125 @@
+@import 'variables';
+@import 'mixins';
+
+.page-about-us {
+  .hero {
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .container {
+    padding-left: 140px;
+
+  }
+}
+
+.hero {
+  &__headline {
+    font-size: $font-hero-lg;
+    font-weight: bold;
+    letter-spacing: -0.15rem;
+    margin-top: 64px;
+  }
+
+  &__subhead {
+    font-size: $font-hero-md;
+    font-weight: bold;
+    letter-spacing: -0.1rem;
+    line-height: 4.4rem;
+    max-width: 790px;
+    margin-bottom: 80px;
+  }
+}
+
+.about-us {
+
+  &__content {
+    display: flex;
+  }
+
+  &__main {
+    flex: 1;
+
+    img {
+      max-width: 100%;
+    }
+
+    p,
+    li {
+      max-width: 560px;
+      line-height: 2.4rem;
+    }
+  }
+
+  &__sidebar {
+    position: sticky;
+    top: 24px;
+    align-self: flex-start;
+    flex: 0 1 200px;
+    margin: 64px 24px 84px 0;
+    font-size: $font-sm;
+  }
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+
+    &-item {
+      margin-bottom: 16px;
+
+      &:focus-within {
+        @include focus-outline;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      font-weight: bold;
+      color: $black;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__section {
+    &:first-child {
+      margin-bottom: 64px;
+    }
+
+    &:not(:first-child) {
+      margin-bottom: 96px;
+    }
+  }
+
+  &__section-title {
+    font-size: $font-xxl;
+    font-weight: bold;
+
+    .about-us__section:first-child & {
+      margin-top: 60px;
+    }
+  }
+
+  &__subsection-title {
+    font-size: $font-md;
+    font-weight: bold;
+    margin-bottom: 4px;
+
+    +p {
+      margin-top: 0;
+    }
+  }
+}
+
+.what-the-demo {
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+}
