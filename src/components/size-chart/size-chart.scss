@@ -1,0 +1,93 @@
+/* ========================================= SIZE CHART */
+
+.size-chart {
+  &__link {
+    display: block;
+    font-size: $font-xs;
+    margin-top: $grid-unit * 2;
+  }
+
+  .btn {
+    min-width: 170px;
+  }
+}
+
+.toggle-size-units-button {
+  border-radius: 24px;
+  background-color: $white;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 34px;
+  border: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  .selected {
+    background: #000;
+    border-radius: 24px;
+    color: #fff;
+    border: 3px solid #fff;
+  }
+}
+
+.toggle-size-units-button .units-toggle {
+  width: 150px;
+  font-size: $font-xs;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.show-centimeters tr.inches {
+  display: none;
+}
+
+.show-inches tr.centimeters {
+  display: none;
+}
+
+.size-chart-table {
+  border-spacing: 0;
+  border: none;
+  margin-bottom: 56px;
+
+  td {
+    text-align: center;
+    font-size: $font-sm;
+    height: 48px;
+    width: 150px;
+  }
+
+  th {
+    text-align: center;
+
+    &:first-child {
+      font-size: $font-sm;
+    }
+  }
+
+  td:not(:last-child),
+  th:not(:last-child) {
+    border-right: 1px solid #d8d8d8;
+  }
+
+  tr:not(.index-row) {
+
+    th,
+    td {
+      border-top: 1px solid #d8d8d8;
+    }
+  }
+
+
+  .highlight {
+    background-color: $white;
+  }
+
+  tr:first-of-type th {
+    font-size: $font-sm;
+    height: 48px;
+    min-width: 90px;
+    text-align: center;
+  }
+}

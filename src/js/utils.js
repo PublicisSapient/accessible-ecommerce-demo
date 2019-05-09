@@ -108,3 +108,27 @@ export function setPageTitle(terms) {
     ? `${siteName}, ${terms.join(', ')}`
     : siteName;
 }
+
+function generateStars(starType) {
+  return Array.from(Array(5), () => starType);
+}
+
+export function getStars(rating) {
+  if (rating === 5) return generateStars('full-star');
+  const fractionMin = 0.25;
+  const fractionMax = 0.75;
+  const fullStarCount = Math.floor(rating);
+  let stars = generateStars('empty-star');
+  if (fullStarCount < 5) {
+    for (let i = 0; i < fullStarCount; i++) {
+      stars[i] = 'full-star';
+    }
+    const ratingFraction = rating - fullStarCount;
+    if (ratingFraction > fractionMin && ratingFraction < fractionMax) {
+      stars[fullStarCount] = 'half-star';
+    } else if (ratingFraction > fractionMax) {
+      stars[fullStarCount] = 'full-star';
+    }
+  }
+  return stars;
+}

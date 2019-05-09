@@ -75,6 +75,11 @@ select::-moz-focus-inner {
   text-shadow: 0 0 0 $black;
 }
 
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
 @import "./scss/helpers";
 @import "./scss/grid";
 @import "./scss/buttons";
@@ -99,10 +104,12 @@ select::-moz-focus-inner {
 
 @import "./components/accordion/accordion";
 @import "./components/modal/_modal.scss";
+@import "./components/product-details-accordion/product-details-accordion";
+@import "./components/size-chart/size-chart";
+
 /*
 @import "../components/product-grid/_product-grid.scss";
 @import "../components/product-reviews/_product-reviews.scss";
 @import "../components/product-tile/_product-tile.scss";
 @import "../components/product-title/_product-title.scss";
-@import "../components/size-chart/_size-chart.scss";
  */

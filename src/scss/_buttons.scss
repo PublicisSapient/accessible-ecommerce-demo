@@ -80,9 +80,26 @@
   &--favorites {
     width: 40px;
     height: 40px;
-    border-radius: $grid-unit * 4;
-    color: $heart-red;
-    background-color: $pink;
+    background: transparent;
+    color: $black;
+    border-radius: 0;
+    padding: 0;
+    font-weight: normal;
+
+    .icon {
+      fill: transparent;
+      stroke: $black;
+      stroke-width: 2px;
+      width: 18px;
+      height: 20px;
+    }
+
+    &:not(:disabled):hover,
+    &:focus {
+      color: $black;
+    }
+
+    // background-color: $pink;
   }
 
   &--secondary {
