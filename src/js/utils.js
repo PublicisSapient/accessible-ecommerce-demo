@@ -132,3 +132,26 @@ export function getStars(rating) {
   }
   return stars;
 }
+
+function skipLinkClick(event) {
+  const targetElement = document.querySelector(event.target.hash);
+  focusOnElement(targetElement);
+}
+
+export function enableSkipLinks() {
+  const skipLinks = document.querySelectorAll('.skip-link');
+  skipLinks.forEach(
+    function initHashLink(link) {
+      link.addEventListener('click', skipLinkClick);
+    }
+  );
+}
+
+export function focusOnElement(element) {
+  if (element) {
+    // Basic check only to see if element exists. Can be expanded later to determine if its a focusable element, etc.
+    window.requestAnimationFrame(function () {
+      element.focus();
+    });
+  }
+}
