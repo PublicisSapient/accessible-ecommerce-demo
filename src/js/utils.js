@@ -133,18 +133,13 @@ export function getStars(rating) {
   return stars;
 }
 
-function skipLinkClick(event) {
-  const targetElement = document.querySelector(event.target.hash);
-  focusOnElement(targetElement);
-}
-
 export function enableSkipLinks() {
-  const skipLinks = document.querySelectorAll('.skip-link');
-  skipLinks.forEach(
-    function initHashLink(link) {
-      link.addEventListener('click', skipLinkClick);
+  document.body.addEventListener('click', function (event) {
+    if (event.target.classList.contains('skip-link')) {
+      const targetElement = document.querySelector(event.target.hash);
+      focusOnElement(targetElement);
     }
-  );
+  });
 }
 
 export function focusOnElement(element) {
