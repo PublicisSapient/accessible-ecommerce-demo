@@ -1,69 +1,81 @@
 @import '../../scss/mixins';
 @import '../../scss/variables';
 
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+}
+
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 200; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(31,31,31); 
-    background-color: rgba(31,31,31,0.75); 
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(31, 31, 31);
+  background-color: rgba(31, 31, 31, 0.75);
 
-    &__flex {
-        display: flex;
-        justify-content: center;
+  &[aria-expanded="true"] {
+    display: block;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  &__content {
+    margin-top: 5rem;
+    padding: 40px;
+    background-color: $white;
+    position: relative;
+
+    h2 {
+      color: $black;
+      font-size: $font-xxl;
+      font-weight: bold;
+      letter-spacing: -0.9px;
+      line-height: 29px;
+      margin-top: 0px;
     }
 
-  
-    &__content {
-        margin-top: 5rem; 
-        padding: 40px;
-        background-color: $white; 
-        position: relative;
+    p {
+      color: #000000;
+      letter-spacing: -0.5px;
+      line-height: 24px;
+    }
+  }
 
-        h2 {
-            color: $black;	
-            font-size: $font-xxl;	
-            font-weight: bold;	
-            letter-spacing: -0.9px;	
-            line-height: 29px;
-            margin-top: 0px;
-        }
+  #construction-modal &__content {
+    width: 420px;
+  }
 
-        p {
-            color: #000000;	
-            letter-spacing: -0.5px;	
-            line-height: 24px;
-        }
-    }
-    #construction-modal &__content {
-        width: 420px;	
-    }
-    &__close {
-        position: absolute;
-        right: -16px;
-        top: -16px;
-        height: 32px;
-        width: 32px;
-        border-radius: 16px;
-        border-width: 0;
-        color: #000000;
-        font-size: 18px;
-        font-weight: bold;
-        @include medium-shadow;
-        cursor: pointer;
+  &__close {
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    border-width: 0;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    @include medium-shadow;
+    cursor: pointer;
 
-        .icon-close {
-            height: 18px;
-            width: 18px;
-            margin-top: 5px;
-        }
+    .icon-close {
+      height: 18px;
+      width: 18px;
+      margin-top: 5px;
     }
-    .btn {
-        width: 178px;
-    }
+  }
+
+  .btn {
+    width: 178px;
+  }
 }
