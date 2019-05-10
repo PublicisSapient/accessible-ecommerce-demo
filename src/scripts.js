@@ -23,4 +23,4 @@ if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemp
 // Global components
 GlobalNav.init();
 MiniCart.init();
-Modal.init('construction-modal');
+//Modal.init('construction-modal'); - construction modal is now initialized in each page's javascript

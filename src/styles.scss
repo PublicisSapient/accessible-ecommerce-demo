@@ -42,6 +42,7 @@ body {
 
 svg {
   fill: currentColor;
+  pointer-events: none; //prevents click event
 }
 
 button {

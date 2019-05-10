@@ -20,6 +20,10 @@
     font-size: $font-lg;
     font-weight: bold;
   }
+  &__legal {
+    font-size: $font-xs;
+    margin-top: 30px;
+  }
 
 	.row{
 		justify-content: space-between;
