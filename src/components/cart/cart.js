@@ -1,3 +1,5 @@
+import { roundNumber } from '../../js/utils';
+
 function pushCartUpdatedEvent(detail){
   const event = new CustomEvent('update:cart', { detail });
   document.dispatchEvent(event);
@@ -33,7 +35,7 @@ function addToCart(newCartItem){
   let cart = getCartFromStorage();
   cart.cartIndex++;
   newCartItem.cart_id = cart.cartIndex;
-  newCartItem.total_price = parseInt(newCartItem.quantity) * Number(newCartItem.price_sale);
+  newCartItem.total_price = roundNumber(parseInt(newCartItem.quantity) * Number(newCartItem.price_sale));
   cart.cartItems.push(newCartItem);
   updateCart(cart);
 }

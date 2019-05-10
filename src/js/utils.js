@@ -132,3 +132,7 @@ export function getStars(rating) {
   }
   return stars;
 }
+
+export function roundNumber(value, decimals = 2) {
+  return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+}
