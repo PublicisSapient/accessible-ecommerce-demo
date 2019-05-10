@@ -5,6 +5,7 @@ import * as productGallery from '../../components/gallery/gallery';
 import * as productForm from '../../components/product-form/product-form';
 import { setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
+import * as Modal from '../../components/modal/modal';
 
 (function pdpPage() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -34,6 +35,7 @@ import * as productDB from '../../js/pouchdb';
       );
       productForm.init(productFormEl);
       productDetailsAccordion.init(productData);
+      Modal.init('construction-modal');
     });
   }
 

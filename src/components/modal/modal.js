@@ -44,6 +44,7 @@ var Modal = function (element, mainSelector) {
       this.focusedElementBeforeModal.focus();
     },
     initEvents: function(){
+
       document.addEventListener('keydown', this.onKeyDown.bind(this));
   
       document.body.addEventListener('focus', this.onFocus.bind(this), true);
