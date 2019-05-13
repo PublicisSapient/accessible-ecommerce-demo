@@ -59,6 +59,7 @@ import * as Modal from '../../components/modal/modal';
   function updateComponents() {
     const itemsPerPage = productSort.getItemsPerPage();
     pages = chunk(allProducts, itemsPerPage);
+    console.log("pages",pages);
     const pageCount = itemsPerPage === 0 ? 1 : pages.length;
     productGrid.update(pages[0]);
     pagination.update({ pageCount, currentPage: 1 });
