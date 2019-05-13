@@ -151,3 +151,6 @@ export function focusOnElement(element) {
     });
   }
 }
+export function roundNumber(value, decimals = 2) {
+  return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+}
