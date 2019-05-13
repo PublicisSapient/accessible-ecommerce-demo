@@ -58,7 +58,8 @@
   &__btn--zoom {
     padding: 0;
 
-    &:not(:disabled):hover {
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
       color: $black;
     }
   }

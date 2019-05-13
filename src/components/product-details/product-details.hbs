@@ -22,7 +22,7 @@
     <p class="product-description__summary">
       {{short_desc}}
       <br />
-      <a href="#product-description" class="product-description__read-more">Read More</a>
+      <a href="#product-description" class="product-description__read-more">Full product description</a>
     </p>
 
     <form class="product-form" data-component="product-form">
@@ -42,7 +42,7 @@
         </div>
         <a class="product-rating__view-button" href="#product-reviews">
           <span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
-          View Rating and Reviews
+          Ratings and reviews
         </a>
       </div>
       <hr class="divider" />
@@ -86,7 +86,7 @@
           <a href="#size-chart" class="size-chart__link">
             <svg class="icon icon--ruler">
               <use xlink:href="../sprite.svg#ruler"></use>
-            </svg>View size chart
+            </svg>Size chart
           </a>
         </fieldset>
 
@@ -116,12 +116,11 @@
             </button>
           </span>
           <button class="product-actions__add-to-cart btn btn--primary" type="submit">Add to Cart</button>
-          <button class="product-actions__add-to-wishlist btn btn--favorites" type="button">
-            <span class="sr-only">Save to wishlist</span>
+          <button class="product-actions__add-to-wishlist btn btn--favorites" type="button" data-modal-show="construction-modal">
             <svg class="icon icon--heart">
               <use xlink:href="../sprite.svg#heart"></use>
             </svg>
-            Save
+            Save <span class="sr-only">to wish list</span>
           </button>
         </div>
       </div>

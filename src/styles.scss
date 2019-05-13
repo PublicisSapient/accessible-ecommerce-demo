@@ -69,6 +69,10 @@ a {
   }
 }
 
+a {
+  color: $black;
+}
+
 // Firefox hack :(
 select:-moz-focusring,
 select::-moz-focus-inner {
