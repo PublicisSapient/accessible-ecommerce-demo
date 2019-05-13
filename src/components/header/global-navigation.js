@@ -77,6 +77,14 @@ function onClickMenuItemWithSubmenu(event) {
   return false;
 }
 
+function setActiveClass() {
+  // temporary way to set active class on "Women" nav item when in PLP or PDP page
+  var pathname = window.location.pathname;
+  if(pathname.indexOf("/plp/") >= 0 || pathname.indexOf("/pdp/") >= 0) {
+    document.querySelector('#main-nav-women').className += " active";
+  }
+}
+
 function init() {
   componentEl = document.querySelector('[data-component="global-header"]');
   const menuItems = componentEl.querySelectorAll('[data-js="dropdown-toggle"]');
@@ -94,6 +102,8 @@ function init() {
   });
 
   hamburgerMenuButton.addEventListener('click', onHamburgerMenuClick);
+
+  setActiveClass();
 }
 
 export { init };
