@@ -16,8 +16,7 @@ function update(products){
     componentEl.innerHTML = renderTiles({products});
   } else {
     componentEl.style.display = 'block';
-    // copy to be confirmed
-    componentEl.innerHTML = '<h2>Sorry, there are no products that match your search</h2><p><a href="#skip-to-filters">Please review your filters</a></p>';
+    componentEl.innerHTML = '<h2>Sorry. We did not find any results. Try expanding your filters.</h2>';
   }
 }
 
