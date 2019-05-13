@@ -7,6 +7,7 @@ import * as pagination from '../../components/pagination/pagination';
 import * as carousel from '../../components/product-carousel/product-carousel';
 import { chunk, getRandomSubset, setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
+import * as Modal from '../../components/modal/modal';
 
 (function plpPage() {
   let pages;
@@ -38,6 +39,8 @@ import * as productDB from '../../js/pouchdb';
   document.addEventListener('update:sort', sortProducts);
   document.addEventListener('update:ipp', updateComponents);
   document.addEventListener('update:pagination', getPage);
+
+  Modal.init('construction-modal');
 
   function getPage(event) {
     let newPage = event.detail.goToPage;
