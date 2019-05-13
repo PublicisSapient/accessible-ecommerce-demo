@@ -8,22 +8,40 @@
     <title>Cart | The Accessibile eStore</title>
 
     <link rel="stylesheet" href="../../styles.scss">
-
+    <link rel="stylesheet" href="./cart.scss" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
 </head>
 
-<body class="cart-page">
+
+<body class="page page--cart">
     <header class="navigation" data-template="global-header"></header>
     <div class="main">
         <div data-component="breadcrumb"></div>
         <div class="container">
             <section id="content" class="main-content">
-                <h1 class="template-heading">Your Cart</h1>
-                <div data-template="cart-items"></div>
+                <div class="cart-summary">
+                    <h1 class="template-heading">Your Cart</h1>
+                    <p class="cart__total-quantity">You {{cartItemCount}} {{cartItemsLabel}}</p>
+                    <div class="mini-cart__summary-controls">
+                        <a href="../plp/index.html" class="mini-cart__cta-btn btn btn--outline-black">Continue Shopping</a>
+                        <a href="../checkout/index.html" class="mini-cart__cta-btn mini-cart__checkout btn btn--primary">Pay Securely Now</a>
+                    </div>
+                </div>
+<!-- <div data-template="mini-cart-items" class="mini-cart__items"></div> -->
+                <div class="cart__items" data-template="cart-items"></div>
+                <div class="cart__moneybox" data-template="cart-moneybox"></div>
+                <div class="cart-summary">
+                    <div class="mini-cart__summary-controls">
+                        <a href="../plp/index.html" class="mini-cart__cta-btn btn btn--outline-black">Continue Shopping</a>
+                        <a href="../checkout/index.html" class="mini-cart__cta-btn mini-cart__checkout btn btn--primary">Pay Securely Now</a>
+                    </div>
+                </div>
+
             </section>
         </div>
     </div>
+
     <div data-template="footer"></div>
     <div data-component="modal"></div>
     <script src="./cart-page.js"></script>

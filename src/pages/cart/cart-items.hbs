@@ -1,5 +1,45 @@
-<ul>
-  {{#each cartItems}}
-  <li>{{product_name}}</li>
-  {{/each}}
-</ul>
+<div class="cart-items">
+  <h2 class="heading heading--section">Items in Cart</h2>
+  <ul class="cart-items__item-list">
+    {{#each cartItems}}
+      <li class="cart-items__item">
+        <a class="cart-items__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Shirt Malo.
+        Size: Medium, Color: blue, quantity: 1, Item unit price: $36.95, Item total price: $36.95">
+        <img class="cart-items__image" alt="" src="{{thumbnail_url}}">
+        <div class="cart-items__description">
+          <p class="cart-items__item-title">{{product_name}}</p>
+          <dl class="cart-items__details">
+            <div class="cart-items__detail">
+              <dt>Price</dt>
+              <dd class="detail__price">${{price_sale}}</dd>
+            </div>
+            <div class="cart-items__detail">
+              <dt>Color</dt>
+              <dd>{{color}}</dd>
+            </div>
+            <div class="cart-items__detail">
+              <dt>Size</dt>
+              <dd>{{size}}</dd>
+            </div>
+          </dl>
+          <dl class="cart-items__details">
+            <div class="cart-items__detail">
+              <dt>Qty</dt>
+              <dd>{{quantity}}</dd>
+            </div>
+            <div class="cart-items__detail">
+              <dt>Total</dt>
+              <dd class="detail__price">${{total_price}}</dd>
+            </div>
+          </dl>
+        </div>
+        </a>
+        <div class="cart-items__controls">
+          <button class="cart-items__control btn--link" data-remove="{{cart_id}}">Remove</button>
+          <a class="cart-items__control btn--link" href="../pdp/index.html?product_id={{product_id}}">Edit</a>
+          <button class="cart-items__control btn--link">Save</button>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
