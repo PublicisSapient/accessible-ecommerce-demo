@@ -1,3 +1,5 @@
+import { focusOnElement } from '../../js/utils';
+
 function toggleState(button) {
   const header = button.closest('.accordion__heading');
   const ariaExpanded = button.getAttribute('aria-expanded') === 'true' ? false : true;
@@ -14,16 +16,16 @@ function enableToggle(button) {
 }
 
 function openAccordionButton(hashElement) {
-  return hashElement
-    && hashElement.classList.contains('accordion__heading')
-    && hashElement.classList.contains('collapsed');
+  return hashElement && hashElement.getAttribute('aria-expanded') == 'false';
 }
 
 function hashClicked(event) {
-  const currentHash = event.currentTarget.getAttribute('href');
-  const hashElement = document.querySelector(currentHash);
+  const hashElement = document.querySelector(event.currentTarget.hash);
+
+  focusOnElement(hashElement);
+
   if (openAccordionButton(hashElement)) {
-    toggleState(hashElement.querySelector('button'));
+    toggleState(hashElement);
   }
 }
 
@@ -37,7 +39,7 @@ function createToggle(accordionElement, panel, startCollapsed) {
   let toggle = document.createElement('button');
   if (startCollapsed) header.classList.add('collapsed');
   header.classList.add('accordion__heading');
-  header.setAttribute('id', panel.dataset.id);
+  toggle.setAttribute('id', panel.dataset.id);
   toggle.classList.add('accordion__toggle');
   toggle.setAttribute('aria-expanded', !startCollapsed);
   panel.classList.add('accordion__panel');
@@ -66,7 +68,7 @@ function init(accordionElement, startCollapsed) {
   const hashLinks = document.querySelectorAll('[href^="#"]');
   hashLinks.forEach(
     function initHashLink(link) {
-      link.addEventListener('click', hashClicked);
+      if (link.hash) link.addEventListener('click', hashClicked);
     }
   );
 
@@ -74,7 +76,7 @@ function init(accordionElement, startCollapsed) {
   if (window.location.hash) {
     const hashElement = document.querySelector(window.location.hash);
     if (openAccordionButton(hashElement)) {
-      toggleState(hashElement.querySelector('button'));
+      toggleState(hashElement);
     }
   }
 }
