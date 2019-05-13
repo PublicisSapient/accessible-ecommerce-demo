@@ -1,5 +1,6 @@
 <section class="product-sort" id="product-sort" data-component="sort">
     <h2 class="heading heading--section">Sort</h2>
+    <a id="skip-to-products-from-sort-heading" href="#skip-to-products-from-sort" class="skip-link">Skip to products</a>
     <span class="sort__showing-count" aria-live="polite" aria-atomic="true">
         Showing
         <span data-js="showing-count"></span>
@@ -8,7 +9,6 @@
     <div class="product-sort__options">
         <div class="product-sort__option">
             <h3 class="form--label"><label for="sortBy">Sort By</label></h3>
-            <a href="#skip-to-sort" class="skip-link">Back to Sort</a>
             <select class="sort-menu__select select--block" data-js="update-sort" name="sort-by" id="sortBy">
                 <option value="rating:desc">Newest</option>
                 <option value="price_sale:desc">Price high to low</option>
@@ -18,7 +18,6 @@
         </div>
         <div class="product-sort__option">
             <h3 class="form--label"><label for="itemsPerPage">Items Per Page</label></h3>
-            <a href="#skip-to-sort" class="skip-link">Back to Sort</a>
             <select class="sort-menu__select select--block" data-js="update-ipp" name="items-per-page" id="itemsPerPage">
                 <option value="12">12</option>
                 <option value="24">24</option>
