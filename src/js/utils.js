@@ -133,6 +133,24 @@ export function getStars(rating) {
   return stars;
 }
 
+export function enableSkipLinks() {
+  document.body.addEventListener('click', function (event) {
+    if (event.target.classList.contains('skip-link')) {
+      const targetElement = document.querySelector(event.target.hash);
+      event.preventDefault();
+      focusOnElement(targetElement);
+    }
+  });
+}
+
+export function focusOnElement(element) {
+  if (element) {
+    // Basic check only to see if element exists. Can be expanded later to determine if its a focusable element, etc.
+    window.requestAnimationFrame(function () {
+      element.focus();
+    });
+  }
+}
 export function roundNumber(value, decimals = 2) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }

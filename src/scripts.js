@@ -4,6 +4,7 @@ import constructionModalTemplate from './components/modal/construction-modal.hbs
 import * as MiniCart from './components/mini-cart/mini-cart';
 import * as GlobalNav from './components/header/global-navigation';
 import * as Modal from './components/modal/modal';
+import { enableSkipLinks } from './js/utils';
 
 // Global templating
 const headerDOM = document.querySelector('[data-template="global-header"]');
@@ -23,4 +24,5 @@ if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemp
 // Global components
 GlobalNav.init();
 MiniCart.init();
-//Modal.init('construction-modal'); - construction modal is now initialized in each page's javascript
+
+enableSkipLinks();
