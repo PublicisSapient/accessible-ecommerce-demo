@@ -24,5 +24,4 @@ if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemp
 // Global components
 GlobalNav.init();
 MiniCart.init();
-
 enableSkipLinks();
