@@ -137,6 +137,7 @@ export function enableSkipLinks() {
   document.body.addEventListener('click', function (event) {
     if (event.target.classList.contains('skip-link')) {
       const targetElement = document.querySelector(event.target.hash);
+      event.preventDefault();
       focusOnElement(targetElement);
     }
   });
