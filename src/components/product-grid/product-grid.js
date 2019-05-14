@@ -10,9 +10,10 @@ function init() {
   componentEl = document.querySelector('[data-component="grid"]');
 }
 function update(products){
-  if(products){
-    if(componentEl.style.display = 'block')
+  if(products !== undefined){
+    if(componentEl.style.display = 'block') {
       componentEl.style.display = 'grid';
+    }
     componentEl.innerHTML = renderTiles({products});
   } else {
     componentEl.style.display = 'block';
