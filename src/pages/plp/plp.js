@@ -5,7 +5,7 @@ import * as productSort from '../../components/product-sort/product-sort';
 import * as productGrid from '../../components/product-grid/product-grid';
 import * as pagination from '../../components/pagination/pagination';
 import * as carousel from '../../components/product-carousel/product-carousel';
-import * as modal from '../../components/modal/modal-dynamic';
+import * as DynamicModal from '../../components/modal/modal-dynamic';
 import { chunk, getRandomSubset, setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
 import * as Modal from '../../components/modal/modal';
@@ -34,6 +34,8 @@ import * as Modal from '../../components/modal/modal';
   productGrid.init();
   pagination.init();
   carousel.init();
+
+  Modal.init('construction-modal');
 
   function getPage(event) {
     let newPage = event.detail.goToPage;
@@ -78,9 +80,12 @@ import * as Modal from '../../components/modal/modal';
     });
   }
 
-  function showModal() {
-    modal.init();
-    console.log('%c CLICK ', 'background: hotpink; color: white');
+  function loadModal(event) {
+    const componentName = event.currentTarget.dataset.modalLoad;
+    DynamicModal.init(
+      `[data-component="${componentName}"]`,
+      `modal-${componentName}`
+    );
   }
 
   // Event Listeners
@@ -88,7 +93,8 @@ import * as Modal from '../../components/modal/modal';
   document.addEventListener('update:sort', sortProducts);
   document.addEventListener('update:ipp', updateComponents);
   document.addEventListener('update:pagination', getPage);
-  document.querySelector('[data-modal-show="filters"]').addEventListener('click', showModal);
+  const dynamicModals = document.querySelectorAll('[data-modal-load]');
+  dynamicModals.forEach((modalTrigger) => modalTrigger.addEventListener('click', loadModal));
 
   setPageTitle(['Women', 'Women’s Tops']);
   productDB.init().then(fetchComponentData);

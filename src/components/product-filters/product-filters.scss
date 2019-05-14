@@ -1,18 +1,18 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 .product-filters {
   @include component-panel;
 
-  .heading {
-    padding: 0 24px;
+  .modal & {
+    box-shadow: none;
   }
 
   .skip-link {
-    margin: 0 24px;
+    vertical-align: middle;
   }
 
   &__filter-count {
-    padding: 0 24px;
     font-size: $font-sm;
   }
 
@@ -23,12 +23,6 @@
       border-style: solid;
       border-width: 1px 0 0;
       margin: 0;
-    }
-
-    &__options {
-      padding: 8px 24px;
-      margin: 0;
-      border-top: 1px solid $grey;
     }
 
     &__toggle {
@@ -49,12 +43,66 @@
       }
     }
   }
+
+  .checkbox {
+    &__label {
+      display: flex;
+
+      @media only screen and (max-width: $filters-collapse) {
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $grey;
+          padding-bottom: 8px;
+        }
+      }
+    }
+
+  }
+
+  &__header {
+    padding: 0 24px 16px;
+  }
+
+  &__footer {
+    display: flex;
+    padding: 0 24px;
+
+    @media only screen and (min-width: $filters-collapse) {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__accordion {
+    border-bottom: 1px solid $grey;
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    &+.skip-link {
+      margin: 0 0 0 16px;
+
+      @media only screen and (min-width: $filters-collapse) {
+        margin: 16px 20px 0 0;
+      }
+    }
+  }
+}
+
+.filter {
+  &__options {
+    padding: 8px 24px;
+    margin: 0;
+    border-top: 1px solid $grey;
+  }
 }
 
 .price-filter {
 
   &__fieldset {
     display: flex;
+  }
+
+  &__form {
+    padding-bottom: 16px;
   }
 
   &__label {
@@ -79,28 +127,40 @@
   &__submit {
     width: 100%;
     margin-top: 16px;
+    margin-bottom: 8px;
   }
 
   &__clear-btn {
-    margin: 8px 0 16px;
+    margin: 0;
     padding: 0;
     font-size: $font-sm;
   }
 }
 
 .active-filters {
-  padding: 0 24px;
+  padding: 0;
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  grid-gap: 8px;
 
   &__clear-btn {
     font-size: $font-sm;
-    margin: 0 0 24px 24px;
     padding: 0;
+    flex: 0 1 auto;
+  }
+
+  &__close-btn {
+    flex: 1;
+    margin-right: 24px;
+
+    @media only screen and (min-width: $filters-collapse) {
+      display: none;
+    }
   }
 }
 
 .active-filter {
-  margin-bottom: 8px;
 
   .icon--close-btn {
     width: 12px;

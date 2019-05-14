@@ -3,7 +3,6 @@
 
 body.modal-open {
   overflow: hidden;
-  position: fixed;
 }
 
 .modal {
@@ -27,32 +26,20 @@ body.modal-open {
     justify-content: center;
   }
 
-
   &__content {
-    margin-top: 5rem;
+    margin: 5rem 24px 0;
     padding: 40px;
     background-color: $white;
     position: relative;
+    z-index: 10;
 
-    h2 {
-      color: $black;
-      font-size: $font-xxl;
-      font-weight: bold;
-      letter-spacing: -0.9px;
-      line-height: 29px;
-      margin-top: 0px;
-    }
-
-    p {
-      color: #000000;
-      letter-spacing: -0.5px;
-      line-height: 24px;
+    .modal--dynamic & {
+      margin: 0;
+      padding: 16px 0;
     }
   }
 
-  #construction-modal &__content {
-    width: 420px;
-  }
+
 
   &__close {
     position: absolute;
@@ -68,14 +55,59 @@ body.modal-open {
     @include medium-shadow;
     cursor: pointer;
 
-    .icon-close {
+    .icon--close {
       height: 18px;
       width: 18px;
       margin-top: 5px;
     }
+
+    .modal--dynamic & {
+      box-shadow: none;
+      right: 8px;
+      top: 8px;
+      padding: 0;
+      background: transparent;
+    }
   }
 
-  .btn {
-    width: 178px;
+  &__backdrop-close {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    border: 0;
+    background: transparent;
+  }
+}
+
+.gallery-modal {
+  &__image {
+    max-width: 100%;
+  }
+}
+
+.construction-modal {
+  &__content {
+    max-width: 420px;
+  }
+
+  &__title {
+    font-size: $font-xxl;
+    font-weight: bold;
+    letter-spacing: -0.9px;
+    line-height: 29px;
+    margin-top: 0px;
+  }
+
+  &__description {
+    letter-spacing: -0.5px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__cta-btn {
+    width: 180px;
   }
 }

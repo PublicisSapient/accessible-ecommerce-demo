@@ -26,21 +26,22 @@ Modal.prototype = {
       setFocusToFirstItem(this.element);
     }
   },
-  show: function () {
+  show: function (event) {
+    event.preventDefault();
     this.shown = true;
-    this.element.style.display = 'block';
     this.element.setAttribute('aria-hidden', 'false');
     this.element.setAttribute('aria-expanded', 'true');
     this.main.setAttribute('aria-hidden', 'true');
+    document.body.classList.add('modal-open');
     this.focusedElementBeforeModal = document.activeElement;
     setFocusToFirstItem(this.element);
   },
   hide: function () {
     this.shown = false;
-    this.element.style.display = 'none';
     this.element.setAttribute('aria-hidden', 'true');
     this.element.setAttribute('aria-expanded', 'false');
     this.main.setAttribute('aria-hidden', 'false');
+    document.body.classList.remove('modal-open');
     this.focusedElementBeforeModal.focus();
   },
   initEvents: function () {
