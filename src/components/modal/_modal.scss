@@ -1,69 +1,113 @@
 @import '../../scss/mixins';
 @import '../../scss/variables';
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 200; 
-    left: 0;
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(31, 31, 31);
+  background-color: rgba(31, 31, 31, 0.75);
+
+  &[aria-expanded="true"] {
+    display: block;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    margin: 5rem 24px 0;
+    padding: 40px;
+    background-color: $white;
+    position: relative;
+    z-index: 10;
+
+    .modal--dynamic & {
+      margin: 0;
+      padding: 16px 0;
+    }
+  }
+
+
+
+  &__close {
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    border-width: 0;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    @include medium-shadow;
+    cursor: pointer;
+
+    .icon--close {
+      height: 18px;
+      width: 18px;
+      margin-top: 5px;
+    }
+
+    .modal--dynamic & {
+      box-shadow: none;
+      right: 8px;
+      top: 8px;
+      padding: 0;
+      background: transparent;
+    }
+  }
+
+  &__backdrop-close {
+    width: 100%;
+    height: 100%;
+    position: absolute;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(31,31,31); 
-    background-color: rgba(31,31,31,0.75); 
+    left: 0;
+    z-index: 0;
+    border: 0;
+    background: transparent;
+  }
+}
 
-    &__flex {
-        display: flex;
-        justify-content: center;
-    }
+.gallery-modal {
+  &__image {
+    max-width: 100%;
+  }
+}
 
-  
-    &__content {
-        margin-top: 5rem; 
-        padding: 40px;
-        background-color: $white; 
-        position: relative;
+.construction-modal {
+  &__content {
+    max-width: 420px;
+  }
 
-        h2 {
-            color: $black;	
-            font-size: $font-xxl;	
-            font-weight: bold;	
-            letter-spacing: -0.9px;	
-            line-height: 29px;
-            margin-top: 0px;
-        }
+  &__title {
+    font-size: $font-xxl;
+    font-weight: bold;
+    letter-spacing: -0.9px;
+    line-height: 29px;
+    margin-top: 0px;
+  }
 
-        p {
-            color: #000000;	
-            letter-spacing: -0.5px;	
-            line-height: 24px;
-        }
-    }
-    #construction-modal &__content {
-        width: 420px;	
-    }
-    &__close {
-        position: absolute;
-        right: -16px;
-        top: -16px;
-        height: 32px;
-        width: 32px;
-        border-radius: 16px;
-        border-width: 0;
-        color: #000000;
-        font-size: 18px;
-        font-weight: bold;
-        @include medium-shadow;
-        cursor: pointer;
+  &__description {
+    letter-spacing: -0.5px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
 
-        .icon-close {
-            height: 18px;
-            width: 18px;
-            margin-top: 5px;
-        }
-    }
-    .btn {
-        width: 178px;
-    }
+  &__cta-btn {
+    width: 180px;
+  }
 }

@@ -3,7 +3,6 @@ import footerTemplate from './components/footer/footer.hbs';
 import constructionModalTemplate from './components/modal/construction-modal.hbs';
 import * as MiniCart from './components/mini-cart/mini-cart';
 import * as GlobalNav from './components/header/global-navigation';
-import * as Modal from './components/modal/modal';
 import { enableSkipLinks } from './js/utils';
 
 // Global templating
@@ -24,5 +23,4 @@ if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemp
 // Global components
 GlobalNav.init();
 MiniCart.init();
-
 enableSkipLinks();

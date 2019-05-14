@@ -53,6 +53,10 @@ button {
   font-size: $font-lg;
   font-weight: bold;
   margin-top: 2.4rem;
+
+  .modal & {
+    margin-top: 0;
+  }
 }
 
 button,
@@ -96,6 +100,7 @@ select::-moz-focus-inner {
 @import "./components/footer/footer";
 @import "./components/header/global-navigation";
 @import "./components/mini-cart/mini-cart";
+@import "./components/accordion/accordion";
 
 @import "./components/product-filters/product-filters";
 @import "./components/product-grid/product-grid";
@@ -107,7 +112,6 @@ select::-moz-focus-inner {
 @import "./components/product-details/product-details";
 @import "./components/gallery/gallery";
 
-@import "./components/accordion/accordion";
 @import "./components/modal/_modal.scss";
 @import "./components/product-details-accordion/product-details-accordion";
 @import "./components/size-chart/size-chart";

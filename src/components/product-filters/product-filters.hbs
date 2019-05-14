@@ -1,19 +1,37 @@
-<section aria-label="Filters" class="product-filters" data-component="filters">
-    <h2 class="heading heading--section">Filters</h2>
-    <a id="skip-to-products-from-filters-heading" class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
-    <p class="product-filters__filter-count" aria-live="polite" aria-atomic="true" data-js="filter-count">
-        0 filters applied
-    </p>
-    <p class="element-invisible">Showing <span data-js="product-count">0</span> products</p>
-    <h3 class="sr-only" id="remove-filter-description">Remove filter</h3>
-    <div data-component="active-filters"></div>
-    <button class="btn btn--link active-filters__clear-btn" data-js="clear-filters" type="button">
-        Clear filters
+<div class="mobile-filters">
+    <button class="mobile-filter" type="button" data-modal-load="filters">
+        Filters <span data-js="mobile-filter-count" aria-hidden="true">(0)</span>
         <span class="sr-only">, </span>
         <span class="sr-only" data-js="filter-count">0 filters applied</span>
+        <svg class="icon icon--add" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <use xlink:href="../sprite.svg#add"></use>
+        </svg>
     </button>
-    <a id="skip-to-filters" class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
-    <ul class="accordion filters__accordion">
+    <button class="mobile-filter" type="button" data-modal-load="sort">
+        Sort
+        <svg class="icon icon--add" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <use xlink:href="../sprite.svg#add"></use>
+        </svg>
+    </button>
+</div>
+<section aria-label="Filters" class="product-filters" data-component="filters">
+    <div class="product-filters__header">
+        <h2 class="heading heading--section">Filters</h2>
+        <a id="skip-to-products-from-filters-heading" class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
+        <p class="product-filters__filter-count" aria-live="polite" aria-atomic="true" data-js="filter-count">
+            0 filters applied
+        </p>
+        <p class="element-invisible">Showing <span data-js="product-count">0</span> products</p>
+        <h3 class="sr-only" id="remove-filter-description">Remove filter</h3>
+        <div data-component="active-filters"></div>
+        <button class="btn btn--link active-filters__clear-btn" data-js="clear-filters" type="button">
+            Clear filters
+            <span class="sr-only">, </span>
+            <span class="sr-only" data-js="filter-count">0 filters applied</span>
+        </button>
+        <a id="skip-to-filters" class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
+    </div>
+    <ul class="accordion product-filters__accordion">
         <li class="filter">
             <h3 class="accordion__heading filter__heading">
                 <button class="filter__toggle accordion__toggle" type="button" aria-expanded="true" data-js="accordion-toggle">
@@ -27,15 +45,15 @@
             <fieldset class="accordion__panel filter__options">
                 <legend id="colorLegend" class="visibly-hidden">Filter by Colors</legend>
                 <input id="blue" data-js="filter" class="checkbox__input" aria-label="Filter on color blue" type="checkbox" name="color" value="blue">
-                <label for="blue" class="checkbox__label">Blue</label><br>
+                <label for="blue" class="checkbox__label">Blue</label>
                 <input id="green" data-js="filter" class="checkbox__input" aria-label="Filter on color green" type="checkbox" name="color" value="green">
-                <label for="green" class="checkbox__label">Green</label><br>
+                <label for="green" class="checkbox__label">Green</label>
                 <input id="yellow" data-js="filter" class="checkbox__input" aria-label="Filter on color yellow" type="checkbox" name="color" value="yellow">
-                <label for="yellow" class="checkbox__label">Yellow</label><br>
+                <label for="yellow" class="checkbox__label">Yellow</label>
                 <input id="red" data-js="filter" class="checkbox__input" aria-label="Filter on color red" type="checkbox" name="color" value="red">
                 <label for="red" class="checkbox__label">Red</label>
+                <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
             </fieldset>
-            <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
         </li>
         <li class="filter">
             <h3 class="accordion__heading filter__heading">
@@ -50,13 +68,13 @@
             <fieldset class="accordion__panel filter__options">
                 <legend id="sizeLegend" class="visibly-hidden">Filter by Size</legend>
                 <input id="large" data-js="filter" class="checkbox__input" aria-label="Filter on size large" type="checkbox" name="size" value="large" />
-                <label for="large" class="checkbox__label">Large</label><br>
+                <label for="large" class="checkbox__label">Large</label>
                 <input id="medium" data-js="filter" class="checkbox__input" aria-label="Filter on size medium" type="checkbox" name="size" value="medium">
-                <label for="medium" class="checkbox__label">Medium</label><br>
+                <label for="medium" class="checkbox__label">Medium</label>
                 <input id="small" data-js="filter" class="checkbox__input" aria-label="Filter on size small" type="checkbox" name="size" value="small">
-                <label for="small" class="checkbox__label">Small</label><br>
+                <label for="small" class="checkbox__label">Small</label>
+                <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
             </fieldset>
-            <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
         </li>
         <li class="filter">
             <h3 class="accordion__heading filter__heading">
@@ -84,13 +102,18 @@
                 <button class="btn btn--link price-filter__clear-btn" type="button" data-js="price-range-clear">
                     Clear price range
                 </button>
+                <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
             </form>
-            <a class="skip-link" href="#skip-to-products-from-filters">Skip to Products</a>
         </li>
     </ul>
-    <button class="btn btn--link active-filters__clear-btn" data-js="clear-filters" type="button">
-        Clear filters
-        <span class="sr-only">, </span>
-        <span class="sr-only" data-js="filter-count">0 filters applied</span>
-    </button>
+    <div class="product-filters__footer">
+        <button class="btn active-filters__close-btn" data-js="close-modal" type="button">
+            I’m done
+        </button>
+        <button class="btn btn--link active-filters__clear-btn" data-js="clear-filters" type="button">
+            Clear filters
+            <span class="sr-only">, </span>
+            <span class="sr-only" data-js="filter-count">0 filters applied</span>
+        </button>
+    </div>
 </section>

@@ -51,7 +51,7 @@ export function getRandomSubset(items, length) {
 }
 
 export function getFocusableChildren(node) {
-  var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex="-1"])'];
+  var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled]):not([tabindex="-1"])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex="-1"])'];
 
   return $$(focusableElements.join(','), node).filter(function (child) {
     return !!(child.offsetWidth || child.offsetHeight || child.getClientRects().length);
@@ -67,7 +67,6 @@ export function $$(selector, context) {
 export function trapTabKey(node, event) {
   var focusableChildren = getFocusableChildren(node);
   var focusedItemIndex = focusableChildren.indexOf(document.activeElement);
-
   if (event.shiftKey && focusedItemIndex === 0) {
     focusableChildren[focusableChildren.length - 1].focus();
     event.preventDefault();

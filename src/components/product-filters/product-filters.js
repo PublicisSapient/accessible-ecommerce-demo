@@ -6,6 +6,7 @@ import * as accordion from '../accordion/accordion';
 let componentEl;
 let activeFiltersEl;
 let filterCountEls;
+let mobileFilterCount;
 let priceFilterForm;
 let priceFromField;
 let priceToField;
@@ -65,6 +66,10 @@ function updateFilters() {
     ? 'filter'
     : 'filters';
 
+  mobileFilterCount.innerHTML = (activeFilters.length)
+    ? `&nbsp;(${activeFilters.length})`
+    : '';
+
   filterCountEls.forEach(element =>
     element.innerHTML =
     `${activeFilters.length} ${filterText} applied`
@@ -110,6 +115,7 @@ function init() {
   if (element) element.outerHTML = renderFilters();
 
   componentEl = document.querySelector('[data-component="filters"]');
+  mobileFilterCount = document.querySelector('[data-js="mobile-filter-count"]');
   filterCountEls = componentEl.querySelectorAll('[data-js="filter-count"]');
   activeFiltersEl = componentEl.querySelector('[data-component="active-filters"]');
   priceFilterForm = componentEl.querySelector('[data-js="price-filter"]');
