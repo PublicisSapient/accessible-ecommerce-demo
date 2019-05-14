@@ -11,7 +11,7 @@ function init() {
 }
 function update(products){
   if(products !== undefined){
-    if(componentEl.style.display = 'block') {
+    if(componentEl.style.display == 'block') {
       componentEl.style.display = 'grid';
     }
     componentEl.innerHTML = renderTiles({products});
