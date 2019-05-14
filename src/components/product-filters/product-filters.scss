@@ -182,3 +182,8 @@
     align-items: center;
   }
 }
+
+.error-summary {
+  color: $error-red;
+  font-size: $font-xs;
+}
