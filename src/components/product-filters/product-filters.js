@@ -126,19 +126,19 @@ function validatePriceFields(event) {
 
   const fields = Array.from(priceFilterForm.querySelectorAll('.price-filter__input'));
   fields.forEach(function(input) {
-    if (input.value.match(nonCurrencyChars)) {
+    if (input.value.match(nonCurrencyChars) || input.value < minPrice || input.value > maxPrice) {
       input.classList.add('error');
-      input.setAttribute('aria-describedby', errorSummary.getAttribute('id'));
+      input.previousElementSibling.classList.remove('hidden');
     } else {
       input.classList.remove('error');
-      input.removeAttribute('aria-describedby');
+      input.previousElementSibling.classList.add('hidden');
     }
   });
 
   numErrors = document.getElementsByClassName('price-filter__input error').length;
   if (numErrors > 0) {
     errorText = numErrors === 1 ? 'error' : 'errors';
-    errorSummary.innerText = `You have ${numErrors} ${errorText} in your price range.`;
+    errorSummary.querySelector('span').innerText = `${numErrors} ${errorText}`;
     errorSummary.classList.remove('hidden');
     document.getElementsByClassName("price-filter__input error")[0].focus();
     validated = false;
@@ -153,7 +153,7 @@ function clearErrorState() {
   const fields = Array.from(priceFilterForm.querySelectorAll('.price-filter__input'));
   fields.forEach(function(input) {
     input.classList.remove('error');
-    input.removeAttribute('aria-describedby');
+    input.previousElementSibling.classList.add('hidden');
   });
   document.querySelector('.error-summary').classList.add('hidden');
 }

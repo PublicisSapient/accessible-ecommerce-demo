@@ -187,3 +187,11 @@
   color: $error-red;
   font-size: $font-xs;
 }
+
+.error-msg {
+  color: $error-red;
+  font-size: $font-xs;
+  &:not(.hidden) {
+    display: inline-block;
+  }
+}
