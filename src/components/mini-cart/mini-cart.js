@@ -67,9 +67,7 @@ function onCartUpdate(event){
 }
 
 function updateMiniCart(cartData){
-  console.log(cartData);
   cartData.rootPath = globalVariables.rootPath;
-  console.log(cartData);
   cartCountEl.innerHTML = cartData.cartItemCount;
   miniCartItems.innerHTML = miniCartItemsTemplate(cartData);
 }
