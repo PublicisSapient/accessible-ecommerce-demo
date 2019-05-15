@@ -139,7 +139,7 @@ function validatePriceFields(event) {
   numErrors = document.getElementsByClassName('price-filter__input error').length;
   if (numErrors > 0) {
     errorText = numErrors === 1 ? 'error' : 'errors';
-    errorSummary.querySelector('span').innerText = `${numErrors} ${errorText}`;
+    errorSummary.innerText = `You have ${numErrors} ${errorText} in your price range.`;
     errorSummary.classList.remove('hidden');
     document.getElementsByClassName("price-filter__input error")[0].focus();
     validated = false;
