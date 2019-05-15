@@ -1,1 +1,0 @@
-{"version":3,"sources":["pdp/pdp.scss"],"names":[],"mappings":"AAGE,mBACE,aAGF,oCAEE,aAGF,cACE","file":"pdp.2ea46657.css","sourceRoot":"../src/pages","sourcesContent":["@import '../../scss/variables';\n\n.pdp {\n  .main-content {\n    display: flex;\n  }\n\n  .product-details,\n  .gallery {\n    flex: 1 0 50%;\n  }\n\n  .gallery {\n    max-width: 50%;\n  }\n}\n"]}
