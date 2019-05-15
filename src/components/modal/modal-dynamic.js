@@ -7,6 +7,13 @@ let originalContent = {};
 let modalElement;
 let mediaQueryList;
 let focusedElementBeforeModal;
+const globalVariables = {
+  rootPath: (
+    window.location.pathname === '/index.html'
+    || window.location.pathname === '/accessible-ecommerce-demo/'
+    || window.location.pathname === '/accessible-ecommerce-demo/index.html'
+  ) ? '.' : '..'
+};
 
 function onKeyDown(event) {
   if (event.which === 27) {
@@ -42,9 +49,10 @@ function storeOriginalElement(elementQuery) {
 }
 
 function createNewModal(elementQuery, modalId) {
+  globalVariables.modalId = modalId;
   const modalPlaceholder = document.createElement('div');
   document.body.appendChild(modalPlaceholder);
-  modalPlaceholder.outerHTML = renderModal({ modalId });
+  modalPlaceholder.outerHTML = renderModal( globalVariables );
   document.body.classList.add('modal-open');
 
   const modalContent = storeOriginalElement(elementQuery);

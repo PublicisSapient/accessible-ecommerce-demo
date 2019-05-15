@@ -3,6 +3,13 @@ import galleryModalTemplate from './gallery-modal.hbs';
 import * as Modal from '../modal/modal';
 
 var thumbnails;
+const globalVariables = {
+  rootPath: (
+    window.location.pathname === '/index.html'
+    || window.location.pathname === '/accessible-ecommerce-demo/'
+    || window.location.pathname === '/accessible-ecommerce-demo/index.html'
+  ) ? '.' : '..'
+};
 
 function onClickViewImage(event){
   var currElement = event.target;
@@ -31,7 +38,7 @@ function init(galleryData){
   
 
   const galleryModalDOM = document.querySelector('[data-template="gallery-modal"]');
-  if (galleryModalDOM) galleryModalDOM.outerHTML = galleryModalTemplate();
+  if (galleryModalDOM) galleryModalDOM.outerHTML = galleryModalTemplate(globalVariables);
   Modal.init("gallery-modal");
 
   // set initial modal image based on initial main image

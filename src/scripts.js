@@ -9,16 +9,16 @@ import { enableSkipLinks } from './js/utils';
 const headerDOM = document.querySelector('[data-template="global-header"]');
 const footerDOM = document.querySelector('[data-template="footer"]');
 const constructionModalDOM = document.querySelector('[data-template="construction-modal"]');
-const header = {
+const globalVariables = {
   rootPath: (
     window.location.pathname === '/index.html'
     || window.location.pathname === '/accessible-ecommerce-demo/'
     || window.location.pathname === '/accessible-ecommerce-demo/index.html'
   ) ? '.' : '..'
 };
-if (headerDOM) headerDOM.outerHTML = headerTemplate(header);
+if (headerDOM) headerDOM.outerHTML = headerTemplate(globalVariables);
 if (footerDOM) footerDOM.outerHTML = footerTemplate();
-if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemplate();
+if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemplate(globalVariables);
 
 // Global components
 GlobalNav.init();
