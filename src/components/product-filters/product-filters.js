@@ -126,12 +126,13 @@ function validatePriceFields(event) {
 
   const fields = Array.from(priceFilterForm.querySelectorAll('.price-filter__input'));
   fields.forEach(function(input) {
+    let inputId = input.getAttribute('id');
     if (input.value.match(nonCurrencyChars) || input.value < minPrice || input.value > maxPrice) {
       input.classList.add('error');
-      input.previousElementSibling.classList.remove('hidden');
+      priceFilterForm.querySelector(`[data-field=${inputId}]`).classList.remove('hidden');
     } else {
       input.classList.remove('error');
-      input.previousElementSibling.classList.add('hidden');
+      priceFilterForm.querySelector(`[data-field=${inputId}]`).classList.add('hidden');
     }
   });
 

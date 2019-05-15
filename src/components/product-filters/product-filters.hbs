@@ -92,16 +92,20 @@
                 <p class="error-summary hidden" id="errorSummaryPriceFilters" role="alert">You have <span></span> in your price range.</p>
                 <fieldset class="price-filter__fieldset">
                     <legend id="priceLegend" class="visibly-hidden">Filter by Price</legend>
-                    <label for="priceFrom" class="price-filter__label">
-                        <span class="sr-only">Price </span>From
-                        <span class="error-msg hidden" id="priceFromErrorMsg">Enter a number between 0 and 999.</span>
-                        <input type="text" name="priceFrom" id="priceFrom" class="price-filter__input" aria-describedby="priceFromErrorMsg">
-                    </label>
-                    <label for="priceTo" class="price-filter__label">
-                        <span class="sr-only">Price </span>To 
-                        <span class="error-msg hidden" id="priceToErrorMsg">Enter a number between 0 and 999.</span>
-                        <input type="text" name="priceTo" id="priceTo" class="price-filter__input" aria-describedby="priceToErrorMsg">
-                    </label>
+                    <div class="price-filter__field-container">
+                        <label for="priceFrom" class="price-filter__label">
+                            <span class="sr-only">Price </span>From
+                            <input type="text" name="priceFrom" id="priceFrom" class="price-filter__input" aria-describedby="priceFromErrorMsg">
+                        </label>
+                        <span class="error-msg priceFrom hidden" data-field="priceFrom" id="priceFromErrorMsg">Enter a number between 0 and 999.</span>
+                    </div>
+                    <div class="price-filter__field-container">
+                        <label for="priceTo" class="price-filter__label">
+                            <span class="sr-only">Price </span>To 
+                            <input type="text" name="priceTo" id="priceTo" class="price-filter__input" aria-describedby="priceToErrorMsg">
+                        </label>
+                        <span class="error-msg priceTo hidden" data-field="priceTo" id="priceToErrorMsg">Enter a number between 0 and 999.</span>
+                    </div>
                 </fieldset>
                 <button type="submit" class="price-filter__submit btn btn--outline-black">Update Range</button>
                 <button class="btn btn--link price-filter__clear-btn" type="button" data-js="price-range-clear">

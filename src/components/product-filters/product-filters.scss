@@ -105,13 +105,15 @@
     padding-bottom: 16px;
   }
 
-  &__label {
-    font-size: $font-xs;
-    flex: 1 1 auto;
-
+  &__field-container {
     &:first-of-type {
       margin-right: 8px;
     }
+  }
+
+  &__label {
+    font-size: $font-xs;
+    flex: 1 1 auto;
   }
 
   &__input {
