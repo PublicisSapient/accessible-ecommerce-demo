@@ -13,6 +13,8 @@ let priceToField;
 let priceFilterFrom;
 let priceFilterTo;
 const nonCurrencyChars = /[^0-9.-]+/g;
+const minPrice = 0;
+const maxPrice = 999;
 
 // Private functions
 function pushFilterUpdateEvent() {
@@ -89,8 +91,13 @@ function onActiveFilterClick(event) {
 function onPriceFilterSubmit(event) {
   event.preventDefault();
   priceFilterFrom.value = priceFromField.value.replace(nonCurrencyChars, '');
+  priceFilterFrom.value = priceFilterFrom.value === '' ? minPrice : priceFilterFrom.value;
   priceFilterTo.value = priceToField.value.replace(nonCurrencyChars, '');
-  updateFilters();
+  priceFilterTo.value = priceFilterTo.value === '' ? maxPrice : priceFilterTo.value;
+  
+  if (validatePriceFields()) {
+    updateFilters();
+  }
 }
 
 function onPriceFilterClear() {
@@ -98,6 +105,7 @@ function onPriceFilterClear() {
   priceFilterTo.value = '';
   priceFromField.value = '';
   priceToField.value = '';
+  clearErrorState();
   updateFilters();
 }
 
@@ -107,6 +115,48 @@ function clearFilters() {
     filter.checked = false;
   });
   updateFilters();
+}
+
+function validatePriceFields(event) {
+  const submitBtn = document.querySelector('.price-filter__submit');
+  const errorSummary = document.querySelector('.error-summary');
+  let validated = true;
+  let errorText;
+  let numErrors;
+
+  const fields = Array.from(priceFilterForm.querySelectorAll('.price-filter__input'));
+  fields.forEach(function(input) {
+    let inputId = input.getAttribute('id');
+    if (input.value.match(nonCurrencyChars) || input.value < minPrice || input.value > maxPrice) {
+      input.classList.add('error');
+      priceFilterForm.querySelector(`[data-field=${inputId}]`).classList.remove('hidden');
+    } else {
+      input.classList.remove('error');
+      priceFilterForm.querySelector(`[data-field=${inputId}]`).classList.add('hidden');
+    }
+  });
+
+  numErrors = document.getElementsByClassName('price-filter__input error').length;
+  if (numErrors > 0) {
+    errorText = numErrors === 1 ? 'error' : 'errors';
+    errorSummary.querySelector('span').innerText = `${numErrors} ${errorText}`;
+    errorSummary.classList.remove('hidden');
+    document.getElementsByClassName("price-filter__input error")[0].focus();
+    validated = false;
+  } else {
+    errorSummary.classList.add('hidden');
+    validated = true;
+  }
+  return validated;
+}
+
+function clearErrorState() {
+  const fields = Array.from(priceFilterForm.querySelectorAll('.price-filter__input'));
+  fields.forEach(function(input) {
+    input.classList.remove('error');
+    input.previousElementSibling.classList.add('hidden');
+  });
+  document.querySelector('.error-summary').classList.add('hidden');
 }
 
 // Public functions

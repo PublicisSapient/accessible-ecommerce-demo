@@ -105,13 +105,15 @@
     padding-bottom: 16px;
   }
 
-  &__label {
-    font-size: $font-xs;
-    flex: 1 1 auto;
-
+  &__field-container {
     &:first-of-type {
       margin-right: 8px;
     }
+  }
+
+  &__label {
+    font-size: $font-xs;
+    flex: 1 1 auto;
   }
 
   &__input {
@@ -180,5 +182,18 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+  }
+}
+
+.error-summary {
+  color: $error-red;
+  font-size: $font-xs;
+}
+
+.error-msg {
+  color: $error-red;
+  font-size: $font-xs;
+  &:not(.hidden) {
+    display: inline-block;
   }
 }
