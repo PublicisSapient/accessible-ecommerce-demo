@@ -106,9 +106,24 @@
     font-size: $font-md;
     font-weight: bold;
     margin-bottom: 4px;
+    clear: left;
 
     +p {
       margin-top: 0;
+    }
+  }
+  &__team-list {
+    li {
+      float:left;
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    &__team-list {  
+      li {
+        float: none;
+        width: 100%;
+      }
     }
   }
 }
