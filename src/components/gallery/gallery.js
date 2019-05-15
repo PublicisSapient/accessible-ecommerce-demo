@@ -29,7 +29,7 @@ function onClickViewImage(event){
 
 function init(galleryData){
   const targetElement = document.querySelector('[data-template="gallery"]');
-  targetElement.outerHTML = galleryTemplate();
+  targetElement.outerHTML = galleryTemplate(galleryData);
 
   thumbnails = document.querySelectorAll('.gallery__thumbnail-list-item button');
   thumbnails.forEach(function(thumbnail){
