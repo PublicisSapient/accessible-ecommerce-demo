@@ -129,3 +129,9 @@ select {
   font-size: $font-sm;
   font-weight: bold;
 }
+
+input[type=text] {
+  &.error {
+    border: 1px solid $error-red
+  }
+}
