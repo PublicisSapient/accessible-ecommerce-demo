@@ -42,7 +42,12 @@ Modal.prototype = {
     this.element.setAttribute('aria-expanded', 'false');
     this.main.setAttribute('aria-hidden', 'false');
     document.body.classList.remove('modal-open');
-    this.focusedElementBeforeModal.focus();
+    if (document.querySelector(".mini-cart__dropdown").contains(this.focusedElementBeforeModal)){
+      // if we don't check this, focus is lost because the mini-cart closes when this modal closes
+      document.querySelector(".secondary-nav__mini-cart button").focus();
+    } else {
+      this.focusedElementBeforeModal.focus();
+    }
   },
   initEvents: function () {
 
