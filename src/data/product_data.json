@@ -15,8 +15,8 @@
    "rating_count": 61,
    "color": ["blue","yellow"],
    "size": ["small","large","x-large","medium"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "blue-t-shirt_4460x4460.jpg",
+   "image_url": "blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 2,
@@ -34,8 +34,8 @@
    "rating_count": 79,
    "color": ["yellow","green"],
    "size": ["x-large","medium","large","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "bright-purple-t-shirt_4460x4460.jpg",
+   "image_url": "bright-purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 3,
@@ -53,8 +53,8 @@
    "rating_count": 47,
    "color": ["red","blue","green"],
    "size": ["x-small","large","medium"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "cobalt-blue-t-shirt_4460x4460.jpg",
+   "image_url": "cobalt-blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 4,
@@ -72,8 +72,8 @@
    "rating_count": 98,
    "color": ["green","blue"],
    "size": ["medium","x-small","large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "green-t-shirt_4460x4460.jpg",
+   "image_url": "green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 5,
@@ -91,8 +91,8 @@
    "rating_count": 11,
    "color": ["green","blue","yellow"],
    "size": ["x-small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "grey-t-shirt_4460x4460.jpg",
+   "image_url": "grey-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 6,
@@ -110,8 +110,8 @@
    "rating_count": 102,
    "color": ["yellow","blue","red"],
    "size": ["x-small","medium","large","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "light-green-t-shirt_4460x4460.jpg",
+   "image_url": "light-green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 7,
@@ -129,8 +129,8 @@
    "rating_count": 35,
    "color": ["red","green","yellow"],
    "size": ["large","x-small","small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "purple-t-shirt_4460x4460.jpg",
+   "image_url": "purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 8,
@@ -148,8 +148,8 @@
    "rating_count": 57,
    "color": ["red","yellow"],
    "size": ["medium","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "red-t-shirt_4460x4460.jpg",
+   "image_url": "red-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 9,
@@ -167,8 +167,8 @@
    "rating_count": 43,
    "color": ["green","yellow","blue"],
    "size": ["x-large","x-small","medium","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "teal-t-shirt_4460x4460.jpg",
+   "image_url": "teal-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 10,
@@ -186,8 +186,8 @@
    "rating_count": 53,
    "color": ["green","yellow"],
    "size": ["large","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "blue-t-shirt_4460x4460.jpg",
+   "image_url": "blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 11,
@@ -205,8 +205,8 @@
    "rating_count": 21,
    "color": ["blue","green","red"],
    "size": ["small","x-small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "bright-purple-t-shirt_4460x4460.jpg",
+   "image_url": "bright-purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 12,
@@ -224,8 +224,8 @@
    "rating_count": 49,
    "color": ["green","yellow"],
    "size": ["medium","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "cobalt-blue-t-shirt_4460x4460.jpg",
+   "image_url": "cobalt-blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 13,
@@ -243,8 +243,8 @@
    "rating_count": 50,
    "color": ["blue","yellow","green"],
    "size": ["x-small","medium"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "green-t-shirt_4460x4460.jpg",
+   "image_url": "green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 14,
@@ -262,8 +262,8 @@
    "rating_count": 102,
    "color": ["blue","red","yellow"],
    "size": ["large","x-large","small","medium"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "grey-t-shirt_4460x4460.jpg",
+   "image_url": "grey-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 15,
@@ -281,8 +281,8 @@
    "rating_count": 75,
    "color": ["red","yellow","blue"],
    "size": ["small","x-small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "light-green-t-shirt_4460x4460.jpg",
+   "image_url": "light-green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 16,
@@ -300,8 +300,8 @@
    "rating_count": 17,
    "color": ["red","blue","green"],
    "size": ["medium","small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "purple-t-shirt_4460x4460.jpg",
+   "image_url": "purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 17,
@@ -319,8 +319,8 @@
    "rating_count": 116,
    "color": ["green","red"],
    "size": ["medium","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "red-t-shirt_4460x4460.jpg",
+   "image_url": "red-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 18,
@@ -338,8 +338,8 @@
    "rating_count": 196,
    "color": ["red","blue","yellow"],
    "size": ["x-large","small","large","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "teal-t-shirt_4460x4460.jpg",
+   "image_url": "teal-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 19,
@@ -357,8 +357,8 @@
    "rating_count": 38,
    "color": ["blue","yellow","red"],
    "size": ["x-small","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "blue-t-shirt_4460x4460.jpg",
+   "image_url": "blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 20,
@@ -376,8 +376,8 @@
    "rating_count": 92,
    "color": ["red","blue","yellow"],
    "size": ["large","x-large","medium","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "bright-purple-t-shirt_4460x4460.jpg",
+   "image_url": "bright-purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 21,
@@ -395,8 +395,8 @@
    "rating_count": 99,
    "color": ["yellow","red"],
    "size": ["large","medium","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "cobalt-blue-t-shirt_4460x4460.jpg",
+   "image_url": "cobalt-blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 22,
@@ -414,8 +414,8 @@
    "rating_count": 66,
    "color": ["yellow","red"],
    "size": ["small","x-small","large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "green-t-shirt_4460x4460.jpg",
+   "image_url": "green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 23,
@@ -433,8 +433,8 @@
    "rating_count": 111,
    "color": ["green","blue"],
    "size": ["x-large","x-small","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "grey-t-shirt_4460x4460.jpg",
+   "image_url": "grey-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 24,
@@ -452,8 +452,8 @@
    "rating_count": 104,
    "color": ["yellow","red"],
    "size": ["large","small","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "light-green-t-shirt_4460x4460.jpg",
+   "image_url": "light-green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 25,
@@ -471,8 +471,8 @@
    "rating_count": 59,
    "color": ["blue","yellow"],
    "size": ["small","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "purple-t-shirt_4460x4460.jpg",
+   "image_url": "purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 26,
@@ -490,8 +490,8 @@
    "rating_count": 37,
    "color": ["green","yellow"],
    "size": ["medium","x-large","x-small","large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "red-t-shirt_4460x4460.jpg",
+   "image_url": "red-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 27,
@@ -509,8 +509,8 @@
    "rating_count": 73,
    "color": ["red","yellow"],
    "size": ["large","medium","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "teal-t-shirt_4460x4460.jpg",
+   "image_url": "teal-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 28,
@@ -528,8 +528,8 @@
    "rating_count": 98,
    "color": ["yellow","red"],
    "size": ["large","x-small","medium","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "blue-t-shirt_4460x4460.jpg",
+   "image_url": "blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 29,
@@ -547,8 +547,8 @@
    "rating_count": 115,
    "color": ["yellow","blue","green"],
    "size": ["small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "bright-purple-t-shirt_4460x4460.jpg",
+   "image_url": "bright-purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 30,
@@ -566,8 +566,8 @@
    "rating_count": 38,
    "color": ["blue","red","yellow"],
    "size": ["x-small","medium","large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "cobalt-blue-t-shirt_4460x4460.jpg",
+   "image_url": "cobalt-blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 31,
@@ -585,8 +585,8 @@
    "rating_count": 82,
    "color": ["green","blue","red"],
    "size": ["small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "green-t-shirt_4460x4460.jpg",
+   "image_url": "green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 32,
@@ -604,8 +604,8 @@
    "rating_count": 91,
    "color": ["red","green"],
    "size": ["small","x-large","medium","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "grey-t-shirt_4460x4460.jpg",
+   "image_url": "grey-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 33,
@@ -623,8 +623,8 @@
    "rating_count": 34,
    "color": ["red","yellow"],
    "size": ["x-large","medium"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "light-green-t-shirt_4460x4460.jpg",
+   "image_url": "light-green-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 34,
@@ -642,8 +642,8 @@
    "rating_count": 69,
    "color": ["red","blue"],
    "size": ["x-large","large","small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "purple-t-shirt_4460x4460.jpg",
+   "image_url": "purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 35,
@@ -661,8 +661,8 @@
    "rating_count": 23,
    "color": ["green","yellow"],
    "size": ["x-small","small","large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "red-t-shirt_4460x4460.jpg",
+   "image_url": "red-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 36,
@@ -680,8 +680,8 @@
    "rating_count": 159,
    "color": ["yellow","blue","green"],
    "size": ["medium","small","large","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "teal-t-shirt_4460x4460.jpg",
+   "image_url": "teal-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 37,
@@ -699,8 +699,8 @@
    "rating_count": 87,
    "color": ["red","green","yellow"],
    "size": ["medium","x-large","small","x-small"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "blue-t-shirt_4460x4460.jpg",
+   "image_url": "blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 38,
@@ -718,8 +718,8 @@
    "rating_count": 69,
    "color": ["green","blue","red"],
    "size": ["medium","x-small","large","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "bright-purple-t-shirt_4460x4460.jpg",
+   "image_url": "bright-purple-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 39,
@@ -737,8 +737,8 @@
    "rating_count": 24,
    "color": ["red","yellow","blue"],
    "size": ["small","x-large"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "cobalt-blue-t-shirt_4460x4460.jpg",
+   "image_url": "cobalt-blue-t-shirt_4460x4460.jpg"
  },
  {
    "product_id": 40,
@@ -756,7 +756,7 @@
    "rating_count": 65,
    "color": ["yellow","blue"],
    "size": ["large","x-large","medium"],
-   "thumbnail_url": "https://via.placeholder.com/162x141",
-   "image_url": "https://via.placeholder.com/583x645"
+   "thumbnail_url": "green-t-shirt_4460x4460.jpg",
+   "image_url": "green-t-shirt_4460x4460.jpg"
  }
 ]
