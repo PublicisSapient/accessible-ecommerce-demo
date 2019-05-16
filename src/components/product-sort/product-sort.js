@@ -40,13 +40,13 @@ function init() {
 }
 
 function update(index, total) {
-  if(total > 0) {
+  if (total > 0) {
     showing.total = total;
     showing.start = index * itemsPerPage + 1;
     showing.end = (itemsPerPage > 0) ? Math.min((index + 1) * itemsPerPage, showing.total) : showing.total;
     showingCountElement.innerHTML = `${showing.start} to ${showing.end} of ${showing.total}`;
   } else {
-    showingCountElement.innerHTML = "0 products";
+    showingCountElement.innerHTML = '0 products';
   }
 }
 

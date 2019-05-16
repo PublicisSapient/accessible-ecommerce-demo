@@ -43,7 +43,7 @@ function onClickPagination(event) {
  */
 
 function update(paginationData) {
-  if(paginationData.pageCount > 0) {
+  if (paginationData.pageCount > 0) {
     paginationData.pages = createPages(paginationData);
     paginationData.prevDisabled = paginationData.currentPage === 1;
     paginationData.nextDisabled = paginationData.currentPage === paginationData.pageCount;
@@ -52,7 +52,7 @@ function update(paginationData) {
 
     componentEl.innerHTML = renderPagination(paginationData);
     // show pagination if it was previously hidden by 0 results
-    if(document.querySelector(".pagination__list").style.display == "none")
+    if (document.querySelector(".pagination__list").style.display == "none")
       document.querySelector(".pagination__list").style.display = "flex";
 
     const paginationButtons = componentEl.querySelectorAll('[data-go-to-page]');
