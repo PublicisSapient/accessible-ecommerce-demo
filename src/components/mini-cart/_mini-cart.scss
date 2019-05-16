@@ -74,6 +74,7 @@
   }
 
   &__description {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -162,10 +163,9 @@
   }
 
   &__image {
-    max-width: 100%;
     height: auto;
-    flex: 0 0 70px;
     margin-right: 16px;
+    width: 76px;
   }
 
   &__item-title {

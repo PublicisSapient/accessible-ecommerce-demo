@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+
+.review {
+  &-total {
+    font-size: $font-sm;
+    font-weight: bold;
+    margin-top: $grid-unit;
+    margin-bottom: $grid-unit * 3;
+  }
+
+  &-details {
+    margin: $grid-unit 0;
+    font-size: $font-sm;
+  }
+
+  &-text {
+    font-size: $font-sm;
+    letter-spacing: -0.29px;
+    line-height: 2.2rem;
+  }
+}
+
+.user-ratings {
+  list-style: none;
+  padding-left: 0;
+
+  &__list-item {
+    margin-bottom: $grid-unit * 4;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+  }
+}
+
+.product-rating {
+  &__title {
+    margin: $grid-unit 0;
+  }
+}

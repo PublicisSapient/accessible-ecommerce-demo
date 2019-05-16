@@ -34,7 +34,7 @@
     padding: 0 between(24px, 60px, $menu-collapse, $max-width);
     height: 140px;
     grid-template-columns:
-      minmax(72px, 220px) minmax(428px, 740px) minmax(195px, 216px);
+      minmax(72px, 220px) minmax(428px, 724px) minmax(195px, 216px);
   }
 
   @media only screen and (min-width: $max-width) {

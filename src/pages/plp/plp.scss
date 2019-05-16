@@ -28,6 +28,7 @@
 
   .template-heading {
     grid-column: 1 / span 2;
+    margin-top: $grid-unit * 3;
   }
 
   .product-filters {
