@@ -17,7 +17,7 @@ const globalVariables = {
   ) ? '.' : '..'
 };
 if (headerDOM) headerDOM.outerHTML = headerTemplate(globalVariables);
-if (footerDOM) footerDOM.outerHTML = footerTemplate();
+if (footerDOM) footerDOM.outerHTML = footerTemplate(globalVariables);
 if (constructionModalDOM) constructionModalDOM.outerHTML = constructionModalTemplate(globalVariables);
 
 // Global components
