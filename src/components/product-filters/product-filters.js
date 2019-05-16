@@ -53,7 +53,7 @@ function getCheckboxFilters() {
 function getPriceRangeFilter() {
   const priceFrom = Number(priceFilterFrom.value);
   const priceTo = Number(priceFilterTo.value);
-  const priceRangeFilter = (priceFrom && priceTo)
+  const priceRangeFilter = (priceFrom >= 0 && priceTo >= 0)
     ? { $gte: Number(priceFilterFrom.value), $lte: Number(priceFilterTo.value) }
     : { $gt: null };
 
