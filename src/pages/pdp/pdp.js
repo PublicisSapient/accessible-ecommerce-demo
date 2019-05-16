@@ -6,7 +6,6 @@ import * as productForm from '../../components/product-form/product-form';
 import { setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
 import * as Modal from '../../components/modal/modal';
-import { isRegExp } from 'util';
 
 (function pdpPage() {
   const urlParams = new URLSearchParams(window.location.search);

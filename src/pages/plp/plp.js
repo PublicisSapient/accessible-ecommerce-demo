@@ -42,7 +42,7 @@ import * as Modal from '../../components/modal/modal';
     const index = newPage - 1;
     productGrid.update(pages[index]);
     pagination.update({ pageCount: pages.length, currentPage: newPage });
-    productSort.update(index);
+    productSort.update(index, allProducts.length);
     SCROLL_TOP.scrollIntoView({ behavior: 'smooth' });
   }
 
