@@ -112,14 +112,17 @@
       margin-top: 0;
     }
   }
+
   &__team-list {
     li {
-      float:left;
+      float: left;
       width: 50%;
+      padding-right: 30px;
     }
   }
+
   @media screen and (max-width: $mobile) {
-    &__team-list {  
+    &__team-list {
       li {
         float: none;
         width: 100%;
