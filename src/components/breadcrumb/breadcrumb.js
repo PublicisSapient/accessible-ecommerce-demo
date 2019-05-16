@@ -1,8 +1,9 @@
 import breadcrumbTemplate from './breadcrumb.hbs';
 
-function init(breadcrumbs){
+function init(breadcrumbs) {
   const element = document.querySelector('[data-template="breadcrumb"]');
-  element.outerHTML = breadcrumbTemplate({breadcrumbs});
+  const parent = breadcrumbs[breadcrumbs.length - 2];
+  element.outerHTML = breadcrumbTemplate({ breadcrumbs, parent });
 }
 
 export { init };

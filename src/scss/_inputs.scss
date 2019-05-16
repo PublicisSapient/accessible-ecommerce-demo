@@ -22,18 +22,23 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: $grid-unit;
-    margin-right: $grid-unit * 2;
+    margin-bottom: $grid-unit * 2;
     cursor: pointer;
     font-size: $font-xs;
+    box-sizing: border-box;
+
+    .product-description__radio-group:not(:last-of-type) & {
+      margin-right: 20px;
+    }
 
     &::before {
       background-color: $white;
       border: 1px solid;
       border-radius: 50%;
+      color: $yet-another-grey;
       content: "";
       display: block;
-      margin-right: $grid-unit * 2;
+      margin-right: $grid-unit;
       height: $input-size;
       width: $input-size;
     }
@@ -42,11 +47,11 @@
       background: $black;
       border-radius: 50%;
       display: block;
-      left: 5px;
-      top: 5px;
+      left: 7px;
+      top: 7px;
       position: absolute;
-      height: $input-size - 8px;
-      width: $input-size - 8px;
+      height: 12px;
+      width: 12px;
     }
   }
 }
@@ -83,7 +88,7 @@
       border-radius: 4px;
       content: "";
       display: block;
-      margin-right: $grid-unit * 2;
+      margin-right: $grid-unit;
       height: $input-size;
       width: $input-size;
     }

@@ -4,10 +4,17 @@
 /* ============================== Product Description */
 
 .product-description {
-  padding-right: calc((0px) + (57) * ((100vw - 600px) / (800 - 600)));
 
-  @media only screen and (min-width: 800px) {
-    padding-right: calc(10% - #{$grid-unit});
+  @media only screen and (min-width: $phablet) {
+    padding-right: 12px;
+  }
+
+  @media only screen and (min-width: 900px) {
+    padding-right: between(12px, 62px, 900px, $max-width);
+  }
+
+  @media only screen and (min-width: $max-width) {
+    padding-right: 62px;
   }
 
   a {
@@ -18,7 +25,6 @@
     font-size: 2.4rem;
     margin-bottom: $grid-unit * 3;
     font-weight: bold;
-    display: none;
     letter-spacing: -0.09rem;
   }
 
@@ -31,9 +37,8 @@
   }
 
   &__price-now {
-    display: block;
     font-weight: bold;
-    flex-basis: 50%;
+    margin-right: auto;
 
     & .price {
       &__dollar {
@@ -47,8 +52,7 @@
   }
 
   &__price-was {
-    display: block;
-    flex-basis: 25%;
+    margin-right: $grid-unit * 5;
 
     & .price {
       &__dollar {
@@ -59,13 +63,10 @@
         font-size: $font-sm;
       }
     }
-
-    margin-left: $grid-unit * 2;
   }
 
   &__price-save {
-    display: block;
-    flex-basis: 25%;
+    margin-right: $grid-unit;
 
     & .price {
       &__dollar {
@@ -85,7 +86,7 @@
   &__summary {
     letter-spacing: -0.05rem;
     line-height: 1.6;
-    margin-bottom: $grid-unit * 4;
+    margin-bottom: $grid-unit;
   }
 
   &__read-more {
@@ -126,11 +127,6 @@
 
 .size-chart {
   &__link {
-    font-size: 1.2rem;
-    display: inline-flex;
-    align-items: flex-start;
-    margin-top: 8px;
-
     .icon {
       width: 20px;
       height: 20px;
@@ -141,28 +137,33 @@
 }
 
 .quantity-comp {
-  display: inline-block;
+  @include medium-shadow;
   background-color: $white;
   padding: 4px;
-  border-radius: 18px;
+  border-radius: 20px;
   align-items: center;
-  margin-bottom: 16px;
+  margin-right: $grid-unit;
 
   &__text {
     text-align: center;
     border: none;
     font-size: 1.6rem;
     font-weight: bold;
-    display: inline-block;
-    width: 50px;
-    flex-grow: 1;
+    width: 40px;
   }
 }
 
 .product-actions {
+  &__cart {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__add-to-cart {
-    width: $grid-unit * 39;
-    height: 40px;
+    flex: 1;
+    max-width: 224px;
+    margin-right: $grid-unit;
+    // height: 40px;
   }
 }
 
@@ -213,18 +214,5 @@
     background-color: grey;
     padding: 10px;
     display: inline-block;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .product-description {
-    &__title {
-      display: block;
-    }
-
-    &__price {
-      margin-bottom: $grid-unit * 6;
-      margin-top: 0;
-    }
   }
 }

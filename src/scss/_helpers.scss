@@ -20,10 +20,14 @@
 }
 
 .divider {
-  margin: 23px 0;
+  margin: $grid-unit*3 0;
   border: 0;
   height: 1px;
   background: $grey;
+
+  &--medium {
+    margin: $grid-unit*2 0;
+  }
 }
 
 .rotate-90 {
