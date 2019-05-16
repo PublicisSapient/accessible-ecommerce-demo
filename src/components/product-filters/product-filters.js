@@ -53,7 +53,7 @@ function getCheckboxFilters() {
 function getPriceRangeFilter() {
   const priceFrom = Number(priceFilterFrom.value);
   const priceTo = Number(priceFilterTo.value);
-  const priceRangeFilter = (priceFrom >= 0 && priceTo >= 0)
+  const priceRangeFilter = (priceFrom >= 0 && priceTo >= 0 && priceFilterFrom.value !== "" && priceFilterTo.value !== "")
     ? { $gte: Number(priceFilterFrom.value), $lte: Number(priceFilterTo.value) }
     : { $gt: null };
 
@@ -94,7 +94,7 @@ function onPriceFilterSubmit(event) {
   priceFilterFrom.value = priceFilterFrom.value === '' ? minPrice : priceFilterFrom.value;
   priceFilterTo.value = priceToField.value.replace(nonCurrencyChars, '');
   priceFilterTo.value = priceFilterTo.value === '' ? maxPrice : priceFilterTo.value;
-  
+
   if (validatePriceFields()) {
     updateFilters();
   }
@@ -125,7 +125,7 @@ function validatePriceFields(event) {
   let numErrors;
 
   const fields = Array.from(priceFilterForm.querySelectorAll('.price-filter__input'));
-  fields.forEach(function(input) {
+  fields.forEach(function (input) {
     let inputId = input.getAttribute('id');
     if (input.value.match(nonCurrencyChars) || input.value < minPrice || input.value > maxPrice) {
       input.classList.add('error');
@@ -152,7 +152,7 @@ function validatePriceFields(event) {
 
 function clearErrorState() {
   const fields = Array.from(priceFilterForm.querySelectorAll('.price-filter__input'));
-  fields.forEach(function(input) {
+  fields.forEach(function (input) {
     input.classList.remove('error');
     input.previousElementSibling.classList.add('hidden');
   });
