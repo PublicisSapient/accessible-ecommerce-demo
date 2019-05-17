@@ -4,7 +4,7 @@ import * as productFilters from '../../components/product-filters/product-filter
 import * as productSort from '../../components/product-sort/product-sort';
 import * as productGrid from '../../components/product-grid/product-grid';
 import * as pagination from '../../components/pagination/pagination';
-import * as carousel from '../../components/product-carousel/product-carousel';
+//import * as carousel from '../../components/product-carousel/product-carousel';
 import * as DynamicModal from '../../components/modal/modal-dynamic';
 import { chunk, getRandomSubset, setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
@@ -33,7 +33,7 @@ import * as Modal from '../../components/modal/modal';
   productSort.init();
   productGrid.init();
   pagination.init();
-  carousel.init();
+  //carousel.init();
 
   Modal.init('construction-modal');
 
@@ -75,8 +75,8 @@ import * as Modal from '../../components/modal/modal';
   function fetchComponentData() {
     productDB.query(['rating'], currentQuery).then(function (result) {
       updateAllProducts(result);
-      const carouselItems = getRandomSubset(allProducts, CAROUSEL_ITEM_COUNT);
-      carousel.update(carouselItems);
+      //const carouselItems = getRandomSubset(allProducts, CAROUSEL_ITEM_COUNT);
+      //carousel.update(carouselItems);
     });
   }
 
