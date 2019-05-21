@@ -17,7 +17,8 @@ function totalWidth() {
   return carouselList.scrollWidth;
 }
 function numItemsVisible() {
-  return Math.floor(carouselWidth() / itemWidth());
+  // Mobile portrait mode: carouselWidth() < itemWidth() so returning 1 since there is only 1 item in view
+  return Math.floor(carouselWidth() / itemWidth()) === 0 ? 1 : Math.floor(carouselWidth() / itemWidth());
 }
 function minX() {
   return totalWidth() >= carouselWidth() ? -(Math.floor(totalWidth() / carouselWidth()) * carouselWidth()) + carouselWidth() - (totalWidth() % carouselWidth()) : 0;
