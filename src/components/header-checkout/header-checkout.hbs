@@ -6,7 +6,7 @@
       The <br />Accessible <br />eStore
     </h1>
   </a>
-  <div class="global-header__mobile-toggles">
+  <div class="global-header-checkout__mobile-toggles">
     <button class="btn btn--mobile btn--menu-toggle" data-js="hamburger-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Navigation">
       Menu
       <svg class="icon icon--menu-btn">
@@ -16,15 +16,15 @@
   </div>
 
   <nav class="primary-nav-checkout" aria-label="Primary" data-js="hamburger-dropdown">
-    <ul class="primary-nav__items">
-      <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" id="main-nav-women" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+    <ul class="primary-nav-checkout__items">
+      <li class="primary-nav-checkout__item has-submenu">
+        <button class="primary-nav-checkout__heading" id="main-nav-women" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
           Women
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
           </svg>
         </button>
-        <ul class="primary-nav__submenu">
+        <ul class="primary-nav-checkout__submenu">
           <li class="submenu-item-checkout">
             <a href="{{rootPath}}/plp/index.html">Womens</a>
           </li>
@@ -45,14 +45,14 @@
           </li>
         </ul>
       </li>
-      <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      <li class="primary-nav-checkout__item has-submenu">
+        <button class="primary-nav-checkout__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
           Men
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
           </svg>
         </button>
-        <ul class="primary-nav__submenu">
+        <ul class="primary-nav-checkout__submenu">
           <li class="submenu-item-checkout">
             <a href="{{rootPath}}/plp/index.html">Mens</a>
           </li>
@@ -73,14 +73,14 @@
           </li>
         </ul>
       </li>
-      <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      <li class="primary-nav-checkout__item has-submenu">
+        <button class="primary-nav-checkout__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
           Girls
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
           </svg>
         </button>
-        <ul class="primary-nav__submenu">
+        <ul class="primary-nav-checkout__submenu">
           <li class="submenu-item-checkout">
             <a href="{{rootPath}}/plp/index.html">Girls</a>
           </li>
@@ -101,14 +101,14 @@
           </li>
         </ul>
       </li>
-      <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+      <li class="primary-nav-checkout__item has-submenu">
+        <button class="primary-nav-checkout__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
           Boys
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
           </svg>
         </button>
-        <ul class="primary-nav__submenu">
+        <ul class="primary-nav-checkout__submenu">
           <li class="submenu-item-checkout">
             <a href="{{rootPath}}/plp/index.html">Boys</a>
           </li>
@@ -169,7 +169,12 @@
     </ul>
   </nav>
   <div class="checkout-info">
-    <h2 class="checkout-info__heading">Secure Checkout</h2>
+    <h2 class="checkout-info__heading">
+      <svg class="icon icon--lock">
+        <use xlink:href="{{rootPath}}/sprite.svg#lock"></use>
+      </svg>
+      Secure Checkout
+    </h2>
     <p class="checkout-info__contact">Contact Number: <span>999-999-9999</span></p>
   </div>
 </header>
