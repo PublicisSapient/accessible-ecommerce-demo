@@ -37,15 +37,15 @@
                     <label for="sign-in-email">
                         Email *
                     </label>
-                    <input name="email" id="sign-in-email" type="email" data-required="true">
-                    <span class="error-msg">
+                    <input name="email" id="sign-in-email" type="email" data-required="true" aria-describedby="error-msg-email">
+                    <span class="error-msg" id="error-msg-email">
                         Please input a valid email
                     </span>
                     <label for="sign-in-password">
                         Password *
                     </label>
-                    <input name="password" id="sign-in-password" type="password" data-required="true">
-                    <span class="error-msg">
+                    <input name="password" id="sign-in-password" type="password" data-required="true" aria-describedby="error-msg-password">
+                    <span class="error-msg" id="error-msg-password">
                         Please input a password
                     </span>
                     <button class="btn btn--black sign-in-form__submit" type="submit">
@@ -60,8 +60,8 @@
                     <label for="guest-sign-in-email">
                         Email *
                     </label>
-                    <input name="guest-sign-in-email" id="guest-sign-in-email" type="email" data-required="true">
-                    <span class="error-msg">
+                    <input name="guest-sign-in-email" id="guest-sign-in-email" type="email" data-required="true" aria-describedby="error-msg-guest-email">
+                    <span class="error-msg" id="error-msg-guest-email">
                         Please input a valid email
                     </span>
                     <button class="btn btn--black guest-sign-in__submit">
@@ -79,24 +79,24 @@
                         </span>
                         <hr class="hr-2" />
                         <label for="shipping-first-name">First Name *</label>
-                        <input class="first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true">
-                        <span class="error-msg">Please input a first name</span>
+                        <input class="first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true" aria-describedby="error-msg-shipping-first-name">
+                        <span class="error-msg" id="error-msg-shipping-first-name">Please input a first name</span>
                         <label for="shipping-last-name">Last Name *</label>
-                        <input class="last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true">
-                        <span class="error-msg">Please input a last name</span>
-                        <label for="shipping-address">Address *</label>
-                        <input class="address" name="shipping-address" id="shipping-address" type="text" data-required="true">
-                        <span class="error-msg">Please input an address</span>
+                        <input class="last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true" aria-describedby="error-msg-shipping-last-name">
+                        <span class="error-msg" id="error-msg-shipping-last-name">Please input a last name</span>
+                        <label for="shipping-address">Address *</label> 
+                        <input class="address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="error-msg-shipping-address">
+                        <span class="error-msg" id="error-msg-shipping-address">Please input an address</span>
                         <label for="shipping-apt-suite">Apt / Suite</label>
                         <input class="apt-suite" name="shipping-apt-suite" id="shipping-apt-suite" type="text">
                         <label for="shipping-city">City *</label>
-                        <input class="city" name="shipping-city" id="shipping-city" type="text" data-required="true">
-                        <span class="error-msg">Please input a city name</span>
+                        <input class="city" name="shipping-city" id="shipping-city" type="text" data-required="true" aria-describedby="error-msg-shipping-city">
+                        <span class="error-msg" id="error-msg-shipping-city">Please input a city name</span>
 
                         <div class="address__form-row">
                             <div class="address__column address__column--5">
                                 <label for="shipping-province">Province *</label>
-                                <select class="province" id="shipping-province" name="shipping-province" data-required="true">
+                                <select class="province" id="shipping-province" name="shipping-province" data-required="true" aria-describedby="error-msg-shipping-province">
                                     <option value="" selected>Select a Province</option>
                                     <option value="ab">Alberta</option>
                                     <option value="bc">British Columbia</option>
@@ -112,7 +112,7 @@
                                     <option value="nu">Nunavut</option>
                                     <option value="yt">Yukon</option>
                                 </select>
-                                <span class="error-msg">Please select a province</span>
+                                <span class="error-msg" id="error-msg-shipping-province">Please select a province</span>
                             </div>
                             <div class="address__column address__column--3">
                                 <label for="shipping-postal-code">Postal Code</label>

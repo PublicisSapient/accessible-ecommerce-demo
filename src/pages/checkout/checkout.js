@@ -3,7 +3,7 @@ let shippingForm;
 let securityCodeTooltip;
 
 const regex = {
-  email: /^([A-Za-z0-9\-\/\:\;\(\)\$\&\"\=\,\?\*\#\%\^\+\_\.\|\[\]\{\}\<\>\\\')+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,16})$/,
+  'email': /^([A-Za-z0-9\-\/\:\;\(\)\$\&\"\=\,\?\*\#\%\^\+\_\.\|\[\]\{\}\<\>\\\'])+\@([A-Za-z0-9_\-])+\.([A-Za-z]{2,16})$/,
   'postal-code': /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/,
   'phone-number': /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
   'credit-card-number': /^$[0-9]{14}/,
@@ -47,20 +47,26 @@ const checkForm = (e) => {
 
   let formValid = true;
 
-  const checkIfInputIsValid = ({ classList, dataset, value }) => {
+  const checkIfInputIsValid = ({ classList, dataset, type, value }) => {
     let valid = false;
-    const { required, inputType } = dataset;
+    const { required } = dataset;
+    const inputType = type;
 
     if (required) {
       valid = regex[inputType] ? regex[inputType].test(value) : Boolean(value);
       // class remove and add return undefined we are just using a tertiray for succinct code
       formValid = valid ? !classList.remove('invalid') : classList.add('invalid');
     }
+    //TODO: validate optional fields?
   };
 
   inputs.forEach(checkIfInputIsValid);
 
-  formValid && form.submit();
+  if (form.querySelectorAll('.invalid').length === 0) {
+    form.submit();
+  } else {
+    //TODO: update error summary and focus on first error
+  }
 };
 
 const addListeners = (submitButtons = [], callBack = checkForm) => {
