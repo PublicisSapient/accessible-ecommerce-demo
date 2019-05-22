@@ -1,0 +1,179 @@
+@import 'variables';
+@import 'mixins';
+
+.page-about-us {
+  .hero {
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .container {
+    padding-left: 24px;
+
+    @media only screen and (min-width: 900px) {
+      padding-left: between(24px, 140px, 900px, $max-width);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      padding-left: 140px;
+    }
+
+  }
+}
+
+.hero {
+  &__headline {
+    font-size: $font-hero-md;
+    font-weight: bold;
+    letter-spacing: -0.15rem;
+    margin-top: 64px;
+  }
+
+  &__subhead {
+    font-size: $font-xxl;
+    font-weight: bold;
+    letter-spacing: -0.1rem;
+    line-height: 3.2rem;
+    max-width: 790px;
+    margin-bottom: 80px;
+  }
+
+  @media only screen and (min-width: $phablet) {
+    &__headline {
+      font-size: $font-hero-lg;
+    }
+
+    &__subhead {
+      font-size: $font-hero-md;
+      line-height: 4.4rem;
+    }
+  }
+}
+
+.about-us {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main {
+    flex: 1;
+
+    img {
+      max-width: 100%;
+    }
+
+    p,
+    li {
+      max-width: 560px;
+      line-height: 2.4rem;
+    }
+  }
+
+  &__sidebar {
+    margin: 48px 0 0;
+    font-size: $font-sm;
+  }
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+
+    &-item {
+      margin-bottom: 8px;
+
+      &:focus-within {
+        @include focus-outline;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      font-weight: bold;
+      color: $black;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__section {
+    margin-bottom: 64px;
+  }
+
+  &__section-title {
+    font-size: $font-xxl;
+    font-weight: bold;
+
+    .about-us__section:first-child & {
+      margin-top: 48px;
+    }
+  }
+
+  &__subsection-title {
+    font-size: $font-md;
+    font-weight: bold;
+    margin-bottom: 4px;
+    clear: left;
+
+    +p {
+      margin-top: 0;
+    }
+  }
+
+  &__team-list {
+    li {
+      float: left;
+      width: 50%;
+      padding-right: 30px;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &__team-list {
+      li {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $phablet) {
+    &__content {
+      flex-direction: row;
+    }
+
+    &__sidebar {
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
+      flex: 0 1 200px;
+      margin: 64px 24px 84px 0;
+    }
+
+    &__menu {
+      &-item {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__section-title {
+      .about-us__section:first-child & {
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+.what-the-demo {
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+}

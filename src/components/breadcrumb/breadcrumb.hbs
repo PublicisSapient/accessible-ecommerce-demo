@@ -7,11 +7,14 @@
                     {{#if link}}
                     <a href="{{link}}">{{label}}</a>
                     {{else}}
-                    <a href="./test.html" aria-current="page">{{label}}</a>
+                    <a href="./index.html" aria-current="page">{{label}}</a>
                     {{/if}}
                 </li>
                 {{/each}}
             </ol>
+        </nav>
+        <nav class="breadcrumb--back-link">
+            &lt; <a href="{{parent.link}}">Back to {{parent.label}}</a>
         </nav>
     </section>
 </div>

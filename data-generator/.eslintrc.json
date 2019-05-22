@@ -1,0 +1,18 @@
+{
+    "env": {
+        "node": true
+    },
+    "rules": {
+        "quotes": [
+            "error",
+            "single",
+            { "avoidEscape": true }
+        ],
+        "no-console": "off",
+        "indent": [
+            "error",
+            2,
+            { "SwitchCase": 1 }
+        ]
+    }
+}

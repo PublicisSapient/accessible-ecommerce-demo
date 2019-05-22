@@ -1,23 +1,29 @@
 <section class="carousel-wrapper">
-	<h2 class="carousel__header">Recommended Products</h2>
-	<a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="skip-link">
-		Skip product recommendations carousel
-	</a>
-	<div class="carousel" data-component="carousel">
-		<button class="carousel__arrow carousel__arrow--left btn btn--black btn--icon thumbnail__scroll-left" tabindex="-1">
-			<svg class="icon icon--chevron"><use xlink:href="../sprite.svg#chevron"></use></svg>
-		</button>
-		<div class="carousel__container">
-			<div class="carousel__items" data-template="carousel-items">
-				{{!-- CAROUSEL ITEMS --}}
-			</div>
-		</div>
-		<button class="carousel__arrow carousel__arrow--right btn btn--black btn--icon thumbnail__scroll-right" tabindex="-1">
-			<svg class="icon icon--chevron"><use xlink:href="../sprite.svg#chevron"></use></svg>
-		</button>
-	</div>
+    <h2 class="carousel__header">Recommended Products</h2>
+    <a id="product-recommendation-carousel-start" href="#product-recommendation-carousel-end" class="skip-link">
+        Skip product recommendations carousel
+    </a>
+    <div class="carousel" data-component="carousel">
+        <button class="carousel__arrow carousel__arrow--left btn btn--black btn--icon thumbnail__scroll-left" tabindex="-1">
+            <span class="sr-only">Previous</span>
+            <svg class="icon icon--chevron">
+                <use xlink:href="../sprite.svg#chevron"></use>
+            </svg>
+        </button>
+        <div class="carousel__container">
+            <div class="carousel__items" data-template="carousel-items">
+                {{!-- CAROUSEL ITEMS --}}
+            </div>
+        </div>
+        <button class="carousel__arrow carousel__arrow--right btn btn--black btn--icon thumbnail__scroll-right" tabindex="-1">
+            <span class="sr-only">Next</span>
+            <svg class="icon icon--chevron">
+                <use xlink:href="../sprite.svg#chevron"></use>
+            </svg>
+        </button>
+    </div>
 
-	<a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="skip-link">
-		Jump to start of product recommendations carousel
-	</a>
+    <a id="product-recommendation-carousel-end" href="#product-recommendation-carousel-start" class="skip-link">
+        Jump to start of product recommendations carousel
+    </a>
 </section>

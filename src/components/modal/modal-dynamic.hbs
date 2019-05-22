@@ -1,0 +1,12 @@
+<div class="modal modal--dynamic" id="{{modalId}}" role="dialog" aria-modal="true" aria-expanded="true">
+    <div class="modal__content">
+        <button class="close modal__close" data-js="close-modal" aria-label="close modal">
+            <span class="sr-only">Close</span>
+            <svg class="icon icon--close">
+                <use xlink:href="{{rootPath}}/sprite.svg#close"></use>
+            </svg>
+        </button>
+        <div class="modal__inner"></div>
+    </div>
+    <button tabindex="-1" class="modal__backdrop-close" data-js="close-modal" aria-hidden="true">close</button>
+</div>
