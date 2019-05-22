@@ -8,26 +8,45 @@
   }
 
   .container {
-    padding-left: 140px;
+    padding-left: 24px;
+
+    @media only screen and (min-width: 900px) {
+      padding-left: between(24px, 140px, 900px, $max-width);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      padding-left: 140px;
+    }
 
   }
 }
 
 .hero {
   &__headline {
-    font-size: $font-hero-lg;
+    font-size: $font-hero-md;
     font-weight: bold;
     letter-spacing: -0.15rem;
     margin-top: 64px;
   }
 
   &__subhead {
-    font-size: $font-hero-md;
+    font-size: $font-xxl;
     font-weight: bold;
     letter-spacing: -0.1rem;
-    line-height: 4.4rem;
+    line-height: 3.2rem;
     max-width: 790px;
     margin-bottom: 80px;
+  }
+
+  @media only screen and (min-width: $phablet) {
+    &__headline {
+      font-size: $font-hero-lg;
+    }
+
+    &__subhead {
+      font-size: $font-hero-md;
+      line-height: 4.4rem;
+    }
   }
 }
 
@@ -35,6 +54,7 @@
 
   &__content {
     display: flex;
+    flex-direction: column;
   }
 
   &__main {
@@ -52,11 +72,7 @@
   }
 
   &__sidebar {
-    position: sticky;
-    top: 24px;
-    align-self: flex-start;
-    flex: 0 1 200px;
-    margin: 64px 24px 84px 0;
+    margin: 48px 0 0;
     font-size: $font-sm;
   }
 
@@ -65,7 +81,7 @@
     padding: 0;
 
     &-item {
-      margin-bottom: 16px;
+      margin-bottom: 8px;
 
       &:focus-within {
         @include focus-outline;
@@ -84,13 +100,7 @@
   }
 
   &__section {
-    &:first-child {
-      margin-bottom: 64px;
-    }
-
-    &:not(:first-child) {
-      margin-bottom: 96px;
-    }
+    margin-bottom: 64px;
   }
 
   &__section-title {
@@ -98,7 +108,7 @@
     font-weight: bold;
 
     .about-us__section:first-child & {
-      margin-top: 60px;
+      margin-top: 48px;
     }
   }
 
@@ -126,6 +136,32 @@
       li {
         float: none;
         width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $phablet) {
+    &__content {
+      flex-direction: row;
+    }
+
+    &__sidebar {
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
+      flex: 0 1 200px;
+      margin: 64px 24px 84px 0;
+    }
+
+    &__menu {
+      &-item {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__section-title {
+      .about-us__section:first-child & {
+        margin-top: 60px;
       }
     }
   }
