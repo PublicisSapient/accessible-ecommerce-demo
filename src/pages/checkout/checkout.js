@@ -37,6 +37,7 @@ const hideShowBillingAddress = () => {
   billingForm.classList.toggle('checkout__billing-address-form--hidden');
   if (billingForm.classList.contains('checkout__billing-address-form--hidden')) {
     prefillBillingAddress();
+    clearErrorState(billingForm);
   }
 };
 
@@ -49,7 +50,7 @@ const checkForm = (e) => {
 
   const checkIfInputIsValid = ({ classList, dataset, type, value }) => {
     let valid = false;
-    const { required } = dataset;
+    const required = dataset;
     const inputType = type;
 
     if (required) {
@@ -62,11 +63,27 @@ const checkForm = (e) => {
 
   inputs.forEach(checkIfInputIsValid);
 
-  if (form.querySelectorAll('.invalid').length === 0) {
+  const numErrors = form.querySelectorAll('.invalid').length;
+  const errorSummary = form.querySelector('.error-summary');
+  if (numErrors === 0) {
+    errorSummary.classList.add('hidden');
     form.submit();
   } else {
-    //TODO: update error summary and focus on first error
+    const errorText = numErrors > 1 ? 'errors' : 'error';
+    errorSummary.innerText = `You have ${numErrors} ${errorText} in your ${errorSummary.getAttribute('data-section')} information.`;
+    errorSummary.classList.remove('hidden');
+    form.querySelectorAll('.invalid')[0].focus();
   }
+};
+
+const clearErrorState = (form) => {
+  if (form.querySelector('.error-summary')) {
+    form.querySelector('.error-summary').classList.add('hidden');
+  }
+  const inputs = form.querySelectorAll('input, select');
+  inputs.forEach(function(input) {
+    input.classList.remove('invalid');
+  });
 };
 
 const addListeners = (submitButtons = [], callBack = checkForm) => {

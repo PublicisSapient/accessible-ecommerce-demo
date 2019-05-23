@@ -34,6 +34,7 @@
                         Sign In
                     </h3>
                     <hr class="hr-2" />
+                    <p class="error-summary hidden" role="alert" data-section="sign in"></p>
                     <label for="sign-in-email">
                         Email *
                     </label>
@@ -57,6 +58,7 @@
                         Or Guest Information
                     </h3>
                     <hr class="hr-2" />
+                    <p class="error-summary hidden" role="alert" data-section="guest email"></p>
                     <label for="guest-sign-in-email">
                         Email *
                     </label>
@@ -69,15 +71,17 @@
                     </button>
                 </form>
             </section>
-            <form action="/process-payment">
-                <section class="checkout__shipping-information shipping-information">
+            <section class="checkout__shipping-information shipping-information">
+                <form action="/process-shipping">
                     <div class="checkout__shipping-form shipping-form">
                         <h2>Shipping Information</h2>
                         <hr />
-                        <span>
+                        <h3>
                             Shipping Address
-                        </span>
+                        </h3>
                         <hr class="hr-2" />
+                        <p class="error-summary hidden" role="alert" data-section="shipping address"></p>
+
                         <label for="shipping-first-name">First Name *</label>
                         <input class="first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true" aria-describedby="error-msg-shipping-first-name">
                         <span class="error-msg" id="error-msg-shipping-first-name">Please input a first name</span>
@@ -115,7 +119,7 @@
                                 <span class="error-msg" id="error-msg-shipping-province">Please select a province</span>
                             </div>
                             <div class="address__column address__column--3">
-                                <label for="shipping-postal-code">Postal Code</label>
+                                <label for="shipping-postal-code">Postal Code *</label>
                                 <input
                                     type="text"
                                     class="postal-code"
@@ -124,8 +128,9 @@
                                     data-required="true"
                                     data-input-type="postal-code"
                                     pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+                                    aria-describedby="error-msg-shipping-postal-code"
                                 >
-                                <span class="error-msg">Please input a postal code</span>
+                                <span class="error-msg" id="error-msg-shipping-postal-code">Please input a postal code</span>
                             </div>
                         </div>
                         <label for="phone-number">Phone Number *</label>
@@ -136,8 +141,9 @@
                             class="phone-number"
                             data-required="true"
                             data-input-type="phone-number"
+                            aria-describedby="error-msg-shipping-phone"
                         >
-                        <span class="error-msg">Please enter a phone number</span>
+                        <span class="error-msg" id="error-msg-shipping-phone">Please enter a phone number</span>
                         <h3>
                             Shipping Method
                         </h3>
@@ -166,8 +172,10 @@
                             Proceed to Payment Information
                         </button>
                     </div>
-                </section>
-                <section class="checkout__payment-information payment-information">
+                </form>
+            </section>
+            <section class="checkout__payment-information payment-information">
+                <form action="process/payment">
                     <div class="checkout__payment-form payment-form">
                         <h2>
                             Payment Information
@@ -177,6 +185,7 @@
                             Card Information
                         </h3>
                         <hr class="hr-2" />
+                        <p class="error-summary hidden" role="alert" data-section="payment and billing"></p>
                         <label>
                             Accepted Cards
                         </label>
@@ -193,8 +202,9 @@
                             name="credit-card-number"
                             data-required="true"
                             data-input-type="credit-card-number"
+                            aria-describedby="error-msg-cc-number"
                         >
-                        <span class="error-msg">
+                        <span class="error-msg" id="error-msg-cc-number">
                             Please enter a valid credit card number
                         </span>
                         <div class="payment-information__form-row">
@@ -208,8 +218,9 @@
                                     name="expiry-date"
                                     data-required="true"
                                     data-input-type="expiry-date"
+                                    aria-describedby="error-msg-expiry-date"
                                 >
-                                <span class="error-msg">
+                                <span class="error-msg" id="error-msg-expiry-date">
                                     Please enter a valid expiry date
                                 </span>
                             </div>
@@ -236,68 +247,69 @@
                                     name="security-code"
                                     data-required="true"
                                     data-input-type="ccv"
+                                    aria-describedby="error-msg-ccv"
                                 >
-                                <span class="error-msg">
+                                <span class="error-msg" id="error-msg-ccv">
                                     Please enter a valid security code
                                 </span>
                             </div>
                         </div>
-                        </div>
                         <div class="checkout__billing-address billing-address">
-                        <h3>
-                            Billing address
-                        </h3>
-                        <hr class="hr-2" />
-                        <label for="billing-address-remove" class="billing-address__billing-address-check">
-                            <input
-                                type="checkbox" name="billing-address-remove"
-                                id="billing-address-remove"
-                                class="billing-address__billing-address-checkbox"
-                            />
-                            <span class="billing-address__billing-address-custom-checkbox"></span>
-                            <span>
-                                My billing address is the same as my shipping address
-                            </span>
-                        </label>
-                        <div class="checkout__billing-address-form">
-                            <label for="billing-first-name">First Name *</label>
-                            <input class="first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true">
-                            <span class="error-msg">Please input a first name</span>
-                            <label for="billing-last-name">Last Name *</label>
-                            <input class="last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true">
-                            <span class="error-msg">Please input a last name</span>
-                            <label for="billing-address">Address *</label>
-                            <input class="address" name="billing-address" id="billing-address" type="text" data-required="true">
-                            <span class="error-msg">Please input an address</span>
-                            <label for="billing-apt-suite">Apt / Suite</label>
-                            <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text">
-                            <label for="billing-city">City *</label>
-                            <input class="city" name="billing-city" id="billing-city" type="text" data-required="true">
-                            <span class="error-msg">Please input a city name</span>
+                            <h3>
+                                Billing address
+                            </h3>
+                            <hr class="hr-2" />
+                            <label for="billing-address-remove" class="billing-address__billing-address-check">
+                                <input
+                                    type="checkbox" name="billing-address-remove"
+                                    id="billing-address-remove"
+                                    class="billing-address__billing-address-checkbox"
+                                />
+                                <span class="billing-address__billing-address-custom-checkbox"></span>
+                                <span>
+                                    My billing address is the same as my shipping address
+                                </span>
+                            </label>
+                            <div class="checkout__billing-address-form">
+                                <label for="billing-first-name">First Name *</label>
+                                <input class="first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true">
+                                <span class="error-msg" id="error-msg-billing-first-name">Please input a first name</span>
+                                <label for="billing-last-name">Last Name *</label>
+                                <input class="last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="error-msg-billing-last-name">
+                                <span class="error-msg" id="error-msg-billing-last-name">Please input a last name</span>
+                                <label for="billing-address">Address *</label>
+                                <input class="address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="error-msg-billing-address">
+                                <span class="error-msg" id="error-msg-billing-address">Please input an address</span>
+                                <label for="billing-apt-suite">Apt / Suite</label>
+                                <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text">
+                                <label for="billing-city">City *</label>
+                                <input class="city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="error-msg-billing-city">
+                                <span class="error-msg" id="error-msg-billing-city">Please input a city name</span>
 
-                            <div class="address__form-row">
-                                <div class="address__column address__column--5">
-                                    <label for="billing-province">Province *</label>
-                                    <select class="province" id="billing-province" name="billing-province" data-required="true">
-                                        <option value="" selected>Select a Province</option>
-                                        <option value="ab">Alberta</option>
-                                        <option value="bc">British Columbia</option>
-                                        <option value="mb">Manitoba</option>
-                                        <option value="nb">New Brunswick</option>
-                                        <option value="nl">Newfoundland and Labrador</option>
-                                        <option value="ns">Nova Scotia</option>
-                                        <option value="on">Ontario</option>
-                                        <option value="pe">Prince Edward Island</option>
-                                        <option value="qc">Quebec</option>
-                                        <option value="sk">Saskatchewan</option>
-                                        <option value="nt">Northwest Territories</option>
-                                        <option value="nu">Nunavut</option>
-                                        <option value="yt">Yukon</option>
-                                    </select>
-                                    <span class="error-msg">Please select a province</span>
+                                <div class="address__form-row">
+                                    <div class="address__column address__column--5">
+                                        <label for="billing-province">Province *</label>
+                                        <select class="province" id="billing-province" name="billing-province" data-required="true" aria-describedy="error-msg-billing-province">
+                                            <option value="" selected>Select a Province</option>
+                                            <option value="ab">Alberta</option>
+                                            <option value="bc">British Columbia</option>
+                                            <option value="mb">Manitoba</option>
+                                            <option value="nb">New Brunswick</option>
+                                            <option value="nl">Newfoundland and Labrador</option>
+                                            <option value="ns">Nova Scotia</option>
+                                            <option value="on">Ontario</option>
+                                            <option value="pe">Prince Edward Island</option>
+                                            <option value="qc">Quebec</option>
+                                            <option value="sk">Saskatchewan</option>
+                                            <option value="nt">Northwest Territories</option>
+                                            <option value="nu">Nunavut</option>
+                                            <option value="yt">Yukon</option>
+                                        </select>
+                                        <span class="error-msg" id="error-msg-billing-province">Please select a province</span>
+                                    </div>
                                 </div>
                                 <div class="address__column address__column--3">
-                                    <label for="billing-postal-code">Postal Code</label>
+                                    <label for="billing-postal-code">Postal Code *</label>
                                     <input
                                         type="text"
                                         class="postal-code"
@@ -306,26 +318,28 @@
                                         data-required="true"
                                         data-input-type="postal-code"
                                         pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+                                        aria-describedby="error-msg-billing-postal-code"
                                     >
-                                    <span class="error-msg">Please input a postal code</span>
+                                    <span class="error-msg" id="error-msg-billing-postal-code">Please input a postal code</span>
                                 </div>
+                                <label for="phone-number">Phone Number *</label>
+                                <input
+                                    type="tel"
+                                    class="phone-number"
+                                    id="billing-phone-number"
+                                    name="billing-phone-number"
+                                    data-required="true"
+                                    data-input-type="phone-number"
+                                    aria-describedby="error-msg-billing-phone"
+                                >
+                                <span class="error-msg" id="error-msg-billing-phone">Please enter a phone number</span>
                             </div>
-                            <label for="phone-number">Phone Number *</label>
-                            <input
-                                type="tel"
-                                class="phone-number"
-                                id="billing-phone-number"
-                                name="billing-phone-number"
-                                data-required="true"
-                                data-input-type="phone-number"
-                            >
-                            <span class="error-msg">Please enter a phone number</span>
-                        </div>
-                    </section>
+                    </div>
                     <button type="submit" class="btn btn--black payment-information__submit">
                         Finish and Review Order
                     </button>
-            </form>
+                </form>
+            </section>
         </div>
     </main>
     <div data-template="footer"></div>
