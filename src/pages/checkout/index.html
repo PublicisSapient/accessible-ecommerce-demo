@@ -186,13 +186,23 @@
                         </h3>
                         <hr class="hr-2" />
                         <p class="error-summary hidden" role="alert" data-section="payment and billing"></p>
-                        <label>
+                        <h4>
                             Accepted Cards
-                        </label>
-                        <img height="20">
-                        <img height="20">
-                        <img height="20">
-                        <img height="20">
+                        </h4>
+                        <ul class="payment-information__credit-cards">
+                            <li>
+                                <img src="../../assets/visa-logo.svg" alt="Visa">
+                            </li>
+                            <li>
+                                <img src="../../assets/mastercard-logo.svg" alt="Mastercard">
+                            </li>
+                            <li>
+                                <img src="../../assets/amex-logo.svg" alt="American Express">
+                            </li>
+                            <li>
+                                <img src="../../assets/discover-logo.svg" alt="Discover">
+                            </li>
+                        </ul>
                         <label for="credit-card-number">
                             Credit Card Number *
                         </label>
@@ -202,11 +212,12 @@
                             name="credit-card-number"
                             data-required="true"
                             data-input-type="credit-card-number"
-                            aria-describedby="error-msg-cc-number"
+                            aria-describedby="error-msg-cc-number sr-only-accepted-cc"
                         >
                         <span class="error-msg" id="error-msg-cc-number">
-                            Please enter a valid credit card number
+                            Please enter a valid credit card number.
                         </span>
+                        <span class="hidden" id="sr-only-accepted-cc">Accepted credit cards are Visa, Mastercard, American Express and Discover.</span>
                         <div class="payment-information__form-row">
                             <div class="payment-information__column">
                                 <label for="expiry-date">
@@ -218,11 +229,12 @@
                                     name="expiry-date"
                                     data-required="true"
                                     data-input-type="expiry-date"
-                                    aria-describedby="error-msg-expiry-date"
+                                    aria-describedby="error-msg-expiry-date sr-only-cc-expiry-date"
                                 >
                                 <span class="error-msg" id="error-msg-expiry-date">
                                     Please enter a valid expiry date
                                 </span>
+                                <span class="hidden" id="sr-only-cc-expiry-date">in the format of M M / Y Y.</span>
                             </div>
                             <div class="payment-information__column">
                                 <div class="payment-information__label-tooltip">

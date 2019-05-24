@@ -59,6 +59,14 @@
     font-weight: bold;
   }
 
+  h4 {
+    color: black;
+    font-weight: bold;
+    font-size: $font-sm;
+    line-height: $font-lg;
+    display: inline-block;
+  }
+
   header {
     width: 100%;
     display: flex;
@@ -68,7 +76,7 @@
 
   label {
     width: 100%;
-    font-size: 14px;
+    font-size: $font-sm;
   }
 
   input {
@@ -83,7 +91,7 @@
   label {
     color: black;
     font-weight: bold;
-    line-height: 18px;
+    line-height: $font-lg;
     display: inline-block;
     padding: 1.333rem 0 0.666rem;
   }
@@ -183,6 +191,17 @@
       label {
         flex: 0;
         min-width: 140px;
+      }
+    }
+
+    &__credit-cards {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: left;
+        margin-right: 30px;
       }
     }
   }
