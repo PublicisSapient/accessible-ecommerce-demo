@@ -1,0 +1,193 @@
+@import '../../scss/variables';
+
+/* ============================== Order Summary */
+
+.order-summary {
+
+  &__container {
+    grid-column: 2 / 2;
+    background: $white;
+    padding: 16px 24px;
+    color: $black;
+  }
+
+  &__description {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__details {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 18px;
+
+    dt {
+      text-transform: uppercase;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    dd {
+      margin: 0;
+      display: inline-block;
+
+      &:not(.detail__price) {
+        font-weight: normal;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &__detail {
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: $font-lg;
+    font-weight: bold;
+  }
+
+  &__quantity {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+
+  &__total-quantity {
+    width: 100%;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $grey;
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  &__items {
+    width: 100%;
+  }
+
+  &__item-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 0 0 100%;
+    overflow-y: scroll;
+    max-height: 324px;
+  }
+
+  &__item {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid $grey;
+  }
+
+  &__item-link {
+    color: $black;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+
+    &:hover,
+    &:focus {
+      outline-offset: -1px;
+
+      .mini-cart__item-title {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__image {
+    height: auto;
+    margin-right: 16px;
+    width: 76px;
+  }
+
+  &__item-title {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    flex: 0 0 100%;
+  }
+
+  &__item-price {
+    margin-top: 0;
+  }
+
+  &__controls {
+    border-top: 1px solid $grey;
+    margin-left: 76px;
+    padding: 8px 8px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__control {
+    color: $black;
+    font-weight: normal;
+    font-size: $font-xs;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__control-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  &__summary {
+    padding-top: 24px;
+    width: 100%;
+  }
+
+  &__summary-subtotal {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__subtotal-title {
+    float: left;
+    font-size: 1.4rem;
+    line-height: 22px;
+  }
+
+  &__subtotal {
+    float: right;
+  }
+
+  &__summary-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__view-cart {
+    text-decoration: none;
+    padding: 0.5rem;
+    float: left;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__checkout {
+    &:focus {
+      outline-color: $black;
+    }
+  }
+
+  &__cta-btn {
+    text-align: center;
+    flex: 0 0 48%;
+  }
+}

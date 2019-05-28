@@ -1,3 +1,4 @@
+import * as orderSummary from '../../components/order-summary/order-summary';
 import { trapTabKey } from '../../js/utils';
 
 let billingForm;
@@ -156,4 +157,6 @@ window.onload = () => {
   securityCodeTooltipBtn = document.querySelector('.payment-information__tooltip-icon');
   
   securityCodeTooltipBtn.addEventListener('click', toggleTooltipIcon);
+
+  orderSummary.init();
 };

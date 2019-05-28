@@ -27,6 +27,16 @@
 
 .checkout {
   margin-bottom: 80px;
+  @media only screen and (min-width: $filters-collapse) {
+    display: grid;
+    grid-template-columns: 596px 1fr;
+    grid-gap: 50px;
+    padding: 0 120px;
+  }
+
+  &__customer-info {
+    grid-column: 1 / 2;
+  }
 
   form,
   &__sign-in-form,
@@ -363,6 +373,12 @@
         left: 6px;
         margin-right: 1rem;
       }
+    }
+  }
+
+  &__order-summary {
+    @media only screen and (min-width: $filters-collapse) {
+      grid-column: 2 / 2;
     }
   }
 }
