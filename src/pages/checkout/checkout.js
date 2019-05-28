@@ -1,6 +1,10 @@
+import { trapTabKey } from '../../js/utils';
+
 let billingForm;
 let shippingForm;
 let securityCodeTooltip;
+let securityCodeTooltipBtn;
+let securityCodeTooltipPopup;
 
 const regex = {
   'email': /^([A-Za-z0-9\-\/\:\;\(\)\$\&\"\=\,\?\*\#\%\^\+\_\.\|\[\]\{\}\<\>\\\'])+\@([A-Za-z0-9_\-])+\.([A-Za-z]{2,16})$/,
@@ -11,10 +15,37 @@ const regex = {
   ccv: /^[0-9]{3,4}$/,
 };
 
-const showHideSecurityCodeTooltip = (e) => {
-  e.preventDefault();
-  securityCodeTooltip.classList.toggle('payment-information__tooltip--visible');
-};
+function openTooltip() {
+  securityCodeTooltip.classList.add('visible');
+  securityCodeTooltipPopup.setAttribute('aria-hidden', 'false');
+  securityCodeTooltipPopup.setAttribute('tabindex', 0);
+  securityCodeTooltipPopup.focus();
+  securityCodeTooltipBtn.setAttribute('aria-expanded', 'true');
+
+  const securityCodeTooltipClose = securityCodeTooltipPopup.querySelector('.payment-information__tooltip-popup__btn--close');
+  securityCodeTooltipClose.addEventListener('click', closeTooltip);
+
+  securityCodeTooltipPopup.addEventListener('keydown', function(event) {
+    trapTabKey(securityCodeTooltipPopup, event);
+  });
+}
+
+function closeTooltip() {
+  securityCodeTooltip.classList.remove('visible');
+  securityCodeTooltipPopup.setAttribute('aria-hidden', 'true');
+  securityCodeTooltipPopup.setAttribute('tabindex', -1);
+  securityCodeTooltipBtn.setAttribute('aria-expanded', 'false');
+  securityCodeTooltipBtn.focus();
+}
+
+function toggleTooltipIcon(event) {
+  event.stopPropagation();
+  if (securityCodeTooltip.classList.contains('visible')) {
+    closeTooltip();
+  } else {
+    openTooltip();
+  }
+}
 
 const uncheckBillingAddress = ([el]) => {
   el.checked = false;
@@ -107,7 +138,6 @@ window.onload = () => {
 
   billingForm = document.querySelector('.checkout__billing-address-form');
   shippingForm = document.querySelector('.checkout__shipping-form');
-  securityCodeTooltip = document.querySelector('.payment-information__tooltip');
 
   // other listeners
   const billingAddressCheckbox = findButtons(
@@ -121,10 +151,9 @@ window.onload = () => {
     hideShowBillingAddress
   );
 
-  addListeners(
-    findButtons(
-      '.payment-information__tooltip'
-    ),
-    showHideSecurityCodeTooltip
-  );
+  securityCodeTooltip = document.querySelector('.payment-information__tooltip');
+  securityCodeTooltipPopup = document.querySelector('.payment-information__tooltip-popup');
+  securityCodeTooltipBtn = document.querySelector('.payment-information__tooltip-icon');
+  
+  securityCodeTooltipBtn.addEventListener('click', toggleTooltipIcon);
 };

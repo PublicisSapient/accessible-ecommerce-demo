@@ -112,7 +112,7 @@
     &__tooltip {
       position: relative;
 
-      &--visible {
+      &.visible {
         .payment-information__tooltip-popup {
           display: block;
         }
@@ -131,6 +131,26 @@
 
       p {
         font-size: 12px;
+      }
+
+      &__btn--close {
+        background: transparent;
+        border: 0;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin-left: auto;
+        margin-right: -8px;
+        margin-top: -4px;
+        cursor: pointer;
+        position: absolute;
+        right: 12px;
+        top: 10px;
+
+        .icon--close-btn {
+          width: 18px;
+          height: 18px;
+        }
       }
     }
 
