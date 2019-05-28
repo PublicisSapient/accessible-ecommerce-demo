@@ -92,7 +92,8 @@
                         <input class="address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="error-msg-shipping-address">
                         <span class="error-msg" id="error-msg-shipping-address">Please input an address</span>
                         <label for="shipping-apt-suite">Apt / Suite</label>
-                        <input class="apt-suite" name="shipping-apt-suite" id="shipping-apt-suite" type="text">
+                        <input class="apt-suite" name="shipping-apt-suite" id="shipping-apt-suite" type="text" aria-describedby="sr-only-shipping-apt-suite">
+                        <span class="hidden" class="sr-only-shipping-apt-suite">Appartment number, suite number or unit number.</span>
                         <label for="shipping-city">City *</label>
                         <input class="city" name="shipping-city" id="shipping-city" type="text" data-required="true" aria-describedby="error-msg-shipping-city">
                         <span class="error-msg" id="error-msg-shipping-city">Please input a city name</span>
@@ -133,7 +134,7 @@
                                 <span class="error-msg" id="error-msg-shipping-postal-code">Please input a postal code</span>
                             </div>
                         </div>
-                        <label for="phone-number">Phone Number *</label>
+                        <label for="shipping-phone-number">Phone Number *</label>
                         <input
                             type="tel"
                             id="shipping-phone-number"
@@ -148,26 +149,29 @@
                             Shipping Method
                         </h3>
                         <hr class="hr-2" />
-                        <label class="shipping-form__shipping-type">
-                            <input type="radio" name="shipping-method" id="cp-10-day" value="cp-10-day" checked>
-                            <span class="custom-radio"></span>
-                            $0.00 Canada Post - Free Shipping. Delivers in 10 days.
-                        </label>
-                        <label class="shipping-form__shipping-type">
-                            <input type="radio" name="shipping-method" id="ex-5-day" value="ex-5-day">
-                            <span class="custom-radio"></span>
-                            $8.00 Canada Post - Express Shipping. Delivers in 5 days.
-                        </label>
-                        <label class="shipping-form__shipping-type">
-                            <input type="radio" name="shipping-method" id="xp-2-3-day" value="xp-2-3-day">
-                            <span class="custom-radio"></span>
-                            $14.00 Canada Post - Xpresspost. Delivers in 2 - 3 days.
-                        </label>
-                        <label class="shipping-form__shipping-type">
-                            <input type="radio" name="shipping-method" id="pr-1-day" value="pr-1-day">
-                            <span class="custom-radio"></span>
-                            $20.00 Canada Post - Priority Delivery. Delivers in 24 hours.
-                        </label>
+                        <fieldset class="shipping-form__shipping-options">
+                            <legend class="sr-only">Shipping Method</legend>
+                            <label class="shipping-form__shipping-type">
+                                <input type="radio" name="shipping-method" id="cp-10-day" value="cp-10-day" checked>
+                                <span class="custom-radio"></span>
+                                $0.00 Canada Post - Free Shipping. Delivers in 10 days.
+                            </label>
+                            <label class="shipping-form__shipping-type">
+                                <input type="radio" name="shipping-method" id="ex-5-day" value="ex-5-day">
+                                <span class="custom-radio"></span>
+                                $8.00 Canada Post - Express Shipping. Delivers in 5 days.
+                            </label>
+                            <label class="shipping-form__shipping-type">
+                                <input type="radio" name="shipping-method" id="xp-2-3-day" value="xp-2-3-day">
+                                <span class="custom-radio"></span>
+                                $14.00 Canada Post - Xpresspost. Delivers in 2 - 3 days.
+                            </label>
+                            <label class="shipping-form__shipping-type">
+                                <input type="radio" name="shipping-method" id="pr-1-day" value="pr-1-day">
+                                <span class="custom-radio"></span>
+                                $20.00 Canada Post - Priority Delivery. Delivers in 24 hours.
+                            </label>
+                        </fieldset>
                         <button class="btn btn--black shipping-form__submit">
                             Proceed to Payment Information
                         </button>
@@ -299,7 +303,8 @@
                                 <input class="address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="error-msg-billing-address">
                                 <span class="error-msg" id="error-msg-billing-address">Please input an address</span>
                                 <label for="billing-apt-suite">Apt / Suite</label>
-                                <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text">
+                                <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text" aria-describedby="sr-only-billing-apt-suite">
+                                <span class="hidden" class="sr-only-billing-apt-suite">Appartment number, suite number or unit number.</span>
                                 <label for="billing-city">City *</label>
                                 <input class="city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="error-msg-billing-city">
                                 <span class="error-msg" id="error-msg-billing-city">Please input a city name</span>
@@ -340,7 +345,7 @@
                                     >
                                     <span class="error-msg" id="error-msg-billing-postal-code">Please input a postal code</span>
                                 </div>
-                                <label for="phone-number">Phone Number *</label>
+                                <label for="billing-phone-number">Phone Number *</label>
                                 <input
                                     type="tel"
                                     class="phone-number"
