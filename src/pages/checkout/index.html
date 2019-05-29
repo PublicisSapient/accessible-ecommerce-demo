@@ -77,32 +77,32 @@
                         <div class="checkout__shipping-form shipping-form">
                             <h2>Shipping Information</h2>
                             <hr />
-                            <h3>
+                            <h3 id="shipping-address-heading">
                                 Shipping Address
                             </h3>
                             <hr class="hr-2" />
                             <p class="error-summary hidden" role="alert" data-section="shipping address"></p>
 
                             <label for="shipping-first-name">First Name *</label>
-                            <input class="first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true" aria-describedby="error-msg-shipping-first-name">
+                            <input class="first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-first-name" required>
                             <span class="error-msg" id="error-msg-shipping-first-name">Please input a first name</span>
                             <label for="shipping-last-name">Last Name *</label>
-                            <input class="last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true" aria-describedby="error-msg-shipping-last-name">
+                            <input class="last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-last-name" required>
                             <span class="error-msg" id="error-msg-shipping-last-name">Please input a last name</span>
                             <label for="shipping-address">Address *</label> 
-                            <input class="address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="error-msg-shipping-address">
+                            <input class="address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-address" required>
                             <span class="error-msg" id="error-msg-shipping-address">Please input an address</span>
                             <label for="shipping-apt-suite">Apt / Suite</label>
                             <input class="apt-suite" name="shipping-apt-suite" id="shipping-apt-suite" type="text" aria-describedby="sr-only-shipping-apt-suite">
-                            <span class="hidden" class="sr-only-shipping-apt-suite">Appartment number, suite number or unit number.</span>
+                            <span class="hidden" id="sr-only-shipping-apt-suite">Appartment number, suite number or unit number.</span>
                             <label for="shipping-city">City *</label>
-                            <input class="city" name="shipping-city" id="shipping-city" type="text" data-required="true" aria-describedby="error-msg-shipping-city">
+                            <input class="city" name="shipping-city" id="shipping-city" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-city" required>
                             <span class="error-msg" id="error-msg-shipping-city">Please input a city name</span>
 
                             <div class="address__form-row">
                                 <div class="address__column address__column--5">
                                     <label for="shipping-province">Province *</label>
-                                    <select class="province" id="shipping-province" name="shipping-province" data-required="true" aria-describedby="error-msg-shipping-province">
+                                    <select class="province" id="shipping-province" name="shipping-province" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-province" required>
                                         <option value="" selected>Select a Province</option>
                                         <option value="ab">Alberta</option>
                                         <option value="bc">British Columbia</option>
@@ -130,7 +130,8 @@
                                         data-required="true"
                                         data-input-type="postal-code"
                                         pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
-                                        aria-describedby="error-msg-shipping-postal-code"
+                                        aria-describedby="shipping-address-heading error-msg-shipping-postal-code"
+                                        required
                                     >
                                     <span class="error-msg" id="error-msg-shipping-postal-code">Please input a postal code</span>
                                 </div>
@@ -143,7 +144,8 @@
                                 class="phone-number"
                                 data-required="true"
                                 data-input-type="phone-number"
-                                aria-describedby="error-msg-shipping-phone"
+                                aria-describedby="shipping-address-heading error-msg-shipping-phone"
+                                required
                             >
                             <span class="error-msg" id="error-msg-shipping-phone">Please enter a phone number</span>
                             <h3>
@@ -182,7 +184,7 @@
                 <section class="checkout__payment-information payment-information">
                     <form action="process/payment">
                         <div class="checkout__payment-form payment-form">
-                            <h2>
+                            <h2 id="payment-info-heading">
                                 Payment Information
                             </h2>
                             <hr />
@@ -217,7 +219,8 @@
                                 name="credit-card-number"
                                 data-required="true"
                                 data-input-type="credit-card-number"
-                                aria-describedby="error-msg-cc-number sr-only-accepted-cc"
+                                aria-describedby="payment-info-heading error-msg-cc-number sr-only-accepted-cc"
+                                required
                             >
                             <span class="error-msg" id="error-msg-cc-number">
                                 Please enter a valid credit card number.
@@ -234,7 +237,8 @@
                                         name="expiry-date"
                                         data-required="true"
                                         data-input-type="expiry-date"
-                                        aria-describedby="error-msg-expiry-date sr-only-cc-expiry-date"
+                                        aria-describedby="payment-info-heading error-msg-expiry-date sr-only-cc-expiry-date"
+                                        required
                                     >
                                     <span class="error-msg" id="error-msg-expiry-date">
                                         Please enter a valid expiry date
@@ -270,7 +274,8 @@
                                         name="security-code"
                                         data-required="true"
                                         data-input-type="ccv"
-                                        aria-describedby="error-msg-ccv"
+                                        aria-describedby="payment-info-heading error-msg-ccv"
+                                        required
                                     >
                                     <span class="error-msg" id="error-msg-ccv">
                                         Please enter a valid security code
@@ -278,7 +283,7 @@
                                 </div>
                             </div>
                             <div class="checkout__billing-address billing-address">
-                                <h3>
+                                <h3 id="billing-address-heading">
                                     Billing address
                                 </h3>
                                 <hr class="hr-2" />
@@ -295,25 +300,25 @@
                                 </label>
                                 <div class="checkout__billing-address-form">
                                     <label for="billing-first-name">First Name *</label>
-                                    <input class="first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true">
+                                    <input class="first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-first-name" required>
                                     <span class="error-msg" id="error-msg-billing-first-name">Please input a first name</span>
                                     <label for="billing-last-name">Last Name *</label>
-                                    <input class="last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="error-msg-billing-last-name">
+                                    <input class="last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-last-name" required>
                                     <span class="error-msg" id="error-msg-billing-last-name">Please input a last name</span>
                                     <label for="billing-address">Address *</label>
-                                    <input class="address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="error-msg-billing-address">
+                                    <input class="address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-address" required>
                                     <span class="error-msg" id="error-msg-billing-address">Please input an address</span>
                                     <label for="billing-apt-suite">Apt / Suite</label>
                                     <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text" aria-describedby="sr-only-billing-apt-suite">
-                                    <span class="hidden" class="sr-only-billing-apt-suite">Appartment number, suite number or unit number.</span>
+                                    <span class="hidden" id="sr-only-billing-apt-suite">Appartment number, suite number or unit number.</span>
                                     <label for="billing-city">City *</label>
-                                    <input class="city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="error-msg-billing-city">
+                                    <input class="city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-city" required>
                                     <span class="error-msg" id="error-msg-billing-city">Please input a city name</span>
 
                                     <div class="address__form-row">
                                         <div class="address__column address__column--5">
                                             <label for="billing-province">Province *</label>
-                                            <select class="province" id="billing-province" name="billing-province" data-required="true" aria-describedy="error-msg-billing-province">
+                                            <select class="province" id="billing-province" name="billing-province" data-required="true" aria-describedy="billing-address-heading error-msg-billing-province" required>
                                                 <option value="" selected>Select a Province</option>
                                                 <option value="ab">Alberta</option>
                                                 <option value="bc">British Columbia</option>
@@ -342,7 +347,8 @@
                                             data-required="true"
                                             data-input-type="postal-code"
                                             pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
-                                            aria-describedby="error-msg-billing-postal-code"
+                                            aria-describedby="billing-address-heading error-msg-billing-postal-code"
+                                            required
                                         >
                                         <span class="error-msg" id="error-msg-billing-postal-code">Please input a postal code</span>
                                     </div>
@@ -354,18 +360,20 @@
                                         name="billing-phone-number"
                                         data-required="true"
                                         data-input-type="phone-number"
-                                        aria-describedby="error-msg-billing-phone"
+                                        aria-describedby="billing-address-heading error-msg-billing-phone"
+                                        required
                                     >
                                     <span class="error-msg" id="error-msg-billing-phone">Please enter a phone number</span>
                                 </div>
+                            </div>
+                            <button type="submit" class="btn btn--black payment-information__submit">
+                                Finish and Review Order
+                            </button>
                         </div>
-                        <button type="submit" class="btn btn--black payment-information__submit">
-                            Finish and Review Order
-                        </button>
                     </form>
                 </section>
             </div>
-            <div data-template="order-summary" class="checkout__order-summary"></div>
+            <div data-template="order-summary"></div>
         </div>
     </main>
     <div data-template="footer"></div>

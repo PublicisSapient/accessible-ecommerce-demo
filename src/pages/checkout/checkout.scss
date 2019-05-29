@@ -14,12 +14,11 @@
   }
 
   &.invalid {
-    box-shadow: 0 0 3px red;
+    border: 2px solid $error-red;
 
     + .error-msg {
       display: block;
       margin-top: 10px;
-      color: red;
       font-size: 12px;
     }
   }
@@ -57,10 +56,16 @@
 
   hr {
     width: 100%;
-    border-top-width: 2px;
+    border: 0;
+    border-top: 1px solid $black;
     &.hr-2 {
-      border-top: 1px solid #9b9b9b;
+      border-top: 1px solid $medium-grey;
     }
+  }
+
+  h2 {
+    font-size: $font-lg;
+    font-weight: bold;
   }
 
   h3 {
@@ -82,6 +87,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    span {
+      font-size: $font-sm;
+    }
   }
 
   label {
@@ -110,8 +119,10 @@
     &__form-row {
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 250px;
-      grid-column-gap: 50px;
+      @media only screen and (min-width: $filters-collapse) {
+        grid-template-columns: 1fr 250px;
+        grid-column-gap: 50px;
+      }
     }
 
     &__column {
@@ -325,13 +336,13 @@
   }
 
   .billing-address {
-    margin-bottom: 80px;
 
     &__billing-address-check {
       cursor: pointer;
       position: relative;
       display: flex;
       align-items: center;
+      font-weight: normal;
 
       input {
         position: absolute;
@@ -376,24 +387,25 @@
     }
   }
 
-  &__order-summary {
+  .order-summary {
+    margin-top: 50px;
+
     @media only screen and (min-width: $filters-collapse) {
       grid-column: 2 / 2;
+      margin-top: 66px;
     }
   }
 }
 
 @media screen and (max-width: $mobile) {
   .checkout {
-    .payment-information {
-      &__form-row {
-        display: flex;
-      }
-
-      &__label-tooltip {
-        label {
-          min-width: auto;
-        }
+    .btn {
+      width: 100%;
+    }
+    
+    .billing-address {
+      &__billing-address-custom-checkbox {
+        width: 31px;
       }
     }
   }

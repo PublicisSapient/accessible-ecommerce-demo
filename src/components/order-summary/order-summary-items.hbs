@@ -1,62 +1,56 @@
-<p class="mini-cart__total-quantity">{{cartItemCount}} {{cartItemsLabel}}</p>
-<ul class="mini-cart__item-list">
+<p class="order-summary__total-quantity">{{cartItemCount}} {{cartItemsLabel}}</p>
+<ul class="order-summary__item-list">
   {{#each cartItems}}
-  <li class="mini-cart__item">
-    <a class="mini-cart__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 1, Item unit price: $36.95, Item total price: $36.95">
-      <img class="mini-cart__image" alt="" src="{{../rootPath}}/{{thumbnail_url}}">
-      <div class="mini-cart__description">
-        <p class="mini-cart__item-title">{{product_name}}</p>
-        <dl class="mini-cart__details">
-          <div class="mini-cart__detail">
+  <li class="order-summary__item">
+    <a class="order-summary__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 1, Item unit price: $36.95, Item total price: $36.95">
+      <img class="order-summary__image" alt="" src="{{../rootPath}}/{{thumbnail_url}}">
+      <div class="order-summary__description">
+        <p class="order-summary__item-title">{{product_name}}</p>
+        <dl class="order-summary__details">
+          <div class="order-summary__detail">
             <dt>Price</dt>
             <dd class="detail__price">${{price_sale}}</dd>
           </div>
-          <div class="mini-cart__detail">
+          <div class="order-summary__detail">
             <dt>Color</dt>
             <dd>{{color}}</dd>
           </div>
-          <div class="mini-cart__detail">
+          <div class="order-summary__detail">
             <dt>Size</dt>
             <dd>{{size}}</dd>
           </div>
         </dl>
-        <dl class="mini-cart__details">
-          <div class="mini-cart__detail">
+        <dl class="order-summary__details">
+          <div class="order-summary__detail">
             <dt>Qty</dt>
             <dd>{{quantity}}</dd>
           </div>
-          <div class="mini-cart__detail">
+          <div class="order-summary__detail">
             <dt>Total</dt>
             <dd class="detail__price">${{total_price}}</dd>
           </div>
         </dl>
       </div>
     </a>
-    <div class="mini-cart__controls">
-      <button class="mini-cart__control btn--link" data-remove="{{cart_id}}">
-        <svg class="icon mini-cart__control-icon">
-          <use xlink:href="{{../rootPath}}/sprite.svg#trash"></use>
-        </svg>
-        Remove
-      </button>
-      <a class="mini-cart__control btn--link" href="../pdp/index.html?product_id={{product_id}}">
-        <svg class="icon mini-cart__control-icon">
-          <use xlink:href="{{../rootPath}}/sprite.svg#edit"></use>
-        </svg>
-        Edit
-      </a>
-      <button class="mini-cart__control btn--link" data-modal-show="construction-modal">
-        <svg class="icon mini-cart__control-icon">
-          <use xlink:href="{{../rootPath}}/sprite.svg#heart"></use>
-        </svg>
-        Save
-      </button>
-    </div>
   </li>
   {{/each}}
 </ul>
 
-<div class="mini-cart__summary-subtotal">
-  <p class="mini-cart__subtotal-title">Estimated Total</p>
-  <p class="mini-cart__subtotal">${{cartSubtotal}}</p>
-</div>
+<dl class="order-summary__totals">
+  <div class="order-summary__total subtotal">
+    <dt>Subtotal</dt>
+    <dd>${{cartSubtotal}}</dd>
+  </div>
+  <div class="order-summary__total shipping-estimate">
+    <dt>Shipping esitmate</dt>
+    <dd>Free</dd>
+  </div>
+  <div class="order-summary__total tax-estimate">
+    <dt>Taxes estimate</dt>
+    <dd>$0.00</dd>
+  </div>
+  <div class="order-summary__total total">
+    <dt>Estimated Total</dt>
+    <dd>${{cartSubtotal}}</dd>
+  </div>
+</dl>

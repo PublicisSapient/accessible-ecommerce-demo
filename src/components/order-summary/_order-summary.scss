@@ -4,8 +4,7 @@
 
 .order-summary {
 
-  &__container {
-    grid-column: 2 / 2;
+  &__background {
     background: $white;
     padding: 16px 24px;
     color: $black;
@@ -20,7 +19,8 @@
 
   &__details {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: $font-xs;
+    font-weight: bold;
     line-height: 18px;
 
     dt {
@@ -76,12 +76,17 @@
     flex: 0 0 100%;
     overflow-y: scroll;
     max-height: 324px;
+    border-bottom: 1px solid $grey;
   }
 
   &__item {
     display: block;
     padding: 16px 0;
     border-bottom: 1px solid $grey;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   &__item-link {
@@ -94,7 +99,7 @@
     &:focus {
       outline-offset: -1px;
 
-      .mini-cart__item-title {
+      .order-summary__item-title {
         text-decoration: underline;
       }
     }
@@ -107,8 +112,9 @@
   }
 
   &__item-title {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
+    font-size: $font-sm;
+    font-weight: bold;
+    line-height: $font-lg;
     margin-top: 0;
     margin-bottom: 8px;
     flex: 0 0 100%;
@@ -147,47 +153,40 @@
     width: 100%;
   }
 
-  &__summary-subtotal {
+  &__totals {
     display: inline-block;
     width: 100%;
     margin-bottom: 16px;
+    font-size: $font-sm;
   }
 
-  &__subtotal-title {
-    float: left;
-    font-size: 1.4rem;
-    line-height: 22px;
-  }
+  &__total {
+    margin: 5px 0;
 
-  &__subtotal {
-    float: right;
-  }
-
-  &__summary-controls {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  &__view-cart {
-    text-decoration: none;
-    padding: 0.5rem;
-    float: left;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+    &.subtotal {
+      font-weight: bold;
+      margin: 5px 0 20px;
     }
-  }
 
-  &__checkout {
-    &:focus {
-      outline-color: $black;
+    &.total {
+      font-weight: bold;
+      margin: 30px 0 0;
+      padding: 20px 0 0;
+      border-top: 1px solid $grey;
+    }
+    dt {
+      display: inline-block;
+    }
+
+    dd {
+      display: inline-block;
+      float: right;
     }
   }
 
   &__cta-btn {
     text-align: center;
     flex: 0 0 48%;
+    width: 100%;
   }
 }
