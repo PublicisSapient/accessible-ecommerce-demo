@@ -26,6 +26,8 @@
 
 .checkout {
   margin-bottom: 80px;
+  padding: 0;
+
   @media only screen and (min-width: $filters-collapse) {
     display: grid;
     grid-template-columns: 596px 1fr;
@@ -34,7 +36,12 @@
   }
 
   &__customer-info {
-    grid-column: 1 / 2;
+    padding: 0 24px;
+
+    @media only screen and (min-width: $filters-collapse) {
+      grid-column: 1 / 2;
+      padding: 0;
+    }
   }
 
   form,
@@ -327,6 +334,10 @@
     padding-left: 50px;
     flex: 0;
     align-self: flex-end;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
   }
 
   &__billing-address-form {
@@ -384,29 +395,21 @@
         left: 6px;
         margin-right: 1rem;
       }
+
+      @media screen and (max-width: $mobile) {
+        width: 31px;
+      }
     }
   }
 
   .order-summary {
     margin-top: 50px;
+    padding: 0 8px;
 
     @media only screen and (min-width: $filters-collapse) {
       grid-column: 2 / 2;
       margin-top: 66px;
-    }
-  }
-}
-
-@media screen and (max-width: $mobile) {
-  .checkout {
-    .btn {
-      width: 100%;
-    }
-    
-    .billing-address {
-      &__billing-address-custom-checkbox {
-        width: 31px;
-      }
+      padding: 0;
     }
   }
 }

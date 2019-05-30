@@ -49,7 +49,7 @@ function toggleTooltipIcon(event) {
 }
 
 const uncheckBillingAddress = ([el]) => {
-  el.checked = false;
+  el.checked = true;
 };
 
 const prefillBillingAddress = () => {
