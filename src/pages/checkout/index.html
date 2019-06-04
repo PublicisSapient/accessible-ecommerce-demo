@@ -300,25 +300,25 @@
                                 </label>
                                 <div class="checkout__billing-address-form checkout__billing-address-form--hidden">
                                     <label for="billing-first-name">First Name *</label>
-                                    <input class="first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-first-name" required>
+                                    <input class="first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-first-name" required disabled>
                                     <span class="error-msg" id="error-msg-billing-first-name">Please input a first name</span>
                                     <label for="billing-last-name">Last Name *</label>
-                                    <input class="last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-last-name" required>
+                                    <input class="last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-last-name" required disabled>
                                     <span class="error-msg" id="error-msg-billing-last-name">Please input a last name</span>
                                     <label for="billing-address">Address *</label>
-                                    <input class="address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-address" required>
+                                    <input class="address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-address" required disabled>
                                     <span class="error-msg" id="error-msg-billing-address">Please input an address</span>
                                     <label for="billing-apt-suite">Apt / Suite</label>
-                                    <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text" aria-describedby="sr-only-billing-apt-suite">
+                                    <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text" aria-describedby="sr-only-billing-apt-suite" disabled>
                                     <span class="hidden" id="sr-only-billing-apt-suite">Appartment number, suite number or unit number.</span>
                                     <label for="billing-city">City *</label>
-                                    <input class="city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-city" required>
+                                    <input class="city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-city" required disabled>
                                     <span class="error-msg" id="error-msg-billing-city">Please input a city name</span>
 
                                     <div class="address__form-row">
                                         <div class="address__column address__column--5">
                                             <label for="billing-province">Province *</label>
-                                            <select class="province" id="billing-province" name="billing-province" data-required="true" aria-describedy="billing-address-heading error-msg-billing-province" required>
+                                            <select class="province" id="billing-province" name="billing-province" data-required="true" aria-describedy="billing-address-heading error-msg-billing-province" required disabled>
                                                 <option value="" selected>Select a Province</option>
                                                 <option value="ab">Alberta</option>
                                                 <option value="bc">British Columbia</option>
@@ -349,6 +349,7 @@
                                             pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
                                             aria-describedby="billing-address-heading error-msg-billing-postal-code"
                                             required
+                                            disabled
                                         >
                                         <span class="error-msg" id="error-msg-billing-postal-code">Please input a postal code</span>
                                     </div>
@@ -362,6 +363,7 @@
                                         data-input-type="phone-number"
                                         aria-describedby="billing-address-heading error-msg-billing-phone"
                                         required
+                                        disabled
                                     >
                                     <span class="error-msg" id="error-msg-billing-phone">Please enter a phone number</span>
                                 </div>
