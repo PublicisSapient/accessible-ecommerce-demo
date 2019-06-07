@@ -1,3 +1,91 @@
+<!-- accessible-ecommerce-demo README 2.0 - START -->
+<!-- Snazzy new logo here
+<div align="center">
+  <a href="https://github.com/webpack/webpack">
+    <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
+  </a>
+
+  <br>
+  <br>
+</div>  
+-->
+<!-- accessible-ecommerce-demo README 2.0 - END -->
+
+
+
+# accessible-ecommerce-demo
+
+A truly accessible demo eCommerce website brought to you by Publicis.Sapient.
+
+**This project is currently in alpha status.** This means that anything could change at any time. Additionally, it means that your feedback will have an impact on how the project evolves, so please feel free to [open issues](https://github.com/PublicisSapient/accessible-ecommerce-demo/issues).
+
+## Accessibility Criteria
+
+We are supporting the following:
+
+*	[NVDA](https://www.nvaccess.org/) for Mozilla Firefox
+*	VoiceOver for Safari
+*	Talkback for Android Chrome
+
+## Todo
+* Their templating, styling, linting, etc. sections where they indicate which tools they are using
+* Their note on contributing
+* Their core team section with photos
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Setup](#setup)
+3. [Contributing](#contributing)
+4. [Core Team](#core-team)
+
+<!--
+1. [Install](#install)
+2. [Introduction](#introduction)
+3. [Concepts](#concepts)
+4. [Contributing](#contributing)
+5. [Support](#support)
+6. [Core Team](#core-team)
+7. [Sponsoring](#sponsoring)
+8. [Premium Partners](#premium-partners)
+9. [Other Backers and Sponsors](#other-backers-and-sponsors)
+10. [Gold Sponsors](#gold-sponsors)
+11. [Silver Sponsors](#silver-sponsors)
+12. [Bronze Sponsors](#bronze-sponsors)
+13. [Backers](#backers)
+14. [Special Thanks](#special-thanks-to)
+-->
+
+## Introduction
+
+The Accessible eStore is an iterative, interactive prototype of an e‑commerce storefront. It explores concepts in designing and developing for the web considering accessibility first. Web accessibility is more of a journey than a destination. In that spirit, this experience will evolve based on our continued learning and user feedback.
+
+### What our demo is, and what it is not
+
+**It is intended to be fully keyboard navigable and screen reader-friendly in its current state.** Navigate with your tab key to discover hidden wayfinding cues, and note how we tried to provide screen reader users with the appropriate amount of context and information as they navigated through the site. Let us know if you experience any issues or have suggestions.
+
+**It is not fully designed.** Think of it as an interactive desktop wireframe right now. We are working out all of the interactions first, then applying an eye-catching design later.
+It is not fully functional at the moment. For example, right now you can’t add an item to your cart. We plan to make that work shortly. This is as far as we got for Global Accessibility Awareness Day.
+
+**It is not representative of today’s best coding standards – yet.** This code came out of multiple hackathon sessions. The point of the demo today is to showcase how an accessible e‑commerce website should feel and behave. We will clean up the code later.
+
+**It is not perfect.** We didn’t want to waste time trying to make it perfect before getting it out there. The danger would be that it would never be perfect enough. Edward de Bono said it best: **“An idea that is developed and put into action is more important than an idea that exists only as an idea.”**
+
+## Setup
+Setup
+
+## Contributing
+Contribution
+
+## Core Team
+Core Teammembers
+
+
+
+
+
+<!-- accessible-ecommerce-demo README 1.0 - START -->
+
 # accessible-ecommerce-demo
 
 A truly accessible demo eCommerce website brought to you by Publicis.Sapient.
@@ -107,3 +195,5 @@ npm run deploy
 ```
 This can be done from any working branch, but ideally would should be run from `dev` or `master`. 
 *NB: These two lines will be simplified into a single command in the next update
+
+<!-- accessible-ecommerce-demo README 1.0 - END -->
