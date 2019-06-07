@@ -27,10 +27,12 @@ We are supporting the following:
 *	VoiceOver for Safari
 *	Talkback for Android Chrome
 
+<!--
 ## Todo
 * Their templating, styling, linting, etc. sections where they indicate which tools they are using
 * Their note on contributing
 * Their core team section with photos
+-->
 
 ## Table of Contents
 
