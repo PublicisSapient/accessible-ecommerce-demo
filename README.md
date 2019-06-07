@@ -1,17 +1,11 @@
 <!-- accessible-ecommerce-demo README 2.0 - START -->
 <!-- Snazzy new logo here
 <div align="center">
-  <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
+  <a href="https://publicissapient.github.io/accessible-ecommerce-demo/">
+    <img width="200" height="200" src="http://localhost:1234/eStore-logo-README.png">
   </a>
-
-  <br>
-  <br>
 </div>  
--->
-<!-- accessible-ecommerce-demo README 2.0 - END -->
-
-
+ -->
 
 # accessible-ecommerce-demo
 
@@ -74,38 +68,20 @@ It is not fully functional at the moment. For example, right now you can’t add
 **It is not perfect.** We didn’t want to waste time trying to make it perfect before getting it out there. The danger would be that it would never be perfect enough. Edward de Bono said it best: **“An idea that is developed and put into action is more important than an idea that exists only as an idea.”**
 
 ## Setup
-Setup
+
+Note: Please use node v10.10.0 or greater.
+
+1. Open Terminal on your computer (or Terminal equivalent).
+2. Navigate to the directory where you want this repository code to be on your local computer using the `cd foldername` command.
+3. Enter the following 3 lines in Terminal:
+
+```bash
+git clone https://github.com/PublicisSapient/accessible-ecommerce-demo.git
+cd accessible-ecommerce-demo
+npm install
+```
 
 ## Contributing
-Contribution
-
-## Core Team
-Core Teammembers
-
-
-
----
-
-!!! Old README Content Below !!! 
-
-<!-- accessible-ecommerce-demo README 1.0 - START -->
-
-# accessible-ecommerce-demo
-
-A truly accessible demo eCommerce website brought to you by Publicis.Sapient.
-
-**This project is currently in alpha status.** This means that anything could change at any time. Additionally, it means that your feedback will have an impact on how the project evolves, so please feel free to [open issues](https://github.com/PublicisSapient/accessible-ecommerce-demo/issues).
-
-## Accessibility Criteria
-
-We are supporting the following:
-
-*	[NVDA](https://www.nvaccess.org/) for Mozilla Firefox
-*	VoiceOver for Safari
-*	Talkback for Android Chrome
-
-
-## Production Notes
 
 ### BEM
 
@@ -115,7 +91,7 @@ Please review the [BEM documentation](http://getbem.com/naming/) in preparation 
 
 Please branch off of the default branch. The default branch is currently `dev`
 
-Creating a new branch as follows. The general nomenclature for a branch should be 'feature/feature-name', 'defect/defect-id', 'hotfix/hotfix-date'. Ex) Create a feature by running the following in your terminal:
+Creating a new branch as follows. The general nomenclature for a branch should be 'feature/feature-name', 'defect/defectid-defect-name', 'hotfix/hotfix-date'. Ex) Create a feature by running the following in your terminal:
 `
 git branch -b feature/carousel
 `
@@ -123,8 +99,11 @@ git branch -b feature/carousel
 Please be sure to provide detailed comments within your commits as follows:
 
 `
-git commit -m "Title of the commit" -m "Detailed comment"
+git commit -m "[branch name] - Title of the commit" -m "Detailed comment"
 `
+
+Example:
+> git commit -m "defect/235-plp-images-missing - Images not showing up on PLP" -m "Updated PLP image srcs to point to new image repo"
 
 Open up a pull request from your working branch into `dev`, and have your partner approve and merge the branch within GitHub.
 
@@ -138,21 +117,6 @@ These settings override both User and Default settings for the HTML syntax. Plea
 `
 We're also using ESLint, and there's some config files for that already in the repo that your IDE should be able to pick up.
 
-## Initial Setup
-
-1) Open Terminal on your computer (or Terminal equivalent).
-
-2) Navigate to the directory where you want this repository code to be on your local computer using the `cd foldername` command.
-
-3) Enter the following 3 lines in Terminal:
-
-```bash
-git clone https://github.com/PublicisSapient/accessible-ecommerce-demo.git
-cd accessible-ecommerce-demo
-npm install
-```
-
-## Development
 After completing the initial setup, you can simply run the following in Terminal:
 
 ```bash
@@ -191,6 +155,19 @@ This process will
 
 Any errors will be displayed in Terminal.
 
+
+## Core Team
+Core Teammembers
+
+<!-- accessible-ecommerce-demo README 2.0 - END -->
+
+---
+
+!!! Old README Content Below !!! 
+
+<!-- accessible-ecommerce-demo README 1.0 - START -->
+
+<!--
 ## Deployment
 To deploy to the public site, run the following in Terminal:
 ```bash
@@ -199,5 +176,5 @@ npm run deploy
 ```
 This can be done from any working branch, but ideally would should be run from `dev` or `master`. 
 *NB: These two lines will be simplified into a single command in the next update
-
+-->
 <!-- accessible-ecommerce-demo README 1.0 - END -->
