@@ -1,124 +1,146 @@
 @import '../../scss/variables';
 /* ==================================== GALLERY */
 
-.gallery {
-    max-width: 100vw;
-}
-
 .gallery__main-image__container {
-    position: relative;
-    max-height: 900px;
-    img{
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-}
+  position: relative;
 
-.gallery__main-image__inner-container {
-    max-width: 100vw;
-    max-height: 600px;
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .gallery {
-    &__main-image{
-        &__zoom {
-            position: absolute;
-            width: 100%;
-            bottom: $grid-unit * 2;
-            padding: 0 $grid-unit * 2;
-            left: 0;
-            display: flex;
-            .btn--outline{
-                background: white;
-                &:not(:disabled):hover, &:focus{
-                    background: darken(white, 5%);
-                }
-            }
-        }
-        &__zoom-group {
-          display: flex;
-          padding: 3px;
-          height: 40px;
-          width: 111px;
-          opacity: 0.9;
-          border-radius: 24px;
-          background-color: #FFFFFF;
-          box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
-          position: absolute;
-          right: $grid-unit * 2;
-        }
-    }
-    &__zoom-icon {
-      text-align: center;
-      align-self: center;
-      width: 33.3%;
+  &__main-image {
+    &__zoom {
+      position: absolute;
+      width: 100%;
+      bottom: 12px;
+      padding: 0 12px;
+      left: 0;
+      display: flex;
 
-      &::before {
-        font-size: 20px;
+      .btn--outline {
+        background: white;
+
+        &:not(:disabled):hover,
+        &:focus {
+          background: darken(white, 5%);
+        }
       }
     }
-    &__thumbnail-list {
-        margin-top: 10px;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        overflow: hidden;
-    }
-    &__minimize {
-      margin: 0 3px;
-    }
-}
 
+    &__zoom-group {
+      display: flex;
+      padding: 4px;
+      height: 40px;
+      width: 111px;
+      opacity: 0.9;
+      margin-left: auto;
+      border-radius: 24px;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
 
-.gallery__thumbnail-list button {
-    border: 0;
+  &__btn--zoom {
     padding: 0;
-}
 
-.gallery__thumbnail-list button img {
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    width: auto;
-    display: block;
-}
-
-.gallery__thumbnail-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-
-  .btn {
-    position: absolute;
-    z-index: 2;
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      color: $black;
+    }
   }
 
-  .thumbnail__scroll-right {
-    right: 0;
+  &__zoom-icon {
+    text-align: center;
+    align-self: center;
+    width: 33.3%;
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+    }
+  }
+
+  &__thumbnail-list {
+    margin: $grid-unit*2 auto 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-left: 0;
+
+    &-item {
+      margin: 0 8px;
+    }
+
+    button {
+      border: 0;
+      padding: 0;
+      border: 2px solid transparent;
+
+      &.selected {
+        border-color: $pure-black;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+
+  &__thumbnail-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    .btn {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .thumbnail__scroll-right {
+      right: 0;
+    }
+  }
+
+  &__minimize {
+    margin: 0 3px;
   }
 }
 
-@media only screen and (min-width: 600px) {
-    .gallery {
-        max-width: 600px;
-        margin-top: $grid-unit * 4;
-    }
-    .gallery__main-image__inner-container {
-        max-width: 600px;
-        max-height: 900px;
-    }
-    .gallery__thumbnail-list button {
-        width: $grid-unit * 14;
-        height: $grid-unit * 14;
-        margin: 0 $grid-unit * 2;
+@media only screen and (min-width: $phablet) {
+  .gallery {
 
-        &.selected {
-          border: 2px solid $pure-black;
-        }
+    &__thumbnail-list,
+    &__main-image__container {
+      padding-left: 12px;
     }
-    .gallery__thumbnail-list {
-        margin-top: 20px;
+
+    &__main-image__zoom {
+      padding-left: 24px;
     }
+
+    &__thumbnail-list {
+      margin-top: $grid-unit * 4;
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .gallery {
+
+    &__thumbnail-list {
+
+      &-item {
+        margin: 0 12px;
+      }
+    }
+  }
 }

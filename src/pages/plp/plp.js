@@ -5,8 +5,10 @@ import * as productSort from '../../components/product-sort/product-sort';
 import * as productGrid from '../../components/product-grid/product-grid';
 import * as pagination from '../../components/pagination/pagination';
 import * as carousel from '../../components/product-carousel/product-carousel';
-import { chunk, getRandomSubset } from '../../js/utils';
+import * as DynamicModal from '../../components/modal/modal-dynamic';
+import { chunk, getRandomSubset, setPageTitle } from '../../js/utils';
 import * as productDB from '../../js/pouchdb';
+import * as Modal from '../../components/modal/modal';
 
 (function plpPage() {
   let pages;
@@ -33,18 +35,14 @@ import * as productDB from '../../js/pouchdb';
   pagination.init();
   carousel.init();
 
-  // Event Listeners
-  document.addEventListener('update:filters', filterProducts);
-  document.addEventListener('update:sort', sortProducts);
-  document.addEventListener('update:ipp', updateComponents);
-  document.addEventListener('update:pagination', getPage);
+  Modal.init('construction-modal');
 
   function getPage(event) {
     let newPage = event.detail.goToPage;
     const index = newPage - 1;
     productGrid.update(pages[index]);
     pagination.update({ pageCount: pages.length, currentPage: newPage });
-    productSort.update(index);
+    productSort.update(index, allProducts.length);
     SCROLL_TOP.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -75,12 +73,29 @@ import * as productDB from '../../js/pouchdb';
   }
 
   function fetchComponentData() {
-    productDB.query(['rating'], currentQuery).then(function(result) {
+    productDB.query(['rating'], currentQuery).then(function (result) {
       updateAllProducts(result);
       const carouselItems = getRandomSubset(allProducts, CAROUSEL_ITEM_COUNT);
       carousel.update(carouselItems);
     });
   }
 
+  function loadModal(event) {
+    const componentName = event.currentTarget.dataset.modalLoad;
+    DynamicModal.init(
+      `[data-component="${componentName}"]`,
+      `modal-${componentName}`
+    );
+  }
+
+  // Event Listeners
+  document.addEventListener('update:filters', filterProducts);
+  document.addEventListener('update:sort', sortProducts);
+  document.addEventListener('update:ipp', updateComponents);
+  document.addEventListener('update:pagination', getPage);
+  const dynamicModals = document.querySelectorAll('[data-modal-load]');
+  dynamicModals.forEach((modalTrigger) => modalTrigger.addEventListener('click', loadModal));
+
+  setPageTitle(['Women', 'Women’s Tops']);
   productDB.init().then(fetchComponentData);
 })();

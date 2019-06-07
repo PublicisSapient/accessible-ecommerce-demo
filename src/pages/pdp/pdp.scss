@@ -1,11 +1,44 @@
-.pdp{
-  .main-content{
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.pdp {
+
+  .main-content,
+  .product-details__accordion {
+    @media only screen and (min-width: $filters-collapse) {
+      padding-top: 8px;
+    }
+
+    @media only screen and (min-width: 900px) {
+
+      padding-left: between(0px, 74px, 900px, $max-width);
+      padding-right: between(0px, 74px, 900px, $max-width);
+    }
+
+    @media only screen and (min-width: $max-width) {
+      padding-left: 74px;
+      padding-right: 74px;
+    }
+  }
+}
+
+.pdp {
+  .main-content {
     display: flex;
   }
-  .product-details, .gallery{
-    flex: 1 0 50%;
+
+  .product-details,
+  .gallery {
+    flex: 1;
   }
-  .gallery{
-    max-width: 50%;
+
+  @media only screen and (max-width: $filters-collapse) {
+    .breadcrumb--back-link {
+      display: block;
+    }
+
+    .breadcrumb {
+      display: none;
+    }
   }
 }

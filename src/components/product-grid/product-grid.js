@@ -10,7 +10,15 @@ function init() {
   componentEl = document.querySelector('[data-component="grid"]');
 }
 function update(products){
-  componentEl.innerHTML = renderTiles({products});
+  if(products !== undefined){
+    if(componentEl.style.display == 'block') {
+      componentEl.style.display = 'grid';
+    }
+    componentEl.innerHTML = renderTiles({products});
+  } else {
+    componentEl.style.display = 'block';
+    componentEl.innerHTML = '<h2>Sorry. We did not find any results. Try expanding your filters.</h2>';
+  }
 }
 
 export { init, update };

@@ -20,6 +20,10 @@
     font-size: $font-lg;
     font-weight: bold;
   }
+  &__legal {
+    font-size: $font-xs;
+    margin-top: 30px;
+  }
 
 	.row{
 		justify-content: space-between;
@@ -90,5 +94,8 @@
     @media only screen and (min-width:$footer-collapse+1) {
       margin-bottom: 32px;
     }
+  }
+  .feedback__submit {
+    color: $pure-black;
   }
 }

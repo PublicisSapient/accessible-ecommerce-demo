@@ -11,13 +11,20 @@
 @mixin medium-shadow {
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
+
 @mixin soft-shadow {
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
 }
+
 @mixin component-panel {
   background: #fff;
   border-radius: 4px;
   @include soft-shadow;
+}
+
+@mixin focus-outline {
+  outline: 2px solid $focus-indicator;
+  outline-offset: 2px;
 }
 
 // Linear interpolation

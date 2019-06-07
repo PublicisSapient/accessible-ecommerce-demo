@@ -6,9 +6,11 @@
   max-width: $max-width;
   padding: 0 24px;
   margin: 0 auto;
+
   @media only screen and (min-width: $phablet) {
     padding: 0 between(24px, 60px, $phablet, $max-width);
   }
+
   @media only screen and (min-width: $max-width) {
     padding: 0 60px;
   }
