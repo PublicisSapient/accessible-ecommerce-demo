@@ -161,12 +161,7 @@ Core Teammembers
 
 <!-- accessible-ecommerce-demo README 2.0 - END -->
 
----
-
-!!! Old README Content Below !!! 
-
 <!-- accessible-ecommerce-demo README 1.0 - START -->
-
 <!--
 ## Deployment
 To deploy to the public site, run the following in Terminal:
