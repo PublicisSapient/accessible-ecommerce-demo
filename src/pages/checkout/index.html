@@ -251,12 +251,15 @@
                                             Security Code *
                                         </label>
                                         <div aria-label="Security code tooltip" class="payment-information__tooltip">
-                                            <button class="payment-information__tooltip-icon" title="View tool tip" aria-describedby="tooltip-security-code" type="button" aria-expanded="false">?</button>
-                                            <div class="payment-information__tooltip-popup" id="tooltip-security-code" aria-hidden="true" tabindex="-1">    
+                                            <button class="payment-information__tooltip-icon" title="View tool tip" aria-describedby="tooltip-security-code" type="button" aria-expanded="false">
+                                                <span aria-hidden="true">?</span>
+                                            </button>
+                                            <div class="payment-information__tooltip-popup" id="tooltip-security-code" aria-hidden="true">    
                                                 <div class="payment-information__tooltip-popup-background">
-                                                    <h1>Where to find your credit card secrurity code</h1>
-                                                    <p>Every credit card has a 3 or 4 digit security code called the CSC, CVV, CV2, CVC, or CCV. It can be found
-                                                        on either the front or on the back of your card.</p>
+                                                    <div class="payment-information__tooltip-content" tabindex="-1">
+                                                        <h1>Where to find your credit card security code</h1>
+                                                        <p>Every credit card has a 3 or 4 digit security code called the CSC, CVV, CV2, CVC, or CCV. It can be found on either the front or on the back of your card.</p>
+                                                    </div>
                                                     <button class="payment-information__tooltip-popup__btn--close" type="button">
                                                         <span class="sr-only">Close</span>
                                                         <svg class="icon--close-btn">

@@ -1,5 +1,5 @@
 import * as orderSummary from '../../components/order-summary/order-summary';
-import { trapTabKey } from '../../js/utils';
+import { activeElementMatches } from '../../js/utils';
 
 let signInForm;
 let guestSignInForm;
@@ -8,6 +8,7 @@ let shippingForm;
 let securityCodeTooltip;
 let securityCodeTooltipBtn;
 let securityCodeTooltipPopup;
+let securityCodeTooltipContent;
 let billingAddressCheckbox;
 
 const regex = {
@@ -19,27 +20,47 @@ const regex = {
   ccv: /^[0-9]{3,4}$/,
 };
 
+function testClick(event){
+  const clickInsideDropdown = event.target.matches('.payment-information__tooltip-popup, .payment-information__tooltip-popup *');
+  if(!clickInsideDropdown){
+    closeTooltip();
+  }
+}
+function testBlur(){
+  activeElementMatches('.payment-information__tooltip-popup *').then(function(focusInDropdown){
+    if(!focusInDropdown){
+      closeTooltip();
+    }
+  });
+}
+
 function openTooltip() {
   securityCodeTooltip.classList.add('visible');
   securityCodeTooltipPopup.setAttribute('aria-hidden', 'false');
-  securityCodeTooltipPopup.setAttribute('tabindex', 0);
-  securityCodeTooltipPopup.focus();
   securityCodeTooltipBtn.setAttribute('aria-expanded', 'true');
 
+  securityCodeTooltipContent.setAttribute('tabindex', 0);
+  securityCodeTooltipContent.focus();
+  securityCodeTooltipContent.addEventListener('blur', testBlur);
+  
   const securityCodeTooltipClose = securityCodeTooltipPopup.querySelector('.payment-information__tooltip-popup__btn--close');
-  securityCodeTooltipClose.addEventListener('click', closeTooltip);
+  securityCodeTooltipClose.addEventListener('click', onClose);
 
-  securityCodeTooltipPopup.addEventListener('keydown', function(event) {
-    trapTabKey(securityCodeTooltipPopup, event);
-  });
+  document.addEventListener('click', testClick);
+}
+
+function onClose(event) {
+  event.stopPropagation();
+  closeTooltip();
 }
 
 function closeTooltip() {
   securityCodeTooltip.classList.remove('visible');
   securityCodeTooltipPopup.setAttribute('aria-hidden', 'true');
-  securityCodeTooltipPopup.setAttribute('tabindex', -1);
+  securityCodeTooltipContent.addEventListener('blur', testBlur).setAttribute('tabindex', -1);
   securityCodeTooltipBtn.setAttribute('aria-expanded', 'false');
   securityCodeTooltipBtn.focus();
+  document.removeEventListener('click', testClick);
 }
 
 function toggleTooltipIcon(event) {
@@ -162,7 +183,7 @@ const submitShippingForm = (e) => {
   const inputs = shippingForm.querySelectorAll('input, select');
   let shippingInfo = {};
   inputs.forEach(function(input) {
-    shippingInfo[input.getAttribute('name')] = input.value
+    shippingInfo[input.getAttribute('name')] = input.value;
   });
   shippingInfo['shipping-method'] = shippingForm.querySelector('input[name=shipping-method]:checked').value;
   localStorage.setItem('shippingInfo', JSON.stringify(shippingInfo));
@@ -217,8 +238,13 @@ window.onload = () => {
   securityCodeTooltip = document.querySelector('.payment-information__tooltip');
   securityCodeTooltipPopup = document.querySelector('.payment-information__tooltip-popup');
   securityCodeTooltipBtn = document.querySelector('.payment-information__tooltip-icon');
+  securityCodeTooltipContent = document.querySelector('.payment-information__tooltip-content');
   
   securityCodeTooltipBtn.addEventListener('click', toggleTooltipIcon);
+
+  // Add blur check to last focusable item in the tooltip
+  const focusableItems = securityCodeTooltipPopup.querySelectorAll('button, [href]');
+  focusableItems[focusableItems.length - 1].addEventListener('blur', testBlur);
 
   orderSummary.init();
 };
