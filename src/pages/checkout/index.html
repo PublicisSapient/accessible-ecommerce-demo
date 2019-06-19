@@ -30,7 +30,7 @@
                         Contact Information
                     </h2>
                     <hr />
-                    <form action="/sign-in" class="checkout__sign-in-form sign-in-form">
+                    <form action="/sign-in" class="checkout__sign-in-form sign-in-form" novalidate>
                         <h3>
                             Sign In
                         </h3>
@@ -54,7 +54,7 @@
                             Sign In
                         </button>
                     </form>
-                    <form class="checkout__guest-sign-in guest-sign-in" action="/guest-sign-in">
+                    <form class="checkout__guest-sign-in-form guest-sign-in" action="/guest-sign-in" novalidate>
                         <h3>
                             Or Guest Information
                         </h3>
@@ -73,7 +73,7 @@
                     </form>
                 </section>
                 <section class="checkout__shipping-information shipping-information">
-                    <form action="/process-shipping">
+                    <form class="checkout__shipping-information-form" action="/process-shipping" novalidate>
                         <div class="checkout__shipping-form shipping-form">
                             <h2>Shipping Information</h2>
                             <hr />
@@ -182,7 +182,7 @@
                     </form>
                 </section>
                 <section class="checkout__payment-information payment-information">
-                    <form action="process/payment">
+                    <form class="checkout__payment-information-form" action="process/payment" novalidate>
                         <div class="checkout__payment-form payment-form">
                             <h2 id="payment-info-heading">
                                 Payment Information
@@ -295,6 +295,7 @@
                                         type="checkbox" name="billing-address-remove"
                                         id="billing-address-remove"
                                         class="billing-address__billing-address-checkbox"
+                                        checked="checked"
                                     />
                                     <span class="billing-address__billing-address-custom-checkbox"></span>
                                     <span>

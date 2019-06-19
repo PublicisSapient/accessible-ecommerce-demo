@@ -3,13 +3,14 @@ import { activeElementMatches } from '../../js/utils';
 
 let signInForm;
 let guestSignInForm;
-let billingForm;
+let paymentForm;
 let shippingForm;
 let securityCodeTooltip;
 let securityCodeTooltipBtn;
 let securityCodeTooltipPopup;
 let securityCodeTooltipContent;
 let billingAddressCheckbox;
+let billingFormFields;
 
 const regex = {
   'email': /^([A-Za-z0-9\-\/\:\;\(\)\$\&\"\=\,\?\*\#\%\^\+\_\.\|\[\]\{\}\<\>\\\'])+\@([A-Za-z0-9_\-])+\.([A-Za-z]{2,16})$/,
@@ -72,16 +73,12 @@ function toggleTooltipIcon(event) {
   }
 }
 
-const uncheckBillingAddress = ([el]) => {
-  el.checked = true;
-};
-
 const prefillBillingAddress = () => {
   const inputs = shippingForm.querySelectorAll('input, select');
 
   inputs.forEach(input => {
     const { className } = input;
-    const billingInput = className ? billingForm.querySelector(`.${className}`) : null;
+    const billingInput = className ? billingFormFields.querySelector(`.${className}`) : null;
 
     if (billingInput) {
       billingInput.removeAttribute('disabled');
@@ -91,13 +88,13 @@ const prefillBillingAddress = () => {
 };
 
 const hideShowBillingAddress = () => {
-  billingForm.classList.toggle('checkout__billing-address-form--hidden');
-  const inputs = billingForm.querySelectorAll('input, select');
-  if (billingForm.classList.contains('checkout__billing-address-form--hidden')) {
+  billingFormFields.classList.toggle('checkout__billing-address-form--hidden');
+  const inputs = billingFormFields.querySelectorAll('input, select');
+  if (billingFormFields.classList.contains('checkout__billing-address-form--hidden')) {
     prefillBillingAddress();
-    clearErrorState(billingForm);
+    clearErrorState(billingFormFields);
     inputs.forEach(function(input) {
-      input.setAttribute('disabled');
+      input.setAttribute('disabled', true);
     });
   } else {
     inputs.forEach(function(input) {
@@ -106,9 +103,7 @@ const hideShowBillingAddress = () => {
   }
 };
 
-const checkForm = (e) => {
-  e.preventDefault();
-  const form = e.currentTarget.parentNode;
+const checkForm = (form, callBack) => {
   const inputs = form.querySelectorAll('input:not([disabled]), select:not([disabled])');
 
   let formValid = true;
@@ -131,7 +126,7 @@ const checkForm = (e) => {
   const errorSummary = form.querySelector('.error-summary');
   if (numErrors === 0) {
     errorSummary.classList.add('hidden');
-    //form.submit();
+    callBack();
   } else {
     const errorText = numErrors > 1 ? 'errors' : 'error';
     errorSummary.innerText = `You have ${numErrors} ${errorText} in your ${errorSummary.getAttribute('data-section')} information.`;
@@ -150,16 +145,12 @@ const clearErrorState = (form) => {
   });
 };
 
-const addListeners = (submitButtons = [], callBack = checkForm) => {
-  submitButtons.forEach(button => {
-    button && button.addEventListener('click', callBack);
-  });
+const onSubmitSignInForm = (e) => {
+  e.preventDefault();
+  checkForm(signInForm, submitSignInForm);
 };
 
-const findButtons = (...selectors) => selectors.map(button => document.querySelector(button));
-
-const submitSignInForm = (e) => {
-  e.preventDefault();
+const submitSignInForm = () => {
   const input = signInForm.querySelector('input[type=email]');
   const user = {
     'status' : 'authenticated',
@@ -168,8 +159,12 @@ const submitSignInForm = (e) => {
   localStorage.setItem('user', JSON.stringify(user));
 };
 
-const submitGuestSignInForm = (e) => {
+const onSubmitGuestSignInForm = (e) => {
   e.preventDefault();
+  checkForm(guestSignInForm, submitGuestSignInForm);
+};
+
+const submitGuestSignInForm = () => {
   const input = guestSignInForm.querySelector('input[type=email]');
   const user = {
     'status' : 'guest',
@@ -178,10 +173,14 @@ const submitGuestSignInForm = (e) => {
   localStorage.setItem('user', JSON.stringify(user));
 };
 
-const submitShippingForm = (e) => {
+const onSubmitShippingForm = (e) => {
   e.preventDefault();
+  checkForm(shippingForm, submitShippingForm);
+};
+
+const submitShippingForm = () => {
   const inputs = shippingForm.querySelectorAll('input, select');
-  let shippingInfo = {};
+  let shippingInfo = { };
   inputs.forEach(function(input) {
     shippingInfo[input.getAttribute('name')] = input.value;
   });
@@ -189,56 +188,48 @@ const submitShippingForm = (e) => {
   localStorage.setItem('shippingInfo', JSON.stringify(shippingInfo));
 };
 
-const submitBillingForm = (e) => {
+const onSubmitPaymentForm = (e) => {
   e.preventDefault();
+  checkForm(paymentForm, submitPaymentForm);
+};
+
+const submitPaymentForm = () => {
+  let billingInfo = { };
   if (billingAddressCheckbox.checked) {
-    prefillBillingAddress();
+    const shippingInfo = JSON.parse(localStorage.getItem('shippingInfo'));
+    Object.keys(shippingInfo).forEach(key => {
+      if (!key.includes('method')) {
+        billingInfo[key.replace('shipping', 'billing')] = shippingInfo[key];
+      }
+    });
+  } else {
+    const inputs = billingFormFields.querySelectorAll('input, select');
+    inputs.forEach(function(input) {
+      billingInfo[input.getAttribute('name')] = input.value;
+    });
   }
-  const inputs = billingForm.querySelectorAll('input, select');
-  let billingInfo = {};
-  inputs.forEach(function(input) {
-    billingInfo[input.getAttribute('name')] = input.value
-  });
-  localStorage.setItem('billingingInfo', JSON.stringify(billingInfo));
+  localStorage.setItem('billingInfo', JSON.stringify(billingInfo));
 };
 
 window.onload = () => {
-  // Validation Listeners
-  addListeners(
-    findButtons(
-      '.sign-in-form__submit',
-      '.guest-sign-in__submit',
-      '.shipping-form__submit',
-      '.payment-information__submit'
-    )
-  );
-
-  billingForm = document.querySelector('.checkout__billing-address-form');
-  shippingForm = document.querySelector('.checkout__shipping-form');
   signInForm = document.querySelector('.checkout__sign-in-form');
-  guestSignInForm = document.querySelector('.checkout__guest-sign-in');
+  guestSignInForm = document.querySelector('.checkout__guest-sign-in-form');
+  paymentForm = document.querySelector('.checkout__payment-information-form');
+  shippingForm = document.querySelector('.checkout__shipping-information-form');
+  billingFormFields = document.querySelector('.checkout__billing-address-form');
 
-  // other listeners
-  billingAddressCheckbox = findButtons(
-    '.billing-address__billing-address-checkbox'
-  );
+  signInForm.addEventListener('submit', onSubmitSignInForm);
+  guestSignInForm.addEventListener('submit', onSubmitGuestSignInForm);
+  paymentForm.addEventListener('submit', onSubmitPaymentForm);
+  shippingForm.addEventListener('submit', onSubmitShippingForm);
 
-  uncheckBillingAddress(billingAddressCheckbox);
-
-  addListeners(
-    billingAddressCheckbox,
-    hideShowBillingAddress
-  );
-
-  addListeners(findButtons('.sign-in-form__submit'), submitSignInForm);
-  addListeners(findButtons('.guest-sign-in__submit'), submitGuestSignInForm);
-  addListeners(findButtons('.shipping-form__submit'), submitShippingForm);
-  addListeners(findButtons('.payment-information__submit'), submitBillingForm);
+  billingAddressCheckbox = document.querySelector('.billing-address__billing-address-checkbox');
+  billingAddressCheckbox.addEventListener('click', hideShowBillingAddress);
 
   securityCodeTooltip = document.querySelector('.payment-information__tooltip');
-  securityCodeTooltipPopup = document.querySelector('.payment-information__tooltip-popup');
-  securityCodeTooltipBtn = document.querySelector('.payment-information__tooltip-icon');
-  securityCodeTooltipContent = document.querySelector('.payment-information__tooltip-content');
+  securityCodeTooltipPopup = securityCodeTooltip.querySelector('.payment-information__tooltip-popup');
+  securityCodeTooltipBtn = securityCodeTooltip.querySelector('.payment-information__tooltip-icon');
+  securityCodeTooltipContent = securityCodeTooltip.querySelector('.payment-information__tooltip-content');
   
   securityCodeTooltipBtn.addEventListener('click', toggleTooltipIcon);
 
