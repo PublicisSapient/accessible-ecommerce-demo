@@ -2,7 +2,7 @@
 <ul class="order-summary__item-list">
   {{#each cartItems}}
   <li class="order-summary__item">
-    <a class="order-summary__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 1, Item unit price: $36.95, Item total price: $36.95">
+    <a class="order-summary__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="{{product_name}}. Size: {{size}}, Color: {{color}}, quantity: {{quantity}}, Item unit price: ${{price_sale}}, Item total price: ${{total_price}}">
       <img class="order-summary__image" alt="" src="{{../rootPath}}/{{thumbnail_url}}">
       <div class="order-summary__description">
         <p class="order-summary__item-title">{{product_name}}</p>

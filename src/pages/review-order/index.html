@@ -8,21 +8,108 @@
     <title>The Accessibile eStore, Review Order</title>
 
     <link rel="stylesheet" href="../../styles.scss">
+    <link rel="stylesheet" href="./review-order.scss">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
 </head>
 
-<body class="pdp">
+<body>
     <header class="navigation" data-template="global-header"></header>
-    <div class="main">
+    <main>
         <div data-component="breadcrumb"></div>
-        <div class="container">
-            <section id="content" class="main-content">
+        <div class="container review-order">
+            <div class="review-order__order-details">
                 <h1 class="template-heading">Review Order</h1>
-            </section>
+                <section class="review-order__order-summary">
+                    <h2>Order Summary</h2>
+                    <a class="skip-link" href="#">Skip order summary</a>
+                    <div data-template="order-summary"></div>
+                    <hr>
+                    <a class="review-order__edit-link" href="/checkout/index.html">
+                        <svg class="icon icon--edit-btn">
+                            <use xlink:href="../../assets/sprite.svg#edit"></use>
+                        </svg>
+                        Edit order summary
+                    </a>
+                </section>
+                <a class="skip-link" href="#">Back to order summary</a>
+                <section class="review-order__contact-info">
+                    <h2>Contact Information</h2>
+                    <a class="skip-link" href="#">Skip contact information</a>
+                    <hr>
+                    <p id="email-address">emailaddress@email.com</p>
+                    <hr>
+                    <a class="review-order__edit-link" href="/checkout/index.html?edit=contactInfo">
+                        <svg class="icon icon--edit-btn">
+                            <use xlink:href="../../assets/sprite.svg#edit"></use>
+                        </svg>
+                        Edit contact information
+                    </a>
+                </section>
+                <section class="review-order__shipping-info">
+                    <h2>Shipping Information</h2>
+                    <a class="skip-link" href="#">Skip shipping information</a>
+                    <hr>
+                    <h3>Shipping Address</h3>
+                    <hr class="hr-2">
+                    <p>
+                        <span class="review-order__shipping-info-detail" id="shipping-name">Karen Hawkins</span>
+                        <span class="review-order__shipping-info-detail" id="shipping-address">168 Sunshine Street</span>
+                        <span class="review-order__shipping-info-detail" id="shipping-city">Toronto, ON</span>
+                        <span class="review-order__shipping-info-detail" id="shipping-postal-code">M3M 2J6</span>
+                        <span class="review-order__shipping-info-detail" id="shipping-phone">416-342-1276</span>
+                    </p>
+                    <h3>Shipping Method</h3>
+                    <hr class="hr-2">
+                    <p class="review-order__shipping-info-detail" id="shipping-method">
+                        $0.00. Canada Post, Free Shipping. Deliver in 10 days.
+                    </p>
+                    <hr>
+                    <a class="review-order__edit-link"  href="/checkout/index.html?edit=shippingInfo">
+                        <svg class="icon icon--edit-btn">
+                            <use xlink:href="../../assets/sprite.svg#edit"></use>
+                        </svg>
+                        Edit shipping information
+                    </a>
+                </section>
+                <a class="skip-link" href="#">Back to shipping information</a>
+                <section class="review-order__payment-info">
+                    <h2>Payment Information</h2>
+                    <a class="skip-link" href="#">Skip payment information</a>
+                    <hr>
+                    <h3>Card Information</h3>
+                    <hr class="hr-2">
+                    <p>
+                        <span class="review-order__payment-info-detail" id="cc-num">
+                            Mastercard ****-****-****-<span id="cc-last-four-digits">1234</span>
+                        </span>
+                        <span class="review-order__payment-info-detail" id="cc-expiry-date">
+                            <span id="cc-expiry-month">MM</span> / <span id="cc-expiry-year">YYYY</span>
+                        </span>
+                        <span class="review-order__payment-info-detail" id="cc-holder-name">Karen Hawkins</span>
+                    </p>
+                    <h3>Billing Address</h3>
+                    <hr class="hr-2">
+                    <p>
+                        <span class="review-order__billing-info-detail" id="billing-name">Karen Hawkins</span>
+                        <span class="review-order__billing-info-detail" id="billing-address">168 Sunshine Street</span>
+                        <span class="review-order__billing-info-detail" id="billing-city">Toronto, ON</span>
+                        <span class="review-order__billing-info-detail" id="billing-postal-code">M3M 2J6</span>
+                        <span class="review-order__billing-info-detail" id="billing-phone">416-342-1276</span>
+                    </p>
+                    <hr>
+                    <a class="review-order__edit-link"  href="/checkout/index.html?edit=billingInfo">
+                        <svg class="icon icon--edit-btn">
+                            <use xlink:href="../../assets/sprite.svg#edit"></use>
+                        </svg>
+                        Edit payment information
+                    </a>
+                </section>
+                <button type="button" class="btn btn--black review-order__submit">Submit Order</button>
+            </div>
         </div>
-    </div>
+    </main>
     <div data-template="footer"></div>
     <div data-component="modal"></div>
     <div data-template="construction-modal"></div>
