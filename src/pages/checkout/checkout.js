@@ -11,6 +11,11 @@ let securityCodeTooltipPopup;
 let securityCodeTooltipContent;
 let billingAddressCheckbox;
 let billingFormFields;
+let contactInfo;
+let shippingInfo;
+let paymentInfo;
+//let contactInfoDisplay;
+let editMode = false;
 
 const regex = {
   'email': /^([A-Za-z0-9\-\/\:\;\(\)\$\&\"\=\,\?\*\#\%\^\+\_\.\|\[\]\{\}\<\>\\\'])+\@([A-Za-z0-9_\-])+\.([A-Za-z]{2,16})$/,
@@ -157,6 +162,7 @@ const submitSignInForm = () => {
     'email' : input.value
   };
   localStorage.setItem('user', JSON.stringify(user));
+  //displayContactInfo();
 };
 
 const onSubmitGuestSignInForm = (e) => {
@@ -171,7 +177,21 @@ const submitGuestSignInForm = () => {
     'email' : input.value
   };
   localStorage.setItem('user', JSON.stringify(user));
+  //displayContactInfo();
 };
+
+/*const displayContactInfo = () => {
+  getContactInfo();
+  if (contactInfo !== null) {
+    const email = contactInfo.email;
+    signInForm.classList.add('hidden');
+    guestSignInForm.classList.add('hidden');
+
+    contactInfoDisplay.querySelector('p').innerText = email;
+    contactInfoDisplay.classList.remove('hidden');
+    contactInfoDisplay.querySelector('.proceed-to-shipping').addEventListener('click', function(){ scrollTo(shippingForm); });
+  }
+};*/
 
 const onSubmitShippingForm = (e) => {
   e.preventDefault();
@@ -194,21 +214,85 @@ const onSubmitPaymentForm = (e) => {
 };
 
 const submitPaymentForm = () => {
-  let billingInfo = { };
+  let paymentInfo = { };
   if (billingAddressCheckbox.checked) {
     const shippingInfo = JSON.parse(localStorage.getItem('shippingInfo'));
     Object.keys(shippingInfo).forEach(key => {
       if (!key.includes('method')) {
-        billingInfo[key.replace('shipping', 'billing')] = shippingInfo[key];
+        paymentInfo[key.replace('shipping', 'billing')] = shippingInfo[key];
       }
     });
+    paymentInfo['billingAddressSame'] = true;
   } else {
     const inputs = billingFormFields.querySelectorAll('input, select');
     inputs.forEach(function(input) {
-      billingInfo[input.getAttribute('name')] = input.value;
+      paymentInfo[input.getAttribute('name')] = input.value;
     });
+    paymentInfo['billingAddressSame'] = false;
   }
-  localStorage.setItem('billingInfo', JSON.stringify(billingInfo));
+  const creditCardNumber = document.getElementById('credit-card-number').value;
+  paymentInfo['cc-last-four-digits'] = creditCardNumber.substring(creditCardNumber.length - 4);
+  paymentInfo['cc-expiry-date'] = document.getElementById('expiry-date').value;
+  localStorage.setItem('paymentInfo', JSON.stringify(paymentInfo));
+};
+
+function getContactInfo() {
+  contactInfo = localStorage.getItem('user');
+  contactInfo = contactInfo === null ? null : JSON.parse(contactInfo);
+  return contactInfo;
+}
+
+function getShippingInfo() {
+  shippingInfo = localStorage.getItem('shippingInfo');
+  return shippingInfo === null ? null : JSON.parse(shippingInfo);
+}
+
+function getPaymentInfo() {
+  paymentInfo = localStorage.getItem('paymentInfo');
+  return paymentInfo === null ? null : JSON.parse(paymentInfo);
+}
+
+/*const scrollTo = (element) => {
+  window.scrollTo(0, element.getBoundingClientRect().top);
+};*/
+
+const setFocus = () => {
+  const url = window.location.href;
+  const inputId = url.substring(url.indexOf('=') + 1);
+  document.querySelector(`input#${inputId}`).focus();
+};
+
+const populateFields = () => {
+  // Shipping Info
+  const shippingInfo = getShippingInfo();
+  Object.keys(shippingInfo).forEach(key => {
+    if (!key.includes('method') && !key.includes('province')) {
+      shippingForm.querySelector(`input[name=${key}]`).value = shippingInfo[key];
+    }
+  });
+  // set Province
+  const shippingProvince = shippingInfo['shipping-province'];
+  shippingForm.querySelector(`select#shipping-province option[value=${shippingProvince}]`).setAttribute('selected', 'selected');
+  // set Shipping Method
+  const shippingMethod = shippingInfo['shipping-method'];
+  shippingForm.querySelector(`input#${shippingMethod}`).setAttribute('checked', 'checked');
+
+  const paymentInfo = getPaymentInfo();
+  if (paymentInfo['billing-address-same'] === true) {
+    billingAddressCheckbox.setAttribute('checked', 'checked');
+  } else {
+    Object.keys(paymentInfo).forEach(key => {
+      if (!key.includes('province') && key.includes('billing-')) {
+        paymentForm.querySelector(`input[name=${key}]`).value = paymentInfo[key];
+      }
+    });
+    // set Province
+    const billingProvince = paymentInfo['billing-province'];
+    paymentForm.querySelector(`select#billing-province option[value=${billingProvince}]`).setAttribute('selected', 'selected');
+
+    billingAddressCheckbox.click();
+    setFocus();
+  }
 };
 
 window.onload = () => {
@@ -227,9 +311,9 @@ window.onload = () => {
   billingAddressCheckbox.addEventListener('click', hideShowBillingAddress);
 
   securityCodeTooltip = document.querySelector('.payment-information__tooltip');
-  securityCodeTooltipPopup = securityCodeTooltip.querySelector('.payment-information__tooltip-popup');
-  securityCodeTooltipBtn = securityCodeTooltip.querySelector('.payment-information__tooltip-icon');
-  securityCodeTooltipContent = securityCodeTooltip.querySelector('.payment-information__tooltip-content');
+  securityCodeTooltipPopup = document.querySelector('.payment-information__tooltip-popup');
+  securityCodeTooltipBtn = document.querySelector('.payment-information__tooltip-icon');
+  securityCodeTooltipContent = document.querySelector('.payment-information__tooltip-content');
   
   securityCodeTooltipBtn.addEventListener('click', toggleTooltipIcon);
 
@@ -237,5 +321,14 @@ window.onload = () => {
   const focusableItems = securityCodeTooltipPopup.querySelectorAll('button, [href]');
   focusableItems[focusableItems.length - 1].addEventListener('blur', testBlur);
 
+  //contactInfoDisplay = document.querySelector('.customer-info-contact-info');
+
   orderSummary.init();
+
+  if (window.location.href.includes('edit=')) {
+    editMode = true;
+    populateFields();
+  }
 };
+
+export { getContactInfo, getShippingInfo, getPaymentInfo };

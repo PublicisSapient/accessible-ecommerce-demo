@@ -47,6 +47,10 @@
     > span {
       display: block;
     }
+
+    span[id*="province"] {
+      text-transform: uppercase;
+    }
   }
 
   &__edit-link {
@@ -78,12 +82,21 @@
     h2 {
       display: none;
     }
+
     &__background {
       background: none;
       padding: 0;
     }
+
     &__summary-controls {
       display: none;
+    }
+
+    &__total {
+      dd {
+        float: none;
+        margin: 0;
+      }
     }
   }
 }

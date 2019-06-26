@@ -40,7 +40,7 @@
                     <hr>
                     <p id="email-address">emailaddress@email.com</p>
                     <hr>
-                    <a class="review-order__edit-link" href="/checkout/index.html?edit=contactInfo">
+                    <a class="review-order__edit-link" href="/checkout/index.html?edit=guest-sign-in-email">
                         <svg class="icon icon--edit-btn">
                             <use xlink:href="../../assets/sprite.svg#edit"></use>
                         </svg>
@@ -54,19 +54,27 @@
                     <h3>Shipping Address</h3>
                     <hr class="hr-2">
                     <p>
-                        <span class="review-order__shipping-info-detail" id="shipping-name">Karen Hawkins</span>
-                        <span class="review-order__shipping-info-detail" id="shipping-address">168 Sunshine Street</span>
-                        <span class="review-order__shipping-info-detail" id="shipping-city">Toronto, ON</span>
-                        <span class="review-order__shipping-info-detail" id="shipping-postal-code">M3M 2J6</span>
-                        <span class="review-order__shipping-info-detail" id="shipping-phone">416-342-1276</span>
+                        <span>
+                            <span class="review-order__shipping-info-detail" id="shipping-first-name"></span> <span class="review-order__shipping-info-detail" id="shipping-last-name"></span>
+                        </span>
+                        <span class="review-order__shipping-info-detail" id="shipping-address"></span>
+                        <span class="review-order__shipping-info-detail" id="shipping-apt-suite"></span>
+                        <span>
+                            <span class="review-order__shipping-info-detail" id="shipping-city"></span>, <span class="review-order__shipping-info-detail" id="shipping-province"></span>
+                        </span>
+                        <span class="review-order__shipping-info-detail" id="shipping-postal-code"></span>
+                        <span class="review-order__shipping-info-detail" id="shipping-phone-number"></span>
                     </p>
                     <h3>Shipping Method</h3>
                     <hr class="hr-2">
                     <p class="review-order__shipping-info-detail" id="shipping-method">
-                        $0.00. Canada Post, Free Shipping. Deliver in 10 days.
+                        <span class="hidden" id="cp-10-day">$0.00. Canada Post, Free Shipping. Deliver in 10 days.</span>
+                        <span class="hidden" id="ex-5-day" >$8.00 Canada Post - Express Shipping. Delivers in 5 days.</span>
+                        <span class="hidden" id="xp-2-3-day">$14.00 Canada Post - Xpresspost. Delivers in 2 - 3 days.</span>
+                        <span class="hidden" id="pr-1-day">$20.00 Canada Post - Priority Delivery. Delivers in 24 hours.</span>
                     </p>
                     <hr>
-                    <a class="review-order__edit-link"  href="/checkout/index.html?edit=shippingInfo">
+                    <a class="review-order__edit-link"  href="/checkout/index.html?edit=shipping-first-name">
                         <svg class="icon icon--edit-btn">
                             <use xlink:href="../../assets/sprite.svg#edit"></use>
                         </svg>
@@ -82,24 +90,32 @@
                     <hr class="hr-2">
                     <p>
                         <span class="review-order__payment-info-detail" id="cc-num">
-                            Mastercard ****-****-****-<span id="cc-last-four-digits">1234</span>
+                            Mastercard: ****-****-****-<span id="cc-last-four-digits"></span>
                         </span>
-                        <span class="review-order__payment-info-detail" id="cc-expiry-date">
-                            <span id="cc-expiry-month">MM</span> / <span id="cc-expiry-year">YYYY</span>
+                        <span>
+                            <span class="review-order__payment-info-detail">Expiry date: </span><span id="cc-expiry-date">
+                            </span>
                         </span>
-                        <span class="review-order__payment-info-detail" id="cc-holder-name">Karen Hawkins</span>
+                        <span>
+                            <span class="review-order__payment-info-detail">Name on Card: </span><span id="cc-holder-name"></span>
+                        </span>
                     </p>
                     <h3>Billing Address</h3>
                     <hr class="hr-2">
                     <p>
-                        <span class="review-order__billing-info-detail" id="billing-name">Karen Hawkins</span>
-                        <span class="review-order__billing-info-detail" id="billing-address">168 Sunshine Street</span>
-                        <span class="review-order__billing-info-detail" id="billing-city">Toronto, ON</span>
-                        <span class="review-order__billing-info-detail" id="billing-postal-code">M3M 2J6</span>
-                        <span class="review-order__billing-info-detail" id="billing-phone">416-342-1276</span>
+                        <span>
+                            <span class="review-order__billing-info-detail" id="billing-first-name"></span> <span class="review-order__billing-info-detail" id="billing-last-name"></span>
+                        </span>
+                        <span class="review-order__billing-info-detail" id="billing-address"></span>
+                        <span class="review-order__billing-info-detail" id="billing-apt-suite"></span>
+                        <span>
+                            <span class="review-order__billing-info-detail" id="billing-city"></span>, <span class="review-order__billing-info-detail" id="billing-province"></span>
+                        </span>
+                        <span class="review-order__billing-info-detail" id="billing-postal-code"></span>
+                        <span class="review-order__billing-info-detail" id="billing-phone-number"></span>
                     </p>
                     <hr>
-                    <a class="review-order__edit-link"  href="/checkout/index.html?edit=billingInfo">
+                    <a class="review-order__edit-link"  href="/checkout/index.html?edit=credit-card-number">
                         <svg class="icon icon--edit-btn">
                             <use xlink:href="../../assets/sprite.svg#edit"></use>
                         </svg>
