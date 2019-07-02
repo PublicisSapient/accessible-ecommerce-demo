@@ -13,7 +13,7 @@ const displayShippingInfo = () => {
     }
   });
   const shippingMethod = shippingInfo['shipping-method'];
-  shippingSection.querySelector(`span#${shippingMethod}`).classList.remove('hidden');
+  shippingSection.querySelector(`p#${shippingMethod}`).classList.remove('hidden');
 };
 
 const displayPaymentInfo = () => {

@@ -2,9 +2,9 @@ import * as orderSummary from '../../components/order-summary/order-summary';
 import { activeElementMatches } from '../../js/utils';
 
 let signInForm;
-let guestSignInForm;
-let paymentForm;
-let shippingForm;
+let mainForm;
+let shippingSection;
+let paymentSection;
 let securityCodeTooltip;
 let securityCodeTooltipBtn;
 let securityCodeTooltipPopup;
@@ -14,7 +14,6 @@ let billingFormFields;
 let contactInfo;
 let shippingInfo;
 let paymentInfo;
-//let contactInfoDisplay;
 let editMode = false;
 
 const regex = {
@@ -79,7 +78,7 @@ function toggleTooltipIcon(event) {
 }
 
 const prefillBillingAddress = () => {
-  const inputs = shippingForm.querySelectorAll('input, select');
+  const inputs = mainForm.querySelectorAll('input, select');
 
   inputs.forEach(input => {
     const { className } = input;
@@ -134,7 +133,7 @@ const checkForm = (form, callBack) => {
     callBack();
   } else {
     const errorText = numErrors > 1 ? 'errors' : 'error';
-    errorSummary.innerText = `You have ${numErrors} ${errorText} in your ${errorSummary.getAttribute('data-section')} information.`;
+    errorSummary.innerText = `You have ${numErrors} ${errorText} in your ${errorSummary.getAttribute('data-section')} form.`;
     errorSummary.classList.remove('hidden');
     form.querySelectorAll('.invalid')[0].focus();
   }
@@ -161,8 +160,6 @@ const submitSignInForm = () => {
     'status' : 'authenticated',
     'email' : input.value
   };
-  localStorage.setItem('user', JSON.stringify(user));
-  //displayContactInfo();
 };
 
 const onSubmitGuestSignInForm = (e) => {
@@ -177,43 +174,32 @@ const submitGuestSignInForm = () => {
     'email' : input.value
   };
   localStorage.setItem('user', JSON.stringify(user));
-  //displayContactInfo();
 };
 
-/*const displayContactInfo = () => {
-  getContactInfo();
-  if (contactInfo !== null) {
-    const email = contactInfo.email;
-    signInForm.classList.add('hidden');
-    guestSignInForm.classList.add('hidden');
-
-    contactInfoDisplay.querySelector('p').innerText = email;
-    contactInfoDisplay.classList.remove('hidden');
-    contactInfoDisplay.querySelector('.proceed-to-shipping').addEventListener('click', function(){ scrollTo(shippingForm); });
-  }
-};*/
-
-const onSubmitShippingForm = (e) => {
+const onSubmitMainForm = (e) => {
   e.preventDefault();
-  checkForm(shippingForm, submitShippingForm);
+  checkForm(mainForm, submitMainForm);
 };
 
-const submitShippingForm = () => {
-  const inputs = shippingForm.querySelectorAll('input, select');
+const submitMainForm = () => {
+  // Guest email
+  const input = mainForm.querySelector('input[type=email]');
+  const user = {
+    'status' : 'guest',
+    'email' : input.value
+  };
+  localStorage.setItem('user', JSON.stringify(user));
+
+  // Shipping Info
+  const inputs = shippingSection.querySelectorAll('input, select');
   let shippingInfo = { };
   inputs.forEach(function(input) {
     shippingInfo[input.getAttribute('name')] = input.value;
   });
-  shippingInfo['shipping-method'] = shippingForm.querySelector('input[name=shipping-method]:checked').value;
+  shippingInfo['shipping-method'] = shippingSection.querySelector('input[name=shipping-method]:checked').value;
   localStorage.setItem('shippingInfo', JSON.stringify(shippingInfo));
-};
 
-const onSubmitPaymentForm = (e) => {
-  e.preventDefault();
-  checkForm(paymentForm, submitPaymentForm);
-};
-
-const submitPaymentForm = () => {
+  // Payment Info
   let paymentInfo = { };
   if (billingAddressCheckbox.checked) {
     const shippingInfo = JSON.parse(localStorage.getItem('shippingInfo'));
@@ -234,6 +220,8 @@ const submitPaymentForm = () => {
   paymentInfo['cc-last-four-digits'] = creditCardNumber.substring(creditCardNumber.length - 4);
   paymentInfo['cc-expiry-date'] = document.getElementById('expiry-date').value;
   localStorage.setItem('paymentInfo', JSON.stringify(paymentInfo));
+
+  mainForm.submit();
 };
 
 function getContactInfo() {
@@ -252,10 +240,6 @@ function getPaymentInfo() {
   return paymentInfo === null ? null : JSON.parse(paymentInfo);
 }
 
-/*const scrollTo = (element) => {
-  window.scrollTo(0, element.getBoundingClientRect().top);
-};*/
-
 const setFocus = () => {
   const url = window.location.href;
   const inputId = url.substring(url.indexOf('=') + 1);
@@ -267,15 +251,15 @@ const populateFields = () => {
   const shippingInfo = getShippingInfo();
   Object.keys(shippingInfo).forEach(key => {
     if (!key.includes('method') && !key.includes('province')) {
-      shippingForm.querySelector(`input[name=${key}]`).value = shippingInfo[key];
+      shippingSection.querySelector(`input[name=${key}]`).value = shippingInfo[key];
     }
   });
   // set Province
   const shippingProvince = shippingInfo['shipping-province'];
-  shippingForm.querySelector(`select#shipping-province option[value=${shippingProvince}]`).setAttribute('selected', 'selected');
+  shippingSection.querySelector(`select#shipping-province option[value=${shippingProvince}]`).setAttribute('selected', 'selected');
   // set Shipping Method
   const shippingMethod = shippingInfo['shipping-method'];
-  shippingForm.querySelector(`input#${shippingMethod}`).setAttribute('checked', 'checked');
+  shippingSection.querySelector(`input#${shippingMethod}`).setAttribute('checked', 'checked');
 
   const paymentInfo = getPaymentInfo();
   if (paymentInfo['billing-address-same'] === true) {
@@ -283,12 +267,12 @@ const populateFields = () => {
   } else {
     Object.keys(paymentInfo).forEach(key => {
       if (!key.includes('province') && key.includes('billing-')) {
-        paymentForm.querySelector(`input[name=${key}]`).value = paymentInfo[key];
+        paymentSection.querySelector(`input[name=${key}]`).value = paymentInfo[key];
       }
     });
     // set Province
     const billingProvince = paymentInfo['billing-province'];
-    paymentForm.querySelector(`select#billing-province option[value=${billingProvince}]`).setAttribute('selected', 'selected');
+    paymentSection.querySelector(`select#billing-province option[value=${billingProvince}]`).setAttribute('selected', 'selected');
 
     billingAddressCheckbox.click();
     setFocus();
@@ -297,15 +281,13 @@ const populateFields = () => {
 
 window.onload = () => {
   signInForm = document.querySelector('.checkout__sign-in-form');
-  guestSignInForm = document.querySelector('.checkout__guest-sign-in-form');
-  paymentForm = document.querySelector('.checkout__payment-information-form');
-  shippingForm = document.querySelector('.checkout__shipping-information-form');
+  mainForm = document.querySelector('.checkout__main-form');
+  shippingSection = document.querySelector('.checkout__shipping-information');
+  paymentSection = document.querySelector('.checkout__payment-information');
   billingFormFields = document.querySelector('.checkout__billing-address-form');
 
   signInForm.addEventListener('submit', onSubmitSignInForm);
-  guestSignInForm.addEventListener('submit', onSubmitGuestSignInForm);
-  paymentForm.addEventListener('submit', onSubmitPaymentForm);
-  shippingForm.addEventListener('submit', onSubmitShippingForm);
+  mainForm.addEventListener('submit', onSubmitMainForm);
 
   billingAddressCheckbox = document.querySelector('.billing-address__billing-address-checkbox');
   billingAddressCheckbox.addEventListener('click', hideShowBillingAddress);
@@ -320,8 +302,6 @@ window.onload = () => {
   // Add blur check to last focusable item in the tooltip
   const focusableItems = securityCodeTooltipPopup.querySelectorAll('button, [href]');
   focusableItems[focusableItems.length - 1].addEventListener('blur', testBlur);
-
-  //contactInfoDisplay = document.querySelector('.customer-info-contact-info');
 
   orderSummary.init();
 

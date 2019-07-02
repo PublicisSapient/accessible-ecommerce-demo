@@ -46,10 +46,8 @@
 
   form,
   &__sign-in-form,
-  &__guest-sign-in,
-  &__shipping-form,
-  &__billing-address-form,
-  &__payment-form {
+  &__main-form,
+  &__billing-address-form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -77,8 +75,15 @@
 
   h3 {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: $font-xs;
     font-weight: bold;
+    margin: 30px 0 15px;
+  }
+
+  &__sign-in-form {
+    h3 {
+      margin: 22px 0 7px;
+    }
   }
 
   h4 {
@@ -153,12 +158,61 @@
       left: 24px;
 
       h1 {
-        font-size: 14px;
+        font-size: $font-sm;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: $font-xs;
         font-weight: bold;
       }
 
       p {
-        font-size: 12px;
+        font-size: $font-xs;
+      }
+
+      .sample-credit-card {
+        background-color: $grey;
+        border-radius: 2px;
+        width: 100px;
+        height: 64px;
+        position: relative;
+
+        p {
+          font-size: 8px;
+          color: $dark-grey;
+          padding: 3px;
+          position: absolute;
+        }
+
+        &.sample-amex {
+          p {
+            &:first-child {
+              right: 0;
+              top: 2px;
+              border: 2px solid $purple;
+            }
+            &:last-child {
+              left: 6px;
+              bottom: 3px;
+            }
+          }
+        }
+
+        &.sample-others {
+          p {
+            background-color: $white;
+            width: 80px;
+            right: 10px;
+            bottom: 14px;
+
+            span {
+              float: right;
+              border: 2px solid $purple;
+              padding: 3px;
+            }
+          }
+        }
       }
 
       &__btn--close {
@@ -212,6 +266,11 @@
       border: 1px solid #b5b5b5;
       position: absolute;
       left: 5px;
+      z-index: 1;
+
+      @media only screen and (max-width: $mobile) {
+        left: -150px;
+      }
     }
 
     &__tooltip-icon {
@@ -334,6 +393,7 @@
     padding-left: 50px;
     flex: 0;
     align-self: flex-end;
+    float: right;
 
     @media screen and (max-width: $mobile) {
       width: 100%;
@@ -410,6 +470,11 @@
       grid-column: 2 / 2;
       margin-top: 66px;
       padding: 0;
+    }
+
+    &__image {
+      width: 69px;
+      height: 69px;
     }
   }
 }
