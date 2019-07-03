@@ -5,6 +5,11 @@ let contactSection;
 let shippingSection;
 let paymentSection;
 
+const displayContactInfo = () => {
+  const contactInfo = getContactInfo();
+  contactSection.querySelector('#email-address').innerText = contactInfo['email'];
+};
+
 const displayShippingInfo = () => {
   const shippingInfo = getShippingInfo();
   Object.keys(shippingInfo).forEach(key => {
@@ -39,6 +44,7 @@ window.onload = () => {
   paymentSection = document.querySelector('.review-order__payment-info');
 
   orderSummary.init();
+  displayContactInfo();
   displayShippingInfo();
   displayPaymentInfo();
   modifyTotalsText();
