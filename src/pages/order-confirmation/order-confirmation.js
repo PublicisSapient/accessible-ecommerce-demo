@@ -29,11 +29,19 @@ const displayShippingInfo = () => {
 
 const displayPaymentInfo = () => {
   const paymentInfo = getPaymentInfo();
-  Object.keys(paymentInfo).forEach(key => {
-    if (!key.includes('billingAddressSame')) {
-      paymentSection.querySelector(`#${key}`).innerText = paymentInfo[key];
-    }
-  });
+  const billingAddressSame = paymentInfo['billingAddressSame'];
+  if (billingAddressSame) {
+    paymentSection.querySelector('#cc-expiry-date').innerText = paymentInfo['cc-expiry-date'];
+    paymentSection.querySelector('#cc-last-four-digits').innerText = paymentInfo['cc-last-four-digits'];
+    paymentSection.querySelector('.billing-address-same').classList.remove('hidden');
+  } else {
+    Object.keys(paymentInfo).forEach(key => {
+      if (!key.includes('billingAddressSame')) {
+        paymentSection.querySelector(`#${key}`).innerText = paymentInfo[key];
+      }
+    });
+    paymentSection.querySelector('.billing-address-different').classList.remove('hidden');
+  }
   paymentSection.querySelector('#cc-holder-name').innerText = `${paymentInfo['billing-first-name']} ${paymentInfo['billing-last-name']}`;
 };
 

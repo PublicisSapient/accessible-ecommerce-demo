@@ -26,6 +26,7 @@
 
 .checkout {
   margin-bottom: 80px;
+  padding: 0;
 
   @media only screen and (min-width: $filters-collapse) {
     display: grid;
@@ -37,8 +38,14 @@
     padding: 0 120px;
   }
 
+  .main-content {
+
+    @media only screen and (max-width: $mobile) {
+      padding: 0 24px;
+    }
+  }
+
   &__customer-info {
-    padding: 0 24px;
 
     @media only screen and (min-width: $filters-collapse) {
       grid-column: 1 / 2;
@@ -493,6 +500,10 @@
     &__image {
       width: 69px;
       height: 69px;
+    }
+
+    .btn {
+      float: none;
     }
   }
 }

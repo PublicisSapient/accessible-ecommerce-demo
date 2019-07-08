@@ -55,17 +55,21 @@
                         </dd>
                     </p>
                 </dl>
+                <h2>Order Summary</h2>
                 <div data-template="order-summary"></div>
             </section>
             <section class="order-confirmation__contact-info">
                 <h2>Contact Information</h2>
+                <a class="skip-link" href="#back-to-contact-info" id="skip-contact-info">Skip contact information</a>
                 <hr>
                 <p class="email-address"></p>
             </section>
+            <a class="skip-link" href="#skip-contact-info" id="back-to-contact-info">Back to contact information</a>
             <section class="order-confirmation__shipping-info">
                 <h2>Shipping Information</h2>
                 <hr>
                 <h3>Shipping Address</h3>
+                <a class="skip-link" href="#back-to-shipping-info" id="skip-shipping-info">Skip shipping information</a>
                 <hr class="hr-2">
                 <p>
                     <span>
@@ -88,8 +92,10 @@
                     <p class="hidden" id="pr-1-day">$20.00 Canada Post - Priority Delivery. Delivers in 24 hours.</p>
                 </div>
             </section>
+            <a class="skip-link" href="#skip-shipping-info" id="back-to-shipping-info">Back to shipping information</a>
             <section class="order-confirmation__payment-info">
                 <h2>Payment Information</h2>
+                <a class="skip-link" href="#print-page-btn-2" id="skip-payment-info">Skip payment information</a>
                 <hr>
                 <h3>Card Information</h3>
                 <hr class="hr-2">
@@ -107,7 +113,8 @@
                 </p>
                 <h3>Billing Address</h3>
                 <hr class="hr-2">
-                <p>
+                <p class="billing-address-same hidden">My billing address is the same as my shipping address.</p>
+                <p class="billing-address-different hidden">
                     <span>
                         <span class="order-confirmation__billing-info-detail" id="billing-first-name"></span> <span class="order-confirmation__billing-info-detail" id="billing-last-name"></span>
                     </span>
@@ -121,7 +128,7 @@
                 </p>
             </section>
             <div class="order-confirmation__button-container">
-                <button class="btn btn--outline-black order-confirmation__print-page">Print page</button>
+                <button class="btn btn--outline-black order-confirmation__print-page" id="print-page-btn-2">Print page</button>
                 <a class="btn btn--black order-confirmation__continue-shipping" href="/index.html">Continue shopping</a>
             </div>
         </section>
