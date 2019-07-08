@@ -13,9 +13,9 @@
 </head>
 <body>
     <header class="navigation" data-template="global-header"></header>
-    <main>
-        <div data-component="breadcrumb"></div>
-        <div class="container checkout">
+    <div data-component="breadcrumb"></div>
+    <div class="container checkout">
+        <section id="content" class="main-content">
             <div class="checkout__customer-info">
                 <header>
                     <h1 class="template-heading">
@@ -209,6 +209,7 @@
                             data-input-type="credit-card-number"
                             aria-describedby="payment-info-heading error-msg-cc-number sr-only-accepted-cc"
                             required
+                            autocomplete="off"
                         >
                         <span class="error-msg" id="error-msg-cc-number">
                             Please enter a valid credit card number.
@@ -227,6 +228,7 @@
                                     data-input-type="expiry-date"
                                     aria-describedby="payment-info-heading error-msg-expiry-date sr-only-cc-expiry-date"
                                     required
+                                    autocomplete="off"
                                 >
                                 <span class="error-msg" id="error-msg-expiry-date">
                                     Please enter a valid expiry date
@@ -276,6 +278,7 @@
                                     data-input-type="ccv"
                                     aria-describedby="payment-info-heading error-msg-ccv"
                                     required
+                                    autocomplete="off"
                                 >
                                 <span class="error-msg" id="error-msg-ccv">
                                     Please enter a valid security code
@@ -375,9 +378,9 @@
                     </section>
                 </form>
             </div>
-            <div data-template="order-summary"></div>
-        </div>
-    </main>
+        </section>
+        <div data-template="order-summary"></div>
+    </div>
     <div data-template="footer"></div>
     <div data-component="modal"></div>
     <div data-template="construction-modal"></div>

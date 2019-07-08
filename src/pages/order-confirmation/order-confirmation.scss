@@ -1,34 +1,51 @@
 @import '../../scss/variables';
 
+@mixin inputField {
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid #D8D8D8;
+  width: 100%;
+  font-size: 14px;
+  box-shadow: none;
+  background-color: #fff;
+
+  + .error-msg {
+    display: none;
+  }
+
+  &.invalid {
+    border: 2px solid $error-red;
+
+    + .error-msg {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
+}
+
 .order-confirmation {
   margin-bottom: 40px;
   overflow: hidden;
 
   @media only screen and (min-width: $filters-collapse) {
     display: grid;
-    grid-template-columns: 596px 394px;
-    grid-gap: 50px;
+    grid-template-columns: 60% 35%;
+    grid-gap: 5%;
+  }
+
+  @media only screen and (min-width:  $logo-collapse) {
     padding: 0 120px;
   }
 
   .main-content {
-    padding: 0 24px;
 
     @media only screen and (min-width: $filters-collapse) {
       grid-column: 1 / 2;
-      padding: 0;
     }
-  }
 
-  &__order-details {
     & > section {
-      overflow: hidden;
-      width: 100%;
       margin: 30px 0;
-      padding: 4px;
-    }
-    @media only screen and (min-width: $filters-collapse) {
-      width: 596px;
     }
   }
 
@@ -36,6 +53,10 @@
     width: 100%;
     border: 0;
     border-top: 1px solid $black;
+
+    &:not(.hr-2) {
+      margin-bottom: 30px;
+    }
     
     &.hr-2 {
       border-top: 1px solid $medium-grey;
@@ -98,9 +119,26 @@
     }
   }
 
+  &__intro {
+    overflow: hidden;
+  }
+
+  &__button-container {
+    @media only screen and (min-width: $filters-collapse) {
+      float: right;
+      margin: 20px 0 0;
+    }
+  }
+
   &__print-page, &__continue-shipping {
-    width: 197px;
+    width: 100%;
     text-align: center;
+    margin: 0 0 20px;
+
+    @media only screen and (min-width: $filters-collapse) {
+      width: 197px;
+      margin: 0 0 0 8px;
+    }
   }
 
   .order-summary {
@@ -128,5 +166,94 @@
         margin: 0;
       }
     }
+  }
+
+  &__create-account {
+
+    .create-account__background {
+      background-color: $white;
+      padding: 20px;
+    }
+
+    .password-format {
+      font-size: $font-xs;
+      display: block;
+      width: 250px;
+      margin: 0 0 10px;
+    }
+
+    .save-payment-info-check {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      margin: 10px 0 0;
+
+      input {
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        width: auto;
+
+        &:checked ~ .save-payment-info__save-payment-info-custom-checkbox {
+          &:before {
+            content: '';
+          }
+        }
+
+        &:focus ~ .save-payment-info__save-payment-info-custom-checkbox {
+          outline: 1px dotted currentColor;
+        }
+      }
+    }
+
+    .save-payment-info__save-payment-info-custom-checkbox {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #B5B5B5;
+      border-radius: 4px;
+      display: inline-block;
+      background-color: white;
+      position: relative;
+      margin-right: 1rem;
+
+      &:before {
+        position: absolute;
+        width: 6px;
+        height: 11px;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        transform: rotate(35deg);
+        top: 2px;
+        left: 6px;
+        margin-right: 1rem;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      margin: 20px 0 0;
+    }
+  }
+
+  input {
+    @include inputField;
+  }
+
+  select {
+    @include inputField;
+    font-weight: bold;
+  }
+
+  label {
+    width: 100%;
+    font-size: $font-sm;
+    color: black;
+    font-weight: bold;
+    line-height: $font-lg;
+    display: inline-block;
+    padding: 1.333rem 0 0.666rem;
   }
 }

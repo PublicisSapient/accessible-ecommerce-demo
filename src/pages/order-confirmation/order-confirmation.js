@@ -1,5 +1,6 @@
 import * as orderSummary from '../../components/order-summary/order-summary';
 import { getContactInfo, getShippingInfo, getPaymentInfo } from '../checkout/checkout';
+import { getCartFromStorage, getCartSubtotal } from '../../components/cart/cart';
 
 let orderDetailSection;
 let contactSection;
@@ -44,6 +45,7 @@ const modifyTotalsText = () => {
 };
 
 const displayOrderDetails = () => {
+  displayTotal();
   displayDate();
   displayTime();
 };
@@ -62,9 +64,13 @@ const displayTime = () => {
   let minutes = date.getMinutes();
   orderDetailSection.querySelector('.hour').innerText = hour > 12 ? hour - 12 : hour;
   orderDetailSection.querySelector('.minutes').innerText = minutes < 10 ? `0${minutes}` : minutes;
-  orderDetailSection.querySelector('.am-pm').innerText = hour > 12 ? 'PM' : 'AM';
+  orderDetailSection.querySelector('.am-pm').innerText = hour >= 12 ? 'PM' : 'AM';
 };
 
+const displayTotal = () => {
+  const cart = getCartFromStorage();
+  orderDetailSection.querySelector('.order-detail__total').innerText = `$${getCartSubtotal(cart.cartItems).toFixed(2)}`;
+};
 
 window.onload = () => {
   orderDetailSection = document.querySelector('.order-confirmation__order-details');

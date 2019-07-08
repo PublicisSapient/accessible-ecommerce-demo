@@ -26,12 +26,14 @@
 
 .checkout {
   margin-bottom: 80px;
-  padding: 0;
 
   @media only screen and (min-width: $filters-collapse) {
     display: grid;
-    grid-template-columns: 596px 1fr;
-    grid-gap: 50px;
+    grid-template-columns: 60% 35%;
+    grid-gap: 5%;
+  }
+
+  @media only screen and (min-width:  $logo-collapse) {
     padding: 0 120px;
   }
 

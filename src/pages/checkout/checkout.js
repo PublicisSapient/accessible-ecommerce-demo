@@ -121,7 +121,6 @@ const checkForm = (form, callBack) => {
       // class remove and add return undefined we are just using a tertiray for succinct code
       formValid = valid ? !classList.remove('invalid') : classList.add('invalid');
     }
-    //TODO: validate optional fields?
   };
 
   inputs.forEach(checkIfInputIsValid);
@@ -178,7 +177,28 @@ const submitGuestSignInForm = () => {
 
 const onSubmitMainForm = (e) => {
   e.preventDefault();
-  checkForm(mainForm, submitMainForm);
+  checkForm(mainForm, checkExpiryDate);
+  
+};
+
+const checkExpiryDate = () => {
+  const input = mainForm.querySelector('input#expiry-date');
+  const expiryYear = Number(`20${(input.value).substring((input.value).indexOf('/') + 1)}`);
+  const expiryMonth = Number((input.value).substring(0, 2));
+  const currDate = new Date();
+  const currMonth = currDate.getMonth() + 1;
+  const currYear = currDate.getFullYear();
+
+  const errorSummary = mainForm.querySelector('.error-summary');
+  if ((expiryYear === currYear && expiryMonth < currMonth) || (expiryYear < currYear)) {
+    errorSummary.innerText = `You have 1 error in your ${errorSummary.getAttribute('data-section')} form.`;
+    errorSummary.classList.remove('hidden');
+    input.classList.add('invalid');
+    input.focus();
+  } else {
+    errorSummary.classList.add('hidden');
+    submitMainForm();
+  }
 };
 
 const submitMainForm = () => {
