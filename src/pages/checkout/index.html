@@ -26,7 +26,7 @@
                     </span>
                 </header>
                 <h2>
-                    Contact Information
+                    <span id="contact-info-heading">Contact Information</span>
                     <span class="sign-in-text">Already a member? <a href="#">Sign in</a></span>
                 </h2>
                 <hr />
@@ -35,18 +35,18 @@
                         Sign In
                     </h3>
                     <hr class="hr-2" />
-                    <p class="error-summary hidden" role="alert" data-section="sign in"></p>
+                    <p class="sign-in-form__error-summary error-summary hidden" role="alert" data-section="sign in"></p>
                     <label for="sign-in-email">
                         Email *
                     </label>
-                    <input name="email" id="sign-in-email" type="email" data-required="true" aria-describedby="error-msg-email">
+                    <input name="email" id="sign-in-email" type="email" data-required="true" aria-describedby="contact-info-heading error-msg-email">
                     <span class="error-msg" id="error-msg-email">
                         Please input a valid email
                     </span>
                     <label for="sign-in-password">
                         Password *
                     </label>
-                    <input name="password" id="sign-in-password" type="password" data-required="true" aria-describedby="error-msg-password">
+                    <input name="password" id="sign-in-password" type="password" data-required="true" aria-describedby="contact-info-heading error-msg-password">
                     <span class="error-msg" id="error-msg-password">
                         Please input a password
                     </span>
@@ -54,17 +54,17 @@
                         Sign In
                     </button>
                 </form>
-                <form class="checkout__main-form" action="/review-order/index.html" novalidate>
+                <form class="checkout__main-form" action="review-order/index.html" novalidate>
                     <section class="checkout__guest-sign-in-email guest-sign-in-email">
                         <h3>
-                            Or Guest Information
+                            Or <span id="guest-info-heading">Guest Information</span>
                         </h3>
                         <hr class="hr-2" />
-                        <p class="error-summary hidden" role="alert" data-section=""></p>
+                        <p class="guest-sign-in-email__error-summary error-summary hidden" role="alert" data-section=""></p>
                         <label for="guest-sign-in-email">
                             Email *
                         </label>
-                        <input name="guest-sign-in-email" id="guest-sign-in-email" type="email" data-required="true" aria-describedby="error-msg-guest-email">
+                        <input name="guest-sign-in-email" id="guest-sign-in-email" type="email" data-required="true" aria-describedby="guest-info-heading error-msg-guest-email">
                         <span class="error-msg" id="error-msg-guest-email">
                             Please input a valid email
                         </span>
@@ -76,28 +76,28 @@
                             Shipping Address
                         </h3>
                         <hr class="hr-2" />
-                        <p class="error-summary hidden" role="alert" data-section="shipping address"></p>
+                        <p class="shipping-information__error-summary error-summary hidden" role="alert" data-section="shipping address"></p>
 
                         <label for="shipping-first-name">First Name *</label>
-                        <input class="first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-first-name" required>
+                        <input class="shipping-information__first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-first-name" required>
                         <span class="error-msg" id="error-msg-shipping-first-name">Please input a first name</span>
                         <label for="shipping-last-name">Last Name *</label>
-                        <input class="last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-last-name" required>
+                        <input class="shipping-information__last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-last-name" required>
                         <span class="error-msg" id="error-msg-shipping-last-name">Please input a last name</span>
                         <label for="shipping-address">Address *</label> 
-                        <input class="address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-address" required>
+                        <input class="shipping-information__address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-address" required>
                         <span class="error-msg" id="error-msg-shipping-address">Please input an address</span>
                         <label for="shipping-apt-suite">Apt / Suite</label>
-                        <input class="apt-suite" name="shipping-apt-suite" id="shipping-apt-suite" type="text" aria-describedby="sr-only-shipping-apt-suite">
+                        <input class="shipping-information__apt-suite" name="shipping-apt-suite" id="shipping-apt-suite" type="text" aria-describedby="sr-only-shipping-apt-suite">
                         <span class="hidden" id="sr-only-shipping-apt-suite">Appartment number, suite number or unit number.</span>
                         <label for="shipping-city">City *</label>
-                        <input class="city" name="shipping-city" id="shipping-city" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-city" required>
+                        <input class="shipping-information__city" name="shipping-city" id="shipping-city" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-city" required>
                         <span class="error-msg" id="error-msg-shipping-city">Please input a city name</span>
 
                         <div class="address__form-row">
                             <div class="address__column address__column--5">
                                 <label for="shipping-province">Province *</label>
-                                <select class="province" id="shipping-province" name="shipping-province" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-province" required>
+                                <select class="shipping-information__province" id="shipping-province" name="shipping-province" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-province" required>
                                     <option value="" selected>Select a Province</option>
                                     <option value="ab">Alberta</option>
                                     <option value="bc">British Columbia</option>
@@ -119,7 +119,7 @@
                                 <label for="shipping-postal-code">Postal Code *</label>
                                 <input
                                     type="text"
-                                    class="postal-code"
+                                    class="shipping-information__postal-code"
                                     id="shipping-postal-code"
                                     name="shipping-postal-code"
                                     data-required="true"
@@ -136,7 +136,7 @@
                             type="tel"
                             id="shipping-phone-number"
                             name="shipping-phone-number"
-                            class="phone-number"
+                            class="shipping-information__phone-number"
                             data-required="true"
                             data-input-type="phone-number"
                             aria-describedby="shipping-address-heading error-msg-shipping-phone"
@@ -147,25 +147,25 @@
                             Shipping Method
                         </h3>
                         <hr class="hr-2" />
-                        <fieldset class="shipping-form__shipping-options">
+                        <fieldset class="shipping-information__shipping-options">
                             <legend class="sr-only">Shipping Method</legend>
-                            <label class="shipping-form__shipping-type">
-                                <input type="radio" name="shipping-method" id="cp-10-day" value="cp-10-day" checked>
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="cp-10-day" value="cp-10-day" checked>
                                 <span class="custom-radio"></span>
                                 $0.00 Canada Post - Free Shipping. Delivers in 10 days.
                             </label>
-                            <label class="shipping-form__shipping-type">
-                                <input type="radio" name="shipping-method" id="ex-5-day" value="ex-5-day">
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="ex-5-day" value="ex-5-day">
                                 <span class="custom-radio"></span>
                                 $8.00 Canada Post - Express Shipping. Delivers in 5 days.
                             </label>
-                            <label class="shipping-form__shipping-type">
-                                <input type="radio" name="shipping-method" id="xp-2-3-day" value="xp-2-3-day">
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="xp-2-3-day" value="xp-2-3-day">
                                 <span class="custom-radio"></span>
-                                $14.00 Canada Post - Xpresspost. Delivers in 2 - 3 days.
+                                $14.00 Canada Post - Xpresspost. Delivers in 2 to 3 days.
                             </label>
-                            <label class="shipping-form__shipping-type">
-                                <input type="radio" name="shipping-method" id="pr-1-day" value="pr-1-day">
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="pr-1-day" value="pr-1-day">
                                 <span class="custom-radio"></span>
                                 $20.00 Canada Post - Priority Delivery. Delivers in 24 hours.
                             </label>
@@ -180,7 +180,7 @@
                             Card Information
                         </h3>
                         <hr class="hr-2" />
-                        <p class="error-summary hidden" role="alert" data-section="payment and billing"></p>
+                        <p class="payment-information__error-summary error-summary hidden" role="alert" data-section="payment and billing"></p>
                         <h4>
                             Accepted Cards
                         </h4>
@@ -210,6 +210,7 @@
                             aria-describedby="payment-info-heading error-msg-cc-number sr-only-accepted-cc"
                             required
                             autocomplete="off"
+                            class="payment-information__credit-card-number"
                         >
                         <span class="error-msg" id="error-msg-cc-number">
                             Please enter a valid credit card number.
@@ -229,6 +230,7 @@
                                     aria-describedby="payment-info-heading error-msg-expiry-date sr-only-cc-expiry-date"
                                     required
                                     autocomplete="off"
+                                    class="payment-information__expiry-date"
                                 >
                                 <span class="error-msg" id="error-msg-expiry-date">
                                     Please enter a valid expiry date
@@ -279,6 +281,7 @@
                                     aria-describedby="payment-info-heading error-msg-ccv"
                                     required
                                     autocomplete="off"
+                                    class="payment-information__security-code"
                                 >
                                 <span class="error-msg" id="error-msg-ccv">
                                     Please enter a valid security code
@@ -304,25 +307,25 @@
                             </label>
                             <div class="checkout__billing-address-form checkout__billing-address-form--hidden">
                                 <label for="billing-first-name">First Name *</label>
-                                <input class="first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-first-name" required disabled>
+                                <input class="billing-address__first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-first-name" required disabled>
                                 <span class="error-msg" id="error-msg-billing-first-name">Please input a first name</span>
                                 <label for="billing-last-name">Last Name *</label>
-                                <input class="last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-last-name" required disabled>
+                                <input class="billing-address__last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-last-name" required disabled>
                                 <span class="error-msg" id="error-msg-billing-last-name">Please input a last name</span>
                                 <label for="billing-address">Address *</label>
-                                <input class="address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-address" required disabled>
+                                <input class="billing-address__address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-address" required disabled>
                                 <span class="error-msg" id="error-msg-billing-address">Please input an address</span>
                                 <label for="billing-apt-suite">Apt / Suite</label>
-                                <input class="apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text" aria-describedby="sr-only-billing-apt-suite" disabled>
+                                <input class="billing-address__apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text" aria-describedby="sr-only-billing-apt-suite" disabled>
                                 <span class="hidden" id="sr-only-billing-apt-suite">Appartment number, suite number or unit number.</span>
                                 <label for="billing-city">City *</label>
-                                <input class="city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-city" required disabled>
+                                <input class="billing-address__city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-city" required disabled>
                                 <span class="error-msg" id="error-msg-billing-city">Please input a city name</span>
 
                                 <div class="address__form-row">
                                     <div class="address__column address__column--5">
                                         <label for="billing-province">Province *</label>
-                                        <select class="province" id="billing-province" name="billing-province" data-required="true" aria-describedy="billing-address-heading error-msg-billing-province" required disabled>
+                                        <select class="billing-address__province" id="billing-province" name="billing-province" data-required="true" aria-describedy="billing-address-heading error-msg-billing-province" required disabled>
                                             <option value="" selected>Select a Province</option>
                                             <option value="ab">Alberta</option>
                                             <option value="bc">British Columbia</option>
@@ -345,7 +348,7 @@
                                     <label for="billing-postal-code">Postal Code *</label>
                                     <input
                                         type="text"
-                                        class="postal-code"
+                                        class="billing-address__postal-code"
                                         id="billing-postal-code"
                                         name="billing-postal-code"
                                         data-required="true"
@@ -360,7 +363,7 @@
                                 <label for="billing-phone-number">Phone Number *</label>
                                 <input
                                     type="tel"
-                                    class="phone-number"
+                                    class="billing-address__phone-number"
                                     id="billing-phone-number"
                                     name="billing-phone-number"
                                     data-required="true"
