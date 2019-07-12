@@ -157,9 +157,14 @@
       padding: 0;
     }
 
+    &__item-list {
+      overflow-y: visible;
+      max-height: unset;
+    }
+
     &__image {
-      width: 53px;
-      height: 53px;
+      width: 153px;
+      height: 153px;
     }
 
     &__summary-controls {
