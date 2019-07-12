@@ -243,7 +243,7 @@
                                         Security Code *
                                     </label>
                                     <div aria-label="Security code tooltip" class="payment-information__tooltip">
-                                        <button class="payment-information__tooltip-icon" title="View tool tip" type="button" aria-expanded="false">
+                                        <button class="payment-information__tooltip-icon" title="View tool tip" aria-describedby="tooltip-security-code" type="button" aria-expanded="false">
                                             <span aria-hidden="true">?</span>
                                         </button>
                                         <div class="payment-information__tooltip-popup" id="tooltip-security-code" aria-hidden="true">    
@@ -251,14 +251,14 @@
                                                 <div class="payment-information__tooltip-content" tabindex="-1">
                                                     <h1>Where to find your credit card security code</h1>
                                                     <p>Every credit card has a 3 or 4 digit security code called the CSC, CVV, CV2, CVC, or CCV. It can be found on either the front or on the back of your card.</p>
-                                                    <h2>American Express</h2>
-                                                    <div class="sample-credit-card sample-amex" aria-hidden="true">
-                                                        <p>0000</p>
-                                                        <p>0000 000000 00000</p>
+                                                    <h2 aria-hidden="true">American Express</h2>
+                                                    <div class="sample-credit-card sample-amex">
+                                                        <p aria-hidden="true">0000</p>
+                                                        <p aria-hidden="true">0000 000000 00000</p>
                                                     </div>
-                                                    <h2>Visa, Mastercard, Discover,...</h2>
-                                                    <div class="sample-credit-card sample-others" aria-hidden="true">
-                                                        <p><span>000</span></p>
+                                                    <h2 aria-hidden="true">Visa, Mastercard, Discover,...</h2>
+                                                    <div class="sample-credit-card sample-others">
+                                                        <p aria-hidden="true"><span>000</span></p>
                                                     </div>
                                                 </div>
                                                 <button class="payment-information__tooltip-popup__btn--close" type="button">
