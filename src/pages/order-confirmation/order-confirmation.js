@@ -80,6 +80,12 @@ const displayTotal = () => {
   orderDetailSection.querySelector('.order-detail__total').innerText = `$${getCartSubtotal(cart.cartItems).toFixed(2)}`;
 };
 
+const clearCheckoutData = () => {
+  localStorage.removeItem('cart');
+  localStorage.removeItem('paymentInfo');
+  localStorage.removeItem('shippingInfo');
+};
+
 window.onload = () => {
   orderDetailSection = document.querySelector('.order-confirmation__order-details');
   contactSection = document.querySelector('.order-confirmation__contact-info');
@@ -92,4 +98,6 @@ window.onload = () => {
   displayShippingInfo();
   displayPaymentInfo();
   modifyTotalsText();
+
+  clearCheckoutData();
 };

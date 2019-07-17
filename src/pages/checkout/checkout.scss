@@ -34,6 +34,10 @@
     grid-gap: 5%;
   }
 
+  @media only screen and (min-width:  $phablet) {
+    padding: 0 24px;
+  }
+
   @media only screen and (min-width:  $logo-collapse) {
     padding: 0 120px;
   }
@@ -80,6 +84,7 @@
   h2 {
     font-size: $font-lg;
     font-weight: bold;
+    margin: 30px 0 15px;
   }
 
   h3 {
@@ -158,13 +163,19 @@
       display: grid;
       @media only screen and (min-width: $filters-collapse) {
         grid-template-columns: 1fr 250px;
-        grid-column-gap: 50px;
+        grid-column-gap: 25px;
       }
     }
 
     &__column {
       display: flex;
       flex-direction: column;
+    }
+
+    label[for="expiry-date"] {
+      @media only screen and (min-width: $filters-collapse) {
+        font-size: $font-xs;
+      }
     }
 
     &__tooltip {

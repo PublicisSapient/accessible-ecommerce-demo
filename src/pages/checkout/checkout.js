@@ -1,7 +1,7 @@
 import * as orderSummary from '../../components/order-summary/order-summary';
 import { activeElementMatches } from '../../js/utils';
 
-let signInForm;
+//let signInForm;
 let mainForm;
 let shippingSection;
 let paymentSection;
@@ -300,13 +300,13 @@ const populateFields = () => {
 };
 
 window.onload = () => {
-  signInForm = document.querySelector('.checkout__sign-in-form');
+  //signInForm = document.querySelector('.checkout__sign-in-form');
   mainForm = document.querySelector('.checkout__main-form');
   shippingSection = document.querySelector('.checkout__shipping-information');
   paymentSection = document.querySelector('.checkout__payment-information');
   billingFormFields = document.querySelector('.checkout__billing-address-form');
 
-  signInForm.addEventListener('submit', onSubmitSignInForm);
+  //signInForm.addEventListener('submit', onSubmitSignInForm);
   mainForm.addEventListener('submit', onSubmitMainForm);
 
   billingAddressCheckbox = document.querySelector('.billing-address__billing-address-checkbox');
@@ -324,6 +324,7 @@ window.onload = () => {
   focusableItems[focusableItems.length - 1].addEventListener('blur', testBlur);
 
   orderSummary.init();
+  document.querySelector('.order-summary__summary-controls button').addEventListener('click', onSubmitMainForm);
 
   if (window.location.href.includes('edit=')) {
     editMode = true;

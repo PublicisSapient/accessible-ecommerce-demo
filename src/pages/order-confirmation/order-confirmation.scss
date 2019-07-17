@@ -35,6 +35,10 @@
     grid-gap: 5%;
   }
 
+  @media only screen and (min-width:  $phablet) {
+    padding: 0 24px;
+  }
+
   @media only screen and (min-width:  $logo-collapse) {
     padding: 0 120px;
   }
@@ -163,8 +167,13 @@
     }
 
     &__image {
-      width: 153px;
-      height: 153px;
+      width: 100px;
+      height: 100px;
+
+      @media only screen and (min-width: $filters-collapse) {
+        width: 125px;
+        height: 125px;
+      }
     }
 
     &__summary-controls {
