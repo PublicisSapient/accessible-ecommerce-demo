@@ -166,6 +166,14 @@
       max-height: unset;
     }
 
+    &__description {
+      justify-content: left;
+
+      dl {
+        padding-right: 7.0rem;
+      }
+    }
+
     &__image {
       width: 100px;
       height: 100px;

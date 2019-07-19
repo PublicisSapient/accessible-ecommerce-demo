@@ -267,6 +267,10 @@ const setFocus = () => {
 };
 
 const populateFields = () => {
+  // Contact Info
+  const contactInfo = getContactInfo();
+  mainForm.querySelector('#guest-sign-in-email').value = contactInfo.email;
+
   // Shipping Info
   const shippingInfo = getShippingInfo();
   Object.keys(shippingInfo).forEach(key => {
