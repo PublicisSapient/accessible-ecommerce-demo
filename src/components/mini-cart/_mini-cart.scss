@@ -202,6 +202,12 @@
     width: 20px;
     height: 20px;
     margin-right: 8px;
+
+    &.icon--heart {
+      fill: transparent;
+      stroke: $black;
+      stroke-width: 2px;
+    }
   }
 
   &__summary {
