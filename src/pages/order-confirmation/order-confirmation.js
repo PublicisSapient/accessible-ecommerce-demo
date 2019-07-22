@@ -1,9 +1,9 @@
 import * as orderSummary from '../../components/order-summary/order-summary';
 import { getContactInfo, getShippingInfo, getPaymentInfo } from '../checkout/checkout';
 import { getCartFromStorage, getCartSubtotal } from '../../components/cart/cart';
+import * as Modal from '../../components/modal/modal';
 
 let orderDetailSection;
-let contactSection;
 let shippingSection;
 let paymentSection;
 let date;
@@ -87,17 +87,20 @@ const clearCheckoutData = () => {
 };
 
 window.onload = () => {
-  orderDetailSection = document.querySelector('.order-confirmation__order-details');
-  contactSection = document.querySelector('.order-confirmation__contact-info');
-  shippingSection = document.querySelector('.order-confirmation__shipping-info');
-  paymentSection = document.querySelector('.order-confirmation__payment-info');
+  if (localStorage.getItem('shippingInfo')) {
+    orderDetailSection = document.querySelector('.order-confirmation__order-details');
+    shippingSection = document.querySelector('.order-confirmation__shipping-info');
+    paymentSection = document.querySelector('.order-confirmation__payment-info');
 
-  orderSummary.init();
-  displayOrderDetails();
-  displayContactInfo();
-  displayShippingInfo();
-  displayPaymentInfo();
-  modifyTotalsText();
+    orderSummary.init();
+    displayOrderDetails();
+    displayContactInfo();
+    displayShippingInfo();
+    displayPaymentInfo();
+    modifyTotalsText();
+  }
 
   clearCheckoutData();
+
+  Modal.init('construction-modal');
 };

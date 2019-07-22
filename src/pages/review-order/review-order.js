@@ -1,5 +1,6 @@
 import * as orderSummary from '../../components/order-summary/order-summary';
 import { getContactInfo, getShippingInfo, getPaymentInfo } from '../checkout/checkout';
+import * as Modal from '../../components/modal/modal';
 
 let contactSection;
 let shippingSection;
@@ -48,4 +49,6 @@ window.onload = () => {
   displayShippingInfo();
   displayPaymentInfo();
   modifyTotalsText();
+
+  Modal.init('construction-modal');
 };

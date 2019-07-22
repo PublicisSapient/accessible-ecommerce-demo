@@ -1,5 +1,6 @@
 import * as orderSummary from '../../components/order-summary/order-summary';
 import { activeElementMatches } from '../../js/utils';
+import * as Modal from '../../components/modal/modal';
 
 //let signInForm;
 let mainForm;
@@ -22,9 +23,10 @@ const regex = {
   'phone-number': /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
   'credit-card-number': /^$[0-9]{14}/,
   'expiry-date': /^[0-9]{2}[-\s\/\\]?[0-9]{2}$/,
-  ccv: /^[0-9]{3,4}$/,
+  'ccv': /^[0-9]{3,4}$/,
 };
 
+// START: Tooltip methods
 function testClick(event){
   const clickInsideDropdown = event.target.matches('.payment-information__tooltip-popup, .payment-information__tooltip-popup *');
   if(!clickInsideDropdown){
@@ -76,6 +78,7 @@ function toggleTooltipIcon(event) {
     openTooltip();
   }
 }
+// END: Tooltip methods
 
 const prefillBillingAddress = () => {
   const inputs = mainForm.querySelectorAll('input, select');
@@ -116,10 +119,15 @@ const checkForm = (form, callBack) => {
     let valid = false;
     const required = dataset.required;
     const inputType = type;
-    if (required) {
-      valid = regex[inputType] ? regex[inputType].test(value) : Boolean(value);
-      // class remove and add return undefined we are just using a tertiray for succinct code
-      formValid = valid ? !classList.remove('invalid') : classList.add('invalid');
+
+    if (classList.contains('payment-information__expiry-date')) {
+      checkExpiryDate(classList);
+    } else {
+      if (required) {
+        valid = regex[inputType] ? regex[inputType].test(value) : Boolean(value);
+        // class remove and add return undefined we are just using a tertiray for succinct code
+        formValid = valid ? !classList.remove('invalid') : classList.add('invalid');
+      }
     }
   };
 
@@ -148,7 +156,8 @@ const clearErrorState = (form) => {
   });
 };
 
-const onSubmitSignInForm = (e) => {
+// Registered Users Sign In Form removed for now
+/*const onSubmitSignInForm = (e) => {
   e.preventDefault();
   checkForm(signInForm, submitSignInForm);
 };
@@ -173,31 +182,36 @@ const submitGuestSignInForm = () => {
     'email' : input.value
   };
   localStorage.setItem('user', JSON.stringify(user));
-};
+};*/
 
 const onSubmitMainForm = (e) => {
   e.preventDefault();
-  checkForm(mainForm, checkExpiryDate);
+  checkForm(mainForm, submitMainForm);
   
 };
 
-const checkExpiryDate = () => {
-  const input = mainForm.querySelector('input#expiry-date');
-  const expiryYear = Number(`20${(input.value).substring((input.value).indexOf('/') + 1)}`);
-  const expiryMonth = Number((input.value).substring(0, 2));
-  const currDate = new Date();
-  const currMonth = currDate.getMonth() + 1;
-  const currYear = currDate.getFullYear();
+const checkExpiryDate = ([first]) => {
+  const input = mainForm.querySelector(`input.${first}`);
+  const value = input.value;
 
-  const errorSummary = mainForm.querySelector('.error-summary');
-  if ((expiryYear === currYear && expiryMonth < currMonth) || (expiryYear < currYear)) {
-    errorSummary.innerText = `You have 1 error in your ${errorSummary.getAttribute('data-section')} form.`;
-    errorSummary.classList.remove('hidden');
+  // Check date format first
+  if (!regex['expiry-date'].test(value)) {
     input.classList.add('invalid');
-    input.focus();
-  } else {
-    errorSummary.classList.add('hidden');
-    submitMainForm();
+  // If format is correct, check date validity next
+  } else if (regex['expiry-date'].test(value)) {
+    const expiryYear = Number(`20${(input.value).substring((input.value).indexOf('/') + 1)}`);
+    const expiryMonth = Number((input.value).substring(0, 2));
+    const currDate = new Date();
+    const currMonth = currDate.getMonth() + 1;
+    const currYear = currDate.getFullYear();
+
+    if ((expiryMonth > 12 || expiryMonth < 1) ||
+      (expiryYear === currYear && expiryMonth < currMonth) ||
+      (expiryYear < currYear)) {
+      input.classList.add('invalid');
+    } else {
+      input.classList.remove('invalid');
+    }
   }
 };
 
@@ -334,6 +348,8 @@ window.onload = () => {
     editMode = true;
     populateFields();
   }
+
+  Modal.init('construction-modal');
 };
 
 export { getContactInfo, getShippingInfo, getPaymentInfo };
