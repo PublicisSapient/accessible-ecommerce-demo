@@ -10,39 +10,45 @@ let date;
 
 const displayContactInfo = () => {
   const contactInfo = getContactInfo();
-  const emailElems = document.querySelectorAll('.email-address');
-  emailElems.forEach(email => {
-    email.innerText = contactInfo['email'];
-  });
+  if (contactInfo !==  null) {
+    const emailElems = document.querySelectorAll('.email-address');
+    emailElems.forEach(email => {
+      email.innerText = contactInfo['email'];
+    });
+  }
 };
 
 const displayShippingInfo = () => {
   const shippingInfo = getShippingInfo();
-  Object.keys(shippingInfo).forEach(key => {
-    if (!key.includes('method')) {
-      shippingSection.querySelector(`#${key}`).innerText = shippingInfo[key];
-    }
-  });
-  const shippingMethod = shippingInfo['shipping-method'];
-  shippingSection.querySelector(`p#${shippingMethod}`).classList.remove('hidden');
+  if (shippingInfo !== null) {
+    Object.keys(shippingInfo).forEach(key => {
+      if (!key.includes('method')) {
+        shippingSection.querySelector(`#${key}`).innerText = shippingInfo[key];
+      }
+    });
+    const shippingMethod = shippingInfo['shipping-method'];
+    shippingSection.querySelector(`p#${shippingMethod}`).classList.remove('hidden');
+  }
 };
 
 const displayPaymentInfo = () => {
   const paymentInfo = getPaymentInfo();
-  const billingAddressSame = paymentInfo['billingAddressSame'];
-  if (billingAddressSame) {
-    paymentSection.querySelector('#cc-expiry-date').innerText = paymentInfo['cc-expiry-date'];
-    paymentSection.querySelector('#cc-last-four-digits').innerText = paymentInfo['cc-last-four-digits'];
-    paymentSection.querySelector('.billing-address-same').classList.remove('hidden');
-  } else {
-    Object.keys(paymentInfo).forEach(key => {
-      if (!key.includes('billingAddressSame')) {
-        paymentSection.querySelector(`#${key}`).innerText = paymentInfo[key];
-      }
-    });
-    paymentSection.querySelector('.billing-address-different').classList.remove('hidden');
+  if (paymentInfo !== null) {
+    const billingAddressSame = paymentInfo['billingAddressSame'];
+    if (billingAddressSame) {
+      paymentSection.querySelector('#cc-expiry-date').innerText = paymentInfo['cc-expiry-date'];
+      paymentSection.querySelector('#cc-last-four-digits').innerText = paymentInfo['cc-last-four-digits'];
+      paymentSection.querySelector('.billing-address-same').classList.remove('hidden');
+    } else {
+      Object.keys(paymentInfo).forEach(key => {
+        if (!key.includes('billingAddressSame')) {
+          paymentSection.querySelector(`#${key}`).innerText = paymentInfo[key];
+        }
+      });
+      paymentSection.querySelector('.billing-address-different').classList.remove('hidden');
+    }
+    paymentSection.querySelector('#cc-holder-name').innerText = `${paymentInfo['billing-first-name']} ${paymentInfo['billing-last-name']}`;
   }
-  paymentSection.querySelector('#cc-holder-name').innerText = `${paymentInfo['billing-first-name']} ${paymentInfo['billing-last-name']}`;
 };
 
 const modifyTotalsText = () => {
@@ -87,7 +93,7 @@ const clearCheckoutData = () => {
 };
 
 window.onload = () => {
-  if (localStorage.getItem('shippingInfo')) {
+  if (localStorage.getItem('shippingInfo') !== null) {
     orderDetailSection = document.querySelector('.order-confirmation__order-details');
     shippingSection = document.querySelector('.order-confirmation__shipping-info');
     paymentSection = document.querySelector('.order-confirmation__payment-info');

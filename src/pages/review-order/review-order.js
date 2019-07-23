@@ -8,28 +8,34 @@ let paymentSection;
 
 const displayContactInfo = () => {
   const contactInfo = getContactInfo();
-  contactSection.querySelector('#email-address').innerText = contactInfo['email'];
+  if (contactInfo !== null) {
+    contactSection.querySelector('#email-address').innerText = contactInfo['email'];
+  }
 };
 
 const displayShippingInfo = () => {
   const shippingInfo = getShippingInfo();
-  Object.keys(shippingInfo).forEach(key => {
-    if (!key.includes('method')) {
-      shippingSection.querySelector(`#${key}`).innerText = shippingInfo[key];
-    }
-  });
-  const shippingMethod = shippingInfo['shipping-method'];
-  shippingSection.querySelector(`p#${shippingMethod}`).classList.remove('hidden');
+  if (shippingInfo !== null) {
+    Object.keys(shippingInfo).forEach(key => {
+      if (!key.includes('method')) {
+        shippingSection.querySelector(`#${key}`).innerText = shippingInfo[key];
+      }
+    });
+    const shippingMethod = shippingInfo['shipping-method'];
+    shippingSection.querySelector(`p#${shippingMethod}`).classList.remove('hidden');
+  }
 };
 
 const displayPaymentInfo = () => {
   const paymentInfo = getPaymentInfo();
-  Object.keys(paymentInfo).forEach(key => {
-    if (!key.includes('billingAddressSame')) {
-      paymentSection.querySelector(`#${key}`).innerText = paymentInfo[key];
-    }
-  });
-  paymentSection.querySelector('#cc-holder-name').innerText = `${paymentInfo['billing-first-name']} ${paymentInfo['billing-last-name']}`;
+  if (paymentInfo !== null) {
+    Object.keys(paymentInfo).forEach(key => {
+      if (!key.includes('billingAddressSame')) {
+        paymentSection.querySelector(`#${key}`).innerText = paymentInfo[key];
+      }
+    });
+    paymentSection.querySelector('#cc-holder-name').innerText = `${paymentInfo['billing-first-name']} ${paymentInfo['billing-last-name']}`;
+  }
 };
 
 const modifyTotalsText = () => {
