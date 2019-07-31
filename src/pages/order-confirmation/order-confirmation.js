@@ -104,6 +104,9 @@ window.onload = () => {
     displayShippingInfo();
     displayPaymentInfo();
     modifyTotalsText();
+  } else {
+    // For now, redirect to homepage if there is no checkout data
+    window.location.href = '/';
   }
 
   clearCheckoutData();

@@ -46,15 +46,20 @@ const modifyTotalsText = () => {
 };
 
 window.onload = () => {
-  contactSection = document.querySelector('.review-order__contact-info');
-  shippingSection = document.querySelector('.review-order__shipping-info');
-  paymentSection = document.querySelector('.review-order__payment-info');
+  if (localStorage.getItem('shippingInfo') !== null) {
+    contactSection = document.querySelector('.review-order__contact-info');
+    shippingSection = document.querySelector('.review-order__shipping-info');
+    paymentSection = document.querySelector('.review-order__payment-info');
 
-  orderSummary.init();
-  displayContactInfo();
-  displayShippingInfo();
-  displayPaymentInfo();
-  modifyTotalsText();
+    orderSummary.init();
+    displayContactInfo();
+    displayShippingInfo();
+    displayPaymentInfo();
+    modifyTotalsText();
 
-  Modal.init('construction-modal');
+    Modal.init('construction-modal');
+  } else {
+    // For now, redirect to homepage if there is no checkout data
+    window.location.href = '/';
+  }
 };
