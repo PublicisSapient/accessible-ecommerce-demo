@@ -19,10 +19,10 @@
 	"devDependencies": {
 		"del-cli": "^1.1.0",
 		"gh-pages": "^2.0.1",
-		"handlebars": "^4.1.1",
+		"handlebars": "^4.1.2",
 		"http-server": "^0.11.1",
 		"pa11y-ci": "^2.2.0",
-		"parcel": "1.12.2",
+		"parcel": "^1.12.3",
 		"parcel-plugin-asset-copier": "^1.0.0",
 		"parcel-plugin-handlebars-precompile": "aevanson/parcel-plugin-handlebars-precompile",
 		"sass": "^1.19.0",
