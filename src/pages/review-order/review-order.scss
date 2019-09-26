@@ -1,0 +1,141 @@
+@import '../../scss/variables';
+
+.review-order {
+  margin-bottom: 40px;
+  overflow: hidden;
+
+  @media only screen and (min-width: $desktop) {
+    padding: 0 120px 4px;
+  }
+
+  &__order-details {
+    & > section {
+      overflow: hidden;
+      width: 100%;
+      margin: 30px 0;
+      padding: 4px;
+    }
+    @media only screen and (min-width: $filters-collapse) {
+      width: 596px;
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid $black;
+    
+    &.hr-2 {
+      border-top: 1px solid $medium-grey;
+    }
+
+    &.title-underline {
+      margin: 10px 0 20px;
+    }
+
+    &.section-end {
+      margin: 30px 0 20px;
+    }
+  }
+
+  h2 {
+    font-size: $font-lg;
+    font-weight: bold;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: $font-xs;
+    font-weight: bold;
+    margin: 20px 0 12px;
+  }
+
+  p {
+    font-size: $font-sm;
+    line-height: 2.2rem;
+
+    > span {
+      display: block;
+    }
+
+    span[id*="province"] {
+      text-transform: uppercase;
+    }
+  }
+
+  &__edit-link {
+    float: right;
+    text-decoration: none;
+    font-size: $font-xs;
+    position: relative;
+    padding-left: 20px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__submit {
+    float: right;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+
+    @media only screen and (min-width: $filters-collapse) {
+      width: 270px;
+    }
+  }
+
+  .order-summary {
+    h2 {
+      display: none;
+    }
+
+    &__background {
+      background: none;
+      padding: 0;
+    }
+
+    &__item-list {
+      overflow-y: visible;
+      max-height: unset;
+    }
+
+    &__description {
+      justify-content: left;
+
+      dl {
+        padding-right: 7.0rem;
+      }
+    }
+
+    &__image {
+      width: 100px;
+      height: 100px;
+
+      @media only screen and (min-width: $filters-collapse) {
+        width: 125px;
+        height: 125px;
+      }
+    }
+
+    &__summary-controls {
+      display: none;
+    }
+
+    &__total {
+      dd {
+        float: none;
+        margin: 0;
+      }
+    }
+  }
+}

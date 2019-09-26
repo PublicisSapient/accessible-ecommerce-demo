@@ -1,0 +1,520 @@
+@import '../../scss/variables';
+
+@mixin inputField {
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid #D8D8D8;
+  width: 100%;
+  font-size: 14px;
+  box-shadow: none;
+  background-color: #fff;
+
+  + .error-msg {
+    display: none;
+  }
+
+  &.invalid {
+    border: 2px solid $error-red;
+
+    + .error-msg {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
+}
+
+.checkout {
+  margin-bottom: 80px;
+  padding: 0;
+
+  @media only screen and (min-width: $filters-collapse) {
+    display: grid;
+    grid-template-columns: 60% 35%;
+    grid-gap: 5%;
+  }
+
+  @media only screen and (min-width:  $phablet) {
+    padding: 0 24px;
+  }
+
+  @media only screen and (min-width:  $logo-collapse) {
+    padding: 0 120px;
+  }
+
+  .main-content {
+
+    @media only screen and (max-width: $mobile) {
+      padding: 0 24px;
+    }
+  }
+
+  &__customer-info {
+
+    @media only screen and (min-width: $filters-collapse) {
+      grid-column: 1 / 2;
+      padding: 0;
+    }
+  }
+
+  form,
+  &__sign-in-form,
+  &__main-form,
+  &__billing-address-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__billing-address-form {
+    &--hidden {
+      display: none;
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid $black;
+    &.hr-2 {
+      border-top: 1px solid $medium-grey;
+    }
+  }
+
+  h2 {
+    font-size: $font-lg;
+    font-weight: bold;
+    margin: 30px 0 15px;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: $font-xs;
+    font-weight: bold;
+    margin: 30px 0 15px;
+  }
+
+  &__sign-in-form {
+    h3 {
+      margin: 22px 0 7px;
+    }
+  }
+
+  h4 {
+    color: black;
+    font-weight: bold;
+    font-size: $font-sm;
+    line-height: $font-lg;
+    display: inline-block;
+  }
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: $font-sm;
+    }
+  }
+
+  .sign-in-text {
+    display: inline-block;
+    font-size: $font-sm;
+    font-weight: normal;
+    margin: 10px 0 0;
+
+    @media only screen and (min-width: $filters-collapse) {
+      float: right;
+      margin: 0;
+    }
+
+    a {
+      font-weight: bold;
+    }
+  }
+
+  label {
+    width: 100%;
+    font-size: $font-sm;
+  }
+
+  input {
+    @include inputField;
+  }
+
+  select {
+    @include inputField;
+    font-weight: bold;
+  }
+
+  label {
+    color: black;
+    font-weight: bold;
+    line-height: $font-lg;
+    display: inline-block;
+    padding: 1.333rem 0 0.666rem;
+  }
+
+  .payment-information {
+    &__form-row {
+      width: 100%;
+      display: grid;
+      @media only screen and (min-width: $filters-collapse) {
+        grid-template-columns: 1fr 250px;
+        grid-column-gap: 25px;
+      }
+    }
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label[for="expiry-date"] {
+      @media only screen and (min-width: $filters-collapse) {
+        font-size: $font-xs;
+      }
+    }
+
+    &__tooltip {
+      position: relative;
+
+      &.visible {
+        .payment-information__tooltip-popup {
+          display: block;
+        }
+      }
+    }
+
+    &__tooltip-popup {
+      display: none;
+      position: absolute;
+      left: 24px;
+
+      h1 {
+        font-size: $font-sm;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: $font-xs;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: $font-xs;
+      }
+
+      .sample-credit-card {
+        background-color: $grey;
+        border-radius: 2px;
+        width: 100px;
+        height: 64px;
+        position: relative;
+
+        p {
+          font-size: 8px;
+          color: $dark-grey;
+          padding: 3px;
+          position: absolute;
+        }
+
+        &.sample-amex {
+          p {
+            &:first-child {
+              right: 0;
+              top: 2px;
+              border: 2px solid $purple;
+            }
+            &:last-child {
+              left: 6px;
+              bottom: 3px;
+            }
+          }
+        }
+
+        &.sample-others {
+          p {
+            background-color: $white;
+            width: 80px;
+            right: 10px;
+            bottom: 14px;
+
+            span {
+              float: right;
+              border: 2px solid $purple;
+              padding: 3px;
+            }
+          }
+        }
+      }
+
+      &__btn--close {
+        background: transparent;
+        border: 0;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin-left: auto;
+        margin-right: -8px;
+        margin-top: -4px;
+        cursor: pointer;
+        position: absolute;
+        right: 12px;
+        top: 10px;
+
+        .icon--close-btn {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &__tooltip-popup-arrow {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+      border-right: 2px solid white;
+      left: -16px;
+      top: -16px;
+
+      &:before {
+        position: absolute;
+        right: -27px;
+        width: 24px;
+        content: '';
+        top: 0;
+        height: 24px;
+        transform: rotate(45deg) skew(-25deg, -25deg) translate(-12px,-1px);
+        background-color: #fff;
+        border: 1px solid #b5b5b5;
+      }
+    }
+
+    &__tooltip-popup-background {
+      background-color: white;
+      width: 300px;
+      padding: 24px;
+      top: -50px;
+      border: 1px solid #b5b5b5;
+      position: absolute;
+      left: 5px;
+      z-index: 1;
+
+      @media only screen and (max-width: $mobile) {
+        left: -150px;
+      }
+    }
+
+    &__tooltip-icon {
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: white;
+      background-color: black;
+      display: inline-block;
+      font-size: 1.25rem;
+      text-align: center;
+      font-style: normal;
+      line-height: 1.1;
+      cursor: pointer;
+
+    }
+
+    &__label-tooltip {
+      display: flex;
+      align-items: center;
+
+      label {
+        flex: 0;
+        min-width: 140px;
+      }
+    }
+
+    &__credit-cards {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: left;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .shipping-information {
+    &__form-row {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 250px;
+      grid-column-gap: 50px;
+    }
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__shipping-type {
+      display: flex;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: normal;
+
+      &:hover input ~ .custom-radio {
+        background-color: #ccc;
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .custom-radio {
+          background-color: white;
+
+          &:after {
+            display: block;
+          }
+        }
+
+        &:focus ~ .custom-radio {
+          outline: 1px dotted currentColor;
+        }
+
+      }
+
+      .custom-radio {
+        position: absolute;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        margin-top: -3px;
+        background-color: white;
+        border: 1px solid #b5b5b5;
+        border-radius: 50%;
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 6px;
+          left: 6px;
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          background: black;
+        }
+      }
+    }
+
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  .btn {
+    margin-top: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+    flex: 0;
+    align-self: flex-end;
+    float: right;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__billing-address-form {
+    &--hidden {
+      display: none;
+    }
+  }
+
+  .billing-address {
+
+    &__billing-address-check {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+
+      input {
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        width: auto;
+
+        &:checked ~ .billing-address__billing-address-custom-checkbox {
+          &:before {
+            content: '';
+          }
+        }
+
+        &:focus ~ .billing-address__billing-address-custom-checkbox {
+          outline: 1px dotted currentColor;
+        }
+      }
+    }
+
+    &__billing-address-custom-checkbox {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #B5B5B5;
+      border-radius: 4px;
+      display: inline-block;
+      background-color: white;
+      position: relative;
+      margin-right: 1rem;
+
+      &:before {
+        position: absolute;
+        width: 6px;
+        height: 11px;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        transform: rotate(35deg);
+        top: 2px;
+        left: 6px;
+        margin-right: 1rem;
+      }
+
+      @media screen and (max-width: $mobile) {
+        width: 31px;
+      }
+    }
+  }
+
+  .order-summary {
+    margin-top: 50px;
+    padding: 0 8px;
+
+    @media only screen and (min-width: $filters-collapse) {
+      grid-column: 2 / 2;
+      margin-top: 66px;
+      padding: 0;
+    }
+
+    &__image {
+      width: 69px;
+      height: 69px;
+    }
+
+    .btn {
+      float: none;
+    }
+  }
+}

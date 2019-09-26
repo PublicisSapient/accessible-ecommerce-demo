@@ -65,8 +65,14 @@ export function $$(selector, context) {
 
 // Helper function trapping the tab key inside a node
 export function trapTabKey(node, event) {
-  var focusableChildren = getFocusableChildren(node);
-  var focusedItemIndex = focusableChildren.indexOf(document.activeElement);
+  let focusableChildren = getFocusableChildren(node);
+  let focusedItemIndex = focusableChildren.indexOf(document.activeElement);
+  const isTabPressed = (event.key === 'Tab' || event.keyCode === 9);
+
+  if (!isTabPressed) { 
+    return; 
+  }
+
   if (event.shiftKey && focusedItemIndex === 0) {
     focusableChildren[focusableChildren.length - 1].focus();
     event.preventDefault();

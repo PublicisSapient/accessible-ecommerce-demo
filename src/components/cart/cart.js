@@ -57,4 +57,4 @@ function updateCart(cart) {
   pushCartUpdatedEvent(cart);
 }
 
-export { addToCart, getCartFromStorage, removeFromCart };
+export { addToCart, getCartFromStorage, removeFromCart, getCartSubtotal };
