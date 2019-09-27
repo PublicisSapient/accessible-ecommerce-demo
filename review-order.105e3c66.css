@@ -1,0 +1,88 @@
+.review-order {
+  margin-bottom: 40px;
+  overflow: hidden; }
+  @media only screen and (min-width: 1200px) {
+    .review-order {
+      padding: 0 120px 4px; } }
+  .review-order__order-details > section {
+    overflow: hidden;
+    width: 100%;
+    margin: 30px 0;
+    padding: 4px; }
+  @media only screen and (min-width: 760px) {
+    .review-order__order-details {
+      width: 596px; } }
+  .review-order hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #1f1f1f; }
+    .review-order hr.hr-2 {
+      border-top: 1px solid #9b9b9b; }
+    .review-order hr.title-underline {
+      margin: 10px 0 20px; }
+    .review-order hr.section-end {
+      margin: 30px 0 20px; }
+  .review-order h2 {
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .review-order h3 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 20px 0 12px; }
+  .review-order p {
+    font-size: 1.4rem;
+    line-height: 2.2rem; }
+    .review-order p > span {
+      display: block; }
+    .review-order p span[id*="province"] {
+      text-transform: uppercase; }
+  .review-order__edit-link {
+    float: right;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    padding-left: 20px; }
+    .review-order__edit-link:hover {
+      text-decoration: underline; }
+    .review-order__edit-link .icon {
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      left: 0;
+      top: 0; }
+  .review-order__submit {
+    float: right;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center; }
+    @media only screen and (min-width: 760px) {
+      .review-order__submit {
+        width: 270px; } }
+  .review-order .order-summary h2 {
+    display: none; }
+  .review-order .order-summary__background {
+    background: none;
+    padding: 0; }
+  .review-order .order-summary__item-list {
+    overflow-y: visible;
+    max-height: unset; }
+  .review-order .order-summary__description {
+    justify-content: left; }
+    .review-order .order-summary__description dl {
+      padding-right: 7.0rem; }
+  .review-order .order-summary__image {
+    width: 100px;
+    height: 100px; }
+    @media only screen and (min-width: 760px) {
+      .review-order .order-summary__image {
+        width: 125px;
+        height: 125px; } }
+  .review-order .order-summary__summary-controls {
+    display: none; }
+  .review-order .order-summary__total dd {
+    float: none;
+    margin: 0; }
+
+
+/*# sourceMappingURL=/review-order.105e3c66.css.map */
