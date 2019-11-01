@@ -18,20 +18,20 @@
 	},
 	"devDependencies": {
 		"del-cli": "^1.1.0",
-		"gh-pages": "^2.0.1",
-		"handlebars": "^4.1.1",
+		"gh-pages": "^2.1.1",
+		"handlebars": "^4.3.3",
 		"http-server": "^0.11.1",
-		"pa11y-ci": "^2.2.0",
+		"pa11y-ci": "^2.3.0",
 		"parcel": "1.12.2",
 		"parcel-plugin-asset-copier": "^1.0.0",
-		"parcel-plugin-handlebars-precompile": "aevanson/parcel-plugin-handlebars-precompile",
-		"sass": "^1.19.0",
-		"start-server-and-test": "^1.9.0"
+		"parcel-plugin-handlebars-precompile": "github:aevanson/parcel-plugin-handlebars-precompile",
+		"sass": "^1.22.12",
+		"start-server-and-test": "^1.10.2"
 	},
 	"dependencies": {
-		"pouchdb": "^7.0.0",
-		"pouchdb-debug": "^7.0.0",
-		"pouchdb-find": "^7.0.0"
+		"pouchdb": "^7.1.1",
+		"pouchdb-debug": "^7.1.1",
+		"pouchdb-find": "^7.1.1"
 	},
 	"assetsPath": "src/assets",
 	"bugs": {
