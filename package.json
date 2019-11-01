@@ -19,7 +19,7 @@
 	"devDependencies": {
 		"del-cli": "^1.1.0",
 		"gh-pages": "^2.0.1",
-		"handlebars": "^4.1.1",
+		"handlebars": "^4.1.2",
 		"http-server": "^0.11.1",
 		"pa11y-ci": "^2.2.0",
 		"parcel": "1.12.2",
