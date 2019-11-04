@@ -4,24 +4,312 @@
 <head prefix="og: http://ogp.me/ns/website#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
 
     <title>The Accessibile eStore, Checkout</title>
 
     <link rel="stylesheet" href="../../styles.scss">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="./checkout.scss">
 </head>
 
-<body class="pdp">
-    <header class="navigation" data-template="global-header"></header>
-    <div class="main">
-        <div data-component="breadcrumb"></div>
-        <div class="container">
-            <section id="content" class="main-content">
-                <h1 class="template-heading">Checkout</h1>
-            </section>
-        </div>
+<body>
+    <header class="navigation" data-template="global-header-checkout"></header>
+    <div data-component="breadcrumb"></div>
+    <div class="container checkout">
+        <section id="content" class="main-content">
+            <div class="checkout__customer-info">
+                <header>
+                    <h1 class="template-heading">
+                        Checkout
+                    </h1>
+                    <span>
+                        * Required
+                    </span>
+                </header>
+                <h2>
+                    <span id="contact-info-heading">Contact Information</span>
+                    <span class="sign-in-text">Already a member? <a href="/index.html" data-modal-show="construction-modal">Sign in</a></span>
+                </h2>
+                <hr />
+                <!--<form action="/sign-in" class="checkout__sign-in-form sign-in-form" novalidate>
+                    <h3>
+                        Sign In
+                    </h3>
+                    <hr class="hr-2" />
+                    <p class="sign-in-form__error-summary error-summary hidden" role="alert" data-section="sign in"></p>
+                    <label for="sign-in-email">
+                        Email *
+                    </label>
+                    <input name="email" id="sign-in-email" type="email" data-required="true" aria-describedby="contact-info-heading error-msg-email">
+                    <span class="error-msg" id="error-msg-email">
+                        Please input a valid email
+                    </span>
+                    <label for="sign-in-password">
+                        Password *
+                    </label>
+                    <input name="password" id="sign-in-password" type="password" data-required="true" aria-describedby="contact-info-heading error-msg-password">
+                    <span class="error-msg" id="error-msg-password">
+                        Please input a password
+                    </span>
+                    <button class="btn btn--black sign-in-form__submit" type="submit">
+                        Sign In
+                    </button>
+                </form>-->
+                <form class="checkout__main-form" action="/review-order/index.html" novalidate>
+                    <section class="checkout__guest-sign-in-email guest-sign-in-email">
+                        <!--<h3>
+                            Or <span id="guest-info-heading">Guest Information</span>
+                        </h3>
+                        <hr class="hr-2" />-->
+                        <p class="guest-sign-in-email__error-summary error-summary hidden" role="alert" data-section=""></p>
+                        <label for="guest-sign-in-email">
+                            Email *
+                        </label>
+                        <input name="guest-sign-in-email" id="guest-sign-in-email" type="email" data-required="true" aria-describedby="guest-info-heading error-msg-guest-email">
+                        <span class="error-msg" id="error-msg-guest-email">
+                            Please input a valid email
+                        </span>
+                    </section>
+                    <section class="checkout__shipping-information shipping-information">
+                        <h2>Shipping Information</h2>
+                        <hr />
+                        <h3 id="shipping-address-heading">
+                            Shipping Address
+                        </h3>
+                        <hr class="hr-2" />
+                        <p class="shipping-information__error-summary error-summary hidden" role="alert" data-section="shipping address"></p>
+
+                        <label for="shipping-first-name">First Name *</label>
+                        <input class="shipping-information__first-name" name="shipping-first-name" id="shipping-first-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-first-name" required>
+                        <span class="error-msg" id="error-msg-shipping-first-name">Please input a first name</span>
+                        <label for="shipping-last-name">Last Name *</label>
+                        <input class="shipping-information__last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-last-name" required>
+                        <span class="error-msg" id="error-msg-shipping-last-name">Please input a last name</span>
+                        <label for="shipping-address">Address *</label>
+                        <input class="shipping-information__address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-address" required>
+                        <span class="error-msg" id="error-msg-shipping-address">Please input an address</span>
+                        <label for="shipping-apt-suite">Apt / Suite</label>
+                        <input class="shipping-information__apt-suite" name="shipping-apt-suite" id="shipping-apt-suite" type="text" aria-describedby="sr-only-shipping-apt-suite">
+                        <span class="hidden" id="sr-only-shipping-apt-suite">Appartment number, suite number or unit number.</span>
+                        <label for="shipping-city">City *</label>
+                        <input class="shipping-information__city" name="shipping-city" id="shipping-city" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-city" required>
+                        <span class="error-msg" id="error-msg-shipping-city">Please input a city name</span>
+
+                        <div class="address__form-row">
+                            <div class="address__column address__column--5">
+                                <label for="shipping-province">Province *</label>
+                                <select class="shipping-information__province" id="shipping-province" name="shipping-province" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-province" required>
+                                    <option value="" selected>Select a Province</option>
+                                    <option value="ab">Alberta</option>
+                                    <option value="bc">British Columbia</option>
+                                    <option value="mb">Manitoba</option>
+                                    <option value="nb">New Brunswick</option>
+                                    <option value="nl">Newfoundland and Labrador</option>
+                                    <option value="ns">Nova Scotia</option>
+                                    <option value="on">Ontario</option>
+                                    <option value="pe">Prince Edward Island</option>
+                                    <option value="qc">Quebec</option>
+                                    <option value="sk">Saskatchewan</option>
+                                    <option value="nt">Northwest Territories</option>
+                                    <option value="nu">Nunavut</option>
+                                    <option value="yt">Yukon</option>
+                                </select>
+                                <span class="error-msg" id="error-msg-shipping-province">Please select a province</span>
+                            </div>
+                            <div class="address__column address__column--3">
+                                <label for="shipping-postal-code">Postal Code *</label>
+                                <input type="text" class="shipping-information__postal-code" id="shipping-postal-code" name="shipping-postal-code" data-required="true" data-input-type="postal-code" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" aria-describedby="shipping-address-heading error-msg-shipping-postal-code" required>
+                                <span class="error-msg" id="error-msg-shipping-postal-code">Please input a postal code</span>
+                            </div>
+                        </div>
+                        <label for="shipping-phone-number">Phone Number *</label>
+                        <input type="tel" id="shipping-phone-number" name="shipping-phone-number" class="shipping-information__phone-number" data-required="true" data-input-type="phone-number" aria-describedby="shipping-address-heading error-msg-shipping-phone" required>
+                        <span class="error-msg" id="error-msg-shipping-phone">Please enter a phone number</span>
+                        <h3>
+                            Shipping Method
+                        </h3>
+                        <hr class="hr-2" />
+                        <fieldset class="shipping-information__shipping-options">
+                            <legend class="sr-only">Shipping Method</legend>
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="cp-10-day" value="cp-10-day" checked>
+                                <span class="custom-radio"></span>
+                                $0.00 Canada Post - Free Shipping. Delivers in 10 days.
+                            </label>
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="ex-5-day" value="ex-5-day">
+                                <span class="custom-radio"></span>
+                                $8.00 Canada Post - Express Shipping. Delivers in 5 days.
+                            </label>
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="xp-2-3-day" value="xp-2-3-day">
+                                <span class="custom-radio"></span>
+                                $14.00 Canada Post - Xpresspost. Delivers in 2 to 3 days.
+                            </label>
+                            <label class="shipping-information__shipping-type">
+                                <input class="shipping-options__option" type="radio" name="shipping-method" id="pr-1-day" value="pr-1-day">
+                                <span class="custom-radio"></span>
+                                $20.00 Canada Post - Priority Delivery. Delivers in 24 hours.
+                            </label>
+                        </fieldset>
+                    </section>
+                    <section class="checkout__payment-information payment-information">
+                        <h2 id="payment-info-heading">
+                            Payment Information
+                        </h2>
+                        <hr />
+                        <h3>
+                            Card Information
+                        </h3>
+                        <hr class="hr-2" />
+                        <p class="payment-information__error-summary error-summary hidden" role="alert" data-section="payment and billing"></p>
+                        <h4>
+                            Accepted Cards
+                        </h4>
+                        <ul class="payment-information__credit-cards">
+                            <li>
+                                <img src="../../assets/visa-logo.svg" alt="Visa">
+                            </li>
+                            <li>
+                                <img src="../../assets/mastercard-logo.svg" alt="Mastercard">
+                            </li>
+                            <li>
+                                <img src="../../assets/amex-logo.svg" alt="American Express">
+                            </li>
+                            <li>
+                                <img src="../../assets/discover-logo.svg" alt="Discover">
+                            </li>
+                        </ul>
+                        <label for="credit-card-number">
+                            Credit Card Number *
+                        </label>
+                        <input type="text" id="credit-card-number" name="credit-card-number" data-required="true" data-input-type="credit-card-number" aria-describedby="payment-info-heading error-msg-cc-number sr-only-accepted-cc" required autocomplete="off" class="payment-information__credit-card-number">
+                        <span class="error-msg" id="error-msg-cc-number">
+                            Please enter a valid credit card number.
+                        </span>
+                        <span class="hidden" id="sr-only-accepted-cc">Accepted credit cards are Visa, Mastercard, American Express and Discover.</span>
+                        <div class="payment-information__form-row">
+                            <div class="payment-information__column">
+                                <label for="expiry-date">
+                                    Expiry Date (MM/YY) *
+                                </label>
+                                <input type="text" id="expiry-date" name="expiry-date" data-required="true" data-input-type="expiry-date" aria-describedby="payment-info-heading error-msg-expiry-date sr-only-cc-expiry-date" required autocomplete="off" class="payment-information__expiry-date">
+                                <span class="error-msg" id="error-msg-expiry-date">
+                                    Please enter a valid expiry date
+                                </span>
+                                <span class="hidden" id="sr-only-cc-expiry-date">in the format of M M / Y Y.</span>
+                            </div>
+                            <div class="payment-information__column">
+                                <div class="payment-information__label-tooltip">
+                                    <label for="security-code">
+                                        Security Code *
+                                    </label>
+                                    <div aria-label="Security code tooltip" class="payment-information__tooltip">
+                                        <button class="payment-information__tooltip-icon" title="View tool tip" aria-describedby="tooltip-security-code" type="button" aria-expanded="false">
+                                            <span aria-hidden="true">?</span>
+                                        </button>
+                                        <div class="payment-information__tooltip-popup" id="tooltip-security-code" aria-hidden="true">
+                                            <div class="payment-information__tooltip-popup-background">
+                                                <div class="payment-information__tooltip-content" tabindex="-1">
+                                                    <h1>Where to find your credit card security code</h1>
+                                                    <p>Every credit card has a 3 or 4 digit security code called the CSC, CVV, CV2, CVC, or CCV. It can be found on either the front or on the back of your card.</p>
+                                                    <h2 aria-hidden="true">American Express</h2>
+                                                    <div class="sample-credit-card sample-amex">
+                                                        <p aria-hidden="true">0000</p>
+                                                        <p aria-hidden="true">0000 000000 00000</p>
+                                                    </div>
+                                                    <h2 aria-hidden="true">Visa, Mastercard, Discover,...</h2>
+                                                    <div class="sample-credit-card sample-others">
+                                                        <p aria-hidden="true"><span>000</span></p>
+                                                    </div>
+                                                </div>
+                                                <button class="payment-information__tooltip-popup__btn--close" type="button">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg class="icon--close-btn">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprite.svg#close"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="payment-information__tooltip-popup-arrow"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" id="security-code" name="security-code" data-required="true" data-input-type="ccv" aria-describedby="payment-info-heading error-msg-ccv" required autocomplete="off" class="payment-information__security-code">
+                                <span class="error-msg" id="error-msg-ccv">
+                                    Please enter a valid security code
+                                </span>
+                            </div>
+                        </div>
+                        <div class="checkout__billing-address billing-address">
+                            <h3 id="billing-address-heading">
+                                Billing address
+                            </h3>
+                            <hr class="hr-2" />
+                            <label for="billing-address-remove" class="billing-address__billing-address-check">
+                                <input type="checkbox" name="billing-address-remove" id="billing-address-remove" class="billing-address__billing-address-checkbox" checked="checked" />
+                                <span class="billing-address__billing-address-custom-checkbox"></span>
+                                <span>
+                                    My billing address is the same as my shipping address
+                                </span>
+                            </label>
+                            <div class="checkout__billing-address-form checkout__billing-address-form--hidden">
+                                <label for="billing-first-name">First Name *</label>
+                                <input class="billing-address__first-name" name="billing-first-name" id="billing-first-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-first-name" required disabled>
+                                <span class="error-msg" id="error-msg-billing-first-name">Please input a first name</span>
+                                <label for="billing-last-name">Last Name *</label>
+                                <input class="billing-address__last-name" name="billing-last-name" id="billing-last-name" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-last-name" required disabled>
+                                <span class="error-msg" id="error-msg-billing-last-name">Please input a last name</span>
+                                <label for="billing-address">Address *</label>
+                                <input class="billing-address__address" name="billing-address" id="billing-address" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-address" required disabled>
+                                <span class="error-msg" id="error-msg-billing-address">Please input an address</span>
+                                <label for="billing-apt-suite">Apt / Suite</label>
+                                <input class="billing-address__apt-suite" name="billing-apt-suite" id="billing-apt-suite" type="text" aria-describedby="sr-only-billing-apt-suite" disabled>
+                                <span class="hidden" id="sr-only-billing-apt-suite">Appartment number, suite number or unit number.</span>
+                                <label for="billing-city">City *</label>
+                                <input class="billing-address__city" name="billing-city" id="billing-city" type="text" data-required="true" aria-describedby="billing-address-heading error-msg-billing-city" required disabled>
+                                <span class="error-msg" id="error-msg-billing-city">Please input a city name</span>
+
+                                <div class="address__form-row">
+                                    <div class="address__column address__column--5">
+                                        <label for="billing-province">Province *</label>
+                                        <select class="billing-address__province" id="billing-province" name="billing-province" data-required="true" aria-describedy="billing-address-heading error-msg-billing-province" required disabled>
+                                            <option value="" selected>Select a Province</option>
+                                            <option value="ab">Alberta</option>
+                                            <option value="bc">British Columbia</option>
+                                            <option value="mb">Manitoba</option>
+                                            <option value="nb">New Brunswick</option>
+                                            <option value="nl">Newfoundland and Labrador</option>
+                                            <option value="ns">Nova Scotia</option>
+                                            <option value="on">Ontario</option>
+                                            <option value="pe">Prince Edward Island</option>
+                                            <option value="qc">Quebec</option>
+                                            <option value="sk">Saskatchewan</option>
+                                            <option value="nt">Northwest Territories</option>
+                                            <option value="nu">Nunavut</option>
+                                            <option value="yt">Yukon</option>
+                                        </select>
+                                        <span class="error-msg" id="error-msg-billing-province">Please select a province</span>
+                                    </div>
+                                </div>
+                                <div class="address__column address__column--3">
+                                    <label for="billing-postal-code">Postal Code *</label>
+                                    <input type="text" class="billing-address__postal-code" id="billing-postal-code" name="billing-postal-code" data-required="true" data-input-type="postal-code" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" aria-describedby="billing-address-heading error-msg-billing-postal-code" required disabled>
+                                    <span class="error-msg" id="error-msg-billing-postal-code">Please input a postal code</span>
+                                </div>
+                                <label for="billing-phone-number">Phone Number *</label>
+                                <input type="tel" class="billing-address__phone-number" id="billing-phone-number" name="billing-phone-number" data-required="true" data-input-type="phone-number" aria-describedby="billing-address-heading error-msg-billing-phone" required disabled>
+                                <span class="error-msg" id="error-msg-billing-phone">Please enter a phone number</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--black payment-information__submit">
+                            Finish and Review Order
+                        </button>
+                    </section>
+                </form>
+            </div>
+        </section>
+        <div data-template="order-summary"></div>
     </div>
     <div data-template="footer"></div>
     <div data-component="modal"></div>
@@ -31,13 +319,13 @@
     <script>
 
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-140213591-1');
 
     </script>
-    <script src="../../scripts.js"></script>
+    <script src="../../scripts-checkout.js"></script>
     <script src="./checkout.js"></script>
 </body>
 

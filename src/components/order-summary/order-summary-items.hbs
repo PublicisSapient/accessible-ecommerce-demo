@@ -1,0 +1,56 @@
+<p class="order-summary__total-quantity">{{cartItemCount}} {{cartItemsLabel}}</p>
+<ul class="order-summary__item-list">
+  {{#each cartItems}}
+  <li class="order-summary__item">
+    <a class="order-summary__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="{{product_name}}. Size: {{size}}, Color: {{color}}, quantity: {{quantity}}, Item unit price: ${{price_sale}}, Item total price: ${{total_price}}">
+      <img class="order-summary__image" alt="" src="{{../rootPath}}/{{thumbnail_url}}">
+      <div class="order-summary__description">
+        <p class="order-summary__item-title">{{product_name}}</p>
+        <dl class="order-summary__details">
+          <div class="order-summary__detail">
+            <dt>Price</dt>
+            <dd class="detail__price">${{price_sale}}</dd>
+          </div>
+          <div class="order-summary__detail">
+            <dt>Color</dt>
+            <dd>{{color}}</dd>
+          </div>
+          <div class="order-summary__detail">
+            <dt>Size</dt>
+            <dd>{{size}}</dd>
+          </div>
+        </dl>
+        <dl class="order-summary__details">
+          <div class="order-summary__detail">
+            <dt>Qty</dt>
+            <dd>{{quantity}}</dd>
+          </div>
+          <div class="order-summary__detail">
+            <dt>Total</dt>
+            <dd class="detail__price">${{total_price}}</dd>
+          </div>
+        </dl>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</ul>
+
+<dl class="order-summary__totals">
+  <div class="order-summary__subtotal">
+    <dt>Subtotal</dt>
+    <dd>${{cartSubtotal}}</dd>
+  </div>
+  <div class="order-summary__shipping-estimate">
+    <dt>Shipping<span class="est-text"> estimate</span></dt>
+    <dd>Free</dd>
+  </div>
+  <div class="order-summary__tax-estimate">
+    <dt>Taxes<span class="est-text"> estimate</span></dt>
+    <dd>$0.00</dd>
+  </div>
+  <div class="order-summary__total">
+    <dt><span class="est-text">Estimated </span>Total</dt>
+    <dd>${{cartSubtotal}}</dd>
+  </div>
+</dl>

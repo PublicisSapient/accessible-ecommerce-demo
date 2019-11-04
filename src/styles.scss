@@ -99,6 +99,7 @@ select::-moz-focus-inner {
 @import "./components/breadcrumb/breadcrumb";
 @import "./components/footer/footer";
 @import "./components/header/global-navigation";
+@import "./components/header-checkout/global-navigation-checkout";
 @import "./components/mini-cart/mini-cart";
 @import "./components/accordion/accordion";
 
@@ -116,3 +117,5 @@ select::-moz-focus-inner {
 @import "./components/product-details-accordion/product-details-accordion";
 @import "./components/size-chart/size-chart";
 @import "./components/product-reviews/product-reviews";
+
+@import "./components/order-summary/order-summary";

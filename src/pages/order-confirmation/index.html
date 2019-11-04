@@ -8,20 +8,154 @@
     <title>The Accessibile eStore, Order Confirmation</title>
 
     <link rel="stylesheet" href="../../styles.scss">
+    <link rel="stylesheet" href="./order-confirmation.scss">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
 </head>
 
-<body class="pdp">
-    <header class="navigation" data-template="global-header"></header>
-    <div class="main">
-        <div data-component="breadcrumb"></div>
-        <div class="container">
-            <section id="content" class="main-content">
-                <h1 class="template-heading">Order Confirmation</h1>
+<body>
+    <header class="navigation" data-template="global-header-checkout"></header>
+    <div data-component="breadcrumb"></div>
+    <div class="container order-confirmation">
+        <section id="content" class="main-content">
+            <h1 class="template-heading">Order Confirmation</h1>
+            <section class="order-confirmation__intro">
+                <p>
+                    Thank you for shopping with us. We have sent you a confirmation email of this order to <span class="email-address"></span>. You may print a copy for your records.
+                </p>
+                <div class="order-confirmation__button-container">
+                    <button class="btn btn--outline-black order-confirmation__print-page" data-modal-show="construction-modal">Print page</button>
+                    <a class="btn btn--black order-confirmation__continue-shipping" href="/index.html">Continue shopping</a>
+                </div>
             </section>
-        </div>
+            <section class="order-confirmation__order-details">
+                <h2>Order Details</h2>
+                <hr>
+                <dl class="order-details">
+                    <p>
+                        <dt>Order Number:</dt>
+                        <dd class="order-detail__number">1234567890</dd>
+                    </p>
+                    <p>
+                        <dt>Order Total:</dt>
+                        <dd class="order-detail__total"></dd>
+                    </p>
+                    <p>
+                        <dt>Order Date:</dt>
+                        <dd class="order-detail__date">
+                            <span class="day"></span><span> / </span><span class="month"></span><span> / </span><span class="year"></span>
+                        </dd>
+                    </p>
+                    <p>
+                        <dt>Order Time:</dt>
+                        <dd id="order-detail__time">
+                            <span class="hour"></span><span>:</span><span class="minutes"></span>
+                            <span class="am-pm"></span>
+                        </dd>
+                    </p>
+                </dl>
+                <h2>Order Summary</h2>
+                <div data-template="order-summary"></div>
+            </section>
+            <section class="order-confirmation__contact-info">
+                <h2>Contact Information</h2>
+                <a class="skip-link" href="#back-to-contact-info" id="skip-contact-info">Skip contact information</a>
+                <hr>
+                <p class="email-address"></p>
+            </section>
+            <a class="skip-link" href="#skip-contact-info" id="back-to-contact-info">Back to contact information</a>
+            <section class="order-confirmation__shipping-info">
+                <h2>Shipping Information</h2>
+                <hr>
+                <h3>Shipping Address</h3>
+                <a class="skip-link" href="#back-to-shipping-info" id="skip-shipping-info">Skip shipping information</a>
+                <hr class="hr-2">
+                <p class="order-confirmation__shipping-info-details">
+                    <span>
+                        <span class="order-confirmation__shipping-info-detail" id="shipping-first-name"></span> <span class="order-confirmation__shipping-info-detail" id="shipping-last-name"></span>
+                    </span>
+                    <span class="order-confirmation__shipping-info-detail" id="shipping-address"></span>
+                    <span class="order-confirmation__shipping-info-detail" id="shipping-apt-suite"></span>
+                    <span>
+                        <span class="order-confirmation__shipping-info-detail" id="shipping-city"></span>, <span class="order-confirmation__shipping-info-detail" id="shipping-province"></span>
+                    </span>
+                    <span class="order-confirmation__shipping-info-detail" id="shipping-postal-code"></span>
+                    <span class="order-confirmation__shipping-info-detail" id="shipping-phone-number"></span>
+                </p>
+                <h3>Shipping Method</h3>
+                <hr class="hr-2">
+                <div class="order-confirmation__shipping-info-detail" id="shipping-method">
+                    <p class="hidden" id="cp-10-day">$0.00. Canada Post, Free Shipping. Deliver in 10 days.</p>
+                    <p class="hidden" id="ex-5-day" >$8.00 Canada Post - Express Shipping. Delivers in 5 days.</p>
+                    <p class="hidden" id="xp-2-3-day">$14.00 Canada Post - Xpresspost. Delivers in 2 - 3 days.</p>
+                    <p class="hidden" id="pr-1-day">$20.00 Canada Post - Priority Delivery. Delivers in 24 hours.</p>
+                </div>
+            </section>
+            <a class="skip-link" href="#skip-shipping-info" id="back-to-shipping-info">Back to shipping information</a>
+            <section class="order-confirmation__payment-info">
+                <h2>Payment Information</h2>
+                <a class="skip-link" href="#print-page-btn-2" id="skip-payment-info">Skip payment information</a>
+                <hr>
+                <h3>Card Information</h3>
+                <hr class="hr-2">
+                <p class="order-confirmation__payment-info-details">
+                    <span class="order-confirmation__payment-info-detail" id="cc-num">
+                        Mastercard: ****-****-****-<span id="cc-last-four-digits"></span>
+                    </span>
+                    <span>
+                        <span class="order-confirmation__payment-info-detail">Expiry date: </span><span id="cc-expiry-date">
+                        </span>
+                    </span>
+                    <span>
+                        <span class="order-confirmation__payment-info-detail">Name on Card: </span><span id="cc-holder-name"></span>
+                    </span>
+                </p>
+                <h3>Billing Address</h3>
+                <hr class="hr-2">
+                <p class="order-confirmation__billing-info-details billing-address-same hidden">My billing address is the same as my shipping address.</p>
+                <p class="order-confirmation__billing-info-details billing-address-different hidden">
+                    <span>
+                        <span class="order-confirmation__billing-info-detail" id="billing-first-name"></span> <span class="order-confirmation__billing-info-detail" id="billing-last-name"></span>
+                    </span>
+                    <span class="order-confirmation__billing-info-detail" id="billing-address"></span>
+                    <span class="order-confirmation__billing-info-detail" id="billing-apt-suite"></span>
+                    <span>
+                        <span class="order-confirmation__billing-info-detail" id="billing-city"></span>, <span class="order-confirmation__billing-info-detail" id="billing-province"></span>
+                    </span>
+                    <span class="order-confirmation__billing-info-detail" id="billing-postal-code"></span>
+                    <span class="order-confirmation__billing-info-detail" id="billing-phone-number"></span>
+                </p>
+            </section>
+            <div class="order-confirmation__button-container">
+                <button class="btn btn--outline-black order-confirmation__print-page" id="print-page-btn-2" data-modal-show="construction-modal">Print page</button>
+                <a class="btn btn--black order-confirmation__continue-shipping" href="/index.html">Continue shopping</a>
+            </div>
+        </section>
+        <aside class="order-confirmation__create-account">
+            <div class="create-account__background">
+                <h2>Create an Account</h2>
+                <hr>
+                <p>
+                    Create an account to enjoy a faster checkout, see your purchase history, and save items to a wishlist.
+                </p>
+                <form class="create-account-form">
+                    <label for="password">Enter Password</label>
+                    <span class="password-format" aria-hidden="true">Password must be 8 to 15 characters long and cannot use %$&()_.</span>
+                    <span class="sr-only" id="password-format-text">Password must be 8 to 15 characters long and cannot use the following characters: percentage, dollar, ampersand, parentheses and underscore.</span>
+                    <input type="password" name="password" id="password" aria-describedby="password-format-text">
+                    <label for="password-confirm">Confirm Password</label>
+                    <input type="password" name="password-confirm" id="password-confirm">
+                    <label for="save-payment-info" class="save-payment-info-check">
+                        <input type="checkbox" id="save-payment-info">
+                        <span class="save-payment-info__save-payment-info-custom-checkbox"></span>
+                        <span>Save my payment information</span>
+                    </label>
+                    <button class="btn btn--black order-confirmation__create-acccount" type="submit" data-modal-show="construction-modal">Create Account</button>
+                    <a class="btn btn--outline-black order-confirmation__continue-shipping" href="/index.html">Continue shopping</a>
+                </form>
+            </div>
+        </aside>
     </div>
     <div data-template="footer"></div>
     <div data-component="modal"></div>
@@ -37,8 +171,7 @@
         gtag('config', 'UA-140213591-1');
 
     </script>
-    <script src="../../scripts.js"></script>
+    <script src="../../scripts-checkout.js"></script>
     <script src="./order-confirmation.js"></script>
 </body>
-
 </html>

@@ -1,76 +1,13 @@
 @import '../../scss/variables';
 
-/* ============================== Mini Cart */
+/* ============================== Order Summary */
 
-.mini-cart {
+.order-summary {
 
-  &__toggle {
-    position: relative;
-  }
-
-  &__visible-label {
-    &--amount {
-      text-align: center;
-      margin-left: 8px;
-      background-color: $white;
-      color: $black;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      width: 2.0rem;
-      height: 2.0rem;
-      line-height: 2.0rem;
-    }
-  }
-
-  &__dropdown {
-    position: absolute;
-    top: 42px;
-    right: -20px;
-    width: 394px;
-    display: none;
+  &__background {
     background: $white;
-    z-index: 1;
-    box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.31);
-    z-index: 100;
     padding: 16px 24px;
     color: $black;
-
-    &:before {
-      top: -24px;
-      right: 18px;
-      margin-left: 18px;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      box-sizing: border-box;
-      border: 12px solid transparent;
-      border-bottom-color: #fff;
-    }
-
-    &.expanded {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
-
-  &__btn--close {
-    background: transparent;
-    border: 0;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin-left: auto;
-    margin-right: -8px;
-    margin-top: -4px;
-    cursor: pointer;
-
-    .icon--close-btn {
-      width: 18px;
-      height: 18px;
-    }
   }
 
   &__description {
@@ -82,7 +19,8 @@
 
   &__details {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: $font-xs;
+    font-weight: bold;
     line-height: 18px;
 
     dt {
@@ -125,6 +63,7 @@
     margin: 0;
     padding-top: 16px;
     padding-bottom: 16px;
+    font-weight: bold;
   }
 
   &__items {
@@ -138,12 +77,17 @@
     flex: 0 0 100%;
     overflow-y: scroll;
     max-height: 324px;
+    border-bottom: 1px solid $grey;
   }
 
   &__item {
     display: block;
     padding: 16px 0;
     border-bottom: 1px solid $grey;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   &__item-link {
@@ -156,7 +100,7 @@
     &:focus {
       outline-offset: -1px;
 
-      .mini-cart__item-title {
+      .order-summary__item-title {
         text-decoration: underline;
       }
     }
@@ -169,8 +113,9 @@
   }
 
   &__item-title {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
+    font-size: $font-sm;
+    font-weight: bold;
+    line-height: $font-lg;
     margin-top: 0;
     margin-bottom: 8px;
     flex: 0 0 100%;
@@ -202,12 +147,6 @@
     width: 20px;
     height: 20px;
     margin-right: 8px;
-
-    &.icon--heart-outline {
-      fill: transparent;
-      stroke: $black;
-      stroke-width: 2px;
-    }
   }
 
   &__summary {
@@ -215,47 +154,44 @@
     width: 100%;
   }
 
-  &__summary-subtotal {
+  &__totals {
     display: inline-block;
     width: 100%;
     margin-bottom: 16px;
-  }
-
-  &__subtotal-title {
-    float: left;
-    font-size: 1.4rem;
-    line-height: 22px;
+    font-size: $font-sm;
   }
 
   &__subtotal {
+    font-weight: bold;
+    margin: 5px 0 20px;
+  }
+
+  &__shipping-estimate {
+    margin: 5px 0;
+  }
+
+  &__tax-estimate {
+    margin: 5px 0;
+  }
+
+  &__total {
+    font-weight: bold;
+    margin: 30px 0 0;
+    padding: 20px 0 0;
+    border-top: 1px solid $grey;
+  }
+  dt {
+    display: inline-block;
+  }
+
+  dd {
+    display: inline-block;
     float: right;
-  }
-
-  &__summary-controls {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  &__view-cart {
-    text-decoration: none;
-    padding: 0.5rem;
-    float: left;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-
-  &__checkout {
-    &:focus {
-      outline-color: $black;
-    }
   }
 
   &__cta-btn {
     text-align: center;
     flex: 0 0 48%;
+    width: 100%;
   }
 }
