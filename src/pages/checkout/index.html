@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+
 <head prefix="og: http://ogp.me/ns/website#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="../../styles.scss">
     <link rel="stylesheet" href="./checkout.scss">
 </head>
+
 <body>
     <header class="navigation" data-template="global-header-checkout"></header>
     <div data-component="breadcrumb"></div>
@@ -84,7 +86,7 @@
                         <label for="shipping-last-name">Last Name *</label>
                         <input class="shipping-information__last-name" name="shipping-last-name" id="shipping-last-name" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-last-name" required>
                         <span class="error-msg" id="error-msg-shipping-last-name">Please input a last name</span>
-                        <label for="shipping-address">Address *</label> 
+                        <label for="shipping-address">Address *</label>
                         <input class="shipping-information__address" name="shipping-address" id="shipping-address" type="text" data-required="true" aria-describedby="shipping-address-heading error-msg-shipping-address" required>
                         <span class="error-msg" id="error-msg-shipping-address">Please input an address</span>
                         <label for="shipping-apt-suite">Apt / Suite</label>
@@ -117,31 +119,12 @@
                             </div>
                             <div class="address__column address__column--3">
                                 <label for="shipping-postal-code">Postal Code *</label>
-                                <input
-                                    type="text"
-                                    class="shipping-information__postal-code"
-                                    id="shipping-postal-code"
-                                    name="shipping-postal-code"
-                                    data-required="true"
-                                    data-input-type="postal-code"
-                                    pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
-                                    aria-describedby="shipping-address-heading error-msg-shipping-postal-code"
-                                    required
-                                >
+                                <input type="text" class="shipping-information__postal-code" id="shipping-postal-code" name="shipping-postal-code" data-required="true" data-input-type="postal-code" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" aria-describedby="shipping-address-heading error-msg-shipping-postal-code" required>
                                 <span class="error-msg" id="error-msg-shipping-postal-code">Please input a postal code</span>
                             </div>
                         </div>
                         <label for="shipping-phone-number">Phone Number *</label>
-                        <input
-                            type="tel"
-                            id="shipping-phone-number"
-                            name="shipping-phone-number"
-                            class="shipping-information__phone-number"
-                            data-required="true"
-                            data-input-type="phone-number"
-                            aria-describedby="shipping-address-heading error-msg-shipping-phone"
-                            required
-                        >
+                        <input type="tel" id="shipping-phone-number" name="shipping-phone-number" class="shipping-information__phone-number" data-required="true" data-input-type="phone-number" aria-describedby="shipping-address-heading error-msg-shipping-phone" required>
                         <span class="error-msg" id="error-msg-shipping-phone">Please enter a phone number</span>
                         <h3>
                             Shipping Method
@@ -201,17 +184,7 @@
                         <label for="credit-card-number">
                             Credit Card Number *
                         </label>
-                        <input
-                            type="text"
-                            id="credit-card-number"
-                            name="credit-card-number"
-                            data-required="true"
-                            data-input-type="credit-card-number"
-                            aria-describedby="payment-info-heading error-msg-cc-number sr-only-accepted-cc"
-                            required
-                            autocomplete="off"
-                            class="payment-information__credit-card-number"
-                        >
+                        <input type="text" id="credit-card-number" name="credit-card-number" data-required="true" data-input-type="credit-card-number" aria-describedby="payment-info-heading error-msg-cc-number sr-only-accepted-cc" required autocomplete="off" class="payment-information__credit-card-number">
                         <span class="error-msg" id="error-msg-cc-number">
                             Please enter a valid credit card number.
                         </span>
@@ -221,17 +194,7 @@
                                 <label for="expiry-date">
                                     Expiry Date (MM/YY) *
                                 </label>
-                                <input
-                                    type="text"
-                                    id="expiry-date"
-                                    name="expiry-date"
-                                    data-required="true"
-                                    data-input-type="expiry-date"
-                                    aria-describedby="payment-info-heading error-msg-expiry-date sr-only-cc-expiry-date"
-                                    required
-                                    autocomplete="off"
-                                    class="payment-information__expiry-date"
-                                >
+                                <input type="text" id="expiry-date" name="expiry-date" data-required="true" data-input-type="expiry-date" aria-describedby="payment-info-heading error-msg-expiry-date sr-only-cc-expiry-date" required autocomplete="off" class="payment-information__expiry-date">
                                 <span class="error-msg" id="error-msg-expiry-date">
                                     Please enter a valid expiry date
                                 </span>
@@ -246,7 +209,7 @@
                                         <button class="payment-information__tooltip-icon" title="View tool tip" aria-describedby="tooltip-security-code" type="button" aria-expanded="false">
                                             <span aria-hidden="true">?</span>
                                         </button>
-                                        <div class="payment-information__tooltip-popup" id="tooltip-security-code" aria-hidden="true">    
+                                        <div class="payment-information__tooltip-popup" id="tooltip-security-code" aria-hidden="true">
                                             <div class="payment-information__tooltip-popup-background">
                                                 <div class="payment-information__tooltip-content" tabindex="-1">
                                                     <h1>Where to find your credit card security code</h1>
@@ -264,7 +227,7 @@
                                                 <button class="payment-information__tooltip-popup__btn--close" type="button">
                                                     <span class="sr-only">Close</span>
                                                     <svg class="icon--close-btn">
-                                                        <use xlink:href="../../assets/sprite.svg#close"></use>
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprite.svg#close"></use>
                                                     </svg>
                                                 </button>
                                             </div>
@@ -272,17 +235,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input
-                                    type="text"
-                                    id="security-code"
-                                    name="security-code"
-                                    data-required="true"
-                                    data-input-type="ccv"
-                                    aria-describedby="payment-info-heading error-msg-ccv"
-                                    required
-                                    autocomplete="off"
-                                    class="payment-information__security-code"
-                                >
+                                <input type="text" id="security-code" name="security-code" data-required="true" data-input-type="ccv" aria-describedby="payment-info-heading error-msg-ccv" required autocomplete="off" class="payment-information__security-code">
                                 <span class="error-msg" id="error-msg-ccv">
                                     Please enter a valid security code
                                 </span>
@@ -294,12 +247,7 @@
                             </h3>
                             <hr class="hr-2" />
                             <label for="billing-address-remove" class="billing-address__billing-address-check">
-                                <input
-                                    type="checkbox" name="billing-address-remove"
-                                    id="billing-address-remove"
-                                    class="billing-address__billing-address-checkbox"
-                                    checked="checked"
-                                />
+                                <input type="checkbox" name="billing-address-remove" id="billing-address-remove" class="billing-address__billing-address-checkbox" checked="checked" />
                                 <span class="billing-address__billing-address-custom-checkbox"></span>
                                 <span>
                                     My billing address is the same as my shipping address
@@ -346,32 +294,11 @@
                                 </div>
                                 <div class="address__column address__column--3">
                                     <label for="billing-postal-code">Postal Code *</label>
-                                    <input
-                                        type="text"
-                                        class="billing-address__postal-code"
-                                        id="billing-postal-code"
-                                        name="billing-postal-code"
-                                        data-required="true"
-                                        data-input-type="postal-code"
-                                        pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
-                                        aria-describedby="billing-address-heading error-msg-billing-postal-code"
-                                        required
-                                        disabled
-                                    >
+                                    <input type="text" class="billing-address__postal-code" id="billing-postal-code" name="billing-postal-code" data-required="true" data-input-type="postal-code" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" aria-describedby="billing-address-heading error-msg-billing-postal-code" required disabled>
                                     <span class="error-msg" id="error-msg-billing-postal-code">Please input a postal code</span>
                                 </div>
                                 <label for="billing-phone-number">Phone Number *</label>
-                                <input
-                                    type="tel"
-                                    class="billing-address__phone-number"
-                                    id="billing-phone-number"
-                                    name="billing-phone-number"
-                                    data-required="true"
-                                    data-input-type="phone-number"
-                                    aria-describedby="billing-address-heading error-msg-billing-phone"
-                                    required
-                                    disabled
-                                >
+                                <input type="tel" class="billing-address__phone-number" id="billing-phone-number" name="billing-phone-number" data-required="true" data-input-type="phone-number" aria-describedby="billing-address-heading error-msg-billing-phone" required disabled>
                                 <span class="error-msg" id="error-msg-billing-phone">Please enter a phone number</span>
                             </div>
                         </div>
@@ -392,7 +319,7 @@
     <script>
 
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-140213591-1');
@@ -401,4 +328,5 @@
     <script src="../../scripts-checkout.js"></script>
     <script src="./checkout.js"></script>
 </body>
+
 </html>
