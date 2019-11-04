@@ -108,7 +108,7 @@ export function normalizeName(str) {
  * @param  {Array} [terms] - list of terms to add after the site name
  */
 export function setPageTitle(terms) {
-  const siteName = 'The Accessible eStore';
+  const siteName = 'The Accessible E Store';
   document.title = (terms)
     ? `${siteName}, ${terms.join(', ')}`
     : siteName;
