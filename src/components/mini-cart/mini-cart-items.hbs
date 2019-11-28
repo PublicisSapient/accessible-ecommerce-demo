@@ -2,7 +2,7 @@
 <ul class="mini-cart__item-list">
   {{#each cartItems}}
   <li class="mini-cart__item">
-    <a class="mini-cart__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Shirt Malo. Size: Medium, Color: blue, quantity: 1, Item unit price: $36.95, Item total price: $36.95">
+    <a class="mini-cart__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="{{product_name}}. Size: {{size}}, Color: {{color}}, quantity: {{quantity}}, Item unit price: ${{price_sale}}, Item total price: ${{total_price}}">
       <img class="mini-cart__image" alt="" src="{{../rootPath}}/{{thumbnail_url}}">
       <div class="mini-cart__description">
         <p class="mini-cart__item-title">{{product_name}}</p>
@@ -33,19 +33,19 @@
       </div>
     </a>
     <div class="mini-cart__controls">
-      <button class="mini-cart__control btn--link" data-remove="{{cart_id}}">
+      <button class="mini-cart__control btn--link" data-remove="{{cart_id}}" aria-label="Remove {{product_name}}">
         <svg class="icon mini-cart__control-icon">
           <use xlink:href="{{../rootPath}}/sprite.svg#trash"></use>
         </svg>
         Remove
       </button>
-      <a class="mini-cart__control btn--link" href="../pdp/index.html?product_id={{product_id}}">
+      <a class="mini-cart__control btn--link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Edit {{product_name}}">
         <svg class="icon mini-cart__control-icon">
           <use xlink:href="{{../rootPath}}/sprite.svg#edit"></use>
         </svg>
         Edit
       </a>
-      <button class="mini-cart__control btn--link" data-modal-show="construction-modal">
+      <button class="mini-cart__control btn--link" data-modal-show="construction-modal" aria-label="Save {{product_name}} to list">
         <svg class="icon mini-cart__control-icon icon--heart-outline">
           <use xlink:href="{{../rootPath}}/sprite.svg#heart"></use>
         </svg>
