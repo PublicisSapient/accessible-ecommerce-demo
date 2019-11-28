@@ -32,7 +32,10 @@
 	a {
     color: $white;
 		text-decoration: none;
-		margin-bottom: 8px;
+    margin-bottom: 8px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   ul {

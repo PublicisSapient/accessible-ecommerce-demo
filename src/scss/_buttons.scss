@@ -1,7 +1,11 @@
 @import './variables';
 
 /* ====================================== BUTTONS */
-
+button {
+  &:not(:disabled):hover {
+    text-decoration: underline;
+  }
+}
 .btn {
   font-size: $font-xs;
   font-weight: bold;
@@ -20,6 +24,10 @@
   &:not(:disabled):hover,
   &:focus {
     color: white;
+  }
+
+  &:not(:disabled):hover {
+    text-decoration: underline;
   }
 
   &::before {

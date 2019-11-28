@@ -155,7 +155,7 @@
     &:hover,
     &:focus {
       outline-offset: -1px;
-
+      text-decoration: none;
       .mini-cart__item-title {
         text-decoration: underline;
       }
