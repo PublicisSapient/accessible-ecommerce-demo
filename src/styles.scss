@@ -75,6 +75,9 @@ a {
 
 a {
   color: $black;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 // Firefox hack :(

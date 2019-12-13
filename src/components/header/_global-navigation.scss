@@ -316,7 +316,13 @@
     display: block;
     border-bottom: 1px solid $grey;
 
-    &:hover,
+    &:hover {
+      text-decoration: underline;
+      color: $pure-black;
+      font-weight: bold;
+      background-color: $light-grey;
+    }
+
     &:focus {
       text-decoration: none;
       color: $pure-black;
