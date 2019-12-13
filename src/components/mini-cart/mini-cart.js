@@ -70,6 +70,9 @@ function updateMiniCart(cartData){
   cartData.rootPath = globalVariables.rootPath;
   cartCountEl.innerHTML = cartData.cartItemCount;
   miniCartItems.innerHTML = miniCartItemsTemplate(cartData);
+  //Update aria-label of Mini Cart button in header
+  const itemText = cartData.cartItemCount > 1 ? 'items' : 'item';
+  buttonEl.setAttribute('aria-label', `Mini Cart, ${cartData.cartItemCount} ${itemText}, estimated subtotal: $${cartData.cartSubtotal}`);
 }
 
 function init(){
