@@ -1,4 +1,5 @@
 const stringify = require('csv-stringify');
+const csv=require('csvtojson');
 const fs = require('fs');
 const argv = require('minimist')(process.argv.slice(2));
 
@@ -6,7 +7,7 @@ const argv = require('minimist')(process.argv.slice(2));
 const { getRandomInt, getRandomNumber, grabAFewRandom, getRandomElement, truncateText } = require('./utils');
 
 // Arrays of configurable parameters are in product-parameters.js
-const { brands, productTypes, descriptors, sweaterDescriptors, sweaterTypes, shirtTypes, colours, sizes } = require('./product-parameters');
+const { brands, productTypes, descriptors, sweaterDescriptors, sweaterTypes, shirtTypes, colours, sizes, images } = require('./product-parameters');
 
 // Configurable options
 const NUM_RECORDS = argv.n || 10;
@@ -57,12 +58,16 @@ function generateDescription(index) {
 }
 
 function generateRating() {
-  return `${getRandomNumber(2, 5)} out of 5 by ${getRandomInt(20, 200)} people`;
+  return getRandomNumber(2, 5);
+}
+
+function generateRatingCount() {
+ return getRandomInt(20, 200);
 }
 
 let data = [];
 const columns = [
-  'id',
+  'product_id',
   'category',
   'subcategory',
   'product_type',
@@ -74,9 +79,9 @@ const columns = [
   'short_desc',
   'long_desc',
   'rating',
+  'rating_count',
   'color',
   'size',
-  'favorite',
   'thumbnail_url',
   'image_url'
 ];
@@ -85,10 +90,11 @@ for (var i = 0; i < NUM_RECORDS; i++) {
   const price = generatePrice();
   const description = generateDescription(i);
   const product = generateProduct();
+  const imageURL = `${getRandomElement(images)}-t-shirt_4460x4460.jpg`;
   const row = [
-    i, // id
+    i+1, // id
     'Women', // category
-    'Tops', // subcategory
+    'Women’s Tops', // subcategory
     product.type, // product_type
     product.name, // product_name
     getRandomElement(brands), // brand
@@ -98,18 +104,32 @@ for (var i = 0; i < NUM_RECORDS; i++) {
     description.shortText, // short_desc
     description.fullText, // long_desc
     generateRating(), // rating
+    generateRatingCount(), // rating count
     `[${grabAFewRandom(colours)}]`, // color
     `[${grabAFewRandom(sizes)}]`, // size
-    'https://via.placeholder.com/50', // thumbnail_url
-    'https://via.placeholder.com/250' // image_url
+    imageURL, // thumbnail_url
+    imageURL // image_url
   ];
   data.push(row);
 }
+const jsonDataFile = '../src/data/product_data.json';
+const csvDataFile = 'products.csv';
+const csvWriteStream = fs.createWriteStream(csvDataFile);
 
-stringify(data, { header: true, columns: columns }, (err, output) => {
-  if (err) throw err;
-  fs.writeFile('products.csv', output, (err) => {
+csvWriteStream.write(columns.join(";") + '\n');
+data.forEach(function(items){
+  csvWriteStream.write(items.join(";") + '\n', (err) => {
     if (err) throw err;
-    console.log('products.csv saved.');
+      csv({
+        delimiter: ";",
+        checkType: true
+      })
+      .fromFile(csvDataFile)
+      .then((jsonObj)=>{
+          fs.writeFile(jsonDataFile, JSON.stringify(jsonObj, null, 2), (err) => {
+            if (err) throw err;
+            console.log('product_data.json saved.');
+          });
+      })
   });
 });

@@ -24,9 +24,29 @@ function createPages(paginationData) {
   return Array.from({ length: paginationData.pageCount }, (v, k) => {
     return {
       label: k + 1,
-      isCurrent: k + 1 === paginationData.currentPage
+      isCurrent: k + 1 === paginationData.currentPage,
+      showPaginationListItem: showPaginationList(paginationData, k + 1)
     };
   });
+}
+
+/*
+* function will filter the pagination list itmes that need to show on the page
+*
+* @function showPaginationList
+* @param {Array} - data
+* @param {Int} - index
+*
+* @returns {Boolean}
+*/
+function showPaginationList(paginationData, index) {
+ const maxNumOfPagesToShow = paginationData.pageCount > 5;
+ const showTailEllipsis = maxNumOfPagesToShow && (paginationData.currentPage < 5);
+ const showHeadEllipsis = maxNumOfPagesToShow && paginationData.currentPage > (paginationData.pageCount - 4);
+
+ let showPaginationListItemCondition = (((showTailEllipsis && (index < 6)) || (showHeadEllipsis && (index > (paginationData.pageCount - 6))) || (paginationData.pageCount < 6) || (!(showTailEllipsis) && !(showHeadEllipsis) && (paginationData.currentPage - (index + 1) >= -3 && paginationData.currentPage - (index + 1) <= 1))));
+
+ return showPaginationListItemCondition;
 }
 
 function onClickPagination(event) {
@@ -45,6 +65,8 @@ function onClickPagination(event) {
 function update(paginationData) {
   if (paginationData.pageCount > 0) {
     paginationData.pages = createPages(paginationData);
+    paginationData.showFirstPage = paginationData.currentPage > 4;
+    paginationData.showLastPage = paginationData.pageCount - paginationData.currentPage >= 4;
     paginationData.prevDisabled = paginationData.currentPage === 1;
     paginationData.nextDisabled = paginationData.currentPage === paginationData.pageCount;
     paginationData.prevPage = paginationData.currentPage - 1;

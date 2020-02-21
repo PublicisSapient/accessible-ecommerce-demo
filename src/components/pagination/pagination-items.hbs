@@ -6,13 +6,35 @@
         <span class="pagination__nav-label">Previous</span>
     </button>
 </li>
+{{#if showFirstPage}}
+    <li class="pagination__list-item">
+        <button type="button" class="pagination__index showListItem" aria-label="Page 1, display results" data-go-to-page="1">
+            1
+        </button>
+    </li>
+     <li class="pagination__list-item">
+         ...
+     </li>
+{{/if}}
 {{#each pages}}
-<li class="pagination__list-item">
-    <button type="button" class="pagination__index {{activeClass isCurrent}}" aria-label="{{getAriaLabel isCurrent label}}" data-go-to-page="{{label}}">
-        {{label}}
-    </button>
-</li>
+    {{#if showPaginationListItem}}
+        <li class="pagination__list-item">
+            <button type="button" class="pagination__index {{activeClass isCurrent}}" aria-label="{{getAriaLabel isCurrent label}}" data-go-to-page="{{label}}">
+                {{label}}
+            </button>
+        </li>
+    {{/if}}
 {{/each }}
+{{#if showLastPage}}
+    <li class="pagination__list-item">
+         ...
+     </li>
+    <li class="pagination__list-item">
+        <button type="button" class="pagination__index showListItem" aria-label="Page {{pageCount}}, display results" data-go-to-page="{{pageCount}}">
+            {{pageCount}}
+        </button>
+    </li>
+{{/if}}
 <li class="pagination__list-item">
     <button type="button" aria-label="Next Page" {{isDisabled nextDisabled}} data-go-to-page="{{nextPage}}" class="pagination__nav pagination__next btn btn--black-inverted">
         <span class="pagination__nav-label">Next</span><svg class="icon--pagination-btn rotate-180">
