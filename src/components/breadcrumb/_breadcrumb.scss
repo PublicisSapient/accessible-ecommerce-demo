@@ -2,31 +2,43 @@
 /* ============================================== Breadcrumb Styles */
 
 .breadcrumb {
-    font-size: 1.2rem;
-    margin: $grid-unit * 2 0 $grid-unit * 4;
+  font-size: 1.2rem;
+  margin: $grid-unit * 2 0 $grid-unit;
+  color: $dark-grey;
+
+  a:not(.btn) {
+    color: $black;
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline;
+
+    +li::before {
+      display: inline-block;
+      margin: 0 .25em;
+      content: '>';
+    }
+  }
+
+  [aria-current="page"],
+  a[aria-current="page"] {
     color: $dark-grey;
-    a:not(.btn) {
-      color: $black;
-    }
-    ol {
-        margin: 0;
-        padding-left: 0;
-        list-style: none;
-    }
-    li {
-        display: inline;
-        +li::before {
-            display: inline-block;
-            margin: 0 .25em;
-            content: '>';
-        }
-    }
-    [aria-current="page"], a[aria-current="page"] {
-        color: $dark-grey;
-        text-decoration: none;
-    }
-    @media only screen and (min-width: $tablet) {
-        margin-top: $grid-unit * 4;
-        margin-bottom: $grid-unit * 2;
-    }
+    text-decoration: none;
+  }
+
+  &--back-link {
+    font-size: $font-xs;
+    margin: $grid-unit * 2 0 $grid-unit;
+    display: none;
+  }
+
+  @media only screen and (min-width: $phablet) {
+    margin-top: $grid-unit * 3;
+  }
 }

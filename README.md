@@ -83,6 +83,22 @@ We're using PouchDB to create an in-browser database via the Indexed DB API. Usa
 ### CSS
 The header/main nav and PLP page are using CSS Grid and Flexbox. CSS Grid is amazing to work with, so exploration of these is encouraged! We don't need to support IE!
 
+### Automated testing with Pa11y
+An automated accessibility test can be run to look for major accessibility or HTML validity errors. The test is run using pa11y-ci (https://github.com/pa11y/pa11y-ci).
+
+To run the test, stop any runner parcel server (Control + C) enter the following into Terminal:
+```bash
+npm run test
+```
+This process will 
+* delete the dist folder, 
+* build files to a new dist folder with a local url structure (as opposed to normal build process that prepends urls with a Github specific path),
+* spin up a server on http://127.0.0.1:8080, 
+* run the pa11y tests, and 
+* shut down the server. 
+
+Any errors will be displayed in Terminal.
+
 ## Deployment
 To deploy to the public site, run the following in Terminal:
 ```bash

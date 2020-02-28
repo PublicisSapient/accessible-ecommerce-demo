@@ -10,6 +10,7 @@ $light-grey: #e7e7e7;
 $grey: #d8d8d8;
 $yet-another-grey: #b5b5b5;
 $medium-grey: #9b9b9b;
+$focus-indicator: #0097F5;
 
 $rose: #b94650;
 $dark-rose: #90373d;
@@ -23,6 +24,7 @@ $blue: #3575ff;
 $dark-blue: #2a5fd2;
 $dark-grey: #333333;
 $black-transparent: rgba(25, 25, 30, 0.75);
+$purple: #bd10e0;
 
 $error-red: firebrick;
 
@@ -40,17 +42,22 @@ $menu-collapse: $phablet;
 $filters-collapse: $phablet;
 $pagination-collapse: $phablet;
 
-$grid-unit: 6px;
+$grid-unit: 8px;
 
 $input-size: 24px;
 
-$font-sans: Verdana, Geneva, Tahoma, sans-serif;
+$font-sans: Verdana,
+Geneva,
+Tahoma,
+sans-serif;
 
 // =========================================== FONT SIZES
 
 // We're using REM based on a 10px root value set on html
 // Makes the maths easy, e.g.: 1.6rem = 16px
 // body is set to 1.6rem in global.scss
+$font-hero-lg: 4rem;
+$font-hero-md: 3.2rem;
 
 $font-xxl: 2.4rem;
 $font-xl: 2rem;

@@ -1,0 +1,40 @@
+<!-- Reviews START -->
+<div id="reviews" class="product-reviews">
+    <div class="rating-summary">
+        {{#each ratings}}
+        <svg class="icon product-rating__star">
+            <use xlink:href="../sprite.svg#{{this}}"></use>
+        </svg>
+        {{/each}}
+
+        <span class="rating-total">{{rating}} out of 5</span>
+        <div class="element-invisible">based on</div>
+        <div class="review-total">{{rating_count}} Reviews</div>
+    </div>
+
+    <ul class="user-ratings">
+        {{#each reviews}}
+        <li class="user-ratings__list-item">
+            <div class="element-invisible">Customer review {{this.index}} of 5</div>
+            <div class="user-ratings__stars">
+                {{#each this.stars}}
+                <svg class="icon product-rating__star">
+                    <use xlink:href="../sprite.svg#{{this}}"></use>
+                </svg>
+                {{/each}}
+            </div>
+            <div class="element-invisible">3 out of 5 stars</div>
+            <p class="product-rating__title"><strong>Do something every day that will make you happy</strong></p>
+
+            <p class="review-details">
+                <a href="#">Reviewer's Profile</a> on May 2, 2018
+            </p>
+            <p class="review-text">
+                Those great big fluffy clouds. There he comes. This is a happy place, little squirrels live here and play. Let your imagination just wonder around when you're doing these things. There isn't a rule. You just practice and find out which way works best for you.
+            </p>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+<!-- Reviews END -->

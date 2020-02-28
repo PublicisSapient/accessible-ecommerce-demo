@@ -7,6 +7,13 @@ let dropdownEl;
 let buttonEl;
 let miniCartItems;
 let cartCountEl;
+const globalVariables = {
+  rootPath: (
+    window.location.pathname === '/index.html'
+    || window.location.pathname === '/accessible-ecommerce-demo/'
+    || window.location.pathname === '/accessible-ecommerce-demo/index.html'
+  ) ? '.' : '..'
+};
 
 function testClick(event){
   const clickInsideDropdown = event.target.matches('.mini-cart__dropdown, .mini-cart__dropdown *');
@@ -60,14 +67,18 @@ function onCartUpdate(event){
 }
 
 function updateMiniCart(cartData){
+  cartData.rootPath = globalVariables.rootPath;
   cartCountEl.innerHTML = cartData.cartItemCount;
   miniCartItems.innerHTML = miniCartItemsTemplate(cartData);
+  //Update aria-label of Mini Cart button in header
+  const itemText = cartData.cartItemCount > 1 ? 'items' : 'item';
+  buttonEl.setAttribute('aria-label', `Mini Cart, ${cartData.cartItemCount} ${itemText}, estimated subtotal: $${cartData.cartSubtotal}`);
 }
 
 function init(){
   const cartData = getCartFromStorage();
   const templateEl = document.querySelector('[data-template="mini-cart"]');
-  templateEl.outerHTML = miniCartTemplate();
+  templateEl.outerHTML = miniCartTemplate(globalVariables);
 
   const miniCartEl = document.querySelector('[data-component="mini-cart"]');
   buttonEl = miniCartEl.querySelector('[data-js="mini-cart-toggle"]');

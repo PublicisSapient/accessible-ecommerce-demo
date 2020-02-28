@@ -1,0 +1,16 @@
+<div id="construction-modal" class="modal construction-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div class="modal__flex">
+    <div class="modal__content construction-modal__content">
+      <button class="modal__close" data-modal-hide="construction-modal">
+        <span class="sr-only">close</span>
+        <svg class="icon icon--close">
+          <use xlink:href="{{rootPath}}/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h2 id="modalTitle" class="construction-modal__title">Coming soon!</h2>
+      <p id="modalDesc" class="construction-modal__description">This element is under construction. It currently lacks functionality, but it is planned to be developed in the coming months. Check back soon.</p>
+      <button class="btn construction-modal__cta-btn" aria-label="close modal" data-modal-hide="construction-modal">Close</button>
+    </div>
+  </div>
+  <button tabindex="-1" class="modal__backdrop-close" data-modal-hide="construction-modal" aria-hidden="true">close</button>
+</div>

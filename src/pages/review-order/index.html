@@ -5,28 +5,142 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <title>Review Order | The Accessibile eStore</title>
+    <title>The Accessibile E Store, Review Order</title>
 
     <link rel="stylesheet" href="../../styles.scss">
+    <link rel="stylesheet" href="./review-order.scss">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
 </head>
 
-<body class="pdp">
-    <header class="navigation" data-template="global-header"></header>
-    <div class="main">
-        <div data-component="breadcrumb"></div>
-        <div class="container">
-            <section id="content" class="main-content">
-                <h1 class="template-heading">Review Order</h1>
+<body>
+    <header class="navigation" data-template="global-header-checkout"></header>
+    <div data-component="breadcrumb"></div>
+    <div class="container review-order">
+        <section id="content" class="main-content review-order__order-details">
+            <h1 class="template-heading">Review Order</h1>
+            <section class="review-order__order-summary">
+                <h2>Order Summary</h2>
+                <a class="skip-link" href="#back-to-order-summary" id="skip-order-summary">Skip order summary</a>
+                <div data-template="order-summary"></div>
+                <hr class="section-end">
+                <a class="review-order__edit-link" href="/cart/index.html" data-modal-show="construction-modal">
+                    <svg class="icon icon--edit-btn">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprite.svg#pencil"></use>
+                    </svg>
+                    Edit order summary
+                </a>
             </section>
-        </div>
+            <a class="skip-link" href="#skip-order-summary" id="back-to-order-summary">Back to order summary</a>
+            <section class="review-order__contact-info">
+                <h2>Contact Information</h2>
+                <a class="skip-link" href="#back-to-contact-info" id="skip-contact-info">Skip contact information</a>
+                <hr class="title-underline">
+                <p id="email-address"></p>
+                <hr class="section-end">
+                <a class="review-order__edit-link" href="/checkout/index.html?edit=guest-sign-in-email">
+                    <svg class="icon icon--edit-btn">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprite.svg#pencil"></use>
+                    </svg>
+                    Edit contact information
+                </a>
+            </section>
+            <a class="skip-link" href="#skip-contact-info" id="back-to-contact-info">Back to contact information</a>
+            <section class="review-order__shipping-info">
+                <h2>Shipping Information</h2>
+                <a class="skip-link" href="#back-to-shipping-info" id="skip-shipping-info">Skip shipping information</a>
+                <hr class="title-underline">
+                <h3>Shipping Address</h3>
+                <hr class="hr-2">
+                <p class="review-order__shipping-info-details">
+                    <span>
+                        <span class="review-order__shipping-info-detail" id="shipping-first-name"></span> <span class="review-order__shipping-info-detail" id="shipping-last-name"></span>
+                    </span>
+                    <span class="review-order__shipping-info-detail" id="shipping-address"></span>
+                    <span class="review-order__shipping-info-detail" id="shipping-apt-suite"></span>
+                    <span>
+                        <span class="review-order__shipping-info-detail" id="shipping-city"></span>, <span class="review-order__shipping-info-detail" id="shipping-province"></span>
+                    </span>
+                    <span class="review-order__shipping-info-detail" id="shipping-postal-code"></span>
+                    <span class="review-order__shipping-info-detail" id="shipping-phone-number"></span>
+                </p>
+                <h3>Shipping Method</h3>
+                <hr class="hr-2">
+                <div class="review-order__shipping-info-detail" id="shipping-method">
+                    <p class="hidden" id="cp-10-day">$0.00. Canada Post, Free Shipping. Deliver in 10 days.</p>
+                    <p class="hidden" id="ex-5-day">$8.00 Canada Post - Express Shipping. Delivers in 5 days.</p>
+                    <p class="hidden" id="xp-2-3-day">$14.00 Canada Post - Xpresspost. Delivers in 2 - 3 days.</p>
+                    <p class="hidden" id="pr-1-day">$20.00 Canada Post - Priority Delivery. Delivers in 24 hours.</p>
+                </div>
+                <hr class="section-end">
+                <a class="review-order__edit-link" href="/checkout/index.html?edit=shipping-first-name">
+                    <svg class="icon icon--edit-btn">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprite.svg#pencil"></use>
+                    </svg>
+                    Edit shipping information
+                </a>
+            </section>
+            <a class="skip-link" href="#skip-shipping-info" id="back-to-shipping-info">Back to shipping information</a>
+            <section class="review-order__payment-info">
+                <h2>Payment Information</h2>
+                <a class="skip-link" href="#submit-order-btn" id="skip-payment-info">Skip payment information</a>
+                <hr class="title-underline">
+                <h3>Card Information</h3>
+                <hr class="hr-2">
+                <p class="review-order__payment-info-details">
+                    <span class="review-order__payment-info-detail" id="cc-num">
+                        Mastercard: ****-****-****-<span id="cc-last-four-digits"></span>
+                    </span>
+                    <span>
+                        <span class="review-order__payment-info-detail">Expiry date: </span><span id="cc-expiry-date">
+                        </span>
+                    </span>
+                    <span>
+                        <span class="review-order__payment-info-detail">Name on Card: </span><span id="cc-holder-name"></span>
+                    </span>
+                </p>
+                <h3>Billing Address</h3>
+                <hr class="hr-2">
+                <p class="review-order__billing-info-details">
+                    <span>
+                        <span class="review-order__billing-info-detail" id="billing-first-name"></span> <span class="review-order__billing-info-detail" id="billing-last-name"></span>
+                    </span>
+                    <span class="review-order__billing-info-detail" id="billing-address"></span>
+                    <span class="review-order__billing-info-detail" id="billing-apt-suite"></span>
+                    <span>
+                        <span class="review-order__billing-info-detail" id="billing-city"></span>, <span class="review-order__billing-info-detail" id="billing-province"></span>
+                    </span>
+                    <span class="review-order__billing-info-detail" id="billing-postal-code"></span>
+                    <span class="review-order__billing-info-detail" id="billing-phone-number"></span>
+                </p>
+                <hr class="section-end">
+                <a class="review-order__edit-link" href="/checkout/index.html?edit=credit-card-number">
+                    <svg class="icon icon--edit-btn">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/sprite.svg#pencil"></use>
+                    </svg>
+                    Edit payment information
+                </a>
+            </section>
+            <a role="button" href="/order-confirmation/index.html" class="btn btn--black review-order__submit" id="submit-order-btn">Submit Order</a>
+        </section>
     </div>
     <div data-template="footer"></div>
     <div data-component="modal"></div>
+    <div data-template="construction-modal"></div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140213591-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140213591-1');
+
+    </script>
+    <script src="../../scripts-checkout.js"></script>
     <script src="./review-order.js"></script>
-    <script src="../../scripts.js"></script>
 </body>
 
 </html>

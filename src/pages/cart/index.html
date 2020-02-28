@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <title>Cart | The Accessibile eStore</title>
+    <title>The Accessibile E Store, Cart</title>
 
     <link rel="stylesheet" href="../../styles.scss">
     <link rel="stylesheet" href="./cart.scss" />
@@ -44,8 +44,19 @@
 
     <div data-template="footer"></div>
     <div data-component="modal"></div>
-    <script src="./cart-page.js"></script>
-    <script src="../../scripts.js"></script>
-</body>
+    <div data-template="construction-modal"></div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140213591-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
 
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140213591-1');
+
+    </script>
+    <script src="../../scripts.js"></script>
+    <script src="./cart-page.js"></script>
+</body>
 </html>

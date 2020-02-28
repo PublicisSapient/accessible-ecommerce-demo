@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <title>Product Detail page | The Accessibile eStore</title>
+    <title>The Accessible E Store</title>
 
     <link rel="stylesheet" href="../../styles.scss">
     <link rel="stylesheet" href="./pdp.scss">
@@ -23,20 +23,29 @@
                 <p class="error-message hidden">No product with that ID found. See <a href="../pdp/index.html?product_id=1">example page</a>.</p>
                 <div data-template="product-details"></div>
                 <div data-template="gallery"></div>
-              </section>
-              <section>
-                <div data-component="accordion">
-                  <div id="product-description" data-title="Product Description" data-component="product-description"></div>
-                  <div id="size-chart" data-title="Size Chart" data-component="size-chart"></div>
-                  <div id="ratings-reviews" data-title="Ratings & Reviews" data-component="product-ratings"></div>
-                </div>
+            </section>
+            <section>
+                <div data-template="product-details-accordion"></div>
             </section>
         </div>
     </div>
     <footer data-template="footer"></footer>
     <div data-component="modal"></div>
-    <script src="./pdp.js"></script>
+    <div data-template="construction-modal"></div>
+    <div data-template="gallery-modal"></div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140213591-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140213591-1');
+
+    </script>
     <script src="../../scripts.js"></script>
+    <script src="./pdp.js"></script>
 </body>
 
 </html>
