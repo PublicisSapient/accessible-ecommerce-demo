@@ -509,6 +509,11 @@
       grid-column: 2 / 2;
       margin-top: 66px;
       padding: 0;
+      &--sticky-moneybox {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
     }
 
     &__image {
@@ -518,14 +523,6 @@
 
     .btn {
       float: none;
-    }
-  }
-
-  @media only screen and (min-width: $filters-collapse) {
-    .sticky-moneybox {
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
   }
 }
