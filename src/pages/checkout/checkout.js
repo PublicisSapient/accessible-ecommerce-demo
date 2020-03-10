@@ -317,15 +317,6 @@ const populateFields = () => {
   }
 };
 
-const stickyMoneybox = () => {
-  let window_top = window.scrollY;
-  let footer_top =  document.querySelector(".footer").offsetTop;
-  let orderSummary = document.querySelector(".order-summary");
-  let div_height = orderSummary.querySelector(".order-summary__background").clientHeight;
-  orderSummary.style.height = div_height + "px";
-  orderSummary.style.top = (window_top + div_height - footer_top) * -1;
-};
-
 
 window.onload = () => {
   //signInForm = document.querySelector('.checkout__sign-in-form');
@@ -358,8 +349,11 @@ window.onload = () => {
     editMode = true;
     populateFields();
   }
-  window.addEventListener("scroll", stickyMoneybox);
-  stickyMoneybox();
+
+  // set the height for the sticky mini cart container
+  let stickyMiniCartContainer = document.querySelector(".order-summary--sticky-minicart");
+  stickyMiniCartContainer.style.height = stickyMiniCartContainer.querySelector(".order-summary__background").clientHeight + "px";
+
   Modal.init('construction-modal');
 };
 
