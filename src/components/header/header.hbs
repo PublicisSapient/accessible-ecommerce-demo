@@ -1,4 +1,10 @@
-<a class="skip-link" id="skip-to-main" href="#skip-to-nav" tabindex="0">Skip navigation menu</a>
+<a class="skip-link" id="skip-to-main" href="#skip-to-nav" tabindex="0">Skip to main</a>
+<a class="skip-link" id="skip-to-search" href="#global-header__search-input" tabindex="0">Skip to search</a>
+<a class="skip-link" id="skip-to-cart" href="#mini-cart-button" tabindex="0">Skip to cart</a>
+<a class="skip-link" id="skip-to-categories" href="#main-nav-women" tabindex="0">Skip to product categories</a>
+<a class="skip-link" id="skip-to-about" href="#footer_about-link" tabindex="0">Skip to about us</a>
+<a class="skip-link" id="skip-to-statement" href="#footer_statement-link" tabindex="0">Skip to accessibility
+  statement</a>
 <header class="global-header" data-component="global-header">
   <a class="global-header__logo" href="{{rootPath}}/index.html">
     <span class="global-header__site-icon" aria-hidden="true">A</span>
@@ -7,13 +13,15 @@
     </h1>
   </a>
   <div class="global-header__mobile-toggles">
-    <button class="btn btn--mobile btn--mobile-search" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="search" aria-label="search">
+    <button class="btn btn--mobile btn--mobile-search" type="button" aria-haspopup="true" aria-expanded="false"
+      aria-controls="search" aria-label="search">
       Search
       <svg class="icon icon--menu-btn">
         <use xlink:href="{{rootPath}}/sprite.svg#search"></use>
       </svg>
     </button>
-    <button class="btn btn--mobile btn--menu-toggle" data-js="hamburger-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Navigation">
+    <button class="btn btn--mobile btn--menu-toggle" data-js="hamburger-toggle" type="button" aria-haspopup="true"
+      aria-expanded="false" aria-controls="menu" aria-label="Navigation">
       Menu
       <svg class="icon icon--menu-btn">
         <use xlink:href="{{rootPath}}/sprite.svg#menu"></use>
@@ -35,7 +43,8 @@
   <nav class="primary-nav" aria-label="Primary" data-js="hamburger-dropdown">
     <ul class="primary-nav__items">
       <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" id="main-nav-women" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        <button class="primary-nav__heading" id="main-nav-women" data-js="dropdown-toggle" aria-haspopup="true"
+          aria-expanded="false">
           Women
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -158,7 +167,8 @@
         </button>
       </li>
       <li class="secondary-nav__item secondary-nav__mini-cart mini-cart__toggle" data-component="mini-cart">
-        <button aria-label="Mini Cart, 0 items" data-js="mini-cart-toggle" class="secondary-nav__button" aria-haspopup="true" aria-expanded="false">
+        <button id='mini-cart-button' aria-label="Mini Cart, 0 items" data-js="mini-cart-toggle"
+          class="secondary-nav__button" aria-haspopup="true" aria-expanded="false">
           <span aria-live="assertive" aria-atomic="true" class="element-invisible mini-cart__aria">You have 0 items in
             your cart.</span>
           <svg class="icon icon--menu-btn">

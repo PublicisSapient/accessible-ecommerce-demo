@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head prefix="og: http://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <title>The Accessible E Store</title>
+
+    <link rel="stylesheet" href="../../styles.scss">
+    <link rel="stylesheet" href="../../scss/about-us.scss">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+</head>
+
+<body class="page-about-us">
+    <header data-template="global-header"></header>
+    <div class="about-us__content container">
+        <main class="about-us__main">
+            <section class="hero">
+                <div class="container">
+                    <h1 class="hero__headline">Accessibility Statement</h1>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <ul style="display:none">
+        <!-- Pages need to be linked from the root for Parcel -->
+        <li><a href="../plp/index.html">Product Listing Page</a></li>
+        <li><a href="../pdp/index.html?product_id=1">Product Detail Page</a></li>
+        <li><a href="../cart/index.html">Cart Page</a></li>
+        <li><a href="../checkout/index.html">Checkout Page</a></li>
+        <li><a href="../review-order/index.html">Review Order Page</a></li>
+        <li><a href="../order-confirmation/index.html">Confirmation Page</a></li>
+    </ul>
+    <footer data-template="footer"></footer>
+    <div data-template="modal"></div>
+    <div data-template="construction-modal"></div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140213591-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140213591-1');
+
+    </script>
+    <script src="../../scripts.js"></script>
+    <script src="../index.js"></script>
+</body>
+
+</html>
