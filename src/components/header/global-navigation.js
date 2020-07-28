@@ -6,12 +6,11 @@ let isMenuOpen = false;
 let activeMenuItem = null;
 
 setTimeout(() => {
-  let keyLinks = document.getElementById('key-links');
+  let keyLinks = document.getElementById('key-link-container');
   keyLinks.onkeydown = onKeyLinkPress;
 }, 1000)
 
 function onKeyLinkPress(e) {
-  console.log(e.code)
   if (e.code === 'KeyS') {
     let search = document.getElementById('global-header__search-input')
     search && search.focus()
@@ -35,6 +34,78 @@ function onKeyLinkPress(e) {
   if (e.code === 'KeyU') {
     let search = document.getElementById('footer_about-link')
     search && search.focus()
+  }
+  if (e.code === 'ArrowRight' || e.code === 'ArrowDown') {
+    e.preventDefault()
+    nextLink()
+  }
+  if (e.code === 'ArrowLeft' || e.code === 'ArrowUp') {
+    e.preventDefault()
+    prevLink()
+  }
+}
+
+function nextLink() {
+  let next
+  switch (document.activeElement.id) {
+    case 's4search':
+      next = document.getElementById('p4products')
+      next.focus()
+      break;
+    case 'p4products':
+      next = document.getElementById('r4results')
+      next.focus()
+      break;
+    case 'r4results':
+      next = document.getElementById('c4cart')
+      next.focus()
+      break;
+    case 'c4cart':
+      next = document.getElementById('a4a11y')
+      next.focus()
+      break;
+    case 'a4a11y':
+      next = document.getElementById('u4about')
+      next.focus()
+      break;
+    case 'u4about':
+      break;
+    default:
+      next = document.getElementById('s4search')
+      next.focus()
+      break;
+  }
+}
+
+function prevLink() {
+  let next
+  switch (document.activeElement.id) {
+    case 's4search':
+      break;
+    case 'p4products':
+      next = document.getElementById('s4search')
+      next.focus()
+      break;
+    case 'r4results':
+      next = document.getElementById('p4products')
+      next.focus()
+      break;
+    case 'c4cart':
+      next = document.getElementById('r4results')
+      next.focus()
+      break;
+    case 'a4a11y':
+      next = document.getElementById('c4cart')
+      next.focus()
+      break;
+    case 'u4about':
+      next = document.getElementById('a4a11y')
+      next.focus()
+      break;
+    default:
+      next = document.getElementById('u4about')
+      next.focus()
+      break;
   }
 }
 

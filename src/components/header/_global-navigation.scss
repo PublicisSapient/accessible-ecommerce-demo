@@ -418,7 +418,7 @@
 $accent-blue: #0059ab;
 $key-link-border: #00407A;
 
-#key-links {
+#key-link-container {
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -426,6 +426,12 @@ $key-link-border: #00407A;
   background-color: $accent-blue;
   color: #fff;
   font-weight: bold;
+}
+
+#key-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
 }
 
 #welcome {
