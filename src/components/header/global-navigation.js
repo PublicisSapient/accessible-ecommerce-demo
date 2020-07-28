@@ -5,6 +5,39 @@ let hamburgerDropdown;
 let isMenuOpen = false;
 let activeMenuItem = null;
 
+setTimeout(() => {
+  let keyLinks = document.getElementById('key-links');
+  keyLinks.onkeydown = onKeyLinkPress;
+}, 1000)
+
+function onKeyLinkPress(e) {
+  console.log(e.code)
+  if (e.code === 'KeyS') {
+    let search = document.getElementById('global-header__search-input')
+    search && search.focus()
+  }
+  if (e.code === 'KeyP') {
+    let search = document.getElementById('main-nav-women')
+    search && search.focus()
+  }
+  if (e.code === 'KeyR') {
+    let search = document.getElementById('skip-to-products-from-filters')
+    search && search.focus()
+  }
+  if (e.code === 'KeyC') {
+    let search = document.getElementById('mini-cart-button">')
+    search && search.focus()
+  }
+  if (e.code === 'KeyA') {
+    let search = document.getElementById('footer_statement-link')
+    search && search.focus()
+  }
+  if (e.code === 'KeyU') {
+    let search = document.getElementById('footer_about-link')
+    search && search.focus()
+  }
+}
+
 function onHamburgerMenuClick(event) {
   isMenuOpen = !isMenuOpen;
   event.currentTarget.setAttribute('aria-expanded', isMenuOpen);

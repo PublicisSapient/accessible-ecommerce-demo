@@ -51,7 +51,7 @@
   overflow: hidden;
   left: -9999px;
 
-  &:focus {
+  &:focus, &:focus-within {
     color: $pure-black;
     height: auto;
     width: auto;
