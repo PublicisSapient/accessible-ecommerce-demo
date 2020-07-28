@@ -421,7 +421,7 @@ $key-link-border: #00407A;
 #key-links {
   margin: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   background-color: $accent-blue;
   color: #fff;
@@ -445,7 +445,7 @@ $key-link-border: #00407A;
   &:focus {
     outline: none;
     background-color: #fff;
-    border: $key-link-border;
+    border-color: $key-link-border;
     color: $accent-blue;
   }
 }
