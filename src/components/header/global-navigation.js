@@ -116,6 +116,7 @@ function prevLink() {
 
 /* Focus Region Functions */
 
+// Search
 let search
 setTimeout(() => {
   search = document.getElementById('global-header__search-form');
@@ -156,6 +157,64 @@ function onSearchLeave() {
     let btn = document.getElementById('global-header__search-btn')
     btn.tabIndex = '-1'
     input.tabIndex = '-1'
+  }
+}
+
+// Product Categories
+let categories
+setTimeout(() => {
+  categories = document.getElementById("primary-nav");
+  categories.onkeydown = onCategoriesEnter;
+  categories.addEventListener('focusin', onCategoriesFocusIn)
+  categories.addEventListener('focusout', onCategoriesLeave)
+}, 1)
+
+function onCategoriesEnter(e) {
+  if (document.activeElement.id === "primary-nav") {
+    if (e.code === 'Space' || e.code === 'Enter') {
+      e.preventDefault()
+      let women = document.getElementById('main-nav-women')
+      let men = document.getElementById('main-nav-men')
+      let girls = document.getElementById('main-nav-girls')
+      let boys = document.getElementById('main-nav-boys')
+      women.tabIndex = '0'
+      men.tabIndex = '0'
+      girls.tabIndex = '0'
+      boys.tabIndex = '0'
+      women.focus()
+    }
+  }
+}
+
+function onCategoriesFocusIn() {
+  if (document.activeElement.id !== "primary-nav") {
+    let women = document.getElementById('main-nav-women')
+    let men = document.getElementById('main-nav-men')
+    let girls = document.getElementById('main-nav-girls')
+    let boys = document.getElementById('main-nav-boys')
+    women.tabIndex = '0'
+    men.tabIndex = '0'
+    girls.tabIndex = '0'
+    boys.tabIndex = '0'
+  }
+}
+
+function onCategoriesLeave() {
+  console.log(document.activeElement)
+  if (document.activeElement.id !== "primary-nav" &&
+    document.activeElement.id !== 'main-nav-women' &&
+    document.activeElement.id !== 'main-nav-men' &&
+    document.activeElement.id !== 'main-nav-boys' &&
+    document.activeElement.id !== 'main-nav-girls'
+  ) {
+    let women = document.getElementById('main-nav-women')
+    let men = document.getElementById('main-nav-men')
+    let girls = document.getElementById('main-nav-girls')
+    let boys = document.getElementById('main-nav-boys')
+    women.tabIndex = '-1'
+    men.tabIndex = '-1'
+    girls.tabIndex = '-1'
+    boys.tabIndex = '-1'
   }
 }
 

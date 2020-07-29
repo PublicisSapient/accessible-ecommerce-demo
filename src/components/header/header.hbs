@@ -80,11 +80,11 @@
     </button>
   </form>
 
-  <nav class="primary-nav" aria-label="Primary" data-js="hamburger-dropdown">
+  <nav id="primary-nav" class="primary-nav" aria-label="Product Categories" data-js="hamburger-dropdown" tabindex="0">
     <ul class="primary-nav__items">
       <li class="primary-nav__item has-submenu">
         <button class="primary-nav__heading" id="main-nav-women" data-js="dropdown-toggle" aria-haspopup="true"
-          aria-expanded="false">
+          aria-expanded="false" tabindex="-1">
           Women
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -112,7 +112,8 @@
         </ul>
       </li>
       <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        <button class="primary-nav__heading" id="main-nav-men" data-js="dropdown-toggle" aria-haspopup="true"
+          aria-expanded="false" tabindex="-1">
           Men
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -140,7 +141,8 @@
         </ul>
       </li>
       <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        <button class="primary-nav__heading" id="main-nav-girls" data-js="dropdown-toggle" aria-haspopup="true"
+          aria-expanded="false" tabindex="-1">
           Girls
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -168,7 +170,8 @@
         </ul>
       </li>
       <li class="primary-nav__item has-submenu">
-        <button class="primary-nav__heading" data-js="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        <button class="primary-nav__heading" id="main-nav-boys" data-js="dropdown-toggle" aria-haspopup="true"
+          aria-expanded="false" tabindex="-1">
           Boys
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
