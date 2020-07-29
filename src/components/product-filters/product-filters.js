@@ -2,6 +2,39 @@ import renderFilters from './product-filters.hbs';
 import renderActiveFilters from './active-filters.hbs';
 import * as accordion from '../accordion/accordion';
 
+// Region Functions
+// let filters
+// setTimeout(() => {
+//   filters = document.getElementById('product-filters');
+
+//   console.log(getFocusableChildren(filters.children))
+
+//   filters.onkeydown = onFilterEnter;
+//   filters.addEventListener('focusin', onFilterFocusIn)
+//   filters.addEventListener('focusout', onFilterLeave)
+// }, 1)
+
+// function getFocusableChildren(children, arr = []) {
+//   let nodes = arr
+//   console.log('parent:', children)
+//   for (const child of children) {
+//     console.log('child:', child)
+//     if(child.tabindex === '0') {
+//       console.log('here at all???')
+//       nodes.push(child)
+//     }
+//     if(child.firstChild !== null) {
+//       for (const node of getFocusableChildren(child.children, nodes)) {
+//         nodes.push(node)
+//       }
+//     }
+//   }
+//   children.forEach(child => {
+    
+//   });
+//   return nodes
+// }
+
 // Private vars
 let componentEl;
 let activeFiltersEl;
