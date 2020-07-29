@@ -1,13 +1,13 @@
 <div class="container">
     <section>
-        <nav aria-label="Breadcrumb" class="breadcrumb">
+        <nav aria-label="Breadcrumb" class="breadcrumbs" id="breadcrumbs" tabindex="0">
             <ol>
                 {{#each breadcrumbs}}
                 <li>
                     {{#if link}}
-                    <a href="{{link}}">{{label}}</a>
+                    <a href="{{link}}" class="breadcrumb" tabindex="-1">{{label}}</a>
                     {{else}}
-                    <a href="./index.html" aria-current="page">{{label}}</a>
+                    <a href="./index.html" class="breadcrumb" aria-current="page" tabindex="-1">{{label}}</a>
                     {{/if}}
                 </li>
                 {{/each}}

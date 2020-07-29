@@ -205,7 +205,7 @@ function onCategoriesLeave() {
     document.activeElement.id !== 'main-nav-women' &&
     document.activeElement.id !== 'main-nav-men' &&
     document.activeElement.id !== 'main-nav-boys' &&
-    document.activeElement.id !== 'main-nav-girls'
+  document.activeElement.id !== 'main-nav-girls'
   ) {
     let women = document.getElementById('main-nav-women')
     let men = document.getElementById('main-nav-men')
@@ -218,6 +218,63 @@ function onCategoriesLeave() {
   }
 }
 
+// Store
+let store
+setTimeout(() => {
+  store = document.getElementById("secondary-nav");
+  store.onkeydown = onStoreEnter;
+  store.addEventListener('focusin', onStoreFocusIn)
+  store.addEventListener('focusout', onStoreLeave)
+}, 1)
+
+function onStoreEnter(e) {
+  if (document.activeElement.id === "secondary-nav") {
+    if (e.code === 'Space' || e.code === 'Enter') {
+      e.preventDefault()
+      let account = document.getElementById('account-button')
+      let cart = document.getElementById('mini-cart-button')
+      let stores = document.getElementById('stores-button')
+      let contact = document.getElementById('contact-button')
+      account.tabIndex = '0'
+      cart.tabIndex = '0'
+      stores.tabIndex = '0'
+      contact.tabIndex = '0'
+      account.focus()
+    }
+  }
+}
+
+function onStoreFocusIn() {
+  if (document.activeElement.id !== "secondary-nav") {
+    let account = document.getElementById('account-button')
+    let cart = document.getElementById('mini-cart-button')
+    let stores = document.getElementById('stores-button')
+    let contact = document.getElementById('contact-button')
+    account.tabIndex = '0'
+    cart.tabIndex = '0'
+    stores.tabIndex = '0'
+    contact.tabIndex = '0'
+  }
+}
+
+function onStoreLeave() {
+  console.log(document.activeElement)
+  if (document.activeElement.id !== "secondary-nav" &&
+    document.activeElement.id !== 'account-button' &&
+    document.activeElement.id !== 'account-button' &&
+    document.activeElement.id !== 'stores-button' &&
+  document.activeElement.id !== 'contact-button'
+  ) {
+    let account = document.getElementById('account-button')
+    let cart = document.getElementById('mini-cart-button')
+    let stores = document.getElementById('stores-button')
+    let contact = document.getElementById('contact-button')
+    account.tabIndex = '-1'
+    cart.tabIndex = '-1'
+    stores.tabIndex = '-1'
+    contact.tabIndex = '-1'
+  }
+}
 
 /* End Focus Region Functions */
 

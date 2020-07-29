@@ -200,10 +200,10 @@
       </li>
     </ul>
   </nav>
-  <nav class="secondary-nav" aria-label="Secondary" data-js="hamburger-dropdown">
+  <nav class="secondary-nav" id="secondary-nav" aria-label="Secondary" data-js="hamburger-dropdown" tabindex="0">
     <ul class="secondary-nav__items">
       <li class="secondary-nav__item">
-        <button class="secondary-nav__button" data-modal-show="construction-modal">
+        <button class="secondary-nav__button" id="account-button" data-modal-show="construction-modal" tabindex="-1">
           <svg class="icon icon--menu-btn">
             <use xlink:href="{{rootPath}}/sprite.svg#account"></use>
           </svg> Account
@@ -211,7 +211,7 @@
       </li>
       <li class="secondary-nav__item secondary-nav__mini-cart mini-cart__toggle" data-component="mini-cart">
         <button id='mini-cart-button' aria-label="Mini Cart, 0 items" data-js="mini-cart-toggle"
-          class="secondary-nav__button" aria-haspopup="true" aria-expanded="false">
+          class="secondary-nav__button" aria-haspopup="true" aria-expanded="false" tabindex="-1">
           <span aria-live="assertive" aria-atomic="true" class="element-invisible mini-cart__aria">You have 0 items in
             your cart.</span>
           <svg class="icon icon--menu-btn">
@@ -223,14 +223,14 @@
         <div data-template="mini-cart"></div>
       </li>
       <li class="secondary-nav__item secondary-nav__stores">
-        <button class="secondary-nav__button" data-modal-show="construction-modal">
+        <button class="secondary-nav__button" id="stores-button" data-modal-show="construction-modal" tabindex="-1">
           <svg class="icon icon--menu-btn">
             <use xlink:href="{{rootPath}}/sprite.svg#stores"></use>
           </svg> Stores
         </button>
       </li>
       <li class="secondary-nav__item secondary-nav__contact">
-        <button class="secondary-nav__button" data-modal-show="construction-modal">
+        <button class="secondary-nav__button" id="contact-button" data-modal-show="construction-modal" tabindex="-1">
           <svg class="icon icon--menu-btn">
             <use xlink:href="{{rootPath}}/sprite.svg#contact"></use>
           </svg> Contact
