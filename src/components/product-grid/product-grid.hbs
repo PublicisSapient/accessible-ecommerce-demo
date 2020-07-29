@@ -1,7 +1,26 @@
 <section class="product-grid">
   <div class="product-grid__jump-links">
-    <a id="skip-to-products-from-filters" href="#skip-to-products-from-filters-heading" class="skip-link">Skip to Filters</a>
-    <a id="skip-to-products-from-sort" href="#skip-to-products-from-sort-heading" class="skip-link">Skip to Sort</a>
+    <div class="skip-link" id="product-link-container" role=”application” tabindex="0">
+      <p id="product-link-text">
+        Showing 1 to 12 of 40 items.<br />
+        Use the arrow keys to browse the items, F to filter or B to sort by.
+      </p>
+      <ul id="product-links">
+        <li>
+          <a class="key-link" id="f4filter" href="#skip-to-products-from-filters-heading">
+            F for filter
+          </a>
+        </li>
+        <li>
+          <a class="key-link" id="b4sort" href="#skip-to-products-from-sort-heading">
+            B for sort by
+          </a>
+        </li>
+      </ul>
+    </div>
+    {{!-- <a id="skip-to-products-from-filters" href="#skip-to-products-from-filters-heading" class="skip-link">Skip to
+      Filters</a>
+    <a id="skip-to-products-from-sort" href="#skip-to-products-from-sort-heading" class="skip-link">Skip to Sort</a> --}}
   </div>
   <div class="product-grid__product-tiles" data-component="grid"></div>
 </section>

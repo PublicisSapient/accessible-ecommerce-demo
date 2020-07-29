@@ -3,6 +3,24 @@ import renderTiles from './product-tiles.hbs';
 
 let componentEl;
 
+/* Product Link Functions  */
+
+setTimeout(() => {
+  let productLinks = document.getElementById('product-link-container');
+  productLinks.onkeydown = onProductLinkPress;
+}, 1)
+
+function onProductLinkPress(e) {
+  if (e.code === 'KeyF') {
+    let node = document.getElementById('skip-to-products-from-filters-heading')
+    node && node.focus()
+  }
+  if (e.code === 'KeyB') {
+    let node = document.getElementById('skip-to-products-from-sort-heading')
+    node && node.focus()
+  }
+}
+
 // Public functions
 function init() {
   let templateTarget = document.querySelector('[data-template="grid"]');

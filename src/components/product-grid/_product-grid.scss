@@ -1,3 +1,28 @@
+$accent-blue: #0059ab;
+$key-link-border: #00407A;
+
+#product-link-container {
+  background-color: $accent-blue;
+  color: #fff;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+#product-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#product-link-text {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
 .product-grid {
   &__jump-links {
     display: none;
