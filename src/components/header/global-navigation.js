@@ -34,7 +34,7 @@ function onKeyLinkPress(e) {
     search && search.focus()
   }
   if (e.code === 'KeyU') {
-    let search = document.getElementById('footer_about-link')
+    let search = document.getElementById('about-us-link')
     search && search.focus()
   }
   if (e.code === 'ArrowRight' || e.code === 'ArrowDown') {
@@ -233,7 +233,7 @@ function onStoreEnter(e) {
       e.preventDefault()
       let account = document.getElementById('account-button')
       let cart = document.getElementById('mini-cart-button')
-      let stores = document.getElementById('stores-button')
+      let stores = document.getElementById('about-us-link')
       let contact = document.getElementById('contact-button')
       account.tabIndex = '0'
       cart.tabIndex = '0'
@@ -248,7 +248,7 @@ function onStoreFocusIn() {
   if (document.activeElement.id !== "secondary-nav") {
     let account = document.getElementById('account-button')
     let cart = document.getElementById('mini-cart-button')
-    let stores = document.getElementById('stores-button')
+    let stores = document.getElementById('about-us-link')
     let contact = document.getElementById('contact-button')
     account.tabIndex = '0'
     cart.tabIndex = '0'
@@ -262,12 +262,12 @@ function onStoreLeave() {
   if (document.activeElement.id !== "secondary-nav" &&
     document.activeElement.id !== 'account-button' &&
     document.activeElement.id !== 'account-button' &&
-    document.activeElement.id !== 'stores-button' &&
+    document.activeElement.id !== 'about-us-link' &&
   document.activeElement.id !== 'contact-button'
   ) {
     let account = document.getElementById('account-button')
     let cart = document.getElementById('mini-cart-button')
-    let stores = document.getElementById('stores-button')
+    let stores = document.getElementById('about-us-link')
     let contact = document.getElementById('contact-button')
     account.tabIndex = '-1'
     cart.tabIndex = '-1'
