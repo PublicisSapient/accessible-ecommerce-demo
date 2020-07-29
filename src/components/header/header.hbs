@@ -68,10 +68,11 @@
     </button>
   </div>
 
-  <form action="" id="global-header__search-form" class="global-header__search-form">
+  <form action="" id="global-header__search-form" class="global-header__search-form" tabindex="0">
     <label for="global-header__search-input">Search</label>
-    <input type="text" id="global-header__search-input" class="global-header__search-input" />
-    <button class="global-header__search-btn" data-modal-show="construction-modal">
+    <input type="text" id="global-header__search-input" class="global-header__search-input" tabindex="-1" />
+    <button id="global-header__search-btn" class="global-header__search-btn" data-modal-show="construction-modal"
+      tabindex="-1">
       <span class="sr-only">Search</span>
       <svg class="icon icon--search-btn">
         <use xlink:href="{{rootPath}}/sprite.svg#search"></use>
