@@ -24,7 +24,7 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
   display: grid;
   grid-template-columns: 70px 1fr;
-  grid-template-rows: 58px auto;
+  grid-template-rows: 58px auto auto;
   justify-content: center;
   height: 58px;
   position: relative;
@@ -445,4 +445,12 @@ $key-link-border: #00407A;
 #welcome {
   margin-left: 16px;
   margin-right: 16px;
+}
+
+.back-to-keys {
+  background-color: #fff;
+  justify-self: start;
+  @media only screen and (max-width: $menu-collapse) {
+    display: none;
+  }
 }
