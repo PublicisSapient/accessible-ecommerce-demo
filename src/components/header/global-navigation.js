@@ -27,7 +27,7 @@ function onKeyLinkPress(e) {
     node && node.focus()
   }
   if (e.code === 'KeyC') {
-    let node = document.getElementById('mini-cart-button">')
+    let node = document.getElementById('mini-cart-button')
     node && node.focus()
   }
   if (e.code === 'KeyA') {
