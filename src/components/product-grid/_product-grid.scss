@@ -9,7 +9,6 @@ $key-link-border: #00407A;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
 }
 
 #product-links {
@@ -21,6 +20,10 @@ $key-link-border: #00407A;
 #product-link-text {
   margin-left: 16px;
   margin-right: 16px;
+}
+
+.product-grid__product-tiles {
+  margin-top: 32px;
 }
 
 .product-grid {
