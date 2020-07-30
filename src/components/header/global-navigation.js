@@ -13,29 +13,30 @@ setTimeout(() => {
 }, 1)
 
 function onKeyLinkPress(e) {
+  console.log('triggered???')
   if (e.code === 'KeyS') {
-    let search = document.getElementById('global-header__search-input')
-    search && search.focus()
+    let node = document.getElementById('global-header__search-input')
+    node && node.focus()
   }
   if (e.code === 'KeyP') {
-    let search = document.getElementById('main-nav-women')
-    search && search.focus()
+    let node = document.getElementById('main-nav-women')
+    node && node.focus()
   }
   if (e.code === 'KeyR') {
-    let search = document.getElementById('skip-to-products-from-filters')
-    search && search.focus()
+    let node = document.getElementById('product-link-container')
+    node && node.focus()
   }
   if (e.code === 'KeyC') {
-    let search = document.getElementById('mini-cart-button">')
-    search && search.focus()
+    let node = document.getElementById('mini-cart-button')
+    node && node.focus()
   }
   if (e.code === 'KeyA') {
-    let search = document.getElementById('footer_statement-link')
-    search && search.focus()
+    let node = document.getElementById('footer_statement-link')
+    node && node.focus()
   }
   if (e.code === 'KeyU') {
-    let search = document.getElementById('about-us-link')
-    search && search.focus()
+    let node = document.getElementById('about-us-link')
+    node && node.focus()
   }
   if (e.code === 'ArrowRight' || e.code === 'ArrowDown') {
     e.preventDefault()
