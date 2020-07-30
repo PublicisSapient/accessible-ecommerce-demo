@@ -1,6 +1,33 @@
 <div class="product-details" data-component="product-details">
 	<div class="product-description">
 		<h1 class="product-description__title">{{product_name}}</h1>
+
+		<p class="product-description__summary">
+			{{short_desc}}
+		</p>
+		<a href="#product-description" class="product-description__read-more">Full product description</a>
+		<hr class="divider" aria-hidden="true" />
+		<div class="product-rating">
+			<div class="product-description__input-title">Rating</div>
+			<div class="product-rating__display" aria-hidden="true">
+				<div class="product-rating__stars">
+					{{#each ratings}}
+					<svg class="icon product-rating__star">
+						<use xlink:href="../sprite.svg#{{this}}"></use>
+					</svg>
+					{{/each}}
+					<span class="product-rating__value">{{rating}} out of 5</span>
+					<span class="product-rating__count">({{rating_count}}<span class="element-invisible">
+							reviews</span>)</span>
+				</div>
+			</div>
+			<a class="product-rating__view-button" href="#product-reviews">
+				<span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
+				Ratings and reviews
+			</a>
+		</div>
+
+		<hr class="divider divider--medium" aria-hidden="true" />
 		<span class="product-description__price" data-js="gallery-target-sibling" aria-label="product price">
 			<span class="product-description__price-now">
 				<span class="price__label" aria-hidden="true">Price</span>
@@ -18,32 +45,8 @@
 				<span class="element-invisible">save ${{price_savings}}</span>
 			</span>
 		</span>
-		<hr class="divider divider--medium" aria-hidden="true" />
-		<p class="product-description__summary">
-			{{short_desc}}
-		</p>
-		<a href="#product-description" class="product-description__read-more">Full product description</a>
 
 		<form class="product-form" data-component="product-form">
-			<hr class="divider" aria-hidden="true" />
-			<div class="product-rating">
-				<div class="product-description__input-title">Rating</div>
-				<div class="product-rating__display" aria-hidden="true">
-					<div class="product-rating__stars">
-						{{#each ratings}}
-						<svg class="icon product-rating__star">
-							<use xlink:href="../sprite.svg#{{this}}"></use>
-						</svg>
-						{{/each}}
-						<span class="product-rating__value">{{rating}} out of 5</span>
-						<span class="product-rating__count">({{rating_count}}<span class="element-invisible"> reviews</span>)</span>
-					</div>
-				</div>
-				<a class="product-rating__view-button" href="#product-reviews">
-					<span class="element-invisible">Rating: 3.5 out of 5 based on 156 reviews.</span>
-					Ratings and reviews
-				</a>
-			</div>
 			<hr class="divider" aria-hidden="true" />
 			<input type="hidden" name="product_name" value="{{product_name}}">
 			<input type="hidden" name="product_id" value="{{product_id}}">
@@ -53,19 +56,23 @@
 				<fieldset class="product-description__color">
 					<legend id="color" class="product-description__input-title">Select Color</legend>
 					<div class="product-description__radio-group">
-						<input type="radio" class="radio__input" value="blue" name="color" id="color-blue" aria-describedby="color">
+						<input type="radio" class="radio__input" value="blue" name="color" id="color-blue"
+							aria-describedby="color">
 						<label for="color-blue" class="radio__label"> Blue</label>
 					</div>
 					<div class="product-description__radio-group">
-						<input type="radio" class="radio__input" value="green" name="color" id="color-green" aria-describedby="color">
+						<input type="radio" class="radio__input" value="green" name="color" id="color-green"
+							aria-describedby="color">
 						<label for="color-green" class="radio__label">Green</label>
 					</div>
 					<div class="product-description__radio-group">
-						<input type="radio" class="radio__input" value="yellow" name="color" id="color-yellow" aria-describedby="color" checked>
+						<input type="radio" class="radio__input" value="yellow" name="color" id="color-yellow"
+							aria-describedby="color" checked>
 						<label for="color-yellow" class="radio__label">Yellow</label>
 					</div>
 					<div class="product-description__radio-group">
-						<input type="radio" class="radio__input" value="red" name="color" id="color-red" aria-describedby="color" checked>
+						<input type="radio" class="radio__input" value="red" name="color" id="color-red"
+							aria-describedby="color" checked>
 						<label for="color-red" class="radio__label">Red</label>
 					</div>
 					<a class="skip-link" href="#skip-to-gallery" id="skip-to-details">Jump to product gallery</a>
@@ -74,15 +81,18 @@
 				<fieldset class="product-description__size">
 					<legend id="size" class="product-description__input-title">Select Size</legend>
 					<div class="product-description__radio-group">
-						<input type="radio" class="radio__input" value="small" name="size" id="size-small" aria-describedby="size" checked>
+						<input type="radio" class="radio__input" value="small" name="size" id="size-small"
+							aria-describedby="size" checked>
 						<label for="size-small" class="radio__label">Small</label>
 					</div>
 					<div class="product-description__radio-group">
-						<input type="radio" class="radio__input" value="medium" name="size" id="size-medium" aria-describedby="size">
+						<input type="radio" class="radio__input" value="medium" name="size" id="size-medium"
+							aria-describedby="size">
 						<label for="size-medium" class="radio__label">Medium</label>
 					</div>
 					<div class="product-description__radio-group">
-						<input type="radio" class="radio__input" value="large" name="size" id="size-large" aria-describedby="size">
+						<input type="radio" class="radio__input" value="large" name="size" id="size-large"
+							aria-describedby="size">
 						<label for="size-large" class="radio__label">Large</label>
 					</div>
 					<a href="#size-chart" class="size-chart__link">
@@ -105,8 +115,10 @@
 							</svg>
 						</button>
 						<!-- <label for="quantity">Qty:</label> -->
-						<input type="text" aria-label="quantity" value="1" class="quantity-comp__text" name="quantity" id="quantity" data-js="quantity">
-						<span aria-live="assertive" aria-atomic="true" class="element-invisible quantity-comp__aria">Quantity is now
+						<input type="text" aria-label="quantity" value="1" class="quantity-comp__text" name="quantity"
+							id="quantity" data-js="quantity">
+						<span aria-live="assertive" aria-atomic="true"
+							class="element-invisible quantity-comp__aria">Quantity is now
 							<span> 1 </span></span>
 						<button class="quantity-comp__increase btn btn--black-inverted btn--icon" type="button">
 							<span class="sr-only">Increase quantity</span>
@@ -116,7 +128,8 @@
 						</button>
 					</span>
 					<button class="product-actions__add-to-cart btn btn--primary" type="submit">Add to Cart</button>
-					<button class="product-actions__add-to-wishlist btn btn--favorites" type="button" data-modal-show="construction-modal">
+					<button class="product-actions__add-to-wishlist btn btn--favorites" type="button"
+						data-modal-show="construction-modal">
 						<svg class="icon icon--heart">
 							<use xlink:href="../sprite.svg#heart"></use>
 						</svg>
