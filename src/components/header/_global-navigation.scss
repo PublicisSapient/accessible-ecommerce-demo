@@ -426,32 +426,23 @@ $key-link-border: #00407A;
   background-color: $accent-blue;
   color: #fff;
   font-weight: bold;
+  @media only screen and (max-width: $menu-collapse) {
+    flex-direction: column;
+  }
 }
 
 #key-links {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   list-style: none;
+  flex-wrap: wrap;
+  @media only screen and (max-width: $menu-collapse) {
+    justify-content: space-between;
+  }
 }
 
 #welcome {
   margin-left: 16px;
   margin-right: 16px;
-}
-
-.key-link {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 16px;
-  margin-right: 16px;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  padding: 8px;
-
-  &:focus {
-    outline: none;
-    background-color: #fff;
-    border-color: $key-link-border;
-    color: $accent-blue;
-  }
 }

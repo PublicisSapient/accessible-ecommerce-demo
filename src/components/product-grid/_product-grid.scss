@@ -9,12 +9,50 @@ $key-link-border: #00407A;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 448px) {
+    flex-direction: column;
+  }
 }
 
 #product-links {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   list-style: none;
+  flex-wrap: wrap;
+  @media only screen and (max-width: $menu-collapse) {
+    justify-content: space-between;
+  }
+}
+
+.link-wrapper {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 16px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 4px 0px;
+
+  a {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+  }
+
+  &:focus-within {
+    outline: none;
+    background-color: #fff;
+    border-color: $key-link-border;
+    color: $accent-blue;
+
+    a {
+      color: $accent-blue;
+    }
+  }
 }
 
 #product-link-text {
