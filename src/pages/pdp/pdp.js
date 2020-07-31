@@ -86,3 +86,121 @@ import * as Modal from '../../components/modal/modal';
   }
   productDB.init().then(loadProductData);
 })();
+
+/* Key Link Functions  */
+
+setTimeout(() => {
+  let keyLinks = document.getElementById('key-link-container');
+  keyLinks.onkeydown = onKeyLinkPress;
+}, 1000)
+
+function onKeyLinkPress(e) {
+  if (e.code === 'KeyD') {
+    let node = document.getElementById('product-description')
+    node && node.focus()
+  }
+  if (e.code === 'KeyR') {
+    let node = document.getElementById('product-reviews')
+    node && node.focus()
+  }
+  if (e.code === 'KeyS') {
+    let node = document.getElementById('size-chart')
+    node && node.focus()
+  }
+  if (e.code === 'KeyB') {
+    let node = document.getElementById('add-to-cart')
+    node && node.focus()
+  }
+  if (e.code === 'KeyC') {
+    let node = document.getElementById('mini-cart-button')
+    node && node.focus()
+  }
+  if (e.code === 'KeyA') {
+    let node = document.getElementById('footer_statement-link')
+    node && node.focus()
+  }
+  if (e.code === 'KeyU') {
+    let node = document.getElementById('about-us-link')
+    node && node.focus()
+  }
+  if (e.code === 'ArrowRight' || e.code === 'ArrowDown') {
+    e.preventDefault()
+    nextLink()
+  }
+  if (e.code === 'ArrowLeft' || e.code === 'ArrowUp') {
+    e.preventDefault()
+    prevLink()
+  }
+}
+
+function nextLink() {
+  let next
+  switch (document.activeElement.id) {
+    case 'd4description':
+      next = document.getElementById('r4ratings')
+      next.focus()
+      break;
+    case 'r4ratings':
+      next = document.getElementById('s4size')
+      next.focus()
+      break;
+    case 's4size':
+      next = document.getElementById('b4buy')
+      next.focus()
+      break;
+    case 'b4buy':
+      next = document.getElementById('c4cart')
+      next.focus()
+      break;
+    case 'c4cart':
+      next = document.getElementById('a4a11y')
+      next.focus()
+      break;
+    case 'a4a11y':
+      next = document.getElementById('u4about')
+      next.focus()
+      break;
+    case 'u4about':
+      break;
+    default:
+      next = document.getElementById('d4description')
+      next.focus()
+      break;
+  }
+}
+
+function prevLink() {
+  let next
+  switch (document.activeElement.id) {
+    case 'd4description':
+      break;
+    case 'r4ratings':
+      next = document.getElementById('d4description')
+      next.focus()
+      break;
+    case 's4size':
+      next = document.getElementById('r4ratings')
+      next.focus()
+      break;
+    case 'b4buy':
+      next = document.getElementById('s4size')
+      next.focus()
+      break;
+    case 'c4cart':
+      next = document.getElementById('b4buy')
+      next.focus()
+      break;
+    case 'a4a11y':
+      next = document.getElementById('c4cart')
+      next.focus()
+      break;
+    case 'u4about':
+      next = document.getElementById('a4a11y')
+      next.focus()
+      break;
+    default:
+      break;
+  }
+}
+
+/* End Key Link Functions */
