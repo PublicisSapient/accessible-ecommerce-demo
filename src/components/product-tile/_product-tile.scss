@@ -1,4 +1,5 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 .product-tile{
   @include component-panel;
@@ -12,6 +13,13 @@
     font-weight: bold;
     display: block;
     padding-bottom: 24px;
+    &:focus{
+      border: 2px solid $accent-blue;
+      border-radius: 5px;
+      background-color: $accent-blue;
+      color: $white;
+      outline: none;
+    }
   }
   &__product-name{
     font-weight: bold;
