@@ -149,14 +149,14 @@ function nextLink() {
   let next
   switch (document.activeElement.id) {
     case 's4search':
-      next = document.getElementById('p4products')
-      next.focus()
-      break;
-    case 'p4products':
       next = document.getElementById('r4results')
       next.focus()
       break;
     case 'r4results':
+      next = document.getElementById('p4products')
+      next.focus()
+      break;
+    case 'p4products':
       next = document.getElementById('c4cart')
       next.focus()
       break;
@@ -182,16 +182,16 @@ function prevLink() {
   switch (document.activeElement.id) {
     case 's4search':
       break;
-    case 'p4products':
+    case 'r4results':
       next = document.getElementById('s4search')
       next.focus()
       break;
-    case 'r4results':
-      next = document.getElementById('p4products')
+    case 'p4products':
+      next = document.getElementById('r4results')
       next.focus()
       break;
     case 'c4cart':
-      next = document.getElementById('r4results')
+      next = document.getElementById('p4products')
       next.focus()
       break;
     case 'a4a11y':
