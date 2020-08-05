@@ -69,6 +69,7 @@ $key-link-border: #00407A;
     display: none;
 
     @media only screen and (min-width: $filters-collapse) {
+      padding-top: 36px;
       display: flex;
       justify-content: space-between;
     }

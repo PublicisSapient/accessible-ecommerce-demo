@@ -5,169 +5,169 @@ let hamburgerDropdown;
 let isMenuOpen = false;
 let activeMenuItem = null;
 
-/* Focus Region Functions */
+// /* Focus Region Functions */
 
-// Search
-let search
-setTimeout(() => {
-  search = document.getElementById('global-header__search-form');
-  search.onkeydown = onSearchEnter;
-  search.addEventListener('focusin', onSearchFocusIn)
-  search.addEventListener('focusout', onSearchLeave)
-}, 1)
+// // Search
+// let search
+// setTimeout(() => {
+//   search = document.getElementById('global-header__search-form');
+//   search.onkeydown = onSearchEnter;
+//   search.addEventListener('focusin', onSearchFocusIn)
+//   search.addEventListener('focusout', onSearchLeave)
+// }, 1)
 
-function onSearchEnter(e) {
-  if (document.activeElement.id === "global-header__search-form") {
-    if (e.code === 'Space' || e.code === 'Enter') {
-      e.preventDefault()
-      let input = document.getElementById('global-header__search-input')
-      let btn = document.getElementById('global-header__search-btn')
-      btn.tabIndex = '0'
-      input.tabIndex = '0'
-      input.focus()
-    }
-  }
-}
+// function onSearchEnter(e) {
+//   if (document.activeElement.id === "global-header__search-form") {
+//     if (e.code === 'Space' || e.code === 'Enter') {
+//       e.preventDefault()
+//       let input = document.getElementById('global-header__search-input')
+//       let btn = document.getElementById('global-header__search-btn')
+//       btn.tabIndex = '0'
+//       input.tabIndex = '0'
+//       input.focus()
+//     }
+//   }
+// }
 
-function onSearchFocusIn() {
-  if (document.activeElement.id !== "global-header__search-form") {
-    let input = document.getElementById('global-header__search-input')
-    let btn = document.getElementById('global-header__search-btn')
-    btn.tabIndex = '0'
-    input.tabIndex = '0'
-  }
-}
+// function onSearchFocusIn() {
+//   if (document.activeElement.id !== "global-header__search-form") {
+//     let input = document.getElementById('global-header__search-input')
+//     let btn = document.getElementById('global-header__search-btn')
+//     btn.tabIndex = '0'
+//     input.tabIndex = '0'
+//   }
+// }
 
-function onSearchLeave() {
-  console.log(document.activeElement)
-  if (document.activeElement.id !== "global-header__search-form" &&
-    document.activeElement.id !== 'global-header__search-input' &&
-    document.activeElement.id !== 'global-header__search-btn'
-  ) {
-    let input = document.getElementById('global-header__search-input')
-    let btn = document.getElementById('global-header__search-btn')
-    btn.tabIndex = '-1'
-    input.tabIndex = '-1'
-  }
-}
+// function onSearchLeave() {
+//   console.log(document.activeElement)
+//   if (document.activeElement.id !== "global-header__search-form" &&
+//     document.activeElement.id !== 'global-header__search-input' &&
+//     document.activeElement.id !== 'global-header__search-btn'
+//   ) {
+//     let input = document.getElementById('global-header__search-input')
+//     let btn = document.getElementById('global-header__search-btn')
+//     btn.tabIndex = '-1'
+//     input.tabIndex = '-1'
+//   }
+// }
 
-// Product Categories
-let categories
-setTimeout(() => {
-  categories = document.getElementById("primary-nav");
-  categories.onkeydown = onCategoriesEnter;
-  categories.addEventListener('focusin', onCategoriesFocusIn)
-  categories.addEventListener('focusout', onCategoriesLeave)
-}, 1)
+// // Product Categories
+// let categories
+// setTimeout(() => {
+//   categories = document.getElementById("primary-nav");
+//   categories.onkeydown = onCategoriesEnter;
+//   categories.addEventListener('focusin', onCategoriesFocusIn)
+//   categories.addEventListener('focusout', onCategoriesLeave)
+// }, 1)
 
-function onCategoriesEnter(e) {
-  if (document.activeElement.id === "primary-nav") {
-    if (e.code === 'Space' || e.code === 'Enter') {
-      e.preventDefault()
-      let women = document.getElementById('main-nav-women')
-      let men = document.getElementById('main-nav-men')
-      let girls = document.getElementById('main-nav-girls')
-      let boys = document.getElementById('main-nav-boys')
-      women.tabIndex = '0'
-      men.tabIndex = '0'
-      girls.tabIndex = '0'
-      boys.tabIndex = '0'
-      women.focus()
-    }
-  }
-}
+// function onCategoriesEnter(e) {
+//   if (document.activeElement.id === "primary-nav") {
+//     if (e.code === 'Space' || e.code === 'Enter') {
+//       e.preventDefault()
+//       let women = document.getElementById('main-nav-women')
+//       let men = document.getElementById('main-nav-men')
+//       let girls = document.getElementById('main-nav-girls')
+//       let boys = document.getElementById('main-nav-boys')
+//       women.tabIndex = '0'
+//       men.tabIndex = '0'
+//       girls.tabIndex = '0'
+//       boys.tabIndex = '0'
+//       women.focus()
+//     }
+//   }
+// }
 
-function onCategoriesFocusIn() {
-  if (document.activeElement.id !== "primary-nav") {
-    let women = document.getElementById('main-nav-women')
-    let men = document.getElementById('main-nav-men')
-    let girls = document.getElementById('main-nav-girls')
-    let boys = document.getElementById('main-nav-boys')
-    women.tabIndex = '0'
-    men.tabIndex = '0'
-    girls.tabIndex = '0'
-    boys.tabIndex = '0'
-  }
-}
+// function onCategoriesFocusIn() {
+//   if (document.activeElement.id !== "primary-nav") {
+//     let women = document.getElementById('main-nav-women')
+//     let men = document.getElementById('main-nav-men')
+//     let girls = document.getElementById('main-nav-girls')
+//     let boys = document.getElementById('main-nav-boys')
+//     women.tabIndex = '0'
+//     men.tabIndex = '0'
+//     girls.tabIndex = '0'
+//     boys.tabIndex = '0'
+//   }
+// }
 
-function onCategoriesLeave() {
-  console.log(document.activeElement)
-  if (document.activeElement.id !== "primary-nav" &&
-    document.activeElement.id !== 'main-nav-women' &&
-    document.activeElement.id !== 'main-nav-men' &&
-    document.activeElement.id !== 'main-nav-boys' &&
-  document.activeElement.id !== 'main-nav-girls'
-  ) {
-    let women = document.getElementById('main-nav-women')
-    let men = document.getElementById('main-nav-men')
-    let girls = document.getElementById('main-nav-girls')
-    let boys = document.getElementById('main-nav-boys')
-    women.tabIndex = '-1'
-    men.tabIndex = '-1'
-    girls.tabIndex = '-1'
-    boys.tabIndex = '-1'
-  }
-}
+// function onCategoriesLeave() {
+//   console.log(document.activeElement)
+//   if (document.activeElement.id !== "primary-nav" &&
+//     document.activeElement.id !== 'main-nav-women' &&
+//     document.activeElement.id !== 'main-nav-men' &&
+//     document.activeElement.id !== 'main-nav-boys' &&
+//   document.activeElement.id !== 'main-nav-girls'
+//   ) {
+//     let women = document.getElementById('main-nav-women')
+//     let men = document.getElementById('main-nav-men')
+//     let girls = document.getElementById('main-nav-girls')
+//     let boys = document.getElementById('main-nav-boys')
+//     women.tabIndex = '-1'
+//     men.tabIndex = '-1'
+//     girls.tabIndex = '-1'
+//     boys.tabIndex = '-1'
+//   }
+// }
 
-// Store
-let store
-setTimeout(() => {
-  store = document.getElementById("secondary-nav");
-  store.onkeydown = onStoreEnter;
-  store.addEventListener('focusin', onStoreFocusIn)
-  store.addEventListener('focusout', onStoreLeave)
-}, 1)
+// // Store
+// let store
+// setTimeout(() => {
+//   store = document.getElementById("secondary-nav");
+//   store.onkeydown = onStoreEnter;
+//   store.addEventListener('focusin', onStoreFocusIn)
+//   store.addEventListener('focusout', onStoreLeave)
+// }, 1)
 
-function onStoreEnter(e) {
-  if (document.activeElement.id === "secondary-nav") {
-    if (e.code === 'Space' || e.code === 'Enter') {
-      e.preventDefault()
-      let account = document.getElementById('account-button')
-      let cart = document.getElementById('mini-cart-button')
-      let stores = document.getElementById('about-us-link')
-      let contact = document.getElementById('contact-button')
-      account.tabIndex = '0'
-      cart.tabIndex = '0'
-      stores.tabIndex = '0'
-      contact.tabIndex = '0'
-      account.focus()
-    }
-  }
-}
+// function onStoreEnter(e) {
+//   if (document.activeElement.id === "secondary-nav") {
+//     if (e.code === 'Space' || e.code === 'Enter') {
+//       e.preventDefault()
+//       let account = document.getElementById('account-button')
+//       let cart = document.getElementById('mini-cart-button')
+//       let stores = document.getElementById('about-us-link')
+//       let contact = document.getElementById('contact-button')
+//       account.tabIndex = '0'
+//       cart.tabIndex = '0'
+//       stores.tabIndex = '0'
+//       contact.tabIndex = '0'
+//       account.focus()
+//     }
+//   }
+// }
 
-function onStoreFocusIn() {
-  if (document.activeElement.id !== "secondary-nav") {
-    let account = document.getElementById('account-button')
-    let cart = document.getElementById('mini-cart-button')
-    let stores = document.getElementById('about-us-link')
-    let contact = document.getElementById('contact-button')
-    account.tabIndex = '0'
-    cart.tabIndex = '0'
-    stores.tabIndex = '0'
-    contact.tabIndex = '0'
-  }
-}
+// function onStoreFocusIn() {
+//   if (document.activeElement.id !== "secondary-nav") {
+//     let account = document.getElementById('account-button')
+//     let cart = document.getElementById('mini-cart-button')
+//     let stores = document.getElementById('about-us-link')
+//     let contact = document.getElementById('contact-button')
+//     account.tabIndex = '0'
+//     cart.tabIndex = '0'
+//     stores.tabIndex = '0'
+//     contact.tabIndex = '0'
+//   }
+// }
 
-function onStoreLeave() {
-  console.log(document.activeElement)
-  if (document.activeElement.id !== "secondary-nav" &&
-    document.activeElement.id !== 'account-button' &&
-    document.activeElement.id !== 'account-button' &&
-    document.activeElement.id !== 'about-us-link' &&
-  document.activeElement.id !== 'contact-button'
-  ) {
-    let account = document.getElementById('account-button')
-    let cart = document.getElementById('mini-cart-button')
-    let stores = document.getElementById('about-us-link')
-    let contact = document.getElementById('contact-button')
-    account.tabIndex = '-1'
-    cart.tabIndex = '-1'
-    stores.tabIndex = '-1'
-    contact.tabIndex = '-1'
-  }
-}
+// function onStoreLeave() {
+//   console.log(document.activeElement)
+//   if (document.activeElement.id !== "secondary-nav" &&
+//     document.activeElement.id !== 'account-button' &&
+//     document.activeElement.id !== 'account-button' &&
+//     document.activeElement.id !== 'about-us-link' &&
+//   document.activeElement.id !== 'contact-button'
+//   ) {
+//     let account = document.getElementById('account-button')
+//     let cart = document.getElementById('mini-cart-button')
+//     let stores = document.getElementById('about-us-link')
+//     let contact = document.getElementById('contact-button')
+//     account.tabIndex = '-1'
+//     cart.tabIndex = '-1'
+//     stores.tabIndex = '-1'
+//     contact.tabIndex = '-1'
+//   }
+// }
 
-/* End Focus Region Functions */
+// /* End Focus Region Functions */
 
 function onHamburgerMenuClick(event) {
   isMenuOpen = !isMenuOpen;

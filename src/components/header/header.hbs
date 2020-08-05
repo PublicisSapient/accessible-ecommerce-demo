@@ -6,7 +6,7 @@
 <a class="skip-link" id="skip-to-statement" href="#footer_statement-link" tabindex="0">Skip to accessibility
   statement</a> --}}
 <a class="skip-link" id="skip-to-main" href="#skip-to-nav" tabindex="0">Skip to main</a>
-<header class="global-header" id="global-header" data-component="global-header">
+<header aria-label="Site Navigation" class="global-header" id="global-header" data-component="global-header">
   <a class="global-header__logo" href="{{rootPath}}/index.html">
     <span class="global-header__site-icon" aria-hidden="true">A</span>
     <h1 class="global-header__site-name" aria-label="the accessible e store">
@@ -30,12 +30,13 @@
     </button>
   </div>
 
-  <form action="" id="global-header__search-form" class="global-header__search-form" tabindex="0">
+  <form action="" aria-label="Product Search" aria-describedby="search-info" id="global-header__search-form"
+    class="global-header__search-form">
+    <span class="sr-only" id="search-info">Press enter to access the search input and start typing</span>
     <label for="global-header__search-input">Search</label>
-    <input type="text" id="global-header__search-input" class="global-header__search-input" tabindex="-1" />
-    <button id="global-header__search-btn" class="global-header__search-btn" data-modal-show="construction-modal"
-      tabindex="-1">
-      <span class="sr-only">Search</span>
+    <input type="text" id="global-header__search-input" class="global-header__search-input" />
+    <button id="global-header__search-btn" aria-label="submit search" class="global-header__search-btn"
+      data-modal-show="construction-modal">
       <svg class="icon icon--search-btn">
         <use xlink:href="{{rootPath}}/sprite.svg#search"></use>
       </svg>
@@ -44,11 +45,13 @@
 
   {{!-- <a class="skip-link back-to-keys" href="#key-link-container" tabindex="0">Back to key links</a> --}}
 
-  <nav id="primary-nav" class="primary-nav" aria-label="Product Categories" data-js="hamburger-dropdown" tabindex="0">
+  <nav id="primary-nav" class="primary-nav" aria-label="Product Categories" aria-describedby="categories-info"
+    data-js="hamburger-dropdown">
+    <span class="sr-only" id="categories-info">Press enter to browse through the product categories</span>
     <ul class="primary-nav__items">
       <li class="primary-nav__item has-submenu">
         <button class="primary-nav__heading" id="main-nav-women" data-js="dropdown-toggle" aria-haspopup="true"
-          aria-expanded="false" tabindex="-1">
+          aria-expanded="false">
           Women
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -77,7 +80,7 @@
       </li>
       <li class="primary-nav__item has-submenu">
         <button class="primary-nav__heading" id="main-nav-men" data-js="dropdown-toggle" aria-haspopup="true"
-          aria-expanded="false" tabindex="-1">
+          aria-expanded="false">
           Men
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -106,7 +109,7 @@
       </li>
       <li class="primary-nav__item has-submenu">
         <button class="primary-nav__heading" id="main-nav-girls" data-js="dropdown-toggle" aria-haspopup="true"
-          aria-expanded="false" tabindex="-1">
+          aria-expanded="false">
           Girls
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -135,7 +138,7 @@
       </li>
       <li class="primary-nav__item has-submenu">
         <button class="primary-nav__heading" id="main-nav-boys" data-js="dropdown-toggle" aria-haspopup="true"
-          aria-expanded="false" tabindex="-1">
+          aria-expanded="false">
           Boys
           <svg class="icon icon--chevron">
             <use xlink:href="{{rootPath}}/sprite.svg#chevron"></use>
@@ -167,10 +170,12 @@
 
   {{!-- <a class="skip-link back-to-keys" href="#key-link-container" tabindex="0">Back to key links</a> --}}
 
-  <nav class="secondary-nav" id="secondary-nav" aria-label="Secondary" data-js="hamburger-dropdown" tabindex="0">
+  <nav class="secondary-nav" id="secondary-nav" aria-describedby="store-links-info" aria-label="Store Links"
+    data-js="hamburger-dropdown">
+    <span class="sr-only" id="store-links-info">Press enter to browse through the store links</span>
     <ul class="secondary-nav__items">
       <li class="secondary-nav__item">
-        <button class="secondary-nav__button" id="account-button" data-modal-show="construction-modal" tabindex="-1">
+        <button class="secondary-nav__button" id="account-button" data-modal-show="construction-modal">
           <svg class="icon icon--menu-btn">
             <use xlink:href="{{rootPath}}/sprite.svg#account"></use>
           </svg> Account
@@ -178,7 +183,7 @@
       </li>
       <li class="secondary-nav__item secondary-nav__mini-cart mini-cart__toggle" data-component="mini-cart">
         <button id='mini-cart-button' aria-label="Mini Cart, 0 items" data-js="mini-cart-toggle"
-          class="secondary-nav__button" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+          class="secondary-nav__button" aria-haspopup="true" aria-expanded="false">
           <span aria-live="assertive" aria-atomic="true" class="element-invisible mini-cart__aria">You have 0 items in
             your cart.</span>
           <svg class="icon icon--menu-btn">
@@ -190,12 +195,12 @@
         <div data-template="mini-cart"></div>
       </li>
       <li class="secondary-nav__item secondary-nav__stores">
-        <a href="{{rootPath}}/about/index.html" class="secondary-nav__button" id="about-us-link" tabindex="-1">
+        <a href="{{rootPath}}/about/index.html" class="secondary-nav__button" id="about-us-link">
           About Us
         </a>
       </li>
       <li class="secondary-nav__item secondary-nav__contact">
-        <button class="secondary-nav__button" id="contact-button" data-modal-show="construction-modal" tabindex="-1">
+        <button class="secondary-nav__button" id="contact-button" data-modal-show="construction-modal">
           <svg class="icon icon--menu-btn">
             <use xlink:href="{{rootPath}}/sprite.svg#contact"></use>
           </svg> Contact
