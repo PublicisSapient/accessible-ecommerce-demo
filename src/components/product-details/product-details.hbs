@@ -4,7 +4,7 @@
 
 		<span class="product-description__price" data-js="gallery-target-sibling" aria-label="product price">
 			<span class="product-description__price-now">
-				<span class="price__label" aria-hidden="true">Price</span>
+				<span class="price__label" role="heading" aria-level="2">Price</span>
 				<span class="price__dollar" aria-hidden="true">${{price_sale}}</span>
 				<span class="element-invisible">current price ${{price_sale}}</span>
 			</span>
@@ -28,7 +28,7 @@
 		<a href="#product-description" class="product-description__read-more">Full product description</a>
 		<hr class="divider" aria-hidden="true" />
 		<div class="product-rating">
-			<div class="product-description__input-title">Rating</div>
+			<div class="product-description__input-title" role="heading" aria-level="2">Rating</div>
 			<div class="product-rating__display" aria-hidden="true">
 				<div class="product-rating__stars">
 					{{#each ratings}}
@@ -56,7 +56,8 @@
 			<input type="hidden" name="thumbnail_url" value="{{thumbnail_url}}" />
 			<div class="product-description__color-and-size">
 				<fieldset class="product-description__color">
-					<legend id="color" class="product-description__input-title">Select Color</legend>
+					<legend id="color" class="product-description__input-title" role="heading" aria-level="2">Select Color
+					</legend>
 					<div class="product-description__radio-group">
 						<input type="radio" class="radio__input" value="blue" name="color" id="color-blue" aria-describedby="color">
 						<label for="color-blue" class="radio__label"> Blue</label>
@@ -76,11 +77,10 @@
 							checked>
 						<label for="color-red" class="radio__label">Red</label>
 					</div>
-					<a class="skip-link" href="#skip-to-gallery" id="skip-to-details">Jump to product gallery</a>
 				</fieldset>
 
 				<fieldset class="product-description__size">
-					<legend id="size" class="product-description__input-title">Select Size</legend>
+					<legend id="size" class="product-description__input-title" role="heading" aria-level="2">Select Size</legend>
 					<div class="product-description__radio-group">
 						<input type="radio" class="radio__input" value="small" name="size" id="size-small" aria-describedby="size"
 							checked>
@@ -105,7 +105,7 @@
 			</div>
 			<hr class="divider" aria-hidden="true" />
 			<div class="product-actions">
-				<div class="product-description__input-title">Quantity</div>
+				<div class="product-description__input-title" role="heading" aria-level="2">Quantity</div>
 				<div class="product-actions__cart">
 					<span class="quantity-comp">
 						<button class="quantity-comp__decrease btn btn--black-inverted btn--icon" type="button">
