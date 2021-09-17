@@ -317,6 +317,7 @@ const populateFields = () => {
   }
 };
 
+
 window.onload = () => {
   //signInForm = document.querySelector('.checkout__sign-in-form');
   mainForm = document.querySelector('.checkout__main-form');
@@ -348,6 +349,10 @@ window.onload = () => {
     editMode = true;
     populateFields();
   }
+
+  // set the height for the sticky mini cart container
+  let stickyMiniCartContainer = document.querySelector(".order-summary--sticky-minicart");
+  stickyMiniCartContainer.style.height = stickyMiniCartContainer.querySelector(".order-summary__background").clientHeight + "px";
 
   Modal.init('construction-modal');
 };

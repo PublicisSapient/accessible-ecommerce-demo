@@ -27,9 +27,8 @@
 .checkout {
   margin-bottom: 80px;
   padding: 0;
-
+  display: grid;
   @media only screen and (min-width: $filters-collapse) {
-    display: grid;
     grid-template-columns: 60% 35%;
     grid-gap: 5%;
   }
@@ -502,10 +501,19 @@
     margin-top: 50px;
     padding: 0 8px;
 
+    @media screen and (max-width: $mobile) {
+      grid-row-start: 1;
+    }
+
     @media only screen and (min-width: $filters-collapse) {
       grid-column: 2 / 2;
       margin-top: 66px;
       padding: 0;
+      &--sticky-minicart {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
     }
 
     &__image {
