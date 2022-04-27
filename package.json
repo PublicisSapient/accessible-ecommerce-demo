@@ -29,9 +29,9 @@
 		"start-server-and-test": "^1.10.6"
 	},
 	"dependencies": {
-		"pouchdb": "^7.1.1",
+		"pouchdb": "^7.3.0",
 		"pouchdb-debug": "^7.1.1",
-		"pouchdb-find": "^7.1.1"
+		"pouchdb-find": "^7.3.0"
 	},
 	"assetsPath": "src/assets",
 	"bugs": {
