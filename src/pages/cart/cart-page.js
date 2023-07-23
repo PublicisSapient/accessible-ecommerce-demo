@@ -1,8 +1,7 @@
-import { getCartFromStorage } from '../../components/cart/cart';
-import cartItemsTemplate from './cart-items.hbs';
+import { getCartFromStorage, loadCart} from '../../components/cart/cart';
 
 (function cartPage() {
   const cartData = getCartFromStorage();
-  const cartItemsEl = document.querySelector('[data-template="cart-items"]');
-  cartItemsEl.outerHTML = cartItemsTemplate(cartData);
+  // load card data on page load
+  loadCart(cartData);
 })();

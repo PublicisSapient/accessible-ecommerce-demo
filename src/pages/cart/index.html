@@ -8,22 +8,55 @@
     <title>The Accessibile E Store, Cart</title>
 
     <link rel="stylesheet" href="../../styles.scss">
-
+    <link rel="stylesheet" href="./cart.scss" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
 </head>
 
-<body class="cart-page">
+
+<body class="page page--cart">
     <header class="navigation" data-template="global-header"></header>
     <div class="main">
         <div data-component="breadcrumb"></div>
         <div class="container">
             <section id="content" class="main-content">
-                <h1 class="template-heading">Your Cart</h1>
-                <div data-template="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="cart__quantity-summary" data-template="cart-quantity-summary"></div>
+                    <div class="mini-cart__summary-controls">
+                        <a href="../plp/index.html" class="mini-cart__cta-btn btn btn--outline-black">Continue Shopping</a>
+                        <a href="../checkout/index.html" class="mini-cart__cta-btn mini-cart__checkout btn btn--primary">Pay Securely Now</a>
+                    </div>
+                </div>
+<!-- <div data-template="mini-cart-items" class="mini-cart__items"></div> -->
+                <div class="grid-row"></div>
+                <div class="cart__items" data-template="cart-items"></div>
+                <div class="cart__moneybox" data-template="cart-moneybox"></div>
+                <div class="cart-summary mobile-hide">
+                    <div class="mini-cart__summary-controls">
+                        <a href="../plp/index.html" class="mini-cart__cta-btn btn btn--outline-black">Continue Shopping</a>
+                        <a href="../checkout/index.html" class="mini-cart__cta-btn mini-cart__checkout btn btn--primary">Pay Securely Now</a>
+                    </div>
+                </div>
             </section>
         </div>
+        <div class="shipping-info">
+            <div class="container">
+                <section class="bottom-content">
+                    <div class="shipping-info__summary">
+                        <img class="shipping-info__image" alt="" src="../../images/easy-return-icon.png"/>
+                        <p class="shipping-info__heading">Free & Easy Return</p>
+                        <p class="shipping-info__details">If your product doesn't work, arrives damaged or just isn't right! no problem! All returns are free! </p>
+                    </div>
+                    <div class="shipping-info__summary">
+                        <img class="shipping-info__image" alt="" src="../../images/truck-icon.png"/>
+                        <p class="shipping-info__heading">Fast, Free Delivery</p>
+                        <p class="shipping-info__details">We make sure everything is delivered quickly at no cost to you. it's just one more way to show that we value you as a customer.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
+
     <div data-template="footer"></div>
     <div data-component="modal"></div>
     <div data-template="construction-modal"></div>

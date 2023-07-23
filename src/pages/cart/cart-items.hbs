@@ -1,5 +1,83 @@
-<ul>
-  {{#each cartItems}}
-  <li>{{product_name}}</li>
-  {{/each}}
-</ul>
+<div class="cart-items" data-template="cart-items">
+  <h2 class="heading heading--section">Items in Cart</h2>
+  <ul class="cart-items__item-list">
+    {{#each cartItems}}
+    <li class="cart-items__item" data-cart-id="{{cart_id}}">
+      <a class="cart-items__item-link" href="../pdp/index.html?product_id={{product_id}}" aria-label="Shirt Malo.
+        Size: Medium, Color: blue, quantity: {{quantity}}, Item unit price: ${{price_sale}}, Item total price: ${{total_price}}">
+        <img class="cart-items__image" alt="" src="{{../rootPath}}/{{thumbnail_url}}">
+        <div class="cart-items__description">
+          <p class="cart-items__item-title">{{product_name}}</p>
+          <dl class="cart-items__details">
+            <div class="cart-items__detail">
+              <dt>Price</dt>
+              <dd class="detail__price">${{price_sale}}</dd>
+            </div>
+            <div class="cart-items__detail">
+              <dt>Color</dt>
+              <dd>{{color}}</dd>
+            </div>
+            <div class="cart-items__detail">
+              <dt>Size</dt>
+              <dd>{{size}}</dd>
+            </div>
+          </dl>
+          <dl class="cart-items__details">
+            <div class="cart-items__detail cart-items__column">
+              <dt>Quantity</dt>
+              <dd>
+                <span class="quantity-comp">
+                  <button class="quantity-comp__decrease btn btn--black-inverted btn--icon" type="button" data-event-cart-id="{{cart_id}}">
+                    <span class="sr-only">Decrease quantity</span>
+                    <svg class="icon icon--ruler">
+                      <use xlink:href="../sprite.svg#remove"></use>
+                    </svg>
+                  </button>
+                  <!-- <label for="quantity">Qty:</label> -->
+                  <input type="test" aria-label="quantity" value="{{quantity}}" class="quantity-comp__text" name="quantity"
+                    id="quantity" data-js="quantity" data-event-cart-id="{{cart_id}}">
+                  <span aria-live="assertive" aria-atomic="true" class="element-invisible quantity-comp__aria">Quantity is
+                    now
+                    <span> {{quantity}} </span></span>
+                  <button class="quantity-comp__increase btn btn--black-inverted btn--icon" type="button" data-event-cart-id="{{cart_id}}">
+                    <span class="sr-only">Increase quantity</span>
+                    <svg class="icon icon--ruler">
+                      <use xlink:href="../sprite.svg#add"></use>
+                    </svg>
+                  </button>
+                </span>
+              </dd>
+            </div>
+          </dl>
+          <dl class="cart-items__details">
+            <div class="cart-items__detail cart-items__column">
+              <dt>Item Total</dt>
+              <dd class="detail__price">${{total_price}}</dd>
+            </div>
+          </dl>
+        </div>
+      </a>
+      <div class="cart-items__controls">
+        <button class="cart-items__control btn--link" data-remove="{{cart_id}}">
+          <svg class="icon mini-cart__control-icon">
+            <use xlink:href="{{../rootPath}}/sprite.svg#trash"></use>
+          </svg>
+          Remove <span class="sr-only">item</span>
+        </button>
+        <a class="cart-items__control btn--link" href="../pdp/index.html?product_id={{product_id}}">
+          <svg class="icon mini-cart__control-icon">
+            <use xlink:href="{{../rootPath}}/sprite.svg#edit"></use>
+          </svg>
+          Edit <span class="sr-only">item</span>
+        </a>
+        <button class="cart-items__control btn--link" data-modal-show="construction-modal">
+          <svg class="icon mini-cart__control-icon icon--heart-outline">
+            <use xlink:href="{{../rootPath}}/sprite.svg#heart"></use>
+          </svg>
+          Save <span class="sr-only">to wish list</span>
+        </button>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>
