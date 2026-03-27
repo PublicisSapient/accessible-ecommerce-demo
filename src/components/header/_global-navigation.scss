@@ -292,6 +292,10 @@
 
     @media only screen and (min-width: $menu-collapse) {
       position: absolute;
+      // CHANGE: Add border outline around submenu
+      border: 2px solid $black;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
     .has-submenu.open & {
