@@ -31,6 +31,31 @@ function removeDocumentClickHandler() {
   window.removeEventListener('click', onDocumentClick);
 }
 
+// Add escape key handler to close open submenus
+function onEscapeKey(event) {
+  if (event.key === 'Escape' || event.keyCode === 27) {
+    if (activeMenuItem) {
+      closeMenu(activeMenuItem);
+      removeDocumentClickHandler();
+      removeEscapeKeyHandler();
+      // CHANGE: Use requestAnimationFrame to ensure DOM updates complete before focusing
+      requestAnimationFrame(function() {
+        activeMenuItem.focus();
+      });
+    }
+  }
+}
+
+// Add escape key event listener when submenu opens
+function addEscapeKeyHandler() {
+  document.addEventListener('keydown', onEscapeKey);
+}
+
+// Remove escape key event listener when submenu closes
+function removeEscapeKeyHandler() {
+  document.removeEventListener('keydown', onEscapeKey);
+}
+
 function getActiveElement() {
   // the active element (with focus) isn't available yet when the blur event fires
   // so we kick this function down the stack a little with setTimeout
@@ -57,7 +82,12 @@ function closeMenu(element) {
   if (element && element.parentNode.classList.contains('open')) {
     element.parentNode.classList.remove('open');
     element.setAttribute('aria-expanded', 'false');
+    // CHANGE: Use requestAnimationFrame for consistent focus visibility after DOM updates
+    requestAnimationFrame(function() {
+      element.focus();
+    });
     activeMenuItem = null;
+    removeEscapeKeyHandler();
   }
 }
 
@@ -68,6 +98,8 @@ function openMenu(element) {
   element.setAttribute('aria-expanded', 'true');
   activeMenuItem = element;
   addDocumentClickHandler();
+  // CHANGE: Add escape key handler when menu opens
+  addEscapeKeyHandler();
 }
 
 function onClickMenuItemWithSubmenu(event) {
