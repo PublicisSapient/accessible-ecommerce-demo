@@ -72,18 +72,30 @@ const sweaterTypes = [
 ];
 
 const colours = [
-  "'red'",
-  "'yellow'",
-  "'blue'",
-  "'green'",
+  '"red"',
+  '"yellow"',
+  '"blue"',
+  '"green"',
 ];
 
 const sizes = [
-  "'x-small'",
-  "'small'",
-  "'medium'",
-  "'large'",
-  "'x-large'",
+  '"x-small"',
+  '"small"',
+  '"medium"',
+  '"large"',
+  '"x-large"',
+];
+
+const images = [
+  'blue',
+  `bright-purple`,
+  'cobalt-blue',
+  'green',
+  'grey',
+  'light-green',
+  'purple',
+  'red',
+  'teal'
 ];
 
 module.exports = {
@@ -94,5 +106,6 @@ module.exports = {
   sweaterDescriptors,
   sweaterTypes,
   colours,
-  sizes
+  sizes,
+  images
 };
